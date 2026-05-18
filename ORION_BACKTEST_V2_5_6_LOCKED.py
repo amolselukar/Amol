@@ -122,13 +122,9 @@ LOT_SIZE = 65
 # Common risk (V2.5.5 LOCKED defaults — match production spec)
 HARDSL_MODE         = 'pct'     # 'pct' or 'abs'
 HARDSL_VALUE        = 0.25      # if pct: fraction; LOCKED at -25% (sweep confirmed)
-HARDSL_PCT          = 0.25      # legacy alias; not directly used
 CIRCUIT_BREAKER     = 4         # losses/day to halt (flips excluded from count)
 FORCE_CLOSE_BUCKET  = 73        # 15:20-15:25 5m bar; close at its close (15:25)
-ENTRY_WINDOW_END_5M = 70        # last 5m bucket we'll OPEN a trade in: 15:05-15:10 close = bucket 70 close at 15:10. Anything later too tight.
-# (V2.3 spec uses 14:30 as entry window end; we'll use bucket 64 = 14:30 close)
-ENTRY_WINDOW_END_BKT = 63       # last 5m bar whose CLOSE is at 14:30 is bucket 63 (9:15 + 64*5 = 14:35? let me recompute)
-# Bucket K closes at 9:15 + (K+1)*5 min. So bucket 63 closes at 14:35. Bucket 62 closes at 14:30. Use 62.
+# Bucket K closes at 9:15 + (K+1)*5 min. Bucket 62 closes at 14:30. Use 62.
 ENTRY_WINDOW_END_BKT = 62
 
 # V2.3 entry params
@@ -372,7 +368,7 @@ def compute_levels_for_day(df1h_prior: pd.DataFrame, prior_day_ohlc):
     # V2.5.6 Fix A: optionally exclude PDC from clustering sources.
     # PDC is a reference (today's pivot) not a tradeable level — including it as a
     # source contaminates clusters near current price with false Grade A signals.
-    if globals().get('V3_EXCLUDE_PDC_FROM_CLUSTERS', False):
+    if V3_EXCLUDE_PDC_FROM_CLUSTERS:
         src = [(pdh, 'PDH'), (pdl, 'PDL')]
     else:
         src = [(pdh, 'PDH'), (pdl, 'PDL'), (pdc, 'PDC')]
@@ -385,10 +381,10 @@ def compute_levels_for_day(df1h_prior: pd.DataFrame, prior_day_ohlc):
     # === Analyst-style singleton promotions (V2.5.3 — added) ===
     # Promote strong single-source levels to Grade B if not already part of A/B cluster.
     # Matches how analyst tracks specific recent-action levels (not just round_100).
-    if not globals().get('V3_PROMOTE_SINGLETONS', False):
+    if not V3_PROMOTE_SINGLETONS:
         # OLD behavior: return only true clusters
         # V2.5.6 Fix B: respect MIN_BUFFER_FROM_PDC for G/R selection
-        buf = globals().get('V3_MIN_BUFFER_FROM_PDC', 0)
+        buf = V3_MIN_BUFFER_FROM_PDC
         above = [c for c in clusters if c['center'] > pdc + buf and c['grade'] in ('A','B')]
         below = [c for c in clusters if c['center'] < pdc - buf and c['grade'] in ('A','B')]
         above.sort(key=lambda c: (0 if c['grade']=='A' else 1, abs(c['center']-pdc)))

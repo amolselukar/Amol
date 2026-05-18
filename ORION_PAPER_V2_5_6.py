@@ -143,7 +143,13 @@ except (ImportError, AttributeError) as e:
     print("Required keys: KITE_API_KEY, KITE_API_SECRET, KITE_ACCESS_TOKEN, TELEGRAM_BOT_TOKEN")
     sys.exit(1)
 
-TELEGRAM_CHAT_ID = "1173480723"  # OrionClaudebot chat with Amol
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
+if not TELEGRAM_CHAT_ID:
+    try:
+        from credentials import TELEGRAM_CHAT_ID as _tgcid
+        TELEGRAM_CHAT_ID = _tgcid
+    except ImportError:
+        raise RuntimeError("TELEGRAM_CHAT_ID not set in environment or credentials.py")
 
 # =========================================================================
 # CONFIG
@@ -712,6 +718,9 @@ class DailyState:
     # Last 15m K seen (for cross-bar K-reversal detection in flip rule)
     last_K_seen: Optional[float] = None
     last_K_prev_seen: Optional[float] = None
+    # Persisted flags (survive restart via JSON state)
+    eod_sent: bool = False
+    chop_last_log_min: int = -1   # epoch-minute of last chop log (int avoids datetime serde)
 
     def reset(self):
         self.losses = 0
@@ -725,6 +734,8 @@ class DailyState:
         self.last_exit = None
         self.last_K_seen = None
         self.last_K_prev_seen = None
+        self.eod_sent = False
+        self.chop_last_log_min = -1
 
 DAY = DailyState()
 
@@ -1409,9 +1420,9 @@ def main():
                     cur_ltp = ltp(POS.symbol) or POS.entry_premium
                     close_trade("EOD_FORCE_CLOSE", cur_ltp)
                 # EOD summary once
-                if not getattr(main, "_eod_sent", False):
+                if not DAY.eod_sent:
                     TG.send(fmt_eod_summary())
-                    setattr(main, "_eod_sent", True)
+                    DAY.eod_sent = True
                 # Periodic after-hours pulse
                 if time.time() - after_hours_last >= AFTER_HOURS_PULSE_MIN * 60:
                     TG.send(f"🌙 <i>After-hours pulse</i> · ORION {VERSION}\n"
@@ -1451,10 +1462,11 @@ def main():
                     if chop_filter_blocks(df1h):
                         rsi_now = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns else float('nan')
                         # Log once per 15m, not every loop, to avoid spam
-                        if not getattr(main, "_chop_last_log_min", None) or \
-                           (now - main._chop_last_log_min).total_seconds() >= 15 * 60:
+                        now_epoch_min = int(now.timestamp() // 60)
+                        if DAY.chop_last_log_min < 0 or \
+                           (now_epoch_min - DAY.chop_last_log_min) >= 15:
                             linfo(f"[CHOP] Entry blocked: 1h RSI={rsi_now:.1f} in [{CHOP_RSI_LO},{CHOP_RSI_HI}]")
-                            main._chop_last_log_min = now
+                            DAY.chop_last_log_min = now_epoch_min
                     else:
                         # V2.5.2/4 FLIP check first (Path B post-exit watch)
                         sig = check_flip_signal(df15, now)
