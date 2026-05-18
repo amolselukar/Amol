@@ -685,6 +685,7 @@ class TradeState:
     tr_sl: float = 0.0            # ratchet SL price
     peak_premium: float = 0.0
     last_pulse_premium: float = 0.0
+    sma8_last_bar_ts: Optional[datetime] = None  # FIX1: last 15m bar ts evaluated for SMA8 trail
 
     def to_dict(self):
         d = asdict(self)
@@ -1301,12 +1302,14 @@ def check_exits(spot):
             close_trade(f"TIME_RATCHET_+{pts}", POS.tr_sl)
             return True
 
-    # 4. SMA8(low) trail - check at every 15m option bar close
-    # Determined by: option 15m bar just closed within last 2 minutes
-    minute_mod = now.minute % 15
-    if minute_mod == 0 and now.second < 45:
-        df_opt = fetch_option_15m(POS.token)
-        if df_opt is not None and len(df_opt) >= SMA_TRAIL_PERIOD + 1:
+    # 4. SMA8(low) trail - check exactly once per 15m bar close
+    # FIX1: use bar timestamp instead of wall-clock modulo to avoid missing the window
+    df_opt = fetch_option_15m(POS.token)
+    if df_opt is not None and len(df_opt) >= SMA_TRAIL_PERIOD + 1:
+        last_bar_ts = df_opt.index[-2] if hasattr(df_opt.index, '__getitem__') else df_opt['date'].iloc[-2] \
+                      if 'date' in df_opt.columns else None
+        if last_bar_ts is not None and last_bar_ts != POS.sma8_last_bar_ts:
+            POS.sma8_last_bar_ts = last_bar_ts
             sma8L = sma8_low_of_option(df_opt)
             last_closed_15m_c = float(df_opt['close'].iloc[-2])
             if sma8L is not None and last_closed_15m_c < sma8L:
