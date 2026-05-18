@@ -218,8 +218,9 @@ CHOP_K_CROSS_MAX      = 4       # legacy/unused in rsi_band mode
 TRANSACTION_COST_PER_LOT = 50  # Rs per lot, conservative estimate
 
 # Method 2: time-delayed ratchet (NEW)
-RATCHET_TIME_MIN      = 120     # min elapsed before ratchet can arm
-RATCHET_INITIAL_PTS   = 20      # initial lock = entry + this
+# V2.5.7: Velvet Rope + Accelerated Ratchet (was 120min/+20 in V2.5.6)
+RATCHET_TIME_MIN      = 30      # arm window: 30min (was 120)
+RATCHET_INITIAL_PTS   = 15      # velvet rope trigger at entry+15 (was 20)
 RATCHET_STEP_PTS      = 20      # each +N move above current SL → SL += N
 
 # V2.2 entry params
@@ -753,30 +754,35 @@ def simulate_trade(trade: Trade, day_data: dict, exit_model: str,
                         break
 
         elif exit_model == 'sma8_tratchet':
-            # HARDSL + SMA8 trail + TIME-RATCHET (arms after RATCHET_TIME_MIN minutes in trade)
+            # V2.5.7: VELVET ROPE + ACCELERATED RATCHET + RUNNER STEP TRAIL
             elapsed_min = (bkt - trade.entry_bkt) * 5
 
-            # Arm ratchet
-            if (not trade.tr_armed) and elapsed_min >= RATCHET_TIME_MIN:
-                if o5['high'] >= trade.entry_premium + RATCHET_INITIAL_PTS:
-                    trade.tr_armed = True
-                    trade.tr_sl = trade.entry_premium + RATCHET_INITIAL_PTS
-                    # If intra-bar low already breaks the new SL, exit at SL
+            # Step 1: Velvet Rope — immediate protection when premium touches entry+15
+            # Arms SL at entry+2 to prevent winners surrendering back to HARDSL
+            if (not trade.tr_armed) and o5['high'] >= trade.entry_premium + RATCHET_INITIAL_PTS:
+                trade.tr_armed = True
+                trade.tr_sl = trade.entry_premium + 2
+                if o5['low'] <= trade.tr_sl:
+                    trade.book(bkt, 'VELVET_ROPE_BE_SCRATCH', n5['close'], trade.tr_sl, trade.lots_remaining)
+                    break
+
+            # Step 2: Ratchet Gate — after 30min + entry+25, promote SL from entry+2 to entry+15
+            if trade.tr_armed and trade.tr_sl == (trade.entry_premium + 2) and elapsed_min >= RATCHET_TIME_MIN:
+                if o5['high'] >= trade.entry_premium + 25:
+                    trade.tr_sl = trade.entry_premium + 15
                     if o5['low'] <= trade.tr_sl:
-                        trade.book(bkt, f'TIME_RATCHET_+{RATCHET_INITIAL_PTS}', n5['close'], trade.tr_sl, trade.lots_remaining)
+                        trade.book(bkt, 'RATCHET_GATE_+15', n5['close'], trade.tr_sl, trade.lots_remaining)
                         break
 
-            # Ratchet up if armed
+            # Step 3: Runner step trail — ratchet SL up +STEP per +STEP peak
             if trade.tr_armed:
-                # While intra-bar high exceeds tr_sl + STEP, raise SL by STEP (one-way)
                 while o5['high'] >= trade.tr_sl + RATCHET_STEP_PTS:
                     trade.tr_sl += RATCHET_STEP_PTS
                 # cap to bar open — SL cannot be placed above a price never traded
                 trade.tr_sl = min(trade.tr_sl, o5['open'])
-                # Check exit on ratchet SL
                 if o5['low'] <= trade.tr_sl:
                     pts_locked = trade.tr_sl - trade.entry_premium
-                    trade.book(bkt, f'TIME_RATCHET_+{int(pts_locked)}', n5['close'], trade.tr_sl, trade.lots_remaining)
+                    trade.book(bkt, f'OPTIMIZED_RATCHET_+{int(pts_locked)}', n5['close'], trade.tr_sl, trade.lots_remaining)
                     break
 
             # SMA8 trail
@@ -1887,9 +1893,9 @@ def main():
     globals()['HARDSL_MODE']   = 'pct'
     globals()['HARDSL_VALUE']  = 0.25
     globals()['V2V3_PRIORITY'] = 'v2'
-    globals()['RATCHET_INITIAL_PTS'] = 20
+    globals()['RATCHET_INITIAL_PTS'] = 15   # V2.5.7: velvet rope trigger
     globals()['RATCHET_STEP_PTS']    = 20
-    globals()['RATCHET_TIME_MIN']    = 90
+    globals()['RATCHET_TIME_MIN']    = 30   # V2.5.7: 30min gate
     globals()['CIRCUIT_BREAKER']     = 4
     globals()['V2_K_CAP_CE']         = None      # CE cap rejected by data
     globals()['V2_K_FLOOR_PE']       = 25        # PE floor confirmed by data

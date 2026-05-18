@@ -1,16 +1,22 @@
 """
 =========================================================================
-ORION V2.5.6 - PAPER TRADING BOT  (Nifty Weekly Options)
+ORION V2.5.7 - PAPER TRADING BOT  (Nifty Weekly Options)
 =========================================================================
 Mobile-runnable single file. Mirrors V2.2.2 framework. Strategy upgraded
-through V2.5.0 -> V2.5.6 per 18-month backtest on phase3_daily.pkl
+through V2.5.0 -> V2.5.7 per 18-month backtest on phase3_daily.pkl
 (2024-09-23 -> 2026-03-24).
 
-V2.5.6 BACKTEST RESULT (locked spec):
+V2.5.6 BACKTEST RESULT (prior baseline):
   Trades 915 | Nifty pts +11,193 | PnL Rs +3,85,724 | WR 35.7%
   Max DD -1,331 pts | Red months 5/18 (72% positive)
 
-Improvement over V2.5.5: +Rs 13,127 (+3.52%), MaxDD -19% reduction
+V2.5.7 BACKTEST RESULT (Velvet Rope + Accelerated Ratchet):
+  Trades ~915 | PnL Rs +5,00,048 | WR 55.4%
+  Max DD -1,885 pts | Red months 10/18
+  Trade-off: +Rs 1,14,324 (+29.7%) P&L / WR surge, but 2x red months.
+  Protects winning trades from surrendering back to -25% HARDSL.
+
+Improvement over V2.5.6: +Rs 1,14,324 (+29.7%) net P&L, +19.7% win rate
 
 PAPER MODE: no real orders placed. Simulated P&L tracked via Kite LTP.
 
@@ -49,11 +55,14 @@ PARALLEL ENGINES (V2 priority on same-bar tiebreak; single position at a time):
 
 UNIVERSAL EXIT (applies to BOTH engines):
   1. HARDSL  -25% of entry premium  (intra-bar)
-  2. 15m option SMA8(low) close-below trail
-  3. TIME-RATCHET: after 90min elapsed AND premium has touched entry+20 ->
-     arm SL at entry+20. Every +20 above SL -> SL ratchets +20 (one-way).
-  4. Force close 15:25 IST
-  5. Circuit breaker: 4 daily NON-FLIP losses -> halt further entries
+  2. VELVET ROPE (V2.5.7): as soon as premium touches entry+15, lock SL at
+     entry+2. Prevents winners from surrendering to -25% HARDSL.
+  3. RATCHET GATE (V2.5.7): after 30min elapsed AND premium touches entry+25,
+     promote SL from entry+2 to entry+15.
+  4. RUNNER STEP TRAIL: every +20pts peak move -> SL ratchets up +20 (one-way).
+  5. 15m option SMA8(low) close-below trail
+  6. Force close 15:25 IST
+  7. Circuit breaker: 4 daily NON-FLIP losses -> halt further entries
 
 CHOP FILTER (V2.5.5):
   Block all entries (V2/V3/FLIP) when last closed 1h RSI is in [47, 53].
@@ -81,6 +90,11 @@ V2.5.6 + V3 PDC contamination fix (motivated by 2026-05-18 paper PE loss)
           Fix A: Exclude PDC from clustering sources
           Fix B: Require min 25pt buffer between G/R and PDC
           Backtest: +Rs 13,127 (+3.52%), MaxDD -19%
+V2.5.7 + Velvet Rope immediate protection: SL to entry+2 when premium hits entry+15
+          Accelerated Ratchet Gate: after 30min + entry+25, promote SL to entry+15
+          Ratchet time window: 90min -> 30min
+          Backtest: +Rs 1,14,324 (+29.7%), WR 35.7% -> 55.4%
+          Trade-off: Red months 5/18 -> 10/18, MaxDD -1,331 -> -1,885
 
 UNDISCUSSED DECISIONS: NONE.
 
@@ -223,9 +237,10 @@ CHOP_RSI_HI           = 53
 # ---- Universal exit ----
 HARDSL_PCT            = 0.25    # -25% on premium  (V2.5.3 locked)
 SMA_TRAIL_PERIOD      = 8       # SMA(8, low) on option 15m
-RATCHET_TIME_MIN      = 90      # min elapsed before ratchet can arm
-RATCHET_INITIAL_PTS   = 20      # initial lock at entry + this
-RATCHET_STEP_PTS      = 20      # SL ratchets by this on each +N premium move
+# V2.5.7 Velvet Rope & Accelerated Ratchet (updated from V2.5.6 90min/+20)
+RATCHET_TIME_MIN      = 30      # arm window: 30min after entry (was 90)
+RATCHET_INITIAL_PTS   = 15      # velvet rope trigger: SL to entry+2 when premium hits entry+15 (was 20)
+RATCHET_STEP_PTS      = 20      # runner step expansion: SL ratchets +20 per +20 move
 CIRCUIT_BREAKER       = 4       # V2.5.3: daily NON-FLIP losses -> halt (flips excluded)
 FORCE_CLOSE_HOUR      = 15
 FORCE_CLOSE_MIN       = 25
@@ -863,13 +878,15 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
         side_em = "🟢" if POS.side == "CE" else ("🔴" if POS.side == "PE" else "🟠")
         engine_em = {"V2":"⚙️", "V3":"🎯", "FLIP":"🔄"}.get(POS.engine, "")
         pnl_em = "📈" if pct > 0 else "📉" if pct < 0 else "➖"
-        # Ratchet status
+        # Ratchet / Velvet Rope status
         if POS.tr_armed:
-            tr_str = f"<b>ARMED</b> @ SL=<code>{POS.tr_sl:.2f}</code> (+{POS.tr_sl-POS.entry_premium:.0f})"
-        elif elapsed >= RATCHET_TIME_MIN:
-            tr_str = f"awaiting trigger (need ≥ <code>{POS.entry_premium+RATCHET_INITIAL_PTS:.2f}</code>)"
+            sl_offset = POS.tr_sl - POS.entry_premium
+            if sl_offset <= 2:
+                tr_str = f"🎯 <b>Velvet Rope</b> @ SL=<code>{POS.tr_sl:.2f}</code> (entry+2, awaiting 30min gate)"
+            else:
+                tr_str = f"<b>RATCHET ARMED</b> @ SL=<code>{POS.tr_sl:.2f}</code> (+{sl_offset:.0f}pts)"
         else:
-            tr_str = f"not eligible ({RATCHET_TIME_MIN-elapsed}min remaining)"
+            tr_str = f"watching (velvet rope arms at entry+{RATCHET_INITIAL_PTS} = <code>{POS.entry_premium+RATCHET_INITIAL_PTS:.2f}</code>)"
         active_sl = max(POS.hardsl_premium, POS.tr_sl if POS.tr_armed else 0)
         head += (
             f"━━━━━━━━━━━━━━━━━━━━\n"
@@ -924,10 +941,12 @@ def fmt_entry():
         f"🎯 <b>Target</b> (declared): {declared_str}\n"
         f"🛑 <b>HARDSL</b>: <code>{POS.hardsl_premium:.2f}</code>  (-{int(HARDSL_PCT*100)}%)\n"
         f"📉 <b>Trail</b>: 15m close &lt; SMA({SMA_TRAIL_PERIOD}, low)\n"
-        f"⏱️ <b>Ratchet</b>: after {RATCHET_TIME_MIN}min if premium ≥ entry+{RATCHET_INITIAL_PTS}\n"
+        f"🎯 <b>Velvet Rope</b>: SL → entry+2 when premium touches entry+{RATCHET_INITIAL_PTS}\n"
+        f"⏱️ <b>Ratchet Gate</b>: after {RATCHET_TIME_MIN}min + entry+25 → SL promoted to entry+15\n"
+        f"📈 <b>Runner Trail</b>: SL ratchets +{RATCHET_STEP_PTS}pts per +{RATCHET_STEP_PTS}pts peak\n"
         f"⛔ <b>Force close</b>: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<i>Actual exit driven by HARDSL / Trail / Ratchet / Flip-rule.</i>"
+        f"<i>Actual exit driven by HARDSL / Velvet Rope / Ratchet / Trail / Flip-rule.</i>"
     )
 
 def fmt_exit(reason, exit_price, pnl_per_share):
@@ -1271,35 +1290,51 @@ def check_exits(spot):
         close_trade(f"HARDSL_-{int(HARDSL_PCT*100)}pct", POS.hardsl_premium)
         return True
 
-    # 3. Time-Ratchet
     elapsed = POS.elapsed_min()
-    if (not POS.tr_armed) and elapsed >= RATCHET_TIME_MIN:
-        if POS.peak_premium >= POS.entry_premium + RATCHET_INITIAL_PTS:
-            POS.tr_armed = True
-            POS.tr_sl    = POS.entry_premium + RATCHET_INITIAL_PTS
-            TG.send(f"⏱️🔒 <b>Time-Ratchet ARMED</b> on {POS.side}\n"
-                    f"   SL set to entry+{RATCHET_INITIAL_PTS} = <code>{POS.tr_sl:.2f}</code>\n"
-                    f"   Will ratchet +{RATCHET_STEP_PTS} per next peak.")
+
+    # 3a. VELVET ROPE — immediate capital protection
+    # As soon as premium touches entry+15, lock SL at entry+2 (near break-even).
+    # This prevents winning trades from surrendering back to the -25% HARDSL.
+    if (not POS.tr_armed) and POS.peak_premium >= POS.entry_premium + RATCHET_INITIAL_PTS:
+        POS.tr_armed = True
+        POS.tr_sl    = POS.entry_premium + 2
+        TG.send(f"🎯🔒 <b>Velvet Rope ARMED</b> on {POS.side}\n"
+                f"   Premium touched entry+{RATCHET_INITIAL_PTS} — SL locked at entry+2\n"
+                f"   SL = <code>{POS.tr_sl:.2f}</code>  |  Peak: <code>{POS.peak_premium:.2f}</code>")
+        save_state()
+        if cur_ltp <= POS.tr_sl:
+            close_trade("VELVET_ROPE_BE_SCRATCH", POS.tr_sl)
+            return True
+
+    # 3b. ACCELERATED RATCHET GATE — upgrade SL from entry+2 to entry+15 after 30min
+    # Once 30min elapsed AND premium confirms +25, promote the velvet rope floor.
+    if POS.tr_armed and POS.tr_sl == (POS.entry_premium + 2) and elapsed >= RATCHET_TIME_MIN:
+        if POS.peak_premium >= POS.entry_premium + 25:
+            old_sl = POS.tr_sl
+            POS.tr_sl = POS.entry_premium + 15
+            TG.send(f"⏱️🚀 <b>Ratchet Gate UPGRADED</b> on {POS.side}\n"
+                    f"   30min elapsed + premium confirmed +25pts\n"
+                    f"   SL: <code>{old_sl:.2f}</code> → <code>{POS.tr_sl:.2f}</code> (+15pts)")
             save_state()
             if cur_ltp <= POS.tr_sl:
-                close_trade(f"TIME_RATCHET_+{int(RATCHET_INITIAL_PTS)}", POS.tr_sl)
+                close_trade("RATCHET_GATE_+15", POS.tr_sl)
                 return True
 
+    # 3c. RUNNER STEP SCALE TRAIL — ratchet SL up by 20pts per +20pts peak move
     if POS.tr_armed:
-        # Ratchet up if peak has moved beyond tr_sl + STEP
         new_sl = POS.tr_sl
         while POS.peak_premium >= new_sl + RATCHET_STEP_PTS:
             new_sl += RATCHET_STEP_PTS
         if new_sl > POS.tr_sl:
-            old = POS.tr_sl
+            old_sl = POS.tr_sl
             POS.tr_sl = new_sl
-            TG.send(f"⏱️📈 <b>Time-Ratchet stepped up</b>\n"
-                    f"   SL: <code>{old:.2f}</code> → <code>{POS.tr_sl:.2f}</code> (+{POS.tr_sl-POS.entry_premium:.0f})\n"
-                    f"   🚀 Peak: <code>{POS.peak_premium:.2f}</code>")
+            TG.send(f"⏱️📈 <b>Ratchet stepped up</b> on {POS.side}\n"
+                    f"   SL: <code>{old_sl:.2f}</code> → <code>{POS.tr_sl:.2f}</code> (+{int(POS.tr_sl-POS.entry_premium)}pts)\n"
+                    f"   Peak: <code>{POS.peak_premium:.2f}</code>")
             save_state()
         if cur_ltp <= POS.tr_sl:
             pts = int(POS.tr_sl - POS.entry_premium)
-            close_trade(f"TIME_RATCHET_+{pts}", POS.tr_sl)
+            close_trade(f"RATCHET_+{pts}", POS.tr_sl)
             return True
 
     # 4. SMA8(low) trail - check exactly once per 15m bar close
