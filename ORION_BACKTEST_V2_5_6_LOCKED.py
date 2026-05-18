@@ -214,6 +214,9 @@ CHOP_RANGE_PCT_MIN    = 0.4     # legacy/unused in rsi_band mode
 CHOP_RANGE_AFTER_BKT  = 12      # legacy/unused in rsi_band mode
 CHOP_K_CROSS_MAX      = 4       # legacy/unused in rsi_band mode
 
+# Transaction costs per lot per trade (brokerage + STT + exchange fees estimate)
+TRANSACTION_COST_PER_LOT = 50  # Rs per lot, conservative estimate
+
 # Method 2: time-delayed ratchet (NEW)
 RATCHET_TIME_MIN      = 120     # min elapsed before ratchet can arm
 RATCHET_INITIAL_PTS   = 20      # initial lock = entry + this
@@ -230,14 +233,7 @@ SMA_SLOW_1H_LEN       = 50
 
 
 # -------------------- Bucket / time helpers --------------------
-def bkt_to_hour(b: int) -> float:
-    """5m bucket -> decimal hour at bar CLOSE time."""
-    mins = (b + 1) * 5
-    return (9*60 + 15 + mins) / 60.0
-
-def bkt_to_str(b: int) -> str:
-    mins = 9*60 + 15 + (b+1)*5
-    return f"{mins//60:02d}:{mins%60:02d}"
+# bkt_to_hour and bkt_to_str removed — confirmed never called anywhere in codebase
 
 
 # -------------------- Indicator math --------------------
@@ -424,7 +420,7 @@ def compute_levels_for_day(df1h_prior: pd.DataFrame, prior_day_ohlc):
     all_levels = clusters + promoted
 
     # V2.5.6 Fix B: respect MIN_BUFFER_FROM_PDC for G/R selection
-    buf = globals().get('V3_MIN_BUFFER_FROM_PDC', 0)
+    buf = V3_MIN_BUFFER_FROM_PDC
     above = [c for c in all_levels if c['center'] > pdc + buf and c['grade'] in ('A','B')]
     below = [c for c in all_levels if c['center'] < pdc - buf and c['grade'] in ('A','B')]
     # Sort: Grade A first, then by distance to PDC
@@ -466,7 +462,9 @@ def classify_regime(row_1h):
     if c < s20 < s50 and sl20 < 0 and sl50 < 0 and adxv > ADX_TREND_MIN: return 'BEAR'
     return 'TRANSITION'
 
-def regime_allows_trade(regime, sig_dir):
+def regime_allows_trade(regime):
+    # sig_dir parameter removed — strategy trades both CE and PE in any non-CHOP regime.
+    # Directional filtering (BULL blocks PE, BEAR blocks CE) was evaluated and rejected.
     return regime not in ('CHOP', 'INSUFFICIENT')
 
 def evaluate_candle(bar, level, kind, grade):
@@ -513,7 +511,7 @@ def detect_v23_signal(bar, level, level_role):
     return None
 
 
-print("Framework v0.1 loaded. Indicators and V2.3 entry logic ready.")
+# (Framework v0.1 load banner removed — dead module-level print)
 
 def hardsl_floor(entry_premium):
     """Compute HARDSL floor price using current globals HARDSL_MODE/VALUE."""
@@ -624,6 +622,8 @@ class Trade:
         s = 0.0
         for e in self.exits:
             s += (e['prem'] - self.entry_premium) * e['lots'] * LOT_SIZE
+        # Subtract transaction costs: one round-trip per trade (entry + exit), per lot
+        s -= TRANSACTION_COST_PER_LOT * self.lots
         return s
 
 
@@ -771,6 +771,8 @@ def simulate_trade(trade: Trade, day_data: dict, exit_model: str,
                 # While intra-bar high exceeds tr_sl + STEP, raise SL by STEP (one-way)
                 while o5['high'] >= trade.tr_sl + RATCHET_STEP_PTS:
                     trade.tr_sl += RATCHET_STEP_PTS
+                # cap to bar open — SL cannot be placed above a price never traded
+                trade.tr_sl = min(trade.tr_sl, o5['open'])
                 # Check exit on ratchet SL
                 if o5['low'] <= trade.tr_sl:
                     pts_locked = trade.tr_sl - trade.entry_premium
@@ -882,7 +884,7 @@ def select_strike(spot, side, atm_day, use_delta_shift, opt_5m_dict):
     return min(avail, key=lambda s: abs(s - target))
 
 
-print("Framework v0.2 loaded: simulator + V2.4 entry + opt 15m agg ready.")
+# (Framework v0.2 load banner removed — dead module-level print)
 
 
 # -------------------- Flip helpers --------------------
@@ -1139,7 +1141,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
 
     # ---- Regime (V2.3 only): from last closed prior 1h bar
     regime = classify_regime(df1h_prior_all.iloc[-1])
-    if entry_model == 'v23' and not regime_allows_trade(regime, 'CE'):
+    if entry_model == 'v23' and not regime_allows_trade(regime):
         return trades  # regime blocks, but only for V2.3 entry path    # ---- Today's data
     nifty_5m = sorted(day_data['nifty_5m'], key=lambda b: b['bucket'])
     nifty_15m = sorted(day_data['nifty_15m'], key=lambda b: b['bucket'])
@@ -1196,7 +1198,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
 
             # Pre-compute both signals on this 15m close, then dispatch by priority
             sig_v3 = None
-            if regime_allows_trade(regime, 'CE'):
+            if regime_allows_trade(regime):
                 n15 = n15_by_bkt.get(k15_bucket)
                 if n15 is not None:
                     for role, lvl_obj in [('G', levels_v23['G']), ('R', levels_v23['R'])]:
@@ -1276,8 +1278,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 )
                 t = simulate_trade(t, day_data, exit_model)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
                 for _ft in _flips: trades.append(_ft)
+                flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
                 next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
                 fired_levels.add(lvl_obj['center'])
@@ -1307,8 +1310,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 )
                 t = simulate_trade(t, day_data, exit_model)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
                 for _ft in _flips: trades.append(_ft)
+                flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
                 next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
                 if (not _is_flip_related(t)) and t.pnl_prem_per_lot() < 0:
@@ -1324,7 +1328,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
 
             # First, try V3+F1 (mandatory F1 alignment + regime gate)
             sig_v3 = None
-            if first30_dir is not None and regime_allows_trade(regime, 'CE'):
+            if first30_dir is not None and regime_allows_trade(regime):
                 n15 = n15_by_bkt.get(k15_bucket)
                 if n15 is not None:
                     for role, lvl_obj in [('G', levels_v23['G']), ('R', levels_v23['R'])]:
@@ -1362,8 +1366,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 )
                 t = simulate_trade(t, day_data, exit_model)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
                 for _ft in _flips: trades.append(_ft)
+                flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
                 next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
                 fired_levels.add(lvl_obj['center'])
@@ -1428,8 +1433,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
             )
             t = simulate_trade(t, day_data, exit_model)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
             for _ft in _flips: trades.append(_ft)
+            flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
             next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
             if (not _is_flip_related(t)) and t.pnl_prem_per_lot() < 0:
@@ -1464,8 +1470,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
             )
             t = simulate_trade(t, day_data, exit_model)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
             for _ft in _flips: trades.append(_ft)
+            flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
             next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
             if (not _is_flip_related(t)) and t.pnl_prem_per_lot() < 0:
@@ -1552,8 +1559,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
             )
             t = simulate_trade(t, day_data, exit_model)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
             for _ft in _flips: trades.append(_ft)
+            flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
             next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
             if (not _is_flip_related(t)) and t.pnl_prem_per_lot() < 0:
@@ -1619,8 +1627,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
             )
             t = simulate_trade(t, day_data, exit_model)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
             for _ft in _flips: trades.append(_ft)
+            flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
             next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
             fired_levels.add(lvl)
@@ -1636,7 +1645,10 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
         else:
             # Detect at 15m close: bkt is closed 5m; new 15m closes at bkt%3==2
             if bkt % 3 != 2: continue
-            k15 = bkt // 3
+            # n15_by_bkt is keyed by b['bucket'] from day['nifty_15m'], which uses 5m start-bucket (0,3,6...).
+            # Use bkt-2 to get the start-bucket of the just-closed 15m bar (bkt=2->0, bkt=5->3, bkt=8->6...).
+            # bkt//3 (sequential 0,1,2...) is WRONG here — it misses all n15_by_bkt keys beyond index 0.
+            k15 = bkt - 2
             n15 = n15_by_bkt.get(k15)
             if n15 is None: continue
 
@@ -1687,8 +1699,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 )
                 t = simulate_trade(t, day_data, exit_model, trigger_level_for_15m=lvl_obj['center'])
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
                 for _ft in _flips: trades.append(_ft)
+                flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
                 next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
                 fired_levels.add(lvl_obj['center'])
@@ -1785,7 +1798,7 @@ def compute_stats(trades):
     n = len(trades)
     if n == 0:
         return {'n':0, 'pts':0, 'rs':0, 'wr':0, 'avg_win':0, 'avg_loss':0,
-                'max_dd':0, 'red_months':0, 'total_months':0,
+                'max_dd':0, 'max_dd_rs':0, 'red_months':0, 'total_months':0,
                 'reasons':{}, 'by_grade':{}, 'by_side':{}}
     pts = sum(t.pnl_nifty_pts() for t in trades)
     rs  = sum(t.pnl_prem_rs() for t in trades)
@@ -1798,10 +1811,14 @@ def compute_stats(trades):
     # Equity curve by Nifty pts (chronological)
     chrono = sorted(trades, key=lambda t: (t.day, t.entry_bkt))
     cum = 0; peak = 0; max_dd = 0
+    cum_rs = 0; peak_rs = 0; max_dd_rs = 0
     for t in chrono:
         cum += t.pnl_nifty_pts()
         peak = max(peak, cum)
         max_dd = min(max_dd, cum - peak)
+        cum_rs += t.pnl_prem_rs()
+        peak_rs = max(peak_rs, cum_rs)
+        max_dd_rs = min(max_dd_rs, cum_rs - peak_rs)
 
     # Red months
     by_month = defaultdict(float)
@@ -1832,7 +1849,8 @@ def compute_stats(trades):
     return {
         'n': n, 'pts': pts, 'rs': rs, 'wr': wr,
         'avg_win': avg_w, 'avg_loss': avg_l,
-        'max_dd': max_dd, 'red_months': red, 'total_months': len(by_month),
+        'max_dd': max_dd, 'max_dd_rs': max_dd_rs,
+        'red_months': red, 'total_months': len(by_month),
         'reasons': dict(reasons),
         'by_grade': {k: dict(v) for k, v in by_grade.items()},
         'by_side':  {k: dict(v) for k, v in by_side.items()},
@@ -1844,15 +1862,15 @@ def print_stats(name, s):
         return
     print(f"\n=== {name} ===")
     print(f"  Trades : {s['n']}")
-    print(f"  Nifty pts: {s['pts']:+.0f}  |  Premium ₹: {s['rs']:+,.0f}")
+    print(f"  Nifty pts: {s['pts']:+.0f}  |  Net P&L (after costs) Rs: {s['rs']:+,.0f}")
     print(f"  WR     : {s['wr']*100:.1f}%   avg_win={s['avg_win']:+.2f}  avg_loss={s['avg_loss']:+.2f}")
-    print(f"  Max DD : {s['max_dd']:+.0f} pts   red_months={s['red_months']}/{s['total_months']}")
+    print(f"  Max DD (Nifty pts): {s['max_dd']:+.0f} pts  |  Max DD (Rs): {s['max_dd_rs']:+,.0f}   red_months={s['red_months']}/{s['total_months']}")
     print(f"  By side: {dict(s['by_side'])}")
     print(f"  By grade: {dict(s['by_grade'])}")
     rs = sorted(s['reasons'].items(), key=lambda x: -x[1])
     print(f"  Top exit reasons: {rs[:6]}")
 
-print("Framework v0.3 loaded: day driver, combo runner, stats.")
+# (Framework v0.3 load banner removed — dead module-level print)
 
 
 # -------------------- Main --------------------
