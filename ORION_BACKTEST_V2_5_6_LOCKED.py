@@ -230,7 +230,14 @@ SMA_SLOW_1H_LEN       = 50
 
 
 # -------------------- Bucket / time helpers --------------------
-# bkt_to_hour and bkt_to_str removed — never called anywhere in codebase
+def bkt_to_hour(b: int) -> float:
+    """5m bucket -> decimal hour at bar CLOSE time."""
+    mins = (b + 1) * 5
+    return (9*60 + 15 + mins) / 60.0
+
+def bkt_to_str(b: int) -> str:
+    mins = 9*60 + 15 + (b+1)*5
+    return f"{mins//60:02d}:{mins%60:02d}"
 
 
 # -------------------- Indicator math --------------------
@@ -459,9 +466,7 @@ def classify_regime(row_1h):
     if c < s20 < s50 and sl20 < 0 and sl50 < 0 and adxv > ADX_TREND_MIN: return 'BEAR'
     return 'TRANSITION'
 
-def regime_allows_trade(regime):
-    # sig_dir parameter removed — strategy trades both CE and PE in any non-CHOP regime.
-    # Directional filtering (BULL blocks PE, BEAR blocks CE) was evaluated and rejected.
+def regime_allows_trade(regime, sig_dir):
     return regime not in ('CHOP', 'INSUFFICIENT')
 
 def evaluate_candle(bar, level, kind, grade):
@@ -508,7 +513,7 @@ def detect_v23_signal(bar, level, level_role):
     return None
 
 
-# (Framework v0.1 load banner removed — dead module-level print)
+print("Framework v0.1 loaded. Indicators and V2.3 entry logic ready.")
 
 def hardsl_floor(entry_premium):
     """Compute HARDSL floor price using current globals HARDSL_MODE/VALUE."""
@@ -877,7 +882,7 @@ def select_strike(spot, side, atm_day, use_delta_shift, opt_5m_dict):
     return min(avail, key=lambda s: abs(s - target))
 
 
-# (Framework v0.2 load banner removed — dead module-level print)
+print("Framework v0.2 loaded: simulator + V2.4 entry + opt 15m agg ready.")
 
 
 # -------------------- Flip helpers --------------------
@@ -1134,7 +1139,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
 
     # ---- Regime (V2.3 only): from last closed prior 1h bar
     regime = classify_regime(df1h_prior_all.iloc[-1])
-    if entry_model == 'v23' and not regime_allows_trade(regime):
+    if entry_model == 'v23' and not regime_allows_trade(regime, 'CE'):
         return trades  # regime blocks, but only for V2.3 entry path    # ---- Today's data
     nifty_5m = sorted(day_data['nifty_5m'], key=lambda b: b['bucket'])
     nifty_15m = sorted(day_data['nifty_15m'], key=lambda b: b['bucket'])
@@ -1191,7 +1196,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
 
             # Pre-compute both signals on this 15m close, then dispatch by priority
             sig_v3 = None
-            if regime_allows_trade(regime):
+            if regime_allows_trade(regime, 'CE'):
                 n15 = n15_by_bkt.get(k15_bucket)
                 if n15 is not None:
                     for role, lvl_obj in [('G', levels_v23['G']), ('R', levels_v23['R'])]:
@@ -1423,8 +1428,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
             )
             t = simulate_trade(t, day_data, exit_model)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=sum(1 for _x in trades if _x.grade=='FLIP' and _x.day == t.day))
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
             for _ft in _flips: trades.append(_ft)
+            flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
             next_allowed_bkt = (_last.exits[-1]['bkt'] + 1) if _last.exits else (bkt + 1)
             if (not _is_flip_related(t)) and t.pnl_prem_per_lot() < 0:
@@ -1847,7 +1853,7 @@ def print_stats(name, s):
     rs = sorted(s['reasons'].items(), key=lambda x: -x[1])
     print(f"  Top exit reasons: {rs[:6]}")
 
-# (Framework v0.3 load banner removed — dead module-level print)
+print("Framework v0.3 loaded: day driver, combo runner, stats.")
 
 
 # -------------------- Main --------------------
