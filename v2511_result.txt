@@ -1,0 +1,73 @@
+
+[BOOT] Searching for phase3_daily.pkl...
+[BOOT] Found: /home/Selukar/phase3_daily.pkl
+[DATA] 373 sessions loaded.
+
+[V2.5.11 CHANGES vs V2.5.9]
+  Entry: Straddle expansion halt — skip day if straddle grows >6%
+         Reference: bucket 1 (9:20AM)  Check: bucket 6 (9:45AM)
+  Inherits: RSI>53/<47, MACD 1h, premium 30-180, RS=25
+
+[BASELINE PROGRESSION]
+  V2.5.7:       912 trades | ₹+5,00,048 | WR 55.4% | RedMonths 10/18 | MaxDD -1885
+  V2.5.8 RS=25: 486 trades | ₹+5,59,815 | WR 63.4% | RedMonths  6/18 | MaxDD -1384
+  V2.5.9:       357 trades | ₹+6,70,425 | WR 66.9% | RedMonths  8/18 | MaxDD -1485
+
+[Running V2.5.11...]
+
+======================================================================
+  V2.5.11 — Straddle Expansion Filter
+======================================================================
+  Trades     : 294
+  PnL (Rs)   : ₹+416,190
+  Win Rate   : 66.3%
+  Avg Win    : +25.3 pts/lot
+  Avg Loss   : -17.5 pts/lot
+  Max DD     : -1427 pts
+  Red Months : 9/18
+======================================================================
+
+  Monthly PnL (Nifty pts):
+    🔴 2024-10: -218
+    🟢 2024-11: +968
+    🔴 2024-12: -147
+    🟢 2025-01: +97
+    🔴 2025-02: -94
+    🟢 2025-03: +158
+    🟢 2025-04: +58
+    🔴 2025-05: -55
+    🟢 2025-06: +4
+    🟢 2025-07: +238
+    🟢 2025-08: +309
+    🟢 2025-09: +595
+    🔴 2025-10: -236
+    🔴 2025-11: -352
+    🟢 2025-12: +48
+    🔴 2026-01: -331
+    🔴 2026-02: -336
+    🔴 2026-03: -62
+
+
+======================================================================
+  STRADDLE FILTER AUDIT
+======================================================================
+  Days halted by straddle filter : 72
+  Trades on halted days (phantom): 63
+  Phantom P&L (pts)  : +1058  →  BAD  — filter removed profitable trades
+  Phantom P&L (Rs)   : ₹+254,234
+  Phantom Win Rate   : 69.8%
+
+  Top 10 halted days (by straddle expansion):
+    2025-03-06  straddle 139→277 (+98.7%)  🔴 avoided -18pts
+    2024-10-17  straddle 132→204 (+54.7%)  🟢 avoided +0pts
+    2024-10-21  straddle 246→373 (+51.4%)  🟢 avoided +66pts
+    2025-01-23  straddle 98→142 (+45.3%)  🟢 avoided +0pts
+    2025-03-05  straddle 166→235 (+41.9%)  🟢 avoided +96pts
+    2026-01-20  straddle 120→168 (+40.4%)  🟢 avoided +58pts
+    2025-06-26  straddle 117→162 (+38.7%)  🟢 avoided +0pts
+    2025-02-04  straddle 200→274 (+37.3%)  🔴 avoided -95pts
+    2024-12-05  straddle 217→298 (+37.2%)  🔴 avoided -142pts
+    2025-10-20  straddle 111→147 (+32.8%)  🔴 avoided -53pts
+======================================================================
+
+Runtime: 19.8s
