@@ -672,6 +672,33 @@ def fetch_option_15m(token, days_back=10):
     if not rows: return None
     return pd.DataFrame(rows)
 
+def fetch_option_5m(token, days_back=3):
+    now = datetime.now(IST)
+    frm = now - timedelta(days=days_back)
+    rows = historical(token, frm, now, "5minute")
+    if not rows: return None
+    return pd.DataFrame(rows)
+
+def compute_option_vwap(token: int) -> Optional[float]:
+    """Today's VWAP for an option using 5m bars with real volume. Informational only."""
+    try:
+        now = datetime.now(IST)
+        frm = now.replace(hour=9, minute=15, second=0, microsecond=0)
+        rows = historical(token, frm, now, "5minute")
+        if not rows:
+            return None
+        df = pd.DataFrame(rows)
+        if 'volume' not in df.columns or df['volume'].sum() == 0:
+            return None
+        tp = (df['high'] + df['low'] + df['close']) / 3
+        cum_vol = df['volume'].cumsum()
+        cum_tpv = (tp * df['volume']).cumsum()
+        vwap_series = cum_tpv / cum_vol.replace(0, np.nan)
+        val = vwap_series.iloc[-1]
+        return float(val) if not pd.isna(val) else None
+    except Exception:
+        return None
+
 def sma8_low_of_option(df_opt_15m):
     """Compute current SMA(8, low) from closed option 15m bars (iloc[-2] backwards)."""
     if df_opt_15m is None or len(df_opt_15m) < SMA_TRAIL_PERIOD + 1:
@@ -713,6 +740,7 @@ class TradeState:
     peak_premium: float = 0.0
     last_pulse_premium: float = 0.0
     sma8_last_bar_ts: Optional[datetime] = None  # FIX1: last 15m bar ts evaluated for SMA8 trail
+    entry_vwap: Optional[float] = None          # V2.5.9+: option VWAP at entry (informational)
 
     def to_dict(self):
         d = asdict(self)
@@ -854,7 +882,7 @@ def fmt_boot(target_expiry, levels):
         f"   ⏱️ Ratchet: after {RATCHET_TIME_MIN}min, arm entry+{RATCHET_INITIAL_PTS}, step +{RATCHET_STEP_PTS}\n"
         f"   ⛔ Force close: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
-        f"   🌊 Chop filter: 1h RSI in [{CHOP_RSI_LO},{CHOP_RSI_HI}] blocks entry\n"
+        f"   🌊 RSI gate: CE entry needs RSI>{RSI_CE_MIN}, PE needs RSI<{RSI_PE_MAX}\n"
         f"   🔧 V3 PDC fix: exclude PDC from clusters; min {V3_MIN_BUFFER_FROM_PDC}pt buffer for G/R\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"<i>CSV:</i> <code>{tg_escape(CSV_FN)}</code>\n"
@@ -905,6 +933,12 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
         else:
             tr_str = f"watching (velvet rope arms at entry+{RATCHET_INITIAL_PTS} = <code>{POS.entry_premium+RATCHET_INITIAL_PTS:.2f}</code>)"
         active_sl = max(POS.hardsl_premium, POS.tr_sl if POS.tr_armed else 0)
+        cur_vwap = compute_option_vwap(POS.token)
+        vwap_pulse = ""
+        if cur_vwap:
+            v_diff = ltp_now - cur_vwap
+            v_pos = "above" if v_diff >= 0 else "below"
+            vwap_pulse = f"\n   📊 VWAP: <code>{cur_vwap:.2f}</code>  (LTP {abs(v_diff):.1f}pts {v_pos})"
         head += (
             f"━━━━━━━━━━━━━━━━━━━━\n"
             f"{side_em} <b>ACTIVE</b> {engine_em} <b>{POS.side}</b> {tg_escape(POS.symbol)}\n"
@@ -912,7 +946,7 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
             f"   🎯 Target: <code>{POS.declared_target_premium:.2f}</code>  "
             f"🛑 SL: <b>{active_sl:.2f}</b>\n"
             f"   🚀 Peak: <code>{POS.peak_premium:.2f}</code>  ⏱️ Elapsed: <b>{elapsed}min</b>\n"
-            f"   Ratchet: {tr_str}\n"
+            f"   Ratchet: {tr_str}{vwap_pulse}\n"
             f"   🔁 Flips: {DAY.flips_today}/{MAX_FLIPS_PER_DAY} · ⛔ Losses: {DAY.losses}/{CIRCUIT_BREAKER}"
         )
     else:
@@ -946,6 +980,12 @@ def fmt_entry():
                     else f"spot <code>{POS.declared_target_spot:.0f}</code> (cluster T1)")
     entry_t = POS.entry_time.strftime('%H:%M:%S') if POS.entry_time else "—"
 
+    vwap_line = ""
+    if POS.entry_vwap:
+        diff = POS.entry_premium - POS.entry_vwap
+        pos_neg = "above" if diff >= 0 else "below"
+        vwap_line = f"\n   📊 <b>VWAP</b>: <code>{POS.entry_vwap:.2f}</code>  (entry <b>{abs(diff):.1f}pts {pos_neg}</b> VWAP)"
+
     return (
         f"{banner}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -953,7 +993,7 @@ def fmt_entry():
         f"   Engine: <b>{engine}</b> · {tg_escape(POS.engine_detail)}\n"
         f"   ATM Strike: <code>{POS.strike}</code>  |  Spot: <code>{POS.entry_spot:.2f}</code>\n"
         f"   ⏰ Entry time: <b>{entry_t}</b>\n"
-        f"   Trigger: <code>{POS.trigger_value:.2f}</code>\n"
+        f"   Trigger: <code>{POS.trigger_value:.2f}</code>{vwap_line}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🎯 <b>Target</b> (declared): {declared_str}\n"
         f"🛑 <b>HARDSL</b>: <code>{POS.hardsl_premium:.2f}</code>  (-{int(HARDSL_PCT*100)}%)\n"
@@ -981,12 +1021,18 @@ def fmt_exit(reason, exit_price, pnl_per_share):
         banner = "⚪ <b>EXIT — FLAT</b> ⚪"
         outcome = "⚪"
     side_color = "🟢" if POS.side == "CE" else "🔴"
+    vwap_exit = ""
+    if POS.entry_vwap:
+        e_diff = POS.entry_premium - POS.entry_vwap
+        x_diff = exit_price - POS.entry_vwap
+        vwap_exit = (f"\n   📊 VWAP: <code>{POS.entry_vwap:.2f}</code>  "
+                     f"(entry {e_diff:+.1f} / exit {x_diff:+.1f} vs VWAP)")
     return (
         f"{banner}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"{outcome} <b>{tg_escape(reason)}</b>\n"
         f"{side_color} {POS.side} {tg_escape(POS.symbol)} @ <b>₹{exit_price:.2f}</b>\n"
-        f"   Engine: <b>{POS.engine}</b> · Entry: <code>{POS.entry_premium:.2f}</code>\n"
+        f"   Engine: <b>{POS.engine}</b> · Entry: <code>{POS.entry_premium:.2f}</code>{vwap_exit}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"💰 PnL/share: <b>{pnl_per_share:+.2f}</b> ({pct:+.1f}%)\n"
         f"💵 PnL: <b>₹{rs:+,.0f}</b>  ({LOTS_PER_TRADE} lots × {LOT_SIZE})\n"
@@ -1267,6 +1313,8 @@ def open_trade(sig, spot, expiry_lookup):
         POS.declared_target_spot = sig.get('target_spot')
         if sig.get('level_obj') is not None:
             DAY.fired_levels.add(sig['level_obj']['center'])
+    # V2.5.9+: compute option VWAP for informational context
+    POS.entry_vwap = compute_option_vwap(token)
     save_state()
     msg = fmt_entry()
     linfo(f"ENTRY: {POS.symbol} @ {cur_ltp:.2f}  engine={POS.engine}  detail={POS.engine_detail}"
@@ -1314,6 +1362,7 @@ def close_trade(reason, exit_price):
     POS.hardsl_premium = 0.0; POS.sl_current = 0.0
     POS.tr_armed = False; POS.tr_sl = 0.0
     POS.declared_target_premium = 0.0; POS.declared_target_spot = None
+    POS.entry_vwap = None
     save_state()
 
 # =========================================================================
@@ -1626,12 +1675,13 @@ def main():
             if time.time() - last_csv_at >= 5 * 60:
                 pos_ltp = POS.last_pulse_premium if POS.active else 0
                 pos_pnl_pct = ((pos_ltp - POS.entry_premium) / POS.entry_premium * 100) if (POS.active and POS.entry_premium) else 0
-                rsi_now = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns else float('nan')
-                chop_blk = chop_filter_blocks(df1h)
+                rsi_now = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns and not pd.isna(df1h['RSI'].iloc[-2]) else float('nan')
+                # RSI "no-man's land" [47,53] means neither CE nor PE gate passes
+                rsi_blk = (not math.isnan(rsi_now)) and (RSI_PE_MAX <= rsi_now <= RSI_CE_MIN)
                 csv_append([now.isoformat(), spot, c1h, sma20, sma50, rsi_now, K, K_prev,
                             DAY.regime, POS.active, POS.side, POS.engine, POS.strike, pos_ltp, pos_pnl_pct,
                             POS.sl_current, POS.tr_armed, POS.tr_sl, POS.peak_premium,
-                            DAY.losses, DAY.flips_today, DAY.halted, chop_blk])
+                            DAY.losses, DAY.flips_today, DAY.halted, rsi_blk])
                 last_csv_at = time.time()
 
             # ---- Pulse every 15 min ----
