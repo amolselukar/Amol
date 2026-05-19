@@ -667,6 +667,8 @@ def simulate_trade(trade: Trade, day_data: dict, exit_model: str,
     nifty_5m = sorted(day_data['nifty_5m'], key=lambda b: b['bucket'])
     nifty_by_bkt = {b['bucket']: b for b in nifty_5m}
     opt_by_bkt = {b['bucket']: b for b in opt_5m}
+    if vwap_by_bkt is None:
+        vwap_by_bkt = compute_vwap_by_bkt(nifty_5m)
 
     for bkt in range(trade.entry_bkt, FORCE_CLOSE_BUCKET + 1):
         if trade.closed: break
@@ -825,6 +827,149 @@ def simulate_trade(trade: Trade, day_data: dict, exit_model: str,
                         trade.book(bkt, 'SMA8_LOW_TRAIL', n5['close'], o5['close'], trade.lots_remaining)
                         break
 
+        elif exit_model == 'velvet_vwap':
+            # Velvet Rope: arm when premium +15
+            if (not trade.tr_armed) and o5['high'] >= trade.entry_premium + RATCHET_INITIAL_PTS:
+                trade.tr_armed = True
+                trade.tr_sl = trade.entry_premium + VELVET_ROPE_BE_OFFSET
+                if o5['low'] <= trade.tr_sl:
+                    trade.book(bkt, 'VELVET_ROPE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                    break
+            # SL check
+            if trade.tr_armed and o5['low'] <= trade.tr_sl:
+                trade.book(bkt, 'VELVET_ROPE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                break
+            # VWAP trail: exit when Nifty crosses VWAP while in profit
+            vwap_now = vwap_by_bkt.get(bkt)
+            if vwap_now is not None and o5['close'] >= trade.entry_premium + 10:
+                if trade.side == 'CE' and n5['close'] < vwap_now:
+                    trade.book(bkt, 'VWAP_TRAIL_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+                elif trade.side == 'PE' and n5['close'] > vwap_now:
+                    trade.book(bkt, 'VWAP_TRAIL_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+
+        elif exit_model == 'velvet_sma5m':
+            # Velvet Rope
+            if (not trade.tr_armed) and o5['high'] >= trade.entry_premium + RATCHET_INITIAL_PTS:
+                trade.tr_armed = True
+                trade.tr_sl = trade.entry_premium + VELVET_ROPE_BE_OFFSET
+                if o5['low'] <= trade.tr_sl:
+                    trade.book(bkt, 'VELVET_ROPE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                    break
+            if trade.tr_armed and o5['low'] <= trade.tr_sl:
+                trade.book(bkt, 'VELVET_ROPE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                break
+            # 5m SMA8(low) trail: compute on all opt 5m bars up to current
+            all_lows_5m = [b['low'] for b in opt_5m if b['bucket'] <= bkt]
+            if len(all_lows_5m) >= SMA_TRAIL_PERIOD:
+                sma8_5m = sma_last(all_lows_5m, SMA_TRAIL_PERIOD)
+                if sma8_5m is not None and o5['close'] < sma8_5m:
+                    trade.book(bkt, 'SMA8_5M_TRAIL', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+
+        elif exit_model == 'partial_sma15m':
+            # Partial booking at +PARTIAL_BOOK_PTS
+            if not trade.t1_hit and o5['high'] >= trade.entry_premium + PARTIAL_BOOK_PTS:
+                trade.t1_hit = True
+                book_price = trade.entry_premium + PARTIAL_BOOK_PTS
+                trade.book(bkt, f'PARTIAL_FIXED_+{PARTIAL_BOOK_PTS}', n5['close'], book_price, 1)
+                if trade.closed: break
+            # Trail remaining with 15m SMA8
+            if trade.t1_hit and trade.lots_remaining > 0:
+                if bkt % 3 == 2 and bkt >= 3*SMA_TRAIL_PERIOD - 1:
+                    o15 = opt_15m_from_5m(opt_5m, bkt)
+                    if len(o15) >= SMA_TRAIL_PERIOD:
+                        sma8L = sma_last([b['l'] for b in o15], SMA_TRAIL_PERIOD)
+                        if sma8L is not None and o15[-1]['c'] < sma8L:
+                            trade.book(bkt, 'SMA8_TRAIL_RUNNER', n5['close'], o5['close'], trade.lots_remaining)
+                            break
+            # Before t1: also trail with 15m SMA8 (pre-partial)
+            if not trade.t1_hit:
+                if bkt % 3 == 2 and bkt >= 3*SMA_TRAIL_PERIOD - 1:
+                    o15 = opt_15m_from_5m(opt_5m, bkt)
+                    if len(o15) >= SMA_TRAIL_PERIOD:
+                        sma8L = sma_last([b['l'] for b in o15], SMA_TRAIL_PERIOD)
+                        if sma8L is not None and o15[-1]['c'] < sma8L:
+                            trade.book(bkt, 'SMA8_TRAIL_FULL', n5['close'], o5['close'], trade.lots_remaining)
+                            break
+
+        elif exit_model == 'partial_vwap':
+            # Partial booking at +PARTIAL_BOOK_PTS
+            if not trade.t1_hit and o5['high'] >= trade.entry_premium + PARTIAL_BOOK_PTS:
+                trade.t1_hit = True
+                book_price = trade.entry_premium + PARTIAL_BOOK_PTS
+                trade.book(bkt, f'PARTIAL_FIXED_+{PARTIAL_BOOK_PTS}', n5['close'], book_price, 1)
+                if trade.closed: break
+            # VWAP trail on runner (and full position before t1)
+            vwap_now = vwap_by_bkt.get(bkt)
+            if vwap_now is not None and o5['close'] >= trade.entry_premium + 10:
+                if trade.side == 'CE' and n5['close'] < vwap_now:
+                    trade.book(bkt, 'VWAP_TRAIL_RUNNER', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+                elif trade.side == 'PE' and n5['close'] > vwap_now:
+                    trade.book(bkt, 'VWAP_TRAIL_RUNNER', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+
+        elif exit_model == 'vwap_only':
+            vwap_now = vwap_by_bkt.get(bkt)
+            if vwap_now is not None and o5['close'] >= trade.entry_premium + 10:
+                if trade.side == 'CE' and n5['close'] < vwap_now:
+                    trade.book(bkt, 'VWAP_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+                elif trade.side == 'PE' and n5['close'] > vwap_now:
+                    trade.book(bkt, 'VWAP_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+
+        elif exit_model == 'velvet_dual':
+            # Velvet Rope
+            if (not trade.tr_armed) and o5['high'] >= trade.entry_premium + RATCHET_INITIAL_PTS:
+                trade.tr_armed = True
+                trade.tr_sl = trade.entry_premium + VELVET_ROPE_BE_OFFSET
+                if o5['low'] <= trade.tr_sl:
+                    trade.book(bkt, 'VELVET_ROPE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                    break
+            if trade.tr_armed and o5['low'] <= trade.tr_sl:
+                trade.book(bkt, 'VELVET_ROPE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                break
+            # VWAP trail
+            vwap_now = vwap_by_bkt.get(bkt)
+            if vwap_now is not None and o5['close'] >= trade.entry_premium + 10:
+                if trade.side == 'CE' and n5['close'] < vwap_now:
+                    trade.book(bkt, 'DUAL_VWAP_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+                elif trade.side == 'PE' and n5['close'] > vwap_now:
+                    trade.book(bkt, 'DUAL_VWAP_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                    break
+            # 15m SMA8 trail
+            if bkt % 3 == 2 and bkt >= 3*SMA_TRAIL_PERIOD - 1:
+                o15 = opt_15m_from_5m(opt_5m, bkt)
+                if len(o15) >= SMA_TRAIL_PERIOD:
+                    sma8L = sma_last([b['l'] for b in o15], SMA_TRAIL_PERIOD)
+                    if sma8L is not None and o15[-1]['c'] < sma8L:
+                        trade.book(bkt, 'DUAL_SMA8_EXIT', n5['close'], o5['close'], trade.lots_remaining)
+                        break
+
+        elif exit_model == 'fixed_be_sma15m':
+            # Soft BE: when premium touches +15, lock SL at entry+5
+            if (not trade.tr_armed) and o5['high'] >= trade.entry_premium + RATCHET_INITIAL_PTS:
+                trade.tr_armed = True
+                trade.tr_sl = trade.entry_premium + 5
+                if o5['low'] <= trade.tr_sl:
+                    trade.book(bkt, 'SOFT_BE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                    break
+            if trade.tr_armed and o5['low'] <= trade.tr_sl:
+                trade.book(bkt, 'SOFT_BE_SL', n5['close'], trade.tr_sl, trade.lots_remaining)
+                break
+            # Normal 15m SMA8 trail
+            if bkt % 3 == 2 and bkt >= 3*SMA_TRAIL_PERIOD - 1:
+                o15 = opt_15m_from_5m(opt_5m, bkt)
+                if len(o15) >= SMA_TRAIL_PERIOD:
+                    sma8L = sma_last([b['l'] for b in o15], SMA_TRAIL_PERIOD)
+                    if sma8L is not None and o15[-1]['c'] < sma8L:
+                        trade.book(bkt, 'SMA8_TRAIL', n5['close'], o5['close'], trade.lots_remaining)
+                        break
+
         elif exit_model == 'sma8_plock':
             # HARDSL (above) + profit-lock + 15m SMA8(low) trail
             # Profit-lock:
@@ -936,7 +1081,8 @@ def _check_flip_eligibility(trade: Trade, at_bkt: int, day_data: dict) -> Option
             return 'CE'
     return None
 
-def _try_flip_cascade(last_trade: Trade, day_data: dict, exit_model: str, flips_today: int = 0) -> list:
+def _try_flip_cascade(last_trade: Trade, day_data: dict, exit_model: str, flips_today: int = 0,
+                      vwap_by_bkt: Optional[dict] = None) -> list:
     """Recursively attempt flips after a trade closes.
     Returns list of flip trades created. Each is grade='FLIP'.
     Empty list if no flip eligible.
@@ -977,7 +1123,7 @@ def _try_flip_cascade(last_trade: Trade, day_data: dict, exit_model: str, flips_
             hardsl_premium=hardsl_floor(entry_premium),
             peak_prem=entry_premium,
         )
-        flip_t = simulate_trade(flip_t, day_data, exit_model)
+        flip_t = simulate_trade(flip_t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
         flip_trades.append(flip_t)
         prev = flip_t
         flips_today += 1
@@ -1166,6 +1312,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
     if entry_model == 'v23' and not regime_allows_trade(regime):
         return trades  # regime blocks, but only for V2.3 entry path    # ---- Today's data
     nifty_5m = sorted(day_data['nifty_5m'], key=lambda b: b['bucket'])
+    vwap_by_bkt = compute_vwap_by_bkt(nifty_5m)
     nifty_15m = sorted(day_data['nifty_15m'], key=lambda b: b['bucket'])
     nifty_by_bkt = {b['bucket']: b for b in nifty_5m}
     n15_by_bkt = {b['bucket']: b for b in nifty_15m}
@@ -1298,9 +1445,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                     hardsl_premium=hardsl_floor(entry_premium),
                     peak_prem=entry_premium,
                 )
-                t = simulate_trade(t, day_data, exit_model)
+                t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
                 for _ft in _flips: trades.append(_ft)
                 flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
@@ -1330,9 +1477,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                     hardsl_premium=hardsl_floor(entry_premium),
                     peak_prem=entry_premium,
                 )
-                t = simulate_trade(t, day_data, exit_model)
+                t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
                 for _ft in _flips: trades.append(_ft)
                 flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
@@ -1386,9 +1533,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                     hardsl_premium=hardsl_floor(entry_premium),
                     peak_prem=entry_premium,
                 )
-                t = simulate_trade(t, day_data, exit_model)
+                t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
                 for _ft in _flips: trades.append(_ft)
                 flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
@@ -1453,9 +1600,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 hardsl_premium=hardsl_floor(entry_premium),
                 peak_prem=entry_premium,
             )
-            t = simulate_trade(t, day_data, exit_model)
+            t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
             for _ft in _flips: trades.append(_ft)
             flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
@@ -1490,9 +1637,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 hardsl_premium=hardsl_floor(entry_premium),
                 peak_prem=entry_premium,
             )
-            t = simulate_trade(t, day_data, exit_model)
+            t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
             for _ft in _flips: trades.append(_ft)
             flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
@@ -1579,9 +1726,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 hardsl_premium=hardsl_floor(entry_premium),
                 peak_prem=entry_premium,
             )
-            t = simulate_trade(t, day_data, exit_model)
+            t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
             for _ft in _flips: trades.append(_ft)
             flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
@@ -1647,9 +1794,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                 hardsl_premium=hardsl_floor(entry_premium),
                 peak_prem=entry_premium,
             )
-            t = simulate_trade(t, day_data, exit_model)
+            t = simulate_trade(t, day_data, exit_model, vwap_by_bkt=vwap_by_bkt)
             trades.append(t)
-            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+            _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
             for _ft in _flips: trades.append(_ft)
             flips_today += len(_flips)
             _last = _flips[-1] if _flips else t
@@ -1719,9 +1866,9 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
                     hardsl_premium=hardsl_floor(entry_premium),
                     peak_prem=entry_premium,
                 )
-                t = simulate_trade(t, day_data, exit_model, trigger_level_for_15m=lvl_obj['center'])
+                t = simulate_trade(t, day_data, exit_model, trigger_level_for_15m=lvl_obj['center'], vwap_by_bkt=vwap_by_bkt)
                 trades.append(t)
-                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today)
+                _flips = _try_flip_cascade(t, day_data, exit_model, flips_today=flips_today, vwap_by_bkt=vwap_by_bkt)
                 for _ft in _flips: trades.append(_ft)
                 flips_today += len(_flips)
                 _last = _flips[-1] if _flips else t
@@ -1956,6 +2103,52 @@ def main():
                     round(s['max_dd']), s['red_months'], s['total_months']])
     print(f"\nCSV saved: {csv_path}")
     print(f"Runtime: {time.time()-t0:.1f}s")
+
+    # =========================================================================
+    # EXIT MODEL GRID COMPARISON (V2.5.7 + New Strategies)
+    # =========================================================================
+    GRID_MODELS = [
+        ('V2.5.6_baseline',  'sma8_tratchet'),   # but we need the old params — skip for now, label separately
+        ('V2.5.7_velvet',    'sma8_tratchet'),    # current (already ran above)
+        ('velvet_vwap',      'velvet_vwap'),
+        ('velvet_sma5m',     'velvet_sma5m'),
+        ('velvet_dual',      'velvet_dual'),
+        ('partial_sma15m',   'partial_sma15m'),
+        ('partial_vwap',     'partial_vwap'),
+        ('vwap_only',        'vwap_only'),
+        ('fixed_be_sma15m',  'fixed_be_sma15m'),
+    ]
+
+    print("\n" + "="*110)
+    print("EXIT STRATEGY GRID COMPARISON  |  entry=v2_v3 fixed  |  18-month backtest")
+    print(f"{'Model':<22} {'Trades':>7} {'Rs P&L':>11} {'WR%':>6} {'AvgWin':>8} {'AvgLoss':>8} {'MaxDD_Rs':>11} {'RedMo':>7}")
+    print("-"*110)
+
+    grid_stats = {}
+    # First entry is already computed (trs from main run)
+    s_cur = compute_stats(trs)
+    grid_stats['V2.5.7_velvet'] = s_cur
+    print(f"{'V2.5.7_velvet':<22} {s_cur['n']:>7} {s_cur['rs']:>+11,.0f} {s_cur['wr']*100:>6.1f} {s_cur['avg_win']:>+8.2f} {s_cur['avg_loss']:>+8.2f} {s_cur.get('max_dd_rs', s_cur['max_dd']*100):>+11,.0f} {s_cur['red_months']:>3}/{s_cur['total_months']}")
+
+    for label, em in GRID_MODELS[1:]:  # skip first (already printed)
+        try:
+            tr_g, _ = run_combo(label, daily, df5, df15, df1h,
+                                entry_model='v2_v3', exit_model=em, use_delta_shift=False)
+            sg = compute_stats(tr_g)
+            grid_stats[label] = sg
+            dd_rs = sg.get('max_dd_rs', sg['max_dd'] * 100)
+            print(f"{label:<22} {sg['n']:>7} {sg['rs']:>+11,.0f} {sg['wr']*100:>6.1f} {sg['avg_win']:>+8.2f} {sg['avg_loss']:>+8.2f} {dd_rs:>+11,.0f} {sg['red_months']:>3}/{sg['total_months']}")
+        except Exception as e:
+            print(f"{label:<22} ERROR: {e}")
+
+    print("="*110)
+    if grid_stats:
+        best_rs  = max(grid_stats, key=lambda k: grid_stats[k]['rs'])
+        best_wr  = max(grid_stats, key=lambda k: grid_stats[k]['wr'])
+        best_red = min(grid_stats, key=lambda k: grid_stats[k]['red_months'])
+        print(f"\n  Best Net P&L    : {best_rs}  →  Rs {grid_stats[best_rs]['rs']:+,.0f}")
+        print(f"  Best Win Rate   : {best_wr}  →  {grid_stats[best_wr]['wr']*100:.1f}%")
+        print(f"  Fewest Red Months: {best_red}  →  {grid_stats[best_red]['red_months']}/{grid_stats[best_red]['total_months']}")
 
 
 if __name__ == "__main__":
