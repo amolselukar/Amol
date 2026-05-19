@@ -222,6 +222,8 @@ TRANSACTION_COST_PER_LOT = 50  # Rs per lot, conservative estimate
 RATCHET_TIME_MIN      = 30      # arm window: 30min (was 120)
 RATCHET_INITIAL_PTS   = 15      # velvet rope trigger at entry+15 (was 20)
 RATCHET_STEP_PTS      = 20      # each +N move above current SL → SL += N
+VELVET_ROPE_BE_OFFSET = 2       # pts above entry for velvet rope SL (entry + this)
+PARTIAL_BOOK_PTS      = 20      # pts gain at which 1 lot is booked in partial_* models
 
 # V2.2 entry params
 STOCHRSI_LEN          = 14
@@ -570,6 +572,19 @@ def sma_last(values, n):
     if len(values) < n: return None
     return sum(values[-n:]) / n
 
+def compute_vwap_by_bkt(nifty_5m_bars: list) -> dict:
+    """Cumulative VWAP per 5m bucket, computed from session open each day."""
+    cum_vol = 0.0
+    cum_tpv = 0.0
+    result = {}
+    for bar in sorted(nifty_5m_bars, key=lambda b: b['bucket']):
+        tp = (bar['high'] + bar['low'] + bar['close']) / 3.0
+        vol = float(bar.get('volume', 1.0))
+        cum_tpv += tp * vol
+        cum_vol += vol
+        result[bar['bucket']] = cum_tpv / cum_vol if cum_vol > 0 else tp
+    return result
+
 
 # -------------------- Trade dataclass --------------------
 @dataclass
@@ -631,7 +646,8 @@ class Trade:
 # -------------------- Trade simulator --------------------
 def simulate_trade(trade: Trade, day_data: dict, exit_model: str,
                    trigger_level_for_15m: Optional[float] = None,
-                   k_lookup: Optional[dict] = None):
+                   k_lookup: Optional[dict] = None,
+                   vwap_by_bkt: Optional[dict] = None):
     """
     Walk forward from trade.entry_bkt+1 to FORCE_CLOSE_BUCKET.
     Updates intra-bar (using 5m h/l) and 15m bar (using close-back through level).
