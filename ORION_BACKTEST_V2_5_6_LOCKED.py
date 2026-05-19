@@ -116,14 +116,17 @@ from collections import defaultdict
 
 # -------------------- Config --------------------
 def resolve_dataset_path():
-    """Search common Android + desktop paths for phase3_daily.pkl."""
+    """Search common Android + PythonAnywhere + desktop paths for phase3_daily.pkl."""
     import os
     filename = "phase3_daily.pkl"
     candidates = [
-        f"/storage/emulated/0/Download/backtest_out/{filename}",
-        f"/sdcard/Download/backtest_out/{filename}",
-        f"/storage/emulated/0/Download/{filename}",
-        f"/sdcard/Download/{filename}",
+        f"/home/Selukar/{filename}",                                        # PythonAnywhere
+        f"/home/Selukar/Amol/{filename}",                                   # PythonAnywhere (repo folder)
+        f"/home/Selukar/backtest_out/{filename}",                           # PythonAnywhere (subfolder)
+        f"/storage/emulated/0/Download/backtest_out/{filename}",            # Android
+        f"/sdcard/Download/backtest_out/{filename}",                        # Android
+        f"/storage/emulated/0/Download/{filename}",                         # Android
+        f"/sdcard/Download/{filename}",                                     # Android
         f"Download/backtest_out/{filename}",
         f"Download/{filename}",
         f"/mnt/user-data/uploads/{filename}",
