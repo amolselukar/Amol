@@ -1311,6 +1311,7 @@ def run_day(day_date, day_data, df1h_prior_all, entry_model: str, exit_model: st
     filters = optional_filters or {}
     trades = []
     daily_losses = 0
+    flips_today = 0
     halt = False
     fired_levels = set()
     active = None
