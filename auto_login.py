@@ -87,12 +87,10 @@ def get_fresh_access_token(max_retries=3) -> str:
                             request_token = rt
                             break
                 except requests.exceptions.ConnectionError as ce:
-                    # Redirect URL (e.g. 127.0.0.1) unreachable — extract from error
-                    url_str = str(ce)
-                    m = re.search(r"(https?://\S+)", url_str)
+                    # Redirect URL is 127.0.0.1 — request_token is in the failed URL
+                    m = re.search(r"request_token=([A-Za-z0-9]+)", str(ce))
                     if m:
-                        p = parse_qs(urlparse(m.group(1)).query)
-                        request_token = p.get("request_token", [None])[0]
+                        request_token = m.group(1)
                     else:
                         raise Exception(f"ConnectionError following connect/finish: {ce}")
             else:
