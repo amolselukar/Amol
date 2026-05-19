@@ -40,6 +40,6 @@ fi
 
 # 3. Start the paper bot (output appended to log)
 echo "[$(date '+%H:%M:%S')] Starting ORION paper bot..." >> "$LOG"
-python3 "$SCRIPT_DIR/ORION_PAPER_V2_5_6.py" >> "$LOG" 2>&1
+python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_6.py" >> "$LOG" 2>&1
 
 echo "[$(date '+%H:%M:%S')] ORION exited." >> "$LOG"
