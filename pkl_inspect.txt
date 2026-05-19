@@ -1,0 +1,5 @@
+/home/Selukar/phase1_atm.pkl 374 sessions
+/home/Selukar/phase2_bars.pkl 3 sessions
+/home/Selukar/phase3_daily.pkl 373 sessions
+  5m fields: ['bucket', 'open', 'high', 'low', 'close']
+  1h fields: ['bucket', 'open', 'high', 'low', 'close']
