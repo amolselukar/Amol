@@ -1537,8 +1537,11 @@ def main():
 
         except KeyboardInterrupt:
             linfo("Interrupted by user. Sending EOD summary and exiting.")
-            TG.send("🛑 <b>Bot stopped by user.</b>")
-            TG.send(fmt_eod_summary())
+            try:
+                TG.send("🛑 <b>Bot stopped by user.</b>")
+                TG.send(fmt_eod_summary())
+            except Exception:
+                pass
             WD.stop()
             return
         except Exception as e:
