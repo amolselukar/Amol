@@ -1,0 +1,16 @@
+2026-05-04
+2026-05-05
+2026-05-05.zip
+2026-05-07
+2026-05-08
+2026-05-11
+2026-05-12
+2026-05-13
+2026-05-14
+2026-05-15
+2026-05-18
+head: cannot open '/home/Selukar/daily_option_data/nifty_5m.csv' for reading: No such file or directory
+head: cannot open '/home/Selukar/daily_option_data/atm_tracker_5m.csv' for reading: No such file or directory
+ls: cannot access '/home/Selukar/daily_option_data/CE/': No such file or directory
+ls: cannot access '/home/Selukar/daily_option_data/CE/': No such file or directory
+head: cannot open '/home/Selukar/daily_option_data/CE/' for reading: No such file or directory
