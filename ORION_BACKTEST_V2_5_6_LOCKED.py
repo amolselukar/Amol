@@ -115,7 +115,24 @@ from typing import Optional
 from collections import defaultdict
 
 # -------------------- Config --------------------
-PKL_PATH = '/mnt/user-data/uploads/phase3_daily.pkl'
+def resolve_dataset_path():
+    """Search common Android + desktop paths for phase3_daily.pkl."""
+    import os
+    filename = "phase3_daily.pkl"
+    candidates = [
+        f"/storage/emulated/0/Download/backtest_out/{filename}",
+        f"/sdcard/Download/backtest_out/{filename}",
+        f"/storage/emulated/0/Download/{filename}",
+        f"/sdcard/Download/{filename}",
+        f"Download/backtest_out/{filename}",
+        f"Download/{filename}",
+        f"/mnt/user-data/uploads/{filename}",
+        filename,
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            return p
+    return None
 
 LOT_SIZE = 65
 
@@ -2046,8 +2063,14 @@ def print_stats(name, s):
 def main():
     import time, csv
     t0 = time.time()
-    print("\nLoading pkl...")
-    with open(PKL_PATH, 'rb') as f:
+    print("\nSearching for phase3_daily.pkl...")
+    pkl_path = resolve_dataset_path()
+    if not pkl_path:
+        print("[FATAL] Could not find phase3_daily.pkl.")
+        print("Place it in: /storage/emulated/0/Download/backtest_out/phase3_daily.pkl")
+        return
+    print(f"Found: {pkl_path}")
+    with open(pkl_path, 'rb') as f:
         daily = pickle.load(f)
     df5, df15, df1h = build_continuous_streams(daily)
     print(f"  {len(daily)} days, {len(df5)} 5m bars")
