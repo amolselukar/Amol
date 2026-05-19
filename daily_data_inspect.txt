@@ -1,16 +1,40 @@
-2026-05-04
-2026-05-05
-2026-05-05.zip
-2026-05-07
-2026-05-08
-2026-05-11
-2026-05-12
-2026-05-13
-2026-05-14
-2026-05-15
-2026-05-18
-head: cannot open '/home/Selukar/daily_option_data/nifty_5m.csv' for reading: No such file or directory
-head: cannot open '/home/Selukar/daily_option_data/atm_tracker_5m.csv' for reading: No such file or directory
-ls: cannot access '/home/Selukar/daily_option_data/CE/': No such file or directory
-ls: cannot access '/home/Selukar/daily_option_data/CE/': No such file or directory
-head: cannot open '/home/Selukar/daily_option_data/CE/' for reading: No such file or directory
+=== Latest date folder ===
+CE
+PE
+_meta.json
+atm_tracker_5m.csv
+nifty_15m.csv
+nifty_1h.csv
+nifty_5m.csv
+=== nifty_5m.csv ===
+date,open,high,low,close,volume
+2026-05-12 09:15:00+05:30,23722.6,23757.55,23689.1,23736.35,0
+2026-05-12 09:20:00+05:30,23737.8,23737.8,23684.0,23684.2,0
+=== nifty_1h.csv ===
+date,open,high,low,close,volume
+2026-02-18 09:15:00+05:30,25752.65,25759.75,25650.25,25661.95,0
+2026-02-18 10:15:00+05:30,25663.85,25709.0,25645.15,25700.05,0
+=== atm_tracker ===
+time,nifty_close,atm_strike,ce_itm2,ce_itm1,ce_atm,ce_otm1,ce_otm2,pe_itm2,pe_itm1,pe_atm,pe_otm1,pe_otm2
+2026-05-18 09:15:00+05:30,23400.5,23400,23300,23350,23400,23450,23500,23500,23450,23400,23350,23300
+2026-05-18 09:20:00+05:30,23401.5,23400,23300,23350,23400,23450,23500,23500,23450,23400,23350,23300
+=== CE/ files ===
+23200.csv
+23250.csv
+23300.csv
+23350.csv
+23400.csv
+=== First CE file ===
+tf,date,open,high,low,close,volume
+5m,2026-05-12 09:15:00+05:30,611.0,613.9,584.25,612.8,4810
+5m,2026-05-12 09:20:00+05:30,612.8,612.8,572.95,572.95,3510
+=== PE/ files ===
+23200.csv
+23250.csv
+23300.csv
+23350.csv
+23400.csv
+=== First PE file ===
+tf,date,open,high,low,close,volume
+5m,2026-05-12 09:15:00+05:30,71.8,75.05,62.05,64.3,348075
+5m,2026-05-12 09:20:00+05:30,64.3,73.45,64.3,73.25,233285
