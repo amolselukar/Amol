@@ -66,14 +66,41 @@ def get_fresh_access_token(max_retries=3) -> str:
             if data.get("status") != "success":
                 raise Exception(f"2FA failed: {data.get('message', data)}")
 
-            # Step 3: Follow Kite login URL to capture request_token
+            # Step 3: Follow Kite login URL → connect/finish → redirect_url?request_token=
             login_url = kite.login_url()
             resp = session.get(login_url, allow_redirects=False, timeout=15)
-            redirect = resp.headers.get("Location", "")
-            params = parse_qs(urlparse(redirect).query)
-            request_token = params.get("request_token", [None])[0]
+            next_url = resp.headers.get("Location", "")
+
+            # Zerodha may route through /connect/finish before issuing request_token
+            if "connect/finish" in next_url or ("request_token" not in next_url and next_url):
+                try:
+                    resp2 = session.get(next_url, allow_redirects=True, timeout=15)
+                    # Check final URL and full redirect history for request_token
+                    candidates = [resp2.url] + [
+                        r.headers.get("Location", "") for r in resp2.history
+                    ]
+                    request_token = None
+                    for url in candidates:
+                        p = parse_qs(urlparse(url).query)
+                        rt = p.get("request_token", [None])[0]
+                        if rt:
+                            request_token = rt
+                            break
+                except requests.exceptions.ConnectionError as ce:
+                    # Redirect URL (e.g. 127.0.0.1) unreachable — extract from error
+                    url_str = str(ce)
+                    m = re.search(r"(https?://\S+)", url_str)
+                    if m:
+                        p = parse_qs(urlparse(m.group(1)).query)
+                        request_token = p.get("request_token", [None])[0]
+                    else:
+                        raise Exception(f"ConnectionError following connect/finish: {ce}")
+            else:
+                params = parse_qs(urlparse(next_url).query)
+                request_token = params.get("request_token", [None])[0]
+
             if not request_token:
-                raise Exception(f"No request_token in redirect: {redirect}")
+                raise Exception(f"No request_token in redirect: {next_url}")
 
             # Step 4: Exchange for access token
             sess_data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
