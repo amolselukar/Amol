@@ -814,10 +814,13 @@ def simulate_trade(trade: Trade, day_data: dict, exit_model: str,
 
             # Step 3: Runner step trail — ratchet SL up +STEP per +STEP peak
             if trade.tr_armed:
+                prev_sl = trade.tr_sl
                 while o5['high'] >= trade.tr_sl + RATCHET_STEP_PTS:
                     trade.tr_sl += RATCHET_STEP_PTS
-                # cap to bar open — SL cannot be placed above a price never traded
-                trade.tr_sl = min(trade.tr_sl, o5['open'])
+                if trade.tr_sl > prev_sl:
+                    # cap to bar open only when ratchet stepped up (prevents impossible fills)
+                    # but never reduce below what was already set (preserves velvet rope floor)
+                    trade.tr_sl = max(prev_sl, min(trade.tr_sl, o5['open']))
                 if o5['low'] <= trade.tr_sl:
                     pts_locked = trade.tr_sl - trade.entry_premium
                     trade.book(bkt, f'OPTIMIZED_RATCHET_+{int(pts_locked)}', n5['close'], trade.tr_sl, trade.lots_remaining)
@@ -2121,7 +2124,8 @@ def main():
     print(f"{'V2.5.6 LOCKED':<25s} {s['n']:>7d} {s['pts']:+9.0f} {s['rs']:+12,.0f} {s['wr']*100:>6.1f} "
           f"{s['avg_win']:+6.1f} {s['avg_loss']:+7.1f} {s['max_dd']:+7.0f} {rm:>6}")
 
-    csv_path = '/home/claude/v256_locked_result.csv'
+    import os as _os
+    csv_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'v257_grid_result.csv')
     with open(csv_path, 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['variant','trades','nifty_pts','rs','wr_pct','avg_win','avg_loss','max_dd','red_months','total_months'])
