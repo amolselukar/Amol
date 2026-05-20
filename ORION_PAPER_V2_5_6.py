@@ -81,6 +81,10 @@ V2.5.6 + V3 PDC contamination fix (motivated by 2026-05-18 paper PE loss)
           Fix A: Exclude PDC from clustering sources
           Fix B: Require min 25pt buffer between G/R and PDC
           Backtest: +Rs 13,127 (+3.52%), MaxDD -19%
+V2.5.7 + V2 near-SMA20 CE override (motivated by 2026-05-20 pattern)
+          Allow CE when c1h is within 0.15% below SMA20 AND K>=70 AND 1h RSI>55
+          Prevents V2 CE blockage on TRANSITION days where price hugs SMA20 from below
+          with very high momentum. Chop filter (RSI [47,53]) remains a pre-gate.
 
 UNDISCUSSED DECISIONS: NONE.
 
@@ -148,7 +152,7 @@ TELEGRAM_CHAT_ID = "1173480723"  # OrionClaudebot chat with Amol
 # =========================================================================
 # CONFIG
 # =========================================================================
-VERSION = "V2.5.6"
+VERSION = "V2.5.7"
 MODE    = "PAPER"   # PAPER -> no real orders placed
 LOT_SIZE = 65
 LOTS_PER_TRADE = 2
@@ -166,6 +170,14 @@ SMA_SLOW_1H           = 50
 # V2.5.1: V2 PE floor and CE cap
 V2_K_FLOOR_PE         = 25      # PE also requires K_now >= this (matches PE_floor=25)
 V2_K_CAP_CE           = None    # CE cap: None = no upper cap (backtest confirmed)
+
+# V2.5.7: near-SMA20 CE momentum override
+# When c1h is just below SMA20 (within PCT) but K is very high and RSI confirms trend,
+# allow V2 CE. Catches TRANSITION days where price hugs SMA20 underside with strong K.
+V2_CE_NEAR_SMA_ENABLED = True
+V2_CE_NEAR_SMA_PCT     = 0.0015   # within 0.15% below SMA20 (~35 pts at 23,500)
+V2_CE_NEAR_SMA_K_MIN   = 70       # K must be >= 70 for the override to apply
+V2_CE_NEAR_SMA_RSI_MIN = 55       # 1h RSI must exceed this (ensures genuine momentum)
 
 # V3 (cluster) entry
 CLUSTER_RADIUS_PTS    = 20
@@ -812,6 +824,8 @@ def fmt_boot(target_expiry, levels):
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
         f"   🌊 Chop filter: 1h RSI in [{CHOP_RSI_LO},{CHOP_RSI_HI}] blocks entry\n"
         f"   🔧 V3 PDC fix: exclude PDC from clusters; min {V3_MIN_BUFFER_FROM_PDC}pt buffer for G/R\n"
+        f"   📈 V2 near-SMA20 override: {'ON' if V2_CE_NEAR_SMA_ENABLED else 'OFF'} "
+        f"(within {V2_CE_NEAR_SMA_PCT*100:.2f}% of SMA20, K>={V2_CE_NEAR_SMA_K_MIN}, RSI>{V2_CE_NEAR_SMA_RSI_MIN})\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"<i>CSV:</i> <code>{tg_escape(CSV_FN)}</code>\n"
         f"<i>Log:</i> <code>{tg_escape(LOG_FN)}</code>"
@@ -1024,13 +1038,22 @@ def check_v2_signal(df1h, df15m):
     if pd.isna(K) or pd.isna(K_prev): return None
     ce_regime = c1h > sma20
     pe_regime = (c1h < sma20) and (c1h < sma50)
+    # V2.5.7: near-SMA20 CE override — price just below SMA20 but K very high + RSI confirms
+    near_sma_override = False
+    if not ce_regime and V2_CE_NEAR_SMA_ENABLED and K >= V2_CE_NEAR_SMA_K_MIN and K > K_prev:
+        rsi_1h = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns else float('nan')
+        if (not pd.isna(rsi_1h) and rsi_1h > V2_CE_NEAR_SMA_RSI_MIN and
+                c1h >= sma20 * (1.0 - V2_CE_NEAR_SMA_PCT)):
+            ce_regime = True
+            near_sma_override = True
     # V2.5.1: CE may have optional cap (None = no cap); PE has floor at K_FLOOR_PE=25
     sig_ce = ce_regime and (K >= STOCHRSI_CE_LO) and (K > K_prev)
     if sig_ce and V2_K_CAP_CE is not None and K > V2_K_CAP_CE:
         sig_ce = False
     sig_pe = pe_regime and (K <= STOCHRSI_PE_HI) and (K < K_prev) and (K >= V2_K_FLOOR_PE)
     if sig_ce and sig_pe: return None
-    if sig_ce: return {'engine':'V2','side':'CE','detail':f'StochRSI-CE K={K:.1f} rising','trigger':sma20}
+    ce_tag = ' [near-SMA20]' if near_sma_override else ''
+    if sig_ce: return {'engine':'V2','side':'CE','detail':f'StochRSI-CE K={K:.1f} rising{ce_tag}','trigger':sma20}
     if sig_pe: return {'engine':'V2','side':'PE','detail':f'StochRSI-PE K={K:.1f} falling (>=25)','trigger':sma20}
     return None
 
