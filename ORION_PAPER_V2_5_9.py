@@ -117,6 +117,7 @@ import time
 import json
 import math
 import csv
+import subprocess
 import threading
 import traceback
 import logging
@@ -164,6 +165,12 @@ if not TELEGRAM_CHAT_ID:
         TELEGRAM_CHAT_ID = _tgcid
     except ImportError:
         raise RuntimeError("TELEGRAM_CHAT_ID not set in environment or credentials.py")
+
+try:
+    from credentials import GITHUB_PAT as _ghpat
+    GITHUB_PAT = _ghpat
+except (ImportError, AttributeError):
+    GITHUB_PAT = None
 
 # =========================================================================
 # CONFIG
@@ -1495,6 +1502,38 @@ def warmup_until_ready(max_attempts=20):
 # =========================================================================
 # MAIN
 # =========================================================================
+def push_logs_to_github():
+    """Push today's log + CSV to GitHub at EOD so they're readable remotely."""
+    today = datetime.now(IST).strftime("%Y-%m-%d")
+    repo_dir = os.path.dirname(os.path.abspath(__file__))
+    branch = "claude/general-session-YfHuZ"
+    try:
+        # Stage log and CSV (force-add in case they're gitignored)
+        subprocess.run(["git", "add", "-f", LOG_FN, CSV_FN],
+                       cwd=repo_dir, check=True, capture_output=True)
+        # Check if there's anything to commit
+        result = subprocess.run(["git", "diff", "--cached", "--quiet"],
+                                cwd=repo_dir)
+        if result.returncode == 0:
+            linfo("[EOD] No log changes to commit.")
+            return
+        subprocess.run(["git", "commit", "-m", f"Daily log {today} ({VERSION})"],
+                       cwd=repo_dir, check=True, capture_output=True)
+        if GITHUB_PAT:
+            remote = f"https://{GITHUB_PAT}@github.com/amolselukar/Amol.git"
+        else:
+            remote = "origin"
+        subprocess.run(["git", "push", remote, branch],
+                       cwd=repo_dir, check=True, capture_output=True)
+        linfo(f"[EOD] Logs pushed to GitHub: {LOG_FN}, {CSV_FN}")
+        TG.send(f"📤 <b>Logs pushed to GitHub</b>\n"
+                f"   <code>{LOG_FN}</code>\n"
+                f"   <code>{CSV_FN}</code>")
+    except subprocess.CalledProcessError as e:
+        lwarn(f"[EOD] Git push failed: {e.stderr.decode() if e.stderr else e}")
+    except Exception as e:
+        lwarn(f"[EOD] push_logs_to_github error: {e}")
+
 def in_entry_window(now):
     start = now.replace(hour=ENTRY_START_HOUR, minute=ENTRY_START_MIN, second=0, microsecond=0)
     end   = now.replace(hour=ENTRY_END_HOUR,   minute=ENTRY_END_MIN,   second=0, microsecond=0)
@@ -1579,6 +1618,7 @@ def main():
                     TG.send(fmt_eod_summary())
                     TG.send(f"🛑 <b>ORION {VERSION} shutting down.</b> See you tomorrow at 09:00 IST.")
                     DAY.eod_sent = True
+                    push_logs_to_github()
                 WD.stop()
                 linfo("Market closed. Bot exiting cleanly.")
                 return
