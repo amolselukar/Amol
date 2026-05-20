@@ -1565,7 +1565,6 @@ def main():
     # ---- Main loop ----
     last_pulse_at = 0
     last_csv_at = 0
-    after_hours_last = 0
     while True:
         try:
             WD.beat()
@@ -1573,21 +1572,16 @@ def main():
 
             # After market close - send periodic alive pulse + EOD once
             if is_after_market_close(now):
-                if now - (POS.entry_time or now) > timedelta(minutes=0) and POS.active:
-                    # Force close any leftover position immediately
+                if POS.active:
                     cur_ltp = ltp(POS.symbol) or POS.entry_premium
                     close_trade("EOD_FORCE_CLOSE", cur_ltp)
-                # EOD summary once
                 if not DAY.eod_sent:
                     TG.send(fmt_eod_summary())
+                    TG.send(f"🛑 <b>ORION {VERSION} shutting down.</b> See you tomorrow at 09:00 IST.")
                     DAY.eod_sent = True
-                # Periodic after-hours pulse
-                if time.time() - after_hours_last >= AFTER_HOURS_PULSE_MIN * 60:
-                    TG.send(f"🌙 <i>After-hours pulse</i> · ORION {VERSION}\n"
-                            f"   Time: {now.strftime('%H:%M')}\n   No trading. Bot alive.")
-                    after_hours_last = time.time()
-                time.sleep(LOOP_SLEEP_SEC)
-                continue
+                WD.stop()
+                linfo("Market closed. Bot exiting cleanly.")
+                return
 
             # Fresh indicator fetch (every loop iteration is fine for live)
             df1h = fetch_nifty_1h()
