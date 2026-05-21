@@ -2,7 +2,8 @@
 # Run ORION backtests on PythonAnywhere
 # Usage: bash run_backtest.sh
 cd /home/Selukar/Amol
-git pull origin claude/general-session-YfHuZ
+git fetch origin claude/general-session-YfHuZ
+git reset --hard origin/claude/general-session-YfHuZ
 
 echo "=============================="
 echo " Running V2.5.9 (baseline)"

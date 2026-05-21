@@ -15,10 +15,11 @@ echo "========================================" >> "$LOG"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] ORION START" >> "$LOG"
 echo "========================================" >> "$LOG"
 
-# 1. Pull latest code from GitHub
+# 1. Pull latest code from GitHub (fetch + reset avoids diverged-branch errors)
 echo "[$(date '+%H:%M:%S')] Pulling latest code..." >> "$LOG"
 cd "$SCRIPT_DIR" || { echo "FATAL: $SCRIPT_DIR not found"; exit 1; }
-git pull origin claude/general-session-YfHuZ >> "$LOG" 2>&1
+git fetch origin claude/general-session-YfHuZ >> "$LOG" 2>&1
+git reset --hard origin/claude/general-session-YfHuZ >> "$LOG" 2>&1
 
 # 2. Refresh Zerodha access token via TOTP auto-login
 echo "[$(date '+%H:%M:%S')] Refreshing Kite access token..." >> "$LOG"
