@@ -1705,36 +1705,68 @@ def main():
                         if sig is not None:
                             open_trade(sig, spot, expiry_lookup)
 
-            # ---- CSV every 5 min ----
+            # ---- CSV + INDICATORS + SIGNAL log every 5 min ----
             if time.time() - last_csv_at >= 5 * 60:
                 pos_ltp = POS.last_pulse_premium if POS.active else 0
                 pos_pnl_pct = ((pos_ltp - POS.entry_premium) / POS.entry_premium * 100) if (POS.active and POS.entry_premium) else 0
-                rsi_now = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns and not pd.isna(df1h['RSI'].iloc[-2]) else float('nan')
-                # RSI "no-man's land" [47,53] means neither CE nor PE gate passes
-                rsi_blk = (not math.isnan(rsi_now)) and (RSI_PE_MAX <= rsi_now <= RSI_CE_MIN)
+                rsi_now  = float(df1h['RSI'].iloc[-2])       if 'RSI'       in df1h.columns and not pd.isna(df1h['RSI'].iloc[-2])       else float('nan')
+                macd_l   = float(df1h['MACD_line'].iloc[-2]) if 'MACD_line' in df1h.columns and not pd.isna(df1h['MACD_line'].iloc[-2]) else float('nan')
+                macd_s   = float(df1h['MACD_sig'].iloc[-2])  if 'MACD_sig'  in df1h.columns and not pd.isna(df1h['MACD_sig'].iloc[-2])  else float('nan')
+                rsi_blk  = (not math.isnan(rsi_now)) and (RSI_PE_MAX <= rsi_now <= RSI_CE_MIN)
+                ce_reg   = (c1h > sma20) and (sma20 > sma50)
+                pe_reg   = (c1h < sma20) and (sma20 < sma50)
+                k_extr_ce = k_was_extreme_live('CE', df15)
+                k_extr_pe = k_was_extreme_live('PE', df15)
+                k_dir    = '↑' if K > K_prev else '↓'
+                macd_dir = 'bull' if (not math.isnan(macd_l) and not math.isnan(macd_s) and macd_l > macd_s) else 'bear'
+
+                # [INDICATORS] — mirrors T10 V2.2.2 style
+                linfo(
+                    f"[INDICATORS] spot={spot:.1f} | "
+                    f"1h: close={c1h:.1f} sma20={sma20:.1f} sma50={sma50:.1f} "
+                    f"rsi={rsi_now:.1f} macd={macd_l:.2f}/{macd_s:.2f}({macd_dir}) | "
+                    f"15m: K={K:.1f}{k_dir}(prev {K_prev:.1f}) | "
+                    f"regime={'CE-eligible' if ce_reg else 'PE-eligible' if pe_reg else 'NEUTRAL'} "
+                    f"halted={DAY.halted} active={POS.active}"
+                )
+
+                # [SIGNAL] — show each V2 CE/PE filter check individually
+                ce_k_ok    = K >= STOCHRSI_CE_LO and K > K_prev
+                ce_rsi_ok  = not math.isnan(rsi_now) and rsi_now > RSI_CE_MIN
+                ce_macd_ok = not math.isnan(macd_l) and macd_l > macd_s
+                pe_k_ok    = K <= STOCHRSI_PE_HI and K < K_prev and K >= V2_K_FLOOR_PE
+                pe_rsi_ok  = not math.isnan(rsi_now) and rsi_now < RSI_PE_MAX
+                pe_macd_ok = not math.isnan(macd_l) and macd_l < macd_s
+                linfo(
+                    f"[SIGNAL] "
+                    f"CE: reg={ce_reg} K={ce_k_ok}(K={K:.1f}>={STOCHRSI_CE_LO},rising) "
+                    f"Kextr={k_extr_ce} RSI={ce_rsi_ok}({rsi_now:.1f}>{RSI_CE_MIN}) "
+                    f"MACD={ce_macd_ok} => {'PASS' if (ce_reg and ce_k_ok and k_extr_ce and ce_rsi_ok and ce_macd_ok) else 'BLOCK'} | "
+                    f"PE: reg={pe_reg} K={pe_k_ok}(K={K:.1f}<={STOCHRSI_PE_HI},falling) "
+                    f"Kextr={k_extr_pe} RSI={pe_rsi_ok}({rsi_now:.1f}<{RSI_PE_MAX}) "
+                    f"MACD={pe_macd_ok} => {'PASS' if (pe_reg and pe_k_ok and k_extr_pe and pe_rsi_ok and pe_macd_ok) else 'BLOCK'}"
+                )
+
+                # [STATE] — active trade detail if in position
+                if POS.active:
+                    elapsed = int(POS.elapsed_min())
+                    pct = pos_pnl_pct
+                    active_sl = max(POS.hardsl_premium, POS.tr_sl if POS.tr_armed else 0)
+                    linfo(
+                        f"[STATE] {POS.side} {POS.symbol} ltp={pos_ltp:.2f} "
+                        f"entry={POS.entry_premium:.2f} pnl={pos_ltp-POS.entry_premium:+.2f}({pct:+.1f}%) "
+                        f"sl={active_sl:.2f} peak={POS.peak_premium:.2f} "
+                        f"tr_armed={POS.tr_armed} elapsed={elapsed}min"
+                    )
+
                 csv_append([now.isoformat(), spot, c1h, sma20, sma50, rsi_now, K, K_prev,
                             DAY.regime, POS.active, POS.side, POS.engine, POS.strike, pos_ltp, pos_pnl_pct,
                             POS.sl_current, POS.tr_armed, POS.tr_sl, POS.peak_premium,
                             DAY.losses, DAY.flips_today, DAY.halted, rsi_blk])
                 last_csv_at = time.time()
 
-            # ---- Diagnostic log every 15 min (for post-analysis of why signals fired/blocked) ----
+            # ---- Pulse every 15 min ----
             if time.time() - last_pulse_at >= PULSE_INTERVAL_SEC:
-                rsi_log = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns and not pd.isna(df1h['RSI'].iloc[-2]) else float('nan')
-                macd_l  = float(df1h['MACD_line'].iloc[-2]) if 'MACD_line' in df1h.columns and not pd.isna(df1h['MACD_line'].iloc[-2]) else float('nan')
-                macd_s  = float(df1h['MACD_sig'].iloc[-2])  if 'MACD_sig'  in df1h.columns and not pd.isna(df1h['MACD_sig'].iloc[-2])  else float('nan')
-                ce_reg  = (c1h > sma20) and (sma20 > sma50)
-                pe_reg  = (c1h < sma20) and (sma20 < sma50)
-                k_extr_ce = k_was_extreme_live('CE', df15)
-                k_extr_pe = k_was_extreme_live('PE', df15)
-                linfo(
-                    f"[DIAG] spot={spot:.0f} c1h={c1h:.0f} sma20={sma20:.0f} sma50={sma50:.0f} "
-                    f"K={K:.1f}({'↑' if K>K_prev else '↓'}) RSI={rsi_log:.1f} "
-                    f"MACD={'bull' if macd_l>macd_s else 'bear'}({macd_l:.1f}/{macd_s:.1f}) "
-                    f"regime={'CE' if ce_reg else 'PE' if pe_reg else 'NEUT'} "
-                    f"K_extr={'CE' if k_extr_ce else ''}{'PE' if k_extr_pe else ''} "
-                    f"halted={DAY.halted} active={POS.active}"
-                )
                 TG.send(fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, DAY.regime))
                 last_pulse_at = time.time()
 
