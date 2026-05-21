@@ -124,13 +124,23 @@ class MStockBroker:
                 password=self._password
             )
             resp = self._to_dict(raw)
-            log.info(f"[mstock] Login step1: {resp.get('message', raw)}")
+            log.info(f"[mstock] Login step1: {resp}")
+
+            # Extract request_token from login response
+            request_token = (resp.get('data', {}).get('request_token')
+                             or resp.get('request_token')
+                             or resp.get('requestToken')
+                             or resp.get('data', {}).get('requestToken', ''))
 
             # Step 2: TOTP verification
             totp_code = pyotp.TOTP(self._totp_sec).now()
-            raw2 = self._client.verify_totp(otp=totp_code)
+            raw2 = self._client.verify_totp(
+                _api_key=self._api_key,
+                _request_token=request_token,
+                _tOtp=totp_code
+            )
             resp2 = self._to_dict(raw2)
-            log.info(f"[mstock] TOTP verify: {resp2.get('message', raw2)}")
+            log.info(f"[mstock] TOTP verify: {resp2}")
 
             if resp2.get('status') in ('true', True, 'True', 'success', 'SUCCESS') \
                     or resp2.get('success') is True:
