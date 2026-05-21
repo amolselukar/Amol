@@ -93,6 +93,20 @@ class MStockBroker:
         self._logged_in = False
 
     # ── Authentication ────────────────────────────────────────────────
+    @staticmethod
+    def _to_dict(resp) -> dict:
+        """Normalize SDK response — handles dict, requests.Response, or custom objects."""
+        if isinstance(resp, dict):
+            return resp
+        if hasattr(resp, 'json'):
+            try:
+                return resp.json()
+            except Exception:
+                pass
+        if hasattr(resp, '__dict__'):
+            return vars(resp)
+        return {}
+
     def login(self) -> bool:
         """TOTP-based login. Token valid until midnight."""
         if self._load_cached_token():
@@ -105,18 +119,21 @@ class MStockBroker:
 
         try:
             # Step 1: login with credentials
-            resp = self._client.login(
+            raw = self._client.login(
                 user_id=self._user_id,
                 password=self._password
             )
-            log.info(f"[mstock] Login step1: {resp.get('message','')}")
+            resp = self._to_dict(raw)
+            log.info(f"[mstock] Login step1: {resp.get('message', raw)}")
 
             # Step 2: TOTP verification
             totp_code = pyotp.TOTP(self._totp_sec).now()
-            resp2 = self._client.verify_totp(otp=totp_code)
-            log.info(f"[mstock] TOTP verify: {resp2.get('message','')}")
+            raw2 = self._client.verify_totp(otp=totp_code)
+            resp2 = self._to_dict(raw2)
+            log.info(f"[mstock] TOTP verify: {resp2.get('message', raw2)}")
 
-            if resp2.get('status') == 'true' or resp2.get('status') is True:
+            if resp2.get('status') in ('true', True, 'True', 'success', 'SUCCESS') \
+                    or resp2.get('success') is True:
                 self._logged_in = True
                 self._cache_token()
                 log.info("[mstock] Login successful.")
@@ -163,10 +180,10 @@ class MStockBroker:
         """
         self.ensure_logged_in()
         try:
-            resp = self._client.search_scrip(
+            resp = self._to_dict(self._client.search_scrip(
                 exchange=exchange,
                 searchscrip=trading_symbol
-            )
+            ))
             scrips = resp.get('data', [])
             for s in scrips:
                 if s.get('tradingsymbol') == trading_symbol:
@@ -201,7 +218,7 @@ class MStockBroker:
                              "Order may still work (some endpoints accept symbol without token).")
 
         try:
-            resp = self._client.place_order(
+            resp = self._to_dict(self._client.place_order(
                 _variety="NORMAL",
                 _tradingsymbol=trading_symbol,
                 _symboltoken=symbol_token,
@@ -218,7 +235,7 @@ class MStockBroker:
                 _disclosedquantity="",
                 _duration="DAY",
                 _ordertag=tag
-            )
+            ))
             log.info(f"[mstock] place_order resp: {resp}")
             order_id = (resp.get('data', {}).get('orderid')
                         or resp.get('orderid')
@@ -239,12 +256,12 @@ class MStockBroker:
         """Cancel a pending order. Returns True on success."""
         self.ensure_logged_in()
         try:
-            resp = self._client.cancel_order(
+            resp = self._to_dict(self._client.cancel_order(
                 _variety=variety,
                 _orderid=order_id
-            )
+            ))
             log.info(f"[mstock] cancel_order {order_id}: {resp.get('message','')}")
-            return resp.get('status') in ('true', True)
+            return resp.get('status') in ('true', True, 'True', 'success')
         except Exception as e:
             log.error(f"[mstock] cancel_order {order_id}: {e}")
             return False
@@ -257,8 +274,10 @@ class MStockBroker:
         """
         self.ensure_logged_in()
         try:
-            resp = self._client.get_order_book()
-            orders = resp.get('data', resp) if isinstance(resp, dict) else resp
+            resp = self._to_dict(self._client.get_order_book())
+            orders = resp.get('data', [])
+            if not isinstance(orders, list):
+                orders = []
             if isinstance(orders, list):
                 for o in orders:
                     if str(o.get('orderid', '')) == str(order_id):
@@ -290,8 +309,8 @@ class MStockBroker:
         """Returns list of current intraday positions."""
         self.ensure_logged_in()
         try:
-            resp = self._client.get_net_position()
-            return resp.get('data', []) if isinstance(resp, dict) else resp
+            resp = self._to_dict(self._client.get_net_position())
+            return resp.get('data', [])
         except Exception as e:
             log.error(f"[mstock] positions(): {e}")
             return []
@@ -311,8 +330,8 @@ class MStockBroker:
         """
         self.ensure_logged_in()
         try:
-            resp = self._client.get_all_instruments(exchange=exchange)
-            instruments = resp.get('data', [])[:20] if isinstance(resp, dict) else resp[:20]
+            resp = self._to_dict(self._client.get_all_instruments(exchange=exchange))
+            instruments = resp.get('data', [])[:20]
             print(f"\n--- mStock {exchange} instruments (first 20) ---")
             for i in instruments:
                 print(f"  {i.get('tradingsymbol','?'):30s}  token={i.get('symboltoken','?')}")
