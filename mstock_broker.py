@@ -300,8 +300,9 @@ class MStockBroker:
         """Returns list of current intraday positions."""
         self.ensure_logged_in()
         try:
-            resp = self._to_dict(self._client.get_net_position())
-            return resp.get('data', [])
+            raw = self._client.get_net_position()
+            resp = self._to_dict(raw) if raw is not None else {}
+            return resp.get('data') or []
         except Exception as e:
             log.error(f"[mstock] positions(): {e}")
             return []
