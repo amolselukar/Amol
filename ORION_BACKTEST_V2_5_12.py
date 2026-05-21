@@ -357,6 +357,8 @@ def simulate_trade(trade, day_data, k_lookup=None):
         if o5['low']<=trade.hardsl_premium:
             trade.book(bkt,'HARDSL',n5['close'],trade.hardsl_premium,trade.lots_remaining); break
 
+        elapsed_min = (bkt-trade.entry_bkt)*5
+
         # 1. VELVET ROPE: peak >= entry+12 → sl = entry+2
         if not trade.tr_armed and o5['high']>=trade.entry_premium+RATCHET_INITIAL_PTS:
             trade.tr_armed = True
