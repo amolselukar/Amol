@@ -155,6 +155,22 @@ try:
 except (ImportError, AttributeError):
     GITHUB_PAT = None
 
+# ---- mStock live execution broker (loaded only when EXECUTION_BROKER="mstock_live") ----
+_mstock_broker = None
+def _get_mstock():
+    """Lazy-init mStock broker singleton. Call only after EXECUTION_BROKER is set."""
+    global _mstock_broker
+    if _mstock_broker is None:
+        try:
+            from mstock_broker import MStockBroker
+            _mstock_broker = MStockBroker()
+            _mstock_broker.login()
+            linfo("[mstock] Broker initialised and logged in.")
+        except Exception as e:
+            lwarn(f"[mstock] Init failed: {e}. Live orders will NOT be placed.")
+            _mstock_broker = None
+    return _mstock_broker
+
 # =========================================================================
 # STRATEGY BOX + CHANGE HISTORY  (logged to file + sent via Telegram at boot)
 # =========================================================================
@@ -289,6 +305,11 @@ V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 /
 # =========================================================================
 VERSION = "V2.5.12"
 MODE    = "PAPER"   # PAPER -> no real orders placed
+
+# ---- Execution broker ----
+# "kite_paper"   : paper mode, no real orders (current default)
+# "mstock_live"  : live orders via mStock API (activate when going live)
+EXECUTION_BROKER = "kite_paper"
 LOT_SIZE = 65
 LOTS_PER_TRADE = 2
 IST = pytz.timezone("Asia/Kolkata")
@@ -1393,8 +1414,18 @@ def is_path_a_eligible() -> bool:
     return cur_above <= FLIP_PATH_A_DROP_MAX_PTS
 
 # =========================================================================
-# OPEN / CLOSE  (PAPER mode - no real orders)
+# OPEN / CLOSE
+# PAPER mode (EXECUTION_BROKER="kite_paper")  : no real orders, LTP-based P&L
+# LIVE  mode (EXECUTION_BROKER="mstock_live") : real market order via mStock
 # =========================================================================
+def _mstock_option_symbol(symbol_kite: str) -> str:
+    """
+    Convert Kite option symbol to mStock trading symbol.
+    Kite:   NIFTY2529MAY25800CE  (already in NSE format — usually compatible)
+    mStock: same format in most cases; adjust here if exchange format differs.
+    """
+    return symbol_kite  # Kite NFO symbols are typically accepted as-is by mStock
+
 def open_trade(sig, spot, expiry_lookup):
     """Open a paper trade. sig has keys: engine, side, detail, trigger, [level_obj, target_spot]."""
     side = sig['side']
@@ -1444,8 +1475,32 @@ def open_trade(sig, spot, expiry_lookup):
     # V2.5.9+: compute option VWAP for informational context
     POS.entry_vwap = compute_option_vwap(token)
     save_state()
+
+    # ---- Live execution via mStock ----
+    if EXECUTION_BROKER == "mstock_live":
+        broker = _get_mstock()
+        if broker:
+            ms_sym = _mstock_option_symbol(symbol)
+            qty = LOTS_PER_TRADE * LOT_SIZE
+            oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
+            if oid:
+                status, fill = broker.wait_for_fill(oid, timeout_sec=10)
+                if status == "COMPLETE" and fill > 0:
+                    POS.entry_premium  = fill          # use actual fill price
+                    POS.hardsl_premium = fill * (1 - HARDSL_PCT)
+                    POS.sl_current     = POS.hardsl_premium
+                    POS.peak_premium   = fill
+                    linfo(f"[mstock] BUY filled: {ms_sym} qty={qty} fill={fill:.2f} order={oid}")
+                else:
+                    lwarn(f"[mstock] BUY not filled ({status}). Trading on LTP {cur_ltp:.2f}.")
+            else:
+                lwarn("[mstock] place_order returned None. Trading on LTP.")
+        else:
+            lwarn("[mstock] Broker unavailable. Entry recorded at LTP (no real order).")
+
     msg = fmt_entry()
-    linfo(f"ENTRY: {POS.symbol} @ {cur_ltp:.2f}  engine={POS.engine}  detail={POS.engine_detail}"
+    linfo(f"ENTRY: {POS.symbol} @ {POS.entry_premium:.2f}  engine={POS.engine}  "
+          f"detail={POS.engine_detail}"
           f"{f' flips_today={DAY.flips_today}/{MAX_FLIPS_PER_DAY}' if sig['engine']=='FLIP' else ''}")
     TG.send(msg)
     return True
@@ -1478,6 +1533,27 @@ def close_trade(reason, exit_price):
         'exit_price': exit_price,
         'engine': POS.engine,
     }
+    # ---- Live execution via mStock ----
+    if EXECUTION_BROKER == "mstock_live":
+        broker = _get_mstock()
+        if broker:
+            ms_sym = _mstock_option_symbol(POS.symbol)
+            qty = LOTS_PER_TRADE * LOT_SIZE
+            oid = broker.place_order("SELL", ms_sym, qty, "MARKET")
+            if oid:
+                status, fill = broker.wait_for_fill(oid, timeout_sec=10)
+                if status == "COMPLETE" and fill > 0:
+                    exit_price     = fill
+                    pnl_per_share  = exit_price - POS.entry_premium
+                    msg = fmt_exit(reason, exit_price, pnl_per_share)   # rebuild with real fill
+                    linfo(f"[mstock] SELL filled: {ms_sym} qty={qty} fill={fill:.2f} order={oid}")
+                else:
+                    lwarn(f"[mstock] SELL not filled ({status}). Exit recorded at {exit_price:.2f}.")
+            else:
+                lwarn("[mstock] SELL place_order failed. Exit recorded at LTP.")
+        else:
+            lwarn("[mstock] Broker unavailable. Exit recorded at LTP (no real order).")
+
     linfo(f"EXIT: {POS.symbol} @ {exit_price:.2f} reason={reason} pnl/sh={pnl_per_share:+.2f}"
           f" is_flip={is_flip} losses={DAY.losses}/{CIRCUIT_BREAKER}")
     TG.send(msg)
