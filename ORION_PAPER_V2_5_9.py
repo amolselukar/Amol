@@ -1,114 +1,96 @@
 """
 =========================================================================
-ORION V2.5.7 - PAPER TRADING BOT  (Nifty Weekly Options)
+ORION V2.5.9 - PAPER TRADING BOT  (Nifty Weekly Options)
 =========================================================================
-Mobile-runnable single file. Mirrors V2.2.2 framework. Strategy upgraded
-through V2.5.0 -> V2.5.7 per 18-month backtest on phase3_daily.pkl
-(2024-09-23 -> 2026-03-24).
+Single-file live paper bot. Evolved from T10 V2.2.2 production baseline.
+18-month backtest on phase3_daily.pkl (2024-09-23 -> 2026-03-24).
 
-V2.5.6 BACKTEST RESULT (prior baseline):
-  Trades 915 | Nifty pts +11,193 | PnL Rs +3,85,724 | WR 35.7%
-  Max DD -1,331 pts | Red months 5/18 (72% positive)
+V2.5.9 BACKTEST RESULT (CURRENT LOCKED VERSION):
+  Trades 357 | PnL Rs +6,70,425 | WR 66.9%
+  Max DD -1,485 pts | Red months 8/18 (55% positive)
+  Params: RI=12, RT=20, RS=25, CB=3
 
-V2.5.7 BACKTEST RESULT (Velvet Rope + Accelerated Ratchet):
-  Trades ~915 | PnL Rs +5,00,048 | WR 55.4%
-  Max DD -1,885 pts | Red months 10/18
-  Trade-off: +Rs 1,14,324 (+29.7%) P&L / WR surge, but 2x red months.
-  Protects winning trades from surrendering back to -25% HARDSL.
-
-Improvement over V2.5.6: +Rs 1,14,324 (+29.7%) net P&L, +19.7% win rate
+V2.5.6 BASELINE (prior to V2.5.7-V2.5.9 upgrades):
+  Trades 915 | PnL Rs +3,85,724 | WR 35.7%
+  Max DD -1,331 pts | Red months 5/18
 
 PAPER MODE: no real orders placed. Simulated P&L tracked via Kite LTP.
+Bot exits cleanly at 15:30 IST. Logs + CSV pushed to GitHub at EOD.
 
 =========================================================================
-STRATEGY BOX
+STRATEGY BOX  (V2.5.9 — all conditions on last CLOSED bars)
 =========================================================================
-PARALLEL ENGINES (V2 priority on same-bar tiebreak; single position at a time):
 
-  ENGINE V2  (T10/V2.2 indicator-based, fires at every 15m close)
-    CE: 1h_close > 1h_SMA20  AND  15m StochRSI K >= 38  AND  K rising
-    PE: 1h_close < 1h_SMA20  AND  1h_close < 1h_SMA50  AND
-        15m K <= 80  AND  K falling  AND  K >= 25  (V2.5.1 PE_floor)
-    Strike: ATM (round to 100). Lots: 2.
+ENGINE V2  (fires at every 15m close, V2 priority over V3 on same bar):
+  CE ENTRY — ALL must be true:
+    1. 1h close > SMA20 > SMA50         (full bullish SMA alignment)
+    2. 15m K >= 38 AND K rising          (momentum confirming)
+    3. K was < 25 in last 3 bars         (K extreme: fresh from oversold)
+    4. 1h RSI > 53                       (RSI directional gate — bullish)
+    5. 1h MACD_line > MACD_signal        (MACD bullish confirmation)
+    6. Option premium 30 <= LTP <= 180   (premium gate: no deep OTM / IV spike)
+  PE ENTRY — ALL must be true:
+    1. 1h close < SMA20 < SMA50         (full bearish SMA alignment)
+    2. 15m K <= 80 AND K falling AND K >= 25  (momentum + PE floor)
+    3. K was > 75 in last 3 bars         (K extreme: fresh from overbought)
+    4. 1h RSI < 47                       (RSI directional gate — bearish)
+    5. 1h MACD_line < MACD_signal        (MACD bearish confirmation)
+    6. Option premium 30 <= LTP <= 180   (premium gate)
+  Strike: ATM (round to nearest 100). Lots: 2.
 
-  ENGINE V3  (V2.3 cluster-based, fires at 15m close if G/R break/reject)
-    Pre-computed at boot from prior day 1h: PDH/PDL/PDC + round 50/100 levels
-    (+/-300 of PDC) + 20-bar swing pivots. Clustered within 20pts ->
-    Grade A (>=3 source kinds) / Grade B (>=2 source kinds).
-    V2.5.3: PROMOTED SINGLETONS - PDH/PDL/round_100 in +/-200 of PDC/swing
-    pivots in +/-300 of PDC act as standalone Grade B if NOT in any A/B cluster.
-    G = nearest A/B above PDC, R = nearest A/B below PDC.
-    Regime gate (last closed 1h): only fire in BULL/BEAR/TRANSITION (skip CHOP).
-    Signal: 15m bar BREAKS or REJECTS at G or R with valid candle quality.
-    Strike: ATM. Lots: 2.
+ENGINE V3  (cluster G/R break/reject, fires at 15m close):
+  Levels computed at boot from prior day 1h:
+    PDH, PDL + round 50/100 (±300 of PDC) + 20-bar swing pivots
+    Clustered within 20pts -> Grade A (>=3 source kinds) / Grade B (>=2)
+  V2.5.3: Promoted singletons: PDH/PDL/round_100(±200 of PDC)/swing pivots
+           act as standalone Grade B if NOT already in an A/B cluster
+  V2.5.6: PDC excluded from clustering; G/R need >=25pt buffer from PDC
+  G = nearest A/B cluster ABOVE PDC+25   R = nearest A/B cluster BELOW PDC-25
+  Regime gate: fire only in BULL/BEAR/TRANSITION; skip CHOP/INSUFFICIENT
+  Signal: 15m bar breaks or rejects G/R with valid candle body/wick quality
 
-  ENGINE FLIP  (V2.5.2 — rejection-flip on opposite side, max 3/day)
-    Path A (in-trade): elapsed >= 30min AND peak premium >= entry+15 AND
-                       current premium <= entry+10 AND 15m K reversed.
-                       Triggers flip immediately to opposite side at exit.
-    Path B (post-exit): within 60min of any exit, if 15m K reverses direction,
-                       opens flip on opposite side.
-    CE -> PE flip: K_now < K_prev_15m AND 25 <= K_now <= 80
-    PE -> CE flip: K_now > K_prev_15m AND K_now >= 38
-    Flips do NOT increment circuit breaker. Cap: MAX_FLIPS_PER_DAY=3.
-    Same-side continuation: NEVER (backtest showed -Rs 191k catastrophic).
+ENGINE FLIP  (opposite-side only, max 3/day, flips excluded from CB):
+  Path A (in-trade): elapsed>=30min + peak>=entry+15 + LTP<=entry+10 + K reversed
+  Path B (post-exit): within 60min of exit, K reverses direction on 15m
+  CE->PE: K falling AND 25 <= K <= 80
+  PE->CE: K rising AND K >= 38
 
-UNIVERSAL EXIT (applies to BOTH engines):
-  1. HARDSL  -25% of entry premium  (intra-bar)
-  2. VELVET ROPE (V2.5.7): as soon as premium touches entry+15, lock SL at
-     entry+2. Prevents winners from surrendering to -25% HARDSL.
-  3. RATCHET GATE (V2.5.7): after 30min elapsed AND premium touches entry+25,
-     promote SL from entry+2 to entry+15.
-  4. RUNNER STEP TRAIL: every +20pts peak move -> SL ratchets up +20 (one-way).
-  5. 15m option SMA8(low) close-below trail
-  6. Force close 15:25 IST
-  7. Circuit breaker: 4 daily NON-FLIP losses -> halt further entries
+UNIVERSAL EXIT (priority order, applies to all engines):
+  1. HARDSL      : -25% of entry premium (always armed from entry)
+  2. Velvet Rope : premium hits entry+12 -> SL locked at entry+2 immediately
+  3. Ratchet Gate: after 20min elapsed + peak >= entry+25 -> SL to entry+15
+  4. Runner Trail: SL ratchets +25pts per +25pts peak move (one-way only)
+  5. SMA8(low)   : 15m option close < SMA(8, low) trail
+  6. Force close : 15:25 IST
+  7. Circuit Bkr : 3 non-flip losses/day -> halt all entries
 
-CHOP FILTER (V2.5.5):
-  Block all entries (V2/V3/FLIP) when last closed 1h RSI is in [47, 53].
-  This is the "indecision band" - momentum signals fail when RSI hovers
-  near 50 without commitment.
+STRADDLE MONITORING (informational only — NOT a trade gate):
+  9:20 AM: record ATM straddle as reference
+  9:45 AM: morning Telegram — expansion/compression % vs reference
+  11:30AM: mid-day Telegram — current straddle vs reference
 
-NO BE ARMOR (removed in V2.5 - cost -1700pts).
-NO TIME_SL (replaced by time-ratchet in V2.5).
-NO SAME-SIDE FLIP CONTINUATION (rejected: -Rs 191k catastrophic).
-NO SKIP_HOUR_13 (rejected: -Rs 46k; backfires by killing profitable flips).
-NO SKIP_TUESDAYS (rejected: calendar-overfit; Chop C RSI band replaces it).
+OPTIONS VWAP (informational only — NOT a trade gate):
+  Computed from today's 5m bars with real volume for the active option
+  Shown at entry, in each pulse, and at exit for context
 
 =========================================================================
-PROGRESSIVE CHANGES (V2.2.2 production -> V2.5.5)
+FULL CHANGE HISTORY (V2.2.2 -> V2.5.9) — see CHANGE_HISTORY variable
 =========================================================================
-V2.3   + V3 cluster G/R levels + ADX regime classifier
-V2.4   + 15m SMA8(low) trail + ATR exits
-V2.5.0 + Hybrid V2+V3 entry + time-ratchet 90min/+20/+20
-V2.5.1 + V2 PE_floor=25, no CE cap, V2-priority same-bar
-V2.5.2 + flip rule (Path A in-trade + Path B post-close, opposite-side only)
-V2.5.3 + V3 promote singletons; HARDSL -35% -> -25%
-V2.5.4 + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
-V2.5.5 + CHOP_FILTER (RSI [47,53] band block)
-V2.5.6 + V3 PDC contamination fix (motivated by 2026-05-18 paper PE loss)
-          Fix A: Exclude PDC from clustering sources
-          Fix B: Require min 25pt buffer between G/R and PDC
-          Backtest: +Rs 13,127 (+3.52%), MaxDD -19%
-V2.5.7 + Velvet Rope immediate protection: SL to entry+2 when premium hits entry+15
-          Accelerated Ratchet Gate: after 30min + entry+25, promote SL to entry+15
-          Ratchet time window: 90min -> 30min
-          Backtest: +Rs 1,14,324 (+29.7%), WR 35.7% -> 55.4%
-          Trade-off: Red months 5/18 -> 10/18, MaxDD -1,331 -> -1,885
-
-UNDISCUSSED DECISIONS: NONE.
 
 =========================================================================
 DATA PROVENANCE
 =========================================================================
-- Nifty 1h: kite.historical_data("NIFTY 50", 30 days back, "60minute")
-  Adds: SMA20, SMA50, slopes, ADX, MACD, RSI (V2.5.5: RSI added)
-- Nifty 15m: kite.historical_data("NIFTY 50", 10 days back, "15minute")
-  Adds: StochRSI K
-- Option 15m: kite.historical_data(option_token, 10 days back, "15minute")
-- Levels: prior day's 1h H/L/C + 20-bar swing pivots + round 50/100
-- Closed-bar semantics: iloc[-2] for all signal evaluation
+- Nifty 1h : kite.historical_data(256265, 30d back, "60minute")
+             Adds: SMA20, SMA50, SMA20_slope, SMA50_slope, ADX, MACD, RSI
+- Nifty 15m: kite.historical_data(256265, 10d back, "15minute")
+             Adds: StochRSI K
+- Nifty 5m : kite.historical_data(256265, 3d back, "5minute") — spot price
+- Option 15m: kite.historical_data(opt_token, 10d back, "15minute") — SMA8(low) trail
+- Option 5m : kite.historical_data(opt_token, 3d back, "5minute")  — VWAP
+- Levels    : prior day 1h H/L/C + 20-bar swing pivots + round 50/100
+- Closed-bar semantics: iloc[-2] for ALL signal evaluation (no lookahead)
 
+UNDISCUSSED DECISIONS: NONE.
 =========================================================================
 """
 import os
@@ -171,6 +153,123 @@ try:
     GITHUB_PAT = _ghpat
 except (ImportError, AttributeError):
     GITHUB_PAT = None
+
+# =========================================================================
+# STRATEGY BOX + CHANGE HISTORY  (logged to file + sent via Telegram at boot)
+# =========================================================================
+STRATEGY_BOX = """
++========================================================================+
+| ORION V2.5.9 — STRATEGY DESIGN                                         |
+| Backtest: 357 trades | PnL Rs +6,70,425 | WR 66.9% | MaxDD -1,485     |
++========================================================================+
+| ENGINE V2 (fires every 15m close, V2 priority over V3 same-bar)        |
+|   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
+|        RSI>53 | MACD bull | premium 30-180                             |
+|   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
+|        RSI<47 | MACD bear | premium 30-180                             |
+|                                                                         |
+| ENGINE V3 (15m G/R cluster break/reject)                               |
+|   Grade A (>=3 source kinds) / Grade B (>=2)                           |
+|   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
+|   Regime gate: BULL/BEAR/TRANSITION only                               |
+|                                                                         |
+| ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
+|   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
+|   Path B (post-exit): K reversal within 60min                          |
+|                                                                         |
+| UNIVERSAL EXIT (priority order):                                        |
+|   1. HARDSL -25%  2. Velvet Rope entry+12->SL entry+2                 |
+|   3. Ratchet 20min+entry+25->SL entry+15  4. Runner +25/+25           |
+|   5. SMA8(low) trail  6. Force close 15:25  7. CB=3 non-flip losses   |
+|                                                                         |
+| INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
++========================================================================+
+"""
+
+CHANGE_HISTORY = """
+=== ORION CHANGE HISTORY (V2.2.2 -> V2.5.9) ===
+
+V2.2.2 [PRODUCTION BASELINE — T10]
+  Entry : 1h SMA20/50 regime + 15m StochRSI K (CE>=38 rising, PE<=80 falling)
+  Exit  : HARDSL -35%, TIME_SL 210min/-20%, BE +15% -> option SMA8(low) trail
+  CB=2, 1 lot, no flip, no V3, no chop filter
+
+V2.3  [+V3 CLUSTER LEVELS]
+  + PDH/PDL/round_50/round_100/PDC/1h swing pivots clustered within 20pts
+  + Grade A (>=3 source kinds) / Grade B (>=2)
+  + ADX regime classifier (BULL/BEAR/CHOP/TRANSITION)
+
+V2.4  [+EXIT UPGRADES]
+  + 15m option SMA8(low) trail (KEPT in all future versions)
+  + ATR-based exits (REMOVED — not robust enough)
+  + BE armor at +15% (REMOVED later — net negative in backtest)
+
+V2.5.0  [HYBRID V2+V3 + TIME-RATCHET]
+  + Hybrid V2+V3 entry (V2 priority on same-bar tiebreak)
+  + Time-ratchet exit: 90min / +20 step
+
+V2.5.1  [ENTRY REFINEMENT]
+  + V2 PE_floor=25 (K>=25 required for PE entry)
+  + V2 CE: no upper K cap (cap tested and REJECTED — hurts WR)
+  + V2 priority confirmed: +Rs 52k vs V3-priority
+
+V2.5.2  [FLIP RULE +Rs 130k]
+  + Path A flip (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10 + K reversed
+  + Path B flip (post-exit): K reversal within 60min
+  + Opposite-side only (same-side continuation REJECTED: -Rs 191k CATASTROPHIC)
+  + CE->PE: K falling, 25<=K<=80 | PE->CE: K rising, K>=38
+
+V2.5.3  [V3 SINGLETONS + HARDSL LOCKED]
+  + Promoted singletons: PDH/PDL/round_100(+-200 PDC)/swing pivots standalone Grade B
+  + HARDSL locked at -25% (swept -35% to -15%; -25% optimal)
+  + PnL Rs +3,14,418
+
+V2.5.4  [FLIP CAP]
+  + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
+  + PnL Rs +3,23,851
+
+V2.5.5  [CHOP FILTER +Rs 49k]
+  + RSI [47,53] indecision band blocks ALL entries
+  + PnL Rs +3,72,598
+
+V2.5.6  [V3 PDC CONTAMINATION FIX — LOCKED Rs 3,85,724 / WR 35.7%]
+  + Exclude PDC from clustering (PDC is reference, not tradeable level)
+  + G/R require >=25pt buffer from PDC (motivated by 2026-05-18 bad paper trade)
+  + PnL Rs +3,85,724 / MaxDD -1,331 / Red 5/18
+
+V2.5.7  [VELVET ROPE + RATCHET +Rs 1,14,324 / WR 35.7%->55.4%]
+  + Velvet Rope: premium hits entry+15 -> SL immediately to entry+2
+  + Ratchet Gate: 30min elapsed + entry+25 -> SL to entry+15
+  + Runner Trail: +20 per +20pts peak (one-way)
+  + Trade-off: Red months 5->10/18, MaxDD -1,331->-1,885
+
+V2.5.8  [K EXTREME + FULL SMA ALIGNMENT]
+  + K extreme filter: CE entry only if K<25 recently (3 bars); PE if K>75 recently
+  + Full SMA alignment: CE needs close>SMA20>SMA50 (was just close>SMA20)
+
+V2.5.9  [CURRENT LOCKED — Rs 6,70,425 / WR 66.9% / 357 trades]
+  + RSI DIRECTIONAL GATE replaces RSI [47,53] chop filter:
+      CE: 1h RSI>53 required | PE: 1h RSI<47 required
+  + MACD 1h alignment: CE needs MACD_line>signal; PE needs MACD_line<signal
+  + Premium gate: 30<=entry_LTP<=180 (blocks deep OTM and IV-spike entries)
+  + Tightened exit params: RI=12 (was 15), RT=20 (was 30), RS=25 (was 20)
+  + CB=3 (was 4)
+  + Straddle monitoring: informational Telegram at 9:45 and 11:30
+  + Options VWAP: informational context at entry/pulse/exit
+
+=== REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
+  SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
+  SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
+  ADX<20 filter        : -Rs 16k
+  ADX<25 filter        : -Rs 34k
+  BE armor at +15%     : net negative
+  Same-side flip       : -Rs 191k CATASTROPHIC
+  REVERSAL_FLIP=True   : WR 12% vs 33%
+  K cap on CE          : hurts WR (no cap is better)
+  V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
+  V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
+                         halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+"""
 
 # =========================================================================
 # CONFIG
@@ -883,14 +982,18 @@ def fmt_boot(target_expiry, levels):
         f"   🟢 G (resistance above PDC): {g_str}\n"
         f"   🔴 R (support below PDC):    {r_str}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📥 <b>V2 ENTRY CONDITIONS</b>\n"
+        f"   🟢 CE: 1h close&gt;SMA20&gt;SMA50 | K&gt;={STOCHRSI_CE_LO} rising | K&lt;{K_OVERSOLD_THRESH} recently | RSI&gt;{RSI_CE_MIN} | MACD bull | prem {PREMIUM_MIN}-{PREMIUM_MAX}\n"
+        f"   🔴 PE: 1h close&lt;SMA20&lt;SMA50 | K&lt;={STOCHRSI_PE_HI} falling K&gt;={V2_K_FLOOR_PE} | K&gt;{K_OVERBOUGHT_THRESH} recently | RSI&lt;{RSI_PE_MAX} | MACD bear | prem {PREMIUM_MIN}-{PREMIUM_MAX}\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🛡 <b>EXIT PARAMS</b>\n"
         f"   🛑 HARDSL: <b>-{int(HARDSL_PCT*100)}%</b> on premium\n"
-        f"   📉 Trail: 15m option SMA({SMA_TRAIL_PERIOD}, low)\n"
-        f"   ⏱️ Ratchet: after {RATCHET_TIME_MIN}min, arm entry+{RATCHET_INITIAL_PTS}, step +{RATCHET_STEP_PTS}\n"
+        f"   🎯 Velvet Rope: entry+{RATCHET_INITIAL_PTS} hit → SL to entry+2\n"
+        f"   ⏱️ Ratchet Gate: {RATCHET_TIME_MIN}min + entry+25 → SL to entry+15\n"
+        f"   📈 Runner Trail: +{RATCHET_STEP_PTS}pts peak → SL +{RATCHET_STEP_PTS}pts\n"
+        f"   📉 SMA Trail: 15m option SMA({SMA_TRAIL_PERIOD}, low)\n"
         f"   ⛔ Force close: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
-        f"   🌊 RSI gate: CE entry needs RSI &gt;{RSI_CE_MIN}, PE needs RSI &lt;{RSI_PE_MAX}\n"
-        f"   🔧 V3 PDC fix: exclude PDC from clusters; min {V3_MIN_BUFFER_FROM_PDC}pt buffer for G/R\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"<i>CSV:</i> <code>{tg_escape(CSV_FN)}</code>\n"
         f"<i>Log:</i> <code>{tg_escape(LOG_FN)}</code>"
@@ -1589,8 +1692,15 @@ def main():
                 hour=GAP_SUPPRESS_UNTIL_HOUR, minute=GAP_SUPPRESS_UNTIL_MIN, second=0, microsecond=0)
             linfo(f"[GAP] {gap*100:+.2f}% gap; suppressing entries until {DAY.gap_suppress_until.strftime('%H:%M')}")
 
+    # ---- Log strategy box + change history to file (full detail, no length limit) ----
+    for line in STRATEGY_BOX.splitlines():
+        linfo(line)
+    for line in CHANGE_HISTORY.splitlines():
+        linfo(line)
+
     # ---- Boot Telegram ----
     TG.send(fmt_boot(target_expiry, DAY.levels))
+    TG.send(f"<b>📋 CHANGE HISTORY & STRATEGY — ORION {VERSION}</b>\n<pre>{CHANGE_HISTORY[:3800]}</pre>")
 
     # ---- Live state + first pulse ----
     c1h_now    = float(df1h['close'].iloc[-2])
