@@ -88,11 +88,18 @@ with open(OUT, "w") as f:
 print(f"\nWritten to {OUT}")
 
 repo = "/home/Selukar/Amol"
+import sys; sys.path.insert(0, repo)
+try:
+    from credentials import GITHUB_PAT as _PAT
+    remote = f"https://{_PAT}@github.com/amolselukar/Amol.git"
+except (ImportError, AttributeError):
+    remote = "origin"
+
 subprocess.run(["git", "add", OUT], cwd=repo, check=True)
 r = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
 if r.returncode != 0:
     subprocess.run(["git", "commit", "-m", "optdata_inspect: daily_option_data structure dump"], cwd=repo, check=True)
-    subprocess.run(["git", "push", "origin", BRANCH], cwd=repo, check=True)
+    subprocess.run(["git", "push", remote, BRANCH], cwd=repo, check=True)
     print("Pushed to GitHub.")
 else:
-    print("No changes to push.")
+    print("No changes to push (already up to date).")
