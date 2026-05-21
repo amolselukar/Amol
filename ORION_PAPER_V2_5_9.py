@@ -1718,8 +1718,23 @@ def main():
                             DAY.losses, DAY.flips_today, DAY.halted, rsi_blk])
                 last_csv_at = time.time()
 
-            # ---- Pulse every 15 min ----
+            # ---- Diagnostic log every 15 min (for post-analysis of why signals fired/blocked) ----
             if time.time() - last_pulse_at >= PULSE_INTERVAL_SEC:
+                rsi_log = float(df1h['RSI'].iloc[-2]) if 'RSI' in df1h.columns and not pd.isna(df1h['RSI'].iloc[-2]) else float('nan')
+                macd_l  = float(df1h['MACD_line'].iloc[-2]) if 'MACD_line' in df1h.columns and not pd.isna(df1h['MACD_line'].iloc[-2]) else float('nan')
+                macd_s  = float(df1h['MACD_sig'].iloc[-2])  if 'MACD_sig'  in df1h.columns and not pd.isna(df1h['MACD_sig'].iloc[-2])  else float('nan')
+                ce_reg  = (c1h > sma20) and (sma20 > sma50)
+                pe_reg  = (c1h < sma20) and (sma20 < sma50)
+                k_extr_ce = k_was_extreme_live('CE', df15)
+                k_extr_pe = k_was_extreme_live('PE', df15)
+                linfo(
+                    f"[DIAG] spot={spot:.0f} c1h={c1h:.0f} sma20={sma20:.0f} sma50={sma50:.0f} "
+                    f"K={K:.1f}({'↑' if K>K_prev else '↓'}) RSI={rsi_log:.1f} "
+                    f"MACD={'bull' if macd_l>macd_s else 'bear'}({macd_l:.1f}/{macd_s:.1f}) "
+                    f"regime={'CE' if ce_reg else 'PE' if pe_reg else 'NEUT'} "
+                    f"K_extr={'CE' if k_extr_ce else ''}{'PE' if k_extr_pe else ''} "
+                    f"halted={DAY.halted} active={POS.active}"
+                )
                 TG.send(fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, DAY.regime))
                 last_pulse_at = time.time()
 
