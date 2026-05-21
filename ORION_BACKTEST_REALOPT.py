@@ -246,9 +246,12 @@ def check_entry(bar15_idx, df15_today, df1h_prior, K_series_today, p):
             sig_pe = False
 
     side = 'CE' if sig_ce else ('PE' if sig_pe else None)
-    detail = (f"SMA({'ok' if ce_sma else 'NO'}/{('ok' if pe_sma else 'NO')}) "
-              f"K={Kn:.1f}({'↑' if Kn>Kp else '↓'}) RSI={rsi_val:.1f if rsi_val else 'N/A'} "
-              f"MACD={'bull' if (ml and ms and ml>ms) else 'bear' if (ml and ms and ml<ms) else 'N/A'}")
+    rsi_str  = f"{rsi_val:.1f}" if (rsi_val is not None and not pd.isna(rsi_val)) else 'N/A'
+    macd_str = ('bull' if (ml is not None and ms is not None and not pd.isna(ml) and ml > ms)
+                else 'bear' if (ml is not None and ms is not None and not pd.isna(ml) and ml < ms)
+                else 'N/A')
+    detail = (f"SMA({'ok' if ce_sma else 'NO'}/{'ok' if pe_sma else 'NO'}) "
+              f"K={Kn:.1f}({'↑' if Kn>Kp else '↓'}) RSI={rsi_str} MACD={macd_str}")
     return side, detail
 
 # ─── Run one version on all days ─────────────────────────────────────
