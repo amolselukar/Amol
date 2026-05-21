@@ -889,7 +889,7 @@ def fmt_boot(target_expiry, levels):
         f"   ⏱️ Ratchet: after {RATCHET_TIME_MIN}min, arm entry+{RATCHET_INITIAL_PTS}, step +{RATCHET_STEP_PTS}\n"
         f"   ⛔ Force close: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
-        f"   🌊 RSI gate: CE entry needs RSI>{RSI_CE_MIN}, PE needs RSI<{RSI_PE_MAX}\n"
+        f"   🌊 RSI gate: CE entry needs RSI &gt;{RSI_CE_MIN}, PE needs RSI &lt;{RSI_PE_MAX}\n"
         f"   🔧 V3 PDC fix: exclude PDC from clusters; min {V3_MIN_BUFFER_FROM_PDC}pt buffer for G/R\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"<i>CSV:</i> <code>{tg_escape(CSV_FN)}</code>\n"
