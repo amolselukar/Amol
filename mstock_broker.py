@@ -113,44 +113,25 @@ class MStockBroker:
             log.info("[mstock] Using cached token.")
             return True
         try:
-            import pyotp
-        except ImportError:
-            raise RuntimeError("pyotp not installed. pip install pyotp")
-
-        try:
-            # Step 1: login with credentials
             raw = self._client.login(
                 user_id=self._user_id,
                 password=self._password
             )
             resp = self._to_dict(raw)
-            log.info(f"[mstock] Login step1: {resp}")
+            log.info(f"[mstock] Login resp: status={resp.get('status')} "
+                     f"state={resp.get('data', {}).get('state')} "
+                     f"msg={resp.get('message')}")
 
-            # Extract request_token from login response
-            request_token = (resp.get('data', {}).get('request_token')
-                             or resp.get('request_token')
-                             or resp.get('requestToken')
-                             or resp.get('data', {}).get('requestToken', ''))
-
-            # Step 2: TOTP verification
-            totp_code = pyotp.TOTP(self._totp_sec).now()
-            raw2 = self._client.verify_totp(
-                _api_key=self._api_key,
-                _request_token=request_token,
-                _tOtp=totp_code
-            )
-            resp2 = self._to_dict(raw2)
-            log.info(f"[mstock] TOTP verify: {resp2}")
-
-            if resp2.get('status') in ('true', True, 'True', 'success', 'SUCCESS') \
-                    or resp2.get('success') is True:
+            # Type B: login returns jwtToken directly, state='live' means success
+            data = resp.get('data') or {}
+            if resp.get('status') in (True, 'true', 'True') and data.get('jwtToken'):
                 self._logged_in = True
                 self._cache_token()
-                log.info("[mstock] Login successful.")
+                log.info("[mstock] Login successful (Type B direct JWT).")
                 return True
-            else:
-                log.error(f"[mstock] TOTP verification failed: {resp2}")
-                return False
+
+            log.error(f"[mstock] Login failed: {resp}")
+            return False
 
         except Exception as e:
             log.error(f"[mstock] Login failed: {e}")
