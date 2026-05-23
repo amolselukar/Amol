@@ -1,9 +1,15 @@
-=== 24000 Zone OI/Volume Analysis — 2026-05-23 ===
+=== 24000 Zone Volume Analysis — 2026-05-22 ===
 
-No data found for today. Check if daily_option_data has today's files.
+  Strike  Side     Open     High      Low    Close      Volume
+--------------------------------------------------------------------
+   23700  CE      196.3    274.9     85.1    182.5  500,113,315
+   23700  PE      375.0    486.0     85.2    104.2  468,464,685
+   23800  CE      164.0    220.7     60.8    128.4  597,047,425
+   23800  PE      440.0    556.0    122.0    149.1  384,903,935
+   23900  CE      108.0    172.0     41.4     88.0  326,720,615
+   23900  PE      512.1    626.0    171.0    208.9  78,319,475
 
-DATA_DIR: /home/Selukar/daily_option_data
-
-Files found: 290
-
-Sample files: ['nifty_15m.csv', 'nifty_5m.csv', 'nifty_1h.csv', 'atm_tracker_5m.csv', '23450.csv', '23200.csv', '23550.csv', '23500.csv', '23350.csv', '23400.csv']
+=== CE/PE Volume Ratio (>1 = more call buying = resistance above) ===
+  23700: CE=500,113,315  PE=468,464,685  ratio=1.07
+  23800: CE=597,047,425  PE=384,903,935  ratio=1.55
+  23900: CE=326,720,615  PE=78,319,475  ratio=4.17
