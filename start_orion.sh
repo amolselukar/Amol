@@ -10,6 +10,13 @@
 LOG="/home/Selukar/orion_run.log"
 SCRIPT_DIR="/home/Selukar/Amol"
 
+# Weekend guard — exit silently on Sat (6) and Sun (7) IST
+DOW=$(TZ="Asia/Kolkata" date +%u)
+if [ "$DOW" -ge 6 ]; then
+    echo "[$(TZ="Asia/Kolkata" date '+%Y-%m-%d %H:%M:%S')] Weekend — ORION skipped (DOW=$DOW)" >> "$LOG"
+    exit 0
+fi
+
 echo "" >> "$LOG"
 echo "========================================" >> "$LOG"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] ORION START" >> "$LOG"
