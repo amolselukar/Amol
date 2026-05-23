@@ -421,6 +421,10 @@ CSV_FN  = f"Nifty_BarLevel_{VERSION.replace('.','_')}_{RUN_TS}.csv"
 LOG_FN  = f"Nifty_FlightRecorder_{VERSION.replace('.','_')}_{RUN_TS}.log"
 STATE_FN = f"state_{VERSION.replace('.','_')}.json"
 
+# ---- OI Plan (written by Optiondata_1.py + eod_analysis.py) ----
+_SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
+OI_PLAN_FILE  = os.path.join(_SCRIPT_DIR, "next_day_plan.json")
+
 # =========================================================================
 # LOGGING
 # =========================================================================
@@ -652,6 +656,96 @@ def cluster_levels(sources, radius=CLUSTER_RADIUS_PTS):
         grade = 'A' if n >= GRADE_A_MIN_SOURCES else ('B' if n >= GRADE_B_MIN_SOURCES else 'C')
         out.append({'center': round(center, 2), 'kinds': sorted(kinds), 'count': n, 'grade': grade})
     return out
+
+def load_oi_plan() -> Optional[dict]:
+    """
+    Load next_day_plan.json written by eod_analysis.py.
+    Returns plan dict or None if file missing/stale/expiry-day.
+    Stale = plan date is not yesterday (would be wrong levels).
+    """
+    if not os.path.exists(OI_PLAN_FILE):
+        return None
+    try:
+        with open(OI_PLAN_FILE) as f:
+            plan = json.load(f)
+        plan_date = plan.get("date", "")
+        today = datetime.now(IST).date()
+        yesterday = today - timedelta(days=1)
+        # Accept plan dated yesterday OR today (if run same morning)
+        if plan_date not in (str(yesterday), str(today)):
+            lwarn(f"[OI Plan] Stale plan ({plan_date}) — ignoring for today's levels")
+            return None
+        if plan.get("is_expiry_day"):
+            linfo("[OI Plan] Expiry day — OI plan loaded for info only, not V3 triggers")
+            plan["_info_only"] = True
+        return plan
+    except Exception as e:
+        lwarn(f"[OI Plan] Failed to load: {e}")
+        return None
+
+
+def _inject_oi_walls(levels: dict, plan: Optional[dict]):
+    """
+    Inject OI wall levels from next_day_plan.json into the V3 cluster list.
+    WALL (Grade A from OI) -> injected as Grade A cluster with kind 'OI_WALL'
+    SIGNIFICANT (Grade B) -> injected as Grade B cluster with kind 'OI_ZONE'
+    Skipped if plan is None, info_only (expiry day), or expiry_caution.
+    """
+    if plan is None or plan.get("_info_only") or plan.get("expiry_caution"):
+        return
+
+    pdc = levels.get("pdc", 0)
+    all_clusters = levels.get("all_clusters", [])
+
+    def _already_covered(strike):
+        for c in all_clusters:
+            if abs(c["center"] - strike) <= 30:  # 30pt merge radius for OI walls
+                return True
+        return False
+
+    added = []
+    for r in plan.get("resistance_levels", []):
+        s = float(r["strike"])
+        if s <= pdc:
+            continue  # resistance must be above PDC
+        if _already_covered(s):
+            linfo(f"[OI Plan] {s} CE {r['signal']} already in cluster — skipping inject")
+            continue
+        grade = r.get("grade", "B")
+        all_clusters.append({
+            "center": s, "kinds": ["OI_WALL" if grade == "A" else "OI_ZONE"],
+            "count": 1, "grade": grade,
+            "oi_signal": r["signal"], "ce_oi": r.get("ce_oi", 0),
+        })
+        added.append(f"R {s} [{r['signal']}]")
+
+    for sp in plan.get("support_levels", []):
+        s = float(sp["strike"])
+        if s >= pdc:
+            continue  # support must be below PDC
+        if _already_covered(s):
+            linfo(f"[OI Plan] {s} PE {sp['signal']} already in cluster — skipping inject")
+            continue
+        grade = sp.get("grade", "B")
+        all_clusters.append({
+            "center": s, "kinds": ["OI_WALL" if grade == "A" else "OI_ZONE"],
+            "count": 1, "grade": grade,
+            "oi_signal": sp["signal"], "pe_oi": sp.get("pe_oi", 0),
+        })
+        added.append(f"S {s} [{sp['signal']}]")
+
+    if added:
+        linfo(f"[OI Plan] Injected {len(added)} OI levels into V3: {added}")
+        # Re-evaluate G/R with OI walls included
+        buf = V3_MIN_BUFFER_FROM_PDC if V3_EXCLUDE_PDC_FROM_CLUSTERS else 0
+        above = [c for c in all_clusters if c["center"] > pdc + buf and c["grade"] in ("A","B")]
+        below = [c for c in all_clusters if c["center"] < pdc - buf and c["grade"] in ("A","B")]
+        above.sort(key=lambda c: (0 if c["grade"]=="A" else 1, abs(c["center"] - pdc)))
+        below.sort(key=lambda c: (0 if c["grade"]=="A" else 1, abs(c["center"] - pdc)))
+        levels["G"] = above[0] if above else levels.get("G")
+        levels["R"] = below[0] if below else levels.get("R")
+        levels["all_clusters"] = all_clusters
+
 
 def compute_levels_for_day(df1h_prior: pd.DataFrame, prior_day_ohlc):
     pdh = float(prior_day_ohlc['H'])
@@ -1781,6 +1875,36 @@ def main():
         pdc = float(df1h_prior['close'].iloc[-1])
         DAY.levels = compute_levels_for_day(df1h_prior, {'H':pdh,'L':pdl,'C':pdc})
         DAY.regime = classify_regime(df1h_prior.iloc[-1])
+
+        # ---- Load OI plan + inject walls into V3 ----
+        oi_plan = load_oi_plan()
+        if oi_plan:
+            _inject_oi_walls(DAY.levels, oi_plan)
+            exp_flag = ""
+            if oi_plan.get("is_expiry_day"):
+                exp_flag = " | EXPIRY DAY"
+            elif oi_plan.get("expiry_caution"):
+                exp_flag = f" | T-{oi_plan.get('days_to_expiry','?')} expiry caution"
+            plan_msg = (
+                f"<b>OI Plan for today</b>{exp_flag}\n"
+                f"ATM:{oi_plan.get('atm')} PCR:{oi_plan.get('pcr')} "
+                f"Bias:<b>{oi_plan.get('bias')}</b> MaxPain:{oi_plan.get('max_pain')}\n"
+            )
+            res = [f"{r['strike']}[{r['signal']}]" for r in oi_plan.get("resistance_levels", [])[:3]]
+            sup = [f"{s['strike']}[{s['signal']}]" for s in oi_plan.get("support_levels", [])[:3]]
+            if res:
+                plan_msg += f"Resistance: {' | '.join(res)}\n"
+            if sup:
+                plan_msg += f"Support: {' | '.join(sup)}\n"
+            if oi_plan.get("_info_only") or oi_plan.get("expiry_caution"):
+                plan_msg += "OI levels: INFORMATIONAL only (expiry caution)"
+            else:
+                plan_msg += f"V3 R={oi_plan.get('v3_resistance',[])} S={oi_plan.get('v3_support',[])}"
+            TG.send(plan_msg)
+            linfo(f"[OI Plan] PCR={oi_plan.get('pcr')} bias={oi_plan.get('bias')} "
+                  f"max_pain={oi_plan.get('max_pain')} expiry_caution={oi_plan.get('expiry_caution')}")
+        else:
+            linfo("[OI Plan] No valid plan found — running without OI levels (normal mode)")
     else:
         lwarn(f"Insufficient prior 1h history ({len(df1h_prior)} rows); V3 disabled today")
         DAY.levels = None
