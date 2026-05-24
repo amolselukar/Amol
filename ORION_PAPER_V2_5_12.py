@@ -487,6 +487,10 @@ def tg_escape(s) -> str:
 
 TG = TelegramManager(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID)
 
+# Bot-level stop flag and Telegram command offset (used by polling thread)
+_bot_stop_flag  = threading.Event()
+_tg_cmd_offset  = 0
+
 # =========================================================================
 # WATCHDOG
 # =========================================================================
@@ -1885,11 +1889,94 @@ def is_after_market_close(now):
     end = now.replace(hour=15, minute=30, second=0, microsecond=0)
     return now > end
 
+# =========================================================================
+# TELEGRAM COMMAND HANDLERS  (/status /pnl /stop /help)
+# =========================================================================
+def _cmd_status():
+    if not POS.active:
+        TG.send("No active position right now.")
+        return
+    cur = ltp(POS.symbol)
+    unreal = ((cur - POS.entry_premium) * LOTS_PER_TRADE * LOT_SIZE) if cur else 0
+    unreal_ps = (cur - POS.entry_premium) if cur else 0
+    active_sl = POS.tr_sl if POS.tr_armed else POS.sl_current
+    TG.send(
+        f"📊 <b>LIVE POSITION</b>\n"
+        f"━━━━━━━━━━━━━━━━━\n"
+        f"  Symbol : <code>{POS.symbol}</code>\n"
+        f"  Side   : <b>{POS.side}</b>  |  Engine: {POS.engine}\n"
+        f"  Entry  : ₹{POS.entry_premium:.2f}  @  {POS.entry_time.strftime('%H:%M') if POS.entry_time else '-'}\n"
+        f"  LTP    : ₹{cur:.2f}\n"
+        f"  Unreal : {unreal_ps:+.2f}/sh  (₹{unreal:+.0f} total)\n"
+        f"  SL now : ₹{active_sl:.2f}  |  Peak: ₹{POS.peak_premium:.2f}\n"
+        f"  Elapsed: {POS.elapsed_min():.0f} min"
+    )
+
+def _cmd_pnl():
+    closed_pnl = sum(t['pnl'] for t in DAY.trades_today) * LOTS_PER_TRADE * LOT_SIZE
+    open_pnl   = 0.0
+    if POS.active:
+        cur = ltp(POS.symbol)
+        if cur:
+            open_pnl = (cur - POS.entry_premium) * LOTS_PER_TRADE * LOT_SIZE
+    total = closed_pnl + open_pnl
+    TG.send(
+        f"💰 <b>TODAY'S P&amp;L</b>\n"
+        f"━━━━━━━━━━━━━━━━━\n"
+        f"  Closed trades : {len(DAY.trades_today)}  |  ₹{closed_pnl:+.0f}\n"
+        f"  Open P&amp;L      : ₹{open_pnl:+.0f}\n"
+        f"  Total         : ₹{total:+.0f}\n"
+        f"  Losses        : {DAY.losses}/{CIRCUIT_BREAKER}  |  Halted: {DAY.halted}"
+    )
+
+def _cmd_stop():
+    TG.send("🛑 <b>Stop command received.</b> Closing any open position and shutting down...")
+    if POS.active:
+        cur = ltp(POS.symbol) or POS.entry_premium
+        close_trade("TG_STOP", cur)
+    _bot_stop_flag.set()
+
+def _tg_poll_commands():
+    """Background thread: poll Telegram getUpdates every 3 seconds for bot commands."""
+    global _tg_cmd_offset
+    poll_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getUpdates"
+    while not _bot_stop_flag.is_set():
+        try:
+            r = requests.get(poll_url,
+                             params={"offset": _tg_cmd_offset, "timeout": 2},
+                             timeout=6)
+            if r.status_code == 200:
+                for upd in r.json().get("result", []):
+                    _tg_cmd_offset = upd["update_id"] + 1
+                    msg  = upd.get("message", {})
+                    text = (msg.get("text") or "").strip().lower()
+                    cid  = str(msg.get("chat", {}).get("id", ""))
+                    if cid != str(TELEGRAM_CHAT_ID):
+                        continue  # ignore messages from other chats
+                    if text in ("/status", "/pos"):
+                        _cmd_status()
+                    elif text == "/pnl":
+                        _cmd_pnl()
+                    elif text == "/stop":
+                        _cmd_stop()
+                    elif text == "/help":
+                        TG.send("🤖 <b>ORION commands</b>\n"
+                                "/status — live position details\n"
+                                "/pnl    — today's P&amp;L summary\n"
+                                "/stop   — close position &amp; shut down bot\n"
+                                "/help   — this message")
+        except Exception:
+            pass
+        time.sleep(3)
+
+
 def main():
     csv_init()
     load_state()
     wd_thread = threading.Thread(target=WD.run, daemon=True)
     wd_thread.start()
+    tg_cmd_thread = threading.Thread(target=_tg_poll_commands, daemon=True)
+    tg_cmd_thread.start()
 
     # ---- Resolve expiry + strikes ----
     target_expiry, strikes, expiry_lookup = resolve_expiry_and_strikes()
@@ -1981,10 +2068,18 @@ def main():
     TG.send(fmt_live_state(spot_now, c1h_now, sma20_now, sma50_now, K_now, K_prev, DAY.regime))
 
     # ---- Main loop ----
-    last_pulse_at = 0
-    last_csv_at = 0
+    last_pulse_at   = 0
+    last_csv_at     = 0
+    last_pos_sync   = 0
     while True:
         try:
+            # Check if /stop command was received via Telegram
+            if _bot_stop_flag.is_set():
+                linfo("Bot stop flag set (Telegram /stop). Exiting.")
+                TG.send(fmt_eod_summary())
+                WD.stop()
+                return
+
             WD.beat()
             now = datetime.now(IST)
 
@@ -2062,6 +2157,22 @@ def main():
                         f"   vs Open: {ref_str}  {pct_str}"
                     )
                     DAY.straddle_midday_sent = True
+
+            # ---- Position sync: detect manual exit on mStock (every 60 sec) ----
+            if POS.active and EXECUTION_BROKER == "mstock_live" and \
+               time.time() - last_pos_sync >= 60:
+                last_pos_sync = time.time()
+                try:
+                    broker = _get_mstock()
+                    if broker:
+                        ms_sym = _mstock_option_symbol(POS.symbol)
+                        net = broker.net_qty(ms_sym)
+                        if net == 0:
+                            lwarn(f"[sync] {ms_sym} net_qty=0 on exchange — manual exit detected")
+                            cur_ltp = ltp(POS.symbol) or POS.entry_premium
+                            close_trade("MANUAL_EXIT", cur_ltp)
+                except Exception as e:
+                    lwarn(f"[sync] position sync error: {e}")
 
             # ---- ACTIVE TRADE: check exits ----
             if POS.active:
