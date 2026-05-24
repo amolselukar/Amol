@@ -309,7 +309,7 @@ MODE    = "PAPER"   # PAPER -> no real orders placed
 # ---- Execution broker ----
 # "kite_paper"   : paper mode, no real orders (current default)
 # "mstock_live"  : live orders via mStock API (activate when going live)
-EXECUTION_BROKER = "kite_paper"
+EXECUTION_BROKER = "mstock_live"
 LOT_SIZE = 65
 LOTS_PER_TRADE = 2
 IST = pytz.timezone("Asia/Kolkata")
@@ -1537,7 +1537,7 @@ def open_trade(sig, spot, expiry_lookup):
     if not (PREMIUM_MIN <= cur_ltp <= PREMIUM_MAX):
         lwarn(f"Premium {cur_ltp:.2f} outside gate [{PREMIUM_MIN},{PREMIUM_MAX}]; skipping entry")
         return False
-    POS.active        = True
+    # Stage fields before confirming order (do not set POS.active yet for live mode)
     POS.engine        = sig['engine']
     POS.engine_detail = sig['detail']
     POS.side          = side
@@ -1568,29 +1568,58 @@ def open_trade(sig, spot, expiry_lookup):
             DAY.fired_levels.add(sig['level_obj']['center'])
     # V2.5.9+: compute option VWAP for informational context
     POS.entry_vwap = compute_option_vwap(token)
-    save_state()
 
-    # ---- Live execution via mStock ----
+    # ---- Live execution via mStock — abort entirely on any BUY failure ----
     if EXECUTION_BROKER == "mstock_live":
         broker = _get_mstock()
-        if broker:
-            ms_sym = _mstock_option_symbol(symbol)
-            qty = LOTS_PER_TRADE * LOT_SIZE
-            oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
-            if oid:
-                status, fill = broker.wait_for_fill(oid, timeout_sec=10)
-                if status == "COMPLETE" and fill > 0:
-                    POS.entry_premium  = fill          # use actual fill price
-                    POS.hardsl_premium = fill * (1 - HARDSL_PCT)
-                    POS.sl_current     = POS.hardsl_premium
-                    POS.peak_premium   = fill
-                    linfo(f"[mstock] BUY filled: {ms_sym} qty={qty} fill={fill:.2f} order={oid}")
-                else:
-                    lwarn(f"[mstock] BUY not filled ({status}). Trading on LTP {cur_ltp:.2f}.")
+        if not broker:
+            lwarn("[mstock] Broker unavailable — BUY aborted, no position opened.")
+            TG.send(f"⚠️ mStock broker unavailable. BUY aborted ({symbol}).")
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+            POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
+            POS.hardsl_premium = 0.0; POS.sl_current = 0.0
+            return False
+        ms_sym = _mstock_option_symbol(symbol)
+        qty = LOTS_PER_TRADE * LOT_SIZE
+        oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
+        if not oid:
+            lwarn("[mstock] BUY place_order returned None — aborting trade.")
+            TG.send(f"⚠️ mStock BUY FAILED ({ms_sym}). No position opened.")
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+            POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
+            POS.hardsl_premium = 0.0; POS.sl_current = 0.0
+            return False
+        status, fill = broker.wait_for_fill(oid, timeout_sec=15)
+        if status == "TIMEOUT":
+            broker.cancel_order(oid)
+            time.sleep(2)
+            status2, fill2 = broker.order_status(oid)
+            if status2 == "COMPLETE" and fill2 and fill2 > 0:
+                fill = fill2; status = "COMPLETE"
             else:
-                lwarn("[mstock] place_order returned None. Trading on LTP.")
-        else:
-            lwarn("[mstock] Broker unavailable. Entry recorded at LTP (no real order).")
+                lwarn(f"[mstock] BUY timeout, order cancelled — aborting trade ({ms_sym}).")
+                TG.send(f"⚠️ mStock BUY TIMEOUT ({ms_sym}). Order cancelled, no position.")
+                POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+                POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
+                POS.hardsl_premium = 0.0; POS.sl_current = 0.0
+                return False
+        if status != "COMPLETE" or not fill or fill <= 0:
+            lwarn(f"[mstock] BUY rejected/no fill (status={status}) — aborting trade.")
+            TG.send(f"⚠️ mStock BUY REJECTED ({ms_sym}, status={status}). No position opened.")
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+            POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
+            POS.hardsl_premium = 0.0; POS.sl_current = 0.0
+            return False
+        # BUY confirmed — update with actual fill price
+        POS.entry_premium  = fill
+        POS.hardsl_premium = fill * (1 - HARDSL_PCT)
+        POS.sl_current     = POS.hardsl_premium
+        POS.peak_premium   = fill
+        linfo(f"[mstock] BUY filled: {ms_sym} qty={qty} fill={fill:.2f} order={oid}")
+
+    # Position confirmed (paper or live fill) — mark active
+    POS.active = True
+    save_state()
 
     msg = fmt_entry()
     linfo(f"ENTRY: {POS.symbol} @ {POS.entry_premium:.2f}  engine={POS.engine}  "
@@ -1627,26 +1656,38 @@ def close_trade(reason, exit_price):
         'exit_price': exit_price,
         'engine': POS.engine,
     }
-    # ---- Live execution via mStock ----
+    # ---- Live execution via mStock — retry SELL 3×, keep position open if all fail ----
     if EXECUTION_BROKER == "mstock_live":
         broker = _get_mstock()
-        if broker:
-            ms_sym = _mstock_option_symbol(POS.symbol)
-            qty = LOTS_PER_TRADE * LOT_SIZE
+        if not broker:
+            lwarn("[mstock] Broker unavailable on SELL — position still OPEN on exchange!")
+            TG.send(f"🚨 CRITICAL: mStock broker unavailable on SELL for {POS.symbol}. "
+                    f"Position still open on exchange! MANUAL ACTION REQUIRED.")
+            return  # keep POS.active=True so next loop retries exit
+        ms_sym = _mstock_option_symbol(POS.symbol)
+        qty = LOTS_PER_TRADE * LOT_SIZE
+        sell_filled = False
+        for attempt in range(1, 4):
             oid = broker.place_order("SELL", ms_sym, qty, "MARKET")
             if oid:
-                status, fill = broker.wait_for_fill(oid, timeout_sec=10)
-                if status == "COMPLETE" and fill > 0:
-                    exit_price     = fill
-                    pnl_per_share  = exit_price - POS.entry_premium
-                    msg = fmt_exit(reason, exit_price, pnl_per_share)   # rebuild with real fill
+                status, fill = broker.wait_for_fill(oid, timeout_sec=15)
+                if status == "COMPLETE" and fill and fill > 0:
+                    exit_price    = fill
+                    pnl_per_share = exit_price - POS.entry_premium
+                    msg = fmt_exit(reason, exit_price, pnl_per_share)  # rebuild with real fill
                     linfo(f"[mstock] SELL filled: {ms_sym} qty={qty} fill={fill:.2f} order={oid}")
-                else:
-                    lwarn(f"[mstock] SELL not filled ({status}). Exit recorded at {exit_price:.2f}.")
+                    sell_filled = True
+                    break
+                lwarn(f"[mstock] SELL attempt {attempt}/3: status={status}. Retrying in 5s...")
             else:
-                lwarn("[mstock] SELL place_order failed. Exit recorded at LTP.")
-        else:
-            lwarn("[mstock] Broker unavailable. Exit recorded at LTP (no real order).")
+                lwarn(f"[mstock] SELL attempt {attempt}/3: place_order returned None. Retrying in 5s...")
+            if attempt < 3:
+                time.sleep(5)
+        if not sell_filled:
+            lwarn(f"[mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! ({ms_sym})")
+            TG.send(f"🚨 CRITICAL: mStock SELL FAILED for {ms_sym} after 3 attempts. "
+                    f"Position still open on exchange! MANUAL ACTION REQUIRED.")
+            return  # keep POS.active=True — main loop will keep trying to exit
 
     linfo(f"EXIT: {POS.symbol} @ {exit_price:.2f} reason={reason} pnl/sh={pnl_per_share:+.2f}"
           f" is_flip={is_flip} losses={DAY.losses}/{CIRCUIT_BREAKER}")
