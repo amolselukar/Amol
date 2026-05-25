@@ -141,24 +141,36 @@ def auto_login():
 
         print("3️⃣  Entering TOTP...")
         token = pyotp.TOTP(KITE_TOTP_SECRET).now()
+        totp_entered = False
         try:
             for inp in driver.find_elements(By.TAG_NAME, "input"):
-                if inp.get_attribute("type") in ["text", "tel", "number"] and inp.is_displayed():
+                t = inp.get_attribute("type") or ""
+                if t in ["text", "tel", "number", "password"] and inp.is_displayed():
                     if inp.get_attribute("id") not in ["userid", "password"]:
+                        inp.clear()
                         inp.send_keys(token)
-                        inp.send_keys(Keys.ENTER)
+                        totp_entered = True
                         break
         except Exception:
+            pass
+        if not totp_entered:
+            # Fallback: JS inject into first non-login input
             driver.execute_script(f"""
-                var inputs = document.querySelectorAll('input[type=text],input[type=tel]');
+                var inputs = document.querySelectorAll('input');
                 for(var i=0;i<inputs.length;i++){{
-                    if(inputs[i].id!=='userid' && inputs[i].id!=='password'){{
-                        inputs[i].value='{token}';
+                    var id=inputs[i].id;
+                    if(id!=='userid' && id!=='password' && inputs[i].offsetParent!==null){{
+                        var setter=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;
+                        setter.call(inputs[i],'{token}');
                         inputs[i].dispatchEvent(new Event('input',{{bubbles:true}}));
+                        inputs[i].dispatchEvent(new Event('change',{{bubbles:true}}));
                         break;
                     }}
                 }}
             """)
+        time.sleep(0.5)
+        # Click Continue/Submit button
+        driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
 
         print("⏳ Waiting for request_token...")
         wait.until(EC.url_contains("request_token="))
