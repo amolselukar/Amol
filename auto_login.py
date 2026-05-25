@@ -64,29 +64,39 @@ def auto_login():
         wait    = WebDriverWait(driver, 20)
         actions = ActionChains(driver)
 
+        # Use JS to fill fields — avoids native keyboard events that trigger Chrome crash
+        def js_set_value(element_id, value):
+            driver.execute_script("""
+                var el = document.getElementById(arguments[0]);
+                var setter = Object.getOwnPropertyDescriptor(
+                    window.HTMLInputElement.prototype, 'value').set;
+                setter.call(el, arguments[1]);
+                el.dispatchEvent(new Event('input',  {bubbles:true}));
+                el.dispatchEvent(new Event('change', {bubbles:true}));
+            """, element_id, value)
+
         print("1️⃣  Entering User ID...")
-        uid = wait.until(EC.visibility_of_element_located((By.ID, "userid")))
-        uid.clear()
-        uid.send_keys(KITE_USER_ID)
-        uid.send_keys(Keys.ENTER)
+        wait.until(EC.visibility_of_element_located((By.ID, "userid")))
+        js_set_value("userid", KITE_USER_ID)
+        time.sleep(1)
+        # Click continue button
+        driver.execute_script(
+            "document.querySelector('button[type=\"submit\"]').click();"
+        )
 
         print("2️⃣  Entering Password...")
-        pwd = wait.until(EC.visibility_of_element_located((By.ID, "password")))
-        pwd.clear()
-        pwd.send_keys(KITE_PASSWORD)
-        try:
-            btn = driver.find_element(By.XPATH, "//button[@type='submit']")
-            driver.execute_script("arguments[0].click();", btn)
-            print("    👉 Clicked Login Button via JS")
-        except Exception:
-            pwd.send_keys(Keys.ENTER)
-            print("    👉 Pressed Enter")
+        wait.until(EC.visibility_of_element_located((By.ID, "password")))
+        js_set_value("password", KITE_PASSWORD)
+        time.sleep(1)
+        driver.execute_script(
+            "document.querySelector('button[type=\"submit\"]').click();"
+        )
 
         print("⏳ Waiting 5 seconds for 2FA Page...")
         time.sleep(5)
 
         print("3️⃣  Handling 2FA...")
-        totp = pyotp.TOTP(KITE_TOTP_SECRET)
+        totp  = pyotp.TOTP(KITE_TOTP_SECRET)
         token = totp.now()
 
         try:
