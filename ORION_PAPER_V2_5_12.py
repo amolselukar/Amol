@@ -133,12 +133,11 @@ from kiteconnect import KiteConnect
 try:
     import credentials
     KITE_API_KEY    = credentials.KITE_API_KEY
-    KITE_API_SECRET = credentials.KITE_API_SECRET
-    KITE_ACCESS_TOKEN = credentials.KITE_ACCESS_TOKEN
+    KITE_ENCTOKEN   = credentials.KITE_ENCTOKEN
     TELEGRAM_BOT_TOKEN = credentials.TELEGRAM_BOT_TOKEN
 except (ImportError, AttributeError) as e:
     print("[FATAL] credentials.py missing or incomplete.")
-    print("Required keys: KITE_API_KEY, KITE_API_SECRET, KITE_ACCESS_TOKEN, TELEGRAM_BOT_TOKEN")
+    print("Required keys: KITE_API_KEY, KITE_ENCTOKEN, TELEGRAM_BOT_TOKEN")
     sys.exit(1)
 
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -523,7 +522,7 @@ WD = Watchdog(WATCHDOG_TIMEOUT_SEC)
 # KITE CLIENT
 # =========================================================================
 kite = KiteConnect(api_key=KITE_API_KEY)
-kite.set_access_token(KITE_ACCESS_TOKEN)
+kite.reqsess.headers["Authorization"] = f"enctoken {KITE_ENCTOKEN}"
 
 NIFTY_INSTRUMENT_TOKEN = 256265   # NSE NIFTY 50
 
