@@ -76,11 +76,11 @@ def _download_firefox():
         print(f"✅ Firefox already at {binary}")
         return binary
     url = "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
-    tgz = "/tmp/firefox_latest.tar.bz2"
+    tgz = "/tmp/firefox_latest.tar"
     print("⬇️  Downloading Firefox (~80MB)...")
     urllib.request.urlretrieve(url, tgz)
     print("📦 Extracting Firefox...")
-    with tarfile.open(tgz, "r:bz2") as tar:
+    with tarfile.open(tgz, "r:*") as tar:
         tar.extractall(os.path.expanduser("~"))
     os.chmod(binary, stat.S_IRWXU | stat.S_IRGRP | stat.S_IXGRP)
     print(f"✅ Firefox → {binary}")
