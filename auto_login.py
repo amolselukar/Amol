@@ -2,26 +2,14 @@
 =========================================================================
 ORION AUTO-LOGIN  —  Daily Zerodha Kite token refresh
 =========================================================================
-Automates the full Zerodha login flow using TOTP (no manual steps).
-Writes fresh KITE_ACCESS_TOKEN back into credentials.py.
-
-Run order (called by start_orion.sh before the paper bot):
-  1. POST /api/login     → user_id + password
-  2. POST /api/twofa     → TOTP code
-  3. GET  login_url      → capture request_token from redirect
-  4. generate_session()  → exchange for access_token
-  5. Patch credentials.py with new token
-
-Prerequisites: pip install kiteconnect pyotp requests
+Uses Selenium + headless Chromium (same approach that was working before).
+Reads credentials from credentials.py, writes token back to credentials.py.
 =========================================================================
 """
 import sys, os, re, time
 import pyotp
-import requests
-from urllib.parse import urlparse, parse_qs
 from kiteconnect import KiteConnect
 
-# ---- Load credentials ----
 CREDS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'credentials.py')
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -33,101 +21,103 @@ try:
     KITE_PASSWORD    = _c.KITE_PASSWORD
     KITE_TOTP_SECRET = _c.KITE_TOTP_SECRET
 except AttributeError as e:
-    print(f"[AUTO-LOGIN] credentials.py missing required key: {e}")
-    print("Required: KITE_API_KEY, KITE_API_SECRET, KITE_USER_ID, KITE_PASSWORD, KITE_TOTP_SECRET")
+    print(f"[AUTO-LOGIN] credentials.py missing key: {e}")
     sys.exit(1)
 
 
-def get_fresh_access_token(max_retries=3) -> str:
+def get_fresh_access_token() -> str:
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.chrome.options import Options
+
     kite = KiteConnect(api_key=KITE_API_KEY)
+    login_url = kite.login_url()
 
-    for attempt in range(1, max_retries + 1):
+    options = Options()
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
+    options.binary_location = "/usr/bin/chromium"
+
+    # Try ChromeDriverManager first, fall back to system chromedriver
+    driver = None
+    try:
+        from webdriver_manager.chrome import ChromeDriverManager
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=options)
+    except Exception as e:
+        print(f"[AUTO-LOGIN] ChromeDriverManager failed ({e}), trying system chromedriver...")
         try:
-            session = requests.Session()
-            session.headers.update({
-                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-                              "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-                "X-Kite-Version": "3",
-            })
+            driver = webdriver.Chrome(options=options)
+        except Exception as e2:
+            raise Exception(f"Could not start Chrome: {e2}")
 
-            # Step 1: Visit connect/login URL FIRST to initialize OAuth session state
-            connect_url = kite.login_url()
-            print(f"[AUTO-LOGIN] Initializing OAuth session: {connect_url}")
-            session.get(connect_url, allow_redirects=True, timeout=15)
+    print("[AUTO-LOGIN] Browser started.")
+    try:
+        driver.get(login_url)
+        wait = WebDriverWait(driver, 20)
+        actions = ActionChains(driver)
 
-            # Step 2: Login with user_id + password
-            resp = session.post("https://kite.zerodha.com/api/login", data={
-                "user_id":  KITE_USER_ID,
-                "password": KITE_PASSWORD,
-            }, timeout=15)
-            data = resp.json()
-            if data.get("status") != "success":
-                raise Exception(f"Login failed: {data.get('message', data)}")
-            request_id = data["data"]["request_id"]
-            print(f"[AUTO-LOGIN] Login OK, request_id={request_id}")
+        # Step 1: User ID
+        print("[AUTO-LOGIN] Entering user ID...")
+        uid = wait.until(EC.visibility_of_element_located((By.ID, "userid")))
+        uid.clear()
+        uid.send_keys(KITE_USER_ID)
+        uid.send_keys(Keys.ENTER)
 
-            # Step 3: TOTP 2FA
-            totp_code = pyotp.TOTP(KITE_TOTP_SECRET).now()
-            resp = session.post("https://kite.zerodha.com/api/twofa", data={
-                "user_id":     KITE_USER_ID,
-                "request_id":  request_id,
-                "twofa_value": totp_code,
-                "twofa_type":  "totp",
-            }, timeout=15)
-            data = resp.json()
-            if data.get("status") != "success":
-                raise Exception(f"2FA failed: {data.get('message', data)}")
-            print(f"[AUTO-LOGIN] 2FA OK")
+        # Step 2: Password
+        print("[AUTO-LOGIN] Entering password...")
+        pwd = wait.until(EC.visibility_of_element_located((By.ID, "password")))
+        pwd.clear()
+        pwd.send_keys(KITE_PASSWORD)
+        try:
+            btn = driver.find_element(By.XPATH, "//button[@type='submit']")
+            driver.execute_script("arguments[0].click();", btn)
+        except Exception:
+            pwd.send_keys(Keys.ENTER)
 
-            # Step 4: Check twofa response for finish_url, then follow redirect chain
-            request_token = None
+        time.sleep(5)
 
-            # Some Zerodha versions return finish_url directly in twofa response
-            finish_url = None
-            d = data.get("data") or {}
-            if isinstance(d, dict):
-                finish_url = d.get("finish_url") or d.get("redirect_url")
-
-            if finish_url:
-                print(f"[AUTO-LOGIN] Following finish_url from twofa: {finish_url}")
-            else:
-                finish_url = connect_url  # revisit connect URL — now authenticated
-                print(f"[AUTO-LOGIN] Re-visiting connect URL (authenticated): {finish_url}")
-
-            try:
-                resp4 = session.get(finish_url, allow_redirects=True, timeout=15)
-                print(f"[AUTO-LOGIN] finish status={resp4.status_code} final_url={resp4.url}")
-                candidates = [resp4.url] + [
-                    r.headers.get("Location", "") for r in resp4.history
-                ]
-                for url in candidates:
-                    p = parse_qs(urlparse(url).query)
-                    rt = p.get("request_token", [None])[0]
-                    if rt:
-                        request_token = rt
+        # Step 3: TOTP
+        print("[AUTO-LOGIN] Entering TOTP...")
+        totp_code = pyotp.TOTP(KITE_TOTP_SECRET).now()
+        try:
+            actions.send_keys(totp_code).perform()
+            time.sleep(0.5)
+            actions.send_keys(Keys.ENTER).perform()
+        except Exception:
+            pass
+        try:
+            inputs = driver.find_elements(By.TAG_NAME, "input")
+            for i in inputs:
+                if i.get_attribute("type") in ["text", "password", "tel"] and i.is_displayed():
+                    if i.get_attribute("id") not in ["userid", "password"]:
+                        i.clear()
+                        i.send_keys(totp_code)
+                        i.send_keys(Keys.ENTER)
                         break
-            except requests.exceptions.ConnectionError as ce:
-                # redirect_url set to 127.0.0.1 in Kite app — token is in the failed URL
-                m = re.search(r"request_token=([A-Za-z0-9]+)", str(ce))
-                if m:
-                    request_token = m.group(1)
-                else:
-                    raise Exception(f"ConnectionError — no token found: {ce}")
+        except Exception:
+            pass
 
-            if not request_token:
-                raise Exception(f"No request_token found in redirect chain")
+        # Step 4: Wait for redirect with request_token
+        print("[AUTO-LOGIN] Waiting for request_token redirect...")
+        wait.until(EC.url_contains("request_token="))
+        current_url = driver.current_url
+        request_token = current_url.split("request_token=")[1].split("&")[0]
+        print(f"[AUTO-LOGIN] Got request_token={request_token[:8]}...")
 
-            # Step 5: Exchange for access token
-            print(f"[AUTO-LOGIN] Got request_token={request_token[:8]}... Generating session...")
-            sess_data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
-            return sess_data["access_token"]
+    finally:
+        driver.quit()
 
-        except Exception as e:
-            print(f"[AUTO-LOGIN] Attempt {attempt} failed: {e}")
-            if attempt < max_retries:
-                time.sleep(5 * attempt)
-            else:
-                raise
+    sess_data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
+    return sess_data["access_token"]
 
 
 def patch_credentials(access_token: str):
@@ -139,7 +129,6 @@ def patch_credentials(access_token: str):
         content
     )
     if patched == content:
-        # Key not found — append it
         patched = content.rstrip() + f'\nKITE_ACCESS_TOKEN = "{access_token}"\n'
     with open(CREDS_PATH, 'w') as f:
         f.write(patched)
