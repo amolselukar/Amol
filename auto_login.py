@@ -77,20 +77,42 @@ def auto_login():
     kite = KiteConnect(api_key=KITE_API_KEY)
     login_url = kite.login_url()
 
-    # Visit connect/login — authenticated session skips the login page
-    resp = session.get(login_url, allow_redirects=False, timeout=15)
-    print(f"   connect/login → {resp.status_code} {resp.headers.get('Location','')[:80]}")
+    # Warm up session with a visit to kite root (picks up CSRF/session cookies)
+    session.get("https://kite.zerodha.com", timeout=15)
+    session.headers.update({"Referer": "https://kite.zerodha.com/"})
 
-    request_token = _extract_token(resp)
+    # Visit connect/login — authenticated session skips the login page
+    resp = session.get(login_url, allow_redirects=True, timeout=15)
+    print(f"   connect/login → {resp.status_code} final_url={resp.url[:100]}")
+    if resp.status_code >= 400:
+        print(f"   Error body: {resp.text[:300]}")
+
+    # Check if request_token already in final URL (after all redirects)
+    if "request_token=" in resp.url:
+        request_token = parse_qs(urlparse(resp.url).query).get("request_token", [None])[0]
+    else:
+        request_token = _extract_token_from_history(resp)
+
+    if not request_token and resp.status_code == 200:
+        # Possibly on the allow/finish page — try submitting
+        resp_nr = session.get(login_url, allow_redirects=False, timeout=15)
+        request_token = _extract_token(resp_nr)
+        loc = resp_nr.headers.get("Location", "")
+        if not request_token and loc:
+            if loc.startswith("/"):
+                loc = "https://kite.zerodha.com" + loc
+
+            resp2 = session.get(loc, allow_redirects=False, timeout=15)
+            print(f"   connect/finish → {resp2.status_code} {resp2.headers.get('Location','')[:80]}")
+            request_token = _extract_token(resp2)
+
+            if not request_token and resp2.status_code == 200:
+                print("   Submitting Allow form...")
+                request_token = _submit_allow_form(session, resp2)
 
     if not request_token:
-        # Follow to connect/finish
-        loc = resp.headers.get("Location", "")
-        if loc.startswith("/"):
-            loc = "https://kite.zerodha.com" + loc
-        if not loc:
-            print("❌ No redirect from connect/login")
-            sys.exit(1)
+        print("❌ No redirect from connect/login")
+        sys.exit(1)
 
         resp2 = session.get(loc, allow_redirects=False, timeout=15)
         print(f"   connect/finish → {resp2.status_code} {resp2.headers.get('Location','')[:80]}")
@@ -116,10 +138,19 @@ def auto_login():
 
 
 def _extract_token(resp):
-    """Extract request_token from Location header or URL."""
-    loc = resp.headers.get("Location", "") or getattr(resp, "url", "")
+    """Extract request_token from Location header."""
+    loc = resp.headers.get("Location", "")
     if "request_token=" in loc:
         return parse_qs(urlparse(loc).query).get("request_token", [None])[0]
+    return None
+
+
+def _extract_token_from_history(resp):
+    """Check all redirect history for request_token."""
+    for r in resp.history:
+        loc = r.headers.get("Location", "")
+        if "request_token=" in loc:
+            return parse_qs(urlparse(loc).query).get("request_token", [None])[0]
     return None
 
 
