@@ -68,18 +68,22 @@ def get_fresh_access_token(max_retries=3) -> str:
 
             # Step 3: Follow Kite login URL → connect/finish → redirect_url?request_token=
             login_url = kite.login_url()
+            print(f"[AUTO-LOGIN] connect URL: {login_url}")
             resp = session.get(login_url, allow_redirects=False, timeout=15)
             next_url = resp.headers.get("Location", "")
+            print(f"[AUTO-LOGIN] step3 status={resp.status_code} location={next_url!r}")
+
+            request_token = None
 
             # Zerodha may route through /connect/finish before issuing request_token
             if "connect/finish" in next_url or ("request_token" not in next_url and next_url):
                 try:
                     resp2 = session.get(next_url, allow_redirects=True, timeout=15)
+                    print(f"[AUTO-LOGIN] finish url={resp2.url} status={resp2.status_code}")
                     # Check final URL and full redirect history for request_token
                     candidates = [resp2.url] + [
                         r.headers.get("Location", "") for r in resp2.history
                     ]
-                    request_token = None
                     for url in candidates:
                         p = parse_qs(urlparse(url).query)
                         rt = p.get("request_token", [None])[0]
@@ -93,12 +97,32 @@ def get_fresh_access_token(max_retries=3) -> str:
                         request_token = m.group(1)
                     else:
                         raise Exception(f"ConnectionError following connect/finish: {ce}")
-            else:
+            elif next_url:
                 params = parse_qs(urlparse(next_url).query)
                 request_token = params.get("request_token", [None])[0]
+            else:
+                # No redirect at all — session may not be fully authenticated
+                # Try allow_redirects=True as fallback
+                print(f"[AUTO-LOGIN] No redirect from connect URL. Trying with allow_redirects=True...")
+                try:
+                    resp3 = session.get(login_url, allow_redirects=True, timeout=15)
+                    print(f"[AUTO-LOGIN] fallback final url={resp3.url}")
+                    candidates = [resp3.url] + [
+                        r.headers.get("Location", "") for r in resp3.history
+                    ]
+                    for url in candidates:
+                        p = parse_qs(urlparse(url).query)
+                        rt = p.get("request_token", [None])[0]
+                        if rt:
+                            request_token = rt
+                            break
+                except requests.exceptions.ConnectionError as ce:
+                    m = re.search(r"request_token=([A-Za-z0-9]+)", str(ce))
+                    if m:
+                        request_token = m.group(1)
 
             if not request_token:
-                raise Exception(f"No request_token in redirect: {next_url}")
+                raise Exception(f"No request_token in redirect: {next_url!r}")
 
             # Step 4: Exchange for access token
             sess_data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
