@@ -42,15 +42,13 @@ def get_token_via_selenium() -> str:
     login_url = kite.login_url()
 
     options = Options()
-    options.add_argument("--headless")           # old headless — more stable than --headless=new
+    options.add_argument("--headless=old")        # old headless pipeline — most stable on PA
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
-    options.add_argument("--single-process")     # lower memory footprint
-    options.add_argument("--disable-images")     # saves memory
-    options.add_argument("--disable-extensions")
     options.add_argument("--remote-debugging-port=9222")
-    options.add_argument("--window-size=1280,800")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--disable-extensions")
     options.binary_location = "/usr/bin/chromium"
 
     service = Service(ChromeDriverManager(driver_version="131.0.6778.204").install())
