@@ -38,11 +38,22 @@ def get_token_via_selenium() -> str:
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
 
+    import subprocess
     kite = KiteConnect(api_key=KITE_API_KEY)
     login_url = kite.login_url()
 
+    # Auto-detect Chromium version so ChromeDriver matches exactly
+    try:
+        ver_out = subprocess.check_output(["/usr/bin/chromium", "--version"],
+                                          stderr=subprocess.DEVNULL).decode().strip()
+        chrome_ver = ver_out.split()[1]
+        print(f"[AUTO-LOGIN] Detected: {ver_out}")
+    except Exception:
+        chrome_ver = "131.0.6778.204"
+        print(f"[AUTO-LOGIN] Could not detect Chromium version, using {chrome_ver}")
+
     options = Options()
-    options.add_argument("--headless=old")        # old headless pipeline — most stable on PA
+    options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
@@ -51,7 +62,7 @@ def get_token_via_selenium() -> str:
     options.add_argument("--disable-extensions")
     options.binary_location = "/usr/bin/chromium"
 
-    service = Service(ChromeDriverManager(driver_version="131.0.6778.204").install())
+    service = Service(ChromeDriverManager(driver_version=chrome_ver).install())
     driver = webdriver.Chrome(service=service, options=options)
     print("[AUTO-LOGIN] Browser started.")
 
