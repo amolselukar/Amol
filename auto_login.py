@@ -50,7 +50,7 @@ def get_fresh_access_token() -> str:
     driver = None
     try:
         from webdriver_manager.chrome import ChromeDriverManager
-        service = Service(ChromeDriverManager().install())
+        service = Service(ChromeDriverManager(driver_version="131.0.6778.204").install())
         driver = webdriver.Chrome(service=service, options=options)
     except Exception as e:
         print(f"[AUTO-LOGIN] ChromeDriverManager failed ({e}), trying system chromedriver...")
