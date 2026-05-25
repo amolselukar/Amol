@@ -1,0 +1,55 @@
+{
+  "date": "2026-05-25",
+  "for_date": "2026-05-26",
+  "generated_at": "2026-05-25 10:45:42",
+  "atm": 24000,
+  "expiry": "2026-05-26",
+  "monthly_expiry": "2026-05-26",
+  "is_monthly_expiry": true,
+  "days_to_expiry": 1,
+  "expiry_caution": true,
+  "is_expiry_day": false,
+  "pcr": 1.067,
+  "bias": "NEUTRAL",
+  "max_pain": 24000,
+  "straddle_atm": 191.8,
+  "oi_stats": {
+    "ce_mean": 5319705,
+    "ce_std": 3635967,
+    "pe_mean": 5677340,
+    "pe_std": 4380047,
+    "ce_wall_threshold": 12591638,
+    "pe_wall_threshold": 14437434
+  },
+  "resistance_levels": [],
+  "support_levels": [],
+  "info_levels": [
+    {
+      "strike": 23500,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24000,
+      "side": "CE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24000,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24400,
+      "side": "CE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24500,
+      "side": "CE",
+      "reason": "OI significant but stale/expiry caution"
+    }
+  ],
+  "v3_resistance": [],
+  "v3_support": []
+}
