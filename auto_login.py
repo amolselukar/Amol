@@ -41,8 +41,11 @@ def auto_login():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
-    options.add_argument("--remote-debugging-port=9222")
+    options.add_argument("--no-zygote")
+    options.add_argument("--single-process")
+    options.add_argument("--disable-setuid-sandbox")
     options.add_argument("--window-size=1920,1080")
+    options.add_argument("--user-data-dir=/tmp/chrome_orion_profile")
     options.binary_location = "/usr/bin/chromium"
 
     try:
