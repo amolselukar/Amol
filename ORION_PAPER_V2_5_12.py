@@ -522,20 +522,16 @@ WD = Watchdog(WATCHDOG_TIMEOUT_SEC)
 # =========================================================================
 # KITE CLIENT
 # =========================================================================
+kite = KiteConnect(api_key=KITE_API_KEY)
 _kite_use_enctoken = getattr(credentials, 'KITE_USE_ENCTOKEN', False)
 if _kite_use_enctoken:
-    # enctoken from requests-based login — use kite.zerodha.com root
-    kite = KiteConnect(api_key=KITE_API_KEY, root="https://kite.zerodha.com")
-    kite.set_access_token(KITE_ACCESS_TOKEN)
-    import requests as _req
-    class _EnctokenAuth(_req.auth.AuthBase):
-        def __call__(self, r):
-            r.headers["Authorization"] = f"enctoken {KITE_ACCESS_TOKEN}"
-            return r
-    kite.reqsession.auth = _EnctokenAuth()
+    # enctoken: do NOT call set_access_token (it would cause KiteConnect to
+    # override Authorization header). Set session header directly instead.
+    kite.reqsession.headers.update({
+        "Authorization": f"enctoken {KITE_ACCESS_TOKEN}",
+        "X-Kite-Version": "3",
+    })
 else:
-    # proper OAuth access_token from Selenium login
-    kite = KiteConnect(api_key=KITE_API_KEY)
     kite.set_access_token(KITE_ACCESS_TOKEN)
 
 NIFTY_INSTRUMENT_TOKEN = 256265   # NSE NIFTY 50
