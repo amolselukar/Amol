@@ -1,6 +1,7 @@
 """
 ORION AUTO-LOGIN  —  Daily Zerodha Kite token refresh.
 Uses Firefox (geckodriver) instead of Chrome to avoid segfault on PythonAnywhere.
+Auto-downloads Firefox and geckodriver if not present.
 """
 import time, sys, os, re
 import pyotp
@@ -30,24 +31,21 @@ except AttributeError as e:
 
 def _find_geckodriver():
     import shutil
-    # System geckodriver
     gd = shutil.which("geckodriver")
     if gd:
-        print(f"✅ Using system geckodriver: {gd}")
+        print(f"✅ System geckodriver: {gd}")
         return gd
-    # Common install paths
     for path in ["/usr/local/bin/geckodriver", "/usr/bin/geckodriver",
                  os.path.expanduser("~/.local/bin/geckodriver")]:
         if os.path.isfile(path):
-            print(f"✅ Using geckodriver: {path}")
+            print(f"✅ geckodriver: {path}")
             return path
     return None
 
 
 def _download_geckodriver():
-    """Download latest geckodriver binary for Linux x64."""
     import urllib.request, tarfile, stat
-    url = "https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz"
+    url      = "https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz"
     dest_dir = os.path.expanduser("~/.local/bin")
     os.makedirs(dest_dir, exist_ok=True)
     dest = os.path.join(dest_dir, "geckodriver")
@@ -56,41 +54,61 @@ def _download_geckodriver():
     with tarfile.open("/tmp/geckodriver.tar.gz") as tar:
         tar.extract("geckodriver", dest_dir)
     os.chmod(dest, stat.S_IRWXU | stat.S_IRGRP | stat.S_IXGRP)
-    print(f"✅ geckodriver installed to {dest}")
+    print(f"✅ geckodriver → {dest}")
     return dest
+
+
+def _find_firefox():
+    import shutil
+    for fb in [shutil.which("firefox"), shutil.which("firefox-esr"),
+               "/usr/bin/firefox", "/usr/bin/firefox-esr",
+               os.path.expanduser("~/firefox/firefox")]:
+        if fb and os.path.isfile(fb):
+            print(f"✅ Firefox: {fb}")
+            return fb
+    return None
+
+
+def _download_firefox():
+    import urllib.request, tarfile, stat
+    binary = os.path.expanduser("~/firefox/firefox")
+    if os.path.isfile(binary):
+        print(f"✅ Firefox already at {binary}")
+        return binary
+    url = "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+    tgz = "/tmp/firefox_latest.tar.bz2"
+    print("⬇️  Downloading Firefox (~80MB)...")
+    urllib.request.urlretrieve(url, tgz)
+    print("📦 Extracting Firefox...")
+    with tarfile.open(tgz, "r:bz2") as tar:
+        tar.extractall(os.path.expanduser("~"))
+    os.chmod(binary, stat.S_IRWXU | stat.S_IRGRP | stat.S_IXGRP)
+    print(f"✅ Firefox → {binary}")
+    return binary
 
 
 def auto_login():
     print("🚀 STARTING AUTO-LOGIN (Firefox)...")
 
-    kite = KiteConnect(api_key=KITE_API_KEY)
+    kite      = KiteConnect(api_key=KITE_API_KEY)
     login_url = kite.login_url()
 
-    # Locate geckodriver
     gd_path = _find_geckodriver() or _download_geckodriver()
+    fb_path = _find_firefox()     or _download_firefox()
 
     options = FirefoxOptions()
     options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.set_preference("browser.tabs.remote.autostart", False)
+    options.binary_location = fb_path
+    options.set_preference("browser.tabs.remote.autostart",   False)
     options.set_preference("browser.tabs.remote.autostart.2", False)
-
-    # Try system Firefox first, then common paths
-    import shutil
-    for fb in [shutil.which("firefox"), "/usr/bin/firefox", "/usr/bin/firefox-esr",
-               shutil.which("firefox-esr")]:
-        if fb and os.path.isfile(fb):
-            options.binary_location = fb
-            print(f"✅ Using Firefox: {fb}")
-            break
 
     try:
         service = FirefoxService(executable_path=gd_path)
         driver  = webdriver.Firefox(service=service, options=options)
         driver.get(login_url)
-        print("✅ Browser Started.")
+        print("✅ Browser started.")
     except Exception as e:
-        print(f"❌ Browser Failed: {e}")
+        print(f"❌ Browser failed: {e}")
         sys.exit(1)
 
     try:
@@ -134,7 +152,7 @@ def auto_login():
             driver.execute_script(f"""
                 var inputs = document.querySelectorAll('input[type=text],input[type=tel]');
                 for(var i=0;i<inputs.length;i++){{
-                    if(inputs[i].id !== 'userid' && inputs[i].id !== 'password'){{
+                    if(inputs[i].id!=='userid' && inputs[i].id!=='password'){{
                         inputs[i].value='{token}';
                         inputs[i].dispatchEvent(new Event('input',{{bubbles:true}}));
                         break;
@@ -156,7 +174,7 @@ def auto_login():
         print(f"❌ CRITICAL ERROR: {e}")
         try:
             driver.save_screenshot("/tmp/debug_autologin.png")
-            print("📸 Screenshot saved: /tmp/debug_autologin.png")
+            print("📸 Screenshot: /tmp/debug_autologin.png")
         except Exception:
             pass
         try:
@@ -177,7 +195,7 @@ def update_credentials_file(new_token):
     if patched == content:
         patched = content.rstrip() + f'\nKITE_ACCESS_TOKEN = "{new_token}"\n'
     patched = re.sub(r'\nKITE_USE_ENCTOKEN\s*=.*', '', patched)
-    patched = re.sub(r'\nKITE_ENCTOKEN\s*=.*', '', patched)
+    patched = re.sub(r'\nKITE_ENCTOKEN\s*=.*',     '', patched)
     with open(CREDS_PATH, 'w') as f:
         f.write(patched)
     print(f"\n{'='*50}")
