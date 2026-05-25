@@ -40,11 +40,22 @@ except AttributeError as e:
 
 def get_fresh_access_token(max_retries=3) -> str:
     kite = KiteConnect(api_key=KITE_API_KEY)
-    session = requests.Session()
 
     for attempt in range(1, max_retries + 1):
         try:
-            # Step 1: Login with user_id + password
+            session = requests.Session()
+            session.headers.update({
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                              "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+                "X-Kite-Version": "3",
+            })
+
+            # Step 1: Visit connect/login URL FIRST to initialize OAuth session state
+            connect_url = kite.login_url()
+            print(f"[AUTO-LOGIN] Initializing OAuth session: {connect_url}")
+            session.get(connect_url, allow_redirects=True, timeout=15)
+
+            # Step 2: Login with user_id + password
             resp = session.post("https://kite.zerodha.com/api/login", data={
                 "user_id":  KITE_USER_ID,
                 "password": KITE_PASSWORD,
@@ -53,8 +64,9 @@ def get_fresh_access_token(max_retries=3) -> str:
             if data.get("status") != "success":
                 raise Exception(f"Login failed: {data.get('message', data)}")
             request_id = data["data"]["request_id"]
+            print(f"[AUTO-LOGIN] Login OK, request_id={request_id}")
 
-            # Step 2: TOTP 2FA
+            # Step 3: TOTP 2FA
             totp_code = pyotp.TOTP(KITE_TOTP_SECRET).now()
             resp = session.post("https://kite.zerodha.com/api/twofa", data={
                 "user_id":     KITE_USER_ID,
@@ -65,66 +77,48 @@ def get_fresh_access_token(max_retries=3) -> str:
             data = resp.json()
             if data.get("status") != "success":
                 raise Exception(f"2FA failed: {data.get('message', data)}")
+            print(f"[AUTO-LOGIN] 2FA OK")
 
-            # Step 3: Follow Kite login URL → connect/finish → redirect_url?request_token=
-            login_url = kite.login_url()
-            print(f"[AUTO-LOGIN] connect URL: {login_url}")
-            resp = session.get(login_url, allow_redirects=False, timeout=15)
-            next_url = resp.headers.get("Location", "")
-            print(f"[AUTO-LOGIN] step3 status={resp.status_code} location={next_url!r}")
-
+            # Step 4: Check twofa response for finish_url, then follow redirect chain
             request_token = None
 
-            # Zerodha may route through /connect/finish before issuing request_token
-            if "connect/finish" in next_url or ("request_token" not in next_url and next_url):
-                try:
-                    resp2 = session.get(next_url, allow_redirects=True, timeout=15)
-                    print(f"[AUTO-LOGIN] finish url={resp2.url} status={resp2.status_code}")
-                    # Check final URL and full redirect history for request_token
-                    candidates = [resp2.url] + [
-                        r.headers.get("Location", "") for r in resp2.history
-                    ]
-                    for url in candidates:
-                        p = parse_qs(urlparse(url).query)
-                        rt = p.get("request_token", [None])[0]
-                        if rt:
-                            request_token = rt
-                            break
-                except requests.exceptions.ConnectionError as ce:
-                    # Redirect URL is 127.0.0.1 — request_token is in the failed URL
-                    m = re.search(r"request_token=([A-Za-z0-9]+)", str(ce))
-                    if m:
-                        request_token = m.group(1)
-                    else:
-                        raise Exception(f"ConnectionError following connect/finish: {ce}")
-            elif next_url:
-                params = parse_qs(urlparse(next_url).query)
-                request_token = params.get("request_token", [None])[0]
+            # Some Zerodha versions return finish_url directly in twofa response
+            finish_url = None
+            d = data.get("data") or {}
+            if isinstance(d, dict):
+                finish_url = d.get("finish_url") or d.get("redirect_url")
+
+            if finish_url:
+                print(f"[AUTO-LOGIN] Following finish_url from twofa: {finish_url}")
             else:
-                # No redirect at all — session may not be fully authenticated
-                # Try allow_redirects=True as fallback
-                print(f"[AUTO-LOGIN] No redirect from connect URL. Trying with allow_redirects=True...")
-                try:
-                    resp3 = session.get(login_url, allow_redirects=True, timeout=15)
-                    print(f"[AUTO-LOGIN] fallback final url={resp3.url}")
-                    candidates = [resp3.url] + [
-                        r.headers.get("Location", "") for r in resp3.history
-                    ]
-                    for url in candidates:
-                        p = parse_qs(urlparse(url).query)
-                        rt = p.get("request_token", [None])[0]
-                        if rt:
-                            request_token = rt
-                            break
-                except requests.exceptions.ConnectionError as ce:
-                    m = re.search(r"request_token=([A-Za-z0-9]+)", str(ce))
-                    if m:
-                        request_token = m.group(1)
+                finish_url = connect_url  # revisit connect URL — now authenticated
+                print(f"[AUTO-LOGIN] Re-visiting connect URL (authenticated): {finish_url}")
+
+            try:
+                resp4 = session.get(finish_url, allow_redirects=True, timeout=15)
+                print(f"[AUTO-LOGIN] finish status={resp4.status_code} final_url={resp4.url}")
+                candidates = [resp4.url] + [
+                    r.headers.get("Location", "") for r in resp4.history
+                ]
+                for url in candidates:
+                    p = parse_qs(urlparse(url).query)
+                    rt = p.get("request_token", [None])[0]
+                    if rt:
+                        request_token = rt
+                        break
+            except requests.exceptions.ConnectionError as ce:
+                # redirect_url set to 127.0.0.1 in Kite app — token is in the failed URL
+                m = re.search(r"request_token=([A-Za-z0-9]+)", str(ce))
+                if m:
+                    request_token = m.group(1)
+                else:
+                    raise Exception(f"ConnectionError — no token found: {ce}")
 
             if not request_token:
-                raise Exception(f"No request_token in redirect: {next_url!r}")
+                raise Exception(f"No request_token found in redirect chain")
 
-            # Step 4: Exchange for access token
+            # Step 5: Exchange for access token
+            print(f"[AUTO-LOGIN] Got request_token={request_token[:8]}... Generating session...")
             sess_data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
             return sess_data["access_token"]
 
