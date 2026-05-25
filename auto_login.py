@@ -64,7 +64,13 @@ def auto_login():
     if result.get("status") != "success":
         print(f"❌ 2FA failed: {result}")
         sys.exit(1)
-    print("✅ 2FA OK. Session authenticated.")
+    # Set public_token and user_id cookies — required for OAuth connect flow
+    twofa_data = result.get("data", {})
+    public_token = twofa_data.get("public_token", "")
+    if public_token:
+        session.cookies.set("public_token", public_token, domain="kite.zerodha.com")
+    session.cookies.set("user_id", KITE_USER_ID, domain="kite.zerodha.com")
+    print(f"✅ 2FA OK. Session authenticated. public_token: {public_token[:8] if public_token else 'N/A'}...")
 
     # Step 3: Complete OAuth with the authenticated session
     print("3️⃣  Completing OAuth flow...")
