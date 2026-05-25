@@ -259,14 +259,7 @@ def main():
     # 1) Connect to Kite
     try:
         kite = KiteConnect(api_key=credentials.KITE_API_KEY)
-        _use_enc = getattr(credentials, 'KITE_USE_ENCTOKEN', False)
-        if _use_enc:
-            kite.reqsession.headers.update({
-                "Authorization": f"enctoken {credentials.KITE_ACCESS_TOKEN}",
-                "X-Kite-Version": "3",
-            })
-        else:
-            kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
+        kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
         _ = kite.historical_data(NIFTY_TOKEN,
                                  datetime.now(IST) - timedelta(days=2),
                                  datetime.now(IST), "5minute")
