@@ -258,14 +258,19 @@ def main():
 
     # 1) Connect to Kite
     try:
-        kite = KiteConnect(api_key=credentials.KITE_API_KEY)
-        kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
-        import requests as _req
-        class _EnctokenAuth(_req.auth.AuthBase):
-            def __call__(self, r):
-                r.headers["Authorization"] = f"enctoken {credentials.KITE_ACCESS_TOKEN}"
-                return r
-        kite.reqsession.auth = _EnctokenAuth()
+        _use_enc = getattr(credentials, 'KITE_USE_ENCTOKEN', False)
+        if _use_enc:
+            kite = KiteConnect(api_key=credentials.KITE_API_KEY, root="https://kite.zerodha.com")
+            kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
+            import requests as _req
+            class _EnctokenAuth(_req.auth.AuthBase):
+                def __call__(self, r):
+                    r.headers["Authorization"] = f"enctoken {credentials.KITE_ACCESS_TOKEN}"
+                    return r
+            kite.reqsession.auth = _EnctokenAuth()
+        else:
+            kite = KiteConnect(api_key=credentials.KITE_API_KEY)
+            kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
         _ = kite.historical_data(NIFTY_TOKEN,
                                  datetime.now(IST) - timedelta(days=2),
                                  datetime.now(IST), "5minute")
