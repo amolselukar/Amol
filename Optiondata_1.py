@@ -259,7 +259,7 @@ def main():
     # 1) Connect to Kite
     try:
         kite = KiteConnect(api_key=credentials.KITE_API_KEY)
-        kite.reqsession.headers["Authorization"] = f"enctoken {credentials.KITE_ENCTOKEN}"
+        kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
         _ = kite.historical_data(NIFTY_TOKEN,
                                  datetime.now(IST) - timedelta(days=2),
                                  datetime.now(IST), "5minute")
