@@ -137,37 +137,38 @@ def auto_login():
         driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
 
         print("⏳ Waiting for 2FA page...")
-        time.sleep(4)
+        from selenium.webdriver.common.action_chains import ActionChains
+        # Wait until we're off the password page (userid field gone)
+        wait.until_not(EC.presence_of_element_located((By.ID, "password")))
+        time.sleep(1)
 
         print("3️⃣  Entering TOTP...")
+        # Save page source for debugging
+        with open("/tmp/totp_page.html", "w") as f:
+            f.write(driver.page_source)
+
         token = pyotp.TOTP(KITE_TOTP_SECRET).now()
-        totp_entered = False
-        try:
-            for inp in driver.find_elements(By.TAG_NAME, "input"):
-                t = inp.get_attribute("type") or ""
-                if t in ["text", "tel", "number", "password"] and inp.is_displayed():
-                    if inp.get_attribute("id") not in ["userid", "password"]:
-                        inp.clear()
-                        inp.send_keys(token)
-                        totp_entered = True
-                        break
-        except Exception:
-            pass
-        if not totp_entered:
-            # Fallback: JS inject into first non-login input
-            driver.execute_script(f"""
-                var inputs = document.querySelectorAll('input');
-                for(var i=0;i<inputs.length;i++){{
-                    var id=inputs[i].id;
-                    if(id!=='userid' && id!=='password' && inputs[i].offsetParent!==null){{
-                        var setter=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;
-                        setter.call(inputs[i],'{token}');
-                        inputs[i].dispatchEvent(new Event('input',{{bubbles:true}}));
-                        inputs[i].dispatchEvent(new Event('change',{{bubbles:true}}));
-                        break;
-                    }}
-                }}
-            """)
+        print(f"   TOTP: {token}")
+
+        # Find any visible input that isn't userid/password, click + type
+        totp_input = None
+        for inp in driver.find_elements(By.TAG_NAME, "input"):
+            if inp.is_displayed() and inp.get_attribute("id") not in ["userid", "password"]:
+                totp_input = inp
+                break
+
+        if totp_input:
+            print(f"   Found TOTP input: id={totp_input.get_attribute('id')} type={totp_input.get_attribute('type')}")
+            ActionChains(driver).click(totp_input).perform()
+            time.sleep(0.3)
+            # Type digit by digit so React state updates correctly
+            for digit in token:
+                totp_input.send_keys(digit)
+                time.sleep(0.05)
+        else:
+            print("   No TOTP input found — using ActionChains on body")
+            ActionChains(driver).send_keys(token).perform()
+
         time.sleep(0.5)
         # Click Continue/Submit button
         driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
