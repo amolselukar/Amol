@@ -522,7 +522,7 @@ WD = Watchdog(WATCHDOG_TIMEOUT_SEC)
 # KITE CLIENT
 # =========================================================================
 kite = KiteConnect(api_key=KITE_API_KEY)
-kite.reqsess.headers["Authorization"] = f"enctoken {KITE_ENCTOKEN}"
+kite.reqsession.headers["Authorization"] = f"enctoken {KITE_ENCTOKEN}"
 
 NIFTY_INSTRUMENT_TOKEN = 256265   # NSE NIFTY 50
 
