@@ -46,7 +46,13 @@ def auto_login():
     options.binary_location = "/usr/bin/chromium"
 
     try:
-        service = Service(ChromeDriverManager(driver_version="131.0.6778.204").install())
+        # Prefer system chromedriver (compiled for this machine's Chromium)
+        import shutil
+        if shutil.which("chromedriver"):
+            print(f"✅ Using system chromedriver: {shutil.which('chromedriver')}")
+            service = Service(shutil.which("chromedriver"))
+        else:
+            service = Service(ChromeDriverManager(driver_version="131.0.6778.204").install())
         driver = webdriver.Chrome(service=service, options=options)
         driver.get(login_url)
         print("✅ Browser Started.")
