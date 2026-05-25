@@ -1,11 +1,16 @@
 """
-ORION AUTO-LOGIN  —  Daily Zerodha access_token refresh via requests (no browser).
-Steps: internal login → TOTP → OAuth connect/finish → generate_session → access_token
+ORION AUTO-LOGIN  —  Daily Zerodha Kite token refresh.
+Uses Firefox (geckodriver) instead of Chrome to avoid segfault on PythonAnywhere.
 """
-import re, sys, os
+import time, sys, os, re
 import pyotp
-import requests
-from urllib.parse import urlparse, parse_qs
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from kiteconnect import KiteConnect
 
 CREDS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'credentials.py')
@@ -23,180 +28,160 @@ except AttributeError as e:
     sys.exit(1)
 
 
+def _find_geckodriver():
+    import shutil
+    # System geckodriver
+    gd = shutil.which("geckodriver")
+    if gd:
+        print(f"✅ Using system geckodriver: {gd}")
+        return gd
+    # Common install paths
+    for path in ["/usr/local/bin/geckodriver", "/usr/bin/geckodriver",
+                 os.path.expanduser("~/.local/bin/geckodriver")]:
+        if os.path.isfile(path):
+            print(f"✅ Using geckodriver: {path}")
+            return path
+    return None
+
+
+def _download_geckodriver():
+    """Download latest geckodriver binary for Linux x64."""
+    import urllib.request, tarfile, stat
+    url = "https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz"
+    dest_dir = os.path.expanduser("~/.local/bin")
+    os.makedirs(dest_dir, exist_ok=True)
+    dest = os.path.join(dest_dir, "geckodriver")
+    print("⬇️  Downloading geckodriver v0.35.0...")
+    urllib.request.urlretrieve(url, "/tmp/geckodriver.tar.gz")
+    with tarfile.open("/tmp/geckodriver.tar.gz") as tar:
+        tar.extract("geckodriver", dest_dir)
+    os.chmod(dest, stat.S_IRWXU | stat.S_IRGRP | stat.S_IXGRP)
+    print(f"✅ geckodriver installed to {dest}")
+    return dest
+
+
 def auto_login():
-    print("🚀 STARTING AUTO-LOGIN (no browser)...")
+    print("🚀 STARTING AUTO-LOGIN (Firefox)...")
 
-    session = requests.Session()
-    session.headers.update({
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-        "X-Kite-Version": "3",
-    })
-
-    # Step 1: Password login via internal API
-    print("1️⃣  User ID + password...")
-    resp = session.post(
-        "https://kite.zerodha.com/api/login",
-        data={"user_id": KITE_USER_ID, "password": KITE_PASSWORD},
-        timeout=15,
-    )
-    result = resp.json()
-    if result.get("status") != "success":
-        print(f"❌ Login failed: {result}")
-        sys.exit(1)
-    request_id = result["data"]["request_id"]
-    print("✅ Login OK.")
-
-    # Step 2: TOTP
-    print("2️⃣  TOTP...")
-    totp_code = pyotp.TOTP(KITE_TOTP_SECRET).now()
-    resp = session.post(
-        "https://kite.zerodha.com/api/twofa",
-        data={
-            "user_id": KITE_USER_ID,
-            "request_id": request_id,
-            "twofa_value": totp_code,
-            "twofa_type": "totp",
-            "skip_totp": "false",
-        },
-        timeout=15,
-    )
-    result = resp.json()
-    if result.get("status") != "success":
-        print(f"❌ 2FA failed: {result}")
-        sys.exit(1)
-    # Set public_token and user_id cookies — required for OAuth connect flow
-    twofa_data = result.get("data", {})
-    public_token = twofa_data.get("public_token", "")
-    if public_token:
-        session.cookies.set("public_token", public_token, domain="kite.zerodha.com")
-    session.cookies.set("user_id", KITE_USER_ID, domain="kite.zerodha.com")
-    print(f"✅ 2FA OK. Session authenticated. public_token: {public_token[:8] if public_token else 'N/A'}...")
-
-    # Step 3: Complete OAuth with the authenticated session
-    print("3️⃣  Completing OAuth flow...")
     kite = KiteConnect(api_key=KITE_API_KEY)
     login_url = kite.login_url()
 
-    # Warm up session with a visit to kite root (picks up CSRF/session cookies)
-    session.get("https://kite.zerodha.com", timeout=15)
-    session.headers.update({"Referer": "https://kite.zerodha.com/"})
+    # Locate geckodriver
+    gd_path = _find_geckodriver() or _download_geckodriver()
 
-    # Visit connect/login — authenticated session skips the login page
-    resp = session.get(login_url, allow_redirects=True, timeout=15)
-    print(f"   connect/login → {resp.status_code} final_url={resp.url[:100]}")
-    if resp.status_code >= 400:
-        print(f"   Error body: {resp.text[:300]}")
+    options = FirefoxOptions()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.set_preference("browser.tabs.remote.autostart", False)
+    options.set_preference("browser.tabs.remote.autostart.2", False)
 
-    # Check if request_token already in final URL (after all redirects)
-    if "request_token=" in resp.url:
-        request_token = parse_qs(urlparse(resp.url).query).get("request_token", [None])[0]
-    else:
-        request_token = _extract_token_from_history(resp)
+    # Try system Firefox first, then common paths
+    import shutil
+    for fb in [shutil.which("firefox"), "/usr/bin/firefox", "/usr/bin/firefox-esr",
+               shutil.which("firefox-esr")]:
+        if fb and os.path.isfile(fb):
+            options.binary_location = fb
+            print(f"✅ Using Firefox: {fb}")
+            break
 
-    if not request_token and resp.status_code == 200:
-        # Possibly on the allow/finish page — try submitting
-        resp_nr = session.get(login_url, allow_redirects=False, timeout=15)
-        request_token = _extract_token(resp_nr)
-        loc = resp_nr.headers.get("Location", "")
-        if not request_token and loc:
-            if loc.startswith("/"):
-                loc = "https://kite.zerodha.com" + loc
-
-            resp2 = session.get(loc, allow_redirects=False, timeout=15)
-            print(f"   connect/finish → {resp2.status_code} {resp2.headers.get('Location','')[:80]}")
-            request_token = _extract_token(resp2)
-
-            if not request_token and resp2.status_code == 200:
-                print("   Submitting Allow form...")
-                request_token = _submit_allow_form(session, resp2)
-
-    if not request_token:
-        print("❌ No redirect from connect/login")
+    try:
+        service = FirefoxService(executable_path=gd_path)
+        driver  = webdriver.Firefox(service=service, options=options)
+        driver.get(login_url)
+        print("✅ Browser Started.")
+    except Exception as e:
+        print(f"❌ Browser Failed: {e}")
         sys.exit(1)
 
-        resp2 = session.get(loc, allow_redirects=False, timeout=15)
-        print(f"   connect/finish → {resp2.status_code} {resp2.headers.get('Location','')[:80]}")
-        request_token = _extract_token(resp2)
+    try:
+        wait = WebDriverWait(driver, 20)
 
-        if not request_token and resp2.status_code == 200:
-            # Allow page HTML — submit the form automatically
-            print("   Submitting Allow form...")
-            request_token = _submit_allow_form(session, resp2)
+        def js_set(el_id, val):
+            driver.execute_script("""
+                var el = document.getElementById(arguments[0]);
+                var setter = Object.getOwnPropertyDescriptor(
+                    window.HTMLInputElement.prototype, 'value').set;
+                setter.call(el, arguments[1]);
+                el.dispatchEvent(new Event('input',  {bubbles:true}));
+                el.dispatchEvent(new Event('change', {bubbles:true}));
+            """, el_id, val)
 
-    if not request_token:
-        print("❌ Could not extract request_token from OAuth flow.")
+        print("1️⃣  Entering User ID...")
+        wait.until(EC.visibility_of_element_located((By.ID, "userid")))
+        js_set("userid", KITE_USER_ID)
+        time.sleep(0.5)
+        driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
+
+        print("2️⃣  Entering Password...")
+        wait.until(EC.visibility_of_element_located((By.ID, "password")))
+        js_set("password", KITE_PASSWORD)
+        time.sleep(0.5)
+        driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
+
+        print("⏳ Waiting for 2FA page...")
+        time.sleep(4)
+
+        print("3️⃣  Entering TOTP...")
+        token = pyotp.TOTP(KITE_TOTP_SECRET).now()
+        try:
+            for inp in driver.find_elements(By.TAG_NAME, "input"):
+                if inp.get_attribute("type") in ["text", "tel", "number"] and inp.is_displayed():
+                    if inp.get_attribute("id") not in ["userid", "password"]:
+                        inp.send_keys(token)
+                        inp.send_keys(Keys.ENTER)
+                        break
+        except Exception:
+            driver.execute_script(f"""
+                var inputs = document.querySelectorAll('input[type=text],input[type=tel]');
+                for(var i=0;i<inputs.length;i++){{
+                    if(inputs[i].id !== 'userid' && inputs[i].id !== 'password'){{
+                        inputs[i].value='{token}';
+                        inputs[i].dispatchEvent(new Event('input',{{bubbles:true}}));
+                        break;
+                    }}
+                }}
+            """)
+
+        print("⏳ Waiting for request_token...")
+        wait.until(EC.url_contains("request_token="))
+        current_url   = driver.current_url
+        request_token = current_url.split("request_token=")[1].split("&")[0]
+        print(f"✅ Got request_token: {request_token[:8]}...")
+        driver.quit()
+
+        data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
+        update_credentials_file(data["access_token"])
+
+    except Exception as e:
+        print(f"❌ CRITICAL ERROR: {e}")
+        try:
+            driver.save_screenshot("/tmp/debug_autologin.png")
+            print("📸 Screenshot saved: /tmp/debug_autologin.png")
+        except Exception:
+            pass
+        try:
+            driver.quit()
+        except Exception:
+            pass
         sys.exit(1)
 
-    print(f"✅ Got request_token: {request_token[:8]}...")
 
-    # Step 4: Generate access_token
-    print("4️⃣  Generating access_token...")
-    data = kite.generate_session(request_token, api_secret=KITE_API_SECRET)
-    access_token = data["access_token"]
-    print(f"✅ Got access_token: {access_token[:8]}...")
-    update_credentials_file(access_token)
-
-
-def _extract_token(resp):
-    """Extract request_token from Location header."""
-    loc = resp.headers.get("Location", "")
-    if "request_token=" in loc:
-        return parse_qs(urlparse(loc).query).get("request_token", [None])[0]
-    return None
-
-
-def _extract_token_from_history(resp):
-    """Check all redirect history for request_token."""
-    for r in resp.history:
-        loc = r.headers.get("Location", "")
-        if "request_token=" in loc:
-            return parse_qs(urlparse(loc).query).get("request_token", [None])[0]
-    return None
-
-
-def _submit_allow_form(session, resp):
-    """Parse the Allow page and POST the form to get request_token."""
-    html = resp.text
-    action_m = re.search(r'<form[^>]+action=["\']([^"\']+)["\']', html, re.IGNORECASE)
-    action = action_m.group(1) if action_m else "/connect/finish"
-    if action.startswith("/"):
-        action = "https://kite.zerodha.com" + action
-
-    # Collect all hidden inputs
-    hidden = {}
-    for m in re.finditer(r'<input[^>]+>', html, re.IGNORECASE):
-        tag = m.group(0)
-        if 'hidden' in tag.lower():
-            name_m  = re.search(r'name=["\']([^"\']+)["\']', tag)
-            value_m = re.search(r'value=["\']([^"\']*)["\']', tag)
-            if name_m:
-                hidden[name_m.group(1)] = value_m.group(1) if value_m else ""
-
-    submit = session.post(action, data=hidden, allow_redirects=False, timeout=15)
-    print(f"   Allow POST → {submit.status_code} {submit.headers.get('Location','')[:80]}")
-    return _extract_token(submit)
-
-
-def update_credentials_file(access_token):
+def update_credentials_file(new_token):
     with open(CREDS_PATH, 'r') as f:
         content = f.read()
-
-    if 'KITE_ACCESS_TOKEN' in content:
-        patched = re.sub(
-            r'(KITE_ACCESS_TOKEN\s*=\s*)["\'].*?["\']',
-            f'\\g<1>"{access_token}"',
-            content
-        )
-    else:
-        patched = content.rstrip() + f'\nKITE_ACCESS_TOKEN = "{access_token}"\n'
-
+    patched = re.sub(
+        r'(KITE_ACCESS_TOKEN\s*=\s*)["\'].*?["\']',
+        f'\\g<1>"{new_token}"',
+        content
+    )
+    if patched == content:
+        patched = content.rstrip() + f'\nKITE_ACCESS_TOKEN = "{new_token}"\n'
     patched = re.sub(r'\nKITE_USE_ENCTOKEN\s*=.*', '', patched)
     patched = re.sub(r'\nKITE_ENCTOKEN\s*=.*', '', patched)
-
     with open(CREDS_PATH, 'w') as f:
         f.write(patched)
     print(f"\n{'='*50}")
-    print(f"✅ CREDENTIALS UPDATED! Token: {access_token[:8]}...")
+    print(f"✅ CREDENTIALS UPDATED! Token: {new_token[:8]}...")
     print(f"{'='*50}")
 
 
