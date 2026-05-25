@@ -524,6 +524,13 @@ WD = Watchdog(WATCHDOG_TIMEOUT_SEC)
 # =========================================================================
 kite = KiteConnect(api_key=KITE_API_KEY)
 kite.set_access_token(KITE_ACCESS_TOKEN)
+# auto_login saves enctoken (not OAuth access_token) — patch auth header accordingly
+import requests as _req
+class _EnctokenAuth(_req.auth.AuthBase):
+    def __call__(self, r):
+        r.headers["Authorization"] = f"enctoken {KITE_ACCESS_TOKEN}"
+        return r
+kite.reqsession.auth = _EnctokenAuth()
 
 NIFTY_INSTRUMENT_TOKEN = 256265   # NSE NIFTY 50
 

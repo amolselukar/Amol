@@ -260,6 +260,12 @@ def main():
     try:
         kite = KiteConnect(api_key=credentials.KITE_API_KEY)
         kite.set_access_token(credentials.KITE_ACCESS_TOKEN)
+        import requests as _req
+        class _EnctokenAuth(_req.auth.AuthBase):
+            def __call__(self, r):
+                r.headers["Authorization"] = f"enctoken {credentials.KITE_ACCESS_TOKEN}"
+                return r
+        kite.reqsession.auth = _EnctokenAuth()
         _ = kite.historical_data(NIFTY_TOKEN,
                                  datetime.now(IST) - timedelta(days=2),
                                  datetime.now(IST), "5minute")
