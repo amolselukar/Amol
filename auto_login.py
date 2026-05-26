@@ -143,10 +143,6 @@ def auto_login():
         time.sleep(1)
 
         print("3️⃣  Entering TOTP...")
-        # Save page source for debugging
-        with open("/tmp/totp_page.html", "w") as f:
-            f.write(driver.page_source)
-
         token = pyotp.TOTP(KITE_TOTP_SECRET).now()
         print(f"   TOTP: {token}")
 
