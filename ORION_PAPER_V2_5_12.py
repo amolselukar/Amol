@@ -1105,6 +1105,27 @@ def fmt_boot(target_expiry, levels):
              if levels and levels['G'] else "—")
     r_str = (f"<code>{levels['R']['center']:.0f}</code> (Grade {levels['R']['grade']})"
              if levels and levels['R'] else "—")
+
+    # Build full A+B cluster list for display
+    cluster_lines = ""
+    if levels:
+        pdc = levels.get('pdc', 0)
+        buf = V3_MIN_BUFFER_FROM_PDC
+        ab_above = sorted(
+            [c for c in levels.get('all_clusters', []) if c['center'] > pdc + buf and c['grade'] in ('A','B')],
+            key=lambda c: c['center']
+        )
+        ab_below = sorted(
+            [c for c in levels.get('all_clusters', []) if c['center'] < pdc - buf and c['grade'] in ('A','B')],
+            key=lambda c: c['center'], reverse=True
+        )
+        if ab_above:
+            parts = " | ".join(f"<code>{c['center']:.0f}</code>[{c['grade']}]" for c in ab_above[:6])
+            cluster_lines += f"   ↑ Above: {parts}\n"
+        if ab_below:
+            parts = " | ".join(f"<code>{c['center']:.0f}</code>[{c['grade']}]" for c in ab_below[:6])
+            cluster_lines += f"   ↓ Below: {parts}\n"
+
     return (
         f"🚀🚀🚀 <b>ORION {VERSION} BOOT</b> 🚀🚀🚀\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -1114,8 +1135,9 @@ def fmt_boot(target_expiry, levels):
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 <b>V3 LEVELS (prior day 1h)</b>\n"
         f"   PDH: <code>{levels['pdh']:.2f}</code>  |  PDL: <code>{levels['pdl']:.2f}</code>  |  PDC: <code>{levels['pdc']:.2f}</code>\n"
-        f"   🟢 G (resistance above PDC): {g_str}\n"
-        f"   🔴 R (support below PDC):    {r_str}\n"
+        f"   🟢 G (nearest above PDC): {g_str}\n"
+        f"   🔴 R (nearest below PDC): {r_str}\n"
+        f"{cluster_lines}"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📥 <b>V2 ENTRY CONDITIONS</b>\n"
         f"   🟢 CE: 1h close&gt;SMA20&gt;SMA50 | K&gt;={STOCHRSI_CE_LO} rising | K&lt;{K_OVERSOLD_THRESH} recently | RSI&gt;{RSI_CE_MIN} | MACD bull | prem {PREMIUM_MIN}-{PREMIUM_MAX}\n"
@@ -2025,9 +2047,22 @@ def main():
             if sup:
                 plan_msg += f"Support: {' | '.join(sup)}\n"
             if oi_plan.get("_info_only") or oi_plan.get("expiry_caution"):
-                plan_msg += "OI levels: INFORMATIONAL only (expiry caution)"
+                plan_msg += "OI levels: INFORMATIONAL only (expiry caution)\n"
             else:
-                plan_msg += f"V3 R={oi_plan.get('v3_resistance',[])} S={oi_plan.get('v3_support',[])}"
+                plan_msg += f"V3 OI R={oi_plan.get('v3_resistance',[])} S={oi_plan.get('v3_support',[])}\n"
+            # Always show price-action clusters if available in plan
+            pc = oi_plan.get("price_clusters")
+            if pc:
+                plan_msg += (
+                    f"<b>Price Levels (PDH/PDL/round/swing):</b>\n"
+                    f"PDH:{pc.get('pdh')} PDL:{pc.get('pdl')} PDC:{pc.get('pdc')}\n"
+                )
+                above = pc.get("clusters_above", [])[:5]
+                below = pc.get("clusters_below", [])[:5]
+                if above:
+                    plan_msg += "R: " + " | ".join(f"{c['center']:.0f}[{c['grade']}]" for c in above) + "\n"
+                if below:
+                    plan_msg += "S: " + " | ".join(f"{c['center']:.0f}[{c['grade']}]" for c in below) + "\n"
             TG.send(plan_msg)
             linfo(f"[OI Plan] PCR={oi_plan.get('pcr')} bias={oi_plan.get('bias')} "
                   f"max_pain={oi_plan.get('max_pain')} expiry_caution={oi_plan.get('expiry_caution')}")

@@ -43,6 +43,20 @@ EXPIRY_CAUTION_DAYS = 2
 MIN_OI_INCREASE_PCT = 0.0
 
 # ---------------------------------------------------------------------------
+# V3 PRICE CLUSTER CONFIG  (must match ORION_PAPER_V2_5_12.py constants)
+# ---------------------------------------------------------------------------
+_V3_CLUSTER_RADIUS    = 20    # pts — merge sources within this window
+_V3_GRADE_A_MIN       = 3    # distinct source kinds for Grade A
+_V3_GRADE_B_MIN       = 2    # distinct source kinds for Grade B
+_V3_SWING_LOOKBACK    = 20   # 1h bars back for swing pivot detection
+_V3_SWING_N           = 3    # bars each side that must be lower/higher
+_V3_ROUND_STEP        = 50   # round-level grid step (50pt)
+_V3_ROUND_RANGE       = 300  # PDC ± this range for round levels
+_V3_PDC_BUFFER        = 25   # min gap between G/R and PDC
+_V3_PROMOTE_R100_BAND = 200  # round_100 standalone promotion band from PDC
+_V3_PROMOTE_SWING_BAND = 300 # swing pivot standalone promotion band from PDC
+
+# ---------------------------------------------------------------------------
 # HELPERS
 # ---------------------------------------------------------------------------
 def _load_creds():
@@ -105,6 +119,134 @@ def _classify_oi(oi_values):
     variance = sum((v - mean) ** 2 for v in nonzero) / len(nonzero)
     std = math.sqrt(variance)
     return mean, std, mean + OI_MASSIVE_STD * std, mean + OI_SIGNIFICANT_STD * std
+
+
+# ---------------------------------------------------------------------------
+# V3 PRICE CLUSTER HELPERS  (same algorithm as ORION_PAPER_V2_5_12.py)
+# ---------------------------------------------------------------------------
+def _find_swing_pivots(df):
+    pivots = []
+    n = _V3_SWING_N
+    sub = df.iloc[-(_V3_SWING_LOOKBACK + 2*n):].copy().reset_index(drop=True)
+    if len(sub) < 2*n + 1:
+        return pivots
+    for i in range(n, len(sub) - n):
+        h = float(sub['high'].iloc[i])
+        l = float(sub['low'].iloc[i])
+        is_h = all(h > float(sub['high'].iloc[i-k]) for k in range(1, n+1)) and \
+               all(h > float(sub['high'].iloc[i+k]) for k in range(1, n+1))
+        is_l = all(l < float(sub['low'].iloc[i-k])  for k in range(1, n+1)) and \
+               all(l < float(sub['low'].iloc[i+k])  for k in range(1, n+1))
+        if is_h: pivots.append((h, 'swing_high'))
+        if is_l: pivots.append((l, 'swing_low'))
+    return pivots
+
+
+def _generate_round_levels(price):
+    out = set()
+    base = round(price / _V3_ROUND_STEP) * _V3_ROUND_STEP
+    for off in range(-_V3_ROUND_RANGE, _V3_ROUND_RANGE + 1, _V3_ROUND_STEP):
+        p = base + off
+        kind = 'round_100' if p % 100 == 0 else 'round_50'
+        out.add((float(p), kind))
+    return list(out)
+
+
+def _cluster_levels(sources):
+    if not sources: return []
+    s = sorted(sources, key=lambda x: x[0])
+    clusters, cur = [], [s[0]]
+    for p, k in s[1:]:
+        if p - cur[-1][0] <= _V3_CLUSTER_RADIUS:
+            cur.append((p, k))
+        else:
+            clusters.append(cur); cur = [(p, k)]
+    clusters.append(cur)
+    out = []
+    for c in clusters:
+        kinds = set(k for _, k in c)
+        center = sum(p for p, _ in c) / len(c)
+        n = len(kinds)
+        grade = 'A' if n >= _V3_GRADE_A_MIN else ('B' if n >= _V3_GRADE_B_MIN else 'C')
+        out.append({'center': round(center, 1), 'kinds': sorted(kinds), 'grade': grade})
+    return out
+
+
+def _compute_price_clusters(data_root, date_str):
+    """
+    Compute V3 price-action S/R clusters from nifty_1h.csv.
+    Uses same algorithm as compute_levels_for_day() in the paper bot.
+    PDH/PDL/PDC = today's session H/L/C (last 7 1h bars).
+    Always computed regardless of expiry_caution.
+    Returns dict or None on failure.
+    """
+    try:
+        import pandas as pd
+    except ImportError:
+        return None
+
+    path = os.path.join(data_root, date_str, "nifty_1h.csv")
+    if not os.path.exists(path):
+        return None
+
+    try:
+        df = pd.read_csv(path)
+        if df.empty or 'high' not in df.columns or len(df) < 8:
+            return None
+
+        # Last 7 1h bars = today's trading session (~6.25h)
+        pdh = float(df['high'].iloc[-7:].max())
+        pdl = float(df['low'].iloc[-7:].min())
+        pdc = float(df['close'].iloc[-1])
+
+        # Build sources: PDH + PDL (PDC excluded per V3_EXCLUDE_PDC_FROM_CLUSTERS)
+        src = [(pdh, 'PDH'), (pdl, 'PDL')]
+        src += _generate_round_levels(pdc)
+        swing_pivots = _find_swing_pivots(df)
+        src += swing_pivots
+        # Restrict to ±ROUND_RANGE of PDC
+        src = [s for s in src if abs(s[0] - pdc) <= _V3_ROUND_RANGE]
+
+        clusters = _cluster_levels(src)
+
+        # Promote singletons: PDH/PDL/round_100/swing pivots → standalone Grade B
+        def _in_ab(price):
+            for c in clusters:
+                if c['grade'] in ('A', 'B') and abs(c['center'] - price) <= _V3_CLUSTER_RADIUS:
+                    return True
+            return False
+
+        promoted = []
+        for p, kind in [(pdh, 'PDH'), (pdl, 'PDL')]:
+            if not _in_ab(p):
+                promoted.append({'center': round(p, 1), 'kinds': [kind], 'grade': 'B', 'promoted': True})
+        base = round(pdc / 100) * 100
+        for off in range(-_V3_PROMOTE_R100_BAND, _V3_PROMOTE_R100_BAND + 1, 100):
+            p = float(base + off)
+            if not _in_ab(p):
+                promoted.append({'center': round(p, 1), 'kinds': ['round_100'], 'grade': 'B', 'promoted': True})
+        for p, kind in swing_pivots:
+            if abs(p - pdc) <= _V3_PROMOTE_SWING_BAND and not _in_ab(p):
+                promoted.append({'center': round(p, 1), 'kinds': [kind], 'grade': 'B', 'promoted': True})
+
+        all_levels = clusters + promoted
+
+        buf = _V3_PDC_BUFFER
+        above = [c for c in all_levels if c['center'] > pdc + buf and c['grade'] in ('A', 'B')]
+        below = [c for c in all_levels if c['center'] < pdc - buf and c['grade'] in ('A', 'B')]
+        above.sort(key=lambda c: (0 if c['grade'] == 'A' else 1, abs(c['center'] - pdc)))
+        below.sort(key=lambda c: (0 if c['grade'] == 'A' else 1, abs(c['center'] - pdc)))
+
+        return {
+            'pdh': round(pdh, 1),
+            'pdl': round(pdl, 1),
+            'pdc': round(pdc, 1),
+            'clusters_above': above,
+            'clusters_below': below,
+        }
+    except Exception as e:
+        print(f"[eod_analysis] Price cluster computation failed: {e}")
+        return None
 
 
 def _push_github(content_str, pat, filename=GITHUB_FILE):
@@ -287,6 +429,15 @@ def run(date_str=None, data_root=DATA_ROOT):
     v3_resistance = [r["strike"] for r in resistance_levels]
     v3_support    = [s["strike"] for s in support_levels]
 
+    # ---- V3 PRICE CLUSTERS (PDH/PDL/round/swing) — always computed ----
+    price_clusters = _compute_price_clusters(data_root, date_str)
+    if price_clusters:
+        print(f"[EOD] Price clusters: PDH={price_clusters['pdh']} PDL={price_clusters['pdl']} PDC={price_clusters['pdc']}")
+        print(f"      Above PDC: {price_clusters['clusters_above'][:5]}")
+        print(f"      Below PDC: {price_clusters['clusters_below'][:5]}")
+    else:
+        print("[EOD] Price clusters: nifty_1h.csv not available yet — will compute at bot boot")
+
     # ---- Straddle at ATM ----
     straddle = ce_ltp_map.get(atm, 0) + pe_ltp_map.get(atm, 0)
 
@@ -317,6 +468,7 @@ def run(date_str=None, data_root=DATA_ROOT):
         "info_levels":       info_levels,
         "v3_resistance":     v3_resistance,
         "v3_support":        v3_support,
+        "price_clusters":    price_clusters,
     }
 
     # ---- Save to date folder ----
@@ -369,7 +521,31 @@ def run(date_str=None, data_root=DATA_ROOT):
 
     tg_lines.append("")
     if v3_resistance or v3_support:
-        tg_lines.append(f"V3 triggers: R={v3_resistance} | S={v3_support}")
+        tg_lines.append(f"V3 OI triggers: R={v3_resistance} | S={v3_support}")
+
+    # ---- V3 Price-action levels (always shown, expiry_caution does NOT suppress) ----
+    tg_lines.append("")
+    tg_lines.append("<b>V3 Price Levels (PDH/PDL/round/swing — always active):</b>")
+    if price_clusters:
+        tg_lines.append(
+            f"PDH: {price_clusters['pdh']} | PDL: {price_clusters['pdl']} | PDC: {price_clusters['pdc']}"
+        )
+        above = price_clusters['clusters_above'][:6]
+        below = price_clusters['clusters_below'][:6]
+        if above:
+            parts = []
+            for c in above:
+                kinds = "+".join(c['kinds'])
+                parts.append(f"{c['center']:.0f}[{c['grade']}:{kinds}]")
+            tg_lines.append(f"  Resistance: {' | '.join(parts)}")
+        if below:
+            parts = []
+            for c in below:
+                kinds = "+".join(c['kinds'])
+                parts.append(f"{c['center']:.0f}[{c['grade']}:{kinds}]")
+            tg_lines.append(f"  Support:    {' | '.join(parts)}")
+    else:
+        tg_lines.append("  (nifty_1h.csv not found — levels computed at bot boot)")
 
     tg_msg = "\n".join(tg_lines)
     print("\n" + tg_msg)
