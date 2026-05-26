@@ -4,7 +4,7 @@
 # =========================================================================
 # Schedule on PythonAnywhere Tasks tab:
 #   Command : bash /home/Selukar/Amol/eod_capture.sh
-#   UTC Time: 10:30  (= 16:00 IST, Mon–Fri)
+#   UTC Time: 10:10  (= 15:40 IST, Mon–Fri)
 # =========================================================================
 
 LOG="/home/Selukar/orion_run.log"

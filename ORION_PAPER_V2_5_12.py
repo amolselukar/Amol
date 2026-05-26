@@ -1448,23 +1448,40 @@ def check_v2_signal(df1h, df15m):
     return None
 
 def check_v3_signal(df15m_nifty):
-    """V3 entry: cluster G/R break/reject on last closed 15m bar. Returns dict or None."""
+    """V3 entry: any Grade A/B cluster break/reject on last closed 15m bar.
+    Checks ALL clusters (not just nearest G/R), Grade A priority then nearest to price.
+    """
     if df15m_nifty is None or len(df15m_nifty) < 2: return None
     if DAY.levels is None: return None
     if not regime_allows_trade(DAY.regime): return None
     bar15_closed = df15m_nifty.iloc[-2]
-    bar = {'open':float(bar15_closed['open']),'high':float(bar15_closed['high']),
-           'low':float(bar15_closed['low']),'close':float(bar15_closed['close'])}
-    for role, lvl_obj in [('G', DAY.levels['G']), ('R', DAY.levels['R'])]:
-        if lvl_obj is None: continue
-        if lvl_obj['center'] in DAY.fired_levels: continue
+    bar = {'open': float(bar15_closed['open']), 'high': float(bar15_closed['high']),
+           'low':  float(bar15_closed['low']),  'close': float(bar15_closed['close'])}
+    pdc = DAY.levels['pdc']
+    buf = V3_MIN_BUFFER_FROM_PDC
+    bar_close = bar['close']
+
+    # All Grade A/B clusters with PDC buffer — assign role by position relative to PDC
+    candidates = []
+    for c in DAY.levels.get('all_clusters', []):
+        if c['grade'] not in ('A', 'B'): continue
+        if c['center'] in DAY.fired_levels: continue
+        if c['center'] > pdc + buf:
+            candidates.append((c, 'G'))   # resistance above PDC
+        elif c['center'] < pdc - buf:
+            candidates.append((c, 'R'))   # support below PDC
+
+    # Grade A before B; within same grade, nearest to current bar close first
+    candidates.sort(key=lambda x: (0 if x[0]['grade'] == 'A' else 1, abs(x[0]['center'] - bar_close)))
+
+    for lvl_obj, role in candidates:
         sig = detect_v3_signal_on_bar(bar, lvl_obj, role)
         if sig is None: continue
         side = 'CE' if 'CE' in sig['kind'] else 'PE'
         detail = f"Grade {sig['grade']} {role}-cluster {sig['kind'].replace('_','-')} at {lvl_obj['center']:.0f}"
         target = compute_targets(lvl_obj, side, DAY.levels['all_clusters'])
-        return {'engine':'V3','side':side,'detail':detail,'trigger':lvl_obj['center'],
-                'level_obj':lvl_obj,'target_spot':target,'kind':sig['kind']}
+        return {'engine': 'V3', 'side': side, 'detail': detail, 'trigger': lvl_obj['center'],
+                'level_obj': lvl_obj, 'target_spot': target, 'kind': sig['kind']}
     return None
 
 
