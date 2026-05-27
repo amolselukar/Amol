@@ -1,32 +1,32 @@
 {
-  "date": "2026-05-26",
-  "for_date": "2026-05-27",
-  "generated_at": "2026-05-26 10:32:18",
+  "date": "2026-05-27",
+  "for_date": "2026-05-28",
+  "generated_at": "2026-05-27 10:32:09",
   "atm": 23900,
-  "expiry": "2026-05-26",
-  "monthly_expiry": "2026-05-26",
-  "is_monthly_expiry": true,
-  "days_to_expiry": 0,
-  "expiry_caution": true,
-  "is_expiry_day": true,
-  "pcr": 1.017,
+  "expiry": "2026-06-02",
+  "monthly_expiry": "2026-06-30",
+  "is_monthly_expiry": false,
+  "days_to_expiry": 6,
+  "expiry_caution": false,
+  "is_expiry_day": false,
+  "pcr": 0.874,
   "bias": "NEUTRAL",
   "max_pain": 23900,
-  "straddle_atm": 13.8,
+  "straddle_atm": 312.1,
   "oi_stats": {
-    "ce_mean": 5904420,
-    "ce_std": 5169297,
-    "pe_mean": 6007720,
-    "pe_std": 6233264,
-    "ce_wall_threshold": 16243015,
-    "pe_wall_threshold": 18474247
+    "ce_mean": 3352615,
+    "ce_std": 2870355,
+    "pe_mean": 2931225,
+    "pe_std": 1993044,
+    "ce_wall_threshold": 9093324,
+    "pe_wall_threshold": 6917314
   },
   "resistance_levels": [],
   "support_levels": [],
   "info_levels": [
     {
-      "strike": 23900,
-      "side": "CE",
+      "strike": 23500,
+      "side": "PE",
       "reason": "OI significant but stale/expiry caution"
     },
     {
@@ -38,17 +38,22 @@
       "strike": 24000,
       "side": "CE",
       "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24500,
+      "side": "CE",
+      "reason": "OI significant but stale/expiry caution"
     }
   ],
   "v3_resistance": [],
   "v3_support": [],
   "price_clusters": {
-    "pdh": 24089.8,
-    "pdl": 23885.5,
-    "pdc": 23933.8,
+    "pdh": 23983.2,
+    "pdl": 23858.2,
+    "pdc": 23920.7,
     "clusters_above": [
       {
-        "center": 24093.2,
+        "center": 23990.6,
         "kinds": [
           "PDH",
           "round_100",
@@ -57,7 +62,7 @@
         "grade": "A"
       },
       {
-        "center": 23998.0,
+        "center": 24094.9,
         "kinds": [
           "round_100",
           "swing_high"
@@ -67,20 +72,13 @@
     ],
     "clusters_below": [
       {
-        "center": 23892.7,
+        "center": 23858.9,
         "kinds": [
           "PDL",
-          "round_100"
-        ],
-        "grade": "B"
-      },
-      {
-        "center": 23842.8,
-        "kinds": [
           "round_50",
-          "swing_high"
+          "swing_low"
         ],
-        "grade": "B"
+        "grade": "A"
       },
       {
         "center": 23800.0,
