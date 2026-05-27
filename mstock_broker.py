@@ -135,7 +135,7 @@ class MStockBroker:
             # Step 3: complete 2FA via verify_totp
             if totp_code:
                 try:
-                    tr = self._to_dict(self._client.verify_totp(totp=totp_code))
+                    tr = self._to_dict(self._client.verify_totp(_totp=totp_code))
                     log.info(f"[mstock] verify_totp resp: status={tr.get('status')} "
                              f"msg={tr.get('message')}")
                     if tr.get('status') not in (True, 'true', 'True'):
@@ -165,7 +165,7 @@ class MStockBroker:
         """Token lookup via get_instruments(). Optional — orders work without token too."""
         self.ensure_logged_in()
         try:
-            resp = self._to_dict(self._client.get_instruments(exchange=exchange))
+            resp = self._to_dict(self._client.get_instruments())
             instruments = resp.get('data', [])
             if not isinstance(instruments, list):
                 return None
