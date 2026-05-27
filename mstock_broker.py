@@ -172,39 +172,43 @@ class MStockBroker:
             return False
 
     def _build_token_cache(self):
-        """Fetch mStock instrument master and build tradingsymbol→token cache."""
-        try:
-            old_timeout = self._client.timeout
-            self._client.timeout = 30
-            raw = self._client.get_instruments()
-            self._client.timeout = old_timeout
+        """Fetch mStock instrument master and build tradingsymbol→token cache.
 
-            # SDK returns CSV bytes or JSON dict depending on content-type
-            if isinstance(raw, bytes):
-                import csv, io
-                reader = csv.DictReader(io.StringIO(raw.decode('utf-8')))
-                rows = list(reader)
-            else:
-                resp = self._to_dict(raw)
-                rows = resp.get('data') or []
+        OpenAPIScripMaster returns a JSON array where each record has:
+          token, symbol (underlying), name (trading symbol e.g. NIFTY26JUL23000CE),
+          expiry, strike, lotsize, instrumenttype, exch_seg, tick_size
+        """
+        try:
+            import requests as _req
+            url = "https://api.mstock.trade/openapi/typeb/instruments/OpenAPIScripMaster"
+            r = _req.get(url, timeout=30)
+            r.raise_for_status()
+            rows = r.json()   # returns a list of dicts
+            if not isinstance(rows, list):
+                rows = rows.get('data') or []
+            log.info(f"[mstock] Instrument master: {len(rows)} records, "
+                     f"keys={list(rows[0].keys()) if rows else 'empty'}")
 
             for row in rows:
-                sym = (row.get('tradingsymbol') or row.get('symbol') or
-                       row.get('Trading Symbol') or row.get('TradingSymbol') or '')
-                tok = str(row.get('symboltoken') or row.get('token') or
-                          row.get('Token') or row.get('ScripCode') or '')
+                # mStock OpenAPIScripMaster: trading symbol is in 'name' field
+                # (e.g. "NIFTY26JUL29300CE"), not 'symbol' (which is just "NIFTY")
+                sym = (row.get('name') or row.get('tradingsymbol') or
+                       row.get('Trading Symbol') or row.get('TradingSymbol') or
+                       row.get('TRADING_SYMBOL') or '')
+                tok = str(row.get('token') or row.get('symboltoken') or
+                          row.get('symbolToken') or row.get('Token') or
+                          row.get('ScripCode') or row.get('SCRIP_CODE') or '')
                 if sym and tok:
                     self._sym_token_cache[sym] = tok
 
             log.info(f"[mstock] Instrument cache: {len(self._sym_token_cache)} symbols")
-            # Log first few NFO NIFTY entries to verify symbol format
             nifty_sample = [(s, t) for s, t in self._sym_token_cache.items()
                             if 'NIFTY' in s and 'CE' in s][:5]
             if nifty_sample:
-                log.info(f"[mstock] Sample NIFTY CE symbols: {nifty_sample}")
+                log.info(f"[mstock] Sample NIFTY CE: {nifty_sample}")
 
         except Exception as e:
-            log.warning(f"[mstock] Instrument cache failed: {e} — token lookup unavailable")
+            log.warning(f"[mstock] Instrument cache failed: {e}")
 
     def ensure_logged_in(self):
         if not self._logged_in:
