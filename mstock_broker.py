@@ -96,11 +96,17 @@ class MStockBroker:
     @staticmethod
     def _to_dict(resp) -> dict:
         """Normalize SDK response — handles dict, requests.Response, or custom objects."""
+        if resp is None:
+            return {}
         if isinstance(resp, dict):
             return resp
         if hasattr(resp, 'json'):
             try:
-                return resp.json()
+                d = resp.json()
+                # SDK wraps list responses as first element
+                if isinstance(d, list):
+                    d = d[0] if d else {}
+                return d if isinstance(d, dict) else {}
             except Exception:
                 pass
         if hasattr(resp, '__dict__'):
@@ -108,7 +114,12 @@ class MStockBroker:
         return {}
 
     def login(self) -> bool:
-        """Login to mStock. Two-step: login() → set_access_token() → verify_totp()."""
+        """
+        mStock Type B two-step auth:
+        1. login(user_id, password)  → jwtToken + refreshToken
+        2. set_access_token(jwt)     → activate initial JWT
+        3. verify_totp(_api_key, refreshToken, _tOtp) → final JWT (auto-set by SDK)
+        """
         try:
             import pyotp
             totp_code = pyotp.TOTP(self._totp_sec).now() if self._totp_sec else ""
@@ -119,35 +130,39 @@ class MStockBroker:
             # Step 1: password login
             raw  = self._client.login(user_id=self._user_id, password=self._password)
             resp = self._to_dict(raw)
-            log.info(f"[mstock] login resp: status={resp.get('status')} "
-                     f"msg={resp.get('message')} state={( resp.get('data') or {}).get('state')}")
+            log.info(f"[mstock] login: status={resp.get('status')} msg={resp.get('message')}")
 
-            data      = resp.get('data') or {}
-            jwt_token = data.get('jwtToken', '')
+            data          = resp.get('data') or {}
+            jwt_token     = data.get('jwtToken', '')
+            refresh_token = data.get('refreshToken', '')
+
             if not (resp.get('status') in (True, 'true', 'True') and jwt_token):
                 log.error(f"[mstock] Login step-1 failed: {resp}")
                 return False
 
-            # Step 2: activate JWT on the SDK client
+            # Step 2: activate initial JWT
             self._client.set_access_token(jwt_token)
-            log.info("[mstock] JWT activated via set_access_token()")
+            log.info("[mstock] Initial JWT set.")
 
-            # Step 3: complete 2FA via verify_totp
-            if totp_code:
-                try:
-                    tr = self._to_dict(self._client.verify_totp(_tOtp=totp_code))
-                    log.info(f"[mstock] verify_totp resp: status={tr.get('status')} "
-                             f"msg={tr.get('message')}")
-                    if tr.get('status') not in (True, 'true', 'True'):
-                        log.error(f"[mstock] verify_totp failed: {tr}")
-                        return False
-                except Exception as e:
-                    log.warning(f"[mstock] verify_totp exception: {e} — proceeding anyway")
+            # Step 3: TOTP verification — SDK auto-sets final JWT on success
+            if totp_code and refresh_token:
+                raw2 = self._client.verify_totp(
+                    _api_key=self._api_key,
+                    _request_token=refresh_token,
+                    _tOtp=totp_code
+                )
+                resp2 = self._to_dict(raw2)
+                log.info(f"[mstock] verify_totp: status={resp2.get('status')} msg={resp2.get('message')}")
+                if resp2.get('status') not in (True, 'true', 'True'):
+                    log.error(f"[mstock] verify_totp failed: {resp2}")
+                    return False
             else:
-                log.warning("[mstock] No MSTOCK_TOTP_SECRET — skipping verify_totp")
+                log.warning(f"[mstock] Skipping verify_totp "
+                            f"(totp={'yes' if totp_code else 'NO'}, "
+                            f"refreshToken={'yes' if refresh_token else 'NO'})")
 
             self._logged_in = True
-            log.info("[mstock] Login complete (password + TOTP verified).")
+            log.info("[mstock] Login complete.")
             return True
 
         except Exception as e:
