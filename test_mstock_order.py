@@ -80,12 +80,28 @@ def resolve_atm_ce_symbol():
 # ── mStock broker ─────────────────────────────────────────────────────
 try:
     from mstock_broker import MStockBroker
-except ImportError:
-    print("[FATAL] mstock_broker.py not found")
+    from tradingapi_b.mconnect import MConnectB as _SDK
+except ImportError as e:
+    print(f"[FATAL] import failed: {e}")
     sys.exit(1)
 
 import logging
 logging.basicConfig(level=logging.INFO, format='%(message)s')
+
+# Inspect SDK methods so we know what's actually available
+print("\n=== MConnectB available methods ===")
+sdk_methods = [m for m in dir(_SDK) if not m.startswith('__')]
+for m in sdk_methods:
+    print(f"  {m}")
+print("===================================\n")
+
+# Also inspect login() signature
+import inspect
+try:
+    sig = inspect.signature(_SDK.login)
+    print(f"login() signature: {sig}\n")
+except Exception as e:
+    print(f"Could not inspect login: {e}\n")
 
 try:
     broker = MStockBroker()
