@@ -91,6 +91,7 @@ class MStockBroker:
             disable_ssl=True
         )
         self._logged_in = False
+        self._sym_token_cache = {}   # tradingsymbol -> mStock token (built at login)
 
     # ── Authentication ────────────────────────────────────────────────
     @staticmethod
@@ -163,11 +164,47 @@ class MStockBroker:
 
             self._logged_in = True
             log.info("[mstock] Login complete.")
+            self._build_token_cache()
             return True
 
         except Exception as e:
             log.error(f"[mstock] Login failed: {e}")
             return False
+
+    def _build_token_cache(self):
+        """Fetch mStock instrument master and build tradingsymbol→token cache."""
+        try:
+            old_timeout = self._client.timeout
+            self._client.timeout = 30
+            raw = self._client.get_instruments()
+            self._client.timeout = old_timeout
+
+            # SDK returns CSV bytes or JSON dict depending on content-type
+            if isinstance(raw, bytes):
+                import csv, io
+                reader = csv.DictReader(io.StringIO(raw.decode('utf-8')))
+                rows = list(reader)
+            else:
+                resp = self._to_dict(raw)
+                rows = resp.get('data') or []
+
+            for row in rows:
+                sym = (row.get('tradingsymbol') or row.get('symbol') or
+                       row.get('Trading Symbol') or row.get('TradingSymbol') or '')
+                tok = str(row.get('symboltoken') or row.get('token') or
+                          row.get('Token') or row.get('ScripCode') or '')
+                if sym and tok:
+                    self._sym_token_cache[sym] = tok
+
+            log.info(f"[mstock] Instrument cache: {len(self._sym_token_cache)} symbols")
+            # Log first few NFO NIFTY entries to verify symbol format
+            nifty_sample = [(s, t) for s, t in self._sym_token_cache.items()
+                            if 'NIFTY' in s and 'CE' in s][:5]
+            if nifty_sample:
+                log.info(f"[mstock] Sample NIFTY CE symbols: {nifty_sample}")
+
+        except Exception as e:
+            log.warning(f"[mstock] Instrument cache failed: {e} — token lookup unavailable")
 
     def ensure_logged_in(self):
         if not self._logged_in:
@@ -177,8 +214,8 @@ class MStockBroker:
     # ── Instrument lookup ─────────────────────────────────────────────
     def get_symbol_token(self, trading_symbol: str,
                          exchange: str = "NFO") -> Optional[str]:
-        """Token lookup is optional — orders accepted with symbol name alone."""
-        return None
+        """Lookup from in-memory instrument cache built at login."""
+        return self._sym_token_cache.get(trading_symbol)
 
     # ── Order placement ───────────────────────────────────────────────
     def place_order(self,
