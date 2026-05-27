@@ -84,6 +84,9 @@ except ImportError:
     print("[FATAL] mstock_broker.py not found")
     sys.exit(1)
 
+import logging
+logging.basicConfig(level=logging.INFO, format='%(message)s')
+
 try:
     broker = MStockBroker()
     ok = broker.login()

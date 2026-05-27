@@ -108,10 +108,7 @@ class MStockBroker:
         return {}
 
     def login(self) -> bool:
-        """TOTP-based login. Token valid until midnight."""
-        if self._load_cached_token():
-            log.info("[mstock] Using cached token.")
-            return True
+        """Login to mStock. Always does a fresh SDK login — JWT is in-memory only."""
         try:
             raw = self._client.login(
                 user_id=self._user_id,
@@ -126,8 +123,13 @@ class MStockBroker:
             data = resp.get('data') or {}
             if resp.get('status') in (True, 'true', 'True') and data.get('jwtToken'):
                 self._logged_in = True
-                self._cache_token()
                 log.info("[mstock] Login successful (Type B direct JWT).")
+                return True
+
+            # Some SDK versions return success differently — check for any truthy status
+            if resp.get('status') in (True, 'true', 'True', 'success', 'SUCCESS'):
+                self._logged_in = True
+                log.info("[mstock] Login successful.")
                 return True
 
             log.error(f"[mstock] Login failed: {resp}")
@@ -136,25 +138,6 @@ class MStockBroker:
         except Exception as e:
             log.error(f"[mstock] Login failed: {e}")
             return False
-
-    def _cache_token(self):
-        today = datetime.now().strftime("%Y-%m-%d")
-        with open(TOKEN_CACHE, 'w') as f:
-            json.dump({'date': today, 'logged_in': True}, f)
-
-    def _load_cached_token(self) -> bool:
-        """Check if we already logged in today (session persists until midnight)."""
-        if not os.path.exists(TOKEN_CACHE):
-            return False
-        try:
-            data = json.load(open(TOKEN_CACHE))
-            today = datetime.now().strftime("%Y-%m-%d")
-            if data.get('date') == today and data.get('logged_in'):
-                self._logged_in = True
-                return True
-        except Exception:
-            pass
-        return False
 
     def ensure_logged_in(self):
         if not self._logged_in:
@@ -166,19 +149,17 @@ class MStockBroker:
                          exchange: str = "NFO") -> Optional[str]:
         """
         Lookup instrument token for a symbol from mStock instrument master.
-        Returns token string or None.
-        Tip: call dump_instruments() once to inspect available symbols.
+        Returns token string or None (order placement works without token too).
         """
         self.ensure_logged_in()
         try:
-            resp = self._to_dict(self._client.search_scrip(
-                exchange=exchange,
-                searchscrip=trading_symbol
-            ))
-            scrips = resp.get('data', [])
-            for s in scrips:
-                if s.get('tradingsymbol') == trading_symbol:
-                    return str(s.get('symboltoken') or s.get('token', ''))
+            resp = self._to_dict(self._client.get_all_instruments(exchange=exchange))
+            instruments = resp.get('data', [])
+            if not isinstance(instruments, list):
+                return None
+            for i in instruments:
+                if i.get('tradingsymbol') == trading_symbol:
+                    return str(i.get('symboltoken') or i.get('token', ''))
         except Exception as e:
             log.warning(f"[mstock] get_symbol_token failed: {e}")
         return None
