@@ -108,51 +108,47 @@ class MStockBroker:
         return {}
 
     def login(self) -> bool:
-        """Login to mStock with TOTP. Always does a fresh SDK login — JWT is in-memory only."""
+        """Login to mStock. Two-step: login() → set_access_token() → verify_totp()."""
         try:
             import pyotp
-            totp = pyotp.TOTP(self._totp_sec).now() if self._totp_sec else ""
+            totp_code = pyotp.TOTP(self._totp_sec).now() if self._totp_sec else ""
         except Exception:
-            totp = ""
+            totp_code = ""
 
         try:
-            # Try with TOTP first (required for live trading session)
-            raw = self._client.login(
-                user_id=self._user_id,
-                password=self._password,
-                totp=totp
-            )
+            # Step 1: password login
+            raw  = self._client.login(user_id=self._user_id, password=self._password)
             resp = self._to_dict(raw)
-            log.info(f"[mstock] Login resp: status={resp.get('status')} "
-                     f"msg={resp.get('message')} data_keys={list((resp.get('data') or {}).keys())}")
+            log.info(f"[mstock] login resp: status={resp.get('status')} "
+                     f"msg={resp.get('message')} state={( resp.get('data') or {}).get('state')}")
 
-            data = resp.get('data') or {}
-            if resp.get('status') in (True, 'true', 'True'):
-                self._logged_in = True
-                log.info("[mstock] Login successful.")
-                return True
-
-            log.error(f"[mstock] Login failed: {resp}")
-            return False
-
-        except TypeError:
-            # SDK doesn't accept totp param — fall back to password-only
-            log.info("[mstock] Retrying login without totp param...")
-            try:
-                raw = self._client.login(
-                    user_id=self._user_id,
-                    password=self._password
-                )
-                resp = self._to_dict(raw)
-                log.info(f"[mstock] Login resp (no-totp): {resp}")
-                if resp.get('status') in (True, 'true', 'True'):
-                    self._logged_in = True
-                    return True
-                log.error(f"[mstock] Login failed: {resp}")
+            data      = resp.get('data') or {}
+            jwt_token = data.get('jwtToken', '')
+            if not (resp.get('status') in (True, 'true', 'True') and jwt_token):
+                log.error(f"[mstock] Login step-1 failed: {resp}")
                 return False
-            except Exception as e:
-                log.error(f"[mstock] Login failed: {e}")
-                return False
+
+            # Step 2: activate JWT on the SDK client
+            self._client.set_access_token(jwt_token)
+            log.info("[mstock] JWT activated via set_access_token()")
+
+            # Step 3: complete 2FA via verify_totp
+            if totp_code:
+                try:
+                    tr = self._to_dict(self._client.verify_totp(totp=totp_code))
+                    log.info(f"[mstock] verify_totp resp: status={tr.get('status')} "
+                             f"msg={tr.get('message')}")
+                    if tr.get('status') not in (True, 'true', 'True'):
+                        log.error(f"[mstock] verify_totp failed: {tr}")
+                        return False
+                except Exception as e:
+                    log.warning(f"[mstock] verify_totp exception: {e} — proceeding anyway")
+            else:
+                log.warning("[mstock] No MSTOCK_TOTP_SECRET — skipping verify_totp")
+
+            self._logged_in = True
+            log.info("[mstock] Login complete (password + TOTP verified).")
+            return True
 
         except Exception as e:
             log.error(f"[mstock] Login failed: {e}")
@@ -166,8 +162,19 @@ class MStockBroker:
     # ── Instrument lookup ─────────────────────────────────────────────
     def get_symbol_token(self, trading_symbol: str,
                          exchange: str = "NFO") -> Optional[str]:
-        """Token lookup is optional — orders work with symbol name alone."""
-        return None  # skip lookup; no confirmed method name in MConnectB SDK
+        """Token lookup via get_instruments(). Optional — orders work without token too."""
+        self.ensure_logged_in()
+        try:
+            resp = self._to_dict(self._client.get_instruments(exchange=exchange))
+            instruments = resp.get('data', [])
+            if not isinstance(instruments, list):
+                return None
+            for i in instruments:
+                if i.get('tradingsymbol') == trading_symbol:
+                    return str(i.get('symboltoken') or i.get('token', ''))
+        except Exception as e:
+            log.warning(f"[mstock] get_symbol_token failed: {e}")
+        return None
 
     # ── Order placement ───────────────────────────────────────────────
     def place_order(self,
