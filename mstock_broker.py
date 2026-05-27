@@ -108,32 +108,51 @@ class MStockBroker:
         return {}
 
     def login(self) -> bool:
-        """Login to mStock. Always does a fresh SDK login — JWT is in-memory only."""
+        """Login to mStock with TOTP. Always does a fresh SDK login — JWT is in-memory only."""
         try:
+            import pyotp
+            totp = pyotp.TOTP(self._totp_sec).now() if self._totp_sec else ""
+        except Exception:
+            totp = ""
+
+        try:
+            # Try with TOTP first (required for live trading session)
             raw = self._client.login(
                 user_id=self._user_id,
-                password=self._password
+                password=self._password,
+                totp=totp
             )
             resp = self._to_dict(raw)
             log.info(f"[mstock] Login resp: status={resp.get('status')} "
-                     f"state={resp.get('data', {}).get('state')} "
-                     f"msg={resp.get('message')}")
+                     f"msg={resp.get('message')} data_keys={list((resp.get('data') or {}).keys())}")
 
-            # Type B: login returns jwtToken directly, state='live' means success
             data = resp.get('data') or {}
-            if resp.get('status') in (True, 'true', 'True') and data.get('jwtToken'):
-                self._logged_in = True
-                log.info("[mstock] Login successful (Type B direct JWT).")
-                return True
-
-            # Some SDK versions return success differently — check for any truthy status
-            if resp.get('status') in (True, 'true', 'True', 'success', 'SUCCESS'):
+            if resp.get('status') in (True, 'true', 'True'):
                 self._logged_in = True
                 log.info("[mstock] Login successful.")
                 return True
 
             log.error(f"[mstock] Login failed: {resp}")
             return False
+
+        except TypeError:
+            # SDK doesn't accept totp param — fall back to password-only
+            log.info("[mstock] Retrying login without totp param...")
+            try:
+                raw = self._client.login(
+                    user_id=self._user_id,
+                    password=self._password
+                )
+                resp = self._to_dict(raw)
+                log.info(f"[mstock] Login resp (no-totp): {resp}")
+                if resp.get('status') in (True, 'true', 'True'):
+                    self._logged_in = True
+                    return True
+                log.error(f"[mstock] Login failed: {resp}")
+                return False
+            except Exception as e:
+                log.error(f"[mstock] Login failed: {e}")
+                return False
 
         except Exception as e:
             log.error(f"[mstock] Login failed: {e}")
@@ -147,22 +166,8 @@ class MStockBroker:
     # ── Instrument lookup ─────────────────────────────────────────────
     def get_symbol_token(self, trading_symbol: str,
                          exchange: str = "NFO") -> Optional[str]:
-        """
-        Lookup instrument token for a symbol from mStock instrument master.
-        Returns token string or None (order placement works without token too).
-        """
-        self.ensure_logged_in()
-        try:
-            resp = self._to_dict(self._client.get_all_instruments(exchange=exchange))
-            instruments = resp.get('data', [])
-            if not isinstance(instruments, list):
-                return None
-            for i in instruments:
-                if i.get('tradingsymbol') == trading_symbol:
-                    return str(i.get('symboltoken') or i.get('token', ''))
-        except Exception as e:
-            log.warning(f"[mstock] get_symbol_token failed: {e}")
-        return None
+        """Token lookup is optional — orders work with symbol name alone."""
+        return None  # skip lookup; no confirmed method name in MConnectB SDK
 
     # ── Order placement ───────────────────────────────────────────────
     def place_order(self,
@@ -209,7 +214,7 @@ class MStockBroker:
                 _ordertag=tag
             ))
             log.info(f"[mstock] place_order resp: {resp}")
-            order_id = (resp.get('data', {}).get('orderid')
+            order_id = ((resp.get('data') or {}).get('orderid')
                         or resp.get('orderid')
                         or resp.get('order_id'))
             if order_id:
