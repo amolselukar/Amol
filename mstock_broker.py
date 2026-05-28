@@ -261,7 +261,7 @@ class MStockBroker:
                 _squareoff="0",
                 _stoploss="0",
                 _trailingStopLoss="",
-                _disclosedquantity="",
+                _disclosedquantity="0",
                 _duration="DAY",
                 _ordertag=tag
             ))
