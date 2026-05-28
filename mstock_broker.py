@@ -303,17 +303,25 @@ class MStockBroker:
         """
         self.ensure_logged_in()
         try:
-            resp = self._to_dict(self._client.get_order_book())
-            orders = resp.get('data', [])
+            raw = self._client.get_order_book()
+            # get_order_book() may return Response or dict; extract order list safely
+            if hasattr(raw, 'json'):
+                parsed = raw.json()
+            elif isinstance(raw, dict):
+                parsed = raw
+            else:
+                parsed = {}
+            if isinstance(parsed, list):
+                orders = parsed
+            else:
+                orders = parsed.get('data') or []
             if not isinstance(orders, list):
                 orders = []
-            if isinstance(orders, list):
-                for o in orders:
-                    if str(o.get('orderid', '')) == str(order_id):
-                        status = str(o.get('status', 'UNKNOWN')).upper()
-                        fill   = float(o.get('averageprice') or
-                                       o.get('fillprice') or 0)
-                        return status, fill
+            for o in orders:
+                if str(o.get('orderid', '')) == str(order_id):
+                    status = str(o.get('status', 'UNKNOWN')).upper()
+                    fill   = float(o.get('averageprice') or o.get('fillprice') or 0)
+                    return status, fill
         except Exception as e:
             log.error(f"[mstock] order_status {order_id}: {e}")
         return "UNKNOWN", 0.0
