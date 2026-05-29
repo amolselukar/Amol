@@ -1,0 +1,262 @@
+2026-05-29 04:20:54,875 [INFO] [BOOT] Expiry: 2026-06-02, 106 strikes, 212 option contracts
+2026-05-29 04:20:55,696 [WARNING] [OI Plan] Stale plan (2026-05-27) — ignoring for today's levels
+2026-05-29 04:20:55,696 [INFO] [OI Plan] No valid plan found — running without OI levels (normal mode)
+2026-05-29 04:20:55,697 [INFO] 
+2026-05-29 04:20:55,697 [INFO] +========================================================================+
+2026-05-29 04:20:55,697 [INFO] | ORION V2.5.12 — STRATEGY DESIGN                                        |
+2026-05-29 04:20:55,697 [INFO] | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
+2026-05-29 04:20:55,697 [INFO] +========================================================================+
+2026-05-29 04:20:55,697 [INFO] | ENGINE V2 (fires every 15m close, V2 priority over V3 same-bar)        |
+2026-05-29 04:20:55,697 [INFO] |   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
+2026-05-29 04:20:55,697 [INFO] |        RSI>53 | MACD bull | premium 30-180                             |
+2026-05-29 04:20:55,697 [INFO] |   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
+2026-05-29 04:20:55,697 [INFO] |        RSI<47 | MACD bear | premium 30-180                             |
+2026-05-29 04:20:55,697 [INFO] |                                                                         |
+2026-05-29 04:20:55,697 [INFO] | ENGINE V3 (15m G/R cluster break/reject)                               |
+2026-05-29 04:20:55,697 [INFO] |   Grade A (>=3 source kinds) / Grade B (>=2)                           |
+2026-05-29 04:20:55,697 [INFO] |   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
+2026-05-29 04:20:55,697 [INFO] |   Regime gate: BULL/BEAR/TRANSITION only                               |
+2026-05-29 04:20:55,697 [INFO] |                                                                         |
+2026-05-29 04:20:55,697 [INFO] | ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
+2026-05-29 04:20:55,697 [INFO] |   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
+2026-05-29 04:20:55,697 [INFO] |   Path B (post-exit): K reversal within 60min                          |
+2026-05-29 04:20:55,697 [INFO] |                                                                         |
+2026-05-29 04:20:55,697 [INFO] | UNIVERSAL EXIT (priority order):                                        |
+2026-05-29 04:20:55,697 [INFO] |   1. HARDSL -18%  2. Velvet Rope peak+12->SL entry+2                  |
+2026-05-29 04:20:55,697 [INFO] |   3. Ladder T2: peak+24->SL entry+12 (immediate, no time gate)         |
+2026-05-29 04:20:55,697 [INFO] |   4. Ladder T3: peak+36->SL entry+24 (immediate)                       |
+2026-05-29 04:20:55,697 [INFO] |   5. Runner +25/+25  6. SMA8(low) trail  7. Force close 15:25          |
+2026-05-29 04:20:55,698 [INFO] |   8. CB=3 non-flip losses                                               |
+2026-05-29 04:20:55,698 [INFO] |                                                                         |
+2026-05-29 04:20:55,698 [INFO] | INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
+2026-05-29 04:20:55,698 [INFO] +========================================================================+
+2026-05-29 04:20:55,698 [INFO] 
+2026-05-29 04:20:55,698 [INFO] === ORION CHANGE HISTORY (V2.2.2 -> V2.5.9) ===
+2026-05-29 04:20:55,698 [INFO] 
+2026-05-29 04:20:55,698 [INFO] V2.2.2 [PRODUCTION BASELINE — T10]
+2026-05-29 04:20:55,698 [INFO]   Entry : 1h SMA20/50 regime + 15m StochRSI K (CE>=38 rising, PE<=80 falling)
+2026-05-29 04:20:55,698 [INFO]   Exit  : HARDSL -35%, TIME_SL 210min/-20%, BE +15% -> option SMA8(low) trail
+2026-05-29 04:20:55,698 [INFO]   CB=2, 1 lot, no flip, no V3, no chop filter
+2026-05-29 04:20:55,698 [INFO] 
+2026-05-29 04:20:55,698 [INFO] V2.3  [+V3 CLUSTER LEVELS]
+2026-05-29 04:20:55,698 [INFO]   + PDH/PDL/round_50/round_100/PDC/1h swing pivots clustered within 20pts
+2026-05-29 04:20:55,698 [INFO]   + Grade A (>=3 source kinds) / Grade B (>=2)
+2026-05-29 04:20:55,698 [INFO]   + ADX regime classifier (BULL/BEAR/CHOP/TRANSITION)
+2026-05-29 04:20:55,698 [INFO] 
+2026-05-29 04:20:55,698 [INFO] V2.4  [+EXIT UPGRADES]
+2026-05-29 04:20:55,699 [INFO]   + 15m option SMA8(low) trail (KEPT in all future versions)
+2026-05-29 04:20:55,699 [INFO]   + ATR-based exits (REMOVED — not robust enough)
+2026-05-29 04:20:55,699 [INFO]   + BE armor at +15% (REMOVED later — net negative in backtest)
+2026-05-29 04:20:55,699 [INFO] 
+2026-05-29 04:20:55,700 [INFO] V2.5.0  [HYBRID V2+V3 + TIME-RATCHET]
+2026-05-29 04:20:55,700 [INFO]   + Hybrid V2+V3 entry (V2 priority on same-bar tiebreak)
+2026-05-29 04:20:55,700 [INFO]   + Time-ratchet exit: 90min / +20 step
+2026-05-29 04:20:55,700 [INFO] 
+2026-05-29 04:20:55,700 [INFO] V2.5.1  [ENTRY REFINEMENT]
+2026-05-29 04:20:55,701 [INFO]   + V2 PE_floor=25 (K>=25 required for PE entry)
+2026-05-29 04:20:55,701 [INFO]   + V2 CE: no upper K cap (cap tested and REJECTED — hurts WR)
+2026-05-29 04:20:55,701 [INFO]   + V2 priority confirmed: +Rs 52k vs V3-priority
+2026-05-29 04:20:55,701 [INFO] 
+2026-05-29 04:20:55,701 [INFO] V2.5.2  [FLIP RULE +Rs 130k]
+2026-05-29 04:20:55,701 [INFO]   + Path A flip (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10 + K reversed
+2026-05-29 04:20:55,701 [INFO]   + Path B flip (post-exit): K reversal within 60min
+2026-05-29 04:20:55,701 [INFO]   + Opposite-side only (same-side continuation REJECTED: -Rs 191k CATASTROPHIC)
+2026-05-29 04:20:55,701 [INFO]   + CE->PE: K falling, 25<=K<=80 | PE->CE: K rising, K>=38
+2026-05-29 04:20:55,701 [INFO] 
+2026-05-29 04:20:55,701 [INFO] V2.5.3  [V3 SINGLETONS + HARDSL LOCKED]
+2026-05-29 04:20:55,701 [INFO]   + Promoted singletons: PDH/PDL/round_100(+-200 PDC)/swing pivots standalone Grade B
+2026-05-29 04:20:55,701 [INFO]   + HARDSL locked at -25% (swept -35% to -15%; -25% optimal)
+2026-05-29 04:20:55,701 [INFO]   + PnL Rs +3,14,418
+2026-05-29 04:20:55,701 [INFO] 
+2026-05-29 04:20:55,701 [INFO] V2.5.4  [FLIP CAP]
+2026-05-29 04:20:55,701 [INFO]   + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
+2026-05-29 04:20:55,701 [INFO]   + PnL Rs +3,23,851
+2026-05-29 04:20:55,701 [INFO] 
+2026-05-29 04:20:55,701 [INFO] V2.5.5  [CHOP FILTER +Rs 49k]
+2026-05-29 04:20:55,701 [INFO]   + RSI [47,53] indecision band blocks ALL entries
+2026-05-29 04:20:55,701 [INFO]   + PnL Rs +3,72,598
+2026-05-29 04:20:55,701 [INFO] 
+2026-05-29 04:20:55,701 [INFO] V2.5.6  [V3 PDC CONTAMINATION FIX — LOCKED Rs 3,85,724 / WR 35.7%]
+2026-05-29 04:20:55,701 [INFO]   + Exclude PDC from clustering (PDC is reference, not tradeable level)
+2026-05-29 04:20:55,701 [INFO]   + G/R require >=25pt buffer from PDC (motivated by 2026-05-18 bad paper trade)
+2026-05-29 04:20:55,702 [INFO]   + PnL Rs +3,85,724 / MaxDD -1,331 / Red 5/18
+2026-05-29 04:20:55,702 [INFO] 
+2026-05-29 04:20:55,702 [INFO] V2.5.7  [VELVET ROPE + RATCHET +Rs 1,14,324 / WR 35.7%->55.4%]
+2026-05-29 04:20:55,704 [INFO]   + Velvet Rope: premium hits entry+15 -> SL immediately to entry+2
+2026-05-29 04:20:55,704 [INFO]   + Ratchet Gate: 30min elapsed + entry+25 -> SL to entry+15
+2026-05-29 04:20:55,704 [INFO]   + Runner Trail: +20 per +20pts peak (one-way)
+2026-05-29 04:20:55,704 [INFO]   + Trade-off: Red months 5->10/18, MaxDD -1,331->-1,885
+2026-05-29 04:20:55,704 [INFO] 
+2026-05-29 04:20:55,704 [INFO] V2.5.8  [K EXTREME + FULL SMA ALIGNMENT]
+2026-05-29 04:20:55,704 [INFO]   + K extreme filter: CE entry only if K<25 recently (3 bars); PE if K>75 recently
+2026-05-29 04:20:55,704 [INFO]   + Full SMA alignment: CE needs close>SMA20>SMA50 (was just close>SMA20)
+2026-05-29 04:20:55,704 [INFO] 
+2026-05-29 04:20:55,704 [INFO] V2.5.9  [Rs 6,70,425 / WR 66.9% / 357 trades / MaxDD -1,485 / Red 8/18]
+2026-05-29 04:20:55,704 [INFO]   + RSI DIRECTIONAL GATE replaces RSI [47,53] chop filter:
+2026-05-29 04:20:55,705 [INFO]       CE: 1h RSI>53 required | PE: 1h RSI<47 required
+2026-05-29 04:20:55,705 [INFO]   + MACD 1h alignment: CE needs MACD_line>signal; PE needs MACD_line<signal
+2026-05-29 04:20:55,705 [INFO]   + Premium gate: 30<=entry_LTP<=180 (blocks deep OTM and IV-spike entries)
+2026-05-29 04:20:55,705 [INFO]   + Tightened exit params: RI=12 (was 15), RT=20 (was 30), RS=25 (was 20)
+2026-05-29 04:20:55,705 [INFO]   + CB=3 (was 4)
+2026-05-29 04:20:55,705 [INFO]   + Straddle monitoring: informational Telegram at 9:45 and 11:30
+2026-05-29 04:20:55,705 [INFO]   + Options VWAP: informational context at entry/pulse/exit
+2026-05-29 04:20:55,705 [INFO] 
+2026-05-29 04:20:55,705 [INFO] V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 / Red 5/18]
+2026-05-29 04:20:55,705 [INFO]   SOURCE: VRL (Vishal Rajput) code analysis — peak-based ratchet ladder
+2026-05-29 04:20:55,705 [INFO]   + HARDSL tightened -25% → -18% (faster loss cut, less capital exposed)
+2026-05-29 04:20:55,705 [INFO]   + 20-min time gate REMOVED — purely peak-based ladder (no waiting)
+2026-05-29 04:20:55,705 [INFO]   + Ladder Tier2: peak >= entry+24 → SL = entry+12 (immediate)
+2026-05-29 04:20:55,705 [INFO]   + Ladder Tier3: peak >= entry+36 → SL = entry+24 (immediate)
+2026-05-29 04:20:55,705 [INFO]   + Entry logic UNCHANGED from V2.5.9
+2026-05-29 04:20:55,705 [INFO]   + Validated: real option data (May 4-21 2026, 12 days)
+2026-05-29 04:20:55,705 [INFO]   + Key improvement: MaxDD -1,485 → -1,119 (-25%), Red months 8 → 5
+2026-05-29 04:20:55,705 [INFO] 
+2026-05-29 04:20:55,705 [INFO] === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
+2026-05-29 04:20:55,705 [INFO]   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
+2026-05-29 04:20:55,705 [INFO]   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
+2026-05-29 04:20:55,705 [INFO]   ADX<20 filter        : -Rs 16k
+2026-05-29 04:20:55,705 [INFO]   ADX<25 filter        : -Rs 34k
+2026-05-29 04:20:55,705 [INFO]   BE armor at +15%     : net negative
+2026-05-29 04:20:55,706 [INFO]   Same-side flip       : -Rs 191k CATASTROPHIC
+2026-05-29 04:20:55,706 [INFO]   REVERSAL_FLIP=True   : WR 12% vs 33%
+2026-05-29 04:20:55,706 [INFO]   K cap on CE          : hurts WR (no cap is better)
+2026-05-29 04:20:55,706 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
+2026-05-29 04:20:55,706 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
+2026-05-29 04:20:55,706 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-05-29 04:20:56,773 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=80\" at byte offset 212"}
+2026-05-29 04:20:56,773 [WARNING] HTML parse failed; retrying as plain text
+2026-05-29 04:20:59,918 [INFO] [STRADDLE] Reference: ₹282.5 at 09:50
+2026-05-29 04:21:00,818 [INFO] [INDICATORS] spot=23910.8 | 1h: close=23920.7 sma20=23965.6 sma50=23803.7 rsi=52.9 macd=26.77/45.58(bear) | 15m: K=56.3↓(prev 76.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:21:00,818 [INFO] [SIGNAL] CE: reg=False K=False(K=56.3>=38,rising) Kextr=False RSI=False(52.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=56.3<=80,falling) Kextr=True RSI=False(52.9<47) MACD=True => BLOCK
+2026-05-29 04:26:09,170 [INFO] [INDICATORS] spot=23891.7 | 1h: close=23920.7 sma20=23965.6 sma50=23803.7 rsi=52.9 macd=26.77/45.58(bear) | 15m: K=56.3↓(prev 76.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:26:09,171 [INFO] [SIGNAL] CE: reg=False K=False(K=56.3>=38,rising) Kextr=False RSI=False(52.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=56.3<=80,falling) Kextr=True RSI=False(52.9<47) MACD=True => BLOCK
+2026-05-29 04:31:17,197 [INFO] [INDICATORS] spot=23904.2 | 1h: close=23920.7 sma20=23965.6 sma50=23803.7 rsi=52.9 macd=26.77/45.58(bear) | 15m: K=51.4↓(prev 56.3) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:31:17,197 [INFO] [SIGNAL] CE: reg=False K=False(K=51.4>=38,rising) Kextr=False RSI=False(52.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=51.4<=80,falling) Kextr=True RSI=False(52.9<47) MACD=True => BLOCK
+2026-05-29 04:36:24,739 [INFO] [INDICATORS] spot=23943.5 | 1h: close=23920.7 sma20=23965.6 sma50=23803.7 rsi=52.9 macd=26.77/45.58(bear) | 15m: K=51.4↓(prev 56.3) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:36:24,740 [INFO] [SIGNAL] CE: reg=False K=False(K=51.4>=38,rising) Kextr=False RSI=False(52.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=51.4<=80,falling) Kextr=True RSI=False(52.9<47) MACD=True => BLOCK
+2026-05-29 04:41:32,857 [INFO] [INDICATORS] spot=23945.9 | 1h: close=23920.7 sma20=23965.6 sma50=23803.7 rsi=52.9 macd=26.77/45.58(bear) | 15m: K=51.4↓(prev 56.3) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:41:32,858 [INFO] [SIGNAL] CE: reg=False K=False(K=51.4>=38,rising) Kextr=False RSI=False(52.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=51.4<=80,falling) Kextr=True RSI=False(52.9<47) MACD=True => BLOCK
+2026-05-29 04:46:40,620 [INFO] [INDICATORS] spot=23938.2 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=68.4↑(prev 51.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:46:40,620 [INFO] [SIGNAL] CE: reg=False K=True(K=68.4>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=68.4<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 04:51:48,554 [INFO] [INDICATORS] spot=23934.8 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=68.4↑(prev 51.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:51:48,554 [INFO] [SIGNAL] CE: reg=False K=True(K=68.4>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=68.4<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 04:56:56,745 [INFO] [INDICATORS] spot=23923.2 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=68.4↑(prev 51.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 04:56:56,745 [INFO] [SIGNAL] CE: reg=False K=True(K=68.4>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=68.4<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:02:04,485 [INFO] [INDICATORS] spot=23907.7 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=82.1↑(prev 68.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:02:04,487 [INFO] [SIGNAL] CE: reg=False K=True(K=82.1>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=82.1<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:07:12,352 [INFO] [INDICATORS] spot=23923.0 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=82.1↑(prev 68.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:07:12,354 [INFO] [SIGNAL] CE: reg=False K=True(K=82.1>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=82.1<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:12:20,975 [INFO] [INDICATORS] spot=23920.5 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=82.1↑(prev 68.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:12:20,977 [INFO] [SIGNAL] CE: reg=False K=True(K=82.1>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=82.1<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:17:29,375 [INFO] [INDICATORS] spot=23891.7 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=70.0↓(prev 82.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:17:29,376 [INFO] [SIGNAL] CE: reg=False K=False(K=70.0>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=True(K=70.0<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:22:37,395 [INFO] [INDICATORS] spot=23888.2 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=70.0↓(prev 82.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:22:37,396 [INFO] [SIGNAL] CE: reg=False K=False(K=70.0>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=True(K=70.0<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:27:45,554 [INFO] [INDICATORS] spot=23906.0 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=70.0↓(prev 82.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:27:45,554 [INFO] [SIGNAL] CE: reg=False K=False(K=70.0>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=True(K=70.0<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:32:53,545 [INFO] [INDICATORS] spot=23901.2 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=54.1↓(prev 70.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:32:53,546 [INFO] [SIGNAL] CE: reg=False K=False(K=54.1>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=True(K=54.1<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:38:01,238 [INFO] [INDICATORS] spot=23908.5 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=54.1↓(prev 70.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:38:01,238 [INFO] [SIGNAL] CE: reg=False K=False(K=54.1>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=True(K=54.1<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:43:10,010 [INFO] [INDICATORS] spot=23897.6 | 1h: close=23945.7 sma20=23963.5 sma50=23809.7 rsi=55.7 macd=26.26/41.72(bear) | 15m: K=54.1↓(prev 70.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:43:10,010 [INFO] [SIGNAL] CE: reg=False K=False(K=54.1>=38,rising) Kextr=False RSI=True(55.7>53) MACD=False => BLOCK | PE: reg=False K=True(K=54.1<=80,falling) Kextr=True RSI=False(55.7<47) MACD=True => BLOCK
+2026-05-29 05:48:20,302 [INFO] [INDICATORS] spot=23907.4 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=48.9↓(prev 54.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:48:20,302 [INFO] [SIGNAL] CE: reg=False K=False(K=48.9>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=48.9<=80,falling) Kextr=True RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 05:53:28,571 [INFO] [INDICATORS] spot=23896.0 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=48.9↓(prev 54.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:53:28,572 [INFO] [SIGNAL] CE: reg=False K=False(K=48.9>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=48.9<=80,falling) Kextr=True RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 05:58:37,503 [INFO] [INDICATORS] spot=23896.2 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=48.9↓(prev 54.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 05:58:37,503 [INFO] [SIGNAL] CE: reg=False K=False(K=48.9>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=48.9<=80,falling) Kextr=True RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:03:46,931 [INFO] [INDICATORS] spot=23882.4 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=44.6↓(prev 48.9) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:03:46,932 [INFO] [SIGNAL] CE: reg=False K=False(K=44.6>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=44.6<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:08:54,679 [INFO] [INDICATORS] spot=23885.4 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=44.6↓(prev 48.9) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:08:54,679 [INFO] [SIGNAL] CE: reg=False K=False(K=44.6>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=44.6<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:14:02,907 [INFO] [INDICATORS] spot=23876.3 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=44.6↓(prev 48.9) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:14:02,908 [INFO] [SIGNAL] CE: reg=False K=False(K=44.6>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=44.6<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:19:10,749 [INFO] [INDICATORS] spot=23887.8 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=38.0↓(prev 44.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:19:10,750 [INFO] [SIGNAL] CE: reg=False K=False(K=38.0>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=38.0<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:24:18,490 [INFO] [INDICATORS] spot=23908.0 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=38.0↓(prev 44.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:24:18,490 [INFO] [SIGNAL] CE: reg=False K=False(K=38.0>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=38.0<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:29:26,680 [INFO] [INDICATORS] spot=23889.5 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=38.0↓(prev 44.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:29:26,681 [INFO] [SIGNAL] CE: reg=False K=False(K=38.0>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=38.0<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:34:34,594 [INFO] [INDICATORS] spot=23871.3 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=33.2↓(prev 38.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:34:34,595 [INFO] [SIGNAL] CE: reg=False K=False(K=33.2>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=33.2<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:39:42,575 [INFO] [INDICATORS] spot=23870.5 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=33.2↓(prev 38.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:39:42,576 [INFO] [SIGNAL] CE: reg=False K=False(K=33.2>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=33.2<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:44:50,758 [INFO] [INDICATORS] spot=23839.8 | 1h: close=23896.8 sma20=23960.2 sma50=23812.6 rsi=49.5 macd=21.67/37.71(bear) | 15m: K=33.2↓(prev 38.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:44:50,759 [INFO] [SIGNAL] CE: reg=False K=False(K=33.2>=38,rising) Kextr=False RSI=False(49.5>53) MACD=False => BLOCK | PE: reg=False K=True(K=33.2<=80,falling) Kextr=False RSI=False(49.5<47) MACD=True => BLOCK
+2026-05-29 06:49:58,105 [INFO] [INDICATORS] spot=23840.2 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=21.0↓(prev 33.2) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:49:58,106 [INFO] [SIGNAL] CE: reg=False K=False(K=21.0>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.0<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 06:55:06,174 [INFO] [INDICATORS] spot=23849.8 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=21.0↓(prev 33.2) | regime=NEUTRAL halted=False active=False
+2026-05-29 06:55:06,174 [INFO] [SIGNAL] CE: reg=False K=False(K=21.0>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.0<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:00:14,385 [INFO] [INDICATORS] spot=23854.7 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=18.7↓(prev 21.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:00:14,385 [INFO] [SIGNAL] CE: reg=False K=False(K=18.7>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=18.7<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:05:22,819 [INFO] [INDICATORS] spot=23842.0 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=18.7↓(prev 21.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:05:22,820 [INFO] [SIGNAL] CE: reg=False K=False(K=18.7>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=18.7<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:10:30,523 [INFO] [INDICATORS] spot=23852.5 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=18.7↓(prev 21.0) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:10:30,524 [INFO] [SIGNAL] CE: reg=False K=False(K=18.7>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=18.7<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:15:38,925 [INFO] [INDICATORS] spot=23847.8 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=15.2↓(prev 18.7) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:15:38,926 [INFO] [SIGNAL] CE: reg=False K=False(K=15.2>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=15.2<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:20:47,431 [INFO] [INDICATORS] spot=23846.8 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=15.2↓(prev 18.7) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:20:47,431 [INFO] [SIGNAL] CE: reg=False K=False(K=15.2>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=15.2<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:25:54,998 [INFO] [INDICATORS] spot=23836.5 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.75(bear) | 15m: K=15.2↓(prev 18.7) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:25:54,998 [INFO] [SIGNAL] CE: reg=False K=False(K=15.2>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=15.2<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:31:03,792 [INFO] [INDICATORS] spot=23825.5 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.76(bear) | 15m: K=18.6↑(prev 15.2) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:31:03,793 [INFO] [SIGNAL] CE: reg=False K=False(K=18.6>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=18.6<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:36:12,713 [INFO] [INDICATORS] spot=23813.5 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.76(bear) | 15m: K=18.6↑(prev 15.2) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:36:12,713 [INFO] [SIGNAL] CE: reg=False K=False(K=18.6>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=18.6<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:41:20,739 [INFO] [INDICATORS] spot=23793.8 | 1h: close=23835.7 sma20=23953.1 sma50=23814.9 rsi=43.1 macd=12.95/32.76(bear) | 15m: K=18.6↑(prev 15.2) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:41:20,739 [INFO] [SIGNAL] CE: reg=False K=False(K=18.6>=38,rising) Kextr=True RSI=False(43.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=18.6<=80,falling) Kextr=False RSI=True(43.1<47) MACD=True => BLOCK
+2026-05-29 07:46:29,329 [INFO] [INDICATORS] spot=23762.8 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=10.1↓(prev 18.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:46:29,330 [INFO] [SIGNAL] CE: reg=False K=False(K=10.1>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=10.1<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 07:51:37,598 [INFO] [INDICATORS] spot=23778.3 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=10.1↓(prev 18.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:51:37,598 [INFO] [SIGNAL] CE: reg=False K=False(K=10.1>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=10.1<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 07:56:45,425 [INFO] [INDICATORS] spot=23775.2 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=10.1↓(prev 18.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 07:56:45,425 [INFO] [SIGNAL] CE: reg=False K=False(K=10.1>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=10.1<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:01:54,016 [INFO] [INDICATORS] spot=23782.2 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=5.4↓(prev 10.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:01:54,018 [INFO] [SIGNAL] CE: reg=False K=False(K=5.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=5.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:07:01,766 [INFO] [INDICATORS] spot=23767.9 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=5.4↓(prev 10.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:07:01,766 [INFO] [SIGNAL] CE: reg=False K=False(K=5.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=5.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:12:09,308 [INFO] [INDICATORS] spot=23776.5 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=5.4↓(prev 10.1) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:12:09,309 [INFO] [SIGNAL] CE: reg=False K=False(K=5.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=5.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:17:17,565 [INFO] [INDICATORS] spot=23770.8 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=4.4↓(prev 5.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:17:17,565 [INFO] [SIGNAL] CE: reg=False K=False(K=4.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=4.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:22:25,599 [INFO] [INDICATORS] spot=23743.1 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=4.4↓(prev 5.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:22:25,599 [INFO] [SIGNAL] CE: reg=False K=False(K=4.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=4.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:27:33,262 [INFO] [INDICATORS] spot=23755.8 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=4.4↓(prev 5.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:27:33,262 [INFO] [SIGNAL] CE: reg=False K=False(K=4.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=4.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:32:41,528 [INFO] [INDICATORS] spot=23751.7 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=4.4↓(prev 4.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:32:41,529 [INFO] [SIGNAL] CE: reg=False K=False(K=4.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=4.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:37:49,270 [INFO] [INDICATORS] spot=23742.6 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=4.4↓(prev 4.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:37:49,270 [INFO] [SIGNAL] CE: reg=False K=False(K=4.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=4.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:42:57,071 [INFO] [INDICATORS] spot=23746.1 | 1h: close=23769.2 sma20=23943.6 sma50=23815.5 rsi=37.3 macd=0.66/26.34(bear) | 15m: K=4.4↓(prev 4.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:42:57,071 [INFO] [SIGNAL] CE: reg=False K=False(K=4.4>=38,rising) Kextr=True RSI=False(37.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=4.4<=80,falling) Kextr=False RSI=True(37.3<47) MACD=True => BLOCK
+2026-05-29 08:48:05,660 [INFO] [INDICATORS] spot=23743.2 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=2.3↓(prev 4.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:48:05,660 [INFO] [SIGNAL] CE: reg=False K=False(K=2.3>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=2.3<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 08:53:14,406 [INFO] [INDICATORS] spot=23747.3 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=2.3↓(prev 4.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:53:14,406 [INFO] [SIGNAL] CE: reg=False K=False(K=2.3>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=2.3<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 08:58:22,460 [INFO] [INDICATORS] spot=23754.2 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=2.3↓(prev 4.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 08:58:22,460 [INFO] [SIGNAL] CE: reg=False K=False(K=2.3>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=2.3<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:03:30,431 [INFO] [INDICATORS] spot=23791.6 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=7.8↑(prev 2.3) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:03:30,431 [INFO] [SIGNAL] CE: reg=False K=False(K=7.8>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=7.8<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:08:37,928 [INFO] [INDICATORS] spot=23784.2 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=7.8↑(prev 2.3) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:08:37,929 [INFO] [SIGNAL] CE: reg=False K=False(K=7.8>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=7.8<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:13:45,872 [INFO] [INDICATORS] spot=23791.9 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=7.8↑(prev 2.3) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:13:45,872 [INFO] [SIGNAL] CE: reg=False K=False(K=7.8>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=7.8<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:18:53,745 [INFO] [INDICATORS] spot=23783.7 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=28.4↑(prev 7.8) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:18:53,745 [INFO] [SIGNAL] CE: reg=False K=False(K=28.4>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=28.4<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:24:01,431 [INFO] [INDICATORS] spot=23777.1 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=28.4↑(prev 7.8) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:24:01,432 [INFO] [SIGNAL] CE: reg=False K=False(K=28.4>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=28.4<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:29:09,834 [INFO] [INDICATORS] spot=23762.3 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=28.4↑(prev 7.8) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:29:09,835 [INFO] [SIGNAL] CE: reg=False K=False(K=28.4>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=28.4<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:34:18,418 [INFO] [INDICATORS] spot=23579.6 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=45.6↑(prev 28.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:34:18,419 [INFO] [SIGNAL] CE: reg=False K=True(K=45.6>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=45.6<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:39:26,236 [INFO] [INDICATORS] spot=23518.0 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=45.6↑(prev 28.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:39:26,237 [INFO] [SIGNAL] CE: reg=False K=True(K=45.6>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=45.6<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:44:34,823 [INFO] [INDICATORS] spot=23523.0 | 1h: close=23744.5 sma20=23929.1 sma50=23816.2 rsi=35.5 macd=-10.95/18.88(bear) | 15m: K=45.6↑(prev 28.4) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:44:34,824 [INFO] [SIGNAL] CE: reg=False K=True(K=45.6>=38,rising) Kextr=True RSI=False(35.5>53) MACD=False => BLOCK | PE: reg=False K=False(K=45.6<=80,falling) Kextr=False RSI=True(35.5<47) MACD=True => BLOCK
+2026-05-29 09:49:43,100 [INFO] [INDICATORS] spot=23542.0 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.12/7.69(bear) | 15m: K=37.7↓(prev 45.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:49:43,101 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
+2026-05-29 09:54:51,138 [INFO] [INDICATORS] spot=23491.6 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.12/7.69(bear) | 15m: K=37.7↓(prev 45.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:54:51,138 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
+2026-05-29 09:59:59,143 [INFO] [INDICATORS] spot=23602.2 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.12/7.69(bear) | 15m: K=37.7↓(prev 45.6) | regime=NEUTRAL halted=False active=False
+2026-05-29 09:59:59,143 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
