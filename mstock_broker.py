@@ -321,9 +321,16 @@ class MStockBroker:
                 oid = str(o.get('orderid') or o.get('order_id') or
                           o.get('orderId') or o.get('uniqueorderid') or '')
                 if oid == str(order_id):
-                    status = str(o.get('status', 'UNKNOWN')).upper()
-                    fill   = float(o.get('averageprice') or o.get('averagePrice') or
-                                   o.get('fillprice') or 0)
+                    raw_status = str(o.get('status') or o.get('orderstatus') or 'UNKNOWN')
+                    # mStock uses 'Traded' instead of 'COMPLETE'
+                    if raw_status.lower() in ('traded', 'complete', 'trade confirmed'):
+                        status = 'COMPLETE'
+                    elif raw_status.lower() in ('rejected', 'cancelled', 'canceled'):
+                        status = raw_status.upper()
+                    else:
+                        status = raw_status.upper()
+                    fill = float(o.get('averageprice') or o.get('averagePrice') or
+                                 o.get('fillprice') or 0)
                     return status, fill
             log.debug(f"[mstock] order_status: order {order_id} not found in book "
                       f"({len(orders)} orders). Keys sample: "
