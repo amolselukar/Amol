@@ -286,6 +286,22 @@ V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 /
   + Validated: real option data (May 4-21 2026, 12 days)
   + Key improvement: MaxDD -1,485 → -1,119 (-25%), Red months 8 → 5
 
+V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
+  + EXECUTION_BROKER switched from kite_paper → mstock_live
+  + mStock Type B API integrated: login → set_access_token → verify_totp (TOTP auto)
+  + Instrument master: direct fetch from OpenAPIScripMaster (173k symbols, name field)
+  + order_status: mStock returns 'Traded' status (not 'COMPLETE') — mapped correctly
+  + place_order: disclosedquantity="0" required (blank causes IA400 rejection)
+  + IP 18.212.243.203 (PythonAnywhere) whitelisted in mStock API settings
+  + BUY: 15s timeout, cancel-and-check on timeout, abort if not filled
+  + SELL: 3 retries × 5s, 🚨 CRITICAL Telegram alert if all fail, POS.active stays True
+  + V3 REGIME GATE REMOVED: V3 now fires in CHOP/INSUFFICIENT regime
+      Root cause of bug: regime gate wrapped ALL signals including V3;
+      V3 uses cluster break/reject as its own confirmation — ADX not needed
+      V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
+  + V3 engine: acts on ALL Grade A/B clusters simultaneously (not just nearest)
+  + LOTS_PER_TRADE = 2 (live)
+
 === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
@@ -304,7 +320,7 @@ V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 /
 # CONFIG
 # =========================================================================
 VERSION = "V2.5.12"
-MODE    = "PAPER"   # PAPER -> no real orders placed
+MODE    = "LIVE"    # LIVE  -> real orders via mStock API
 
 # ---- Execution broker ----
 # "kite_paper"   : paper mode, no real orders (current default)
