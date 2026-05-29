@@ -1453,7 +1453,6 @@ def check_v3_signal(df15m_nifty):
     """
     if df15m_nifty is None or len(df15m_nifty) < 2: return None
     if DAY.levels is None: return None
-    if not regime_allows_trade(DAY.regime): return None
     bar15_closed = df15m_nifty.iloc[-2]
     bar = {'open': float(bar15_closed['open']), 'high': float(bar15_closed['high']),
            'low':  float(bar15_closed['low']),  'close': float(bar15_closed['close'])}
@@ -2233,19 +2232,17 @@ def main():
                 # ---- ENTRY DECISION: flip -> V2 -> V3 ----
                 if not DAY.halted and in_entry_window(now) and \
                    (DAY.gap_suppress_until is None or now >= DAY.gap_suppress_until):
-                    # Skip if regime is CHOP/INSUFFICIENT (same gate as backtest)
-                    if not regime_allows_trade(DAY.regime):
-                        pass
-                    else:
-                        # V2.5.2/4: FLIP check first (Path B post-exit watch)
+                    sig = None
+                    # FLIP + V2 require BULL/BEAR/TRANSITION regime
+                    if regime_allows_trade(DAY.regime):
                         sig = check_flip_signal(df15, now)
                         if sig is None:
-                            # V2 priority on same-bar tiebreak
                             sig = check_v2_signal(df1h, df15)
-                            if sig is None:
-                                sig = check_v3_signal(df15)
-                        if sig is not None:
-                            open_trade(sig, spot, expiry_lookup)
+                    # V3 fires on cluster break/reject regardless of regime
+                    if sig is None:
+                        sig = check_v3_signal(df15)
+                    if sig is not None:
+                        open_trade(sig, spot, expiry_lookup)
 
             # ---- CSV + INDICATORS + SIGNAL log every 5 min ----
             if time.time() - last_csv_at >= 5 * 60:
