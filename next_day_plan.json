@@ -1,84 +1,107 @@
 {
-  "date": "2026-05-27",
-  "for_date": "2026-05-28",
-  "generated_at": "2026-05-27 10:32:09",
-  "atm": 23900,
+  "date": "2026-05-29",
+  "for_date": "2026-05-30",
+  "generated_at": "2026-05-29 10:32:34",
+  "atm": 23600,
   "expiry": "2026-06-02",
   "monthly_expiry": "2026-06-30",
   "is_monthly_expiry": false,
-  "days_to_expiry": 6,
+  "days_to_expiry": 4,
   "expiry_caution": false,
   "is_expiry_day": false,
-  "pcr": 0.874,
+  "pcr": 0.976,
   "bias": "NEUTRAL",
-  "max_pain": 23900,
-  "straddle_atm": 312.1,
+  "max_pain": 23800,
+  "straddle_atm": 302.9,
   "oi_stats": {
-    "ce_mean": 3352615,
-    "ce_std": 2870355,
-    "pe_mean": 2931225,
-    "pe_std": 1993044,
-    "ce_wall_threshold": 9093324,
-    "pe_wall_threshold": 6917314
+    "ce_mean": 4734995,
+    "ce_std": 5089031,
+    "pe_mean": 4622115,
+    "pe_std": 2342270,
+    "ce_wall_threshold": 14913058,
+    "pe_wall_threshold": 9306656
   },
-  "resistance_levels": [],
-  "support_levels": [],
-  "info_levels": [
-    {
-      "strike": 23500,
-      "side": "PE",
-      "reason": "OI significant but stale/expiry caution"
-    },
+  "resistance_levels": [
     {
       "strike": 23900,
-      "side": "PE",
-      "reason": "OI significant but stale/expiry caution"
+      "ce_oi": 10005060,
+      "ce_oi_chg": 0,
+      "ce_vol": 294320455,
+      "ltp": 71.5,
+      "signal": "SIGNIFICANT",
+      "grade": "B"
     },
     {
       "strike": 24000,
-      "side": "CE",
-      "reason": "OI significant but stale/expiry caution"
+      "ce_oi": 16209180,
+      "ce_oi_chg": 0,
+      "ce_vol": 331994585,
+      "ltp": 47.25,
+      "signal": "WALL",
+      "grade": "A"
     },
     {
-      "strike": 24500,
-      "side": "CE",
-      "reason": "OI significant but stale/expiry caution"
+      "strike": 24200,
+      "ce_oi": 10652460,
+      "ce_oi_chg": 0,
+      "ce_vol": 164796775,
+      "ltp": 20,
+      "signal": "SIGNIFICANT",
+      "grade": "B"
     }
   ],
-  "v3_resistance": [],
-  "v3_support": [],
+  "support_levels": [
+    {
+      "strike": 23500,
+      "pe_oi": 7173530,
+      "pe_oi_chg": 0,
+      "pe_vol": 223178280,
+      "ltp": 61.8,
+      "signal": "SIGNIFICANT",
+      "grade": "B"
+    },
+    {
+      "strike": 23200,
+      "pe_oi": 7865000,
+      "pe_oi_chg": 0,
+      "pe_vol": 102368240,
+      "ltp": 14.5,
+      "signal": "SIGNIFICANT",
+      "grade": "B"
+    },
+    {
+      "strike": 23000,
+      "pe_oi": 8720920,
+      "pe_oi_chg": 0,
+      "pe_vol": 90089285,
+      "ltp": 6.25,
+      "signal": "SIGNIFICANT",
+      "grade": "B"
+    }
+  ],
+  "info_levels": [],
+  "v3_resistance": [
+    23900,
+    24000,
+    24200
+  ],
+  "v3_support": [
+    23500,
+    23200,
+    23000
+  ],
   "price_clusters": {
-    "pdh": 23983.2,
-    "pdl": 23858.2,
-    "pdc": 23920.7,
+    "pdh": 24002.8,
+    "pdl": 23484.8,
+    "pdc": 23609.3,
     "clusters_above": [
       {
-        "center": 23990.6,
+        "center": 23700.0,
         "kinds": [
-          "PDH",
-          "round_100",
-          "swing_high"
+          "round_100"
         ],
-        "grade": "A"
-      },
-      {
-        "center": 24094.9,
-        "kinds": [
-          "round_100",
-          "swing_high"
-        ],
-        "grade": "B"
-      }
-    ],
-    "clusters_below": [
-      {
-        "center": 23858.9,
-        "kinds": [
-          "PDL",
-          "round_50",
-          "swing_low"
-        ],
-        "grade": "A"
+        "grade": "B",
+        "promoted": true
       },
       {
         "center": 23800.0,
@@ -89,12 +112,38 @@
         "promoted": true
       },
       {
-        "center": 23699.5,
+        "center": 23858.9,
         "kinds": [
-          "round_100",
+          "round_50",
           "swing_low"
         ],
         "grade": "B"
+      },
+      {
+        "center": 24002.8,
+        "kinds": [
+          "PDH"
+        ],
+        "grade": "B",
+        "promoted": true
+      }
+    ],
+    "clusters_below": [
+      {
+        "center": 23492.4,
+        "kinds": [
+          "PDL",
+          "round_100"
+        ],
+        "grade": "B"
+      },
+      {
+        "center": 23400.0,
+        "kinds": [
+          "round_100"
+        ],
+        "grade": "B",
+        "promoted": true
       }
     ]
   }
