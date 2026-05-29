@@ -86,7 +86,9 @@ except ImportError as e:
     sys.exit(1)
 
 import logging
-logging.basicConfig(level=logging.INFO, format='%(message)s')
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s',
+                    datefmt='%H:%M:%S')
 
 # Inspect SDK methods so we know what's actually available
 print("\n=== MConnectB available methods ===")

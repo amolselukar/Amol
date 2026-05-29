@@ -304,7 +304,6 @@ class MStockBroker:
         self.ensure_logged_in()
         try:
             raw = self._client.get_order_book()
-            # get_order_book() may return Response or dict; extract order list safely
             if hasattr(raw, 'json'):
                 parsed = raw.json()
             elif isinstance(raw, dict):
@@ -317,11 +316,18 @@ class MStockBroker:
                 orders = parsed.get('data') or []
             if not isinstance(orders, list):
                 orders = []
+            # Try common orderid field names used by mStock
             for o in orders:
-                if str(o.get('orderid', '')) == str(order_id):
+                oid = str(o.get('orderid') or o.get('order_id') or
+                          o.get('orderId') or o.get('uniqueorderid') or '')
+                if oid == str(order_id):
                     status = str(o.get('status', 'UNKNOWN')).upper()
-                    fill   = float(o.get('averageprice') or o.get('fillprice') or 0)
+                    fill   = float(o.get('averageprice') or o.get('averagePrice') or
+                                   o.get('fillprice') or 0)
                     return status, fill
+            log.debug(f"[mstock] order_status: order {order_id} not found in book "
+                      f"({len(orders)} orders). Keys sample: "
+                      f"{list(orders[0].keys()) if orders else 'empty'}")
         except Exception as e:
             log.error(f"[mstock] order_status {order_id}: {e}")
         return "UNKNOWN", 0.0
