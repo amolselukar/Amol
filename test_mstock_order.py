@@ -139,6 +139,20 @@ if buy_oid is None:
     sys.exit(1)
 print(f"[OK] BUY placed. order_id={buy_oid}")
 
+# Dump raw order book to see actual field names
+import time as _t; _t.sleep(2)
+try:
+    _raw = broker._client.get_order_book()
+    _parsed = _raw.json() if hasattr(_raw, 'json') else _raw
+    _orders = _parsed if isinstance(_parsed, list) else (_parsed.get('data') or [])
+    print(f"[DEBUG] Order book: {len(_orders)} orders")
+    if _orders:
+        print(f"[DEBUG] Order fields: {list(_orders[0].keys())}")
+        for _o in _orders[:3]:
+            print(f"[DEBUG] Order sample: {_o}")
+except Exception as _e:
+    print(f"[DEBUG] Order book fetch failed: {_e}")
+
 print("[...] Waiting for BUY fill (up to 10s)...")
 status, fill = broker.wait_for_fill(buy_oid, timeout_sec=10)
 print(f"[BUY] status={status}  fill_price={fill:.2f}")
