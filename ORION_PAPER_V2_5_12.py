@@ -179,16 +179,21 @@ STRATEGY_BOX = """
 | ORION V2.5.12 — STRATEGY DESIGN                                        |
 | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
 +========================================================================+
-| ENGINE V2 (fires every 15m close, V2 priority over V3 same-bar)        |
+| ENGINE V2 (fires every 15m close — regime: BULL/BEAR/TRANSITION only)  |
 |   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
 |        RSI>53 | MACD bull | premium 30-180                             |
 |   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
-|        RSI<47 | MACD bear | premium 30-180                             |
+|        RSI<47 | MACD bear | premium 30-300                             |
 |                                                                         |
-| ENGINE V3 (15m G/R cluster break/reject)                               |
+| ENGINE V3 (15m G/R cluster break/reject — fires in any regime)         |
 |   Grade A (>=3 source kinds) / Grade B (>=2)                           |
 |   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
-|   Regime gate: BULL/BEAR/TRANSITION only                               |
+|   premium 30-180 CE / 30-300 PE                                        |
+|                                                                         |
+| ENGINE VWAP (double confirmation — fires in any regime)                 |
+|   1. Nifty 15m bar crosses daily VWAP with body>=50% of range          |
+|   2. ATM CE/PE LTP also above/below its daily VWAP simultaneously      |
+|   premium 30-180 CE / 30-300 PE                                        |
 |                                                                         |
 | ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
 |   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
@@ -300,6 +305,11 @@ V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
       V3 uses cluster break/reject as its own confirmation — ADX not needed
       V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
   + V3 engine: acts on ALL Grade A/B clusters simultaneously (not just nearest)
+  + PREMIUM_MAX asymmetric: CE=180 (unchanged), PE=300 (was 180, captures panic moves)
+  + VWAP double confirmation engine (new):
+      Fires when Nifty 15m bar crosses daily VWAP with body>=50% range
+      AND ATM CE/PE LTP is also above/below its daily VWAP simultaneously
+      Self-confirming like V3 — no regime gate
   + LOTS_PER_TRADE = 2 (live)
 
 === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
@@ -349,9 +359,14 @@ K_OVERBOUGHT_THRESH   = 75      # PE: K must have been above this recently
 # V2.5.9: RSI directional gate (replaces old chop filter [47,53] band)
 RSI_CE_MIN            = 53      # CE: 1h RSI must be above this
 RSI_PE_MAX            = 47      # PE: 1h RSI must be below this
-# V2.5.9: Premium entry gate
+# V2.5.9: Premium entry gate (asymmetric: PE spikes higher during panic moves)
 PREMIUM_MIN           = 30      # skip if option LTP < this (deep OTM)
-PREMIUM_MAX           = 180     # skip if option LTP > this (IV spike entry)
+PREMIUM_MAX_CE        = 180     # CE cap: IV spikes are less common on upside
+PREMIUM_MAX_PE        = 300     # PE cap: raised to capture panic/downside moves (was 180)
+PREMIUM_MAX           = 180     # legacy alias — not used for entry (use side-specific caps)
+# V2.5.8 VWAP double confirmation engine
+VWAP_BODY_MIN_PCT     = 0.50    # Nifty bar body must be >= 50% of range to confirm VWAP cross
+VWAP_ENGINE_ENABLED   = True    # enable VWAP double confirmation signal
 # V2.5.9: Straddle monitoring (informational Telegram alerts only)
 STRADDLE_REF_MIN      = 20      # record ATM straddle reference after 9:20 AM
 STRADDLE_MORNING_MIN  = 45      # morning straddle Telegram at 9:45 AM
@@ -1500,6 +1515,81 @@ def check_v3_signal(df15m_nifty):
     return None
 
 
+def compute_nifty_vwap_today(df15m):
+    """Compute today's session VWAP from 15m Nifty spot bars already in memory."""
+    try:
+        today = datetime.now(IST).date()
+        if 'date' in df15m.columns:
+            mask = df15m['date'].apply(
+                lambda x: (x.date() if hasattr(x, 'date') else x) == today)
+        else:
+            mask = pd.Series([True] * len(df15m), index=df15m.index)
+        today_df = df15m[mask]
+        if len(today_df) < 1:
+            return None
+        tp  = (today_df['high'] + today_df['low'] + today_df['close']) / 3
+        vol = today_df['volume'] if 'volume' in today_df.columns else pd.Series(
+            [1] * len(today_df), index=today_df.index)
+        vol_sum = vol.sum()
+        if vol_sum == 0:
+            return float(tp.mean())
+        return float((tp * vol).sum() / vol_sum)
+    except Exception:
+        return None
+
+
+def check_vwap_signal(df15m_nifty, expiry_lookup, spot):
+    """
+    VWAP double confirmation entry (new engine):
+    1. Last closed 15m Nifty bar crossed daily VWAP with body >= 50% of range
+    2. ATM CE (bullish) or ATM PE (bearish) LTP is also above/below its daily VWAP
+    Both conditions must be true — hence 'double confirmation'.
+    Fires regardless of regime (self-confirming like V3).
+    """
+    if not VWAP_ENGINE_ENABLED: return None
+    if df15m_nifty is None or len(df15m_nifty) < 3: return None
+
+    nifty_vwap = compute_nifty_vwap_today(df15m_nifty)
+    if nifty_vwap is None: return None
+
+    bar = df15m_nifty.iloc[-2]   # last fully closed 15m bar
+    o = float(bar['open']); h = float(bar['high'])
+    l = float(bar['low']);  c = float(bar['close'])
+    rng = h - l
+    if rng <= 0: return None
+    body_pct = abs(c - o) / rng
+    if body_pct < VWAP_BODY_MIN_PCT: return None  # weak candle — skip
+
+    bullish = c > nifty_vwap
+    bearish = c < nifty_vwap
+    if not bullish and not bearish: return None
+
+    side = 'CE' if bullish else 'PE'
+
+    # Double confirmation: ATM option must also be above/below its VWAP
+    atm = round_to_atm(spot)
+    key = (atm, side)
+    if key not in expiry_lookup: return None
+    opt_sym, opt_token = expiry_lookup[key]
+
+    opt_ltp = ltp(opt_sym)
+    if opt_ltp is None or opt_ltp <= 0: return None
+
+    opt_vwap = compute_option_vwap(opt_token)
+    if opt_vwap is None: return None
+
+    if side == 'CE' and opt_ltp <= opt_vwap: return None   # CE not above VWAP
+    if side == 'PE' and opt_ltp >= opt_vwap: return None   # PE not below VWAP
+
+    detail = (f"Nifty VWAP cross {c:.0f}>{nifty_vwap:.0f} body={body_pct:.0%} | "
+              f"{side} LTP {opt_ltp:.1f} vs VWAP {opt_vwap:.1f}")
+    return {
+        'engine': 'VWAP', 'side': side, 'detail': detail,
+        'trigger': nifty_vwap, 'level_obj': None,
+        'target_spot': None, 'kind': f'BREAK_{side}'
+    }
+
+
 def check_flip_signal(df15m, now):
     """V2.5.2: opposite-side flip on 15m K reversal.
     Looks at most recent closed 15m K vs previous closed K.
@@ -1591,9 +1681,10 @@ def open_trade(sig, spot, expiry_lookup):
     if cur_ltp is None or cur_ltp <= 0:
         lwarn(f"Cannot fetch LTP for {symbol}; skipping entry")
         return False
-    # V2.5.9: premium gate — avoid deep OTM and IV-spike entries
-    if not (PREMIUM_MIN <= cur_ltp <= PREMIUM_MAX):
-        lwarn(f"Premium {cur_ltp:.2f} outside gate [{PREMIUM_MIN},{PREMIUM_MAX}]; skipping entry")
+    # Premium gate: asymmetric — PE cap raised to 300 to capture panic/downside moves
+    prem_max = PREMIUM_MAX_PE if side == 'PE' else PREMIUM_MAX_CE
+    if not (PREMIUM_MIN <= cur_ltp <= prem_max):
+        lwarn(f"Premium {cur_ltp:.2f} outside gate [{PREMIUM_MIN},{prem_max}] ({side}); skipping entry")
         return False
     # Stage fields before confirming order (do not set POS.active yet for live mode)
     POS.engine        = sig['engine']
@@ -2257,6 +2348,9 @@ def main():
                     # V3 fires on cluster break/reject regardless of regime
                     if sig is None:
                         sig = check_v3_signal(df15)
+                    # VWAP double confirmation: Nifty VWAP cross + option VWAP cross
+                    if sig is None:
+                        sig = check_vwap_signal(df15, expiry_lookup, spot)
                     if sig is not None:
                         open_trade(sig, spot, expiry_lookup)
 
