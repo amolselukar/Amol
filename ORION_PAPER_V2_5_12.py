@@ -1220,7 +1220,7 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
         pct = (ltp_now - POS.entry_premium) / POS.entry_premium * 100
         elapsed = int(POS.elapsed_min())
         side_em = "🟢" if POS.side == "CE" else ("🔴" if POS.side == "PE" else "🟠")
-        engine_em = {"V2":"⚙️", "V3":"🎯", "FLIP":"🔄"}.get(POS.engine, "")
+        engine_em = {"V2":"⚙️", "V3":"🎯", "FLIP":"🔄", "VWAP":"📈"}.get(POS.engine, "")
         pnl_em = "📈" if pct > 0 else "📉" if pct < 0 else "➖"
         # Ratchet / Velvet Rope status
         if POS.tr_armed:
@@ -1274,9 +1274,14 @@ def fmt_entry():
         banner = "🔴🔴🔴 <b>BUY PE (Bearish)</b> 🔴🔴🔴"
         side_color = "🔴"
 
-    declared_str = (f"<b>+25%</b> premium = <code>{POS.declared_target_premium:.2f}</code>"
-                    if POS.engine in ("V2", "FLIP")
-                    else f"spot <code>{POS.declared_target_spot:.0f}</code> (cluster T1)")
+    if POS.engine in ("V2", "FLIP"):
+        declared_str = f"<b>+25%</b> premium = <code>{POS.declared_target_premium:.2f}</code>"
+    elif POS.engine == "VWAP":
+        declared_str = "VWAP trail — no fixed target"
+    elif POS.declared_target_spot:
+        declared_str = f"spot <code>{POS.declared_target_spot:.0f}</code> (cluster T1)"
+    else:
+        declared_str = "—"
     entry_t = POS.entry_time.strftime('%H:%M:%S') if POS.entry_time else "—"
 
     vwap_line = ""
