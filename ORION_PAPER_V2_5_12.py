@@ -1663,10 +1663,13 @@ def is_path_a_eligible() -> bool:
 def _mstock_option_symbol(symbol_kite: str) -> str:
     """
     Convert Kite option symbol to mStock trading symbol.
-    Kite:   NIFTY2529MAY25800CE  (already in NSE format — usually compatible)
-    mStock: same format in most cases; adjust here if exchange format differs.
+    Kite stores symbols as 'NFO:NIFTY2660223600PE' for quote calls.
+    mStock expects plain symbol without exchange prefix: 'NIFTY2660223600PE'.
     """
-    return symbol_kite  # Kite NFO symbols are typically accepted as-is by mStock
+    for prefix in ('NFO:', 'NSE:', 'BSE:', 'MCX:'):
+        if symbol_kite.startswith(prefix):
+            return symbol_kite[len(prefix):]
+    return symbol_kite
 
 def open_trade(sig, spot, expiry_lookup):
     """Open a paper trade. sig has keys: engine, side, detail, trigger, [level_obj, target_spot]."""
