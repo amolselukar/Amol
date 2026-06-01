@@ -2453,8 +2453,8 @@ def main():
                 TG.send(fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, DAY.regime))
                 last_pulse_at = time.time()
 
-            # ---- Push logs to GitHub every 30 min for remote monitoring ----
-            if time.time() - last_log_push >= 30 * 60:
+            # ---- Push logs to GitHub every 5 min for remote monitoring ----
+            if time.time() - last_log_push >= 5 * 60:
                 push_logs_to_github(label="periodic")
                 last_log_push = time.time()
 
