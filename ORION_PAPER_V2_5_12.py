@@ -952,11 +952,11 @@ def fetch_option_5m(token, days_back=3):
     return pd.DataFrame(rows)
 
 def compute_option_vwap(token: int) -> Optional[float]:
-    """Today's VWAP for an option using 5m bars with real volume. Informational only."""
+    """Today's session VWAP for an option using 15m bars (from 9:15 AM)."""
     try:
         now = datetime.now(IST)
         frm = now.replace(hour=9, minute=15, second=0, microsecond=0)
-        rows = historical(token, frm, now, "5minute")
+        rows = historical(token, frm, now, "15minute")
         if not rows:
             return None
         df = pd.DataFrame(rows)
