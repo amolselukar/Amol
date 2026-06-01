@@ -607,17 +607,14 @@ def resolve_expiry_and_strikes():
     expiries = sorted({i["expiry"] for i in nifty_options})
     target_expiry = expiries[0]
     strikes = sorted({i["strike"] for i in nifty_options if i["expiry"] == target_expiry})
-    # Build lookup: (strike, side) -> (kite_symbol, token, mstock_symbol)
-    # Kite symbol: NFO:NIFTY2660223500PE (for quote calls)
-    # mStock symbol: NIFTY02JUN23500PE (DDMMM format, for order placement)
+    # Build lookup: (strike, side) -> (kite_symbol, token)
+    # kite_symbol: "NFO:NIFTY2660223500PE" — used for Kite quote calls
+    # mStock symbol = strip "NFO:" prefix → "NIFTY2660223500PE" — confirmed working in live test
     lookup = {}
     for i in nifty_options:
         if i["expiry"] == target_expiry:
             key = (i["strike"], i["instrument_type"])
-            from datetime import datetime as _dt
-            expiry_dt = _dt.combine(i['expiry'], _dt.min.time())
-            ms_sym = f"NIFTY{expiry_dt.strftime('%d')}{expiry_dt.strftime('%b').upper()}{int(i['strike'])}{i['instrument_type']}"
-            lookup[key] = (f"NFO:{i['tradingsymbol']}", i["instrument_token"], ms_sym)
+            lookup[key] = (f"NFO:{i['tradingsymbol']}", i["instrument_token"])
     return target_expiry, strikes, lookup
 
 # =========================================================================
@@ -1439,8 +1436,8 @@ def fetch_atm_straddle(expiry_lookup, spot) -> tuple:
     pe_key = (atm, 'PE')
     if ce_key not in expiry_lookup or pe_key not in expiry_lookup:
         return None, None, None
-    ce_sym, _, _ms1 = expiry_lookup[ce_key]
-    pe_sym, _, _ms2 = expiry_lookup[pe_key]
+    ce_sym, _ = expiry_lookup[ce_key]
+    pe_sym, _ = expiry_lookup[pe_key]
     ce_ltp = ltp(ce_sym)
     pe_ltp = ltp(pe_sym)
     if ce_ltp is None or pe_ltp is None or ce_ltp <= 0 or pe_ltp <= 0:
@@ -1590,7 +1587,7 @@ def check_vwap_signal(df15m_nifty, expiry_lookup, spot):
     atm = round_to_atm(spot)
     key = (atm, side)
     if key not in expiry_lookup: return None
-    opt_sym, opt_token, _opt_ms = expiry_lookup[key]
+    opt_sym, opt_token = expiry_lookup[key]
 
     opt_ltp = ltp(opt_sym)
     if opt_ltp is None or opt_ltp <= 0: return None
@@ -1699,7 +1696,7 @@ def open_trade(sig, spot, expiry_lookup):
     if key not in expiry_lookup:
         lwarn(f"Strike {strike} {side} not in expiry lookup; skipping entry")
         return False
-    symbol, token, ms_symbol = expiry_lookup[key]
+    symbol, token = expiry_lookup[key]
     cur_ltp = ltp(symbol)
     if cur_ltp is None or cur_ltp <= 0:
         lwarn(f"Cannot fetch LTP for {symbol}; skipping entry")
@@ -1715,7 +1712,7 @@ def open_trade(sig, spot, expiry_lookup):
     POS.side          = side
     POS.strike        = strike
     POS.symbol        = symbol
-    POS.ms_symbol     = ms_symbol
+    POS.ms_symbol     = _mstock_option_symbol(symbol)  # strip NFO: → NIFTY2660223500PE (proven format)
     POS.token         = token
     POS.entry_time    = datetime.now(IST)
     POS.entry_premium = cur_ltp
@@ -1754,7 +1751,7 @@ def open_trade(sig, spot, expiry_lookup):
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
             return False
-        ms_sym = ms_symbol   # NIFTY02JUN23500PE — mStock DDMMM format from expiry_lookup
+        ms_sym = POS.ms_symbol  # NIFTY2660223500PE — Kite compact format, confirmed working
         qty = LOTS_PER_TRADE * LOT_SIZE
         oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
         if not oid:
