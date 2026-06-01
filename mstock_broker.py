@@ -268,12 +268,20 @@ class MStockBroker:
             ))
             log.info(f"[mstock] place_order resp: {resp}")
 
-            # Auto-relogin on auth failure (JWT expired mid-session)
+            errorcode  = str(resp.get('errorcode', '') or '')
             status_str = str(resp.get('status', '')).lower()
             msg_str    = str(resp.get('message', '')).lower()
-            if (status_str in ('false', '') or
-                    any(k in msg_str for k in ('unauthori', 'invalid token', 'session', 'expired', 'not logged'))):
-                log.warning(f"[mstock] Auth failure detected in place_order response — re-logging in.")
+
+            # IA403 = IP not whitelisted — relogin won't help, fail immediately
+            if errorcode == 'IA403' or 'ip address' in msg_str:
+                log.error(f"[mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {resp}")
+                self._last_error = f"IA403: IP not whitelisted — {resp.get('message','')}"
+                return None
+
+            # Auto-relogin only for genuine session/JWT expiry errors
+            jwt_expired = any(k in msg_str for k in ('unauthori', 'invalid token', 'session expired', 'not logged', 'token expired'))
+            if jwt_expired:
+                log.warning(f"[mstock] JWT expired in place_order — re-logging in.")
                 self._logged_in = False
                 if self.login():
                     log.info("[mstock] Re-login OK — retrying place_order once.")
@@ -281,7 +289,7 @@ class MStockBroker:
                         transaction_type, trading_symbol, quantity,
                         order_type, price, exchange, product, symbol_token, tag)
                 log.error("[mstock] Re-login also failed.")
-                self._last_error = f"Auth failure + re-login failed: {resp.get('message','')}"
+                self._last_error = f"JWT expiry + re-login failed: {resp.get('message','')}"
                 return None
 
             order_id = ((resp.get('data') or {}).get('orderid')
