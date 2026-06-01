@@ -598,12 +598,17 @@ def resolve_expiry_and_strikes():
     expiries = sorted({i["expiry"] for i in nifty_options})
     target_expiry = expiries[0]
     strikes = sorted({i["strike"] for i in nifty_options if i["expiry"] == target_expiry})
-    # Build lookup: (strike, side) -> (symbol, token)
+    # Build lookup: (strike, side) -> (kite_symbol, token, mstock_symbol)
+    # Kite symbol: NFO:NIFTY2660223500PE (for quote calls)
+    # mStock symbol: NIFTY02JUN23500PE (DDMMM format, for order placement)
     lookup = {}
     for i in nifty_options:
         if i["expiry"] == target_expiry:
             key = (i["strike"], i["instrument_type"])
-            lookup[key] = (f"NFO:{i['tradingsymbol']}", i["instrument_token"])
+            from datetime import datetime as _dt
+            expiry_dt = _dt.combine(i['expiry'], _dt.min.time())
+            ms_sym = f"NIFTY{expiry_dt.strftime('%d')}{expiry_dt.strftime('%b').upper()}{int(i['strike'])}{i['instrument_type']}"
+            lookup[key] = (f"NFO:{i['tradingsymbol']}", i["instrument_token"], ms_sym)
     return target_expiry, strikes, lookup
 
 # =========================================================================
@@ -998,6 +1003,7 @@ class TradeState:
     side: str = ""                # 'CE' or 'PE'
     strike: int = 0
     symbol: str = ""
+    ms_symbol: str = ""              # mStock format: NIFTY02JUN23500PE (for order placement)
     token: int = 0
     entry_time: Optional[datetime] = None
     entry_premium: float = 0.0
@@ -1424,8 +1430,8 @@ def fetch_atm_straddle(expiry_lookup, spot) -> tuple:
     pe_key = (atm, 'PE')
     if ce_key not in expiry_lookup or pe_key not in expiry_lookup:
         return None, None, None
-    ce_sym, _ = expiry_lookup[ce_key]
-    pe_sym, _ = expiry_lookup[pe_key]
+    ce_sym, _, _ms1 = expiry_lookup[ce_key]
+    pe_sym, _, _ms2 = expiry_lookup[pe_key]
     ce_ltp = ltp(ce_sym)
     pe_ltp = ltp(pe_sym)
     if ce_ltp is None or pe_ltp is None or ce_ltp <= 0 or pe_ltp <= 0:
@@ -1575,7 +1581,7 @@ def check_vwap_signal(df15m_nifty, expiry_lookup, spot):
     atm = round_to_atm(spot)
     key = (atm, side)
     if key not in expiry_lookup: return None
-    opt_sym, opt_token = expiry_lookup[key]
+    opt_sym, opt_token, _opt_ms = expiry_lookup[key]
 
     opt_ltp = ltp(opt_sym)
     if opt_ltp is None or opt_ltp <= 0: return None
@@ -1684,7 +1690,7 @@ def open_trade(sig, spot, expiry_lookup):
     if key not in expiry_lookup:
         lwarn(f"Strike {strike} {side} not in expiry lookup; skipping entry")
         return False
-    symbol, token = expiry_lookup[key]
+    symbol, token, ms_symbol = expiry_lookup[key]
     cur_ltp = ltp(symbol)
     if cur_ltp is None or cur_ltp <= 0:
         lwarn(f"Cannot fetch LTP for {symbol}; skipping entry")
@@ -1700,6 +1706,7 @@ def open_trade(sig, spot, expiry_lookup):
     POS.side          = side
     POS.strike        = strike
     POS.symbol        = symbol
+    POS.ms_symbol     = ms_symbol
     POS.token         = token
     POS.entry_time    = datetime.now(IST)
     POS.entry_premium = cur_ltp
@@ -1734,18 +1741,18 @@ def open_trade(sig, spot, expiry_lookup):
             lwarn("[mstock] Broker unavailable — BUY aborted, no position opened.")
             TG.send(f"⚠️ mStock broker unavailable. BUY aborted.\n"
                     f"<i>{_sig_info}</i>")
-            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
             return False
-        ms_sym = _mstock_option_symbol(symbol)
+        ms_sym = ms_symbol   # NIFTY02JUN23500PE — mStock DDMMM format from expiry_lookup
         qty = LOTS_PER_TRADE * LOT_SIZE
         oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
         if not oid:
             lwarn("[mstock] BUY place_order returned None — aborting trade.")
             TG.send(f"⚠️ mStock BUY FAILED ({ms_sym}). No position opened.\n"
                     f"<i>{_sig_info}</i>")
-            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
             return False
@@ -1760,7 +1767,7 @@ def open_trade(sig, spot, expiry_lookup):
                 lwarn(f"[mstock] BUY timeout, order cancelled — aborting trade ({ms_sym}).")
                 TG.send(f"⚠️ mStock BUY TIMEOUT ({ms_sym}). Order cancelled, no position.\n"
                         f"<i>{_sig_info}</i>")
-                POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+                POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
                 POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
                 POS.hardsl_premium = 0.0; POS.sl_current = 0.0
                 return False
@@ -1768,7 +1775,7 @@ def open_trade(sig, spot, expiry_lookup):
             lwarn(f"[mstock] BUY rejected/no fill (status={status}) — aborting trade.")
             TG.send(f"⚠️ mStock BUY REJECTED ({ms_sym}, status={status}). No position opened.\n"
                     f"<i>{_sig_info}</i>")
-            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
             return False
@@ -1826,7 +1833,7 @@ def close_trade(reason, exit_price):
             TG.send(f"🚨 CRITICAL: mStock broker unavailable on SELL for {POS.symbol}. "
                     f"Position still open on exchange! MANUAL ACTION REQUIRED.")
             return  # keep POS.active=True so next loop retries exit
-        ms_sym = _mstock_option_symbol(POS.symbol)
+        ms_sym = POS.ms_symbol or _mstock_option_symbol(POS.symbol)
         qty = LOTS_PER_TRADE * LOT_SIZE
         sell_filled = False
         for attempt in range(1, 4):
@@ -2336,7 +2343,7 @@ def main():
                 try:
                     broker = _get_mstock()
                     if broker:
-                        ms_sym = _mstock_option_symbol(POS.symbol)
+                        ms_sym = POS.ms_symbol or _mstock_option_symbol(POS.symbol)
                         net = broker.net_qty(ms_sym)
                         if net == 0:
                             lwarn(f"[sync] {ms_sym} net_qty=0 on exchange — manual exit detected")
