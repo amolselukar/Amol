@@ -1,0 +1,483 @@
+2026-06-01 03:29:30,763 [INFO] [BOOT] Expiry: 2026-06-02, 106 strikes, 212 option contracts
+2026-06-01 03:29:31,522 [WARNING] [OI Plan] Stale plan (2026-05-29) — ignoring for today's levels
+2026-06-01 03:29:31,522 [INFO] [OI Plan] No valid plan found — running without OI levels (normal mode)
+2026-06-01 03:29:31,522 [INFO] [GAP] +1.24% gap; suppressing entries until 10:15
+2026-06-01 03:29:31,522 [INFO] 
+2026-06-01 03:29:31,522 [INFO] +========================================================================+
+2026-06-01 03:29:31,523 [INFO] | ORION V2.5.12 — STRATEGY DESIGN                                        |
+2026-06-01 03:29:31,523 [INFO] | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
+2026-06-01 03:29:31,523 [INFO] +========================================================================+
+2026-06-01 03:29:31,523 [INFO] | ENGINE V2 (fires every 15m close — regime: BULL/BEAR/TRANSITION only)  |
+2026-06-01 03:29:31,523 [INFO] |   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
+2026-06-01 03:29:31,523 [INFO] |        RSI>53 | MACD bull | premium 30-180                             |
+2026-06-01 03:29:31,523 [INFO] |   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
+2026-06-01 03:29:31,523 [INFO] |        RSI<47 | MACD bear | premium 30-300                             |
+2026-06-01 03:29:31,523 [INFO] |                                                                         |
+2026-06-01 03:29:31,523 [INFO] | ENGINE V3 (15m G/R cluster break/reject — fires in any regime)         |
+2026-06-01 03:29:31,523 [INFO] |   Grade A (>=3 source kinds) / Grade B (>=2)                           |
+2026-06-01 03:29:31,523 [INFO] |   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
+2026-06-01 03:29:31,523 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-06-01 03:29:31,523 [INFO] |                                                                         |
+2026-06-01 03:29:31,523 [INFO] | ENGINE VWAP (double confirmation — fires in any regime)                 |
+2026-06-01 03:29:31,523 [INFO] |   1. Nifty 15m bar crosses daily VWAP with body>=50% of range          |
+2026-06-01 03:29:31,523 [INFO] |   2. ATM CE/PE LTP also above/below its daily VWAP simultaneously      |
+2026-06-01 03:29:31,523 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-06-01 03:29:31,523 [INFO] |                                                                         |
+2026-06-01 03:29:31,523 [INFO] | ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
+2026-06-01 03:29:31,523 [INFO] |   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
+2026-06-01 03:29:31,523 [INFO] |   Path B (post-exit): K reversal within 60min                          |
+2026-06-01 03:29:31,523 [INFO] |                                                                         |
+2026-06-01 03:29:31,523 [INFO] | UNIVERSAL EXIT (priority order):                                        |
+2026-06-01 03:29:31,523 [INFO] |   1. HARDSL -18%  2. Velvet Rope peak+12->SL entry+2                  |
+2026-06-01 03:29:31,523 [INFO] |   3. Ladder T2: peak+24->SL entry+12 (immediate, no time gate)         |
+2026-06-01 03:29:31,523 [INFO] |   4. Ladder T3: peak+36->SL entry+24 (immediate)                       |
+2026-06-01 03:29:31,523 [INFO] |   5. Runner +25/+25  6. SMA8(low) trail  7. Force close 15:25          |
+2026-06-01 03:29:31,523 [INFO] |   8. CB=3 non-flip losses                                               |
+2026-06-01 03:29:31,523 [INFO] |                                                                         |
+2026-06-01 03:29:31,523 [INFO] | INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
+2026-06-01 03:29:31,523 [INFO] +========================================================================+
+2026-06-01 03:29:31,523 [INFO] 
+2026-06-01 03:29:31,523 [INFO] === ORION CHANGE HISTORY (V2.2.2 -> V2.5.9) ===
+2026-06-01 03:29:31,523 [INFO] 
+2026-06-01 03:29:31,523 [INFO] V2.2.2 [PRODUCTION BASELINE — T10]
+2026-06-01 03:29:31,523 [INFO]   Entry : 1h SMA20/50 regime + 15m StochRSI K (CE>=38 rising, PE<=80 falling)
+2026-06-01 03:29:31,523 [INFO]   Exit  : HARDSL -35%, TIME_SL 210min/-20%, BE +15% -> option SMA8(low) trail
+2026-06-01 03:29:31,523 [INFO]   CB=2, 1 lot, no flip, no V3, no chop filter
+2026-06-01 03:29:31,523 [INFO] 
+2026-06-01 03:29:31,523 [INFO] V2.3  [+V3 CLUSTER LEVELS]
+2026-06-01 03:29:31,523 [INFO]   + PDH/PDL/round_50/round_100/PDC/1h swing pivots clustered within 20pts
+2026-06-01 03:29:31,523 [INFO]   + Grade A (>=3 source kinds) / Grade B (>=2)
+2026-06-01 03:29:31,523 [INFO]   + ADX regime classifier (BULL/BEAR/CHOP/TRANSITION)
+2026-06-01 03:29:31,523 [INFO] 
+2026-06-01 03:29:31,523 [INFO] V2.4  [+EXIT UPGRADES]
+2026-06-01 03:29:31,523 [INFO]   + 15m option SMA8(low) trail (KEPT in all future versions)
+2026-06-01 03:29:31,523 [INFO]   + ATR-based exits (REMOVED — not robust enough)
+2026-06-01 03:29:31,523 [INFO]   + BE armor at +15% (REMOVED later — net negative in backtest)
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.0  [HYBRID V2+V3 + TIME-RATCHET]
+2026-06-01 03:29:31,524 [INFO]   + Hybrid V2+V3 entry (V2 priority on same-bar tiebreak)
+2026-06-01 03:29:31,524 [INFO]   + Time-ratchet exit: 90min / +20 step
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.1  [ENTRY REFINEMENT]
+2026-06-01 03:29:31,524 [INFO]   + V2 PE_floor=25 (K>=25 required for PE entry)
+2026-06-01 03:29:31,524 [INFO]   + V2 CE: no upper K cap (cap tested and REJECTED — hurts WR)
+2026-06-01 03:29:31,524 [INFO]   + V2 priority confirmed: +Rs 52k vs V3-priority
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.2  [FLIP RULE +Rs 130k]
+2026-06-01 03:29:31,524 [INFO]   + Path A flip (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10 + K reversed
+2026-06-01 03:29:31,524 [INFO]   + Path B flip (post-exit): K reversal within 60min
+2026-06-01 03:29:31,524 [INFO]   + Opposite-side only (same-side continuation REJECTED: -Rs 191k CATASTROPHIC)
+2026-06-01 03:29:31,524 [INFO]   + CE->PE: K falling, 25<=K<=80 | PE->CE: K rising, K>=38
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.3  [V3 SINGLETONS + HARDSL LOCKED]
+2026-06-01 03:29:31,524 [INFO]   + Promoted singletons: PDH/PDL/round_100(+-200 PDC)/swing pivots standalone Grade B
+2026-06-01 03:29:31,524 [INFO]   + HARDSL locked at -25% (swept -35% to -15%; -25% optimal)
+2026-06-01 03:29:31,524 [INFO]   + PnL Rs +3,14,418
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.4  [FLIP CAP]
+2026-06-01 03:29:31,524 [INFO]   + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
+2026-06-01 03:29:31,524 [INFO]   + PnL Rs +3,23,851
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.5  [CHOP FILTER +Rs 49k]
+2026-06-01 03:29:31,524 [INFO]   + RSI [47,53] indecision band blocks ALL entries
+2026-06-01 03:29:31,524 [INFO]   + PnL Rs +3,72,598
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.6  [V3 PDC CONTAMINATION FIX — LOCKED Rs 3,85,724 / WR 35.7%]
+2026-06-01 03:29:31,524 [INFO]   + Exclude PDC from clustering (PDC is reference, not tradeable level)
+2026-06-01 03:29:31,524 [INFO]   + G/R require >=25pt buffer from PDC (motivated by 2026-05-18 bad paper trade)
+2026-06-01 03:29:31,524 [INFO]   + PnL Rs +3,85,724 / MaxDD -1,331 / Red 5/18
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.7  [VELVET ROPE + RATCHET +Rs 1,14,324 / WR 35.7%->55.4%]
+2026-06-01 03:29:31,524 [INFO]   + Velvet Rope: premium hits entry+15 -> SL immediately to entry+2
+2026-06-01 03:29:31,524 [INFO]   + Ratchet Gate: 30min elapsed + entry+25 -> SL to entry+15
+2026-06-01 03:29:31,524 [INFO]   + Runner Trail: +20 per +20pts peak (one-way)
+2026-06-01 03:29:31,524 [INFO]   + Trade-off: Red months 5->10/18, MaxDD -1,331->-1,885
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.8  [K EXTREME + FULL SMA ALIGNMENT]
+2026-06-01 03:29:31,524 [INFO]   + K extreme filter: CE entry only if K<25 recently (3 bars); PE if K>75 recently
+2026-06-01 03:29:31,524 [INFO]   + Full SMA alignment: CE needs close>SMA20>SMA50 (was just close>SMA20)
+2026-06-01 03:29:31,524 [INFO] 
+2026-06-01 03:29:31,524 [INFO] V2.5.9  [Rs 6,70,425 / WR 66.9% / 357 trades / MaxDD -1,485 / Red 8/18]
+2026-06-01 03:29:31,524 [INFO]   + RSI DIRECTIONAL GATE replaces RSI [47,53] chop filter:
+2026-06-01 03:29:31,524 [INFO]       CE: 1h RSI>53 required | PE: 1h RSI<47 required
+2026-06-01 03:29:31,525 [INFO]   + MACD 1h alignment: CE needs MACD_line>signal; PE needs MACD_line<signal
+2026-06-01 03:29:31,525 [INFO]   + Premium gate: 30<=entry_LTP<=180 (blocks deep OTM and IV-spike entries)
+2026-06-01 03:29:31,525 [INFO]   + Tightened exit params: RI=12 (was 15), RT=20 (was 30), RS=25 (was 20)
+2026-06-01 03:29:31,525 [INFO]   + CB=3 (was 4)
+2026-06-01 03:29:31,525 [INFO]   + Straddle monitoring: informational Telegram at 9:45 and 11:30
+2026-06-01 03:29:31,525 [INFO]   + Options VWAP: informational context at entry/pulse/exit
+2026-06-01 03:29:31,525 [INFO] 
+2026-06-01 03:29:31,525 [INFO] V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 / Red 5/18]
+2026-06-01 03:29:31,525 [INFO]   SOURCE: VRL (Vishal Rajput) code analysis — peak-based ratchet ladder
+2026-06-01 03:29:31,525 [INFO]   + HARDSL tightened -25% → -18% (faster loss cut, less capital exposed)
+2026-06-01 03:29:31,525 [INFO]   + 20-min time gate REMOVED — purely peak-based ladder (no waiting)
+2026-06-01 03:29:31,525 [INFO]   + Ladder Tier2: peak >= entry+24 → SL = entry+12 (immediate)
+2026-06-01 03:29:31,525 [INFO]   + Ladder Tier3: peak >= entry+36 → SL = entry+24 (immediate)
+2026-06-01 03:29:31,525 [INFO]   + Entry logic UNCHANGED from V2.5.9
+2026-06-01 03:29:31,525 [INFO]   + Validated: real option data (May 4-21 2026, 12 days)
+2026-06-01 03:29:31,525 [INFO]   + Key improvement: MaxDD -1,485 → -1,119 (-25%), Red months 8 → 5
+2026-06-01 03:29:31,525 [INFO] 
+2026-06-01 03:29:31,525 [INFO] V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
+2026-06-01 03:29:31,525 [INFO]   + EXECUTION_BROKER switched from kite_paper → mstock_live
+2026-06-01 03:29:31,525 [INFO]   + mStock Type B API integrated: login → set_access_token → verify_totp (TOTP auto)
+2026-06-01 03:29:31,525 [INFO]   + Instrument master: direct fetch from OpenAPIScripMaster (173k symbols, name field)
+2026-06-01 03:29:31,525 [INFO]   + order_status: mStock returns 'Traded' status (not 'COMPLETE') — mapped correctly
+2026-06-01 03:29:31,525 [INFO]   + place_order: disclosedquantity="0" required (blank causes IA400 rejection)
+2026-06-01 03:29:31,525 [INFO]   + IP 18.212.243.203 (PythonAnywhere) whitelisted in mStock API settings
+2026-06-01 03:29:31,525 [INFO]   + BUY: 15s timeout, cancel-and-check on timeout, abort if not filled
+2026-06-01 03:29:31,525 [INFO]   + SELL: 3 retries × 5s, 🚨 CRITICAL Telegram alert if all fail, POS.active stays True
+2026-06-01 03:29:31,525 [INFO]   + V3 REGIME GATE REMOVED: V3 now fires in CHOP/INSUFFICIENT regime
+2026-06-01 03:29:31,525 [INFO]       Root cause of bug: regime gate wrapped ALL signals including V3;
+2026-06-01 03:29:31,525 [INFO]       V3 uses cluster break/reject as its own confirmation — ADX not needed
+2026-06-01 03:29:31,525 [INFO]       V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
+2026-06-01 03:29:31,525 [INFO]   + V3 engine: acts on ALL Grade A/B clusters simultaneously (not just nearest)
+2026-06-01 03:29:31,525 [INFO]   + PREMIUM_MAX asymmetric: CE=180 (unchanged), PE=300 (was 180, captures panic moves)
+2026-06-01 03:29:31,525 [INFO]   + VWAP double confirmation engine (new):
+2026-06-01 03:29:31,525 [INFO]       Fires when Nifty 15m bar crosses daily VWAP with body>=50% range
+2026-06-01 03:29:31,525 [INFO]       AND ATM CE/PE LTP is also above/below its daily VWAP simultaneously
+2026-06-01 03:29:31,525 [INFO]       Self-confirming like V3 — no regime gate
+2026-06-01 03:29:31,525 [INFO]   + LOTS_PER_TRADE = 2 (live)
+2026-06-01 03:29:31,525 [INFO] 
+2026-06-01 03:29:31,525 [INFO] === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
+2026-06-01 03:29:31,525 [INFO]   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
+2026-06-01 03:29:31,525 [INFO]   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
+2026-06-01 03:29:31,525 [INFO]   ADX<20 filter        : -Rs 16k
+2026-06-01 03:29:31,525 [INFO]   ADX<25 filter        : -Rs 34k
+2026-06-01 03:29:31,526 [INFO]   BE armor at +15%     : net negative
+2026-06-01 03:29:31,526 [INFO]   Same-side flip       : -Rs 191k CATASTROPHIC
+2026-06-01 03:29:31,526 [INFO]   REVERSAL_FLIP=True   : WR 12% vs 33%
+2026-06-01 03:29:31,526 [INFO]   K cap on CE          : hurts WR (no cap is better)
+2026-06-01 03:29:31,526 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
+2026-06-01 03:29:31,526 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
+2026-06-01 03:29:31,526 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-06-01 03:29:32,226 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=80\" at byte offset 212"}
+2026-06-01 03:29:32,227 [WARNING] HTML parse failed; retrying as plain text
+2026-06-01 03:29:34,809 [INFO] [INDICATORS] spot=23609.3 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.13/7.67(bear) | 15m: K=37.7↓(prev 45.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 03:29:34,809 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
+2026-06-01 03:34:42,895 [INFO] [INDICATORS] spot=23609.3 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.13/7.67(bear) | 15m: K=37.7↓(prev 45.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 03:34:42,896 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
+2026-06-01 03:39:50,144 [INFO] [INDICATORS] spot=23609.3 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.13/7.67(bear) | 15m: K=37.7↓(prev 45.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 03:39:50,145 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
+2026-06-01 03:44:57,302 [INFO] [INDICATORS] spot=23609.3 | 1h: close=23528.7 sma20=23903.0 sma50=23812.4 rsi=24.1 macd=-37.13/7.67(bear) | 15m: K=37.7↓(prev 45.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 03:44:57,302 [INFO] [SIGNAL] CE: reg=False K=False(K=37.7>=38,rising) Kextr=True RSI=False(24.1>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.7<=80,falling) Kextr=False RSI=True(24.1<47) MACD=True => BLOCK
+2026-06-01 03:50:05,639 [INFO] [STRADDLE] Reference: ₹228.0 at 09:20
+2026-06-01 03:50:05,640 [INFO] [INDICATORS] spot=23638.0 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=35.4↓(prev 37.7) | regime=NEUTRAL halted=False active=False
+2026-06-01 03:50:05,640 [INFO] [SIGNAL] CE: reg=False K=False(K=35.4>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=35.4<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 03:55:13,290 [INFO] [INDICATORS] spot=23608.2 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=35.4↓(prev 37.7) | regime=NEUTRAL halted=False active=False
+2026-06-01 03:55:13,291 [INFO] [SIGNAL] CE: reg=False K=False(K=35.4>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=35.4<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:00:20,925 [INFO] [INDICATORS] spot=23591.8 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=35.3↓(prev 35.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:00:20,928 [INFO] [SIGNAL] CE: reg=False K=False(K=35.3>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=35.3<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:05:29,637 [INFO] [INDICATORS] spot=23603.8 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=35.3↓(prev 35.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:05:29,638 [INFO] [SIGNAL] CE: reg=False K=False(K=35.3>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=35.3<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:10:37,024 [INFO] [INDICATORS] spot=23619.7 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=35.3↓(prev 35.5) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:10:37,026 [INFO] [SIGNAL] CE: reg=False K=False(K=35.3>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=35.3<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:15:45,976 [INFO] [INDICATORS] spot=23584.8 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=51.5↑(prev 35.3) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:15:45,978 [INFO] [SIGNAL] CE: reg=False K=True(K=51.5>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=51.5<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:20:54,068 [INFO] [INDICATORS] spot=23578.0 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=51.5↑(prev 35.3) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:20:54,069 [INFO] [SIGNAL] CE: reg=False K=True(K=51.5>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=51.5<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:26:01,836 [INFO] [INDICATORS] spot=23577.0 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=51.5↑(prev 35.3) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:26:01,837 [INFO] [SIGNAL] CE: reg=False K=True(K=51.5>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=51.5<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:31:10,015 [INFO] [INDICATORS] spot=23563.0 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=48.8↓(prev 51.4) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:31:10,016 [INFO] [SIGNAL] CE: reg=False K=False(K=48.8>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=48.8<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:36:17,985 [INFO] [INDICATORS] spot=23545.0 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=48.8↓(prev 51.4) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:36:17,986 [INFO] [SIGNAL] CE: reg=False K=False(K=48.8>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=48.8<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:41:25,373 [INFO] [INDICATORS] spot=23564.0 | 1h: close=23609.3 sma20=23880.4 sma50=23812.1 rsi=32.8 macd=-50.79/-4.02(bear) | 15m: K=48.8↓(prev 51.4) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:41:25,374 [INFO] [SIGNAL] CE: reg=False K=False(K=48.8>=38,rising) Kextr=False RSI=False(32.8>53) MACD=False => BLOCK | PE: reg=False K=True(K=48.8<=80,falling) Kextr=False RSI=True(32.8<47) MACD=True => BLOCK
+2026-06-01 04:46:32,709 [INFO] [INDICATORS] spot=23548.5 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=46.8↓(prev 48.9) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:46:32,709 [INFO] [SIGNAL] CE: reg=False K=False(K=46.8>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=46.8<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 04:51:41,299 [INFO] [INDICATORS] spot=23558.8 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=46.8↓(prev 48.9) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:51:41,300 [INFO] [SIGNAL] CE: reg=False K=False(K=46.8>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=46.8<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 04:56:48,911 [INFO] [INDICATORS] spot=23554.5 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=46.8↓(prev 48.9) | regime=NEUTRAL halted=False active=False
+2026-06-01 04:56:48,912 [INFO] [SIGNAL] CE: reg=False K=False(K=46.8>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=46.8<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:01:59,207 [INFO] [INDICATORS] spot=23538.0 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=44.1↓(prev 46.8) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:01:59,208 [INFO] [SIGNAL] CE: reg=False K=False(K=44.1>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=44.1<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:07:07,644 [INFO] [INDICATORS] spot=23530.9 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=44.1↓(prev 46.8) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:07:07,645 [INFO] [SIGNAL] CE: reg=False K=False(K=44.1>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=44.1<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:12:16,093 [INFO] [INDICATORS] spot=23548.0 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=44.1↓(prev 46.8) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:12:16,094 [INFO] [SIGNAL] CE: reg=False K=False(K=44.1>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=44.1<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:17:23,838 [INFO] [INDICATORS] spot=23557.2 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=41.7↓(prev 44.2) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:17:23,839 [INFO] [SIGNAL] CE: reg=False K=False(K=41.7>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=41.7<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:22:32,523 [INFO] [INDICATORS] spot=23582.3 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=41.7↓(prev 44.2) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:22:32,523 [INFO] [SIGNAL] CE: reg=False K=False(K=41.7>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=41.7<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:27:39,996 [INFO] [INDICATORS] spot=23592.5 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=41.7↓(prev 44.2) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:27:39,997 [INFO] [SIGNAL] CE: reg=False K=False(K=41.7>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=True(K=41.7<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:30:17,836 [INFO] [mstock] login: status=True msg=Login Success
+2026-06-01 05:30:17,837 [INFO] [mstock] Initial JWT set.
+2026-06-01 05:30:18,235 [INFO] [mstock] verify_totp: status=True msg=SUCCESS
+2026-06-01 05:30:18,235 [INFO] [mstock] Login complete.
+2026-06-01 05:30:32,759 [INFO] [mstock] Instrument master: 161351 records, keys=['token', 'symbol', 'name', 'expiry', 'strike', 'lotsize', 'instrumenttype', 'exch_seg', 'tick_size']
+2026-06-01 05:30:33,328 [INFO] [mstock] Instrument cache: 132467 symbols
+2026-06-01 05:30:33,414 [INFO] [mstock] Sample NIFTY CE: [('BANKNIFTY26JUN65400CE', '35000'), ('BANKNIFTY26JUN65600CE', '35002'), ('BANKNIFTY26JUN65700CE', '35004'), ('BANKNIFTY26JUN65800CE', '35006'), ('BANKNIFTY26JUN82500CE', '35008')]
+2026-06-01 05:30:33,569 [INFO] [mstock] Broker initialised and logged in.
+2026-06-01 05:30:33,569 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:30:33,874 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:30:33,874 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:30:33,882 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:31:06,357 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:31:06,675 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:31:06,675 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:31:06,676 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:31:38,749 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:31:39,054 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:31:39,055 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:31:39,055 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:32:11,065 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:32:11,369 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:32:11,369 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:32:11,369 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:32:43,428 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:32:43,731 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:32:43,731 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:32:43,731 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:32:44,166 [INFO] [INDICATORS] spot=23591.8 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=49.6↑(prev 41.6) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:32:44,166 [INFO] [SIGNAL] CE: reg=False K=True(K=49.6>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=False(K=49.6<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:33:16,260 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:33:16,561 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:33:16,561 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:33:16,561 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:33:48,695 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:33:48,998 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:33:48,999 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:33:48,999 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:34:21,053 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:34:21,358 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:34:21,358 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:34:21,358 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:34:53,878 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:34:54,186 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:34:54,186 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:34:54,186 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:35:26,199 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:35:26,503 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:35:26,504 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:35:26,504 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:35:58,517 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:35:58,821 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:35:58,821 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:35:58,821 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:36:30,858 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:36:31,166 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:36:31,166 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:36:31,166 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:37:03,403 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:37:03,708 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:37:03,708 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:37:03,708 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:37:35,719 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:37:36,021 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:37:36,021 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:37:36,021 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:38:08,052 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:38:08,355 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:38:08,355 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:38:08,355 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:38:08,817 [INFO] [INDICATORS] spot=23593.2 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=49.6↑(prev 41.6) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:38:08,817 [INFO] [SIGNAL] CE: reg=False K=True(K=49.6>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=False(K=49.6<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:38:40,532 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:38:40,834 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:38:40,834 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:38:40,834 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:39:12,933 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:39:13,237 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:39:13,237 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:39:13,237 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:39:45,293 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:39:45,596 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:39:45,596 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:39:45,596 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:40:17,691 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:40:17,999 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:40:17,999 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:40:17,999 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:40:50,038 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:40:50,346 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:40:50,346 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:40:50,346 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:41:22,422 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:41:22,729 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:41:22,729 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:41:22,729 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:41:54,719 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:41:55,024 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:41:55,024 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:41:55,024 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:42:27,074 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:42:27,383 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:42:27,383 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:42:27,383 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:42:59,530 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:42:59,836 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:42:59,836 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:42:59,836 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:43:31,881 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:43:32,187 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:43:32,187 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:43:32,187 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:43:32,625 [INFO] [INDICATORS] spot=23606.0 | 1h: close=23553.2 sma20=23854.5 sma50=23811.0 rsi=30.2 macd=-65.39/-16.29(bear) | 15m: K=49.6↑(prev 41.6) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:43:32,625 [INFO] [SIGNAL] CE: reg=False K=True(K=49.6>=38,rising) Kextr=False RSI=False(30.2>53) MACD=False => BLOCK | PE: reg=False K=False(K=49.6<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True => BLOCK
+2026-06-01 05:44:04,319 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:44:04,626 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:44:04,626 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:44:04,626 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:44:36,660 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:44:36,963 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:44:36,963 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:44:36,963 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:45:09,077 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:45:09,387 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:45:09,390 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:45:09,390 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:45:41,545 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:45:41,851 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:45:41,851 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:45:41,851 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:46:14,000 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:46:14,303 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:46:14,303 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:46:14,303 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:46:46,356 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:46:46,660 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:46:46,660 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:46:46,660 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:47:18,739 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:47:19,041 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:47:19,041 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:47:19,041 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:47:51,104 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:47:51,406 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:47:51,406 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:47:51,406 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:48:24,047 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:48:24,348 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:48:24,348 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:48:24,348 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:48:56,407 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:48:56,709 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:48:56,709 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:48:56,709 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:48:57,156 [INFO] [INDICATORS] spot=23606.8 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=68.9↑(prev 49.7) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:48:57,156 [INFO] [SIGNAL] CE: reg=False K=True(K=68.9>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=68.9<=80,falling) Kextr=False RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 05:49:28,789 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:49:29,097 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:49:29,097 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:49:29,097 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:50:01,192 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:50:01,499 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:50:01,499 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:50:01,499 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:50:33,786 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:50:34,089 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:50:34,089 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:50:34,089 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:51:06,237 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:51:06,538 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:51:06,538 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:51:06,538 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:51:39,006 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:51:39,309 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:51:39,309 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:51:39,309 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:52:11,541 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223600CE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 05:52:11,846 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:52:11,846 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 05:52:11,846 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 05:54:16,994 [INFO] [INDICATORS] spot=23586.9 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=68.9↑(prev 49.7) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:54:16,994 [INFO] [SIGNAL] CE: reg=False K=True(K=68.9>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=68.9<=80,falling) Kextr=False RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 05:59:28,686 [INFO] [INDICATORS] spot=23567.4 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=68.9↑(prev 49.7) | regime=NEUTRAL halted=False active=False
+2026-06-01 05:59:28,686 [INFO] [SIGNAL] CE: reg=False K=True(K=68.9>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=68.9<=80,falling) Kextr=False RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:04:46,171 [INFO] [INDICATORS] spot=23545.2 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=81.5↑(prev 68.9) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:04:46,172 [INFO] [SIGNAL] CE: reg=False K=True(K=81.5>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=81.5<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:09:59,019 [INFO] [INDICATORS] spot=23567.2 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=81.5↑(prev 68.9) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:09:59,019 [INFO] [SIGNAL] CE: reg=False K=True(K=81.5>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=81.5<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:15:11,935 [INFO] [INDICATORS] spot=23548.2 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=83.4↑(prev 81.6) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:15:11,936 [INFO] [SIGNAL] CE: reg=False K=True(K=83.4>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=83.4<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:20:20,598 [INFO] [INDICATORS] spot=23552.2 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=83.4↑(prev 81.6) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:20:20,600 [INFO] [SIGNAL] CE: reg=False K=True(K=83.4>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=83.4<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:25:27,892 [INFO] [INDICATORS] spot=23553.3 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=83.4↑(prev 81.6) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:25:27,892 [INFO] [SIGNAL] CE: reg=False K=True(K=83.4>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=83.4<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:30:36,373 [INFO] [INDICATORS] spot=23498.7 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=68.5↓(prev 83.3) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:30:36,381 [INFO] [SIGNAL] CE: reg=False K=False(K=68.5>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=68.5<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:35:50,094 [INFO] [INDICATORS] spot=23507.0 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=68.5↓(prev 83.3) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:35:50,094 [INFO] [SIGNAL] CE: reg=False K=False(K=68.5>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=68.5<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:41:01,566 [INFO] [INDICATORS] spot=23506.2 | 1h: close=23606.2 sma20=23833.8 sma50=23813.2 rsi=35.4 macd=-71.86/-27.41(bear) | 15m: K=68.5↓(prev 83.3) | regime=NEUTRAL halted=False active=False
+2026-06-01 06:41:01,566 [INFO] [SIGNAL] CE: reg=False K=False(K=68.5>=38,rising) Kextr=False RSI=False(35.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=68.5<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True => BLOCK
+2026-06-01 06:46:13,386 [INFO] [INDICATORS] spot=23525.3 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=70.3↑(prev 68.5) | regime=PE-eligible halted=False active=False
+2026-06-01 06:46:13,386 [INFO] [SIGNAL] CE: reg=False K=True(K=70.3>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=False(K=70.3<=80,falling) Kextr=True RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 06:51:25,503 [INFO] [INDICATORS] spot=23513.4 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=70.3↑(prev 68.5) | regime=PE-eligible halted=False active=False
+2026-06-01 06:51:25,504 [INFO] [SIGNAL] CE: reg=False K=True(K=70.3>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=False(K=70.3<=80,falling) Kextr=True RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 06:56:37,040 [INFO] [INDICATORS] spot=23519.2 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=70.3↑(prev 68.5) | regime=PE-eligible halted=False active=False
+2026-06-01 06:56:37,040 [INFO] [SIGNAL] CE: reg=False K=True(K=70.3>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=False(K=70.3<=80,falling) Kextr=True RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:01:51,772 [INFO] [INDICATORS] spot=23516.8 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=66.6↓(prev 70.4) | regime=PE-eligible halted=False active=False
+2026-06-01 07:01:51,773 [INFO] [SIGNAL] CE: reg=False K=False(K=66.6>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=True(K=66.6<=80,falling) Kextr=True RSI=True(31.7<47) MACD=True => PASS
+2026-06-01 07:07:05,074 [INFO] [INDICATORS] spot=23519.7 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=66.6↓(prev 70.4) | regime=PE-eligible halted=False active=False
+2026-06-01 07:07:05,075 [INFO] [SIGNAL] CE: reg=False K=False(K=66.6>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=True(K=66.6<=80,falling) Kextr=True RSI=True(31.7<47) MACD=True => PASS
+2026-06-01 07:12:16,951 [INFO] [INDICATORS] spot=23507.2 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=66.6↓(prev 70.4) | regime=PE-eligible halted=False active=False
+2026-06-01 07:12:16,951 [INFO] [SIGNAL] CE: reg=False K=False(K=66.6>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=True(K=66.6<=80,falling) Kextr=True RSI=True(31.7<47) MACD=True => PASS
+2026-06-01 07:17:27,261 [INFO] [INDICATORS] spot=23524.3 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=69.3↑(prev 66.6) | regime=PE-eligible halted=False active=False
+2026-06-01 07:17:27,266 [INFO] [SIGNAL] CE: reg=False K=True(K=69.3>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=False(K=69.3<=80,falling) Kextr=False RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:22:35,697 [INFO] [INDICATORS] spot=23530.2 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=69.3↑(prev 66.6) | regime=PE-eligible halted=False active=False
+2026-06-01 07:22:35,697 [INFO] [SIGNAL] CE: reg=False K=True(K=69.3>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=False(K=69.3<=80,falling) Kextr=False RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:27:43,187 [INFO] [INDICATORS] spot=23515.4 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=69.3↑(prev 66.6) | regime=PE-eligible halted=False active=False
+2026-06-01 07:27:43,188 [INFO] [SIGNAL] CE: reg=False K=True(K=69.3>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=False(K=69.3<=80,falling) Kextr=False RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:32:51,784 [INFO] [INDICATORS] spot=23495.3 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=61.6↓(prev 69.3) | regime=PE-eligible halted=False active=False
+2026-06-01 07:32:51,785 [INFO] [SIGNAL] CE: reg=False K=False(K=61.6>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=True(K=61.6<=80,falling) Kextr=False RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:37:59,302 [INFO] [INDICATORS] spot=23500.3 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=61.6↓(prev 69.3) | regime=PE-eligible halted=False active=False
+2026-06-01 07:37:59,302 [INFO] [SIGNAL] CE: reg=False K=False(K=61.6>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=True(K=61.6<=80,falling) Kextr=False RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:43:06,958 [INFO] [INDICATORS] spot=23461.8 | 1h: close=23530.0 sma20=23811.5 sma50=23812.5 rsi=31.7 macd=-82.18/-38.36(bear) | 15m: K=61.6↓(prev 69.3) | regime=PE-eligible halted=False active=False
+2026-06-01 07:43:06,958 [INFO] [SIGNAL] CE: reg=False K=False(K=61.6>=38,rising) Kextr=False RSI=False(31.7>53) MACD=False => BLOCK | PE: reg=True K=True(K=61.6<=80,falling) Kextr=False RSI=True(31.7<47) MACD=True => BLOCK
+2026-06-01 07:45:10,633 [WARNING] [mstock] Could not resolve token for NFO:NIFTY2660223500PE. Order may still work (some endpoints accept symbol without token).
+2026-06-01 07:45:11,623 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 07:45:11,623 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-01 07:45:11,623 [WARNING] [mstock] BUY place_order returned None — aborting trade.
+2026-06-01 07:48:19,767 [INFO] [INDICATORS] spot=23468.0 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=48.2↓(prev 61.6) | regime=PE-eligible halted=False active=False
+2026-06-01 07:48:19,767 [INFO] [SIGNAL] CE: reg=False K=False(K=48.2>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=48.2<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 07:53:32,198 [INFO] [INDICATORS] spot=23475.3 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=48.2↓(prev 61.6) | regime=PE-eligible halted=False active=False
+2026-06-01 07:53:32,199 [INFO] [SIGNAL] CE: reg=False K=False(K=48.2>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=48.2<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 07:58:44,591 [INFO] [INDICATORS] spot=23472.7 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=48.2↓(prev 61.6) | regime=PE-eligible halted=False active=False
+2026-06-01 07:58:44,592 [INFO] [SIGNAL] CE: reg=False K=False(K=48.2>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=48.2<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:03:58,548 [INFO] [INDICATORS] spot=23497.5 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=46.8↓(prev 48.2) | regime=PE-eligible halted=False active=False
+2026-06-01 08:03:58,548 [INFO] [SIGNAL] CE: reg=False K=False(K=46.8>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=46.8<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:09:12,240 [INFO] [INDICATORS] spot=23481.2 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=46.8↓(prev 48.2) | regime=PE-eligible halted=False active=False
+2026-06-01 08:09:12,240 [INFO] [SIGNAL] CE: reg=False K=False(K=46.8>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=46.8<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:14:25,466 [INFO] [INDICATORS] spot=23486.1 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=46.8↓(prev 48.2) | regime=PE-eligible halted=False active=False
+2026-06-01 08:14:25,467 [INFO] [SIGNAL] CE: reg=False K=False(K=46.8>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=46.8<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:19:34,472 [INFO] [INDICATORS] spot=23460.8 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=46.0↓(prev 46.9) | regime=PE-eligible halted=False active=False
+2026-06-01 08:19:34,473 [INFO] [SIGNAL] CE: reg=False K=False(K=46.0>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=46.0<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:24:42,912 [INFO] [INDICATORS] spot=23451.3 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=46.0↓(prev 46.9) | regime=PE-eligible halted=False active=False
+2026-06-01 08:24:42,912 [INFO] [SIGNAL] CE: reg=False K=False(K=46.0>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=46.0<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:29:50,509 [INFO] [INDICATORS] spot=23452.2 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=46.0↓(prev 46.9) | regime=PE-eligible halted=False active=False
+2026-06-01 08:29:50,509 [INFO] [SIGNAL] CE: reg=False K=False(K=46.0>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=True(K=46.0<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:35:03,861 [INFO] [INDICATORS] spot=23443.2 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=50.7↑(prev 46.0) | regime=PE-eligible halted=False active=False
+2026-06-01 08:35:03,864 [INFO] [SIGNAL] CE: reg=False K=True(K=50.7>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=False(K=50.7<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:40:16,454 [INFO] [INDICATORS] spot=23426.6 | 1h: close=23460.7 sma20=23788.4 sma50=23810.1 rsi=28.8 macd=-94.86/-49.66(bear) | 15m: K=50.7↑(prev 46.0) | regime=PE-eligible halted=False active=False
+2026-06-01 08:40:16,454 [INFO] [SIGNAL] CE: reg=False K=True(K=50.7>=38,rising) Kextr=False RSI=False(28.8>53) MACD=False => BLOCK | PE: reg=True K=False(K=50.7<=80,falling) Kextr=False RSI=True(28.8<47) MACD=True => BLOCK
+2026-06-01 08:45:28,600 [INFO] [INDICATORS] spot=23419.1 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=31.4↓(prev 50.6) | regime=PE-eligible halted=False active=False
+2026-06-01 08:45:28,600 [INFO] [SIGNAL] CE: reg=False K=False(K=31.4>=38,rising) Kextr=False RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=True(K=31.4<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 08:50:40,444 [INFO] [INDICATORS] spot=23410.5 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=31.4↓(prev 50.6) | regime=PE-eligible halted=False active=False
+2026-06-01 08:50:40,445 [INFO] [SIGNAL] CE: reg=False K=False(K=31.4>=38,rising) Kextr=False RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=True(K=31.4<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 08:55:53,030 [INFO] [INDICATORS] spot=23402.1 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=31.4↓(prev 50.6) | regime=PE-eligible halted=False active=False
+2026-06-01 08:55:53,030 [INFO] [SIGNAL] CE: reg=False K=False(K=31.4>=38,rising) Kextr=False RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=True(K=31.4<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:01:05,736 [INFO] [INDICATORS] spot=23405.1 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=12.3↓(prev 31.4) | regime=PE-eligible halted=False active=False
+2026-06-01 09:01:05,739 [INFO] [SIGNAL] CE: reg=False K=False(K=12.3>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=12.3<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:06:15,241 [INFO] [INDICATORS] spot=23403.3 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=12.3↓(prev 31.4) | regime=PE-eligible halted=False active=False
+2026-06-01 09:06:15,242 [INFO] [SIGNAL] CE: reg=False K=False(K=12.3>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=12.3<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:11:23,021 [INFO] [INDICATORS] spot=23416.7 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=12.3↓(prev 31.4) | regime=PE-eligible halted=False active=False
+2026-06-01 09:11:23,021 [INFO] [SIGNAL] CE: reg=False K=False(K=12.3>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=12.3<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:16:30,835 [INFO] [INDICATORS] spot=23423.2 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=16.8↑(prev 12.3) | regime=PE-eligible halted=False active=False
+2026-06-01 09:16:30,835 [INFO] [SIGNAL] CE: reg=False K=False(K=16.8>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=16.8<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:21:39,004 [INFO] [INDICATORS] spot=23391.5 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=16.8↑(prev 12.3) | regime=PE-eligible halted=False active=False
+2026-06-01 09:21:39,004 [INFO] [SIGNAL] CE: reg=False K=False(K=16.8>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=16.8<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:26:46,503 [INFO] [INDICATORS] spot=23371.3 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=16.8↑(prev 12.3) | regime=PE-eligible halted=False active=False
+2026-06-01 09:26:46,503 [INFO] [SIGNAL] CE: reg=False K=False(K=16.8>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=16.8<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:31:55,389 [INFO] [INDICATORS] spot=23378.6 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=20.8↑(prev 16.7) | regime=PE-eligible halted=False active=False
+2026-06-01 09:31:55,389 [INFO] [SIGNAL] CE: reg=False K=False(K=20.8>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=20.8<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:37:03,412 [INFO] [INDICATORS] spot=23377.5 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=20.8↑(prev 16.7) | regime=PE-eligible halted=False active=False
+2026-06-01 09:37:03,413 [INFO] [SIGNAL] CE: reg=False K=False(K=20.8>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=20.8<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:42:10,905 [INFO] [INDICATORS] spot=23408.2 | 1h: close=23417.0 sma20=23763.8 sma50=23806.4 rsi=27.1 macd=-107.21/-61.17(bear) | 15m: K=20.8↑(prev 16.7) | regime=PE-eligible halted=False active=False
+2026-06-01 09:42:10,906 [INFO] [SIGNAL] CE: reg=False K=False(K=20.8>=38,rising) Kextr=True RSI=False(27.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=20.8<=80,falling) Kextr=False RSI=True(27.1<47) MACD=True => BLOCK
+2026-06-01 09:47:18,203 [INFO] [INDICATORS] spot=23397.1 | 1h: close=23389.2 sma20=23736.5 sma50=23801.2 rsi=26.1 macd=-117.86/-72.51(bear) | 15m: K=36.5↑(prev 21.0) | regime=PE-eligible halted=False active=False
+2026-06-01 09:47:18,203 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(26.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(26.1<47) MACD=True => BLOCK
+2026-06-01 09:52:26,354 [INFO] [INDICATORS] spot=23367.2 | 1h: close=23389.2 sma20=23736.5 sma50=23801.2 rsi=26.1 macd=-117.86/-72.51(bear) | 15m: K=36.5↑(prev 21.0) | regime=PE-eligible halted=False active=False
+2026-06-01 09:52:26,354 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(26.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(26.1<47) MACD=True => BLOCK
+2026-06-01 09:57:33,677 [INFO] [INDICATORS] spot=23381.5 | 1h: close=23389.2 sma20=23736.5 sma50=23801.2 rsi=26.1 macd=-117.86/-72.51(bear) | 15m: K=36.5↑(prev 21.0) | regime=PE-eligible halted=False active=False
+2026-06-01 09:57:33,678 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(26.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(26.1<47) MACD=True => BLOCK
