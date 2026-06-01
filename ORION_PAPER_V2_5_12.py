@@ -2021,22 +2021,20 @@ def warmup_until_ready(max_attempts=20):
 # =========================================================================
 # MAIN
 # =========================================================================
-def push_logs_to_github():
-    """Push today's log + CSV to GitHub at EOD so they're readable remotely."""
+def push_logs_to_github(label="periodic"):
+    """Push today's log + CSV to GitHub so they're readable remotely."""
     today = datetime.now(IST).strftime("%Y-%m-%d")
     repo_dir = os.path.dirname(os.path.abspath(__file__))
     branch = "claude/general-session-YfHuZ"
     try:
-        # Stage log and CSV (force-add in case they're gitignored)
         subprocess.run(["git", "add", "-f", LOG_FN, CSV_FN],
                        cwd=repo_dir, check=True, capture_output=True)
-        # Check if there's anything to commit
         result = subprocess.run(["git", "diff", "--cached", "--quiet"],
                                 cwd=repo_dir)
         if result.returncode == 0:
-            linfo("[EOD] No log changes to commit.")
+            linfo(f"[{label}] No log changes to commit.")
             return
-        subprocess.run(["git", "commit", "-m", f"Daily log {today} ({VERSION})"],
+        subprocess.run(["git", "commit", "-m", f"Log {label} {today} ({VERSION})"],
                        cwd=repo_dir, check=True, capture_output=True)
         if GITHUB_PAT:
             remote = f"https://{GITHUB_PAT}@github.com/amolselukar/Amol.git"
@@ -2044,14 +2042,15 @@ def push_logs_to_github():
             remote = "origin"
         subprocess.run(["git", "push", remote, branch],
                        cwd=repo_dir, check=True, capture_output=True)
-        linfo(f"[EOD] Logs pushed to GitHub: {LOG_FN}, {CSV_FN}")
-        TG.send(f"📤 <b>Logs pushed to GitHub</b>\n"
-                f"   <code>{LOG_FN}</code>\n"
-                f"   <code>{CSV_FN}</code>")
+        linfo(f"[{label}] Logs pushed to GitHub: {LOG_FN}, {CSV_FN}")
+        if label == "EOD":
+            TG.send(f"📤 <b>Logs pushed to GitHub</b>\n"
+                    f"   <code>{LOG_FN}</code>\n"
+                    f"   <code>{CSV_FN}</code>")
     except subprocess.CalledProcessError as e:
-        lwarn(f"[EOD] Git push failed: {e.stderr.decode() if e.stderr else e}")
+        lwarn(f"[{label}] Git push failed: {e.stderr.decode() if e.stderr else e}")
     except Exception as e:
-        lwarn(f"[EOD] push_logs_to_github error: {e}")
+        lwarn(f"[{label}] push_logs_to_github error: {e}")
 
 def in_entry_window(now):
     start = now.replace(hour=ENTRY_START_HOUR, minute=ENTRY_START_MIN, second=0, microsecond=0)
@@ -2256,10 +2255,14 @@ def main():
     spot_now   = float(df5['close'].iloc[-1])
     TG.send(fmt_live_state(spot_now, c1h_now, sma20_now, sma50_now, K_now, K_prev, DAY.regime))
 
+    # ---- Push boot log to GitHub so remote monitoring can see startup ----
+    push_logs_to_github(label="boot")
+
     # ---- Main loop ----
     last_pulse_at   = 0
     last_csv_at     = 0
     last_pos_sync   = 0
+    last_log_push   = time.time()   # push logs every 30 min for remote monitoring
     while True:
         try:
             # Check if /stop command was received via Telegram
@@ -2449,6 +2452,11 @@ def main():
             if time.time() - last_pulse_at >= PULSE_INTERVAL_SEC:
                 TG.send(fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, DAY.regime))
                 last_pulse_at = time.time()
+
+            # ---- Push logs to GitHub every 30 min for remote monitoring ----
+            if time.time() - last_log_push >= 30 * 60:
+                push_logs_to_github(label="periodic")
+                last_log_push = time.time()
 
             time.sleep(LOOP_SLEEP_SEC)
 
