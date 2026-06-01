@@ -1723,10 +1723,12 @@ def open_trade(sig, spot, expiry_lookup):
 
     # ---- Live execution via mStock — abort entirely on any BUY failure ----
     if EXECUTION_BROKER == "mstock_live":
+        _sig_info = f"Engine:{sig['engine']} | {sig.get('detail','')}"
         broker = _get_mstock()
         if not broker:
             lwarn("[mstock] Broker unavailable — BUY aborted, no position opened.")
-            TG.send(f"⚠️ mStock broker unavailable. BUY aborted ({symbol}).")
+            TG.send(f"⚠️ mStock broker unavailable. BUY aborted.\n"
+                    f"<i>{_sig_info}</i>")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
@@ -1736,7 +1738,8 @@ def open_trade(sig, spot, expiry_lookup):
         oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
         if not oid:
             lwarn("[mstock] BUY place_order returned None — aborting trade.")
-            TG.send(f"⚠️ mStock BUY FAILED ({ms_sym}). No position opened.")
+            TG.send(f"⚠️ mStock BUY FAILED ({ms_sym}). No position opened.\n"
+                    f"<i>{_sig_info}</i>")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
@@ -1750,14 +1753,16 @@ def open_trade(sig, spot, expiry_lookup):
                 fill = fill2; status = "COMPLETE"
             else:
                 lwarn(f"[mstock] BUY timeout, order cancelled — aborting trade ({ms_sym}).")
-                TG.send(f"⚠️ mStock BUY TIMEOUT ({ms_sym}). Order cancelled, no position.")
+                TG.send(f"⚠️ mStock BUY TIMEOUT ({ms_sym}). Order cancelled, no position.\n"
+                        f"<i>{_sig_info}</i>")
                 POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
                 POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
                 POS.hardsl_premium = 0.0; POS.sl_current = 0.0
                 return False
         if status != "COMPLETE" or not fill or fill <= 0:
             lwarn(f"[mstock] BUY rejected/no fill (status={status}) — aborting trade.")
-            TG.send(f"⚠️ mStock BUY REJECTED ({ms_sym}, status={status}). No position opened.")
+            TG.send(f"⚠️ mStock BUY REJECTED ({ms_sym}, status={status}). No position opened.\n"
+                    f"<i>{_sig_info}</i>")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
