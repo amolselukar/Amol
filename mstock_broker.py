@@ -92,6 +92,7 @@ class MStockBroker:
         )
         self._logged_in = False
         self._sym_token_cache = {}   # tradingsymbol -> mStock token (built at login)
+        self._last_error = ""        # last place_order failure reason (for Telegram)
 
     # ── Authentication ────────────────────────────────────────────────
     @staticmethod
@@ -266,18 +267,39 @@ class MStockBroker:
                 _ordertag=tag
             ))
             log.info(f"[mstock] place_order resp: {resp}")
+
+            # Auto-relogin on auth failure (JWT expired mid-session)
+            status_str = str(resp.get('status', '')).lower()
+            msg_str    = str(resp.get('message', '')).lower()
+            if (status_str in ('false', '') or
+                    any(k in msg_str for k in ('unauthori', 'invalid token', 'session', 'expired', 'not logged'))):
+                log.warning(f"[mstock] Auth failure detected in place_order response — re-logging in.")
+                self._logged_in = False
+                if self.login():
+                    log.info("[mstock] Re-login OK — retrying place_order once.")
+                    return self.place_order(
+                        transaction_type, trading_symbol, quantity,
+                        order_type, price, exchange, product, symbol_token, tag)
+                log.error("[mstock] Re-login also failed.")
+                self._last_error = f"Auth failure + re-login failed: {resp.get('message','')}"
+                return None
+
             order_id = ((resp.get('data') or {}).get('orderid')
                         or resp.get('orderid')
                         or resp.get('order_id'))
             if order_id:
                 log.info(f"[mstock] {transaction_type} placed: {trading_symbol} "
                          f"qty={quantity} type={order_type} → orderid={order_id}")
+                self._last_error = ""
                 return str(order_id)
+            err_msg = resp.get('message') or resp.get('errMsg') or resp.get('error') or str(resp)
             log.error(f"[mstock] No orderid in response: {resp}")
+            self._last_error = f"{err_msg}"
             return None
 
         except Exception as e:
             log.error(f"[mstock] place_order exception: {e}")
+            self._last_error = str(e)
             return None
 
     def cancel_order(self, order_id: str,

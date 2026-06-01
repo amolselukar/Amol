@@ -158,18 +158,27 @@ except (ImportError, AttributeError):
 # ---- mStock live execution broker (loaded only when EXECUTION_BROKER="mstock_live") ----
 _mstock_broker = None
 def _get_mstock():
-    """Lazy-init mStock broker singleton. Call only after EXECUTION_BROKER is set."""
-    global _mstock_broker
-    if _mstock_broker is None:
-        try:
-            from mstock_broker import MStockBroker
-            _mstock_broker = MStockBroker()
-            _mstock_broker.login()
-            linfo("[mstock] Broker initialised and logged in.")
-        except Exception as e:
-            lwarn(f"[mstock] Init failed: {e}. Live orders will NOT be placed.")
-            _mstock_broker = None
+    """Return mStock broker singleton — already logged in at boot."""
     return _mstock_broker
+
+def _init_mstock_at_boot():
+    """Called once at startup. Logs in, sends Telegram on failure."""
+    global _mstock_broker
+    if EXECUTION_BROKER != "mstock_live":
+        return
+    try:
+        from mstock_broker import MStockBroker
+        b = MStockBroker()
+        ok = b.login()
+        if ok:
+            _mstock_broker = b
+            linfo("[mstock] Broker initialised and logged in at boot.")
+        else:
+            lwarn("[mstock] Login returned False at boot — live orders DISABLED.")
+            TG.send("🚨 mStock login FAILED at bot startup. Live orders disabled. Check credentials/TOTP.")
+    except Exception as e:
+        lwarn(f"[mstock] Init failed at boot: {e}. Live orders DISABLED.")
+        TG.send(f"🚨 mStock init error at boot: {e}")
 
 # =========================================================================
 # STRATEGY BOX + CHANGE HISTORY  (logged to file + sent via Telegram at boot)
@@ -1749,8 +1758,10 @@ def open_trade(sig, spot, expiry_lookup):
         qty = LOTS_PER_TRADE * LOT_SIZE
         oid = broker.place_order("BUY", ms_sym, qty, "MARKET")
         if not oid:
-            lwarn("[mstock] BUY place_order returned None — aborting trade.")
+            _err = getattr(broker, '_last_error', '') or 'no orderid returned'
+            lwarn(f"[mstock] BUY place_order returned None — aborting trade. err={_err}")
             TG.send(f"⚠️ mStock BUY FAILED ({ms_sym}). No position opened.\n"
+                    f"<code>Error: {_err}</code>\n"
                     f"<i>{_sig_info}</i>")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
@@ -2146,6 +2157,9 @@ def main():
     # ---- Resolve expiry + strikes ----
     target_expiry, strikes, expiry_lookup = resolve_expiry_and_strikes()
     linfo(f"[BOOT] Expiry: {target_expiry}, {len(strikes)} strikes, {len(expiry_lookup)} option contracts")
+
+    # ---- Init mStock broker at boot (not lazily) ----
+    _init_mstock_at_boot()
 
     # ---- Warmup ----
     df1h, df15, df5 = warmup_until_ready()
