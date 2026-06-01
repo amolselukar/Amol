@@ -1,126 +1,75 @@
 {
-  "date": "2026-05-29",
-  "for_date": "2026-05-30",
-  "generated_at": "2026-05-29 10:32:34",
-  "atm": 23600,
+  "date": "2026-06-01",
+  "for_date": "2026-06-02",
+  "generated_at": "2026-06-01 10:32:39",
+  "atm": 23400,
   "expiry": "2026-06-02",
   "monthly_expiry": "2026-06-30",
   "is_monthly_expiry": false,
-  "days_to_expiry": 4,
-  "expiry_caution": false,
+  "days_to_expiry": 1,
+  "expiry_caution": true,
   "is_expiry_day": false,
-  "pcr": 0.976,
+  "pcr": 0.858,
   "bias": "NEUTRAL",
-  "max_pain": 23800,
-  "straddle_atm": 302.9,
+  "max_pain": 23500,
+  "straddle_atm": 167.7,
   "oi_stats": {
-    "ce_mean": 4734995,
-    "ce_std": 5089031,
-    "pe_mean": 4622115,
-    "pe_std": 2342270,
-    "ce_wall_threshold": 14913058,
-    "pe_wall_threshold": 9306656
+    "ce_mean": 5550065,
+    "ce_std": 5544553,
+    "pe_mean": 4764145,
+    "pe_std": 2850639,
+    "ce_wall_threshold": 16639172,
+    "pe_wall_threshold": 10465423
   },
-  "resistance_levels": [
+  "resistance_levels": [],
+  "support_levels": [],
+  "info_levels": [
     {
-      "strike": 23900,
-      "ce_oi": 10005060,
-      "ce_oi_chg": 0,
-      "ce_vol": 294320455,
-      "ltp": 71.5,
-      "signal": "SIGNIFICANT",
-      "grade": "B"
-    },
-    {
-      "strike": 24000,
-      "ce_oi": 16209180,
-      "ce_oi_chg": 0,
-      "ce_vol": 331994585,
-      "ltp": 47.25,
-      "signal": "WALL",
-      "grade": "A"
-    },
-    {
-      "strike": 24200,
-      "ce_oi": 10652460,
-      "ce_oi_chg": 0,
-      "ce_vol": 164796775,
-      "ltp": 20,
-      "signal": "SIGNIFICANT",
-      "grade": "B"
-    }
-  ],
-  "support_levels": [
-    {
-      "strike": 23500,
-      "pe_oi": 7173530,
-      "pe_oi_chg": 0,
-      "pe_vol": 223178280,
-      "ltp": 61.8,
-      "signal": "SIGNIFICANT",
-      "grade": "B"
+      "strike": 23000,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
     },
     {
       "strike": 23200,
-      "pe_oi": 7865000,
-      "pe_oi_chg": 0,
-      "pe_vol": 102368240,
-      "ltp": 14.5,
-      "signal": "SIGNIFICANT",
-      "grade": "B"
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
     },
     {
-      "strike": 23000,
-      "pe_oi": 8720920,
-      "pe_oi_chg": 0,
-      "pe_vol": 90089285,
-      "ltp": 6.25,
-      "signal": "SIGNIFICANT",
-      "grade": "B"
+      "strike": 23400,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24000,
+      "side": "CE",
+      "reason": "OI significant but stale/expiry caution"
     }
   ],
-  "info_levels": [],
-  "v3_resistance": [
-    23900,
-    24000,
-    24200
-  ],
-  "v3_support": [
-    23500,
-    23200,
-    23000
-  ],
+  "v3_resistance": [],
+  "v3_support": [],
   "price_clusters": {
-    "pdh": 24002.8,
-    "pdl": 23484.8,
-    "pdc": 23609.3,
+    "pdh": 23733.7,
+    "pdl": 23358.0,
+    "pdc": 23379.2,
     "clusters_above": [
       {
-        "center": 23700.0,
+        "center": 23492.4,
         "kinds": [
-          "round_100"
-        ],
-        "grade": "B",
-        "promoted": true
-      },
-      {
-        "center": 23800.0,
-        "kinds": [
-          "round_100"
-        ],
-        "grade": "B",
-        "promoted": true
-      },
-      {
-        "center": 23858.9,
-        "kinds": [
-          "round_50",
+          "round_100",
           "swing_low"
         ],
         "grade": "B"
       },
       {
-        "center": 24002.8,
+        "center": 23600.0,
+        "kinds": [
+          "round_100"
+        ],
+        "grade": "B",
+        "promoted": true
+      },
+      {
+        "center": 23733.7,
         "kinds": [
           "PDH"
         ],
@@ -130,15 +79,23 @@
     ],
     "clusters_below": [
       {
-        "center": 23492.4,
+        "center": 23354.0,
         "kinds": [
           "PDL",
-          "round_100"
+          "round_50"
         ],
         "grade": "B"
       },
       {
-        "center": 23400.0,
+        "center": 23300.0,
+        "kinds": [
+          "round_100"
+        ],
+        "grade": "B",
+        "promoted": true
+      },
+      {
+        "center": 23200.0,
         "kinds": [
           "round_100"
         ],
