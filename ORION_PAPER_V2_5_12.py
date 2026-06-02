@@ -2279,7 +2279,8 @@ def main():
 
     # ---- Boot Telegram ----
     TG.send(fmt_boot(target_expiry, DAY.levels))
-    TG.send(f"<b>📋 CHANGE HISTORY & STRATEGY — ORION {VERSION}</b>\n<pre>{CHANGE_HISTORY[:3800]}</pre>")
+    _ch_safe = CHANGE_HISTORY[:3800].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    TG.send(f"<b>📋 CHANGE HISTORY &amp; STRATEGY — ORION {VERSION}</b>\n<pre>{_ch_safe}</pre>")
 
     # ---- Live state + first pulse ----
     c1h_now    = float(df1h['close'].iloc[-2])
