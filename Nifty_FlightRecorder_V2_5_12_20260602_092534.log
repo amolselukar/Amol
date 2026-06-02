@@ -411,3 +411,47 @@
 2026-06-02 05:35:24,734 [INFO] [INDICATORS] spot=23303.0 | 1h: close=23281.4 sma20=23674.3 sma50=23787.8 rsi=22.2 macd=-138.16/-94.15(bear) | 15m: K=86.1↑(prev 75.8) | regime=PE-eligible halted=False active=True
 2026-06-02 05:35:24,734 [INFO] [SIGNAL] CE: reg=False K=True(K=86.1>=38,rising) Kextr=False RSI=False(22.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=86.1<=80,falling) Kextr=True RSI=True(22.2<47) MACD=True => BLOCK
 2026-06-02 05:35:24,734 [INFO] [STATE] CE NFO:NIFTY2660223300CE ltp=47.50 entry=47.50 pnl=+0.00(+0.0%) sl=38.95 peak=47.50 tr_armed=False elapsed=0min
+2026-06-02 05:35:25,932 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_12_20260602_092534.log, Nifty_BarLevel_V2_5_12_20260602_092534.csv
+2026-06-02 05:36:28,123 [WARNING] [sync] NIFTY2660223300CE net_qty=0 on exchange — manual exit detected
+2026-06-02 05:36:28,725 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300CE', 'orderid': '22222606023553', 'uniqueorderid': '22222606023553'}}
+2026-06-02 05:36:28,725 [INFO] [mstock] SELL placed: NIFTY2660223300CE qty=130 type=MARKET → orderid=22222606023553
+2026-06-02 05:36:29,069 [INFO] [mstock] SELL filled: NIFTY2660223300CE qty=130 fill=50.10 order=22222606023553
+2026-06-02 05:36:29,069 [INFO] EXIT: NFO:NIFTY2660223300CE @ 50.10 reason=MANUAL_EXIT pnl/sh=+2.60 is_flip=True losses=1/3
+2026-06-02 05:36:30,804 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300PE', 'orderid': '21722606024495', 'uniqueorderid': '21722606024495'}}
+2026-06-02 05:36:30,804 [INFO] [mstock] BUY placed: NIFTY2660223300PE qty=130 type=MARKET → orderid=21722606024495
+2026-06-02 05:36:31,153 [INFO] [mstock] BUY filled: NIFTY2660223300PE qty=130 fill=37.80 order=21722606024495
+2026-06-02 05:36:31,166 [INFO] ENTRY: NFO:NIFTY2660223300PE @ 37.80  engine=VWAP  detail=Nifty VWAP cross 23301>23308 body=70% | PE LTP 36.5 vs VWAP 45.0
+2026-06-02 05:37:33,765 [WARNING] [sync] NIFTY2660223300PE net_qty=0 on exchange — manual exit detected
+2026-06-02 05:37:34,370 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300PE', 'orderid': '21322606024549', 'uniqueorderid': '21322606024549'}}
+2026-06-02 05:37:34,370 [INFO] [mstock] SELL placed: NIFTY2660223300PE qty=130 type=MARKET → orderid=21322606024549
+2026-06-02 05:37:34,709 [INFO] [mstock] SELL filled: NIFTY2660223300PE qty=130 fill=40.60 order=21322606024549
+2026-06-02 05:37:34,710 [INFO] EXIT: NFO:NIFTY2660223300PE @ 40.60 reason=MANUAL_EXIT pnl/sh=+2.80 is_flip=False losses=1/3
+2026-06-02 05:37:36,029 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300CE', 'orderid': '23722606023610', 'uniqueorderid': '23722606023610'}}
+2026-06-02 05:37:36,029 [INFO] [mstock] BUY placed: NIFTY2660223300CE qty=130 type=MARKET → orderid=23722606023610
+2026-06-02 05:37:36,376 [INFO] [mstock] BUY filled: NIFTY2660223300CE qty=130 fill=44.00 order=23722606023610
+2026-06-02 05:37:36,388 [INFO] ENTRY: NFO:NIFTY2660223300CE @ 44.00  engine=FLIP  detail=FLIP PE->CE K=86.1 (prev 75.8) age=-0min flips_today=3/3
+2026-06-02 05:38:39,017 [WARNING] [sync] NIFTY2660223300CE net_qty=0 on exchange — manual exit detected
+2026-06-02 05:38:39,620 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300CE', 'orderid': '22322606023622', 'uniqueorderid': '22322606023622'}}
+2026-06-02 05:38:39,621 [INFO] [mstock] SELL placed: NIFTY2660223300CE qty=130 type=MARKET → orderid=22322606023622
+2026-06-02 05:38:39,972 [INFO] [mstock] SELL filled: NIFTY2660223300CE qty=130 fill=42.40 order=22322606023622
+2026-06-02 05:38:39,972 [INFO] EXIT: NFO:NIFTY2660223300CE @ 42.40 reason=MANUAL_EXIT pnl/sh=-1.60 is_flip=True losses=1/3
+2026-06-02 05:38:41,714 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300PE', 'orderid': '23022606023614', 'uniqueorderid': '23022606023614'}}
+2026-06-02 05:38:41,714 [INFO] [mstock] BUY placed: NIFTY2660223300PE qty=130 type=MARKET → orderid=23022606023614
+2026-06-02 05:38:42,061 [INFO] [mstock] BUY filled: NIFTY2660223300PE qty=130 fill=42.65 order=23022606023614
+2026-06-02 05:38:42,078 [INFO] ENTRY: NFO:NIFTY2660223300PE @ 42.65  engine=VWAP  detail=Nifty VWAP cross 23301>23307 body=70% | PE LTP 43.1 vs VWAP 45.1
+2026-06-02 05:39:44,719 [WARNING] [sync] NIFTY2660223300PE net_qty=0 on exchange — manual exit detected
+2026-06-02 05:39:45,327 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300PE', 'orderid': '23722606023656', 'uniqueorderid': '23722606023656'}}
+2026-06-02 05:39:45,327 [INFO] [mstock] SELL placed: NIFTY2660223300PE qty=130 type=MARKET → orderid=23722606023656
+2026-06-02 05:39:45,676 [INFO] [mstock] SELL filled: NIFTY2660223300PE qty=130 fill=41.30 order=23722606023656
+2026-06-02 05:39:45,676 [INFO] EXIT: NFO:NIFTY2660223300PE @ 41.30 reason=MANUAL_EXIT pnl/sh=-1.35 is_flip=False losses=2/3
+2026-06-02 05:39:47,381 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300PE', 'orderid': '22522606023657', 'uniqueorderid': '22522606023657'}}
+2026-06-02 05:39:47,381 [INFO] [mstock] BUY placed: NIFTY2660223300PE qty=130 type=MARKET → orderid=22522606023657
+2026-06-02 05:39:47,740 [INFO] [mstock] BUY filled: NIFTY2660223300PE qty=130 fill=41.00 order=22522606023657
+2026-06-02 05:39:47,754 [INFO] ENTRY: NFO:NIFTY2660223300PE @ 41.00  engine=VWAP  detail=Nifty VWAP cross 23301>23307 body=70% | PE LTP 41.0 vs VWAP 45.0
+2026-06-02 05:40:50,409 [WARNING] [sync] NIFTY2660223300PE net_qty=0 on exchange — manual exit detected
+2026-06-02 05:40:51,459 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2660223300PE', 'orderid': '23022606023650', 'uniqueorderid': '23022606023650'}}
+2026-06-02 05:40:51,459 [INFO] [mstock] SELL placed: NIFTY2660223300PE qty=130 type=MARKET → orderid=23022606023650
+2026-06-02 05:40:51,811 [INFO] [mstock] SELL filled: NIFTY2660223300PE qty=130 fill=37.45 order=23022606023650
+2026-06-02 05:40:51,811 [INFO] EXIT: NFO:NIFTY2660223300PE @ 37.45 reason=MANUAL_EXIT pnl/sh=-3.55 is_flip=False losses=3/3
+2026-06-02 05:40:52,262 [INFO] [INDICATORS] spot=23295.7 | 1h: close=23281.4 sma20=23674.3 sma50=23787.8 rsi=22.2 macd=-138.16/-94.15(bear) | 15m: K=86.1↑(prev 75.8) | regime=PE-eligible halted=True active=False
+2026-06-02 05:40:52,262 [INFO] [SIGNAL] CE: reg=False K=True(K=86.1>=38,rising) Kextr=False RSI=False(22.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=86.1<=80,falling) Kextr=True RSI=True(22.2<47) MACD=True => BLOCK
