@@ -161,3 +161,19 @@
 2026-06-02 07:04:01,798 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-06-02 07:04:02,520 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=80\" at byte offset 212"}
 2026-06-02 07:04:02,521 [WARNING] HTML parse failed; retrying as plain text
+2026-06-02 07:04:05,748 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_12_20260602_123349.log, Nifty_BarLevel_V2_5_12_20260602_123349.csv
+2026-06-02 07:04:06,672 [WARNING] Premium 16.60 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:04:06,672 [INFO] [INDICATORS] spot=23340.7 | 1h: close=23279.3 sma20=23612.8 sma50=23770.2 rsi=24.2 macd=-149.56/-113.22(bear) | 15m: K=69.5↓(prev 73.2) | regime=PE-eligible halted=False active=False
+2026-06-02 07:04:06,672 [INFO] [SIGNAL] CE: reg=False K=False(K=69.5>=38,rising) Kextr=False RSI=False(24.2>53) MACD=False => BLOCK | PE: reg=True K=True(K=69.5<=80,falling) Kextr=True RSI=True(24.2<47) MACD=True => PASS
+2026-06-02 07:04:38,041 [WARNING] Premium 20.30 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:05:08,963 [WARNING] Premium 20.70 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:05:39,879 [WARNING] Premium 21.80 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:06:10,807 [WARNING] Premium 23.10 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:06:41,741 [WARNING] Premium 20.90 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:07:12,668 [WARNING] Premium 18.25 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:07:43,579 [WARNING] Premium 19.25 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:08:14,501 [WARNING] Premium 18.75 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:08:45,426 [WARNING] Premium 19.50 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:09:16,351 [WARNING] Premium 19.90 outside gate [30,300] (PE); skipping entry
+2026-06-02 07:09:16,352 [INFO] [INDICATORS] spot=23331.5 | 1h: close=23279.3 sma20=23612.8 sma50=23770.2 rsi=24.2 macd=-149.56/-113.22(bear) | 15m: K=69.5↓(prev 73.2) | regime=PE-eligible halted=False active=False
+2026-06-02 07:09:16,352 [INFO] [SIGNAL] CE: reg=False K=False(K=69.5>=38,rising) Kextr=False RSI=False(24.2>53) MACD=False => BLOCK | PE: reg=True K=True(K=69.5<=80,falling) Kextr=True RSI=True(24.2<47) MACD=True => PASS
