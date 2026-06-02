@@ -1115,6 +1115,11 @@ def load_state():
         DAY.halted = snap.get("day_halted", False)
         DAY.fired_levels = set(snap.get("fired_levels", []))
         DAY.trades_today = snap.get("trades_today", [])
+        # Reset circuit breaker on every fresh bot start — deliberate restart = manual reset
+        if DAY.halted:
+            linfo(f"[STATE] Circuit breaker was halted (losses={DAY.losses}) — RESET on bot restart.")
+            DAY.halted = False
+            DAY.losses = 0
         linfo(f"[STATE] Loaded prior state. POS.active={POS.active} losses={DAY.losses}")
     except Exception as e:
         lwarn(f"load_state failed: {e}")
