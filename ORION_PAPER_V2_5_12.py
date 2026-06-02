@@ -1757,9 +1757,26 @@ def open_trade(sig, spot, expiry_lookup):
         if not oid:
             _err = getattr(broker, '_last_error', '') or 'no orderid returned'
             lwarn(f"[mstock] BUY place_order returned None — aborting trade. err={_err}")
-            TG.send(f"⚠️ mStock BUY FAILED ({ms_sym}). No position opened.\n"
-                    f"<code>Error: {_err}</code>\n"
-                    f"<i>{_sig_info}</i>")
+            _is_ip_err = 'IA403' in _err or 'ip' in _err.lower() or 'whitelist' in _err.lower()
+            if _is_ip_err:
+                TG.send(f"🚫 <b>ORDER BLOCKED — IP NOT WHITELISTED</b>\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"⚠️ This is a <b>technical infrastructure issue</b>, NOT a market signal failure.\n"
+                        f"📋 Signal fired: {ms_sym}\n"
+                        f"❌ No position opened — order was rejected before reaching exchange.\n"
+                        f"🔧 Fix: Whitelist current server IP on mStock portal.\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"<code>{_err}</code>\n"
+                        f"<i>{_sig_info}</i>")
+            else:
+                TG.send(f"🚫 <b>ORDER FAILED — API/BROKER ISSUE</b>\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"⚠️ This is a <b>broker-side issue</b>, NOT a market signal failure.\n"
+                        f"📋 Signal fired: {ms_sym}\n"
+                        f"❌ No position opened.\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"<code>Error: {_err}</code>\n"
+                        f"<i>{_sig_info}</i>")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
@@ -1773,7 +1790,11 @@ def open_trade(sig, spot, expiry_lookup):
                 fill = fill2; status = "COMPLETE"
             else:
                 lwarn(f"[mstock] BUY timeout, order cancelled — aborting trade ({ms_sym}).")
-                TG.send(f"⚠️ mStock BUY TIMEOUT ({ms_sym}). Order cancelled, no position.\n"
+                TG.send(f"⏱️ <b>ORDER TIMEOUT — CANCELLED</b>\n"
+                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"⚠️ This is an <b>exchange/latency issue</b>, NOT a market signal failure.\n"
+                        f"📋 Signal fired: {ms_sym}\n"
+                        f"❌ Order sent but timed out before fill — cancelled. No position opened.\n"
                         f"<i>{_sig_info}</i>")
                 POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
                 POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
@@ -1781,7 +1802,11 @@ def open_trade(sig, spot, expiry_lookup):
                 return False
         if status != "COMPLETE" or not fill or fill <= 0:
             lwarn(f"[mstock] BUY rejected/no fill (status={status}) — aborting trade.")
-            TG.send(f"⚠️ mStock BUY REJECTED ({ms_sym}, status={status}). No position opened.\n"
+            TG.send(f"🚫 <b>ORDER REJECTED — NO FILL</b>\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"⚠️ This is a <b>broker/exchange rejection</b>, NOT a market signal failure.\n"
+                    f"📋 Signal fired: {ms_sym}  |  Status: {status}\n"
+                    f"❌ No position opened.\n"
                     f"<i>{_sig_info}</i>")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
