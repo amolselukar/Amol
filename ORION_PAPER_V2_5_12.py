@@ -2040,7 +2040,12 @@ def push_logs_to_github(label="periodic"):
             remote = f"https://{GITHUB_PAT}@github.com/amolselukar/Amol.git"
         else:
             remote = "origin"
-        subprocess.run(["git", "push", remote, branch],
+        # Fetch remote so we know its state, then rebase our log commit on top
+        subprocess.run(["git", "fetch", remote, branch],
+                       cwd=repo_dir, capture_output=True)
+        subprocess.run(["git", "rebase", f"FETCH_HEAD"],
+                       cwd=repo_dir, capture_output=True)
+        subprocess.run(["git", "push", remote, f"HEAD:{branch}"],
                        cwd=repo_dir, check=True, capture_output=True)
         linfo(f"[{label}] Logs pushed to GitHub: {LOG_FN}, {CSV_FN}")
         if label == "EOD":
