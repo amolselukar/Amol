@@ -104,9 +104,46 @@ import subprocess
 import threading
 import traceback
 import logging
+import signal
+import fcntl
+import atexit
 from datetime import datetime, timedelta, date
 from typing import Optional, Tuple, List, Dict
 from dataclasses import dataclass, field, asdict
+
+# =========================================================================
+# SINGLETON LOCK — prevent multiple bot instances running simultaneously
+# =========================================================================
+_SCRIPT_DIR_LOCK = os.path.dirname(os.path.abspath(__file__))
+_LOCK_FILE = os.path.join(_SCRIPT_DIR_LOCK, ".orion_singleton.lock")
+_lock_fd = None
+
+def _acquire_singleton_lock():
+    global _lock_fd
+    _lock_fd = open(_LOCK_FILE, 'w')
+    try:
+        fcntl.flock(_lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except (IOError, OSError):
+        print(f"[FATAL] Another ORION instance is already running (lock: {_LOCK_FILE}). Exiting.")
+        sys.exit(1)
+    _lock_fd.write(str(os.getpid()))
+    _lock_fd.flush()
+
+def _release_singleton_lock():
+    global _lock_fd
+    if _lock_fd:
+        try:
+            fcntl.flock(_lock_fd, fcntl.LOCK_UN)
+            _lock_fd.close()
+        except Exception:
+            pass
+        try:
+            os.remove(_LOCK_FILE)
+        except Exception:
+            pass
+
+_acquire_singleton_lock()
+atexit.register(_release_singleton_lock)
 
 # ---------- Auto-install missing packages (mobile PythonAnywhere convenience) ----------
 def _ensure(pkg, import_name=None):
@@ -529,6 +566,13 @@ TG = TelegramManager(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID)
 
 # Bot-level stop flag and Telegram command offset (used by polling thread)
 _bot_stop_flag  = threading.Event()
+
+def _signal_handler(signum, frame):
+    print(f"[SIGNAL] Received signal {signum}. Setting stop flag for clean shutdown.")
+    _bot_stop_flag.set()
+
+signal.signal(signal.SIGTERM, _signal_handler)
+signal.signal(signal.SIGINT, _signal_handler)
 _tg_cmd_offset  = 0
 
 # =========================================================================
@@ -1010,6 +1054,7 @@ class TradeState:
     strike: int = 0
     symbol: str = ""
     ms_symbol: str = ""              # mStock format: NIFTY02JUN23500PE (for order placement)
+    buy_order_id: str = ""           # mStock order ID from BUY — used for position verification
     token: int = 0
     entry_time: Optional[datetime] = None
     entry_premium: float = 0.0
@@ -1068,6 +1113,9 @@ class DailyState:
     last_vwap_bar_time: Optional[object] = None
     # Post-manual-exit cooldown: no re-entry for 5 min after manual close
     manual_exit_cooldown_until: Optional[datetime] = None
+    # IA403 consecutive failure tracking — halt after 3, alert on first
+    ia403_consecutive: int = 0
+    ia403_halted: bool = False
 
     def reset(self):
         self.losses = 0
@@ -1087,6 +1135,8 @@ class DailyState:
         self.straddle_midday_sent = False
         self.last_vwap_bar_time = None
         self.manual_exit_cooldown_until = None
+        self.ia403_consecutive = 0
+        self.ia403_halted = False
 
 DAY = DailyState()
 
@@ -1712,8 +1762,8 @@ def _mstock_option_symbol(symbol_kite: str) -> str:
             return symbol_kite[len(prefix):]
     return symbol_kite
 
-def open_trade(sig, spot, expiry_lookup):
-    """Open a paper trade. sig has keys: engine, side, detail, trigger, [level_obj, target_spot]."""
+def open_trade(sig, spot, expiry_lookup, paper_only=False):
+    """Open a trade. paper_only=True means CB hit in live mode — log as paper, no real orders."""
     side = sig['side']
     strike = round_to_atm(spot)
     key = (strike, side)
@@ -1764,13 +1814,22 @@ def open_trade(sig, spot, expiry_lookup):
     POS.entry_vwap = compute_option_vwap(token)
 
     # ---- Live execution via mStock — abort entirely on any BUY failure ----
-    if EXECUTION_BROKER == "mstock_live":
+    if paper_only:
+        linfo(f"[PAPER-FALLBACK] CB hit — logging as paper trade (no real order): {POS.ms_symbol}")
+    elif EXECUTION_BROKER == "mstock_live":
         _sig_info = f"Engine:{sig['engine']} | {sig.get('detail','')}"
         broker = _get_mstock()
         if not broker:
             lwarn("[mstock] Broker unavailable — BUY aborted, no position opened.")
             TG.send(f"⚠️ mStock broker unavailable. BUY aborted.\n"
                     f"<i>{_sig_info}</i>")
+            POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
+            POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
+            POS.hardsl_premium = 0.0; POS.sl_current = 0.0
+            return False
+        # IA403 halt — stop spamming orders if mStock keeps rejecting
+        if DAY.ia403_halted:
+            lwarn("[mstock] IA403 halt active — skipping BUY. Restart bot or wait for daily reset.")
             POS.engine = ""; POS.side = ""; POS.symbol = ""; POS.ms_symbol = ""; POS.token = 0
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
@@ -1783,16 +1842,26 @@ def open_trade(sig, spot, expiry_lookup):
             lwarn(f"[mstock] BUY place_order returned None — aborting trade. err={_err}")
             _is_ip_err = 'IA403' in _err or 'ip' in _err.lower() or 'whitelist' in _err.lower()
             if _is_ip_err:
-                TG.send(f"🚫 <b>ORDER BLOCKED — IP NOT WHITELISTED</b>\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"⚠️ This is a <b>technical infrastructure issue</b>, NOT a market signal failure.\n"
-                        f"📋 Signal fired: {ms_sym}\n"
-                        f"❌ No position opened — order was rejected before reaching exchange.\n"
-                        f"🔧 Fix: Whitelist current server IP on mStock portal.\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━\n"
-                        f"<code>{_err}</code>\n"
-                        f"<i>{_sig_info}</i>")
+                DAY.ia403_consecutive += 1
+                if DAY.ia403_consecutive == 1:
+                    TG.send(f"🚫 <b>ORDER BLOCKED — IA403 (1st)</b>\n"
+                            f"━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"⚠️ mStock IA403 — likely session/token issue (Type B has no secondary IP).\n"
+                            f"📋 Signal: {ms_sym}\n"
+                            f"❌ No position opened.\n"
+                            f"<code>{_err}</code>\n"
+                            f"<i>{_sig_info}</i>")
+                if DAY.ia403_consecutive >= 3:
+                    DAY.ia403_halted = True
+                    TG.send(f"⛔⛔⛔ <b>IA403 HALT — 3 consecutive failures</b> ⛔⛔⛔\n"
+                            f"mStock keeps rejecting orders. Bot will NOT retry until restarted.\n"
+                            f"Check mStock portal / session / token.\n"
+                            f"<code>{_err}</code>")
+                    lwarn(f"[mstock] IA403 halt triggered after {DAY.ia403_consecutive} consecutive failures.")
+                else:
+                    lwarn(f"[mstock] IA403 count: {DAY.ia403_consecutive}/3")
             else:
+                DAY.ia403_consecutive = 0  # non-IA403 error resets the counter
                 TG.send(f"🚫 <b>ORDER FAILED — API/BROKER ISSUE</b>\n"
                         f"━━━━━━━━━━━━━━━━━━━━━━\n"
                         f"⚠️ This is a <b>broker-side issue</b>, NOT a market signal failure.\n"
@@ -1836,11 +1905,13 @@ def open_trade(sig, spot, expiry_lookup):
             POS.entry_time = None; POS.entry_premium = 0.0; POS.peak_premium = 0.0
             POS.hardsl_premium = 0.0; POS.sl_current = 0.0
             return False
-        # BUY confirmed — update with actual fill price
+        # BUY confirmed — update with actual fill price and store order ID
+        DAY.ia403_consecutive = 0  # successful order resets IA403 counter
         POS.entry_premium  = fill
         POS.hardsl_premium = fill * (1 - HARDSL_PCT)
         POS.sl_current     = POS.hardsl_premium
         POS.peak_premium   = fill
+        POS.buy_order_id   = oid
         linfo(f"[mstock] BUY filled: {ms_sym} qty={qty} fill={fill:.2f} order={oid}")
 
     # Position confirmed (paper or live fill) — mark active
@@ -1875,10 +1946,16 @@ def close_trade(reason, exit_price):
     if pnl_per_share < 0 and not is_flip and not is_manual:
         DAY.losses += 1
         linfo(f"[CB] losses={DAY.losses}/{CIRCUIT_BREAKER} (reason={reason})")
-        if DAY.losses >= CIRCUIT_BREAKER:
+        if DAY.losses >= CIRCUIT_BREAKER and not DAY.halted:
             DAY.halted = True
-            TG.send(f"⛔⛔⛔ <b>HALT — Circuit Breaker</b> ⛔⛔⛔\n"
-                    f"{DAY.losses} bot-driven losses today. No more entries.")
+            if EXECUTION_BROKER == "mstock_live":
+                TG.send(f"⛔⛔⛔ <b>HALT — Circuit Breaker (LIVE HALTED)</b> ⛔⛔⛔\n"
+                        f"{DAY.losses} bot-driven losses. <b>Live orders STOPPED.</b>\n"
+                        f"Switching to PAPER mode for remaining signals.")
+                linfo(f"[CB] Circuit breaker hit — switching to paper mode for rest of day")
+            else:
+                TG.send(f"⛔⛔⛔ <b>HALT — Circuit Breaker</b> ⛔⛔⛔\n"
+                        f"{DAY.losses} bot-driven losses today. No more entries.")
     # V2.5.2: record last_exit info for flip detection (Path A check immediately, Path B over time)
     DAY.last_exit = {
         'side': POS.side,
@@ -1890,7 +1967,8 @@ def close_trade(reason, exit_price):
         'engine': POS.engine,
     }
     # ---- Live execution via mStock — retry SELL 3×, keep position open if all fail ----
-    if EXECUTION_BROKER == "mstock_live":
+    # Skip mStock SELL if this is a paper-fallback trade (no buy_order_id means no real position)
+    if EXECUTION_BROKER == "mstock_live" and POS.buy_order_id:
         broker = _get_mstock()
         if not broker:
             lwarn("[mstock] Broker unavailable on SELL — position still OPEN on exchange!")
@@ -1929,6 +2007,7 @@ def close_trade(reason, exit_price):
     POS.active = False
     POS.engine = ""; POS.engine_detail = ""
     POS.side = ""; POS.strike = 0; POS.symbol = ""; POS.token = 0
+    POS.ms_symbol = ""; POS.buy_order_id = ""
     POS.entry_time = None
     POS.entry_premium = 0.0; POS.peak_premium = 0.0
     POS.hardsl_premium = 0.0; POS.sl_current = 0.0
@@ -2413,20 +2492,34 @@ def main():
                     DAY.straddle_midday_sent = True
 
             # ---- Position sync: detect manual exit on mStock (every 60 sec) ----
+            # Verify using the bot's own BUY order_id — not blind net_qty.
+            # Skip sync for first 3 minutes after entry (exchange settlement delay).
             if POS.active and EXECUTION_BROKER == "mstock_live" and \
                time.time() - last_pos_sync >= 60:
                 last_pos_sync = time.time()
-                try:
-                    broker = _get_mstock()
-                    if broker:
-                        ms_sym = POS.ms_symbol or _mstock_option_symbol(POS.symbol)
-                        net = broker.net_qty(ms_sym)
-                        if net == 0:
-                            lwarn(f"[sync] {ms_sym} net_qty=0 on exchange — manual exit detected")
-                            cur_ltp = ltp(POS.symbol) or POS.entry_premium
-                            close_trade("MANUAL_EXIT", cur_ltp)
-                except Exception as e:
-                    lwarn(f"[sync] position sync error: {e}")
+                _entry_age_sec = (datetime.now(IST) - POS.entry_time).total_seconds() if POS.entry_time else 999
+                if _entry_age_sec < 180:
+                    pass  # skip sync within 3 min of entry — exchange needs time to reflect
+                elif POS.buy_order_id:
+                    try:
+                        broker = _get_mstock()
+                        if broker:
+                            _status, _fill = broker.order_status(POS.buy_order_id)
+                            if _status == "CANCELLED":
+                                lwarn(f"[sync] BUY order {POS.buy_order_id} was CANCELLED — manual exit detected")
+                                cur_ltp = ltp(POS.symbol) or POS.entry_premium
+                                close_trade("MANUAL_EXIT", cur_ltp)
+                            elif _status == "COMPLETE":
+                                ms_sym = POS.ms_symbol or _mstock_option_symbol(POS.symbol)
+                                net = broker.net_qty(ms_sym)
+                                if net == 0:
+                                    lwarn(f"[sync] {ms_sym} net_qty=0 (BUY order {POS.buy_order_id} was COMPLETE) — manual exit detected")
+                                    cur_ltp = ltp(POS.symbol) or POS.entry_premium
+                                    close_trade("MANUAL_EXIT", cur_ltp)
+                                else:
+                                    linfo(f"[sync] {ms_sym} net_qty={net} — position confirmed on exchange")
+                    except Exception as e:
+                        lwarn(f"[sync] position sync error: {e}")
 
             # ---- ACTIVE TRADE: check exits ----
             if POS.active:
@@ -2438,7 +2531,10 @@ def main():
                 if _manual_cooling:
                     linfo(f"[ENTRY] Blocked — post-manual-exit cooldown until "
                           f"{DAY.manual_exit_cooldown_until.strftime('%H:%M:%S')} IST")
-                if not DAY.halted and not _manual_cooling and in_entry_window(now) and \
+                # When halted in live mode: continue paper-only (no real orders)
+                _cb_paper_mode = (DAY.halted and EXECUTION_BROKER == "mstock_live")
+                _entry_allowed = (not DAY.halted or _cb_paper_mode)
+                if _entry_allowed and not _manual_cooling and in_entry_window(now) and \
                    (DAY.gap_suppress_until is None or now >= DAY.gap_suppress_until):
                     sig = None
                     # FLIP + V2 require BULL/BEAR/TRANSITION regime
@@ -2453,7 +2549,7 @@ def main():
                     if sig is None:
                         sig = check_vwap_signal(df15, expiry_lookup, spot)
                     if sig is not None:
-                        open_trade(sig, spot, expiry_lookup)
+                        open_trade(sig, spot, expiry_lookup, paper_only=_cb_paper_mode)
 
             # ---- CSV + INDICATORS + SIGNAL log every 5 min ----
             if time.time() - last_csv_at >= 5 * 60:

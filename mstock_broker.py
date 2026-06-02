@@ -277,22 +277,24 @@ class MStockBroker:
             status_str = str(resp.get('status', '')).lower()
             msg_str    = str(resp.get('message', '')).lower()
 
-            # IA403 — could be IP mismatch OR expired token mStock returns same code for both.
-            # Attempt one re-login; if still IA403 after re-login, it's a real IP issue.
+            # IA403 — mStock Type B returns this for token/session issues.
+            # The error message mentions "Secondary IP" but Type B has no secondary IP field.
+            # Attempt one re-login with fresh TOTP; if still IA403, report and stop.
             if errorcode == 'IA403' or 'ip address' in msg_str:
                 if getattr(self, '_ia403_relogin_attempted', False):
-                    # Second IA403 even after re-login → genuine IP mismatch
-                    log.error(f"[mstock] IA403 persists after re-login — whitelist server IP on mStock portal. {resp}")
-                    self._last_error = f"IA403: IP not whitelisted — {resp.get('message','')}"
+                    log.error(f"[mstock] IA403 persists after re-login — likely mStock server-side issue. {resp}")
+                    self._last_error = f"IA403: {resp.get('message','')} (persists after re-login with fresh TOTP)"
                     self._ia403_relogin_attempted = False
                     return None
-                log.warning(f"[mstock] IA403 received — attempting re-login once (token may have expired). {resp}")
+                log.warning(f"[mstock] IA403 received — re-login with fresh TOTP (token may have expired). {resp}")
                 self._ia403_relogin_attempted = True
                 self._logged_in = False
                 if self.login():
-                    log.info("[mstock] Re-login OK after IA403 — retrying order.")
-                    return self.place_order(transaction_type, trading_symbol, quantity,
-                                            order_type, price, exchange, product, symbol_token, tag)
+                    log.info("[mstock] Re-login OK after IA403 — retrying order once.")
+                    result = self.place_order(transaction_type, trading_symbol, quantity,
+                                              order_type, price, exchange, product, symbol_token, tag)
+                    self._ia403_relogin_attempted = False
+                    return result
                 self._last_error = f"IA403 + re-login failed: {resp.get('message','')}"
                 self._ia403_relogin_attempted = False
                 return None
