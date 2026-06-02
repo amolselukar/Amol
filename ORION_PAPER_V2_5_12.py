@@ -1064,6 +1064,10 @@ class DailyState:
     straddle_ref: Optional[float] = None
     straddle_morning_sent: bool = False
     straddle_midday_sent: bool = False
+    # VWAP bar dedup: store last bar timestamp that fired VWAP entry
+    last_vwap_bar_time: Optional[object] = None
+    # Post-manual-exit cooldown: no re-entry for 5 min after manual close
+    manual_exit_cooldown_until: Optional[datetime] = None
 
     def reset(self):
         self.losses = 0
@@ -1081,6 +1085,8 @@ class DailyState:
         self.straddle_ref = None
         self.straddle_morning_sent = False
         self.straddle_midday_sent = False
+        self.last_vwap_bar_time = None
+        self.manual_exit_cooldown_until = None
 
 DAY = DailyState()
 
@@ -1580,12 +1586,18 @@ def check_vwap_signal(df15m_nifty, expiry_lookup, spot):
     if nifty_vwap is None: return None
 
     bar = df15m_nifty.iloc[-2]   # last fully closed 15m bar
+    bar_time = bar.name  # bar's index timestamp — used for dedup
     o = float(bar['open']); h = float(bar['high'])
     l = float(bar['low']);  c = float(bar['close'])
     rng = h - l
     if rng <= 0: return None
     body_pct = abs(c - o) / rng
     if body_pct < VWAP_BODY_MIN_PCT: return None  # weak candle — skip
+
+    # Dedup: block re-fire on same 15m bar (catches immediate re-entry after manual exit)
+    if DAY.last_vwap_bar_time is not None and bar_time == DAY.last_vwap_bar_time:
+        linfo(f"[VWAP] Same bar ({bar_time}) already fired — skipping re-entry dedup")
+        return None
 
     bullish = c > nifty_vwap
     bearish = c < nifty_vwap
@@ -1609,7 +1621,9 @@ def check_vwap_signal(df15m_nifty, expiry_lookup, spot):
     if side == 'PE' and opt_ltp >= opt_vwap: return None   # PE not below VWAP
 
     detail = (f"Nifty VWAP cross {c:.0f}>{nifty_vwap:.0f} body={body_pct:.0%} | "
-              f"{side} LTP {opt_ltp:.1f} vs VWAP {opt_vwap:.1f}")
+              f"{side} LTP {opt_ltp:.1f} vs VWAP {opt_vwap:.1f} | bar={bar_time}")
+    DAY.last_vwap_bar_time = bar_time  # mark this bar as fired — dedup guard
+    linfo(f"[VWAP] Signal confirmed — bar={bar_time} side={side} bar_pct={body_pct:.0%}")
     return {
         'engine': 'VWAP', 'side': side, 'detail': detail,
         'trigger': nifty_vwap, 'level_obj': None,
@@ -1851,13 +1865,20 @@ def close_trade(reason, exit_price):
         'reason': reason, 'elapsed_min': POS.elapsed_min(),
         'entry_time': POS.entry_time.strftime("%H:%M:%S") if POS.entry_time else "",
     })
-    # V2.5.3: only NON-FLIP losses count toward circuit breaker
-    if pnl_per_share < 0 and not is_flip:
+    # NON-FLIP, NON-MANUAL losses count toward circuit breaker.
+    # MANUAL_EXIT = user closed on broker — not a signal failure, excluded from CB.
+    is_manual = (reason == 'MANUAL_EXIT')
+    if is_manual:
+        # Set 5-min cooldown before bot re-enters after a manual close
+        DAY.manual_exit_cooldown_until = datetime.now(IST) + timedelta(minutes=5)
+        linfo(f"[MANUAL_EXIT] CB not incremented (user-initiated). Cooldown until {DAY.manual_exit_cooldown_until.strftime('%H:%M:%S')} IST")
+    if pnl_per_share < 0 and not is_flip and not is_manual:
         DAY.losses += 1
+        linfo(f"[CB] losses={DAY.losses}/{CIRCUIT_BREAKER} (reason={reason})")
         if DAY.losses >= CIRCUIT_BREAKER:
             DAY.halted = True
             TG.send(f"⛔⛔⛔ <b>HALT — Circuit Breaker</b> ⛔⛔⛔\n"
-                    f"{DAY.losses} non-flip losses today. No more entries.")
+                    f"{DAY.losses} bot-driven losses today. No more entries.")
     # V2.5.2: record last_exit info for flip detection (Path A check immediately, Path B over time)
     DAY.last_exit = {
         'side': POS.side,
@@ -2412,7 +2433,12 @@ def main():
                 check_exits(spot)
             else:
                 # ---- ENTRY DECISION: flip -> V2 -> V3 ----
-                if not DAY.halted and in_entry_window(now) and \
+                _manual_cooling = (DAY.manual_exit_cooldown_until is not None and
+                                   now < DAY.manual_exit_cooldown_until)
+                if _manual_cooling:
+                    linfo(f"[ENTRY] Blocked — post-manual-exit cooldown until "
+                          f"{DAY.manual_exit_cooldown_until.strftime('%H:%M:%S')} IST")
+                if not DAY.halted and not _manual_cooling and in_entry_window(now) and \
                    (DAY.gap_suppress_until is None or now >= DAY.gap_suppress_until):
                     sig = None
                     # FLIP + V2 require BULL/BEAR/TRANSITION regime
