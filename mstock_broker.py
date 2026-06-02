@@ -154,10 +154,15 @@ class MStockBroker:
                     _tOtp=totp_code
                 )
                 resp2 = self._to_dict(raw2)
-                log.info(f"[mstock] verify_totp: status={resp2.get('status')} msg={resp2.get('message')}")
+                log.info(f"[mstock] verify_totp: status={resp2.get('status')} msg={resp2.get('message')} data={resp2.get('data')}")
                 if resp2.get('status') not in (True, 'true', 'True'):
                     log.error(f"[mstock] verify_totp failed: {resp2}")
                     return False
+                # Explicitly set final JWT — don't rely on SDK auto-setting it
+                final_jwt = (resp2.get('data') or {}).get('jwtToken', '')
+                if final_jwt:
+                    self._client.set_access_token(final_jwt)
+                    log.info("[mstock] Final JWT explicitly set after verify_totp.")
             else:
                 log.warning(f"[mstock] Skipping verify_totp "
                             f"(totp={'yes' if totp_code else 'NO'}, "
