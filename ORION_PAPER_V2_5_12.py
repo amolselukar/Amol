@@ -1332,6 +1332,10 @@ def fmt_exit(reason, exit_price, pnl_per_share):
     elapsed = int(POS.elapsed_min())
     pct = pnl_per_share / POS.entry_premium * 100 if POS.entry_premium else 0
     rs  = pnl_per_share * LOT_SIZE * LOTS_PER_TRADE
+    # Cumulative day PnL including this trade (called before append, so add current pnl)
+    day_total_rs = (sum(t['pnl'] for t in DAY.trades_today) + pnl_per_share) * LOT_SIZE * LOTS_PER_TRADE
+    n_trades = len(DAY.trades_today) + 1
+    day_em = "🟢" if day_total_rs > 0 else "🔴" if day_total_rs < 0 else "⚪"
     # Visual outcome marker
     if pnl_per_share > 0:
         banner = "✅✅ <b>EXIT — WIN</b> ✅✅"
@@ -1361,6 +1365,7 @@ def fmt_exit(reason, exit_price, pnl_per_share):
         f"🚀 Peak premium: <code>{POS.peak_premium:.2f}</code>\n"
         f"⏱️ Duration: <b>{elapsed} min</b>\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"{day_em} Day PnL: <b>₹{day_total_rs:+,.0f}</b> ({n_trades} trade{'s' if n_trades != 1 else ''})\n"
         f"🔁 Flips today: <b>{DAY.flips_today}/{MAX_FLIPS_PER_DAY}</b>  |  "
         f"⛔ Non-flip losses: <b>{DAY.losses}/{CIRCUIT_BREAKER}</b>"
     )
