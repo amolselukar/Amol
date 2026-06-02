@@ -234,3 +234,28 @@
 2026-06-02 04:52:52,757 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
 2026-06-02 04:52:53,376 [INFO] [INDICATORS] spot=23323.0 | 1h: close=23281.4 sma20=23674.3 sma50=23787.8 rsi=22.2 macd=-138.16/-94.15(bear) | 15m: K=42.8↑(prev 30.6) | regime=PE-eligible halted=False active=False
 2026-06-02 04:52:53,376 [INFO] [SIGNAL] CE: reg=False K=True(K=42.8>=38,rising) Kextr=True RSI=False(22.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=42.8<=80,falling) Kextr=False RSI=True(22.2<47) MACD=True => BLOCK
+2026-06-02 04:52:54,658 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_12_20260602_092534.log, Nifty_BarLevel_V2_5_12_20260602_092534.csv
+2026-06-02 04:53:26,045 [WARNING] Premium 27.80 outside gate [30,300] (PE); skipping entry
+2026-06-02 04:53:57,970 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:53:57,970 [ERROR] [mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:53:57,970 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
+2026-06-02 04:54:29,794 [WARNING] Premium 27.60 outside gate [30,300] (PE); skipping entry
+2026-06-02 04:55:01,141 [WARNING] Premium 26.25 outside gate [30,300] (PE); skipping entry
+2026-06-02 04:55:32,510 [WARNING] Premium 25.75 outside gate [30,300] (PE); skipping entry
+2026-06-02 04:56:04,411 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:56:04,411 [ERROR] [mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:56:04,411 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
+2026-06-02 04:56:36,745 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:56:36,746 [ERROR] [mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:56:36,746 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
+2026-06-02 04:57:09,102 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:57:09,102 [ERROR] [mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:57:09,102 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
+2026-06-02 04:57:41,428 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:57:41,428 [ERROR] [mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:57:41,428 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
+2026-06-02 04:58:14,222 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:58:14,222 [ERROR] [mstock] IA403 IP mismatch — whitelist this server IP on mStock portal. {'status': False, 'message': 'Primary and Secondary IP Address are not matching with current IP address.', 'errorcode': 'IA403', 'data': None}
+2026-06-02 04:58:14,222 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=IA403: IP not whitelisted — Primary and Secondary IP Address are not matching with current IP address.
+2026-06-02 04:58:14,659 [INFO] [INDICATORS] spot=23373.3 | 1h: close=23281.4 sma20=23674.3 sma50=23787.8 rsi=22.2 macd=-138.16/-94.15(bear) | 15m: K=42.8↑(prev 30.6) | regime=PE-eligible halted=False active=False
+2026-06-02 04:58:14,659 [INFO] [SIGNAL] CE: reg=False K=True(K=42.8>=38,rising) Kextr=True RSI=False(22.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=42.8<=80,falling) Kextr=False RSI=True(22.2<47) MACD=True => BLOCK
