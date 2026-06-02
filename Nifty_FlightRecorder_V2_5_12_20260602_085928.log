@@ -159,3 +159,8 @@
 2026-06-02 03:29:41,944 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-06-02 03:29:42,648 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=80\" at byte offset 212"}
 2026-06-02 03:29:42,648 [WARNING] HTML parse failed; retrying as plain text
+2026-06-02 03:29:45,641 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_12_20260602_085928.log, Nifty_BarLevel_V2_5_12_20260602_085928.csv
+2026-06-02 03:29:46,355 [INFO] [INDICATORS] spot=23379.2 | 1h: close=23389.2 sma20=23736.5 sma50=23801.2 rsi=26.1 macd=-117.86/-72.51(bear) | 15m: K=36.5↑(prev 21.0) | regime=PE-eligible halted=False active=False
+2026-06-02 03:29:46,355 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(26.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(26.1<47) MACD=True => BLOCK
+2026-06-02 03:34:56,539 [INFO] [INDICATORS] spot=23379.2 | 1h: close=23389.2 sma20=23736.5 sma50=23801.2 rsi=26.1 macd=-117.86/-72.51(bear) | 15m: K=36.5↑(prev 21.0) | regime=PE-eligible halted=False active=False
+2026-06-02 03:34:56,539 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(26.1>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(26.1<47) MACD=True => BLOCK
