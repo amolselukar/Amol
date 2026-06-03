@@ -192,19 +192,248 @@ try:
 except (ImportError, AttributeError):
     GITHUB_PAT = None
 
-# ---- mStock live execution broker (loaded only when EXECUTION_BROKER="mstock_live") ----
+# ── mStock SDK import ────────────────────────────────────────────────
+try:
+    from tradingapi_b.mconnect import MConnectB as _SDK
+    _SDK_AVAILABLE = True
+except ImportError:
+    _SDK_AVAILABLE = False
+
+# ── MStockBroker (inlined — no separate mstock_broker.py needed) ─────
+class MStockBroker:
+    def __init__(self):
+        if not _SDK_AVAILABLE:
+            raise RuntimeError("mStock SDK not installed. Run: pip install mStock-TradingApi-B")
+        _repo = os.path.dirname(os.path.abspath(__file__))
+        sys.path.insert(0, _repo)
+        try:
+            import credentials as _c
+            self._api_key  = getattr(_c, 'MSTOCK_API_KEY',  '')
+            self._user_id  = getattr(_c, 'MSTOCK_USER_ID',  '')
+            self._password = getattr(_c, 'MSTOCK_PASSWORD', '')
+            self._totp_sec = getattr(_c, 'MSTOCK_TOTP_SECRET', '')
+        except ImportError:
+            raise RuntimeError("credentials.py not found")
+        if not all([self._api_key, self._user_id, self._password]):
+            raise RuntimeError("MSTOCK_API_KEY / MSTOCK_USER_ID / MSTOCK_PASSWORD missing in credentials.py")
+        self._client = _SDK(api_key=self._api_key, debug=False, disable_ssl=True)
+        self._logged_in = False
+        self._sym_token_cache = {}
+        self._last_error = ""
+
+    @staticmethod
+    def _to_dict(resp) -> dict:
+        if resp is None: return {}
+        if isinstance(resp, dict): return resp
+        if hasattr(resp, 'json'):
+            try:
+                d = resp.json()
+                if isinstance(d, list): d = d[0] if d else {}
+                return d if isinstance(d, dict) else {}
+            except Exception: pass
+        if hasattr(resp, '__dict__'): return vars(resp)
+        return {}
+
+    def login(self) -> bool:
+        try:
+            import pyotp
+            totp_code = pyotp.TOTP(self._totp_sec).now() if self._totp_sec else ""
+        except Exception:
+            totp_code = ""
+        try:
+            raw  = self._client.login(user_id=self._user_id, password=self._password)
+            resp = self._to_dict(raw)
+            log.info(f"[mstock] login: status={resp.get('status')} msg={resp.get('message')}")
+            data = resp.get('data') or {}
+            jwt_token     = data.get('jwtToken', '')
+            refresh_token = data.get('refreshToken', '')
+            if not (resp.get('status') in (True, 'true', 'True') and jwt_token):
+                log.error(f"[mstock] Login step-1 failed: {resp}")
+                return False
+            self._client.set_access_token(jwt_token)
+            log.info("[mstock] Initial JWT set.")
+            if totp_code and refresh_token:
+                raw2 = self._client.verify_totp(_api_key=self._api_key, _request_token=refresh_token, _tOtp=totp_code)
+                resp2 = self._to_dict(raw2)
+                log.info(f"[mstock] verify_totp: status={resp2.get('status')} msg={resp2.get('message')} data={resp2.get('data')}")
+                if resp2.get('status') not in (True, 'true', 'True'):
+                    log.error(f"[mstock] verify_totp failed: {resp2}")
+                    return False
+                final_jwt = (resp2.get('data') or {}).get('jwtToken', '')
+                if final_jwt:
+                    self._client.set_access_token(final_jwt)
+                    log.info("[mstock] Final JWT explicitly set after verify_totp.")
+            else:
+                log.warning(f"[mstock] Skipping verify_totp (totp={'yes' if totp_code else 'NO'}, refreshToken={'yes' if refresh_token else 'NO'})")
+            self._logged_in = True
+            log.info("[mstock] Login complete.")
+            self._build_token_cache()
+            return True
+        except Exception as e:
+            log.error(f"[mstock] Login failed: {e}")
+            return False
+
+    def _build_token_cache(self):
+        try:
+            import requests as _req
+            url = "https://api.mstock.trade/openapi/typeb/instruments/OpenAPIScripMaster"
+            r = _req.get(url, timeout=30)
+            r.raise_for_status()
+            rows = r.json()
+            if not isinstance(rows, list): rows = rows.get('data') or []
+            log.info(f"[mstock] Instrument master: {len(rows)} records, keys={list(rows[0].keys()) if rows else 'empty'}")
+            for row in rows:
+                sym = (row.get('name') or row.get('tradingsymbol') or row.get('Trading Symbol') or row.get('TradingSymbol') or row.get('TRADING_SYMBOL') or '')
+                tok = str(row.get('token') or row.get('symboltoken') or row.get('symbolToken') or row.get('Token') or row.get('ScripCode') or row.get('SCRIP_CODE') or '')
+                if sym and tok: self._sym_token_cache[sym] = tok
+            log.info(f"[mstock] Instrument cache: {len(self._sym_token_cache)} symbols")
+            nifty_sample = [(s, t) for s, t in self._sym_token_cache.items() if 'NIFTY' in s and 'CE' in s][:5]
+            if nifty_sample: log.info(f"[mstock] Sample NIFTY CE: {nifty_sample}")
+        except Exception as e:
+            log.warning(f"[mstock] Instrument cache failed: {e}")
+
+    def ensure_logged_in(self):
+        if not self._logged_in:
+            if not self.login(): raise RuntimeError("[mstock] Login required but failed.")
+
+    def get_symbol_token(self, trading_symbol: str, exchange: str = "NFO") -> Optional[str]:
+        return self._sym_token_cache.get(trading_symbol)
+
+    def place_order(self, transaction_type: str, trading_symbol: str, quantity: int,
+                    order_type: str = "MARKET", price: float = 0.0, exchange: str = "NFO",
+                    product: str = "INTRADAY", symbol_token: str = "", tag: str = "ORION") -> Optional[str]:
+        self.ensure_logged_in()
+        if not symbol_token:
+            symbol_token = self.get_symbol_token(trading_symbol, exchange) or ""
+            if not symbol_token:
+                log.warning(f"[mstock] Could not resolve token for {trading_symbol}.")
+        try:
+            resp = self._to_dict(self._client.place_order(
+                _variety="NORMAL", _tradingsymbol=trading_symbol, _symboltoken=symbol_token,
+                _exchange=exchange, _transactiontype=transaction_type, _ordertype=order_type,
+                _quantity=str(quantity), _producttype=product,
+                _price=str(price) if order_type == "LIMIT" else "0",
+                _triggerprice="0", _squareoff="0", _stoploss="0", _trailingStopLoss="",
+                _disclosedquantity="0", _duration="DAY", _ordertag=tag
+            ))
+            log.info(f"[mstock] place_order resp: {resp}")
+            errorcode  = str(resp.get('errorcode', '') or '')
+            status_str = str(resp.get('status', '')).lower()
+            msg_str    = str(resp.get('message', '')).lower()
+            if errorcode == 'IA403' or 'ip address' in msg_str:
+                if getattr(self, '_ia403_relogin_attempted', False):
+                    log.error(f"[mstock] IA403 persists after re-login — likely mStock server-side issue. {resp}")
+                    self._last_error = f"IA403: {resp.get('message','')} (persists after re-login with fresh TOTP)"
+                    self._ia403_relogin_attempted = False
+                    return None
+                log.warning(f"[mstock] IA403 received — rebuilding SDK client + fresh TOTP re-login. {resp}")
+                self._ia403_relogin_attempted = True
+                self._client = _SDK(api_key=self._api_key, debug=False, disable_ssl=True)
+                self._logged_in = False
+                time.sleep(2)
+                if self.login():
+                    log.info("[mstock] Fresh client + re-login OK after IA403 — retrying order.")
+                    time.sleep(1)
+                    result = self.place_order(transaction_type, trading_symbol, quantity,
+                                              order_type, price, exchange, product, symbol_token, tag)
+                    self._ia403_relogin_attempted = False
+                    return result
+                self._last_error = f"IA403 + re-login failed: {resp.get('message','')}"
+                self._ia403_relogin_attempted = False
+                return None
+            jwt_expired = any(k in msg_str for k in ('unauthori', 'invalid token', 'session expired', 'not logged', 'token expired'))
+            if jwt_expired:
+                log.warning(f"[mstock] JWT expired in place_order — re-logging in.")
+                self._logged_in = False
+                if self.login():
+                    log.info("[mstock] Re-login OK — retrying place_order once.")
+                    return self.place_order(transaction_type, trading_symbol, quantity,
+                                            order_type, price, exchange, product, symbol_token, tag)
+                log.error("[mstock] Re-login also failed.")
+                self._last_error = f"JWT expiry + re-login failed: {resp.get('message','')}"
+                return None
+            order_id = ((resp.get('data') or {}).get('orderid') or resp.get('orderid') or resp.get('order_id'))
+            if order_id:
+                log.info(f"[mstock] {transaction_type} placed: {trading_symbol} qty={quantity} type={order_type} → orderid={order_id}")
+                self._last_error = ""
+                return str(order_id)
+            err_msg = resp.get('message') or resp.get('errMsg') or resp.get('error') or str(resp)
+            log.error(f"[mstock] No orderid in response: {resp}")
+            self._last_error = f"{err_msg}"
+            return None
+        except Exception as e:
+            log.error(f"[mstock] place_order exception: {e}")
+            self._last_error = str(e)
+            return None
+
+    def cancel_order(self, order_id: str, variety: str = "NORMAL") -> bool:
+        self.ensure_logged_in()
+        try:
+            resp = self._to_dict(self._client.cancel_order(_variety=variety, _orderid=order_id))
+            log.info(f"[mstock] cancel_order {order_id}: {resp.get('message','')}")
+            return resp.get('status') in ('true', True, 'True', 'success')
+        except Exception as e:
+            log.error(f"[mstock] cancel_order {order_id}: {e}")
+            return False
+
+    def order_status(self, order_id: str) -> Tuple[str, float]:
+        self.ensure_logged_in()
+        try:
+            raw = self._client.get_order_book()
+            if hasattr(raw, 'json'): parsed = raw.json()
+            elif isinstance(raw, dict): parsed = raw
+            else: parsed = {}
+            if isinstance(parsed, list): orders = parsed
+            else: orders = parsed.get('data') or []
+            if not isinstance(orders, list): orders = []
+            for o in orders:
+                oid = str(o.get('orderid') or o.get('order_id') or o.get('orderId') or o.get('uniqueorderid') or '')
+                if oid == str(order_id):
+                    raw_status = str(o.get('status') or o.get('orderstatus') or 'UNKNOWN')
+                    if raw_status.lower() in ('traded', 'complete', 'trade confirmed'): status = 'COMPLETE'
+                    elif raw_status.lower() in ('rejected', 'cancelled', 'canceled'): status = raw_status.upper()
+                    else: status = raw_status.upper()
+                    fill = float(o.get('averageprice') or o.get('averagePrice') or o.get('fillprice') or 0)
+                    return status, fill
+        except Exception as e:
+            log.error(f"[mstock] order_status {order_id}: {e}")
+        return "UNKNOWN", 0.0
+
+    def wait_for_fill(self, order_id: str, timeout_sec: int = 10, poll_sec: float = 0.5) -> Tuple[str, float]:
+        deadline = time.time() + timeout_sec
+        while time.time() < deadline:
+            status, fill = self.order_status(order_id)
+            if status in ("COMPLETE", "REJECTED", "CANCELLED"): return status, fill
+            time.sleep(poll_sec)
+        log.warning(f"[mstock] wait_for_fill timeout — order {order_id} not confirmed.")
+        return "TIMEOUT", 0.0
+
+    def positions(self) -> list:
+        self.ensure_logged_in()
+        try:
+            raw = self._client.get_net_position()
+            resp = self._to_dict(raw) if raw is not None else {}
+            return resp.get('data') or []
+        except Exception as e:
+            log.error(f"[mstock] positions(): {e}")
+            return []
+
+    def net_qty(self, trading_symbol: str) -> int:
+        for p in self.positions():
+            sym = p.get('tradingsymbol') or p.get('trading_symbol', '')
+            if sym == trading_symbol: return int(p.get('netqty') or p.get('net_qty') or 0)
+        return 0
+
+# ---- mStock broker instance ----
 _mstock_broker = None
 def _get_mstock():
-    """Return mStock broker singleton — already logged in at boot."""
     return _mstock_broker
 
 def _init_mstock_at_boot():
-    """Called once at startup. Logs in, sends Telegram on failure."""
     global _mstock_broker
     if EXECUTION_BROKER != "mstock_live":
         return
     try:
-        from mstock_broker import MStockBroker
         b = MStockBroker()
         ok = b.login()
         if ok:
