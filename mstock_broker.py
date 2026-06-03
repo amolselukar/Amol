@@ -286,11 +286,14 @@ class MStockBroker:
                     self._last_error = f"IA403: {resp.get('message','')} (persists after re-login with fresh TOTP)"
                     self._ia403_relogin_attempted = False
                     return None
-                log.warning(f"[mstock] IA403 received — re-login with fresh TOTP (token may have expired). {resp}")
+                log.warning(f"[mstock] IA403 received — rebuilding SDK client + fresh TOTP re-login. {resp}")
                 self._ia403_relogin_attempted = True
+                self._client = _SDK(api_key=self._api_key, debug=False, disable_ssl=True)
                 self._logged_in = False
+                time.sleep(2)
                 if self.login():
-                    log.info("[mstock] Re-login OK after IA403 — retrying order once.")
+                    log.info("[mstock] Fresh client + re-login OK after IA403 — retrying order.")
+                    time.sleep(1)
                     result = self.place_order(transaction_type, trading_symbol, quantity,
                                               order_type, price, exchange, product, symbol_token, tag)
                     self._ia403_relogin_attempted = False
