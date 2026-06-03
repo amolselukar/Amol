@@ -34,8 +34,8 @@ if [ -f "$PID_FILE" ]; then
     fi
     rm -f "$PID_FILE"
 fi
-# Also kill any stray ORION processes (belt + suspenders)
-pkill -f "ORION_PAPER_V2_5_12.py" 2>/dev/null
+# Also kill any stray ORION processes (pkill may fail on PythonAnywhere — that's OK)
+pkill -f "ORION_PAPER_V2_5_12.py" 2>/dev/null || true
 sleep 1
 
 # 1. Pull latest code from GitHub (fetch + reset avoids diverged-branch errors)
