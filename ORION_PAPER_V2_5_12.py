@@ -2297,6 +2297,42 @@ def main():
     # ---- Init mStock broker at boot (not lazily) ----
     _init_mstock_at_boot()
 
+    # ---- mStock execution self-test at boot ----
+    if EXECUTION_BROKER == "mstock_live" and _mstock_broker:
+        linfo("[BOOT] Running mStock execution self-test (LIMIT order + cancel)...")
+        _test_passed = False
+        try:
+            _test_strike = round_to_atm(24000) + 2000  # deep OTM — won't fill
+            _test_expiry = target_expiry
+            _test_sym_key = (_test_strike, 'CE')
+            if _test_sym_key in expiry_lookup:
+                _test_kite_sym, _ = expiry_lookup[_test_sym_key]
+                _test_ms_sym = _mstock_option_symbol(_test_kite_sym)
+            else:
+                _test_ms_sym = f"NIFTY{_test_expiry.strftime('%y%b').upper()}{_test_strike}CE"
+            _test_oid = _mstock_broker.place_order(
+                "BUY", _test_ms_sym, LOT_SIZE, "LIMIT", price=0.05, tag="ORION_TEST"
+            )
+            if _test_oid:
+                linfo(f"[BOOT] ✅ mStock test BUY placed: {_test_ms_sym} oid={_test_oid}")
+                _mstock_broker.cancel_order(_test_oid)
+                linfo(f"[BOOT] ✅ mStock test order cancelled. Execution path VERIFIED.")
+                _test_passed = True
+            else:
+                _err = getattr(_mstock_broker, '_last_error', '') or 'unknown'
+                lwarn(f"[BOOT] ❌ mStock test BUY FAILED: {_err}")
+        except Exception as _te:
+            lwarn(f"[BOOT] ❌ mStock self-test exception: {_te}")
+        if not _test_passed:
+            _msg = ("⛔ ORION BOOT ABORTED — mStock self-test FAILED.\n"
+                    "Order execution is broken. Check mStock portal IP / credentials.\n"
+                    f"Error: {getattr(_mstock_broker, '_last_error', 'unknown')}")
+            TG.send(_msg)
+            linfo(f"[BOOT] {_msg}")
+            linfo("[BOOT] Exiting. Fix mStock and restart manually.")
+            sys.exit(1)
+        TG.send("✅ mStock self-test PASSED — order execution verified at boot.")
+
     # ---- Warmup ----
     df1h, df15, df5 = warmup_until_ready()
 
