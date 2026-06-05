@@ -2790,8 +2790,9 @@ def main():
                         if broker:
                             _status, _fill = broker.order_status(POS.buy_order_id)
                             if _status == "CANCELLED":
-                                lwarn(f"[sync] BUY order {POS.buy_order_id} was CANCELLED — manual exit detected")
+                                lwarn(f"[sync] BUY order {POS.buy_order_id} was CANCELLED — position never opened")
                                 cur_ltp = ltp(POS.symbol) or POS.entry_premium
+                                POS.buy_order_id = ""  # clear so close_trade won't place a SELL
                                 close_trade("MANUAL_EXIT", cur_ltp)
                             elif _status == "COMPLETE":
                                 ms_sym = POS.ms_symbol or _mstock_option_symbol(POS.symbol)
@@ -2799,6 +2800,7 @@ def main():
                                 if net == 0:
                                     lwarn(f"[sync] {ms_sym} net_qty=0 (BUY order {POS.buy_order_id} was COMPLETE) — manual exit detected")
                                     cur_ltp = ltp(POS.symbol) or POS.entry_premium
+                                    POS.buy_order_id = ""  # clear so close_trade won't place a duplicate SELL
                                     close_trade("MANUAL_EXIT", cur_ltp)
                                 else:
                                     linfo(f"[sync] {ms_sym} net_qty={net} — position confirmed on exchange")
