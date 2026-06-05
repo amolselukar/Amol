@@ -1374,7 +1374,8 @@ DAY = DailyState()
 # =========================================================================
 def save_state():
     try:
-        snap = {"pos": POS.to_dict(),
+        snap = {"date": datetime.now(IST).strftime("%Y-%m-%d"),
+                "pos": POS.to_dict(),
                 "day_losses": DAY.losses,
                 "day_halted": DAY.halted,
                 "fired_levels": list(DAY.fired_levels),
@@ -1400,6 +1401,14 @@ def load_state():
         DAY.halted = snap.get("day_halted", False)
         DAY.fired_levels = set(snap.get("fired_levels", []))
         DAY.trades_today = snap.get("trades_today", [])
+        # Reset trades_today if state is from a previous day
+        _snap_date = snap.get("date", "")
+        _today_str = datetime.now(IST).strftime("%Y-%m-%d")
+        if _snap_date and _snap_date != _today_str:
+            linfo(f"[STATE] State from {_snap_date} — resetting trades_today for {_today_str}")
+            DAY.trades_today = []
+            DAY.losses = 0
+            DAY.flips_today = 0
         # Reset circuit breaker on every fresh bot start — deliberate restart = manual reset
         if DAY.halted:
             linfo(f"[STATE] Circuit breaker was halted (losses={DAY.losses}) — RESET on bot restart.")
@@ -1875,7 +1884,6 @@ def check_vwap_signal(df15m_nifty, expiry_lookup, spot):
 
     # Dedup: block re-fire on same 15m bar (catches immediate re-entry after manual exit)
     if DAY.last_vwap_bar_time is not None and bar_time == DAY.last_vwap_bar_time:
-        linfo(f"[VWAP] Same bar ({bar_time}) already fired — skipping re-entry dedup")
         return None
 
     bullish = c > nifty_vwap
@@ -2774,8 +2782,8 @@ def main():
                time.time() - last_pos_sync >= 60:
                 last_pos_sync = time.time()
                 _entry_age_sec = (datetime.now(IST) - POS.entry_time).total_seconds() if POS.entry_time else 999
-                if _entry_age_sec < 180:
-                    pass  # skip sync within 3 min of entry — exchange needs time to reflect
+                if _entry_age_sec < 300:
+                    pass  # skip sync within 5 min of entry — exchange needs time to reflect
                 elif POS.buy_order_id:
                     try:
                         broker = _get_mstock()
