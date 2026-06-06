@@ -2567,6 +2567,342 @@ def _tg_poll_commands():
         time.sleep(3)
 
 
+# =========================================================================
+# EOD DATA CAPTURE (integrated from Optiondata_1.py)
+# =========================================================================
+EOD_ATM_STEP        = 100
+EOD_LADDER_STEP     = 50
+EOD_ITM_OTM_COUNT   = 2
+EOD_NIFTY_DAYS_BACK = {'5minute': 7, '15minute': 15, '60minute': 90}
+EOD_OPTION_DAYS_BACK= {'5minute': 7, '15minute': 10, '60minute': 30}
+EOD_TIMEFRAMES      = ['5minute', '15minute', '60minute']
+EOD_TF_LABELS       = {'5minute': '5m', '15minute': '15m', '60minute': '1h'}
+EOD_RATE_LIMIT      = 0.4
+EOD_OUT_ROOT        = "daily_option_data"
+EOD_OI_SURVEY_RADIUS= 600
+EOD_OI_SURVEY_STEP  = 100
+
+
+def _eod_round_atm(price):
+    return int(round(price / EOD_ATM_STEP)) * EOD_ATM_STEP
+
+
+def _eod_fetch_nifty_tf(target_date, interval, days_back):
+    end = datetime.combine(target_date, datetime.min.time()).replace(hour=15, minute=35)
+    start = end - timedelta(days=days_back)
+    end_ist = IST.localize(end)
+    start_ist = IST.localize(start)
+    recs = historical(NIFTY_INSTRUMENT_TOKEN, start_ist, end_ist, interval)
+    if not recs:
+        return pd.DataFrame(), "EMPTY"
+    df = pd.DataFrame(recs)[['date', 'open', 'high', 'low', 'close', 'volume']]
+    return df, None
+
+
+def _eod_fetch_option_tf(token, target_date, interval, days_back):
+    end = datetime.combine(target_date, datetime.min.time()).replace(hour=15, minute=35)
+    start = end - timedelta(days=days_back)
+    end_ist = IST.localize(end)
+    start_ist = IST.localize(start)
+    recs = historical(token, start_ist, end_ist, interval)
+    if not recs:
+        return pd.DataFrame(), "EMPTY"
+    df = pd.DataFrame(recs)[['date', 'open', 'high', 'low', 'close', 'volume']]
+    return df, None
+
+
+def _eod_build_atm_tracker(nifty_5m_df, target_date):
+    df = nifty_5m_df.copy()
+    df['date_only'] = pd.to_datetime(df['date']).dt.date
+    df = df[df['date_only'] == target_date].drop(columns=['date_only'])
+    rows = []
+    for _, bar in df.iterrows():
+        nc = float(bar['close'])
+        atm = _eod_round_atm(nc)
+        rows.append({
+            'time': bar['date'], 'nifty_close': nc, 'atm_strike': atm,
+            'ce_itm2': atm - 2*EOD_LADDER_STEP, 'ce_itm1': atm - EOD_LADDER_STEP,
+            'ce_atm': atm, 'ce_otm1': atm + EOD_LADDER_STEP, 'ce_otm2': atm + 2*EOD_LADDER_STEP,
+            'pe_itm2': atm + 2*EOD_LADDER_STEP, 'pe_itm1': atm + EOD_LADDER_STEP,
+            'pe_atm': atm, 'pe_otm1': atm - EOD_LADDER_STEP, 'pe_otm2': atm - 2*EOD_LADDER_STEP,
+        })
+    return pd.DataFrame(rows)
+
+
+def _eod_collect_strikes(tracker_df):
+    ce_cols = ['ce_itm2', 'ce_itm1', 'ce_atm', 'ce_otm1', 'ce_otm2']
+    pe_cols = ['pe_itm2', 'pe_itm1', 'pe_atm', 'pe_otm1', 'pe_otm2']
+    ce_strikes, pe_strikes = set(), set()
+    for c in ce_cols:
+        ce_strikes.update(int(s) for s in tracker_df[c].unique())
+    for c in pe_cols:
+        pe_strikes.update(int(s) for s in tracker_df[c].unique())
+    return sorted(ce_strikes), sorted(pe_strikes)
+
+
+def _eod_fetch_oi_survey(nifty_master, expiry, eod_atm, ce_vol_map, pe_vol_map):
+    survey_strikes = list(range(
+        eod_atm - EOD_OI_SURVEY_RADIUS,
+        eod_atm + EOD_OI_SURVEY_RADIUS + EOD_OI_SURVEY_STEP,
+        EOD_OI_SURVEY_STEP
+    ))
+    weekly_master = nifty_master[nifty_master['expiry'] == expiry]
+    sym_to_info = {}
+    for _, row in weekly_master.iterrows():
+        s = int(row['strike'])
+        if s in survey_strikes:
+            side = row['instrument_type']
+            sym = row['tradingsymbol']
+            sym_to_info[f"NFO:{sym}"] = (s, side)
+    if not sym_to_info:
+        return {}
+    all_quotes = {}
+    syms = list(sym_to_info.keys())
+    for i in range(0, len(syms), 200):
+        batch = syms[i:i+200]
+        try:
+            q = kite.quote(batch)
+            all_quotes.update(q)
+            time.sleep(EOD_RATE_LIMIT)
+        except Exception as e:
+            linfo(f"[EOD OI] quote() error: {e}")
+    strikes_data = {}
+    for sym, (strike, side) in sym_to_info.items():
+        key = str(strike)
+        if key not in strikes_data:
+            strikes_data[key] = {"CE": {}, "PE": {}}
+        q = all_quotes.get(sym, {})
+        oi = q.get("oi", 0) or 0
+        lt = q.get("last_price", 0) or 0
+        vol = q.get("volume", 0) or 0
+        if side == "CE" and strike in ce_vol_map:
+            vol = ce_vol_map[strike]
+        elif side == "PE" and strike in pe_vol_map:
+            vol = pe_vol_map[strike]
+        strikes_data[key][side] = {"oi": oi, "ltp": lt, "volume": vol}
+    return strikes_data
+
+
+def validate_captured_data(day_dir, target_date):
+    """Validate captured data has all required components for backtesting."""
+    issues = []
+    required_nifty = ["nifty_5m.csv", "nifty_15m.csv", "nifty_1h.csv"]
+    for fn in required_nifty:
+        fp = os.path.join(day_dir, fn)
+        if not os.path.exists(fp):
+            issues.append(f"Missing {fn}")
+        else:
+            df = pd.read_csv(fp)
+            if len(df) == 0:
+                issues.append(f"{fn} is empty")
+            today_bars = df[pd.to_datetime(df['date']).dt.date == target_date] if 'date' in df.columns else df
+            if len(today_bars) == 0:
+                issues.append(f"{fn} has no bars for {target_date}")
+    tracker_fp = os.path.join(day_dir, "atm_tracker_5m.csv")
+    if not os.path.exists(tracker_fp):
+        issues.append("Missing atm_tracker_5m.csv")
+    ce_dir = os.path.join(day_dir, "CE")
+    pe_dir = os.path.join(day_dir, "PE")
+    ce_count = len([f for f in os.listdir(ce_dir) if f.endswith('.csv')]) if os.path.isdir(ce_dir) else 0
+    pe_count = len([f for f in os.listdir(pe_dir) if f.endswith('.csv')]) if os.path.isdir(pe_dir) else 0
+    if ce_count == 0:
+        issues.append("No CE strike CSVs")
+    if pe_count == 0:
+        issues.append("No PE strike CSVs")
+    # Check option CSVs have all 3 timeframes
+    for side_dir, side in [(ce_dir, "CE"), (pe_dir, "PE")]:
+        if not os.path.isdir(side_dir):
+            continue
+        for fn in os.listdir(side_dir):
+            if not fn.endswith('.csv'):
+                continue
+            fp = os.path.join(side_dir, fn)
+            df = pd.read_csv(fp)
+            if 'tf' in df.columns:
+                tfs = set(df['tf'].unique())
+                missing_tf = {'5m', '15m', '1h'} - tfs
+                if missing_tf:
+                    issues.append(f"{side}/{fn} missing timeframes: {missing_tf}")
+            if 'volume' in df.columns and 'close' in df.columns:
+                pass  # VWAP computable from volume + close
+    oi_fp = os.path.join(day_dir, "_oi_survey.json")
+    if not os.path.exists(oi_fp):
+        issues.append("Missing _oi_survey.json")
+    return issues
+
+
+def run_eod_data_capture():
+    """Run full EOD data capture after trading stops. Uses the bot's existing kite connection."""
+    target_date = datetime.now(IST).date()
+    if target_date.weekday() >= 5:
+        linfo(f"[EOD DATA] {target_date} is weekend. Skipping.")
+        TG.send(f"📊 EOD data capture skipped — {target_date.strftime('%A')} (weekend)")
+        return
+
+    TG.send(
+        f"📊 <b>ORION {VERSION} — Stopping trading, starting EOD data capture</b>\n"
+        f"   Date: {target_date}\n"
+        f"   Collecting: Nifty 5m/15m/1h + ATM option strikes CE/PE + OI survey"
+    )
+    linfo(f"[EOD DATA] Starting data capture for {target_date}")
+
+    try:
+        # Load NFO master
+        inst_df = pd.DataFrame(kite.instruments("NFO"))
+        nifty_master = inst_df[inst_df['name'] == 'NIFTY'].copy()
+        nifty_master['expiry'] = pd.to_datetime(nifty_master['expiry']).dt.date
+        expiries = sorted(set(nifty_master['expiry']))
+        expiry = next((e for e in expiries if e >= target_date), None)
+        monthly_expiry = next((e for e in expiries if e >= target_date and e.day >= 24), None)
+        if expiry is None:
+            TG.send("⚠️ EOD data capture: no expiry found. Aborting.")
+            return
+
+        # Fetch Nifty multi-TF
+        nifty_data = {}
+        for tf in EOD_TIMEFRAMES:
+            df, err = _eod_fetch_nifty_tf(target_date, tf, EOD_NIFTY_DAYS_BACK[tf])
+            if err or df.empty:
+                linfo(f"[EOD DATA] Nifty {EOD_TF_LABELS[tf]} failed: {err or 'EMPTY'}")
+                TG.send(f"⚠️ EOD data: Nifty {EOD_TF_LABELS[tf]} fetch failed")
+                return
+            nifty_data[tf] = df
+            time.sleep(EOD_RATE_LIMIT)
+
+        nifty_5m = nifty_data['5minute']
+        nifty_5m_today = nifty_5m[pd.to_datetime(nifty_5m['date']).dt.date == target_date]
+        if nifty_5m_today.empty:
+            TG.send("⚠️ EOD data: No 5m bars for today — holiday?")
+            return
+        eod_close = float(nifty_5m_today['close'].iloc[-1])
+        eod_atm = _eod_round_atm(eod_close)
+
+        # Build ATM tracker
+        tracker = _eod_build_atm_tracker(nifty_5m, target_date)
+        ce_strikes, pe_strikes = _eod_collect_strikes(tracker)
+        linfo(f"[EOD DATA] ATM tracker: {len(tracker)} rows, CE={ce_strikes}, PE={pe_strikes}")
+
+        # Resolve tokens
+        weekly_master = nifty_master[nifty_master['expiry'] == expiry]
+        contract_lookup = {}
+        for _, row in weekly_master.iterrows():
+            key = (int(row['strike']), row['instrument_type'])
+            contract_lookup[key] = (int(row['instrument_token']), row['tradingsymbol'])
+
+        # Output dirs
+        day_dir = os.path.join(EOD_OUT_ROOT, str(target_date))
+        ce_dir = os.path.join(day_dir, "CE")
+        pe_dir = os.path.join(day_dir, "PE")
+        for d in [ce_dir, pe_dir]:
+            os.makedirs(d, exist_ok=True)
+
+        # Save Nifty CSVs + tracker
+        for tf in EOD_TIMEFRAMES:
+            out = os.path.join(day_dir, f"nifty_{EOD_TF_LABELS[tf]}.csv")
+            nifty_data[tf].to_csv(out, index=False)
+        tracker.to_csv(os.path.join(day_dir, "atm_tracker_5m.csv"), index=False)
+
+        # Fetch option strikes
+        fetch_log = []
+        ce_vol_map, pe_vol_map = {}, {}
+
+        for side, strikes_list in [('CE', ce_strikes), ('PE', pe_strikes)]:
+            side_dir = ce_dir if side == 'CE' else pe_dir
+            for strike in strikes_list:
+                key = (strike, side)
+                if key not in contract_lookup:
+                    for tf in EOD_TIMEFRAMES:
+                        fetch_log.append({'side': side, 'strike': strike,
+                                          'tf': EOD_TF_LABELS[tf], 'status': 'NO_TOKEN', 'bars': 0})
+                    continue
+                token, tsym = contract_lookup[key]
+                all_dfs = []
+                total_vol_5m = 0
+                for tf in EOD_TIMEFRAMES:
+                    df, err = _eod_fetch_option_tf(token, target_date, tf, EOD_OPTION_DAYS_BACK[tf])
+                    tf_label = EOD_TF_LABELS[tf]
+                    if err or df.empty:
+                        fetch_log.append({'side': side, 'strike': strike,
+                                          'tf': tf_label, 'status': err or 'EMPTY', 'bars': 0})
+                        time.sleep(EOD_RATE_LIMIT)
+                        continue
+                    df = df.copy()
+                    df['tf'] = tf_label
+                    if tf == '5minute':
+                        today_mask = pd.to_datetime(df['date']).dt.date == target_date
+                        total_vol_5m = int(df.loc[today_mask, 'volume'].sum())
+                    all_dfs.append(df)
+                    fetch_log.append({'side': side, 'strike': strike,
+                                      'tf': tf_label, 'status': 'OK', 'bars': len(df)})
+                    time.sleep(EOD_RATE_LIMIT)
+                if all_dfs:
+                    combined = pd.concat(all_dfs, ignore_index=True)
+                    combined = combined[['tf', 'date', 'open', 'high', 'low', 'close', 'volume']]
+                    combined.to_csv(os.path.join(side_dir, f"{strike}.csv"), index=False)
+                    if side == 'CE':
+                        ce_vol_map[strike] = total_vol_5m
+                    else:
+                        pe_vol_map[strike] = total_vol_5m
+
+        # OI Survey
+        survey_data = _eod_fetch_oi_survey(nifty_master, expiry, eod_atm, ce_vol_map, pe_vol_map)
+        oi_survey = {
+            "date": str(target_date), "expiry": str(expiry),
+            "monthly_expiry": str(monthly_expiry) if monthly_expiry else "",
+            "atm": eod_atm, "eod_nifty_close": eod_close,
+            "survey_radius": EOD_OI_SURVEY_RADIUS, "survey_step": EOD_OI_SURVEY_STEP,
+            "strikes": survey_data,
+        }
+        with open(os.path.join(day_dir, "_oi_survey.json"), "w") as f:
+            json.dump(oi_survey, f, indent=2)
+
+        # Save metadata
+        ok_count = sum(1 for r in fetch_log if r['status'] == 'OK')
+        fail_count = len(fetch_log) - ok_count
+        total_bars = sum(r['bars'] for r in fetch_log)
+        meta = {
+            'capture_script_version': f'ORION_INTEGRATED_{VERSION}',
+            'target_date': str(target_date), 'target_expiry': str(expiry),
+            'monthly_expiry': str(monthly_expiry),
+            'eod_atm': eod_atm, 'eod_nifty_close': eod_close,
+            'timeframes': [EOD_TF_LABELS[tf] for tf in EOD_TIMEFRAMES],
+            'ce_strikes_fetched': ce_strikes, 'pe_strikes_fetched': pe_strikes,
+            'oi_survey_strikes': sorted(int(k) for k in survey_data.keys()),
+            'fetch_log': fetch_log,
+        }
+        with open(os.path.join(day_dir, "_meta.json"), 'w') as f:
+            json.dump(meta, f, indent=2, default=str)
+
+        # Validate
+        issues = validate_captured_data(day_dir, target_date)
+        if issues:
+            issue_txt = "\n".join(f"  - {i}" for i in issues)
+            TG.send(
+                f"⚠️ <b>EOD data captured with issues</b>\n"
+                f"   Folder: <code>{day_dir}</code>\n"
+                f"   Fetches: {ok_count} OK / {fail_count} failed / {total_bars:,} bars\n"
+                f"   Issues:\n<pre>{issue_txt}</pre>"
+            )
+            linfo(f"[EOD DATA] Completed with issues: {issues}")
+        else:
+            TG.send(
+                f"✅ <b>EOD data capture COMPLETE — all validated</b>\n"
+                f"   Folder: <code>{day_dir}</code>\n"
+                f"   Date: {target_date} | Expiry: {expiry}\n"
+                f"   Nifty EOD: {eod_close:.2f} | ATM: {eod_atm}\n"
+                f"   CE strikes: {len(ce_strikes)} | PE strikes: {len(pe_strikes)}\n"
+                f"   Option fetches: {ok_count} OK / {fail_count} failed / {total_bars:,} bars\n"
+                f"   OI survey: {len(survey_data)} strikes\n"
+                f"   Timeframes: 5m, 15m, 1h ✓ | VWAP data ✓ | Spot data ✓"
+            )
+            linfo(f"[EOD DATA] Capture complete. Folder: {day_dir}, {ok_count} OK, {total_bars} bars")
+
+    except Exception as e:
+        tb = traceback.format_exc()
+        lerr(f"[EOD DATA] Exception: {e}\n{tb}")
+        TG.send(f"⚠️ <b>EOD data capture FAILED</b>\n<code>{str(e)[:500]}</code>")
+
+
 def main():
     csv_init()
     load_state()
@@ -2749,16 +3085,19 @@ def main():
             WD.beat()
             now = datetime.now(IST)
 
-            # After market close - send periodic alive pulse + EOD once
+            # After market close - force close, EOD summary, data capture, then exit
             if is_after_market_close(now):
                 if POS.active:
                     cur_ltp = ltp(POS.symbol) or POS.entry_premium
                     close_trade("EOD_FORCE_CLOSE", cur_ltp)
                 if not DAY.eod_sent:
                     TG.send(fmt_eod_summary())
-                    TG.send(f"🛑 <b>ORION {VERSION} shutting down.</b> See you tomorrow at 09:00 IST.")
                     DAY.eod_sent = True
                     push_logs_to_github()
+                    # EOD data capture — collect option data for backtesting
+                    run_eod_data_capture()
+                    push_logs_to_github(label="EOD")
+                    TG.send(f"🛑 <b>ORION {VERSION} shutting down.</b> See you tomorrow at 09:00 IST.")
                 WD.stop()
                 linfo("Market closed. Bot exiting cleanly.")
                 return
