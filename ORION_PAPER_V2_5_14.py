@@ -2581,6 +2581,25 @@ EOD_RATE_LIMIT      = 0.4
 EOD_OUT_ROOT        = "daily_option_data"
 EOD_OI_SURVEY_RADIUS= 600
 EOD_OI_SURVEY_STEP  = 100
+EOD_FUT_DAYS_BACK   = {'5minute': 7, '15minute': 15, '60minute': 90}
+
+
+def _eod_add_vwap(df, target_date):
+    """Add session VWAP column (computed per-day from 9:15 AM) to a DataFrame with date/close/volume."""
+    df = df.copy()
+    df['_dt'] = pd.to_datetime(df['date'])
+    df['_date'] = df['_dt'].dt.date
+    df['vwap'] = float('nan')
+    typical = (df['high'] + df['low'] + df['close']) / 3
+    for d in df['_date'].unique():
+        mask = (df['_date'] == d) & (df['_dt'].dt.hour * 60 + df['_dt'].dt.minute >= 9 * 60 + 15)
+        if mask.sum() == 0:
+            continue
+        cum_tp_vol = (typical[mask] * df.loc[mask, 'volume']).cumsum()
+        cum_vol = df.loc[mask, 'volume'].cumsum()
+        df.loc[mask, 'vwap'] = (cum_tp_vol / cum_vol.replace(0, float('nan'))).values
+    df.drop(columns=['_dt', '_date'], inplace=True)
+    return df
 
 
 def _eod_round_atm(price):
@@ -2605,6 +2624,18 @@ def _eod_fetch_option_tf(token, target_date, interval, days_back):
     end_ist = IST.localize(end)
     start_ist = IST.localize(start)
     recs = historical(token, start_ist, end_ist, interval)
+    if not recs:
+        return pd.DataFrame(), "EMPTY"
+    df = pd.DataFrame(recs)[['date', 'open', 'high', 'low', 'close', 'volume']]
+    return df, None
+
+
+def _eod_fetch_fut_tf(fut_token, target_date, interval, days_back):
+    end = datetime.combine(target_date, datetime.min.time()).replace(hour=15, minute=35)
+    start = end - timedelta(days=days_back)
+    end_ist = IST.localize(end)
+    start_ist = IST.localize(start)
+    recs = historical(fut_token, start_ist, end_ist, interval)
     if not recs:
         return pd.DataFrame(), "EMPTY"
     df = pd.DataFrame(recs)[['date', 'open', 'high', 'low', 'close', 'volume']]
@@ -2723,8 +2754,23 @@ def validate_captured_data(day_dir, target_date):
                 missing_tf = {'5m', '15m', '1h'} - tfs
                 if missing_tf:
                     issues.append(f"{side}/{fn} missing timeframes: {missing_tf}")
-            if 'volume' in df.columns and 'close' in df.columns:
-                pass  # VWAP computable from volume + close
+            if 'vwap' not in df.columns:
+                issues.append(f"{side}/{fn} missing VWAP column")
+    # Check Nifty spot VWAP
+    for fn in required_nifty:
+        fp = os.path.join(day_dir, fn)
+        if os.path.exists(fp):
+            df = pd.read_csv(fp)
+            if 'vwap' not in df.columns:
+                issues.append(f"{fn} missing VWAP column")
+    # Check futures files
+    fut_files = ["nifty_fut_5m.csv", "nifty_fut_15m.csv", "nifty_fut_1h.csv"]
+    for fn in fut_files:
+        fp = os.path.join(day_dir, fn)
+        if not os.path.exists(fp):
+            issues.append(f"Missing {fn}")
+        elif 'vwap' not in pd.read_csv(fp).columns:
+            issues.append(f"{fn} missing VWAP column")
     oi_fp = os.path.join(day_dir, "_oi_survey.json")
     if not os.path.exists(oi_fp):
         issues.append("Missing _oi_survey.json")
@@ -2758,6 +2804,17 @@ def run_eod_data_capture():
             TG.send("⚠️ EOD data capture: no expiry found. Aborting.")
             return
 
+        # Resolve nearest Nifty futures token
+        all_insts = inst_df
+        nifty_futs = all_insts[(all_insts['name'] == 'NIFTY') &
+                               (all_insts['instrument_type'] == 'FUT')]
+        nifty_futs = nifty_futs[pd.to_datetime(nifty_futs['expiry']).dt.date >= target_date]
+        fut_token = None
+        if len(nifty_futs) > 0:
+            nearest = nifty_futs.sort_values('expiry').iloc[0]
+            fut_token = int(nearest['instrument_token'])
+            linfo(f"[EOD DATA] Futures token: {fut_token} ({nearest['tradingsymbol']})")
+
         # Fetch Nifty multi-TF
         nifty_data = {}
         for tf in EOD_TIMEFRAMES:
@@ -2776,6 +2833,17 @@ def run_eod_data_capture():
             return
         eod_close = float(nifty_5m_today['close'].iloc[-1])
         eod_atm = _eod_round_atm(eod_close)
+
+        # Fetch Nifty futures multi-TF
+        fut_data = {}
+        if fut_token:
+            for tf in EOD_TIMEFRAMES:
+                df, err = _eod_fetch_fut_tf(fut_token, target_date, tf, EOD_FUT_DAYS_BACK[tf])
+                if err or df.empty:
+                    linfo(f"[EOD DATA] Futures {EOD_TF_LABELS[tf]} failed: {err or 'EMPTY'}")
+                else:
+                    fut_data[tf] = df
+                time.sleep(EOD_RATE_LIMIT)
 
         # Build ATM tracker
         tracker = _eod_build_atm_tracker(nifty_5m, target_date)
@@ -2796,10 +2864,21 @@ def run_eod_data_capture():
         for d in [ce_dir, pe_dir]:
             os.makedirs(d, exist_ok=True)
 
-        # Save Nifty CSVs + tracker
+        # Save Nifty spot CSVs with VWAP + tracker
         for tf in EOD_TIMEFRAMES:
+            df_with_vwap = _eod_add_vwap(nifty_data[tf], target_date)
             out = os.path.join(day_dir, f"nifty_{EOD_TF_LABELS[tf]}.csv")
-            nifty_data[tf].to_csv(out, index=False)
+            df_with_vwap.to_csv(out, index=False)
+
+        # Save Nifty futures CSVs with VWAP
+        if fut_data:
+            for tf in EOD_TIMEFRAMES:
+                if tf in fut_data:
+                    df_with_vwap = _eod_add_vwap(fut_data[tf], target_date)
+                    out = os.path.join(day_dir, f"nifty_fut_{EOD_TF_LABELS[tf]}.csv")
+                    df_with_vwap.to_csv(out, index=False)
+            linfo(f"[EOD DATA] Saved futures CSVs: {[EOD_TF_LABELS[tf] for tf in fut_data]}")
+
         tracker.to_csv(os.path.join(day_dir, "atm_tracker_5m.csv"), index=False)
 
         # Fetch option strikes
@@ -2838,6 +2917,13 @@ def run_eod_data_capture():
                 if all_dfs:
                     combined = pd.concat(all_dfs, ignore_index=True)
                     combined = combined[['tf', 'date', 'open', 'high', 'low', 'close', 'volume']]
+                    # Add VWAP per timeframe group
+                    vwap_parts = []
+                    for tf_label in combined['tf'].unique():
+                        tf_slice = combined[combined['tf'] == tf_label].copy()
+                        tf_slice = _eod_add_vwap(tf_slice, target_date)
+                        vwap_parts.append(tf_slice)
+                    combined = pd.concat(vwap_parts, ignore_index=True)
                     combined.to_csv(os.path.join(side_dir, f"{strike}.csv"), index=False)
                     if side == 'CE':
                         ce_vol_map[strike] = total_vol_5m
@@ -2893,7 +2979,8 @@ def run_eod_data_capture():
                 f"   CE strikes: {len(ce_strikes)} | PE strikes: {len(pe_strikes)}\n"
                 f"   Option fetches: {ok_count} OK / {fail_count} failed / {total_bars:,} bars\n"
                 f"   OI survey: {len(survey_data)} strikes\n"
-                f"   Timeframes: 5m, 15m, 1h ✓ | VWAP data ✓ | Spot data ✓"
+                f"   Futures: {len(fut_data)} TFs ✓ | VWAP (spot+fut+options) ✓\n"
+                f"   Timeframes: 5m, 15m, 1h ✓"
             )
             linfo(f"[EOD DATA] Capture complete. Folder: {day_dir}, {ok_count} OK, {total_bars} bars")
 
