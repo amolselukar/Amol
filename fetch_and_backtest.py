@@ -2,11 +2,13 @@
 ORION V2.5.14 — Backtest VWAP triple confirmation using saved daily_option_data
 Run on PythonAnywhere after auto_login.py refreshes the Kite token.
 
-Reads from: daily_option_data/YYYY-MM-DD/ (saved by Optiondata_1.py)
+Reads from: daily_option_data/YYYY-MM-DD/ (saved by bot's EOD capture)
   - nifty_15m.csv          (Nifty spot 15m)
+  - nifty_fut_15m.csv      (Nifty futures 15m — if saved by updated bot)
   - CE/<strike>.csv        (option data with tf=15m rows)
   - PE/<strike>.csv        (option data with tf=15m rows)
-Fetches ONLY: Nifty futures 15m from Kite (not saved by Optiondata_1.py)
+
+If nifty_fut_15m.csv not found locally, fetches from Kite as fallback.
 
 Compares 3 strategies:
   OLD:  Spot VWAP cross (double confirmation — V2.5.12)
@@ -123,32 +125,56 @@ if not all_days:
     sys.exit(1)
 
 # ═══════════════════════════════════════════════════════════════
-#  STEP 2: Fetch Nifty futures 15m (only thing not saved locally)
+#  STEP 2: Load Nifty futures 15m (local first, Kite fallback)
 # ═══════════════════════════════════════════════════════════════
-print("\n[2/3] Fetching Nifty FUTURES 15m data from Kite...")
+print("\n[2/3] Loading Nifty FUTURES 15m data...")
 
-# Find futures token
-insts = kite.instruments("NFO")
-today = date.today()
-nifty_futs = [i for i in insts if i["name"] == "NIFTY"
-              and i["instrument_type"] == "FUT"
-              and i["expiry"] >= today]
-if not nifty_futs:
-    print("❌ No Nifty FUT found in instruments")
+# Try loading from local saved files first
+fut_local_frames = []
+days_needing_kite = []
+for day_info in all_days:
+    fut_csv = os.path.join(day_info["dir"], "nifty_fut_15m.csv")
+    if os.path.isfile(fut_csv):
+        df_tmp = pd.read_csv(fut_csv)
+        df_tmp['date'] = pd.to_datetime(df_tmp['date'])
+        fut_local_frames.append(df_tmp)
+        print(f"   {day_info['date']} — loaded from local ({len(df_tmp)} bars)")
+    else:
+        days_needing_kite.append(day_info)
+        print(f"   {day_info['date']} — nifty_fut_15m.csv not found, will fetch from Kite")
+
+df_fut = pd.concat(fut_local_frames, ignore_index=True) if fut_local_frames else pd.DataFrame()
+
+# Fetch missing days from Kite
+if days_needing_kite:
+    print(f"   Fetching {len(days_needing_kite)} days from Kite...")
+    insts = kite.instruments("NFO")
+    today = date.today()
+    nifty_futs = [i for i in insts if i["name"] == "NIFTY"
+                  and i["instrument_type"] == "FUT"
+                  and i["expiry"] >= today]
+    if not nifty_futs:
+        print("   ⚠️ No Nifty FUT found — days without local futures data will be skipped")
+    else:
+        fut = sorted(nifty_futs, key=lambda x: x["expiry"])[0]
+        NIFTY_FUT_TOKEN = fut["instrument_token"]
+        print(f"   FUT token: {NIFTY_FUT_TOKEN}, expiry: {fut['expiry']}, sym: {fut['tradingsymbol']}")
+        first_day = days_needing_kite[0]["date"]
+        last_day = days_needing_kite[-1]["date"]
+        frm = datetime.combine(first_day, datetime.min.time())
+        to = datetime.combine(last_day, datetime.max.time())
+        fut_15m = kite.historical_data(NIFTY_FUT_TOKEN, frm, to, "15minute")
+        df_kite_fut = pd.DataFrame(fut_15m)
+        df_kite_fut['date'] = pd.to_datetime(df_kite_fut['date'])
+        df_fut = pd.concat([df_fut, df_kite_fut], ignore_index=True) if len(df_fut) > 0 else df_kite_fut
+        print(f"   ✅ {len(df_kite_fut)} futures bars fetched from Kite")
+
+if len(df_fut) == 0:
+    print("❌ No futures data available (local or Kite)")
     sys.exit(1)
-fut = sorted(nifty_futs, key=lambda x: x["expiry"])[0]
-NIFTY_FUT_TOKEN = fut["instrument_token"]
-print(f"   FUT token: {NIFTY_FUT_TOKEN}, expiry: {fut['expiry']}, sym: {fut['tradingsymbol']}")
 
-# Fetch futures for the full date range
-first_day = all_days[0]["date"]
-last_day = all_days[-1]["date"]
-frm = datetime.combine(first_day, datetime.min.time())
-to = datetime.combine(last_day, datetime.max.time())
-fut_15m = kite.historical_data(NIFTY_FUT_TOKEN, frm, to, "15minute")
-df_fut = pd.DataFrame(fut_15m)
-df_fut['date'] = pd.to_datetime(df_fut['date'])
-print(f"   ✅ {len(df_fut)} futures bars fetched ({first_day} to {last_day})")
+df_fut = df_fut.sort_values('date').reset_index(drop=True)
+print(f"   ✅ Total: {len(df_fut)} futures bars")
 
 # ═══════════════════════════════════════════════════════════════
 #  HELPERS
