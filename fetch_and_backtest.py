@@ -181,9 +181,12 @@ print(f"   ✅ Total: {len(df_fut)} futures bars")
 # ═══════════════════════════════════════════════════════════════
 
 def compute_session_vwap_series(df):
-    """Return running VWAP series for today's bars (cumulative from first bar)."""
+    """Return running VWAP series for today's bars (cumulative from first bar).
+    If volume is all zeros (e.g. Nifty index), falls back to cumulative typical price average."""
     tp = (df['high'] + df['low'] + df['close']) / 3
     vol = df['volume'] if 'volume' in df.columns else pd.Series([1]*len(df), index=df.index)
+    if vol.sum() == 0:
+        return tp.expanding().mean()
     cum_vol = vol.cumsum().replace(0, np.nan)
     return (tp * vol).cumsum() / cum_vol
 
