@@ -587,6 +587,19 @@ V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
       Self-confirming like V3 — no regime gate
   + LOTS_PER_TRADE = 2 (live)
 
+V2.5.13 [VWAP TRAIL EXIT + BOOT SELF-TEST + STABILITY FIXES]
+  + VWAP engine trades: trail exit uses option's own VWAP (15m close < option VWAP)
+    instead of SMA8(low) trail — holds through pullbacks better on VWAP-confirmed moves
+  + V2/V3/FLIP trades: keep original SMA8(low) trail (unchanged)
+  + Boot self-test: BUY (LIMIT ₹0.05) + SELL (LIMIT ₹9999) on deep OTM option at startup
+    Both must succeed and cancel cleanly or bot aborts — confirms mStock connectivity + IP
+  + MStockBroker class inlined into single .py file (no separate mstock_broker.py)
+  + IA403 recovery: rebuilds SDK client from scratch on IP mismatch, 3 consecutive → halt
+  + Position sync cooldown: 180s → 300s (avoids false MANUAL_EXIT on slow fills)
+  + MANUAL_EXIT fix: clears buy_order_id before close_trade to prevent duplicate SELL
+  + State file: added date field, resets trades_today/losses on new day boundary
+  + VWAP dedup log spam removed (silent return on same-bar re-fire)
+
 === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
@@ -604,7 +617,7 @@ V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
 # =========================================================================
 # CONFIG
 # =========================================================================
-VERSION = "V2.5.12"
+VERSION = "V2.5.13"
 MODE    = "LIVE"    # LIVE  -> real orders via mStock API
 
 # ---- Execution broker ----
@@ -2355,19 +2368,29 @@ def check_exits(spot):
             close_trade(f"RATCHET_+{pts}", POS.tr_sl)
             return True
 
-    # 4. SMA8(low) trail - check exactly once per 15m bar close
-    # FIX1: use bar timestamp instead of wall-clock modulo to avoid missing the window
+    # 4. Trail exit — VWAP engine uses option VWAP trail; others use SMA8(low)
     df_opt = fetch_option_15m(POS.token)
     if df_opt is not None and len(df_opt) >= SMA_TRAIL_PERIOD + 1:
         last_bar_ts = df_opt.index[-2] if hasattr(df_opt.index, '__getitem__') else df_opt['date'].iloc[-2] \
                       if 'date' in df_opt.columns else None
         if last_bar_ts is not None and last_bar_ts != POS.sma8_last_bar_ts:
             POS.sma8_last_bar_ts = last_bar_ts
-            sma8L = sma8_low_of_option(df_opt)
             last_closed_15m_c = float(df_opt['close'].iloc[-2])
-            if sma8L is not None and last_closed_15m_c < sma8L:
-                close_trade("SMA8_LOW_TRAIL", cur_ltp)
-                return True
+
+            if POS.engine == "VWAP":
+                # VWAP engine: exit only if option 15m close drops below its own VWAP
+                # This holds through pullbacks as long as the trend is intact
+                opt_vwap = compute_option_vwap(POS.token)
+                if opt_vwap is not None and last_closed_15m_c < opt_vwap:
+                    linfo(f"[VWAP_TRAIL] Option 15m close {last_closed_15m_c:.2f} < VWAP {opt_vwap:.2f} — exiting")
+                    close_trade("VWAP_TRAIL", cur_ltp)
+                    return True
+            else:
+                # Non-VWAP engines: original SMA8(low) trail
+                sma8L = sma8_low_of_option(df_opt)
+                if sma8L is not None and last_closed_15m_c < sma8L:
+                    close_trade("SMA8_LOW_TRAIL", cur_ltp)
+                    return True
 
     return False
 
