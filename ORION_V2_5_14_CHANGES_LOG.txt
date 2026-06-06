@@ -1,0 +1,144 @@
+================================================================================
+ORION TRADING BOT — V2.5.14 COMPLETE CHANGE LOG & FINAL LOGIC
+Date: 2026-06-06
+File: ORION_PAPER_V2_5_14.py
+Branch: claude/cool-babbage-G3e5s
+================================================================================
+
+VERIFIED IN CODE — ALL CHANGES PRESENT AS OF 2026-06-06
+========================================================
+
+1. 7-TIER PROFIT LOCK LADDER (replaces old 3-tier ratchet)
+   Location: Line ~731 (config), Line ~2361 (check_exits)
+   Old: Velvet Rope (+15 arm, SL=entry+2) + Tier2 (+24 → entry+12) + Tier3 (+36 → entry+24)
+   New: PROFIT_LOCK_LADDER = [
+           (50, 40), (40, 30), (36, 24), (30, 20), (24, 12), (18, 8), (12, 2),
+        ]
+   Meaning: If peak reaches entry+50, SL locks at entry+40
+            If peak reaches entry+40, SL locks at entry+30
+            If peak reaches entry+36, SL locks at entry+24
+            If peak reaches entry+30, SL locks at entry+20
+            If peak reaches entry+24, SL locks at entry+12
+            If peak reaches entry+18, SL locks at entry+8
+            If peak reaches entry+12, SL locks at entry+2
+   Logic: Sorted highest-first, first match wins. Only ratchets UP (never down).
+   Source: Inspired by VRL (Vishal Rajput Trade v20) tick-based tiered exits.
+
+2. VWAP TRIPLE CONFIRMATION ENGINE (futures-first)
+   Location: Line ~1908 (check_vwap_signal function)
+   Old: Double confirmation — spot VWAP cross + option VWAP
+   New: TRIPLE confirmation:
+     Gate 1 (PRIMARY): Nifty FUTURES 15m close crosses futures VWAP
+       - Body must be >= 50% of candle range
+       - Bullish: close > futures VWAP and close > open (green candle)
+       - Bearish: close < futures VWAP and close < open (red candle)
+     Gate 2: Nifty SPOT 15m close agrees with direction
+       - Bullish: spot close > spot VWAP
+       - Bearish: spot close < spot VWAP
+     Gate 3: ATM option LTP > option's own VWAP (CE for bull, PE for bear)
+   Rationale: Futures lead spot by 2-30 minutes (confirmed from manual trading).
+
+3. NIFTY FUTURES TOKEN AUTO-RESOLUTION
+   Location: Line ~927 (resolve_expiry_and_strikes)
+   Logic: Fetches NFO instruments, filters name=="NIFTY" + instrument_type=="FUT",
+          picks nearest expiry, returns token. No hardcoded token.
+   Used by: fetch_nifty_fut_15m() at line ~1264, called in main loop at line ~3196.
+
+4. VWAP TRAIL EXIT FOR VWAP ENGINE TRADES
+   Location: Line ~2405 (check_exits)
+   Logic: If trade was entered via VWAP engine:
+     - Exit when option 15m close drops below option's own VWAP
+     - Holds through pullbacks better than SMA8(low) trail
+   Non-VWAP engine trades still use SMA8(low) trail as before.
+
+5. EOD DATA CAPTURE (integrated from Optiondata_1.py)
+   Location: Line ~2570+ (run_eod_data_capture function)
+   Trigger: Automatically runs after 3:30 PM when trading stops
+   Collects into daily_option_data/YYYY-MM-DD/:
+     - nifty_5m.csv, nifty_15m.csv, nifty_1h.csv (spot with VWAP column)
+     - nifty_fut_5m.csv, nifty_fut_15m.csv, nifty_fut_1h.csv (futures with VWAP)
+     - CE/<strike>.csv, PE/<strike>.csv (options with VWAP per timeframe)
+     - atm_tracker_5m.csv (ATM tracking every 5 min)
+     - _oi_survey.json (OI for ATM +/- 600 pts)
+     - _meta.json (session metadata)
+   Validation: Checks all timeframes present, VWAP columns exist, futures files exist
+   Telegram: Sends start/completion messages with folder path and stats
+   Weekend: Skips Saturday/Sunday
+
+6. HARDSL TIGHTENED (from V2.5.12, carried forward)
+   -25% → -18% (HARDSL_PCT = 0.18)
+
+7. V3 REGIME GATE REMOVED (from V2.5.12-LIVE, carried forward)
+   V3 cluster engine fires in ALL regimes (CHOP, INSUFFICIENT, etc.)
+   V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
+
+8. mSTOCK EXECUTION (from V2.5.12-LIVE, carried forward)
+   - Boot self-test: BUY (LIMIT Rs 0.05) + SELL (LIMIT Rs 9999) on deep OTM, cancel both
+   - IA403 recovery: rebuilds SDK client on IP mismatch
+   - Position sync: 300s cooldown after entry
+
+================================================================================
+EXISTING FINAL LOGIC SUMMARY (V2.5.14 — as of 2026-06-06)
+================================================================================
+
+ENTRY ENGINES (4 engines, checked in order):
+  1. FLIP: StochRSI K crosses in opposite direction within same session
+     - Requires BULL/BEAR/TRANSITION regime
+  2. V2 (StochRSI): Full SMA alignment + K extreme + RSI directional + MACD
+     - CE: close>SMA20>SMA50, K>=38 rising, K was <25 recently, RSI>53, MACD bull
+     - PE: close<SMA20<SMA50, K<=80 falling, K was >75 recently, RSI<47, MACD bear
+     - Requires BULL/BEAR/TRANSITION regime
+  3. V3 (Cluster): Break/reject of Grade A/B price clusters
+     - No regime gate — self-confirming via cluster strength
+  4. VWAP (Triple): Futures VWAP (primary) + Spot VWAP + Option VWAP
+     - No regime gate — self-confirming via triple VWAP agreement
+
+EXIT LOGIC (checked every tick in order):
+  1. EOD_FORCE_CLOSE: after 15:25 IST
+  2. HARDSL: LTP drops to entry * (1 - 0.18) = -18%
+  3. PROFIT_LOCK_LADDER: 7-tier peak-based lock (see above)
+  4. TRAIL EXIT:
+     - VWAP engine trades: option 15m close < option VWAP → exit
+     - Other engines: option 15m close < SMA8(low) → exit
+
+RISK MANAGEMENT:
+  - Circuit Breaker: 3 consecutive losses → halt trading
+  - Premium gate: 30 <= LTP <= 180 (CE), 30 <= LTP <= 300 (PE)
+  - Gap suppression: >1.5% gap → suppress entries until configured time
+  - LOTS_PER_TRADE: 2 (130 qty for Nifty weekly)
+
+INFORMATIONAL (no trade gate):
+  - Straddle monitoring: 9:45 AM and 11:30 AM Telegram alerts
+  - Options VWAP: shown at entry/pulse/exit messages
+  - OI Plan: loaded from next_day_plan.json at boot, injected into V3
+
+POST-MARKET (automatic after 3:30 PM):
+  - Stops trading, sends Telegram notification
+  - Collects Nifty spot + futures + options data with VWAP (all 3 TFs)
+  - Validates completeness, sends confirmation, shuts down
+
+================================================================================
+VERSION PROGRESSION (backtest results on 18-month Nifty data)
+================================================================================
+V2.5.8:  baseline (K extreme + full SMA alignment)
+V2.5.9:  Rs 6,70,425 / WR 66.9% / 357 trades / MaxDD -1,485 / Red 8/18
+V2.5.12: Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 / Red 5/18
+V2.5.14: Tiered ladder + futures VWAP triple — pending backtest with real data
+
+================================================================================
+REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE)
+================================================================================
+SKIP_HOUR_13         : -Rs 46k
+SKIP_TUESDAYS        : calendar-overfit
+ADX<20 filter        : -Rs 16k
+ADX<25 filter        : -Rs 34k
+BE armor at +15%     : net negative
+Same-side flip       : -Rs 191k CATASTROPHIC
+REVERSAL_FLIP=True   : WR 12% vs 33%
+K cap on CE          : hurts WR
+V2.5.10 macro SMA50  : -Rs 2.3L
+V2.5.11 straddle halt: halting removed profitable trades
+
+================================================================================
+END OF DOCUMENT
+================================================================================
