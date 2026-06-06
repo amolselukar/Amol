@@ -600,6 +600,13 @@ V2.5.13 [VWAP TRAIL EXIT + BOOT SELF-TEST + STABILITY FIXES]
   + State file: added date field, resets trades_today/losses on new day boundary
   + VWAP dedup log spam removed (silent return on same-bar re-fire)
 
+V2.5.14 [TIERED PROFIT LOCK LADDER — inspired by VRL]
+  + Replaced sparse 3-tier ratchet (Velvet Rope + T2 + T3 + Runner) with 7-tier ladder
+  + Ladder: +12→+2, +18→+8, +24→+12, +30→+20, +36→+24, +40→+30, +50→+40
+  + More tiers = less profit give-back on sharp reversals
+  + Checked every tick (not candle-based) — same as before but tighter protection
+  + Unified code: single loop replaces 3 separate sections (3a/3b/3c → 3)
+
 === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
@@ -617,7 +624,7 @@ V2.5.13 [VWAP TRAIL EXIT + BOOT SELF-TEST + STABILITY FIXES]
 # =========================================================================
 # CONFIG
 # =========================================================================
-VERSION = "V2.5.13"
+VERSION = "V2.5.14"
 MODE    = "LIVE"    # LIVE  -> real orders via mStock API
 
 # ---- Execution broker ----
@@ -710,11 +717,19 @@ HARDSL_PCT            = 0.18    # V2.5.12: tightened -25% → -18% (VRL-inspired
 SMA_TRAIL_PERIOD      = 8       # SMA(8, low) on option 15m
 # V2.5.12 exit params: peak-based ladder, no time gate (18-month BT: ₹+6,88,158 WR 64.5% MaxDD -1119)
 RATCHET_INITIAL_PTS   = 12      # Velvet Rope: peak >= entry+12 → sl = entry+2
-RATCHET_TIER2_PEAK    = 24      # peak >= entry+24 → sl = entry+12 (immediate, was: wait 20min)
-RATCHET_TIER2_SL      = 12
-RATCHET_TIER3_PEAK    = 36      # peak >= entry+36 → sl = entry+24
-RATCHET_TIER3_SL      = 24
-RATCHET_STEP_PTS      = 25      # runner trail: +25pts peak → sl +25pts (unchanged)
+# V2.5.14 TIERED PROFIT LOCK LADDER (inspired by VRL)
+# Each tuple: (peak_threshold_pts, lock_pts) — checked highest-first
+# When peak hits threshold, SL locks at entry + lock_pts
+# Tighter tiers prevent profit give-back on sharp reversals
+PROFIT_LOCK_LADDER = [
+    (50, 40),    # peak +50 → lock +40 (was runner +25 step)
+    (40, 30),    # peak +40 → lock +30
+    (36, 24),    # peak +36 → lock +24 (same as old Tier3)
+    (30, 20),    # peak +30 → lock +20 (NEW — fills gap between T2/T3)
+    (24, 12),    # peak +24 → lock +12 (same as old Tier2)
+    (18, 8),     # peak +18 → lock +8 (NEW — protects early gains)
+    (12, 2),     # peak +12 → lock +2 (Velvet Rope, unchanged)
+]
 CIRCUIT_BREAKER       = 3       # daily NON-FLIP losses before halt (was 4)
 FORCE_CLOSE_HOUR      = 15
 FORCE_CLOSE_MIN       = 25
@@ -1500,10 +1515,7 @@ def fmt_boot(target_expiry, levels):
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🛡 <b>EXIT PARAMS</b>\n"
         f"   🛑 HARDSL: <b>-{int(HARDSL_PCT*100)}%</b> on premium\n"
-        f"   🎯 Velvet Rope: entry+{RATCHET_INITIAL_PTS} hit → SL to entry+2\n"
-        f"   🔒 Ladder Tier2: peak entry+{RATCHET_TIER2_PEAK} → SL entry+{RATCHET_TIER2_SL} (immediate)\n"
-        f"   🔒 Ladder Tier3: peak entry+{RATCHET_TIER3_PEAK} → SL entry+{RATCHET_TIER3_SL} (immediate)\n"
-        f"   📈 Runner Trail: +{RATCHET_STEP_PTS}pts peak → SL +{RATCHET_STEP_PTS}pts\n"
+        f"   🔒 Profit Lock Ladder: {' | '.join(f'+{p}→+{l}' for p,l in PROFIT_LOCK_LADDER)}\n"
         f"   📉 SMA Trail: 15m option SMA({SMA_TRAIL_PERIOD}, low)\n"
         f"   ⛔ Force close: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
@@ -1549,12 +1561,9 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
         # Ratchet / Velvet Rope status
         if POS.tr_armed:
             sl_offset = POS.tr_sl - POS.entry_premium
-            if sl_offset <= 2:
-                tr_str = f"🎯 <b>Velvet Rope</b> @ SL=<code>{POS.tr_sl:.2f}</code> (entry+2, ladder arms at peak+{RATCHET_TIER2_PEAK})"
-            else:
-                tr_str = f"<b>RATCHET ARMED</b> @ SL=<code>{POS.tr_sl:.2f}</code> (+{sl_offset:.0f}pts)"
+            tr_str = f"<b>LOCK +{sl_offset:.0f}</b> @ SL=<code>{POS.tr_sl:.2f}</code>"
         else:
-            tr_str = f"watching (velvet rope arms at entry+{RATCHET_INITIAL_PTS} = <code>{POS.entry_premium+RATCHET_INITIAL_PTS:.2f}</code>)"
+            tr_str = f"watching (lock arms at entry+{RATCHET_INITIAL_PTS} = <code>{POS.entry_premium+RATCHET_INITIAL_PTS:.2f}</code>)"
         active_sl = max(POS.hardsl_premium, POS.tr_sl if POS.tr_armed else 0)
         cur_vwap = compute_option_vwap(POS.token)
         vwap_pulse = ""
@@ -1626,13 +1635,10 @@ def fmt_entry():
         f"🎯 <b>Target</b> (declared): {declared_str}\n"
         f"🛑 <b>HARDSL</b>: <code>{POS.hardsl_premium:.2f}</code>  (-{int(HARDSL_PCT*100)}%)\n"
         f"📉 <b>Trail</b>: 15m close &lt; SMA({SMA_TRAIL_PERIOD}, low)\n"
-        f"🎯 <b>Velvet Rope</b>: SL → entry+2 when peak hits entry+{RATCHET_INITIAL_PTS}\n"
-        f"🔒 <b>Ladder T2</b>: peak entry+{RATCHET_TIER2_PEAK} → SL entry+{RATCHET_TIER2_SL} (immediate)\n"
-        f"🔒 <b>Ladder T3</b>: peak entry+{RATCHET_TIER3_PEAK} → SL entry+{RATCHET_TIER3_SL} (immediate)\n"
-        f"📈 <b>Runner Trail</b>: SL ratchets +{RATCHET_STEP_PTS}pts per +{RATCHET_STEP_PTS}pts peak\n"
+        f"🔒 <b>Profit Lock</b>: {' | '.join(f'+{p}→+{l}' for p,l in PROFIT_LOCK_LADDER)}\n"
         f"⛔ <b>Force close</b>: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<i>Actual exit driven by HARDSL / Velvet Rope / Ratchet / Trail / Flip-rule.</i>"
+        f"<i>Actual exit driven by HARDSL / Profit Lock / Trail / Flip-rule.</i>"
     )
 
 def fmt_exit(reason, exit_price, pnl_per_share):
@@ -2313,60 +2319,40 @@ def check_exits(spot):
 
     elapsed = POS.elapsed_min()
 
-    # 3a. VELVET ROPE — immediate capital protection
-    # As soon as premium touches entry+15, lock SL at entry+2 (near break-even).
-    # This prevents winning trades from surrendering back to the -25% HARDSL.
-    if (not POS.tr_armed) and POS.peak_premium >= POS.entry_premium + RATCHET_INITIAL_PTS:
-        POS.tr_armed = True
-        POS.tr_sl    = POS.entry_premium + 2
-        TG.send(f"🎯🔒 <b>Velvet Rope ARMED</b> · {POS.side}\n"
-                f"   Premium hit entry+{RATCHET_INITIAL_PTS} → SL locked at entry+2\n"
-                f"   SL = <code>{POS.tr_sl:.2f}</code>  |  Peak: <code>{POS.peak_premium:.2f}</code>")
-        save_state()
-        if cur_ltp <= POS.tr_sl:
-            close_trade("VELVET_ROPE_BE_SCRATCH", POS.tr_sl)
-            return True
+    # 3. TIERED PROFIT LOCK LADDER (V2.5.14)
+    # Scans PROFIT_LOCK_LADDER top-down to find highest tier reached by peak.
+    # Arms on first tier hit, then only ratchets UP (never down).
+    # Checked every tick — no candle dependency.
+    ep = POS.entry_premium
+    pk = POS.peak_premium
+    best_lock = None
+    best_peak_thresh = 0
+    for peak_thresh, lock_pts in PROFIT_LOCK_LADDER:
+        if pk >= ep + peak_thresh:
+            best_lock = ep + lock_pts
+            best_peak_thresh = peak_thresh
+            break  # ladder is sorted highest-first, first match is best
 
-    # 3b. PEAK-BASED LADDER (V2.5.12 — no time gate, purely peak-driven)
-    # Tier 2: peak hits entry+24 → sl immediately jumps to entry+12
-    # Tier 3: peak hits entry+36 → sl immediately jumps to entry+24
-    if POS.tr_armed:
-        ep = POS.entry_premium
-        pk = POS.peak_premium
-        new_sl = POS.tr_sl
-        if pk >= ep + RATCHET_TIER3_PEAK and new_sl < ep + RATCHET_TIER3_SL:
-            new_sl = ep + RATCHET_TIER3_SL
-        elif pk >= ep + RATCHET_TIER2_PEAK and new_sl < ep + RATCHET_TIER2_SL:
-            new_sl = ep + RATCHET_TIER2_SL
-        if new_sl > POS.tr_sl:
+    if best_lock is not None:
+        if not POS.tr_armed:
+            POS.tr_armed = True
+            POS.tr_sl = best_lock
+            TG.send(f"🔒 <b>Profit Lock ARMED</b> · {POS.side}\n"
+                    f"   Peak +{int(pk-ep)}pts → SL locked at entry+{int(best_lock-ep)}\n"
+                    f"   SL = <code>{POS.tr_sl:.2f}</code>  |  Peak: <code>{pk:.2f}</code>")
+            save_state()
+        elif best_lock > POS.tr_sl:
             old_sl = POS.tr_sl
-            POS.tr_sl = new_sl
-            tier = 3 if pk >= ep + RATCHET_TIER3_PEAK else 2
-            TG.send(f"🔒📈 <b>Ladder Tier {tier} LOCKED</b> on {POS.side}\n"
-                    f"   Peak: <code>{pk:.2f}</code> (+{pk-ep:.0f}pts)\n"
+            POS.tr_sl = best_lock
+            TG.send(f"🔒📈 <b>Lock Tier UP</b> on {POS.side}\n"
+                    f"   Peak: <code>{pk:.2f}</code> (+{int(pk-ep)}pts)\n"
                     f"   SL: <code>{old_sl:.2f}</code> → <code>{POS.tr_sl:.2f}</code> (+{int(POS.tr_sl-ep)}pts)")
             save_state()
-            if cur_ltp <= POS.tr_sl:
-                pts = int(POS.tr_sl - ep)
-                close_trade(f"LADDER_TIER{tier}_+{pts}", POS.tr_sl)
-                return True
 
-    # 3c. RUNNER STEP SCALE TRAIL — ratchet SL up every +25pts of peak
-    if POS.tr_armed:
-        new_sl = POS.tr_sl
-        while POS.peak_premium >= new_sl + RATCHET_STEP_PTS:
-            new_sl += RATCHET_STEP_PTS
-        if new_sl > POS.tr_sl:
-            old_sl = POS.tr_sl
-            POS.tr_sl = new_sl
-            TG.send(f"⏱️📈 <b>Ratchet stepped up</b> on {POS.side}\n"
-                    f"   SL: <code>{old_sl:.2f}</code> → <code>{POS.tr_sl:.2f}</code> (+{int(POS.tr_sl-POS.entry_premium)}pts)\n"
-                    f"   Peak: <code>{POS.peak_premium:.2f}</code>")
-            save_state()
-        if cur_ltp <= POS.tr_sl:
-            pts = int(POS.tr_sl - POS.entry_premium)
-            close_trade(f"RATCHET_+{pts}", POS.tr_sl)
-            return True
+    if POS.tr_armed and cur_ltp <= POS.tr_sl:
+        pts = int(POS.tr_sl - ep)
+        close_trade(f"PROFIT_LOCK_+{pts}", POS.tr_sl)
+        return True
 
     # 4. Trail exit — VWAP engine uses option VWAP trail; others use SMA8(low)
     df_opt = fetch_option_15m(POS.token)
