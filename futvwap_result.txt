@@ -1,0 +1,347 @@
+
+========================================================================
+  ORION FUTVWAP BACKTEST — ENTRY: Nifty Futures 15m VWAP + Limit -₹13
+  Exit: V2.5.12 | Lots: 2 × 65 = 130 qty
+  Data dates found : 14 (2026-05-04 → 2026-05-25)
+  Data dates loaded: 14
+========================================================================
+
+  OVERALL SUMMARY
+  ──────────────────────────────────────────────────
+  Total trades : 28  (W:26  L:2)
+  Win rate     : 92.9%
+  Total PnL    : +51.0 pts  |  ₹+6,629
+  Avg win      : +2.8 pts
+  Avg loss     : -11.5 pts
+
+  BY EXIT REASON:
+    VELVET_ROPE          n= 25  pnl=+50.0 pts
+    RATCHET_+24          n=  1  pnl=+24.0 pts
+    HARDSL_-18pct        n=  2  pnl=-23.0 pts
+
+  BY DAY:
+  DATE            #    PNL_PTS       PNL_RS     WR%
+  ───────────────────────────────────────────────────────
+  ✅ 2026-05-04    5      +10.0  ₹    +1,300   100.0%
+  ❌ 2026-05-05    2       -1.3  ₹      -166    50.0%
+  ✅ 2026-05-07    4       +8.0  ₹    +1,040   100.0%
+  ✅ 2026-05-08    2       +4.0  ₹      +520   100.0%
+  ✅ 2026-05-11    3       +6.3  ₹      +815    66.7%
+  ✅ 2026-05-13    2       +4.0  ₹      +520   100.0%
+  ✅ 2026-05-14    2       +4.0  ₹      +520   100.0%
+  ✅ 2026-05-15    3       +6.0  ₹      +780   100.0%
+  ✅ 2026-05-18    1       +2.0  ₹      +260   100.0%
+  ✅ 2026-05-20    1       +2.0  ₹      +260   100.0%
+  ✅ 2026-05-21    3       +6.0  ₹      +780   100.0%
+
+  TRADE-BY-TRADE:
+  DATE          TIME  FILL  EXIT    S     STK      REF      LMT    ENTRY   EXIT_P      PTS         Rs  REASON
+  ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ✅ 2026-05-04 09:45 09:50 09:50   CE   24250   150.30   137.30   137.30   139.30    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-04 10:00 10:05 10:05   PE   24200    93.50    80.50    80.50    82.50    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-04 10:15 10:25 10:25   PE   24200   121.40   108.40   108.40   110.40    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-04 12:30 12:35 12:35   PE   24100   107.85    94.85    94.85    96.85    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-04 13:30 13:35 13:35   PE   24100   155.60   142.60   142.60   144.60    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-05 12:00 12:05 12:05   PE   23950    68.90    55.90    55.90    57.90    +2.00  ₹    +260  VELVET_ROPE
+  ❌ 2026-05-05 14:45 14:50 14:50   CE   24000    31.20    18.20    18.20    14.92    -3.28  ₹    -426  HARDSL_-18pct
+  ✅ 2026-05-07 09:45 10:00 10:00   PE   24350   170.45   157.45   157.45   159.45    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-07 11:45 11:50 11:50   PE   24350   196.45   183.45   183.45   185.45    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-07 12:45 12:50 12:50   CE   24400   210.45   197.45   197.45   199.45    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-07 14:45 14:55 15:05   PE   24350   173.60   160.60   160.60   162.60    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-08 10:00 10:10 10:10   CE   24200   172.45   159.45   159.45   161.45    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-08 13:15 13:25 13:50   PE   24200   167.60   154.60   154.60   156.60    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-11 10:45 10:50 10:50   PE   23900   129.60   116.60   116.60   118.60    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-11 12:45 13:00 13:35   CE   23950   113.35   100.35   100.35   124.35   +24.00  ₹  +3,120  RATCHET_+24
+  ❌ 2026-05-11 14:00 14:10 14:40   CE   23950   122.60   109.60   109.60    89.87   -19.73  ₹  -2,565  HARDSL_-18pct
+  ✅ 2026-05-13 12:30 12:35 12:35   CE   23450   263.10   250.10   250.10   252.10    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-13 13:00 13:05 13:05   CE   23550   247.40   234.40   234.40   236.40    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-14 13:00 13:05 13:05   CE   23700   226.40   213.40   213.40   215.40    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-14 14:30 14:35 14:35   CE   23750   190.05   177.05   177.05   179.05    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-15 10:00 10:05 10:05   CE   23800   180.15   167.15   167.15   169.15    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-15 11:45 12:00 12:00   PE   23750   181.70   168.70   168.70   170.70    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-15 13:45 13:55 13:55   PE   23700   162.10   149.10   149.10   151.10    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-18 11:30 11:45 11:45   CE   23550   110.65    97.65    97.65    99.65    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-20 13:15 13:25 13:25   CE   23550   226.10   213.10   213.10   215.10    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-21 09:45 09:50 09:50   PE   23750   164.05   151.05   151.05   153.05    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-21 13:30 13:35 13:35   PE   23700   210.15   197.15   197.15   199.15    +2.00  ₹    +260  VELVET_ROPE
+  ✅ 2026-05-21 14:45 14:50 14:50   PE   23700   198.35   185.35   185.35   187.35    +2.00  ₹    +260  VELVET_ROPE
+
+  SIGNALS SKIPPED / DATA GAPS:
+  2026-05-04 09:30: body=46% ≤ 50% — skip
+  2026-05-04 10:30: body=32% ≤ 50% — skip
+  2026-05-04 10:45: body=50% ≤ 50% — skip
+  2026-05-04 11:00: CE 24250 limit=99.35 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-04 11:15: body=49% ≤ 50% — skip
+  2026-05-04 11:30: body=30% ≤ 50% — skip
+  2026-05-04 11:45: body=45% ≤ 50% — skip
+  2026-05-04 12:00: PE 24100 limit=42.70 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-04 12:15: body=26% ≤ 50% — skip
+  2026-05-04 12:45: body=11% ≤ 50% — skip
+  2026-05-04 13:00: body=13% ≤ 50% — skip
+  2026-05-04 13:15: PE 24000 limit=52.20 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-04 13:45: body=12% ≤ 50% — skip
+  2026-05-04 14:00: body=43% ≤ 50% — skip
+  2026-05-04 14:15: body=27% ≤ 50% — skip
+  2026-05-04 14:30: body=25% ≤ 50% — skip
+  2026-05-04 14:45: body=15% ≤ 50% — skip
+  2026-05-05 09:30: body=44% ≤ 50% — skip
+  2026-05-05 09:45: body=21% ≤ 50% — skip
+  2026-05-05 10:00: PE 24000 limit=37.60 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-05 10:15: PE 23950 limit=22.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-05 10:30: body=46% ≤ 50% — skip
+  2026-05-05 10:45: PE 23950 limit=39.55 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-05 11:00: PE 23950 limit=31.45 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-05 11:15: body=23% ≤ 50% — skip
+  2026-05-05 11:30: body=26% ≤ 50% — skip
+  2026-05-05 11:45: PE 23900 limit=27.20 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-05 12:15: body=3% ≤ 50% — skip
+  2026-05-05 12:30: body=42% ≤ 50% — skip
+  2026-05-05 12:45: CE 24000 limit=18.90 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-05 13:00: CE 24050 ref_price=27.5 outside gate [30,300] — skip
+  2026-05-05 13:15: body=43% ≤ 50% — skip
+  2026-05-05 13:30: body=45% ≤ 50% — skip
+  2026-05-05 13:45: body=14% ≤ 50% — skip
+  2026-05-05 14:00: body=33% ≤ 50% — skip
+  2026-05-05 14:15: CE 24050 ref_price=22.8 outside gate [30,300] — skip
+  2026-05-05 14:30: CE 24050 ref_price=13.8 outside gate [30,300] — skip
+  2026-05-07 09:30: CE 24400 limit=155.40 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-07 10:15: CE 24350 limit=171.95 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-07 10:30: body=26% ≤ 50% — skip
+  2026-05-07 10:45: PE 24350 limit=154.05 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-07 11:00: PE 24300 limit=142.05 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-07 11:15: body=9% ≤ 50% — skip
+  2026-05-07 11:30: body=37% ≤ 50% — skip
+  2026-05-07 12:00: CE 24350 limit=173.25 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-07 12:15: body=24% ≤ 50% — skip
+  2026-05-07 12:30: CE 24450 limit=123.85 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-07 13:00: body=2% ≤ 50% — skip
+  2026-05-07 13:15: body=45% ≤ 50% — skip
+  2026-05-07 13:30: body=6% ≤ 50% — skip
+  2026-05-07 13:45: body=33% ≤ 50% — skip
+  2026-05-07 14:00: body=6% ≤ 50% — skip
+  2026-05-07 14:15: body=14% ≤ 50% — skip
+  2026-05-07 14:30: PE 24350 limit=148.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 09:30: PE 24150 limit=119.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 09:45: body=41% ≤ 50% — skip
+  2026-05-08 10:15: body=32% ≤ 50% — skip
+  2026-05-08 10:30: body=11% ≤ 50% — skip
+  2026-05-08 10:45: PE 24200 limit=128.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 11:00: CE 24250 limit=144.25 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 11:15: PE 24200 limit=133.80 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 11:30: body=38% ≤ 50% — skip
+  2026-05-08 11:45: body=18% ≤ 50% — skip
+  2026-05-08 12:00: PE 24200 limit=134.70 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 12:15: PE 24200 limit=142.45 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 12:30: PE 24150 limit=124.45 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 12:45: body=0% ≤ 50% — skip
+  2026-05-08 13:00: body=45% ≤ 50% — skip
+  2026-05-08 14:00: body=17% ≤ 50% — skip
+  2026-05-08 14:15: body=30% ≤ 50% — skip
+  2026-05-08 14:30: CE 24250 limit=123.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-08 14:45: body=29% ≤ 50% — skip
+  2026-05-11 09:30: PE 23850 limit=72.95 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-11 09:45: body=23% ≤ 50% — skip
+  2026-05-11 10:00: body=48% ≤ 50% — skip
+  2026-05-11 10:15: body=45% ≤ 50% — skip
+  2026-05-11 10:30: PE 23850 limit=86.55 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-11 11:00: body=48% ≤ 50% — skip
+  2026-05-11 11:15: CE 23950 limit=96.90 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-11 11:30: body=38% ≤ 50% — skip
+  2026-05-11 11:45: body=49% ≤ 50% — skip
+  2026-05-11 12:00: body=29% ≤ 50% — skip
+  2026-05-11 12:15: body=6% ≤ 50% — skip
+  2026-05-11 12:30: body=40% ≤ 50% — skip
+  2026-05-11 13:45: body=15% ≤ 50% — skip
+  2026-05-11 14:45: PE 23900 limit=82.50 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-12 09:30: body=41% ≤ 50% — skip
+  2026-05-12 09:45: PE 23650 limit=51.10 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-12 10:00: body=39% ≤ 50% — skip
+  2026-05-12 10:15: PE 23600 ref_price=27.1 outside gate [30,300] — skip
+  2026-05-12 10:30: body=35% ≤ 50% — skip
+  2026-05-12 10:45: body=12% ≤ 50% — skip
+  2026-05-12 11:00: PE 23600 limit=37.45 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-12 11:15: body=14% ≤ 50% — skip
+  2026-05-12 11:30: body=38% ≤ 50% — skip
+  2026-05-12 11:45: body=30% ≤ 50% — skip
+  2026-05-12 12:00: PE 23550 ref_price=28.4 outside gate [30,300] — skip
+  2026-05-12 12:15: body=2% ≤ 50% — skip
+  2026-05-12 12:30: PE 23550 limit=45.20 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-12 12:45: body=34% ≤ 50% — skip
+  2026-05-12 13:00: PE 23550 limit=33.50 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-12 13:15: body=15% ≤ 50% — skip
+  2026-05-12 13:30: PE 23500 ref_price=23.4 outside gate [30,300] — skip
+  2026-05-12 13:45: body=32% ≤ 50% — skip
+  2026-05-12 14:00: PE 23450 ref_price=13.4 outside gate [30,300] — skip
+  2026-05-12 14:15: body=16% ≤ 50% — skip
+  2026-05-12 14:30: body=4% ≤ 50% — skip
+  2026-05-12 14:45: PE 23400 ref_price=2.5 outside gate [30,300] — skip
+  2026-05-13 09:30: body=42% ≤ 50% — skip
+  2026-05-13 09:45: CE 23350 limit=225.35 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 10:00: body=26% ≤ 50% — skip
+  2026-05-13 10:15: CE 23450 limit=234.55 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 10:30: body=16% ≤ 50% — skip
+  2026-05-13 10:45: PE 23350 limit=163.25 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 11:00: body=36% ≤ 50% — skip
+  2026-05-13 11:15: body=30% ≤ 50% — skip
+  2026-05-13 11:30: CE 23500 limit=191.60 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 11:45: body=47% ≤ 50% — skip
+  2026-05-13 12:00: CE 23500 limit=225.70 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 12:15: body=15% ≤ 50% — skip
+  2026-05-13 12:45: CE 23600 limit=164.85 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 13:15: CE 23500 limit=229.60 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 13:30: body=47% ≤ 50% — skip
+  2026-05-13 13:45: body=29% ≤ 50% — skip
+  2026-05-13 14:00: CE 23500 limit=219.15 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 14:15: CE 23500 limit=215.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-13 14:30: body=34% ≤ 50% — skip
+  2026-05-13 14:45: body=13% ≤ 50% — skip
+  2026-05-14 09:30: no option data for ATM 23500 PE — skip
+  2026-05-14 09:45: no option data for ATM 23450 PE — skip
+  2026-05-14 10:00: no option data for ATM 23500 PE — skip
+  2026-05-14 10:15: body=34% ≤ 50% — skip
+  2026-05-14 10:30: body=33% ≤ 50% — skip
+  2026-05-14 10:45: no option data for ATM 23450 PE — skip
+  2026-05-14 11:00: body=46% ≤ 50% — skip
+  2026-05-14 11:15: CE 23550 limit=155.95 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-14 11:30: CE 23650 limit=156.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-14 11:45: body=9% ≤ 50% — skip
+  2026-05-14 12:00: body=20% ≤ 50% — skip
+  2026-05-14 12:15: CE 23700 limit=173.80 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-14 12:30: body=6% ≤ 50% — skip
+  2026-05-14 12:45: body=4% ≤ 50% — skip
+  2026-05-14 13:15: CE 23700 limit=191.70 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-14 13:30: CE 23750 limit=174.80 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-14 13:45: body=12% ≤ 50% — skip
+  2026-05-14 14:00: body=33% ≤ 50% — skip
+  2026-05-14 14:15: body=42% ≤ 50% — skip
+  2026-05-14 14:45: body=28% ≤ 50% — skip
+  2026-05-15 09:30: body=28% ≤ 50% — skip
+  2026-05-15 09:45: body=33% ≤ 50% — skip
+  2026-05-15 10:15: body=35% ≤ 50% — skip
+  2026-05-15 10:30: body=30% ≤ 50% — skip
+  2026-05-15 10:45: body=46% ≤ 50% — skip
+  2026-05-15 11:00: PE 23750 limit=142.40 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 11:15: PE 23700 limit=142.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 11:30: body=34% ≤ 50% — skip
+  2026-05-15 12:15: PE 23700 limit=133.15 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 12:30: CE 23750 limit=139.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 12:45: CE 23800 limit=135.40 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 13:00: body=1% ≤ 50% — skip
+  2026-05-15 13:15: body=8% ≤ 50% — skip
+  2026-05-15 13:30: PE 23750 limit=140.50 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 14:00: body=16% ≤ 50% — skip
+  2026-05-15 14:15: PE 23700 limit=142.25 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-15 14:30: body=46% ≤ 50% — skip
+  2026-05-15 14:45: body=44% ≤ 50% — skip
+  2026-05-18 09:30: body=8% ≤ 50% — skip
+  2026-05-18 09:45: PE 23350 limit=117.80 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-18 10:00: body=46% ≤ 50% — skip
+  2026-05-18 10:15: body=26% ≤ 50% — skip
+  2026-05-18 10:30: body=29% ≤ 50% — skip
+  2026-05-18 10:45: CE 23450 limit=84.50 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-18 11:00: body=15% ≤ 50% — skip
+  2026-05-18 11:15: body=38% ≤ 50% — skip
+  2026-05-18 12:00: CE 23500 limit=89.55 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-18 12:15: CE 23550 limit=95.50 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-18 12:30: body=34% ≤ 50% — skip
+  2026-05-18 12:45: CE 23650 limit=71.35 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-18 13:00: body=38% ≤ 50% — skip
+  2026-05-18 13:15: body=29% ≤ 50% — skip
+  2026-05-18 13:30: body=4% ≤ 50% — skip
+  2026-05-18 13:45: body=38% ≤ 50% — skip
+  2026-05-18 14:00: body=50% ≤ 50% — skip
+  2026-05-18 14:15: body=24% ≤ 50% — skip
+  2026-05-18 14:30: body=12% ≤ 50% — skip
+  2026-05-18 14:45: CE 23600 limit=85.70 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 09:30: CE 23500 limit=217.90 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 09:45: body=37% ≤ 50% — skip
+  2026-05-20 10:00: body=38% ≤ 50% — skip
+  2026-05-20 10:15: body=34% ≤ 50% — skip
+  2026-05-20 10:30: body=29% ≤ 50% — skip
+  2026-05-20 10:45: body=0% ≤ 50% — skip
+  2026-05-20 11:00: body=39% ≤ 50% — skip
+  2026-05-20 11:15: CE 23600 limit=179.05 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 11:30: body=23% ≤ 50% — skip
+  2026-05-20 11:45: body=10% ≤ 50% — skip
+  2026-05-20 12:00: CE 23600 limit=197.65 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 12:15: CE 23600 limit=193.80 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 12:30: body=28% ≤ 50% — skip
+  2026-05-20 12:45: body=35% ≤ 50% — skip
+  2026-05-20 13:00: body=33% ≤ 50% — skip
+  2026-05-20 13:30: CE 23600 limit=193.40 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 13:45: CE 23650 limit=167.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 14:00: body=49% ≤ 50% — skip
+  2026-05-20 14:15: body=17% ≤ 50% — skip
+  2026-05-20 14:30: CE 23700 limit=172.60 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-20 14:45: body=9% ≤ 50% — skip
+  2026-05-21 09:30: CE 23800 limit=141.75 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 10:00: body=1% ≤ 50% — skip
+  2026-05-21 10:15: CE 23800 limit=147.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 10:30: body=28% ≤ 50% — skip
+  2026-05-21 10:45: PE 23700 limit=144.25 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 11:00: PE 23700 limit=164.15 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 11:15: body=43% ≤ 50% — skip
+  2026-05-21 11:30: PE 23750 limit=176.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 11:45: body=32% ≤ 50% — skip
+  2026-05-21 12:00: body=29% ≤ 50% — skip
+  2026-05-21 12:15: PE 23650 limit=144.90 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 12:30: body=47% ≤ 50% — skip
+  2026-05-21 12:45: body=10% ≤ 50% — skip
+  2026-05-21 13:00: body=16% ≤ 50% — skip
+  2026-05-21 13:15: body=43% ≤ 50% — skip
+  2026-05-21 13:45: body=20% ≤ 50% — skip
+  2026-05-21 14:00: PE 23650 limit=166.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-21 14:15: body=2% ≤ 50% — skip
+  2026-05-21 14:30: body=47% ≤ 50% — skip
+  2026-05-22 09:30: body=42% ≤ 50% — skip
+  2026-05-22 09:45: body=45% ≤ 50% — skip
+  2026-05-22 10:00: body=16% ≤ 50% — skip
+  2026-05-22 10:15: CE 23750 limit=153.60 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 10:30: CE 23800 limit=132.95 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 10:45: CE 23800 limit=136.15 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 11:00: body=45% ≤ 50% — skip
+  2026-05-22 11:15: body=21% ≤ 50% — skip
+  2026-05-22 11:30: CE 23800 limit=118.35 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 11:45: body=30% ≤ 50% — skip
+  2026-05-22 12:00: body=21% ≤ 50% — skip
+  2026-05-22 12:15: PE 23750 limit=111.15 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 12:30: body=48% ≤ 50% — skip
+  2026-05-22 12:45: CE 23850 limit=119.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 13:00: body=49% ≤ 50% — skip
+  2026-05-22 13:15: body=19% ≤ 50% — skip
+  2026-05-22 13:30: CE 23800 limit=143.10 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 13:45: body=13% ≤ 50% — skip
+  2026-05-22 14:00: body=38% ≤ 50% — skip
+  2026-05-22 14:15: PE 23750 limit=123.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 14:30: PE 23700 limit=110.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-22 14:45: body=38% ≤ 50% — skip
+  2026-05-25 09:30: body=47% ≤ 50% — skip
+  2026-05-25 09:45: body=26% ≤ 50% — skip
+  2026-05-25 10:00: CE 23950 limit=96.50 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 10:15: body=0% ≤ 50% — skip
+  2026-05-25 10:30: CE 24000 limit=82.00 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 10:45: CE 24000 limit=84.35 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 11:00: body=33% ≤ 50% — skip
+  2026-05-25 11:15: CE 24000 limit=77.55 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 11:30: CE 24000 limit=71.30 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 11:45: body=9% ≤ 50% — skip
+  2026-05-25 12:00: PE 23950 limit=69.55 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 12:15: body=31% ≤ 50% — skip
+  2026-05-25 12:30: body=27% ≤ 50% — skip
+  2026-05-25 12:45: body=34% ≤ 50% — skip
+  2026-05-25 13:00: body=45% ≤ 50% — skip
+  2026-05-25 13:15: CE 24000 limit=69.75 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 13:30: PE 23950 limit=58.25 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 13:45: body=3% ≤ 50% — skip
+  2026-05-25 14:00: body=33% ≤ 50% — skip
+  2026-05-25 14:15: CE 24000 limit=56.35 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 14:30: CE 24000 limit=72.75 not filled in 3×5m window — ORDER EXPIRED
+  2026-05-25 14:45: CE 24050 limit=70.00 not filled in 3×5m window — ORDER EXPIRED
+
+========================================================================
+  Body threshold : >50% of bar range
+  Limit offset   : entry ≤ option_price - ₹13
+  Limit window   : 3 × 5min bars (~15 min)
+  HARDSL         : -18%
+  Circuit Breaker: 3 bot-driven losses/day
+========================================================================
