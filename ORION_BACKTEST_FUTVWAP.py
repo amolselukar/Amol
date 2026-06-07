@@ -623,7 +623,41 @@ def main():
         all_trades.extend(trades)
         all_notes.extend(notes)
 
+    # Capture summary into string and save to file
+    import io, subprocess
+    buf = io.StringIO()
+    import builtins
+    _orig_print = builtins.print
+    def _tee(*args, **kwargs):
+        _orig_print(*args, **kwargs)
+        kwargs.pop('file', None)
+        _orig_print(*args, file=buf, **kwargs)
+    builtins.print = _tee
     print_summary(all_trades, all_notes, all_days, days_loaded)
+    builtins.print = _orig_print
+
+    out_path = os.path.join(REPO_DIR, 'futvwap_result.txt')
+    with open(out_path, 'w') as f:
+        f.write(buf.getvalue())
+    _orig_print(f"\n[SAVED] Results → {out_path}")
+
+    # Push to GitHub
+    try:
+        branch = 'claude/general-session-YfHuZ'
+        subprocess.run(['git', 'add', out_path], cwd=REPO_DIR, check=True)
+        r = subprocess.run(['git', 'diff', '--cached', '--quiet'], cwd=REPO_DIR)
+        if r.returncode != 0:
+            subprocess.run(['git', 'commit', '-m',
+                f'futvwap_backtest: {len(all_trades)} trades on {len(days_loaded)} days'],
+                cwd=REPO_DIR, check=True)
+            remote = (f"https://{GITHUB_PAT}@github.com/amolselukar/Amol.git"
+                      if GITHUB_PAT else "origin")
+            subprocess.run(['git', 'push', remote, branch], cwd=REPO_DIR, check=True)
+            _orig_print("[GITHUB] Results pushed.")
+        else:
+            _orig_print("[GITHUB] No changes to push.")
+    except subprocess.CalledProcessError as e:
+        _orig_print(f"[GITHUB] Push failed: {e}. Results still saved locally.")
 
 
 if __name__ == '__main__':
