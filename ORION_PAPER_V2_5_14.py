@@ -667,7 +667,7 @@ PREMIUM_MAX_CE        = 180     # CE cap: IV spikes are less common on upside
 PREMIUM_MAX_PE        = 300     # PE cap: raised to capture panic/downside moves (was 180)
 PREMIUM_MAX           = 180     # legacy alias — not used for entry (use side-specific caps)
 # V2.5.14 VWAP triple confirmation engine (FUT primary + SPOT + option)
-VWAP_BODY_MIN_PCT     = 0.50    # Futures bar body must be >= 50% of range to confirm VWAP cross
+VWAP_BODY_MIN_PCT     = 0.65    # Backtest-calibrated: 65% body filter cuts whipsaw days (sweep2 ₹98k, 13/14 green)
 VWAP_ENGINE_ENABLED   = True    # enable VWAP triple confirmation signal
 # V2.5.9: Straddle monitoring (informational Telegram alerts only)
 STRADDLE_REF_MIN      = 20      # record ATM straddle reference after 9:20 AM
@@ -723,20 +723,9 @@ FLIP_PATH_B_WATCH_MIN     = 60    # post-exit minutes to keep watching for flip
 HARDSL_PCT            = 0.18    # V2.5.12: tightened -25% → -18% (VRL-inspired, confirmed backtest)
 SMA_TRAIL_PERIOD      = 8       # SMA(8, low) on option 15m
 # V2.5.12 exit params: peak-based ladder, no time gate (18-month BT: ₹+6,88,158 WR 64.5% MaxDD -1119)
-RATCHET_INITIAL_PTS   = 12      # Velvet Rope: peak >= entry+12 → sl = entry+2
-# V2.5.14 TIERED PROFIT LOCK LADDER (inspired by VRL)
-# Each tuple: (peak_threshold_pts, lock_pts) — checked highest-first
-# When peak hits threshold, SL locks at entry + lock_pts
-# Tighter tiers prevent profit give-back on sharp reversals
-PROFIT_LOCK_LADDER = [
-    (50, 40),    # peak +50 → lock +40 (was runner +25 step)
-    (40, 30),    # peak +40 → lock +30
-    (36, 24),    # peak +36 → lock +24 (same as old Tier3)
-    (30, 20),    # peak +30 → lock +20 (NEW — fills gap between T2/T3)
-    (24, 12),    # peak +24 → lock +12 (same as old Tier2)
-    (18, 8),     # peak +18 → lock +8 (NEW — protects early gains)
-    (12, 2),     # peak +12 → lock +2 (Velvet Rope, unchanged)
-]
+FIXED_TP_PTS          = 15      # Fixed take-profit: exit when LTP >= entry + 15 pts
+                                # Replaces 7-tier ladder — backtest sweep2: TP15+BODY65 best combo
+                                # (₹98,179, WR 88.1%, 13/14 green days vs ladder ₹44,052, 10/14)
 CIRCUIT_BREAKER       = 3       # daily NON-FLIP losses before halt (was 4)
 FORCE_CLOSE_HOUR      = 15
 FORCE_CLOSE_MIN       = 25
@@ -1542,7 +1531,7 @@ def fmt_boot(target_expiry, levels):
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🛡 <b>EXIT PARAMS</b>\n"
         f"   🛑 HARDSL: <b>-{int(HARDSL_PCT*100)}%</b> on premium\n"
-        f"   🔒 Profit Lock Ladder: {' | '.join(f'+{p}→+{l}' for p,l in PROFIT_LOCK_LADDER)}\n"
+        f"   🎯 Fixed TP: +{FIXED_TP_PTS} pts from entry\n"
         f"   📉 SMA Trail: 15m option SMA({SMA_TRAIL_PERIOD}, low)\n"
         f"   ⛔ Force close: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
@@ -1585,13 +1574,10 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
         side_em = "🟢" if POS.side == "CE" else ("🔴" if POS.side == "PE" else "🟠")
         engine_em = {"V2":"⚙️", "V3":"🎯", "FLIP":"🔄", "VWAP":"📈"}.get(POS.engine, "")
         pnl_em = "📈" if pct > 0 else "📉" if pct < 0 else "➖"
-        # Ratchet / Velvet Rope status
-        if POS.tr_armed:
-            sl_offset = POS.tr_sl - POS.entry_premium
-            tr_str = f"<b>LOCK +{sl_offset:.0f}</b> @ SL=<code>{POS.tr_sl:.2f}</code>"
-        else:
-            tr_str = f"watching (lock arms at entry+{RATCHET_INITIAL_PTS} = <code>{POS.entry_premium+RATCHET_INITIAL_PTS:.2f}</code>)"
-        active_sl = max(POS.hardsl_premium, POS.tr_sl if POS.tr_armed else 0)
+        # Fixed TP status
+        tp_price = POS.entry_premium + FIXED_TP_PTS
+        tr_str = f"TP @ <code>{tp_price:.2f}</code> (entry+{FIXED_TP_PTS})"
+        active_sl = POS.hardsl_premium
         cur_vwap = compute_option_vwap(POS.token)
         vwap_pulse = ""
         if cur_vwap:
@@ -1661,11 +1647,11 @@ def fmt_entry():
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🎯 <b>Target</b> (declared): {declared_str}\n"
         f"🛑 <b>HARDSL</b>: <code>{POS.hardsl_premium:.2f}</code>  (-{int(HARDSL_PCT*100)}%)\n"
+        f"🎯 <b>Fixed TP</b>: entry + {FIXED_TP_PTS} pts = <code>{POS.entry_premium + FIXED_TP_PTS:.2f}</code>\n"
         f"📉 <b>Trail</b>: 15m close &lt; SMA({SMA_TRAIL_PERIOD}, low)\n"
-        f"🔒 <b>Profit Lock</b>: {' | '.join(f'+{p}→+{l}' for p,l in PROFIT_LOCK_LADDER)}\n"
         f"⛔ <b>Force close</b>: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<i>Actual exit driven by HARDSL / Profit Lock / Trail / Flip-rule.</i>"
+        f"<i>Actual exit driven by HARDSL / Fixed TP / Trail / Flip-rule.</i>"
     )
 
 def fmt_exit(reason, exit_price, pnl_per_share):
@@ -2358,39 +2344,11 @@ def check_exits(spot):
 
     elapsed = POS.elapsed_min()
 
-    # 3. TIERED PROFIT LOCK LADDER (V2.5.14)
-    # Scans PROFIT_LOCK_LADDER top-down to find highest tier reached by peak.
-    # Arms on first tier hit, then only ratchets UP (never down).
-    # Checked every tick — no candle dependency.
+    # 3. FIXED TAKE-PROFIT (replaces 7-tier ladder — backtest: TP15+BODY65 best combo)
     ep = POS.entry_premium
-    pk = POS.peak_premium
-    best_lock = None
-    best_peak_thresh = 0
-    for peak_thresh, lock_pts in PROFIT_LOCK_LADDER:
-        if pk >= ep + peak_thresh:
-            best_lock = ep + lock_pts
-            best_peak_thresh = peak_thresh
-            break  # ladder is sorted highest-first, first match is best
-
-    if best_lock is not None:
-        if not POS.tr_armed:
-            POS.tr_armed = True
-            POS.tr_sl = best_lock
-            TG.send(f"🔒 <b>Profit Lock ARMED</b> · {POS.side}\n"
-                    f"   Peak +{int(pk-ep)}pts → SL locked at entry+{int(best_lock-ep)}\n"
-                    f"   SL = <code>{POS.tr_sl:.2f}</code>  |  Peak: <code>{pk:.2f}</code>")
-            save_state()
-        elif best_lock > POS.tr_sl:
-            old_sl = POS.tr_sl
-            POS.tr_sl = best_lock
-            TG.send(f"🔒📈 <b>Lock Tier UP</b> on {POS.side}\n"
-                    f"   Peak: <code>{pk:.2f}</code> (+{int(pk-ep)}pts)\n"
-                    f"   SL: <code>{old_sl:.2f}</code> → <code>{POS.tr_sl:.2f}</code> (+{int(POS.tr_sl-ep)}pts)")
-            save_state()
-
-    if POS.tr_armed and cur_ltp <= POS.tr_sl:
-        pts = int(POS.tr_sl - ep)
-        close_trade(f"PROFIT_LOCK_+{pts}", POS.tr_sl)
+    tp_price = ep + FIXED_TP_PTS
+    if cur_ltp >= tp_price:
+        close_trade(f"FIXED_TP_+{FIXED_TP_PTS}", tp_price)
         return True
 
     # 4. Trail exit — VWAP engine uses option VWAP trail; others use SMA8(low)
