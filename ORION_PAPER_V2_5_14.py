@@ -723,9 +723,12 @@ FLIP_PATH_B_WATCH_MIN     = 60    # post-exit minutes to keep watching for flip
 HARDSL_PCT            = 0.18    # V2.5.12: tightened -25% → -18% (VRL-inspired, confirmed backtest)
 SMA_TRAIL_PERIOD      = 8       # SMA(8, low) on option 15m
 # V2.5.12 exit params: peak-based ladder, no time gate (18-month BT: ₹+6,88,158 WR 64.5% MaxDD -1119)
-FIXED_TP_PTS          = 15      # Fixed take-profit: exit when LTP >= entry + 15 pts
-                                # Replaces 7-tier ladder — backtest sweep2: TP15+BODY65 best combo
-                                # (₹98,179, WR 88.1%, 13/14 green days vs ladder ₹44,052, 10/14)
+FIXED_TP_PTS          = 15      # Trail trigger: when LTP >= entry+15, start trailing
+TRAIL_STEP_PTS        = 5       # Trail: SL = peak - 5 pts (ratchets up, never down)
+TRAIL_FLOOR_PTS       = 10      # Trail floor: SL never below entry + 10 pts
+                                # Backtest (corrected, > filter): ₹96,216 vs ₹68,578 fixed TP
+                                # Same trades (64), same WR (82.8%), same 13/14 green days
+                                # Manual cross-checked May-07/18/21 — exact match
 CIRCUIT_BREAKER       = 3       # daily NON-FLIP losses before halt (was 4)
 FORCE_CLOSE_HOUR      = 15
 FORCE_CLOSE_MIN       = 25
@@ -1531,7 +1534,7 @@ def fmt_boot(target_expiry, levels):
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🛡 <b>EXIT PARAMS</b>\n"
         f"   🛑 HARDSL: <b>-{int(HARDSL_PCT*100)}%</b> on premium\n"
-        f"   🎯 Fixed TP: +{FIXED_TP_PTS} pts from entry\n"
+        f"   🎯 Trail: arms at entry+{FIXED_TP_PTS}, SL=peak−{TRAIL_STEP_PTS} (floor +{TRAIL_FLOOR_PTS})\n"
         f"   📉 SMA Trail: 15m option SMA({SMA_TRAIL_PERIOD}, low)\n"
         f"   ⛔ Force close: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"   🔁 Flip cap: {MAX_FLIPS_PER_DAY}/day  |  Circuit breaker: {CIRCUIT_BREAKER} non-flip losses\n"
@@ -1574,10 +1577,14 @@ def fmt_pulse(spot, c1h, sma20, sma50, K, K_prev, regime):
         side_em = "🟢" if POS.side == "CE" else ("🔴" if POS.side == "PE" else "🟠")
         engine_em = {"V2":"⚙️", "V3":"🎯", "FLIP":"🔄", "VWAP":"📈"}.get(POS.engine, "")
         pnl_em = "📈" if pct > 0 else "📉" if pct < 0 else "➖"
-        # Fixed TP status
-        tp_price = POS.entry_premium + FIXED_TP_PTS
-        tr_str = f"TP @ <code>{tp_price:.2f}</code> (entry+{FIXED_TP_PTS})"
-        active_sl = POS.hardsl_premium
+        # Trail status
+        if POS.tr_armed:
+            pts_locked = round(POS.tr_sl - POS.entry_premium, 1)
+            tr_str = f"🎯 <b>TRAIL</b> SL=<code>{POS.tr_sl:.2f}</code> (+{pts_locked:.0f}pts locked)"
+        else:
+            tp_price = POS.entry_premium + FIXED_TP_PTS
+            tr_str = f"watching — trail arms at <code>{tp_price:.2f}</code> (entry+{FIXED_TP_PTS})"
+        active_sl = max(POS.hardsl_premium, POS.tr_sl if POS.tr_armed else 0)
         cur_vwap = compute_option_vwap(POS.token)
         vwap_pulse = ""
         if cur_vwap:
@@ -1647,8 +1654,8 @@ def fmt_entry():
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🎯 <b>Target</b> (declared): {declared_str}\n"
         f"🛑 <b>HARDSL</b>: <code>{POS.hardsl_premium:.2f}</code>  (-{int(HARDSL_PCT*100)}%)\n"
-        f"🎯 <b>Fixed TP</b>: entry + {FIXED_TP_PTS} pts = <code>{POS.entry_premium + FIXED_TP_PTS:.2f}</code>\n"
-        f"📉 <b>Trail</b>: 15m close &lt; SMA({SMA_TRAIL_PERIOD}, low)\n"
+        f"🎯 <b>Trail trigger</b>: entry+{FIXED_TP_PTS} = <code>{POS.entry_premium + FIXED_TP_PTS:.2f}</code>\n"
+        f"📈 <b>Trail</b>: SL = peak−{TRAIL_STEP_PTS}  (floor entry+{TRAIL_FLOOR_PTS}=<code>{POS.entry_premium+TRAIL_FLOOR_PTS:.2f}</code>)\n"
         f"⛔ <b>Force close</b>: {FORCE_CLOSE_HOUR:02d}:{FORCE_CLOSE_MIN:02d} IST\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
         f"<i>Actual exit driven by HARDSL / Fixed TP / Trail / Flip-rule.</i>"
@@ -2344,12 +2351,34 @@ def check_exits(spot):
 
     elapsed = POS.elapsed_min()
 
-    # 3. FIXED TAKE-PROFIT (replaces 7-tier ladder — backtest: TP15+BODY65 best combo)
+    # 3. TRAIL AFTER TP TRIGGER
+    # Phase 1 (below entry+15): only HARDSL protects, let position breathe
+    # Phase 2 (once peak >= entry+15): arm trail, SL = peak - 5 (floor = entry+10)
     ep = POS.entry_premium
-    tp_price = ep + FIXED_TP_PTS
-    if cur_ltp >= tp_price:
-        close_trade(f"FIXED_TP_+{FIXED_TP_PTS}", tp_price)
-        return True
+    pk = POS.peak_premium
+
+    if not POS.tr_armed and pk >= ep + FIXED_TP_PTS:
+        # TP level first reached — arm the trail
+        POS.tr_armed = True
+        POS.tr_sl    = max(ep + TRAIL_FLOOR_PTS, pk - TRAIL_STEP_PTS)
+        TG.send(f"🎯 <b>Trail ARMED</b> · {POS.side}\n"
+                f"   Peak reached entry+{FIXED_TP_PTS} → trailing (SL = peak−{TRAIL_STEP_PTS})\n"
+                f"   Peak: <code>{pk:.2f}</code>  Trail SL: <code>{POS.tr_sl:.2f}</code>  "
+                f"(floor: entry+{TRAIL_FLOOR_PTS}=<code>{ep+TRAIL_FLOOR_PTS:.2f}</code>)")
+        save_state()
+
+    if POS.tr_armed:
+        # Ratchet trail SL up as peak rises (never down)
+        new_sl = max(ep + TRAIL_FLOOR_PTS, pk - TRAIL_STEP_PTS)
+        if new_sl > POS.tr_sl:
+            old_sl = POS.tr_sl
+            POS.tr_sl = new_sl
+            linfo(f"[TRAIL] SL ratcheted {old_sl:.2f} → {POS.tr_sl:.2f}  (peak={pk:.2f})")
+            save_state()
+        if cur_ltp <= POS.tr_sl:
+            pts = round(POS.tr_sl - ep, 1)
+            close_trade(f"TRAIL_+{pts:.0f}", POS.tr_sl)
+            return True
 
     # 4. Trail exit — VWAP engine uses option VWAP trail; others use SMA8(low)
     df_opt = fetch_option_15m(POS.token)
