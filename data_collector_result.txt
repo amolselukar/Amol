@@ -1,0 +1,2007 @@
+
+================================================================================
+  ORION DATA COLLECTOR — Nifty Futures VWAP Cross Analysis
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-04   A-events: 8
+
+  A1  09:45  🟢CE  Fut=24434.1  VWAP=24413.7  Body=52%  Spot=24246.2  ATM=24250  CE=150.3  PE=89.15
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 8
+     Lower Lows:
+       L1: 10:00  Fut_Lo=24362.5  CE=152.75  PE=93.5
+       L2: 10:15  Fut_Lo=24336.0  CE=125.35  PE=121.4
+       L3: 12:00  Fut_Lo=24311.0  CE=205.4  PE=55.7
+       L4: 12:15  Fut_Lo=24305.0  CE=131.7  PE=107.7
+       L5: 12:30  Fut_Lo=24300.0  CE=140.0  PE=107.85
+     Reversal depth:   -2.5 pts  (option drop at first reversal bar)
+
+  A2  10:00  🔴PE  Fut=24362.5  VWAP=24411.4  Body=81%  Spot=24175.2  ATM=24200  CE=152.75  PE=93.5
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 7
+     Lower Lows:
+       L1: 10:15  Fut_Lo=24336.0  CE=125.35  PE=121.4
+       L2: 12:00  Fut_Lo=24311.0  CE=205.4  PE=55.7
+       L3: 12:15  Fut_Lo=24305.0  CE=131.7  PE=107.7
+       L4: 12:30  Fut_Lo=24300.0  CE=140.0  PE=107.85
+       L5: 12:45  Fut_Lo=24275.0  CE=132.35  PE=108.55
+     B1 (pullback): 10:00  Opt@A=93.5  Opt@B1=93.5  Discount=0.0 pts
+     Max gain from A:  +62.1 pts  (at 13:30)
+     Max gain from B1: +62.1 pts
+
+  A3  10:15  🔴PE  Fut=24392.9  VWAP=24407.0  Body=53%  Spot=24196.65  ATM=24200  CE=125.35  PE=121.4
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 3  |  LLs after A: 6
+     Higher Highs:
+       H1: 10:30  Fut_Hi=24417.7  CE=133.6  PE=108.2
+       H2: 10:45  Fut_Hi=24439.9  CE=155.25  PE=86.55
+       H3: 11:15  Fut_Hi=24443.2  CE=123.5  PE=106.35
+     Lower Lows:
+       L1: 12:00  Fut_Lo=24311.0  CE=205.4  PE=55.7
+       L2: 12:15  Fut_Lo=24305.0  CE=131.7  PE=107.7
+       L3: 12:30  Fut_Lo=24300.0  CE=140.0  PE=107.85
+       L4: 12:45  Fut_Lo=24275.0  CE=132.35  PE=108.55
+       L5: 13:15  Fut_Lo=24220.0  CE=195.65  PE=65.2
+     Max gain from A:  +34.2 pts  (at 13:30)
+     Reversal depth:   +13.2 pts  (option drop at first reversal bar)
+
+  A4  11:00  🟢CE  Fut=24415.2  VWAP=24404.8  Body=77%  Spot=24227.25  ATM=24250  CE=112.35  PE=126.25
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 11:15  Fut_Hi=24443.2  CE=123.5  PE=106.35
+     Lower Lows:
+       L1: 12:00  Fut_Lo=24311.0  CE=205.4  PE=55.7
+       L2: 12:15  Fut_Lo=24305.0  CE=131.7  PE=107.7
+       L3: 12:30  Fut_Lo=24300.0  CE=140.0  PE=107.85
+       L4: 12:45  Fut_Lo=24275.0  CE=132.35  PE=108.55
+       L5: 13:15  Fut_Lo=24220.0  CE=195.65  PE=65.2
+     B1 (pullback): 11:00  Opt@A=112.35  Opt@B1=112.35  Discount=0.0 pts
+     Max gain from A:  +11.2 pts  (at 11:15)
+     Max gain from B1: +11.2 pts
+
+  A5  12:00  🔴PE  Fut=24311.0  VWAP=24402.2  Body=94%  Spot=24117.0  ATM=24100  CE=205.4  PE=55.7
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 5
+     Lower Lows:
+       L1: 12:15  Fut_Lo=24305.0  CE=131.7  PE=107.7
+       L2: 12:30  Fut_Lo=24300.0  CE=140.0  PE=107.85
+       L3: 12:45  Fut_Lo=24275.0  CE=132.35  PE=108.55
+       L4: 13:15  Fut_Lo=24220.0  CE=195.65  PE=65.2
+       L5: 13:30  Fut_Lo=24185.0  CE=92.15  PE=155.6
+     B1 (pullback): 12:00  Opt@A=55.7  Opt@B1=55.7  Discount=0.0 pts
+     Max gain from A:  +99.9 pts  (at 13:30)
+     Max gain from B1: +99.9 pts
+
+  A6  12:30  🔴PE  Fut=24300.1  VWAP=24390.4  Body=82%  Spot=24100.55  ATM=24100  CE=140.0  PE=107.85
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 3
+     Higher Highs:
+       H1: 14:15  Fut_Hi=24335.0  CE=151.0  PE=80.35
+     Lower Lows:
+       L1: 12:45  Fut_Lo=24275.0  CE=132.35  PE=108.55
+       L2: 13:15  Fut_Lo=24220.0  CE=195.65  PE=65.2
+       L3: 13:30  Fut_Lo=24185.0  CE=92.15  PE=155.6
+     B1 (pullback): 12:30  Opt@A=107.85  Opt@B1=107.85  Discount=0.0 pts
+     Max gain from A:  +47.8 pts  (at 13:30)
+     Max gain from B1: +47.8 pts
+
+  A7  13:15  🔴PE  Fut=24220.0  VWAP=24375.9  Body=100%  Spot=24024.7  ATM=24000  CE=195.65  PE=65.2
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 1
+     Higher Highs:
+       H1: 14:15  Fut_Hi=24335.0  CE=151.0  PE=80.35
+     Lower Lows:
+       L1: 13:30  Fut_Lo=24185.0  CE=92.15  PE=155.6
+     B1 (pullback): 13:15  Opt@A=65.2  Opt@B1=65.2  Discount=0.0 pts
+     Max gain from A:  +90.4 pts  (at 13:30)
+     Max gain from B1: +90.4 pts
+
+  A8  13:30  🔴PE  Fut=24279.0  VWAP=24367.8  Body=62%  Spot=24086.8  ATM=24100  CE=92.15  PE=155.6
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 2  |  LLs after A: 0
+     Higher Highs:
+       H1: 13:45  Fut_Hi=24300.0  CE=156.0  PE=83.2
+       H2: 14:15  Fut_Hi=24335.0  CE=151.0  PE=80.35
+     Reversal depth:   +72.4 pts  (option drop at first reversal bar)
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-05   A-events: 13
+
+  A1  10:00  🔴PE  Fut=24150.0  VWAP=24184.1  Body=58%  Spot=23986.0  ATM=24000  CE=60.65  PE=50.6
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 4
+     Higher Highs:
+       H1: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H2: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     Lower Lows:
+       L1: 10:15  Fut_Lo=24116.5  CE=73.35  PE=35.3
+       L2: 10:30  Fut_Lo=24098.2  CE=48.0  PE=56.6
+       L3: 10:45  Fut_Lo=24082.0  CE=47.95  PE=52.55
+       L4: 11:45  Fut_Lo=24050.0  CE=47.95  PE=40.2
+     B1 (pullback): 10:00  Opt@A=50.6  Opt@B1=50.6  Discount=0.0 pts
+     Max gain from A:  -10.4 pts  (at 11:45)
+     Max gain from B1: -10.4 pts
+
+  A2  10:15  🔴PE  Fut=24119.6  VWAP=24174.8  Body=72%  Spot=23954.4  ATM=23950  CE=73.35  PE=35.3
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 3
+     Higher Highs:
+       H1: 12:45  Fut_Hi=24170.0  CE=31.9  PE=48.05
+       H2: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H3: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     Lower Lows:
+       L1: 10:30  Fut_Lo=24098.2  CE=48.0  PE=56.6
+       L2: 10:45  Fut_Lo=24082.0  CE=47.95  PE=52.55
+       L3: 11:45  Fut_Lo=24050.0  CE=47.95  PE=40.2
+     B1 (pullback): 10:15  Opt@A=35.3  Opt@B1=35.3  Discount=0.0 pts
+     Max gain from A:  +4.9 pts  (at 11:45)
+     Max gain from B1: +4.9 pts
+
+  A3  10:45  🔴PE  Fut=24086.4  VWAP=24157.1  Body=54%  Spot=23925.95  ATM=23950  CE=47.95  PE=52.55
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 5  |  LLs after A: 1
+     Higher Highs:
+       H1: 11:15  Fut_Hi=24125.2  CE=41.15  PE=53.0
+       H2: 12:15  Fut_Hi=24148.0  CE=45.6  PE=40.9
+       H3: 12:45  Fut_Hi=24170.0  CE=31.9  PE=48.05
+       H4: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H5: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     Lower Lows:
+       L1: 11:45  Fut_Lo=24050.0  CE=47.95  PE=40.2
+     Max gain from A:  -12.3 pts  (at 11:45)
+     Reversal depth:   -0.5 pts  (option drop at first reversal bar)
+
+  A4  11:00  🔴PE  Fut=24104.9  VWAP=24154.0  Body=68%  Spot=23939.0  ATM=23950  CE=51.2  PE=44.45
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 5  |  LLs after A: 1
+     Higher Highs:
+       H1: 11:15  Fut_Hi=24125.2  CE=41.15  PE=53.0
+       H2: 12:15  Fut_Hi=24148.0  CE=45.6  PE=40.9
+       H3: 12:45  Fut_Hi=24170.0  CE=31.9  PE=48.05
+       H4: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H5: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     Lower Lows:
+       L1: 11:45  Fut_Lo=24050.0  CE=47.95  PE=40.2
+     Max gain from A:  -4.2 pts  (at 11:45)
+     Reversal depth:   -8.6 pts  (option drop at first reversal bar)
+
+  A5  11:45  🔴PE  Fut=24052.0  VWAP=24136.8  Body=95%  Spot=23888.95  ATM=23900  CE=47.95  PE=40.2
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 5  |  LLs after A: 0
+     Higher Highs:
+       H1: 12:00  Fut_Hi=24119.0  CE=26.05  PE=68.9
+       H2: 12:15  Fut_Hi=24148.0  CE=45.6  PE=40.9
+       H3: 12:45  Fut_Hi=24170.0  CE=31.9  PE=48.05
+       H4: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H5: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     Reversal depth:   -28.7 pts  (option drop at first reversal bar)
+
+  A6  12:00  🔴PE  Fut=24112.6  VWAP=24132.7  Body=90%  Spot=23946.45  ATM=23950  CE=26.05  PE=68.9
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 4  |  LLs after A: 0
+     Higher Highs:
+       H1: 12:15  Fut_Hi=24148.0  CE=45.6  PE=40.9
+       H2: 12:45  Fut_Hi=24170.0  CE=31.9  PE=48.05
+       H3: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H4: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     Reversal depth:   +28.0 pts  (option drop at first reversal bar)
+
+  A7  12:45  🟢CE  Fut=24170.0  VWAP=24132.3  Body=96%  Spot=24011.9  ATM=24000  CE=31.9  PE=48.05
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 0
+     Higher Highs:
+       H1: 13:00  Fut_Hi=24240.9  CE=27.5  PE=52.45
+       H2: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     B1 (pullback): 12:45  Opt@A=31.9  Opt@B1=31.9  Discount=0.0 pts
+     Max gain from A:  +6.3 pts  (at 13:15)
+     Max gain from B1: +6.3 pts
+
+  A8  13:00  🟢CE  Fut=24225.5  VWAP=24144.0  Body=78%  Spot=24068.8  ATM=24050  CE=27.5  PE=52.45
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 13:15  Fut_Hi=24244.8  CE=38.2  PE=38.25
+     B1 (pullback): 13:00  Opt@A=27.5  Opt@B1=27.5  Discount=0.0 pts
+     Max gain from A:  +10.7 pts  (at 13:15)
+     Max gain from B1: +10.7 pts
+
+  A9  14:15  🟢CE  Fut=24220.0  VWAP=24154.5  Body=59%  Spot=24058.3  ATM=24050  CE=22.8  PE=27.45
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 2
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24222.6  CE=13.8  PE=29.55
+       H2: 15:15  Fut_Hi=24235.0  CE=0.15  PE=18.85
+     Lower Lows:
+       L1: 14:45  Fut_Lo=24173.2  CE=31.2  PE=6.2
+       L2: 15:00  Fut_Lo=24170.0  CE=0.25  PE=41.3
+     B1 (pullback): 14:15  Opt@A=22.8  Opt@B1=22.8  Discount=0.0 pts
+     Max gain from A:  -22.6 pts  (at 15:15)
+     Max gain from B1: -22.6 pts
+
+  A10  14:30  🟢CE  Fut=24200.0  VWAP=24155.5  Body=52%  Spot=24042.1  ATM=24050  CE=13.8  PE=29.55
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 2
+     Higher Highs:
+       H1: 15:15  Fut_Hi=24235.0  CE=0.15  PE=18.85
+     Lower Lows:
+       L1: 14:45  Fut_Lo=24173.2  CE=31.2  PE=6.2
+       L2: 15:00  Fut_Lo=24170.0  CE=0.25  PE=41.3
+     Max gain from A:  -13.7 pts  (at 15:15)
+     Reversal depth:   -17.4 pts  (option drop at first reversal bar)
+
+  A11  14:45  🟢CE  Fut=24178.0  VWAP=24156.2  Body=84%  Spot=24010.8  ATM=24000  CE=31.2  PE=6.2
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 1
+     Higher Highs:
+       H1: 15:15  Fut_Hi=24235.0  CE=0.15  PE=18.85
+     Lower Lows:
+       L1: 15:00  Fut_Lo=24170.0  CE=0.25  PE=41.3
+     Max gain from A:  -31.1 pts  (at 15:15)
+     Reversal depth:   +30.9 pts  (option drop at first reversal bar)
+
+  A12  15:00  🟢CE  Fut=24210.0  VWAP=24157.3  Body=80%  Spot=24041.65  ATM=24050  CE=0.25  PE=41.3
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 15:15  Fut_Hi=24235.0  CE=0.15  PE=18.85
+     B1 (pullback): 15:00  Opt@A=0.25  Opt@B1=0.25  Discount=0.0 pts
+     Max gain from A:  -0.1 pts  (at 15:15)
+     Max gain from B1: -0.1 pts
+
+  A13  15:15  🟢CE  Fut=24230.0  VWAP=24161.9  Body=80%  Spot=24052.15  ATM=24050  CE=0.15  PE=18.85
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-07   A-events: 12
+
+  A1  09:30  🟢CE  Fut=24548.0  VWAP=24511.0  Body=74%  Spot=24397.35  ATM=24400  CE=168.4  PE=194.4
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 4
+     Higher Highs:
+       H1: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Lower Lows:
+       L1: 10:00  Fut_Lo=24460.0  CE=225.0  PE=139.6
+       L2: 11:15  Fut_Lo=24438.0  CE=198.15  PE=168.6
+       L3: 11:30  Fut_Lo=24434.8  CE=197.6  PE=165.0
+       L4: 11:45  Fut_Lo=24425.0  CE=165.95  PE=196.45
+     Max gain from A:  -31.6 pts  (at 12:30)
+     Reversal depth:   -56.6 pts  (option drop at first reversal bar)
+
+  A2  09:45  🔴PE  Fut=24496.1  VWAP=24510.1  Body=69%  Spot=24342.95  ATM=24350  CE=186.95  PE=170.45
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 4
+     Higher Highs:
+       H1: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Lower Lows:
+       L1: 10:00  Fut_Lo=24460.0  CE=225.0  PE=139.6
+       L2: 11:15  Fut_Lo=24438.0  CE=198.15  PE=168.6
+       L3: 11:30  Fut_Lo=24434.8  CE=197.6  PE=165.0
+       L4: 11:45  Fut_Lo=24425.0  CE=165.95  PE=196.45
+     B1 (pullback): 09:45  Opt@A=170.45  Opt@B1=170.45  Discount=0.0 pts
+     Max gain from A:  +26.0 pts  (at 11:45)
+     Max gain from B1: +26.0 pts
+
+  A3  10:15  🟢CE  Fut=24513.3  VWAP=24506.2  Body=87%  Spot=24360.3  ATM=24350  CE=184.95  PE=171.45
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 4
+     Higher Highs:
+       H1: 10:30  Fut_Hi=24518.0  CE=196.35  PE=163.8
+       H2: 10:45  Fut_Hi=24519.0  CE=191.5  PE=167.05
+       H3: 12:15  Fut_Hi=24527.0  CE=193.2  PE=161.85
+       H4: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Lower Lows:
+       L1: 11:00  Fut_Lo=24460.0  CE=204.75  PE=155.05
+       L2: 11:15  Fut_Lo=24438.0  CE=198.15  PE=168.6
+       L3: 11:30  Fut_Lo=24434.8  CE=197.6  PE=165.0
+       L4: 11:45  Fut_Lo=24425.0  CE=165.95  PE=196.45
+     B1 (pullback): 10:15  Opt@A=184.95  Opt@B1=184.95  Discount=0.0 pts
+     Max gain from A:  -48.1 pts  (at 12:30)
+     Max gain from B1: -48.1 pts
+
+  A4  10:45  🔴PE  Fut=24485.0  VWAP=24505.6  Body=85%  Spot=24340.85  ATM=24350  CE=191.5  PE=167.05
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 4
+     Higher Highs:
+       H1: 12:15  Fut_Hi=24527.0  CE=193.2  PE=161.85
+       H2: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Lower Lows:
+       L1: 11:00  Fut_Lo=24460.0  CE=204.75  PE=155.05
+       L2: 11:15  Fut_Lo=24438.0  CE=198.15  PE=168.6
+       L3: 11:30  Fut_Lo=24434.8  CE=197.6  PE=165.0
+       L4: 11:45  Fut_Lo=24425.0  CE=165.95  PE=196.45
+     B1 (pullback): 10:45  Opt@A=167.05  Opt@B1=167.05  Discount=0.0 pts
+     Max gain from A:  +29.4 pts  (at 11:45)
+     Max gain from B1: +29.4 pts
+
+  A5  11:00  🔴PE  Fut=24460.0  VWAP=24502.4  Body=74%  Spot=24317.75  ATM=24300  CE=204.75  PE=155.05
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 3
+     Higher Highs:
+       H1: 12:00  Fut_Hi=24515.0  CE=186.25  PE=169.0
+       H2: 12:15  Fut_Hi=24527.0  CE=193.2  PE=161.85
+       H3: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Lower Lows:
+       L1: 11:15  Fut_Lo=24438.0  CE=198.15  PE=168.6
+       L2: 11:30  Fut_Lo=24434.8  CE=197.6  PE=165.0
+       L3: 11:45  Fut_Lo=24425.0  CE=165.95  PE=196.45
+     B1 (pullback): 11:00  Opt@A=155.05  Opt@B1=155.05  Discount=0.0 pts
+     Max gain from A:  +41.4 pts  (at 11:45)
+     Max gain from B1: +41.4 pts
+
+  A6  11:45  🔴PE  Fut=24476.0  VWAP=24492.6  Body=63%  Spot=24340.55  ATM=24350  CE=165.95  PE=196.45
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 3  |  LLs after A: 0
+     Higher Highs:
+       H1: 12:00  Fut_Hi=24515.0  CE=186.25  PE=169.0
+       H2: 12:15  Fut_Hi=24527.0  CE=193.2  PE=161.85
+       H3: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Reversal depth:   +27.4 pts  (option drop at first reversal bar)
+
+  A7  12:00  🟢CE  Fut=24506.6  VWAP=24493.0  Body=72%  Spot=24361.55  ATM=24350  CE=186.25  PE=169.0
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 2
+     Higher Highs:
+       H1: 12:15  Fut_Hi=24527.0  CE=193.2  PE=161.85
+       H2: 12:30  Fut_Hi=24630.0  CE=136.85  PE=225.85
+     Lower Lows:
+       L1: 13:15  Fut_Lo=24470.0  CE=190.3  PE=172.6
+       L2: 15:00  Fut_Lo=24451.0  CE=200.55  PE=142.45
+     B1 (pullback): 12:00  Opt@A=186.25  Opt@B1=186.25  Discount=0.0 pts
+     Max gain from A:  -49.4 pts  (at 12:30)
+     Max gain from B1: -49.4 pts
+
+  A8  12:30  🟢CE  Fut=24607.9  VWAP=24508.8  Body=71%  Spot=24463.15  ATM=24450  CE=136.85  PE=225.85
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 13:15  Fut_Lo=24470.0  CE=190.3  PE=172.6
+       L2: 15:00  Fut_Lo=24451.0  CE=200.55  PE=142.45
+     Reversal depth:   -53.5 pts  (option drop at first reversal bar)
+
+  A9  12:45  🟢CE  Fut=24533.9  VWAP=24514.0  Body=70%  Spot=24388.25  ATM=24400  CE=210.45  PE=150.0
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 13:15  Fut_Lo=24470.0  CE=190.3  PE=172.6
+       L2: 15:00  Fut_Lo=24451.0  CE=200.55  PE=142.45
+     Reversal depth:   +20.1 pts  (option drop at first reversal bar)
+
+  A10  14:30  🔴PE  Fut=24483.0  VWAP=24513.6  Body=100%  Spot=24339.45  ATM=24350  CE=191.1  PE=161.0
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 14:45  Fut_Lo=24472.0  CE=174.1  PE=173.6
+       L2: 15:00  Fut_Lo=24451.0  CE=200.55  PE=142.45
+     B1 (pullback): 14:30  Opt@A=161.0  Opt@B1=161.0  Discount=0.0 pts
+     Max gain from A:  -18.6 pts  (at 15:00)
+     Max gain from B1: -18.6 pts
+
+  A11  14:45  🔴PE  Fut=24500.0  VWAP=24513.1  Body=50%  Spot=24352.65  ATM=24350  CE=174.1  PE=173.6
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 2  |  LLs after A: 1
+     Higher Highs:
+       H1: 15:00  Fut_Hi=24506.0  CE=200.55  PE=142.45
+       H2: 15:15  Fut_Hi=24511.9  CE=186.1  PE=146.8
+     Lower Lows:
+       L1: 15:00  Fut_Lo=24451.0  CE=200.55  PE=142.45
+     Max gain from A:  -31.1 pts  (at 15:00)
+     Reversal depth:   +31.1 pts  (option drop at first reversal bar)
+
+  A12  15:15  🔴PE  Fut=24501.6  VWAP=24509.1  Body=69%  Spot=24336.4  ATM=24350  CE=186.1  PE=146.8
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-08   A-events: 13
+
+  A1  09:30  🔴PE  Fut=24320.1  VWAP=24362.9  Body=99%  Spot=24167.75  ATM=24150  CE=206.1  PE=132.0
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 3
+     Lower Lows:
+       L1: 09:45  Fut_Lo=24297.3  CE=162.2  PE=173.15
+       L2: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L3: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 09:30  Opt@A=132.0  Opt@B1=132.0  Discount=0.0 pts
+     Max gain from A:  +18.1 pts  (at 14:00)
+     Max gain from B1: +18.1 pts
+
+  A2  10:00  🟢CE  Fut=24363.5  VWAP=24353.6  Body=50%  Spot=24211.3  ATM=24200  CE=172.45  PE=160.1
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 4
+     Higher Highs:
+       H1: 10:15  Fut_Hi=24390.0  CE=154.0  PE=174.55
+     Lower Lows:
+       L1: 12:30  Fut_Lo=24310.0  CE=182.75  PE=137.45
+       L2: 12:45  Fut_Lo=24300.0  CE=176.65  PE=141.95
+       L3: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L4: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 10:00  Opt@A=172.45  Opt@B1=172.45  Discount=0.0 pts
+     Max gain from A:  -18.4 pts  (at 10:15)
+     Max gain from B1: -18.4 pts
+
+  A3  10:45  🔴PE  Fut=24351.0  VWAP=24356.9  Body=72%  Spot=24195.95  ATM=24200  CE=185.3  PE=141.3
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 8
+     Lower Lows:
+       L1: 11:15  Fut_Lo=24338.1  CE=174.45  PE=146.8
+       L2: 11:30  Fut_Lo=24330.0  CE=172.6  PE=148.0
+       L3: 12:00  Fut_Lo=24326.9  CE=168.85  PE=147.7
+       L4: 12:15  Fut_Lo=24325.0  CE=161.45  PE=155.45
+       L5: 12:30  Fut_Lo=24310.0  CE=182.75  PE=137.45
+     B1 (pullback): 10:45  Opt@A=141.3  Opt@B1=141.3  Discount=0.0 pts
+     Max gain from A:  +8.8 pts  (at 14:00)
+     Max gain from B1: +8.8 pts
+
+  A4  11:00  🟢CE  Fut=24383.1  VWAP=24357.3  Body=87%  Spot=24233.0  ATM=24250  CE=157.25  PE=165.75
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 8
+     Higher Highs:
+       H1: 11:15  Fut_Hi=24388.3  CE=174.45  PE=146.8
+       H2: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 11:15  Fut_Lo=24338.1  CE=174.45  PE=146.8
+       L2: 11:30  Fut_Lo=24330.0  CE=172.6  PE=148.0
+       L3: 12:00  Fut_Lo=24326.9  CE=168.85  PE=147.7
+       L4: 12:15  Fut_Lo=24325.0  CE=161.45  PE=155.45
+       L5: 12:30  Fut_Lo=24310.0  CE=182.75  PE=137.45
+     B1 (pullback): 11:15  Opt@A=157.25  Opt@B1=174.45  Discount=-17.2 pts
+     Max gain from A:  +26.2 pts  (at 14:45)
+     Max gain from B1: +9.0 pts
+
+  A5  11:15  🔴PE  Fut=24340.0  VWAP=24357.3  Body=86%  Spot=24198.35  ATM=24200  CE=174.45  PE=146.8
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 7
+     Higher Highs:
+       H1: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 11:30  Fut_Lo=24330.0  CE=172.6  PE=148.0
+       L2: 12:00  Fut_Lo=24326.9  CE=168.85  PE=147.7
+       L3: 12:15  Fut_Lo=24325.0  CE=161.45  PE=155.45
+       L4: 12:30  Fut_Lo=24310.0  CE=182.75  PE=137.45
+       L5: 12:45  Fut_Lo=24300.0  CE=176.65  PE=141.95
+     B1 (pullback): 11:15  Opt@A=146.8  Opt@B1=146.8  Discount=0.0 pts
+     Max gain from A:  +3.3 pts  (at 14:00)
+     Max gain from B1: +3.3 pts
+
+  A6  12:00  🔴PE  Fut=24330.0  VWAP=24356.3  Body=85%  Spot=24184.2  ATM=24200  CE=168.85  PE=147.7
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 5
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24385.0  CE=136.0  PE=172.9
+       H2: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 12:15  Fut_Lo=24325.0  CE=161.45  PE=155.45
+       L2: 12:30  Fut_Lo=24310.0  CE=182.75  PE=137.45
+       L3: 12:45  Fut_Lo=24300.0  CE=176.65  PE=141.95
+       L4: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L5: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 12:00  Opt@A=147.7  Opt@B1=147.7  Discount=0.0 pts
+     Max gain from A:  +2.4 pts  (at 14:00)
+     Max gain from B1: +2.4 pts
+
+  A7  12:15  🔴PE  Fut=24344.3  VWAP=24355.7  Body=74%  Spot=24196.1  ATM=24200  CE=161.45  PE=155.45
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 4
+     Higher Highs:
+       H1: 13:15  Fut_Hi=24347.9  CE=149.3  PE=167.6
+       H2: 13:30  Fut_Hi=24354.2  CE=187.65  PE=128.35
+       H3: 14:30  Fut_Hi=24385.0  CE=136.0  PE=172.9
+       H4: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 12:30  Fut_Lo=24310.0  CE=182.75  PE=137.45
+       L2: 12:45  Fut_Lo=24300.0  CE=176.65  PE=141.95
+       L3: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L4: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 12:15  Opt@A=155.45  Opt@B1=155.45  Discount=0.0 pts
+     Max gain from A:  -5.3 pts  (at 14:00)
+     Max gain from B1: -5.3 pts
+
+  A8  12:30  🔴PE  Fut=24310.0  VWAP=24354.5  Body=100%  Spot=24164.3  ATM=24150  CE=182.75  PE=137.45
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 3
+     Higher Highs:
+       H1: 13:15  Fut_Hi=24347.9  CE=149.3  PE=167.6
+       H2: 13:30  Fut_Hi=24354.2  CE=187.65  PE=128.35
+       H3: 14:30  Fut_Hi=24385.0  CE=136.0  PE=172.9
+       H4: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 12:45  Fut_Lo=24300.0  CE=176.65  PE=141.95
+       L2: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L3: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 12:30  Opt@A=137.45  Opt@B1=137.45  Discount=0.0 pts
+     Max gain from A:  +12.7 pts  (at 14:00)
+     Max gain from B1: +12.7 pts
+
+  A9  13:15  🔴PE  Fut=24347.9  VWAP=24350.7  Body=63%  Spot=24195.45  ATM=24200  CE=149.3  PE=167.6
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 3  |  LLs after A: 2
+     Higher Highs:
+       H1: 13:30  Fut_Hi=24354.2  CE=187.65  PE=128.35
+       H2: 14:30  Fut_Hi=24385.0  CE=136.0  PE=172.9
+       H3: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L2: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     Max gain from A:  -17.5 pts  (at 14:00)
+     Reversal depth:   +39.2 pts  (option drop at first reversal bar)
+
+  A10  13:30  🔴PE  Fut=24321.0  VWAP=24349.9  Body=69%  Spot=24170.95  ATM=24150  CE=187.65  PE=128.35
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 2
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24385.0  CE=136.0  PE=172.9
+       H2: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 13:45  Fut_Lo=24280.0  CE=175.8  PE=134.65
+       L2: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 13:30  Opt@A=128.35  Opt@B1=128.35  Discount=0.0 pts
+     Max gain from A:  +21.8 pts  (at 14:00)
+     Max gain from B1: +21.8 pts
+
+  A11  13:45  🔴PE  Fut=24287.6  VWAP=24346.7  Body=68%  Spot=24137.2  ATM=24150  CE=175.8  PE=134.65
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 1
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24385.0  CE=136.0  PE=172.9
+       H2: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     Lower Lows:
+       L1: 14:00  Fut_Lo=24273.0  CE=162.85  PE=150.1
+     B1 (pullback): 13:45  Opt@A=134.65  Opt@B1=134.65  Discount=0.0 pts
+     Max gain from A:  +15.4 pts  (at 14:00)
+     Max gain from B1: +15.4 pts
+
+  A12  14:30  🟢CE  Fut=24374.6  VWAP=24344.1  Body=87%  Spot=24231.7  ATM=24250  CE=136.0  PE=172.9
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 14:45  Fut_Hi=24390.0  CE=183.45  PE=124.7
+     B1 (pullback): 14:30  Opt@A=136.0  Opt@B1=136.0  Discount=0.0 pts
+     Max gain from A:  +47.5 pts  (at 14:45)
+     Max gain from B1: +47.5 pts
+
+  A13  15:00  🔴PE  Fut=24343.9  VWAP=24345.2  Body=57%  Spot=24180.85  ATM=24200  CE=150.6  PE=140.45
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-11   A-events: 10
+
+  A1  09:30  🔴PE  Fut=24014.7  VWAP=24093.3  Body=86%  Spot=23865.65  ATM=23850  CE=172.05  PE=85.95
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 4
+     Higher Highs:
+       H1: 13:30  Fut_Hi=24123.0  CE=116.4  PE=95.25
+       H2: 13:45  Fut_Hi=24140.0  CE=135.45  PE=79.45
+     Lower Lows:
+       L1: 10:15  Fut_Lo=23986.9  CE=127.0  PE=114.05
+       L2: 10:45  Fut_Lo=23986.3  CE=109.75  PE=129.6
+       L3: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L4: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     B1 (pullback): 09:30  Opt@A=85.95  Opt@B1=85.95  Discount=0.0 pts
+     Max gain from A:  -9.0 pts  (at 15:15)
+     Max gain from B1: -9.0 pts
+
+  A2  10:30  🔴PE  Fut=23999.9  VWAP=24058.8  Body=51%  Spot=23860.1  ATM=23850  CE=140.55  PE=99.55
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 8  |  LLs after A: 3
+     Higher Highs:
+       H1: 10:45  Fut_Hi=24038.0  CE=109.75  PE=129.6
+       H2: 11:00  Fut_Hi=24063.8  CE=123.0  PE=111.4
+       H3: 11:15  Fut_Hi=24080.0  CE=109.9  PE=120.35
+       H4: 11:30  Fut_Hi=24087.9  CE=114.05  PE=112.6
+       H5: 11:45  Fut_Hi=24088.9  CE=107.95  PE=115.35
+     Lower Lows:
+       L1: 10:45  Fut_Lo=23986.3  CE=109.75  PE=129.6
+       L2: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L3: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     Max gain from A:  -22.6 pts  (at 15:15)
+     Reversal depth:   -30.1 pts  (option drop at first reversal bar)
+
+  A3  10:45  🔴PE  Fut=24031.8  VWAP=24055.6  Body=62%  Spot=23886.95  ATM=23900  CE=109.75  PE=129.6
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 7  |  LLs after A: 2
+     Higher Highs:
+       H1: 11:00  Fut_Hi=24063.8  CE=123.0  PE=111.4
+       H2: 11:15  Fut_Hi=24080.0  CE=109.9  PE=120.35
+       H3: 11:30  Fut_Hi=24087.9  CE=114.05  PE=112.6
+       H4: 11:45  Fut_Hi=24088.9  CE=107.95  PE=115.35
+       H5: 12:30  Fut_Hi=24095.0  CE=109.0  PE=109.25
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L2: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     Max gain from A:  -52.6 pts  (at 15:15)
+     Reversal depth:   +18.2 pts  (option drop at first reversal bar)
+
+  A4  11:15  🟢CE  Fut=24069.0  VWAP=24056.1  Body=63%  Spot=23927.8  ATM=23950  CE=109.9  PE=120.35
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 5  |  LLs after A: 4
+     Higher Highs:
+       H1: 11:30  Fut_Hi=24087.9  CE=114.05  PE=112.6
+       H2: 11:45  Fut_Hi=24088.9  CE=107.95  PE=115.35
+       H3: 12:30  Fut_Hi=24095.0  CE=109.0  PE=109.25
+       H4: 13:30  Fut_Hi=24123.0  CE=116.4  PE=95.25
+       H5: 13:45  Fut_Hi=24140.0  CE=135.45  PE=79.45
+     Lower Lows:
+       L1: 12:30  Fut_Lo=24034.3  CE=109.0  PE=109.25
+       L2: 14:45  Fut_Lo=24015.0  CE=103.8  PE=95.5
+       L3: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L4: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     B1 (pullback): 11:15  Opt@A=109.9  Opt@B1=109.9  Discount=0.0 pts
+     Max gain from A:  +25.6 pts  (at 13:45)
+     Max gain from B1: +25.6 pts
+
+  A5  12:45  🟢CE  Fut=24083.0  VWAP=24057.6  Body=52%  Spot=23945.55  ATM=23950  CE=113.35  PE=100.6
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 2  |  LLs after A: 4
+     Higher Highs:
+       H1: 13:30  Fut_Hi=24123.0  CE=116.4  PE=95.25
+       H2: 13:45  Fut_Hi=24140.0  CE=135.45  PE=79.45
+     Lower Lows:
+       L1: 13:00  Fut_Lo=24040.0  CE=98.5  PE=115.25
+       L2: 14:45  Fut_Lo=24015.0  CE=103.8  PE=95.5
+       L3: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L4: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     Max gain from A:  +22.1 pts  (at 13:45)
+     Reversal depth:   +14.8 pts  (option drop at first reversal bar)
+
+  A6  13:15  🟢CE  Fut=24074.9  VWAP=24058.0  Body=82%  Spot=23946.35  ATM=23950  CE=109.35  PE=101.7
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 5
+     Higher Highs:
+       H1: 13:30  Fut_Hi=24123.0  CE=116.4  PE=95.25
+       H2: 13:45  Fut_Hi=24140.0  CE=135.45  PE=79.45
+     Lower Lows:
+       L1: 14:15  Fut_Lo=24053.4  CE=104.9  PE=99.65
+       L2: 14:30  Fut_Lo=24040.0  CE=131.3  PE=74.1
+       L3: 14:45  Fut_Lo=24015.0  CE=103.8  PE=95.5
+       L4: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L5: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     B1 (pullback): 13:15  Opt@A=109.35  Opt@B1=109.35  Discount=0.0 pts
+     Max gain from A:  +26.1 pts  (at 13:45)
+     Max gain from B1: +26.1 pts
+
+  A7  13:30  🟢CE  Fut=24102.0  VWAP=24059.5  Body=56%  Spot=23965.45  ATM=23950  CE=116.4  PE=95.25
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 5
+     Higher Highs:
+       H1: 13:45  Fut_Hi=24140.0  CE=135.45  PE=79.45
+     Lower Lows:
+       L1: 14:15  Fut_Lo=24053.4  CE=104.9  PE=99.65
+       L2: 14:30  Fut_Lo=24040.0  CE=131.3  PE=74.1
+       L3: 14:45  Fut_Lo=24015.0  CE=103.8  PE=95.5
+       L4: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L5: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     B1 (pullback): 13:30  Opt@A=116.4  Opt@B1=116.4  Discount=0.0 pts
+     Max gain from A:  +19.1 pts  (at 13:45)
+     Max gain from B1: +19.1 pts
+
+  A8  14:00  🟢CE  Fut=24080.0  VWAP=24061.5  Body=88%  Spot=23946.3  ATM=23950  CE=122.6  PE=84.45
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 5
+     Lower Lows:
+       L1: 14:15  Fut_Lo=24053.4  CE=104.9  PE=99.65
+       L2: 14:30  Fut_Lo=24040.0  CE=131.3  PE=74.1
+       L3: 14:45  Fut_Lo=24015.0  CE=103.8  PE=95.5
+       L4: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L5: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     Reversal depth:   +17.7 pts  (option drop at first reversal bar)
+
+  A9  14:45  🔴PE  Fut=24015.0  VWAP=24060.2  Body=86%  Spot=23875.9  ATM=23900  CE=103.8  PE=95.5
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23961.9  CE=136.05  PE=72.1
+       L2: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     B1 (pullback): 14:45  Opt@A=95.5  Opt@B1=95.5  Discount=0.0 pts
+     Max gain from A:  -18.6 pts  (at 15:15)
+     Max gain from B1: -18.6 pts
+
+  A10  15:00  🔴PE  Fut=23965.5  VWAP=24050.5  Body=92%  Spot=23805.75  ATM=23800  CE=136.05  PE=72.1
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 1
+     Lower Lows:
+       L1: 15:15  Fut_Lo=23959.0  CE=132.1  PE=76.95
+     B1 (pullback): 15:00  Opt@A=72.1  Opt@B1=72.1  Discount=0.0 pts
+     Max gain from A:  +4.8 pts  (at 15:15)
+     Max gain from B1: +4.8 pts
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-12   A-events: 11
+
+  A1  09:45  🔴PE  Fut=23771.0  VWAP=23805.6  Body=100%  Spot=23625.85  ATM=23650  CE=61.85  PE=64.1
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 13
+     Higher Highs:
+       H1: 10:15  Fut_Hi=23813.4  CE=103.95  PE=27.1
+     Lower Lows:
+       L1: 10:00  Fut_Lo=23747.3  CE=54.1  PE=65.35
+       L2: 10:30  Fut_Lo=23740.0  CE=39.9  PE=71.65
+       L3: 10:45  Fut_Lo=23738.0  CE=60.2  PE=46.0
+       L4: 11:00  Fut_Lo=23725.0  CE=53.7  PE=50.45
+       L5: 11:30  Fut_Lo=23721.0  CE=57.5  PE=46.7
+     B1 (pullback): 09:45  Opt@A=64.1  Opt@B1=64.1  Discount=0.0 pts
+     Max gain from A:  -63.3 pts  (at 15:00)
+     Max gain from B1: -63.3 pts
+
+  A2  10:15  🔴PE  Fut=23750.9  VWAP=23797.5  Body=55%  Spot=23613.25  ATM=23600  CE=103.95  PE=27.1
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 12
+     Lower Lows:
+       L1: 10:30  Fut_Lo=23740.0  CE=39.9  PE=71.65
+       L2: 10:45  Fut_Lo=23738.0  CE=60.2  PE=46.0
+       L3: 11:00  Fut_Lo=23725.0  CE=53.7  PE=50.45
+       L4: 11:30  Fut_Lo=23721.0  CE=57.5  PE=46.7
+       L5: 12:00  Fut_Lo=23690.0  CE=79.9  PE=28.4
+     B1 (pullback): 10:15  Opt@A=27.1  Opt@B1=27.1  Discount=0.0 pts
+     Max gain from A:  -26.3 pts  (at 15:00)
+     Max gain from B1: -26.3 pts
+
+  A3  11:00  🔴PE  Fut=23726.8  VWAP=23788.3  Body=95%  Spot=23589.35  ATM=23600  CE=53.7  PE=50.45
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 9
+     Lower Lows:
+       L1: 11:30  Fut_Lo=23721.0  CE=57.5  PE=46.7
+       L2: 12:00  Fut_Lo=23690.0  CE=79.9  PE=28.4
+       L3: 12:30  Fut_Lo=23650.0  CE=41.75  PE=58.2
+       L4: 13:30  Fut_Lo=23641.8  CE=53.85  PE=23.4
+       L5: 13:45  Fut_Lo=23635.0  CE=44.5  PE=22.55
+     B1 (pullback): 11:00  Opt@A=50.45  Opt@B1=50.45  Discount=0.0 pts
+     Max gain from A:  -49.6 pts  (at 15:00)
+     Max gain from B1: -49.6 pts
+
+  A4  12:00  🔴PE  Fut=23694.5  VWAP=23769.9  Body=62%  Spot=23557.8  ATM=23550  CE=79.9  PE=28.4
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 7
+     Lower Lows:
+       L1: 12:30  Fut_Lo=23650.0  CE=41.75  PE=58.2
+       L2: 13:30  Fut_Lo=23641.8  CE=53.85  PE=23.4
+       L3: 13:45  Fut_Lo=23635.0  CE=44.5  PE=22.55
+       L4: 14:00  Fut_Lo=23588.8  CE=53.75  PE=13.4
+       L5: 14:30  Fut_Lo=23570.0  CE=19.0  PE=22.05
+     B1 (pullback): 12:00  Opt@A=28.4  Opt@B1=28.4  Discount=0.0 pts
+     Max gain from A:  -27.6 pts  (at 15:00)
+     Max gain from B1: -27.6 pts
+
+  A5  12:30  🔴PE  Fut=23669.0  VWAP=23758.9  Body=53%  Spot=23526.15  ATM=23550  CE=41.75  PE=58.2
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 13:15  Fut_Hi=23700.0  CE=42.05  PE=41.9
+     Lower Lows:
+       L1: 13:30  Fut_Lo=23641.8  CE=53.85  PE=23.4
+       L2: 13:45  Fut_Lo=23635.0  CE=44.5  PE=22.55
+       L3: 14:00  Fut_Lo=23588.8  CE=53.75  PE=13.4
+       L4: 14:30  Fut_Lo=23570.0  CE=19.0  PE=22.05
+       L5: 14:45  Fut_Lo=23545.0  CE=65.4  PE=2.5
+     Max gain from A:  -57.4 pts  (at 15:00)
+     Reversal depth:   +16.3 pts  (option drop at first reversal bar)
+
+  A6  13:00  🔴PE  Fut=23674.7  VWAP=23749.1  Body=55%  Spot=23536.8  ATM=23550  CE=40.85  PE=46.5
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 13:15  Fut_Hi=23700.0  CE=42.05  PE=41.9
+     Lower Lows:
+       L1: 13:30  Fut_Lo=23641.8  CE=53.85  PE=23.4
+       L2: 13:45  Fut_Lo=23635.0  CE=44.5  PE=22.55
+       L3: 14:00  Fut_Lo=23588.8  CE=53.75  PE=13.4
+       L4: 14:30  Fut_Lo=23570.0  CE=19.0  PE=22.05
+       L5: 14:45  Fut_Lo=23545.0  CE=65.4  PE=2.5
+     Max gain from A:  -45.7 pts  (at 15:00)
+     Reversal depth:   +4.6 pts  (option drop at first reversal bar)
+
+  A7  13:30  🔴PE  Fut=23646.1  VWAP=23742.0  Body=60%  Spot=23506.8  ATM=23500  CE=53.85  PE=23.4
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 5
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23635.0  CE=44.5  PE=22.55
+       L2: 14:00  Fut_Lo=23588.8  CE=53.75  PE=13.4
+       L3: 14:30  Fut_Lo=23570.0  CE=19.0  PE=22.05
+       L4: 14:45  Fut_Lo=23545.0  CE=65.4  PE=2.5
+       L5: 15:00  Fut_Lo=23500.0  CE=35.6  PE=0.8
+     B1 (pullback): 13:30  Opt@A=23.4  Opt@B1=23.4  Discount=0.0 pts
+     Max gain from A:  -22.6 pts  (at 15:00)
+     Max gain from B1: -22.6 pts
+
+  A8  14:00  🔴PE  Fut=23595.3  VWAP=23724.6  Body=78%  Spot=23457.5  ATM=23450  CE=53.75  PE=13.4
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 3
+     Lower Lows:
+       L1: 14:30  Fut_Lo=23570.0  CE=19.0  PE=22.05
+       L2: 14:45  Fut_Lo=23545.0  CE=65.4  PE=2.5
+       L3: 15:00  Fut_Lo=23500.0  CE=35.6  PE=0.8
+     B1 (pullback): 14:00  Opt@A=13.4  Opt@B1=13.4  Discount=0.0 pts
+     Max gain from A:  -12.6 pts  (at 15:00)
+     Max gain from B1: -12.6 pts
+
+  A9  14:45  🔴PE  Fut=23554.3  VWAP=23702.6  Body=68%  Spot=23421.25  ATM=23400  CE=65.4  PE=2.5
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 1
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23500.0  CE=35.6  PE=0.8
+     B1 (pullback): 14:45  Opt@A=2.5  Opt@B1=2.5  Discount=0.0 pts
+     Max gain from A:  -1.7 pts  (at 15:00)
+     Max gain from B1: -1.7 pts
+
+  A10  15:00  🔴PE  Fut=23503.9  VWAP=23682.5  Body=90%  Spot=23354.8  ATM=23350  CE=35.6  PE=0.8
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 15:15  Fut_Hi=23581.0  CE=0.15  PE=73.9
+     Reversal depth:   -73.1 pts  (option drop at first reversal bar)
+
+  A11  15:15  🔴PE  Fut=23570.0  VWAP=23669.2  Body=85%  Spot=23430.55  ATM=23450  CE=0.15  PE=73.9
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-13   A-events: 11
+
+  A1  09:45  🟢CE  Fut=23515.0  VWAP=23507.3  Body=54%  Spot=23372.45  ATM=23350  CE=238.35  PE=244.5
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 6  |  LLs after A: 0
+     Higher Highs:
+       H1: 10:00  Fut_Hi=23574.0  CE=258.0  PE=229.35
+       H2: 10:15  Fut_Hi=23617.0  CE=247.55  PE=223.7
+       H3: 10:30  Fut_Hi=23624.8  CE=276.05  PE=199.35
+       H4: 11:30  Fut_Hi=23640.0  CE=204.6  PE=255.3
+       H5: 11:45  Fut_Hi=23650.0  CE=273.8  PE=196.15
+     B1 (pullback): 09:45  Opt@A=238.35  Opt@B1=238.35  Discount=0.0 pts
+     Max gain from A:  -60.5 pts  (at 12:45)
+     Max gain from B1: -60.5 pts
+
+  A2  10:15  🟢CE  Fut=23600.0  VWAP=23525.6  Body=78%  Spot=23452.45  ATM=23450  CE=247.55  PE=223.7
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 2
+     Higher Highs:
+       H1: 10:30  Fut_Hi=23624.8  CE=276.05  PE=199.35
+       H2: 11:30  Fut_Hi=23640.0  CE=204.6  PE=255.3
+       H3: 11:45  Fut_Hi=23650.0  CE=273.8  PE=196.15
+       H4: 12:45  Fut_Hi=23726.4  CE=177.85  PE=250.45
+     Lower Lows:
+       L1: 10:45  Fut_Lo=23515.0  CE=311.25  PE=176.25
+       L2: 11:00  Fut_Lo=23511.0  CE=254.5  PE=214.1
+     B1 (pullback): 10:15  Opt@A=247.55  Opt@B1=247.55  Discount=0.0 pts
+     Max gain from A:  -69.7 pts  (at 12:45)
+     Max gain from B1: -69.7 pts
+
+  A3  10:45  🔴PE  Fut=23515.0  VWAP=23531.4  Body=94%  Spot=23374.8  ATM=23350  CE=311.25  PE=176.25
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 1
+     Higher Highs:
+       H1: 11:30  Fut_Hi=23640.0  CE=204.6  PE=255.3
+       H2: 11:45  Fut_Hi=23650.0  CE=273.8  PE=196.15
+       H3: 12:45  Fut_Hi=23726.4  CE=177.85  PE=250.45
+     Lower Lows:
+       L1: 11:00  Fut_Lo=23511.0  CE=254.5  PE=214.1
+     B1 (pullback): 10:45  Opt@A=176.25  Opt@B1=176.25  Discount=0.0 pts
+     Max gain from A:  +37.9 pts  (at 11:00)
+     Max gain from B1: +37.9 pts
+
+  A4  11:30  🟢CE  Fut=23636.0  VWAP=23539.2  Body=91%  Spot=23498.6  ATM=23500  CE=204.6  PE=255.3
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 1
+     Higher Highs:
+       H1: 11:45  Fut_Hi=23650.0  CE=273.8  PE=196.15
+       H2: 12:45  Fut_Hi=23726.4  CE=177.85  PE=250.45
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     B1 (pullback): 11:30  Opt@A=204.6  Opt@B1=204.6  Discount=0.0 pts
+     Max gain from A:  -26.8 pts  (at 12:45)
+     Max gain from B1: -26.8 pts
+
+  A5  12:00  🟢CE  Fut=23650.0  VWAP=23553.1  Body=83%  Spot=23512.75  ATM=23500  CE=238.7  PE=218.45
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 2
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23726.4  CE=177.85  PE=250.45
+     Lower Lows:
+       L1: 12:30  Fut_Lo=23560.0  CE=263.1  PE=201.65
+       L2: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     Max gain from A:  -60.9 pts  (at 12:45)
+     Reversal depth:   -24.4 pts  (option drop at first reversal bar)
+
+  A6  12:30  🟢CE  Fut=23598.9  VWAP=23560.1  Body=54%  Spot=23453.9  ATM=23450  CE=263.1  PE=201.65
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 1
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23726.4  CE=177.85  PE=250.45
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     B1 (pullback): 12:30  Opt@A=263.1  Opt@B1=263.1  Discount=0.0 pts
+     Max gain from A:  -85.2 pts  (at 12:45)
+     Max gain from B1: -85.2 pts
+
+  A7  12:45  🟢CE  Fut=23716.3  VWAP=23572.4  Body=87%  Spot=23577.95  ATM=23600  CE=177.85  PE=250.45
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 3
+     Lower Lows:
+       L1: 14:15  Fut_Lo=23591.0  CE=228.0  PE=224.25
+       L2: 14:45  Fut_Lo=23581.0  CE=225.8  PE=221.0
+       L3: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     Reversal depth:   -50.1 pts  (option drop at first reversal bar)
+
+  A8  13:00  🟢CE  Fut=23675.4  VWAP=23575.3  Body=70%  Spot=23538.5  ATM=23550  CE=247.4  PE=200.4
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 5
+     Lower Lows:
+       L1: 13:15  Fut_Lo=23625.9  CE=242.6  PE=211.65
+       L2: 13:45  Fut_Lo=23605.0  CE=244.65  PE=204.6
+       L3: 14:15  Fut_Lo=23591.0  CE=228.0  PE=224.25
+       L4: 14:45  Fut_Lo=23581.0  CE=225.8  PE=221.0
+       L5: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     Reversal depth:   +4.8 pts  (option drop at first reversal bar)
+
+  A9  13:15  🟢CE  Fut=23626.8  VWAP=23576.4  Body=98%  Spot=23496.75  ATM=23500  CE=242.6  PE=211.65
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 4
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23605.0  CE=244.65  PE=204.6
+       L2: 14:15  Fut_Lo=23591.0  CE=228.0  PE=224.25
+       L3: 14:45  Fut_Lo=23581.0  CE=225.8  PE=221.0
+       L4: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     Reversal depth:   -2.0 pts  (option drop at first reversal bar)
+
+  A10  14:00  🟢CE  Fut=23658.0  VWAP=23578.6  Body=56%  Spot=23516.8  ATM=23500  CE=232.15  PE=219.05
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 3
+     Higher Highs:
+       H1: 14:15  Fut_Hi=23660.3  CE=228.0  PE=224.25
+     Lower Lows:
+       L1: 14:15  Fut_Lo=23591.0  CE=228.0  PE=224.25
+       L2: 14:45  Fut_Lo=23581.0  CE=225.8  PE=221.0
+       L3: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     B1 (pullback): 14:15  Opt@A=232.15  Opt@B1=228.0  Discount=4.15 pts
+     Max gain from A:  -4.2 pts  (at 14:15)
+     Max gain from B1: +0.0 pts
+
+  A11  14:15  🟢CE  Fut=23611.3  VWAP=23579.3  Body=67%  Spot=23491.35  ATM=23500  CE=228.0  PE=224.25
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 14:45  Fut_Lo=23581.0  CE=225.8  PE=221.0
+       L2: 15:00  Fut_Lo=23540.2  CE=222.3  PE=219.2
+     Reversal depth:   +2.2 pts  (option drop at first reversal bar)
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-14   A-events: 13
+
+  A1  09:30  🔴PE  Fut=23618.0  VWAP=23669.2  Body=100%  Spot=23496.8  ATM=23500  CE=240.0  PE=None
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 8  |  LLs after A: 2
+     Higher Highs:
+       H1: 11:30  Fut_Hi=23785.1  CE=169.3  PE=None
+       H2: 11:45  Fut_Hi=23815.8  CE=194.9  PE=None
+       H3: 12:15  Fut_Hi=23819.8  CE=186.8  PE=None
+       H4: 12:45  Fut_Hi=23828.6  CE=202.95  PE=None
+       H5: 13:00  Fut_Hi=23865.0  CE=226.4  PE=None
+     Lower Lows:
+       L1: 09:45  Fut_Lo=23560.0  CE=233.95  PE=None
+       L2: 10:45  Fut_Lo=23535.0  CE=192.75  PE=None
+     B1 (pullback): 09:30  Opt@A=None  Opt@B1=None  Discount=None pts
+
+  A2  09:45  🔴PE  Fut=23570.2  VWAP=23646.3  Body=53%  Spot=23464.45  ATM=23450  CE=233.95  PE=None
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 9  |  LLs after A: 1
+     Higher Highs:
+       H1: 11:15  Fut_Hi=23696.0  CE=168.95  PE=None
+       H2: 11:30  Fut_Hi=23785.1  CE=169.3  PE=None
+       H3: 11:45  Fut_Hi=23815.8  CE=194.9  PE=None
+       H4: 12:15  Fut_Hi=23819.8  CE=186.8  PE=None
+       H5: 12:45  Fut_Hi=23828.6  CE=202.95  PE=None
+     Lower Lows:
+       L1: 10:45  Fut_Lo=23535.0  CE=192.75  PE=None
+     B1 (pullback): 09:45  Opt@A=None  Opt@B1=None  Discount=None pts
+
+  A3  10:00  🔴PE  Fut=23609.0  VWAP=23638.4  Body=95%  Spot=23495.8  ATM=23500  CE=196.2  PE=None
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 11  |  LLs after A: 1
+     Higher Highs:
+       H1: 10:15  Fut_Hi=23632.0  CE=209.0  PE=None
+       H2: 10:30  Fut_Hi=23648.9  CE=211.7  PE=None
+       H3: 11:15  Fut_Hi=23696.0  CE=168.95  PE=None
+       H4: 11:30  Fut_Hi=23785.1  CE=169.3  PE=None
+       H5: 11:45  Fut_Hi=23815.8  CE=194.9  PE=None
+     Lower Lows:
+       L1: 10:45  Fut_Lo=23535.0  CE=192.75  PE=None
+
+  A4  10:45  🔴PE  Fut=23547.1  VWAP=23624.3  Body=84%  Spot=23430.45  ATM=23450  CE=192.75  PE=None
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 9  |  LLs after A: 0
+     Higher Highs:
+       H1: 11:15  Fut_Hi=23696.0  CE=168.95  PE=None
+       H2: 11:30  Fut_Hi=23785.1  CE=169.3  PE=None
+       H3: 11:45  Fut_Hi=23815.8  CE=194.9  PE=None
+       H4: 12:15  Fut_Hi=23819.8  CE=186.8  PE=None
+       H5: 12:45  Fut_Hi=23828.6  CE=202.95  PE=None
+
+  A5  11:15  🟢CE  Fut=23688.3  VWAP=23624.3  Body=94%  Spot=23567.4  ATM=23550  CE=168.95  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 8  |  LLs after A: 0
+     Higher Highs:
+       H1: 11:30  Fut_Hi=23785.1  CE=169.3  PE=None
+       H2: 11:45  Fut_Hi=23815.8  CE=194.9  PE=None
+       H3: 12:15  Fut_Hi=23819.8  CE=186.8  PE=None
+       H4: 12:45  Fut_Hi=23828.6  CE=202.95  PE=None
+       H5: 13:00  Fut_Hi=23865.0  CE=226.4  PE=None
+     B1 (pullback): 11:15  Opt@A=168.95  Opt@B1=168.95  Discount=0.0 pts
+     Max gain from A:  +21.1 pts  (at 14:30)
+     Max gain from B1: +21.1 pts
+
+  A6  11:30  🟢CE  Fut=23776.2  VWAP=23655.0  Body=88%  Spot=23669.45  ATM=23650  CE=169.3  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 7  |  LLs after A: 0
+     Higher Highs:
+       H1: 11:45  Fut_Hi=23815.8  CE=194.9  PE=None
+       H2: 12:15  Fut_Hi=23819.8  CE=186.8  PE=None
+       H3: 12:45  Fut_Hi=23828.6  CE=202.95  PE=None
+       H4: 13:00  Fut_Hi=23865.0  CE=226.4  PE=None
+       H5: 13:45  Fut_Hi=23870.0  CE=186.35  PE=None
+     B1 (pullback): 11:30  Opt@A=169.3  Opt@B1=169.3  Discount=0.0 pts
+     Max gain from A:  +20.8 pts  (at 14:30)
+     Max gain from B1: +20.8 pts
+
+  A7  12:15  🟢CE  Fut=23808.0  VWAP=23691.0  Body=74%  Spot=23692.65  ATM=23700  CE=186.8  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 5  |  LLs after A: 1
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23828.6  CE=202.95  PE=None
+       H2: 13:00  Fut_Hi=23865.0  CE=226.4  PE=None
+       H3: 13:45  Fut_Hi=23870.0  CE=186.35  PE=None
+       H4: 14:00  Fut_Hi=23878.0  CE=193.65  PE=None
+       H5: 14:30  Fut_Hi=23880.0  CE=190.05  PE=None
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23765.5  CE=175.05  PE=None
+     B1 (pullback): 12:15  Opt@A=186.8  Opt@B1=186.8  Discount=0.0 pts
+     Max gain from A:  +3.2 pts  (at 14:30)
+     Max gain from B1: +3.2 pts
+
+  A8  13:00  🟢CE  Fut=23842.6  VWAP=23715.2  Body=59%  Spot=23713.55  ATM=23700  CE=226.4  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 2
+     Higher Highs:
+       H1: 13:45  Fut_Hi=23870.0  CE=186.35  PE=None
+       H2: 14:00  Fut_Hi=23878.0  CE=193.65  PE=None
+       H3: 14:30  Fut_Hi=23880.0  CE=190.05  PE=None
+     Lower Lows:
+       L1: 14:45  Fut_Lo=23785.0  CE=177.55  PE=None
+       L2: 15:00  Fut_Lo=23765.5  CE=175.05  PE=None
+     B1 (pullback): 13:00  Opt@A=226.4  Opt@B1=226.4  Discount=0.0 pts
+     Max gain from A:  -36.4 pts  (at 14:30)
+     Max gain from B1: -36.4 pts
+
+  A9  13:15  🟢CE  Fut=23821.0  VWAP=23717.1  Body=82%  Spot=23715.15  ATM=23700  CE=204.7  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 3
+     Higher Highs:
+       H1: 13:30  Fut_Hi=23865.0  CE=187.8  PE=None
+       H2: 13:45  Fut_Hi=23870.0  CE=186.35  PE=None
+       H3: 14:00  Fut_Hi=23878.0  CE=193.65  PE=None
+       H4: 14:30  Fut_Hi=23880.0  CE=190.05  PE=None
+     Lower Lows:
+       L1: 13:30  Fut_Lo=23815.0  CE=187.8  PE=None
+       L2: 14:45  Fut_Lo=23785.0  CE=177.55  PE=None
+       L3: 15:00  Fut_Lo=23765.5  CE=175.05  PE=None
+     B1 (pullback): 13:30  Opt@A=204.7  Opt@B1=187.8  Discount=16.9 pts
+     Max gain from A:  -14.7 pts  (at 14:30)
+     Max gain from B1: +2.2 pts
+
+  A10  13:30  🟢CE  Fut=23855.0  VWAP=23722.2  Body=68%  Spot=23752.55  ATM=23750  CE=187.8  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 2
+     Higher Highs:
+       H1: 13:45  Fut_Hi=23870.0  CE=186.35  PE=None
+       H2: 14:00  Fut_Hi=23878.0  CE=193.65  PE=None
+       H3: 14:30  Fut_Hi=23880.0  CE=190.05  PE=None
+     Lower Lows:
+       L1: 14:45  Fut_Lo=23785.0  CE=177.55  PE=None
+       L2: 15:00  Fut_Lo=23765.5  CE=175.05  PE=None
+     B1 (pullback): 13:30  Opt@A=187.8  Opt@B1=187.8  Discount=0.0 pts
+     Max gain from A:  +2.2 pts  (at 14:30)
+     Max gain from B1: +2.2 pts
+
+  A11  14:30  🟢CE  Fut=23831.8  VWAP=23740.6  Body=55%  Spot=23730.1  ATM=23750  CE=190.05  PE=None
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 14:45  Fut_Lo=23785.0  CE=177.55  PE=None
+       L2: 15:00  Fut_Lo=23765.5  CE=175.05  PE=None
+     Reversal depth:   +12.5 pts  (option drop at first reversal bar)
+
+  A12  15:00  🟢CE  Fut=23775.4  VWAP=23746.6  Body=81%  Spot=23683.8  ATM=23700  CE=175.05  PE=None
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 15:15  Fut_Hi=23839.2  CE=168.55  PE=None
+     B1 (pullback): 15:00  Opt@A=175.05  Opt@B1=175.05  Discount=0.0 pts
+     Max gain from A:  -6.5 pts  (at 15:15)
+     Max gain from B1: -6.5 pts
+
+  A13  15:15  🟢CE  Fut=23826.4  VWAP=23749.8  Body=80%  Spot=23713.75  ATM=23700  CE=168.55  PE=None
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-15   A-events: 11
+
+  A1  10:00  🟢CE  Fut=23890.0  VWAP=23879.5  Body=51%  Spot=23800.25  ATM=23800  CE=180.15  PE=163.5
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 5
+     Higher Highs:
+       H1: 10:45  Fut_Hi=23934.8  CE=156.2  PE=178.5
+     Lower Lows:
+       L1: 10:15  Fut_Lo=23869.0  CE=140.35  PE=201.7
+       L2: 11:00  Fut_Lo=23812.0  CE=183.9  PE=155.4
+       L3: 11:15  Fut_Lo=23793.0  CE=182.45  PE=155.3
+       L4: 11:30  Fut_Lo=23756.3  CE=173.4  PE=165.6
+       L5: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     Max gain from A:  -23.9 pts  (at 10:45)
+     Reversal depth:   +39.8 pts  (option drop at first reversal bar)
+
+  A2  11:00  🔴PE  Fut=23833.3  VWAP=23875.0  Body=79%  Spot=23743.55  ATM=23750  CE=183.9  PE=155.4
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 3
+     Lower Lows:
+       L1: 11:15  Fut_Lo=23793.0  CE=182.45  PE=155.3
+       L2: 11:30  Fut_Lo=23756.3  CE=173.4  PE=165.6
+       L3: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     B1 (pullback): 11:00  Opt@A=155.4  Opt@B1=155.4  Discount=0.0 pts
+     Max gain from A:  +37.5 pts  (at 14:45)
+     Max gain from B1: +37.5 pts
+
+  A3  11:15  🔴PE  Fut=23796.8  VWAP=23858.6  Body=76%  Spot=23712.7  ATM=23700  CE=182.45  PE=155.3
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 2
+     Higher Highs:
+       H1: 12:00  Fut_Hi=23868.0  CE=164.05  PE=164.0
+       H2: 12:45  Fut_Hi=23893.0  CE=148.4  PE=172.8
+       H3: 13:15  Fut_Hi=23894.5  CE=152.35  PE=164.65
+     Lower Lows:
+       L1: 11:30  Fut_Lo=23756.3  CE=173.4  PE=165.6
+       L2: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     B1 (pullback): 11:15  Opt@A=155.3  Opt@B1=155.3  Discount=0.0 pts
+     Max gain from A:  +37.6 pts  (at 14:45)
+     Max gain from B1: +37.6 pts
+
+  A4  11:45  🔴PE  Fut=23801.3  VWAP=23854.1  Body=69%  Spot=23725.55  ATM=23750  CE=150.65  PE=181.7
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 3  |  LLs after A: 5
+     Higher Highs:
+       H1: 12:00  Fut_Hi=23868.0  CE=164.05  PE=164.0
+       H2: 12:45  Fut_Hi=23893.0  CE=148.4  PE=172.8
+       H3: 13:15  Fut_Hi=23894.5  CE=152.35  PE=164.65
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23791.6  CE=158.55  PE=162.1
+       L2: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L3: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L4: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L5: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     Max gain from A:  +11.2 pts  (at 14:45)
+     Reversal depth:   +17.7 pts  (option drop at first reversal bar)
+
+  A5  12:00  🔴PE  Fut=23840.0  VWAP=23853.8  Body=58%  Spot=23751.15  ATM=23750  CE=164.05  PE=164.0
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 2  |  LLs after A: 5
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23893.0  CE=148.4  PE=172.8
+       H2: 13:15  Fut_Hi=23894.5  CE=152.35  PE=164.65
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23791.6  CE=158.55  PE=162.1
+       L2: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L3: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L4: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L5: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     Max gain from A:  +28.9 pts  (at 14:45)
+     Reversal depth:   -8.8 pts  (option drop at first reversal bar)
+
+  A6  12:15  🔴PE  Fut=23802.5  VWAP=23852.9  Body=79%  Spot=23720.5  ATM=23700  CE=182.3  PE=146.15
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 3  |  LLs after A: 5
+     Higher Highs:
+       H1: 12:30  Fut_Hi=23860.0  CE=152.0  PE=171.0
+       H2: 12:45  Fut_Hi=23893.0  CE=148.4  PE=172.8
+       H3: 13:15  Fut_Hi=23894.5  CE=152.35  PE=164.65
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23791.6  CE=158.55  PE=162.1
+       L2: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L3: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L4: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L5: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     Max gain from A:  +46.8 pts  (at 14:45)
+     Reversal depth:   -24.9 pts  (option drop at first reversal bar)
+
+  A7  12:30  🟢CE  Fut=23857.0  VWAP=23852.8  Body=95%  Spot=23767.5  ATM=23750  CE=152.0  PE=171.0
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 5
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23893.0  CE=148.4  PE=172.8
+       H2: 13:15  Fut_Hi=23894.5  CE=152.35  PE=164.65
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23791.6  CE=158.55  PE=162.1
+       L2: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L3: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L4: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L5: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     B1 (pullback): 12:30  Opt@A=152.0  Opt@B1=152.0  Discount=0.0 pts
+     Max gain from A:  +0.3 pts  (at 13:15)
+     Max gain from B1: +0.3 pts
+
+  A8  12:45  🟢CE  Fut=23877.5  VWAP=23853.5  Body=52%  Spot=23784.65  ATM=23800  CE=148.4  PE=172.8
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 13:15  Fut_Hi=23894.5  CE=152.35  PE=164.65
+     Lower Lows:
+       L1: 13:30  Fut_Lo=23830.0  CE=161.5  PE=153.5
+       L2: 13:45  Fut_Lo=23791.6  CE=158.55  PE=162.1
+       L3: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L4: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L5: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+     B1 (pullback): 12:45  Opt@A=148.4  Opt@B1=148.4  Discount=0.0 pts
+     Max gain from A:  +4.0 pts  (at 13:15)
+     Max gain from B1: +4.0 pts
+
+  A9  13:30  🔴PE  Fut=23835.0  VWAP=23855.4  Body=75%  Spot=23739.2  ATM=23750  CE=161.5  PE=153.5
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 5
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23791.6  CE=158.55  PE=162.1
+       L2: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L3: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L4: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L5: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     B1 (pullback): 13:30  Opt@A=153.5  Opt@B1=153.5  Discount=0.0 pts
+     Max gain from A:  +39.4 pts  (at 14:45)
+     Max gain from B1: +39.4 pts
+
+  A10  13:45  🔴PE  Fut=23805.0  VWAP=23854.1  Body=54%  Spot=23713.55  ATM=23700  CE=158.55  PE=162.1
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 4
+     Lower Lows:
+       L1: 14:00  Fut_Lo=23785.0  CE=154.0  PE=171.8
+       L2: 14:15  Fut_Lo=23780.0  CE=164.35  PE=155.25
+       L3: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L4: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     B1 (pullback): 13:45  Opt@A=162.1  Opt@B1=162.1  Discount=0.0 pts
+     Max gain from A:  +30.8 pts  (at 14:45)
+     Max gain from B1: +30.8 pts
+
+  A11  14:15  🔴PE  Fut=23782.6  VWAP=23851.7  Body=68%  Spot=23695.7  ATM=23700  CE=164.35  PE=155.25
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 14:30  Fut_Lo=23770.0  CE=152.45  PE=170.0
+       L2: 14:45  Fut_Lo=23690.1  CE=138.9  PE=192.9
+     B1 (pullback): 14:15  Opt@A=155.25  Opt@B1=155.25  Discount=0.0 pts
+     Max gain from A:  +37.6 pts  (at 14:45)
+     Max gain from B1: +37.6 pts
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-18   A-events: 8
+
+  A1  09:45  🔴PE  Fut=23461.9  VWAP=23511.4  Body=60%  Spot=23341.15  ATM=23350  CE=131.95  PE=130.8
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 10  |  LLs after A: 0
+     Higher Highs:
+       H1: 10:15  Fut_Hi=23505.0  CE=118.6  PE=135.95
+       H2: 10:30  Fut_Hi=23545.0  CE=134.65  PE=116.1
+       H3: 10:45  Fut_Hi=23555.0  CE=97.5  PE=148.85
+       H4: 11:00  Fut_Hi=23570.0  CE=117.35  PE=127.95
+       H5: 11:15  Fut_Hi=23608.6  CE=112.95  PE=137.45
+     Reversal depth:   -5.2 pts  (option drop at first reversal bar)
+
+  A2  10:45  🟢CE  Fut=23552.0  VWAP=23508.7  Body=60%  Spot=23465.1  ATM=23450  CE=97.5  PE=148.85
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 7  |  LLs after A: 0
+     Higher Highs:
+       H1: 11:00  Fut_Hi=23570.0  CE=117.35  PE=127.95
+       H2: 11:15  Fut_Hi=23608.6  CE=112.95  PE=137.45
+       H3: 11:30  Fut_Hi=23650.0  CE=110.65  PE=145.85
+       H4: 12:30  Fut_Hi=23688.0  CE=115.8  PE=138.0
+       H5: 12:45  Fut_Hi=23736.7  CE=84.35  PE=177.45
+     B1 (pullback): 10:45  Opt@A=97.5  Opt@B1=97.5  Discount=0.0 pts
+     Max gain from A:  +11.3 pts  (at 15:00)
+     Max gain from B1: +11.3 pts
+
+  A3  11:30  🟢CE  Fut=23612.2  VWAP=23522.6  Body=52%  Spot=23534.25  ATM=23550  CE=110.65  PE=145.85
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 4  |  LLs after A: 2
+     Higher Highs:
+       H1: 12:30  Fut_Hi=23688.0  CE=115.8  PE=138.0
+       H2: 12:45  Fut_Hi=23736.7  CE=84.35  PE=177.45
+       H3: 13:00  Fut_Hi=23750.0  CE=145.85  PE=113.7
+       H4: 15:00  Fut_Hi=23787.9  CE=108.8  PE=107.7
+     Lower Lows:
+       L1: 11:45  Fut_Lo=23560.0  CE=153.0  PE=108.2
+       L2: 12:00  Fut_Lo=23555.0  CE=102.55  PE=147.25
+     Max gain from A:  -1.9 pts  (at 15:00)
+     Reversal depth:   -42.4 pts  (option drop at first reversal bar)
+
+  A4  11:45  🟢CE  Fut=23560.0  VWAP=23524.5  Body=80%  Spot=23474.7  ATM=23450  CE=153.0  PE=108.2
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 5  |  LLs after A: 1
+     Higher Highs:
+       H1: 12:15  Fut_Hi=23645.0  CE=108.5  PE=145.75
+       H2: 12:30  Fut_Hi=23688.0  CE=115.8  PE=138.0
+       H3: 12:45  Fut_Hi=23736.7  CE=84.35  PE=177.45
+       H4: 13:00  Fut_Hi=23750.0  CE=145.85  PE=113.7
+       H5: 15:00  Fut_Hi=23787.9  CE=108.8  PE=107.7
+     Lower Lows:
+       L1: 12:00  Fut_Lo=23555.0  CE=102.55  PE=147.25
+     Max gain from A:  -44.2 pts  (at 15:00)
+     Reversal depth:   +50.5 pts  (option drop at first reversal bar)
+
+  A5  12:00  🟢CE  Fut=23605.0  VWAP=23526.8  Body=82%  Spot=23524.75  ATM=23500  CE=102.55  PE=147.25
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 5  |  LLs after A: 0
+     Higher Highs:
+       H1: 12:15  Fut_Hi=23645.0  CE=108.5  PE=145.75
+       H2: 12:30  Fut_Hi=23688.0  CE=115.8  PE=138.0
+       H3: 12:45  Fut_Hi=23736.7  CE=84.35  PE=177.45
+       H4: 13:00  Fut_Hi=23750.0  CE=145.85  PE=113.7
+       H5: 15:00  Fut_Hi=23787.9  CE=108.8  PE=107.7
+     B1 (pullback): 12:00  Opt@A=102.55  Opt@B1=102.55  Discount=0.0 pts
+     Max gain from A:  +6.2 pts  (at 15:00)
+     Max gain from B1: +6.2 pts
+
+  A6  12:15  🟢CE  Fut=23638.0  VWAP=23530.4  Body=74%  Spot=23553.45  ATM=23550  CE=108.5  PE=145.75
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 0
+     Higher Highs:
+       H1: 12:30  Fut_Hi=23688.0  CE=115.8  PE=138.0
+       H2: 12:45  Fut_Hi=23736.7  CE=84.35  PE=177.45
+       H3: 13:00  Fut_Hi=23750.0  CE=145.85  PE=113.7
+       H4: 15:00  Fut_Hi=23787.9  CE=108.8  PE=107.7
+     B1 (pullback): 12:15  Opt@A=108.5  Opt@B1=108.5  Discount=0.0 pts
+     Max gain from A:  +0.3 pts  (at 15:00)
+     Max gain from B1: +0.3 pts
+
+  A7  12:45  🟢CE  Fut=23720.0  VWAP=23550.1  Body=76%  Spot=23636.9  ATM=23650  CE=84.35  PE=177.45
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 0
+     Higher Highs:
+       H1: 13:00  Fut_Hi=23750.0  CE=145.85  PE=113.7
+       H2: 15:00  Fut_Hi=23787.9  CE=108.8  PE=107.7
+     B1 (pullback): 12:45  Opt@A=84.35  Opt@B1=84.35  Discount=0.0 pts
+     Max gain from A:  +24.4 pts  (at 15:00)
+     Max gain from B1: +24.4 pts
+
+  A8  14:45  🟢CE  Fut=23665.2  VWAP=23577.9  Body=94%  Spot=23591.5  ATM=23600  CE=98.7  PE=135.35
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 15:00  Fut_Hi=23787.9  CE=108.8  PE=107.7
+     B1 (pullback): 14:45  Opt@A=98.7  Opt@B1=98.7  Discount=0.0 pts
+     Max gain from A:  +10.1 pts  (at 15:00)
+     Max gain from B1: +10.1 pts
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-20   A-events: 8
+
+  A1  09:30  🟢CE  Fut=23595.7  VWAP=23548.5  Body=64%  Spot=23524.25  ATM=23500  CE=230.9  PE=229.75
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 9  |  LLs after A: 0
+     Higher Highs:
+       H1: 09:45  Fut_Hi=23620.0  CE=205.9  PE=249.6
+       H2: 10:30  Fut_Hi=23671.2  CE=230.85  PE=217.85
+       H3: 11:15  Fut_Hi=23680.0  CE=192.05  PE=243.6
+       H4: 11:30  Fut_Hi=23690.0  CE=212.35  PE=227.15
+       H5: 11:45  Fut_Hi=23732.4  CE=241.1  PE=207.7
+     B1 (pullback): 09:30  Opt@A=230.9  Opt@B1=230.9  Discount=0.0 pts
+     Max gain from A:  -25.4 pts  (at 15:15)
+     Max gain from B1: -25.4 pts
+
+  A2  11:15  🟢CE  Fut=23673.0  VWAP=23586.2  Body=71%  Spot=23599.85  ATM=23600  CE=192.05  PE=243.6
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 6  |  LLs after A: 2
+     Higher Highs:
+       H1: 11:30  Fut_Hi=23690.0  CE=212.35  PE=227.15
+       H2: 11:45  Fut_Hi=23732.4  CE=241.1  PE=207.7
+       H3: 14:00  Fut_Hi=23750.0  CE=199.2  PE=222.4
+       H4: 14:15  Fut_Hi=23774.0  CE=207.85  PE=209.6
+       H5: 14:45  Fut_Hi=23775.0  CE=197.7  PE=213.9
+     Lower Lows:
+       L1: 13:15  Fut_Lo=23632.0  CE=226.1  PE=206.6
+       L2: 13:30  Fut_Lo=23630.3  CE=206.4  PE=223.0
+     B1 (pullback): 11:15  Opt@A=192.05  Opt@B1=192.05  Discount=0.0 pts
+     Max gain from A:  +13.4 pts  (at 15:15)
+     Max gain from B1: +13.4 pts
+
+  A3  12:00  🟢CE  Fut=23651.9  VWAP=23610.5  Body=69%  Spot=23579.95  ATM=23600  CE=210.65  PE=227.95
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 7  |  LLs after A: 2
+     Higher Highs:
+       H1: 12:15  Fut_Hi=23700.0  CE=206.8  PE=228.6
+       H2: 12:45  Fut_Hi=23706.0  CE=215.3  PE=216.75
+       H3: 13:45  Fut_Hi=23710.0  CE=180.0  PE=243.05
+       H4: 14:00  Fut_Hi=23750.0  CE=199.2  PE=222.4
+       H5: 14:15  Fut_Hi=23774.0  CE=207.85  PE=209.6
+     Lower Lows:
+       L1: 13:15  Fut_Lo=23632.0  CE=226.1  PE=206.6
+       L2: 13:30  Fut_Lo=23630.3  CE=206.4  PE=223.0
+     B1 (pullback): 12:00  Opt@A=210.65  Opt@B1=210.65  Discount=0.0 pts
+     Max gain from A:  -5.2 pts  (at 15:15)
+     Max gain from B1: -5.2 pts
+
+  A4  12:15  🟢CE  Fut=23679.2  VWAP=23617.7  Body=57%  Spot=23588.0  ATM=23600  CE=206.8  PE=228.6
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 6  |  LLs after A: 2
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23706.0  CE=215.3  PE=216.75
+       H2: 13:45  Fut_Hi=23710.0  CE=180.0  PE=243.05
+       H3: 14:00  Fut_Hi=23750.0  CE=199.2  PE=222.4
+       H4: 14:15  Fut_Hi=23774.0  CE=207.85  PE=209.6
+       H5: 14:45  Fut_Hi=23775.0  CE=197.7  PE=213.9
+     Lower Lows:
+       L1: 13:15  Fut_Lo=23632.0  CE=226.1  PE=206.6
+       L2: 13:30  Fut_Lo=23630.3  CE=206.4  PE=223.0
+     B1 (pullback): 12:15  Opt@A=206.8  Opt@B1=206.8  Discount=0.0 pts
+     Max gain from A:  -1.3 pts  (at 15:15)
+     Max gain from B1: -1.3 pts
+
+  A5  13:15  🟢CE  Fut=23633.8  VWAP=23625.0  Body=84%  Spot=23567.1  ATM=23550  CE=226.1  PE=206.6
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 6  |  LLs after A: 1
+     Higher Highs:
+       H1: 13:30  Fut_Hi=23700.0  CE=206.4  PE=223.0
+       H2: 13:45  Fut_Hi=23710.0  CE=180.0  PE=243.05
+       H3: 14:00  Fut_Hi=23750.0  CE=199.2  PE=222.4
+       H4: 14:15  Fut_Hi=23774.0  CE=207.85  PE=209.6
+       H5: 14:45  Fut_Hi=23775.0  CE=197.7  PE=213.9
+     Lower Lows:
+       L1: 13:30  Fut_Lo=23630.3  CE=206.4  PE=223.0
+     B1 (pullback): 13:30  Opt@A=226.1  Opt@B1=206.4  Discount=19.7 pts
+     Max gain from A:  -20.6 pts  (at 15:15)
+     Max gain from B1: -0.9 pts
+
+  A6  13:30  🟢CE  Fut=23672.6  VWAP=23626.8  Body=56%  Spot=23595.85  ATM=23600  CE=206.4  PE=223.0
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 5  |  LLs after A: 0
+     Higher Highs:
+       H1: 13:45  Fut_Hi=23710.0  CE=180.0  PE=243.05
+       H2: 14:00  Fut_Hi=23750.0  CE=199.2  PE=222.4
+       H3: 14:15  Fut_Hi=23774.0  CE=207.85  PE=209.6
+       H4: 14:45  Fut_Hi=23775.0  CE=197.7  PE=213.9
+       H5: 15:15  Fut_Hi=23784.0  CE=205.5  PE=197.65
+     B1 (pullback): 13:30  Opt@A=206.4  Opt@B1=206.4  Discount=0.0 pts
+     Max gain from A:  -0.9 pts  (at 15:15)
+     Max gain from B1: -0.9 pts
+
+  A7  13:45  🟢CE  Fut=23710.0  VWAP=23628.0  Body=74%  Spot=23628.15  ATM=23650  CE=180.0  PE=243.05
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 0
+     Higher Highs:
+       H1: 14:00  Fut_Hi=23750.0  CE=199.2  PE=222.4
+       H2: 14:15  Fut_Hi=23774.0  CE=207.85  PE=209.6
+       H3: 14:45  Fut_Hi=23775.0  CE=197.7  PE=213.9
+       H4: 15:15  Fut_Hi=23784.0  CE=205.5  PE=197.65
+     B1 (pullback): 13:45  Opt@A=180.0  Opt@B1=180.0  Discount=0.0 pts
+     Max gain from A:  +25.5 pts  (at 15:15)
+     Max gain from B1: +25.5 pts
+
+  A8  14:30  🟢CE  Fut=23758.1  VWAP=23641.5  Body=50%  Spot=23677.6  ATM=23700  CE=185.6  PE=229.0
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 1
+     Higher Highs:
+       H1: 14:45  Fut_Hi=23775.0  CE=197.7  PE=213.9
+       H2: 15:15  Fut_Hi=23784.0  CE=205.5  PE=197.65
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23730.0  CE=200.25  PE=208.35
+     B1 (pullback): 14:30  Opt@A=185.6  Opt@B1=185.6  Discount=0.0 pts
+     Max gain from A:  +19.9 pts  (at 15:15)
+     Max gain from B1: +19.9 pts
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-21   A-events: 11
+
+  A1  09:30  🟢CE  Fut=23870.0  VWAP=23855.3  Body=58%  Spot=23793.15  ATM=23800  CE=154.75  PE=221.05
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 09:45  Fut_Hi=23890.0  CE=195.0  PE=164.05
+     Lower Lows:
+       L1: 10:45  Fut_Lo=23792.0  CE=192.75  PE=157.25
+       L2: 11:00  Fut_Lo=23772.0  CE=174.2  PE=177.15
+       L3: 11:15  Fut_Lo=23710.0  CE=135.75  PE=231.05
+       L4: 12:15  Fut_Lo=23702.0  CE=191.85  PE=157.9
+       L5: 12:30  Fut_Lo=23656.0  CE=167.1  PE=183.15
+     B1 (pullback): 09:30  Opt@A=154.75  Opt@B1=154.75  Discount=0.0 pts
+     Max gain from A:  +40.2 pts  (at 09:45)
+     Max gain from B1: +40.2 pts
+
+  A2  09:45  🔴PE  Fut=23842.7  VWAP=23855.9  Body=56%  Spot=23768.35  ATM=23750  CE=195.0  PE=164.05
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 8
+     Lower Lows:
+       L1: 10:00  Fut_Lo=23825.0  CE=190.6  PE=163.5
+       L2: 10:30  Fut_Lo=23807.0  CE=174.8  PE=175.2
+       L3: 10:45  Fut_Lo=23792.0  CE=192.75  PE=157.25
+       L4: 11:00  Fut_Lo=23772.0  CE=174.2  PE=177.15
+       L5: 11:15  Fut_Lo=23710.0  CE=135.75  PE=231.05
+     B1 (pullback): 09:45  Opt@A=164.05  Opt@B1=164.05  Discount=0.0 pts
+     Max gain from A:  +52.9 pts  (at 13:00)
+     Max gain from B1: +52.9 pts
+
+  A3  10:15  🟢CE  Fut=23864.5  VWAP=23855.0  Body=58%  Spot=23780.0  ATM=23800  CE=160.0  PE=189.25
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 7
+     Lower Lows:
+       L1: 10:30  Fut_Lo=23807.0  CE=174.8  PE=175.2
+       L2: 10:45  Fut_Lo=23792.0  CE=192.75  PE=157.25
+       L3: 11:00  Fut_Lo=23772.0  CE=174.2  PE=177.15
+       L4: 11:15  Fut_Lo=23710.0  CE=135.75  PE=231.05
+       L5: 12:15  Fut_Lo=23702.0  CE=191.85  PE=157.9
+     Reversal depth:   -14.8 pts  (option drop at first reversal bar)
+
+  A4  10:45  🔴PE  Fut=23801.0  VWAP=23848.1  Body=74%  Spot=23723.75  ATM=23700  CE=192.75  PE=157.25
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 5
+     Lower Lows:
+       L1: 11:00  Fut_Lo=23772.0  CE=174.2  PE=177.15
+       L2: 11:15  Fut_Lo=23710.0  CE=135.75  PE=231.05
+       L3: 12:15  Fut_Lo=23702.0  CE=191.85  PE=157.9
+       L4: 12:30  Fut_Lo=23656.0  CE=167.1  PE=183.15
+       L5: 13:00  Fut_Lo=23640.2  CE=146.4  PE=216.95
+     B1 (pullback): 10:45  Opt@A=157.25  Opt@B1=157.25  Discount=0.0 pts
+     Max gain from A:  +59.7 pts  (at 13:00)
+     Max gain from B1: +59.7 pts
+
+  A5  11:00  🔴PE  Fut=23772.0  VWAP=23839.7  Body=100%  Spot=23697.05  ATM=23700  CE=174.2  PE=177.15
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 4
+     Higher Highs:
+       H1: 11:15  Fut_Hi=23825.0  CE=135.75  PE=231.05
+     Lower Lows:
+       L1: 11:15  Fut_Lo=23710.0  CE=135.75  PE=231.05
+       L2: 12:15  Fut_Lo=23702.0  CE=191.85  PE=157.9
+       L3: 12:30  Fut_Lo=23656.0  CE=167.1  PE=183.15
+       L4: 13:00  Fut_Lo=23640.2  CE=146.4  PE=216.95
+     Max gain from A:  +39.8 pts  (at 13:00)
+     Reversal depth:   -53.9 pts  (option drop at first reversal bar)
+
+  A6  11:30  🔴PE  Fut=23800.2  VWAP=23829.5  Body=67%  Spot=23731.15  ATM=23750  CE=157.8  PE=189.0
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 5
+     Higher Highs:
+       H1: 11:45  Fut_Hi=23824.4  CE=175.55  PE=169.3
+     Lower Lows:
+       L1: 11:45  Fut_Lo=23780.5  CE=175.55  PE=169.3
+       L2: 12:00  Fut_Lo=23771.8  CE=179.0  PE=165.95
+       L3: 12:15  Fut_Lo=23702.0  CE=191.85  PE=157.9
+       L4: 12:30  Fut_Lo=23656.0  CE=167.1  PE=183.15
+       L5: 13:00  Fut_Lo=23640.2  CE=146.4  PE=216.95
+     Max gain from A:  +27.9 pts  (at 13:00)
+     Reversal depth:   +19.7 pts  (option drop at first reversal bar)
+
+  A7  12:15  🔴PE  Fut=23726.0  VWAP=23817.7  Body=51%  Spot=23663.8  ATM=23650  CE=191.85  PE=157.9
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 12:30  Fut_Lo=23656.0  CE=167.1  PE=183.15
+       L2: 13:00  Fut_Lo=23640.2  CE=146.4  PE=216.95
+     B1 (pullback): 12:15  Opt@A=157.9  Opt@B1=157.9  Discount=0.0 pts
+     Max gain from A:  +59.0 pts  (at 13:00)
+     Max gain from B1: +59.0 pts
+
+  A8  13:30  🔴PE  Fut=23754.3  VWAP=23775.5  Body=80%  Spot=23681.35  ATM=23700  CE=136.65  PE=210.15
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 2  |  LLs after A: 0
+     Higher Highs:
+       H1: 13:45  Fut_Hi=23762.0  CE=166.8  PE=175.95
+       H2: 14:30  Fut_Hi=23770.0  CE=166.0  PE=179.4
+     Reversal depth:   +34.2 pts  (option drop at first reversal bar)
+
+  A9  14:00  🔴PE  Fut=23715.0  VWAP=23770.5  Body=61%  Spot=23652.15  ATM=23650  CE=163.8  PE=179.0
+     First move: HH  →  ❌ REVERSAL
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 14:30  Fut_Hi=23770.0  CE=166.0  PE=179.4
+     Reversal depth:   -0.4 pts  (option drop at first reversal bar)
+
+  A10  14:45  🔴PE  Fut=23751.4  VWAP=23765.7  Body=70%  Spot=23679.55  ATM=23700  CE=145.35  PE=198.35
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 2
+     Lower Lows:
+       L1: 15:00  Fut_Lo=23708.9  CE=164.7  PE=174.2
+       L2: 15:15  Fut_Lo=23705.0  CE=161.65  PE=180.25
+     B1 (pullback): 14:45  Opt@A=198.35  Opt@B1=198.35  Discount=0.0 pts
+     Max gain from A:  -18.1 pts  (at 15:15)
+     Max gain from B1: -18.1 pts
+
+  A11  15:00  🔴PE  Fut=23712.8  VWAP=23763.6  Body=77%  Spot=23639.1  ATM=23650  CE=164.7  PE=174.2
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 1
+     Lower Lows:
+       L1: 15:15  Fut_Lo=23705.0  CE=161.65  PE=180.25
+     B1 (pullback): 15:00  Opt@A=174.2  Opt@B1=174.2  Discount=0.0 pts
+     Max gain from A:  +6.0 pts  (at 15:15)
+     Max gain from B1: +6.0 pts
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-22   A-events: 10
+
+  A1  10:15  🟢CE  Fut=23838.0  VWAP=23832.2  Body=80%  Spot=23761.45  ATM=23750  CE=166.6  PE=142.7
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 7
+     Higher Highs:
+       H1: 10:30  Fut_Hi=23875.0  CE=145.95  PE=156.85
+       H2: 10:45  Fut_Hi=23879.9  CE=149.15  PE=151.7
+       H3: 11:30  Fut_Hi=23890.0  CE=131.35  PE=164.35
+       H4: 11:45  Fut_Hi=23910.0  CE=163.05  PE=137.4
+     Lower Lows:
+       L1: 11:15  Fut_Lo=23821.1  CE=164.7  PE=137.15
+       L2: 11:30  Fut_Lo=23820.0  CE=131.35  PE=164.35
+       L3: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L4: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+       L5: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+     B1 (pullback): 10:15  Opt@A=166.6  Opt@B1=166.6  Discount=0.0 pts
+     Max gain from A:  -3.5 pts  (at 11:45)
+     Max gain from B1: -3.5 pts
+
+  A2  10:30  🟢CE  Fut=23875.0  VWAP=23834.5  Body=100%  Spot=23792.7  ATM=23800  CE=145.95  PE=156.85
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 7
+     Higher Highs:
+       H1: 10:45  Fut_Hi=23879.9  CE=149.15  PE=151.7
+       H2: 11:30  Fut_Hi=23890.0  CE=131.35  PE=164.35
+       H3: 11:45  Fut_Hi=23910.0  CE=163.05  PE=137.4
+     Lower Lows:
+       L1: 11:15  Fut_Lo=23821.1  CE=164.7  PE=137.15
+       L2: 11:30  Fut_Lo=23820.0  CE=131.35  PE=164.35
+       L3: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L4: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+       L5: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+     B1 (pullback): 10:30  Opt@A=145.95  Opt@B1=145.95  Discount=0.0 pts
+     Max gain from A:  +17.1 pts  (at 11:45)
+     Max gain from B1: +17.1 pts
+
+  A3  10:45  🟢CE  Fut=23856.1  VWAP=23836.7  Body=63%  Spot=23780.75  ATM=23800  CE=149.15  PE=151.7
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 2  |  LLs after A: 8
+     Higher Highs:
+       H1: 11:30  Fut_Hi=23890.0  CE=131.35  PE=164.35
+       H2: 11:45  Fut_Hi=23910.0  CE=163.05  PE=137.4
+     Lower Lows:
+       L1: 11:00  Fut_Lo=23838.4  CE=173.15  PE=131.95
+       L2: 11:15  Fut_Lo=23821.1  CE=164.7  PE=137.15
+       L3: 11:30  Fut_Lo=23820.0  CE=131.35  PE=164.35
+       L4: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L5: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+     Max gain from A:  +13.9 pts  (at 11:45)
+     Reversal depth:   -24.0 pts  (option drop at first reversal bar)
+
+  A4  11:30  🟢CE  Fut=23890.0  VWAP=23839.6  Body=79%  Spot=23808.25  ATM=23800  CE=131.35  PE=164.35
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 5
+     Higher Highs:
+       H1: 11:45  Fut_Hi=23910.0  CE=163.05  PE=137.4
+     Lower Lows:
+       L1: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L2: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+       L3: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+       L4: 14:45  Fut_Lo=23765.0  CE=154.95  PE=132.85
+       L5: 15:00  Fut_Lo=23760.0  CE=152.1  PE=131.3
+     B1 (pullback): 11:30  Opt@A=131.35  Opt@B1=131.35  Discount=0.0 pts
+     Max gain from A:  +31.7 pts  (at 11:45)
+     Max gain from B1: +31.7 pts
+
+  A5  12:15  🔴PE  Fut=23846.1  VWAP=23846.3  Body=66%  Spot=23774.75  ATM=23750  CE=174.2  PE=124.15
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 12:45  Fut_Hi=23910.0  CE=132.3  PE=160.55
+     Lower Lows:
+       L1: 12:30  Fut_Lo=23825.8  CE=137.4  PE=157.3
+       L2: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L3: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+       L4: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+       L5: 14:45  Fut_Lo=23765.0  CE=154.95  PE=132.85
+     B1 (pullback): 12:15  Opt@A=124.15  Opt@B1=124.15  Discount=0.0 pts
+     Max gain from A:  +7.2 pts  (at 15:00)
+     Max gain from B1: +7.2 pts
+
+  A6  12:45  🟢CE  Fut=23899.0  VWAP=23849.0  Body=60%  Spot=23827.45  ATM=23850  CE=132.3  PE=160.55
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 0  |  LLs after A: 6
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23851.4  CE=148.3  PE=137.15
+       L2: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L3: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+       L4: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+       L5: 14:45  Fut_Lo=23765.0  CE=154.95  PE=132.85
+     Reversal depth:   -16.0 pts  (option drop at first reversal bar)
+
+  A7  13:30  🟢CE  Fut=23871.0  VWAP=23852.9  Body=58%  Spot=23801.25  ATM=23800  CE=156.1  PE=134.0
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 6
+     Higher Highs:
+       H1: 13:45  Fut_Hi=23899.0  CE=148.3  PE=137.15
+     Lower Lows:
+       L1: 13:45  Fut_Lo=23851.4  CE=148.3  PE=137.15
+       L2: 14:00  Fut_Lo=23806.8  CE=126.85  PE=158.35
+       L3: 14:15  Fut_Lo=23801.1  CE=148.7  PE=136.3
+       L4: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+       L5: 14:45  Fut_Lo=23765.0  CE=154.95  PE=132.85
+     B1 (pullback): 13:45  Opt@A=156.1  Opt@B1=148.3  Discount=7.8 pts
+     Max gain from A:  -7.8 pts  (at 13:45)
+     Max gain from B1: +0.0 pts
+
+  A8  14:15  🔴PE  Fut=23802.0  VWAP=23851.1  Body=80%  Spot=23739.3  ATM=23750  CE=148.7  PE=136.3
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 0  |  LLs after A: 3
+     Lower Lows:
+       L1: 14:30  Fut_Lo=23770.1  CE=165.1  PE=123.0
+       L2: 14:45  Fut_Lo=23765.0  CE=154.95  PE=132.85
+       L3: 15:00  Fut_Lo=23760.0  CE=152.1  PE=131.3
+     B1 (pullback): 14:15  Opt@A=136.3  Opt@B1=136.3  Discount=0.0 pts
+     Max gain from A:  -5.0 pts  (at 15:00)
+     Max gain from B1: -5.0 pts
+
+  A9  14:30  🔴PE  Fut=23774.1  VWAP=23846.7  Body=55%  Spot=23709.05  ATM=23700  CE=165.1  PE=123.0
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 2
+     Higher Highs:
+       H1: 15:15  Fut_Hi=23844.0  CE=136.4  PE=139.9
+     Lower Lows:
+       L1: 14:45  Fut_Lo=23765.0  CE=154.95  PE=132.85
+       L2: 15:00  Fut_Lo=23760.0  CE=152.1  PE=131.3
+     B1 (pullback): 14:30  Opt@A=123.0  Opt@B1=123.0  Discount=0.0 pts
+     Max gain from A:  +8.3 pts  (at 15:00)
+     Max gain from B1: +8.3 pts
+
+  A10  15:15  🟢CE  Fut=23842.0  VWAP=23841.0  Body=96%  Spot=23748.85  ATM=23750  CE=136.4  PE=139.9
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+────────────────────────────────────────────────────────────────────────────────
+  DAY: 2026-05-25   A-events: 13
+
+  A1  10:00  🟢CE  Fut=24025.0  VWAP=24019.6  Body=52%  Spot=23952.05  ATM=23950  CE=109.5  PE=101.55
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 6  |  LLs after A: 2
+     Higher Highs:
+       H1: 10:15  Fut_Hi=24048.0  CE=120.6  PE=83.05
+       H2: 10:30  Fut_Hi=24059.0  CE=95.0  PE=102.65
+       H3: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H4: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H5: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+     Lower Lows:
+       L1: 12:30  Fut_Lo=24004.7  CE=102.5  PE=84.5
+       L2: 12:45  Fut_Lo=23982.5  CE=89.35  PE=97.15
+     B1 (pullback): 10:00  Opt@A=109.5  Opt@B1=109.5  Discount=0.0 pts
+     Max gain from A:  -29.1 pts  (at 15:15)
+     Max gain from B1: -29.1 pts
+
+  A2  10:30  🟢CE  Fut=24046.4  VWAP=24023.6  Body=62%  Spot=23987.4  ATM=24000  CE=95.0  PE=102.65
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 4  |  LLs after A: 5
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H2: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H3: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H4: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     Lower Lows:
+       L1: 11:15  Fut_Lo=24024.0  CE=90.55  PE=104.0
+       L2: 12:00  Fut_Lo=24013.8  CE=109.4  PE=82.55
+       L3: 12:15  Fut_Lo=24009.7  CE=107.0  PE=83.1
+       L4: 12:30  Fut_Lo=24004.7  CE=102.5  PE=84.5
+       L5: 12:45  Fut_Lo=23982.5  CE=89.35  PE=97.15
+     Max gain from A:  -14.6 pts  (at 15:15)
+     Reversal depth:   +4.5 pts  (option drop at first reversal bar)
+
+  A3  10:45  🟢CE  Fut=24032.0  VWAP=24025.3  Body=54%  Spot=23978.15  ATM=24000  CE=97.35  PE=100.65
+     First move: LL  →  ❌ REVERSAL
+     HHs after A: 4  |  LLs after A: 6
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H2: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H3: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H4: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     Lower Lows:
+       L1: 11:00  Fut_Lo=24026.0  CE=92.55  PE=101.7
+       L2: 11:15  Fut_Lo=24024.0  CE=90.55  PE=104.0
+       L3: 12:00  Fut_Lo=24013.8  CE=109.4  PE=82.55
+       L4: 12:15  Fut_Lo=24009.7  CE=107.0  PE=83.1
+       L5: 12:30  Fut_Lo=24004.7  CE=102.5  PE=84.5
+     Max gain from A:  -16.9 pts  (at 15:15)
+     Reversal depth:   +4.8 pts  (option drop at first reversal bar)
+
+  A4  11:15  🟢CE  Fut=24027.0  VWAP=24026.7  Body=62%  Spot=23977.15  ATM=24000  CE=90.55  PE=104.0
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 6  |  LLs after A: 4
+     Higher Highs:
+       H1: 11:30  Fut_Hi=24049.4  CE=84.3  PE=108.5
+       H2: 11:45  Fut_Hi=24054.5  CE=90.65  PE=99.95
+       H3: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H4: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H5: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+     Lower Lows:
+       L1: 12:00  Fut_Lo=24013.8  CE=109.4  PE=82.55
+       L2: 12:15  Fut_Lo=24009.7  CE=107.0  PE=83.1
+       L3: 12:30  Fut_Lo=24004.7  CE=102.5  PE=84.5
+       L4: 12:45  Fut_Lo=23982.5  CE=89.35  PE=97.15
+     B1 (pullback): 11:15  Opt@A=90.55  Opt@B1=90.55  Discount=0.0 pts
+     Max gain from A:  -10.1 pts  (at 15:15)
+     Max gain from B1: -10.1 pts
+
+  A5  11:30  🟢CE  Fut=24040.0  VWAP=24027.2  Body=51%  Spot=23980.95  ATM=24000  CE=84.3  PE=108.5
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 5  |  LLs after A: 4
+     Higher Highs:
+       H1: 11:45  Fut_Hi=24054.5  CE=90.65  PE=99.95
+       H2: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H3: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H4: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H5: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     Lower Lows:
+       L1: 12:00  Fut_Lo=24013.8  CE=109.4  PE=82.55
+       L2: 12:15  Fut_Lo=24009.7  CE=107.0  PE=83.1
+       L3: 12:30  Fut_Lo=24004.7  CE=102.5  PE=84.5
+       L4: 12:45  Fut_Lo=23982.5  CE=89.35  PE=97.15
+     B1 (pullback): 11:30  Opt@A=84.3  Opt@B1=84.3  Discount=0.0 pts
+     Max gain from A:  -3.9 pts  (at 15:15)
+     Max gain from B1: -3.9 pts
+
+  A6  12:00  🔴PE  Fut=24016.0  VWAP=24028.0  Body=76%  Spot=23963.9  ATM=23950  CE=109.4  PE=82.55
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 3
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H2: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H3: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H4: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     Lower Lows:
+       L1: 12:15  Fut_Lo=24009.7  CE=107.0  PE=83.1
+       L2: 12:30  Fut_Lo=24004.7  CE=102.5  PE=84.5
+       L3: 12:45  Fut_Lo=23982.5  CE=89.35  PE=97.15
+     B1 (pullback): 12:00  Opt@A=82.55  Opt@B1=82.55  Discount=0.0 pts
+     Max gain from A:  +14.6 pts  (at 12:45)
+     Max gain from B1: +14.6 pts
+
+  A7  13:15  🟢CE  Fut=24038.0  VWAP=24025.4  Body=56%  Spot=23984.1  ATM=24000  CE=82.75  PE=95.6
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 5  |  LLs after A: 4
+     Higher Highs:
+       H1: 13:30  Fut_Hi=24046.1  CE=110.85  PE=71.25
+       H2: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H3: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H4: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H5: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     Lower Lows:
+       L1: 13:30  Fut_Lo=24014.4  CE=110.85  PE=71.25
+       L2: 13:45  Fut_Lo=24011.6  CE=102.75  PE=73.15
+       L3: 14:00  Fut_Lo=24010.0  CE=103.7  PE=70.25
+       L4: 14:15  Fut_Lo=24007.0  CE=69.35  PE=103.45
+     B1 (pullback): 13:30  Opt@A=82.75  Opt@B1=110.85  Discount=-28.1 pts
+     Max gain from A:  -2.3 pts  (at 15:15)
+     Max gain from B1: -30.4 pts
+
+  A8  13:30  🔴PE  Fut=24020.0  VWAP=24025.5  Body=57%  Spot=23963.95  ATM=23950  CE=110.85  PE=71.25
+     First move: LL  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 3
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H2: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H3: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H4: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     Lower Lows:
+       L1: 13:45  Fut_Lo=24011.6  CE=102.75  PE=73.15
+       L2: 14:00  Fut_Lo=24010.0  CE=103.7  PE=70.25
+       L3: 14:15  Fut_Lo=24007.0  CE=69.35  PE=103.45
+     B1 (pullback): 13:30  Opt@A=71.25  Opt@B1=71.25  Discount=0.0 pts
+     Max gain from A:  +32.2 pts  (at 14:15)
+     Max gain from B1: +32.2 pts
+
+  A9  14:15  🟢CE  Fut=24034.7  VWAP=24025.2  Body=79%  Spot=23978.15  ATM=24000  CE=69.35  PE=103.45
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 4  |  LLs after A: 0
+     Higher Highs:
+       H1: 14:30  Fut_Hi=24077.9  CE=85.75  PE=86.05
+       H2: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H3: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H4: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     B1 (pullback): 14:15  Opt@A=69.35  Opt@B1=69.35  Discount=0.0 pts
+     Max gain from A:  +11.1 pts  (at 15:15)
+     Max gain from B1: +11.1 pts
+
+  A10  14:30  🟢CE  Fut=24076.0  VWAP=24027.5  Body=79%  Spot=24007.8  ATM=24000  CE=85.75  PE=86.05
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 3  |  LLs after A: 0
+     Higher Highs:
+       H1: 14:45  Fut_Hi=24097.3  CE=83.0  PE=91.95
+       H2: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H3: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     B1 (pullback): 14:30  Opt@A=85.75  Opt@B1=85.75  Discount=0.0 pts
+     Max gain from A:  -5.3 pts  (at 15:15)
+     Max gain from B1: -5.3 pts
+
+  A11  14:45  🟢CE  Fut=24091.0  VWAP=24030.9  Body=55%  Spot=24035.0  ATM=24050  CE=83.0  PE=91.95
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 2  |  LLs after A: 0
+     Higher Highs:
+       H1: 15:00  Fut_Hi=24109.3  CE=82.4  PE=88.75
+       H2: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     B1 (pullback): 14:45  Opt@A=83.0  Opt@B1=83.0  Discount=0.0 pts
+     Max gain from A:  -2.5 pts  (at 15:15)
+     Max gain from B1: -2.5 pts
+
+  A12  15:00  🟢CE  Fut=24107.0  VWAP=24034.7  Body=56%  Spot=24035.25  ATM=24050  CE=82.4  PE=88.75
+     First move: HH  →  ✅ CONTINUATION
+     HHs after A: 1  |  LLs after A: 0
+     Higher Highs:
+       H1: 15:15  Fut_Hi=24160.0  CE=80.45  PE=86.0
+     B1 (pullback): 15:00  Opt@A=82.4  Opt@B1=82.4  Discount=0.0 pts
+     Max gain from A:  -1.9 pts  (at 15:15)
+     Max gain from B1: -1.9 pts
+
+  A13  15:15  🟢CE  Fut=24155.0  VWAP=24043.2  Body=69%  Spot=24049.9  ATM=24050  CE=80.45  PE=86.0
+     First move: none  →  — no move
+     HHs after A: 0  |  LLs after A: 0
+
+================================================================================
+  SUMMARY STATISTICS
+================================================================================
+
+  Total A events (VWAP cross >50% body): 152
+  ✅ Continuation (same direction):      99  (65.1%)
+  ❌ Reversal (opposite direction):       46  (30.3%)
+  — No further move (flat/EOD):          7  (4.6%)
+
+  CE events: continuation=53  reversal=22
+  PE events: continuation=46  reversal=24
+
+  ── B1 PULLBACK STATS (from A to B1) ──
+  Events with B1 data : 97
+  Avg discount        : +0.03 pts
+  Median discount     : +0.00 pts
+  Min  (smallest dip) : -28.10 pts
+  Max  (biggest dip)  : +19.70 pts
+  Std dev             : 4.35 pts
+  Pctile 25/50/75     : +0.00 / +0.00 / +0.00 pts
+  Avg wait to B1      : 0.9 min
+  Max wait to B1      : 15 min
+
+  ── GAIN STATS (continuation events only) ──
+  From A price → Hn/Ln:
+    Avg  : +5.51 pts
+    Median:+4.85 pts
+    Min  : -85.25 pts
+    Max  : +99.90 pts
+    25/50/75: -9.00 / +4.85 / +24.45 pts
+  From B1 price → Hn/Ln (optimal entry):
+    Avg  : +5.54 pts
+    Median:+4.85 pts
+    Min  : -85.25 pts
+    Max  : +99.90 pts
+
+  ── REVERSAL DEPTH (for HARDSL calibration) ──
+  Events : 44
+  Avg reversal drop : -0.29 pts
+  Max reversal drop : 72.40 pts
+  25/50/75          : -19.05 / 3.33 / 18.57 pts
+
+================================================================================
+  CALIBRATION RECOMMENDATIONS
+================================================================================
+
+  LIMIT_OFFSET (buy below A price):
+    Conservative (median dip) : 0.0 pts → buy at signal_price - 0
+    Aggressive   (25th pctile): 0.0 pts → buy at signal_price - 0
+
+  LIMIT_WINDOW (wait for fill):
+    Avg wait to B1: 0.9 min → 1 × 5min bars (recommend 2)
+
+  VELVET ROPE / TARGET (peak trigger):
+    Median gain from B1 : 4.8 pts → set RI ≈ 2-3 pts
+    75th pctile gain    : 21.8 pts → runner to 22 pts available
+
+  ➤ Suggested params to test:
+    LIMIT_OFFSET       = 3 (vs current 13)
+    LIMIT_WINDOW_BARS  = 2 (vs current 3)
+    RI (Velvet Rope)   = 10 (vs current 12)
+
+================================================================================
+
