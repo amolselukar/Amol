@@ -1,1 +1,3 @@
 ts,spot,1h_close,1h_sma20,1h_sma50,1h_rsi,15m_K,15m_K_prev,regime,pos_active,pos_side,pos_engine,pos_strike,pos_ltp,pos_pnl_pct,pos_sl,tr_armed,tr_sl,peak_prem,day_losses,flips_today,halted,chop_block
+2026-06-08T09:58:55.132904+05:30,23200.9,23368.85,23374.2325,23533.326,45.47609559969838,24.685982795739022,46.94708721049155,BEAR,False,,,0,0,0,0.0,False,0.0,0.0,0,0,False,False
+2026-06-08T10:04:15.083401+05:30,23179.75,23368.85,23374.2325,23533.326,45.47609559969838,9.547437944035844,24.68377088413617,BEAR,True,PE,V3,23200,124.7,6.308610400682017,96.186,False,0.0,124.7,0,0,False,False
