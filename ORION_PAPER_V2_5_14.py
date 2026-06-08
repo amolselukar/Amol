@@ -3012,19 +3012,9 @@ def main():
             if _test_oid:
                 linfo(f"[BOOT] ✅ mStock test BUY placed: {_test_ms_sym} oid={_test_oid}")
                 _mstock_broker.cancel_order(_test_oid)
-                linfo(f"[BOOT] ✅ mStock test BUY cancelled.")
-                # Test SELL too
-                _test_sell_oid = _mstock_broker.place_order(
-                    "SELL", _test_ms_sym, LOT_SIZE, "LIMIT", price=0.05, tag="ORION_TEST"
-                )
-                if _test_sell_oid:
-                    linfo(f"[BOOT] ✅ mStock test SELL placed: {_test_ms_sym} oid={_test_sell_oid}")
-                    _mstock_broker.cancel_order(_test_sell_oid)
-                    linfo(f"[BOOT] ✅ mStock test SELL cancelled. BUY+SELL VERIFIED.")
-                    _test_passed = True
-                else:
-                    _err = getattr(_mstock_broker, '_last_error', '') or 'unknown'
-                    lwarn(f"[BOOT] ❌ mStock test SELL FAILED: {_err}")
+                linfo(f"[BOOT] ✅ mStock test BUY cancelled. BUY VERIFIED.")
+                # SELL test skipped — naked short requires margin; real exits are long-close (no margin)
+                _test_passed = True
             else:
                 _err = getattr(_mstock_broker, '_last_error', '') or 'unknown'
                 lwarn(f"[BOOT] ❌ mStock test BUY FAILED: {_err}")
