@@ -637,7 +637,7 @@ MODE    = "LIVE"    # LIVE  -> real orders via mStock API
 # ---- Execution broker ----
 # "kite_paper"   : paper mode, no real orders (current default)
 # "mstock_live"  : live orders via mStock API (activate when going live)
-EXECUTION_BROKER = "mstock_live"
+EXECUTION_BROKER = "kite_paper"
 LOT_SIZE = 65
 LOTS_PER_TRADE = 2
 IST = pytz.timezone("Asia/Kolkata")
