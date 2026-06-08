@@ -1900,16 +1900,14 @@ def compute_nifty_vwap_today(df15m):
 
 def check_vwap_signal(df15m_nifty, expiry_lookup, spot, df15m_fut=None):
     """
-    VWAP TRIPLE confirmation entry (V2.5.14):
-    GATE 1 (PRIMARY): Nifty FUTURES 15m close crosses futures VWAP, body >= 50%
-           Futures = real margin-backed money, strongest directional signal.
-    GATE 2: Nifty SPOT 15m close agrees (above/below spot VWAP, same direction)
-    GATE 3: ATM option LTP is also above/below its own daily VWAP
-    All 3 must agree. Fires regardless of regime (self-confirming like V3).
+    VWAP entry (backtest-validated, Gate 1 only):
+    Nifty FUTURES 15m close crosses futures VWAP with body >= VWAP_BODY_MIN_PCT.
+    Fires regardless of regime (self-confirming).
+    Backtest: 14 days May 2026, 64 trades, WR 82.8%, ₹96,216 (trail exit).
     """
     if not VWAP_ENGINE_ENABLED: return None
 
-    # ── GATE 1: Nifty Futures 15m close vs Futures VWAP (PRIMARY) ──
+    # ── Nifty Futures 15m close vs Futures VWAP ──
     if df15m_fut is None or len(df15m_fut) < 3: return None
     fut_vwap = compute_nifty_vwap_today(df15m_fut)
     if fut_vwap is None: return None
@@ -1932,36 +1930,11 @@ def check_vwap_signal(df15m_nifty, expiry_lookup, spot, df15m_fut=None):
     if not fut_bullish and not fut_bearish: return None
     side = 'CE' if fut_bullish else 'PE'
 
-    # ── GATE 2: Nifty Spot 15m close must agree with futures direction ──
-    if df15m_nifty is None or len(df15m_nifty) < 3: return None
-    spot_vwap = compute_nifty_vwap_today(df15m_nifty)
-    if spot_vwap is None: return None
-    spot_bar = df15m_nifty.iloc[-2]
-    sc = float(spot_bar['close'])
-    if side == 'CE' and sc <= spot_vwap: return None
-    if side == 'PE' and sc >= spot_vwap: return None
-
-    # ── GATE 3: ATM option LTP above/below its own VWAP ──
-    atm = round_to_atm(spot)
-    key = (atm, side)
-    if key not in expiry_lookup: return None
-    opt_sym, opt_token = expiry_lookup[key]
-
-    opt_ltp = ltp(opt_sym)
-    if opt_ltp is None or opt_ltp <= 0: return None
-
-    opt_vwap = compute_option_vwap(opt_token)
-    if opt_vwap is None: return None
-
-    if side == 'CE' and opt_ltp <= opt_vwap: return None
-    if side == 'PE' and opt_ltp >= opt_vwap: return None
-
-    detail = (f"FUT VWAP {fc:.0f}{'>' if fut_bullish else '<'}{fut_vwap:.0f} body={f_body_pct:.0%} | "
-              f"SPOT {sc:.0f}{'>' if side=='CE' else '<'}{spot_vwap:.0f} | "
-              f"{side} LTP {opt_ltp:.1f} vs VWAP {opt_vwap:.1f} | bar={bar_time}")
+    detail = (f"FUT VWAP {fc:.0f}{'>' if fut_bullish else '<'}{fut_vwap:.0f} "
+              f"body={f_body_pct:.0%} | bar={bar_time}")
     DAY.last_vwap_bar_time = bar_time
-    linfo(f"[VWAP] TRIPLE confirmed — FUT {fc:.0f}>{fut_vwap:.0f} body={f_body_pct:.0%} "
-          f"SPOT {sc:.0f}>{spot_vwap:.0f} OPT {opt_ltp:.1f}>{opt_vwap:.1f} side={side}")
+    linfo(f"[VWAP] Signal — FUT {fc:.0f}{'>' if fut_bullish else '<'}{fut_vwap:.0f} "
+          f"body={f_body_pct:.0%} side={side}")
     return {
         'engine': 'VWAP', 'side': side, 'detail': detail,
         'trigger': fut_vwap, 'level_obj': None,
