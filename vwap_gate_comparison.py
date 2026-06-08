@@ -13,25 +13,20 @@ REPO_DIR      = "/home/user/Amol"
 FUT15M_CSV    = os.path.join(REPO_DIR, "market_data", "nifty_fut_15m.csv")
 OPT_BASE      = os.path.join(REPO_DIR, "option_data", "selukar")
 
-# ── Strategy constants (from ORION_BACKTEST_OFFLINE.py) ─────────────────
-LOT_SIZE      = 65
-LOTS          = 2
-QTY           = LOT_SIZE * LOTS          # 130
-HARDSL_PCT    = 0.18
-RI            = 12                       # Velvet Rope trigger
-VR_SL         = 8
-T2_PEAK       = 24
-T2_SL         = 12
-T3_PEAK       = 36
-T3_SL         = 24
-RUNNER_STEP   = 25
-SMA_TRAIL_BARS= 8
-FORCE_CLOSE   = "15:25"
-ENTRY_CUTOFF  = "14:45"
-PREM_MIN      = 30
-PREM_MAX      = 300
-BODY_MIN_PCT  = 0.65                     # *** 65% as requested
-LIMIT_OFFSET  = 0
+# ── Strategy constants ───────────────────────────────────────────────────
+LOT_SIZE        = 65
+LOTS            = 2
+QTY             = LOT_SIZE * LOTS        # 130
+HARDSL_PCT      = 0.18                   # Hard stop: entry * (1 - 0.18)
+TRAIL_ARM_GAIN  = 15                     # Arm trail when peak >= entry + 15
+TRAIL_MIN_SL    = 10                     # tr_sl floor: entry + 10
+TRAIL_PEAK_LAG  = 5                      # tr_sl = peak - 5
+FORCE_CLOSE     = "15:25"
+ENTRY_CUTOFF    = "14:45"
+PREM_MIN        = 30
+PREM_MAX        = 300
+BODY_MIN_PCT    = 0.65                   # *** 65% as requested
+LIMIT_OFFSET    = 0
 CIRCUIT_BREAKER = 3
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -51,53 +46,56 @@ def opt_price_at(opt_df: pd.DataFrame, at_time: datetime) -> Optional[float]:
 
 def simulate_exit(opt_df: pd.DataFrame, entry_time: datetime,
                   entry_prem: float) -> Tuple[datetime, float, str]:
+    """
+    NEW trail-after-TP exit (validated in ORION backtest):
+      - HARDSL : entry_prem * (1 - 0.18)  — always armed
+      - Trail  : when peak >= entry_prem + 15 → arm trail
+                 tr_sl = max(entry_prem + 10, peak - 5)
+      - Once armed: ratchet tr_sl = max(entry_prem+10, peak-5), never down
+      - Exit when bar low <= hardsl → HARDSL exit at hardsl price
+      - Exit when bar low <= tr_sl (only if armed) → TRAIL exit at tr_sl price
+      - Force close at 15:25 → exit at bar close
+      - Use bar high to update peak each bar
+      - Bars: opt_df[date > entry_time]  (NOT >=)
+    """
     hardsl   = entry_prem * (1 - HARDSL_PCT)
     tr_armed = False
     tr_sl    = 0.0
     peak     = entry_prem
-    sma_lows: List[float] = []
 
-    # start from first bar AFTER entry_time (per spec: date > signal_time)
+    # First bar AFTER entry_time (spec: date > signal_time)
     bars = opt_df[opt_df['date'] > entry_time].reset_index(drop=True)
-    if bars.empty:
-        # fallback: include entry bar
-        bars = opt_df[opt_df['date'] >= entry_time].reset_index(drop=True)
     if bars.empty:
         return entry_time, entry_prem, 'NO_DATA'
 
     for _, bar in bars.iterrows():
         dt = bar['date']
-        o, h, l, c = float(bar['open']), float(bar['high']), float(bar['low']), float(bar['close'])
-        peak = max(peak, h)
-        sma_lows.append(l)
+        h  = float(bar['high'])
+        l  = float(bar['low'])
+        c  = float(bar['close'])
 
+        # Update peak using bar high
+        peak = max(peak, h)
+
+        # Force close
         if dt.strftime('%H:%M') >= FORCE_CLOSE:
             return dt, c, 'FORCE_CLOSE'
 
+        # Hard stop — always checked first
         if l <= hardsl:
             return dt, round(hardsl, 2), 'HARDSL_-18pct'
 
-        if not tr_armed and h >= entry_prem + RI:
+        # Arm trail when peak reaches entry + TRAIL_ARM_GAIN (15)
+        if not tr_armed and peak >= entry_prem + TRAIL_ARM_GAIN:
             tr_armed = True
-            tr_sl    = entry_prem + VR_SL
-            if l <= tr_sl:
-                return dt, round(tr_sl, 2), 'VELVET_ROPE'
+            tr_sl    = max(entry_prem + TRAIL_MIN_SL, peak - TRAIL_PEAK_LAG)
 
+        # Ratchet tr_sl upward (never down)
         if tr_armed:
-            if peak >= entry_prem + T3_PEAK and tr_sl < entry_prem + T3_SL:
-                tr_sl = entry_prem + T3_SL
-            elif peak >= entry_prem + T2_PEAK and tr_sl < entry_prem + T2_SL:
-                tr_sl = entry_prem + T2_SL
-            while peak >= tr_sl + RUNNER_STEP:
-                tr_sl += RUNNER_STEP
+            new_sl = max(entry_prem + TRAIL_MIN_SL, peak - TRAIL_PEAK_LAG)
+            tr_sl  = max(tr_sl, new_sl)
             if l <= tr_sl:
-                pts = round(tr_sl - entry_prem, 1)
-                return dt, round(tr_sl, 2), f'RATCHET_+{int(pts)}'
-
-        if len(sma_lows) >= SMA_TRAIL_BARS and len(sma_lows) % 3 == 0:
-            sma8l = float(np.mean(sma_lows[-SMA_TRAIL_BARS:]))
-            if c < sma8l:
-                return dt, c, 'SMA8_TRAIL'
+                return dt, round(tr_sl, 2), 'TRAIL_EXIT'
 
     last = bars.iloc[-1]
     return last['date'], float(last['close']), 'EOD'
@@ -424,8 +422,8 @@ def main():
     print("  ORION VWAP GATE COMPARISON BACKTEST")
     print("  Config A: Gate 1 only  (Fut 15m VWAP cross, body>=65%)")
     print("  Config B: Gates 1+2+3  (+ Spot 15m VWAP + ATM Opt VWAP)")
-    print(f"  Exit: trail-after-TP | RI={RI} VR_SL={VR_SL} T2:{T2_PEAK}→{T2_SL} T3:{T3_PEAK}→{T3_SL}")
-    print(f"  Qty: {LOTS}lots x {LOT_SIZE} = {QTY}  |  HARDSL={int(HARDSL_PCT*100)}%")
+    print(f"  Exit: trail-after-TP | arm@+{TRAIL_ARM_GAIN} floor=+{TRAIL_MIN_SL} lag={TRAIL_PEAK_LAG} | HARDSL={int(HARDSL_PCT*100)}%")
+    print(f"  Qty: {LOTS}lots x {LOT_SIZE} = {QTY}  |  ForceClose={FORCE_CLOSE}")
     print(sep)
 
     df_fut = load_fut15m()
