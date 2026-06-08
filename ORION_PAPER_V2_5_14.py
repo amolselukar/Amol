@@ -3015,7 +3015,7 @@ def main():
                 linfo(f"[BOOT] ✅ mStock test BUY cancelled.")
                 # Test SELL too
                 _test_sell_oid = _mstock_broker.place_order(
-                    "SELL", _test_ms_sym, LOT_SIZE, "LIMIT", price=9999.00, tag="ORION_TEST"
+                    "SELL", _test_ms_sym, LOT_SIZE, "LIMIT", price=0.05, tag="ORION_TEST"
                 )
                 if _test_sell_oid:
                     linfo(f"[BOOT] ✅ mStock test SELL placed: {_test_ms_sym} oid={_test_sell_oid}")
