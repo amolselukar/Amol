@@ -1,14 +1,15 @@
 #!/bin/bash
 # =========================================================================
-# ORION AUTO-START  —  PythonAnywhere scheduled task
+# ORION AUTO-START  —  Google Cloud VPS cron task
 # =========================================================================
-# Schedule this on PythonAnywhere Tasks tab:
-#   Command : bash /home/Selukar/Amol/start_orion.sh
-#   UTC Time: 03:30  (= 09:00 IST, Mon–Fri)
+# Cron entry (crontab -e):
+#   30 3 * * 1-5 bash /home/selukar_amol123/Amol/start_orion.sh
+#   (= 09:00 IST, Mon–Fri)
+# Server IP: 34.100.170.253
 # =========================================================================
 
-LOG="/home/Selukar/orion_run.log"
-SCRIPT_DIR="/home/Selukar/Amol"
+LOG="/home/selukar_amol123/orion_run.log"
+SCRIPT_DIR="/home/selukar_amol123/Amol"
 PID_FILE="$SCRIPT_DIR/.orion.pid"
 
 # Weekend guard — exit silently on Sat (6) and Sun (7) IST
@@ -34,15 +35,15 @@ if [ -f "$PID_FILE" ]; then
     fi
     rm -f "$PID_FILE"
 fi
-# Also kill any stray ORION processes (pkill may fail on PythonAnywhere — that's OK)
-pkill -f "ORION_PAPER_V2_5_12.py" 2>/dev/null || true
+# Also kill any stray ORION processes
+pkill -f "ORION_PAPER_V2_5_14.py" 2>/dev/null || true
 sleep 1
 
 # 1. Pull latest code from GitHub (fetch + reset avoids diverged-branch errors)
 echo "[$(date '+%H:%M:%S')] Pulling latest code..." >> "$LOG"
 cd "$SCRIPT_DIR" || { echo "FATAL: $SCRIPT_DIR not found"; exit 1; }
-git fetch origin claude/general-session-YfHuZ >> "$LOG" 2>&1
-git reset --hard origin/claude/general-session-YfHuZ >> "$LOG" 2>&1
+git fetch origin main >> "$LOG" 2>&1
+git reset --hard origin/main >> "$LOG" 2>&1
 
 # 2. Refresh Zerodha access token via TOTP auto-login
 echo "[$(date '+%H:%M:%S')] Refreshing Kite access token..." >> "$LOG"
@@ -67,7 +68,7 @@ rm -f "$SCRIPT_DIR/.orion_singleton.lock"
 
 # 4. Start the bot (output appended to log)
 echo "[$(date '+%H:%M:%S')] Starting ORION bot..." >> "$LOG"
-python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_12.py" >> "$LOG" 2>&1 &
+python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_14.py" >> "$LOG" 2>&1 &
 BOT_PID=$!
 echo "$BOT_PID" > "$PID_FILE"
 echo "[$(date '+%H:%M:%S')] ORION started (PID=$BOT_PID)" >> "$LOG"
