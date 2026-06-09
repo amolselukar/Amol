@@ -431,8 +431,6 @@ def _get_mstock():
 
 def _init_mstock_at_boot():
     global _mstock_broker
-    if EXECUTION_BROKER != "mstock_live":
-        return
     try:
         b = MStockBroker()
         ok = b.login()
@@ -2493,6 +2491,34 @@ def _cmd_stop():
         close_trade("TG_STOP", cur)
     _bot_stop_flag.set()
 
+def _cmd_trades():
+    trades = DAY.trades_today
+    if not trades:
+        TG.send("📋 No trades taken today yet.")
+        return
+    lines = [f"📋 <b>TRADES TODAY ({len(trades)})</b>\n━━━━━━━━━━━━━━━━━"]
+    for i, t in enumerate(trades, 1):
+        side  = t.get('side', '?')
+        eng   = t.get('engine', '?')
+        entry = t.get('entry', 0)
+        pnl   = t.get('pnl', 0) * LOTS_PER_TRADE * LOT_SIZE
+        reason = t.get('exit_reason', '?')
+        lines.append(f"  {i}. {side} [{eng}]  entry ₹{entry:.0f}  PnL ₹{pnl:+.0f}  ({reason})")
+    TG.send("\n".join(lines))
+
+def _cmd_live():
+    global EXECUTION_BROKER
+    if not _mstock_broker:
+        TG.send("⛔ Cannot switch to LIVE — mStock broker not initialised. Restart bot first.")
+        return
+    EXECUTION_BROKER = "mstock_live"
+    TG.send("🟢 <b>Switched to LIVE mode.</b> Real orders will now be placed via mStock.")
+
+def _cmd_paper():
+    global EXECUTION_BROKER
+    EXECUTION_BROKER = "kite_paper"
+    TG.send("📄 <b>Switched to PAPER mode.</b> No real orders will be placed.")
+
 def _tg_poll_commands():
     """Background thread: poll Telegram getUpdates every 3 seconds for bot commands."""
     global _tg_cmd_offset
@@ -2514,14 +2540,23 @@ def _tg_poll_commands():
                         _cmd_status()
                     elif text == "/pnl":
                         _cmd_pnl()
+                    elif text == "/trades":
+                        _cmd_trades()
                     elif text == "/stop":
                         _cmd_stop()
+                    elif text == "/live":
+                        _cmd_live()
+                    elif text == "/paper":
+                        _cmd_paper()
                     elif text == "/help":
                         TG.send("🤖 <b>ORION commands</b>\n"
-                                "/status — live position details\n"
-                                "/pnl    — today's P&amp;L summary\n"
-                                "/stop   — close position &amp; shut down bot\n"
-                                "/help   — this message")
+                                "/status  — live position details\n"
+                                "/pnl     — today's P&amp;L summary\n"
+                                "/trades  — list all trades today\n"
+                                "/live    — switch to LIVE mode (real mStock orders)\n"
+                                "/paper   — switch to PAPER mode (no real orders)\n"
+                                "/stop    — close position &amp; shut down bot\n"
+                                "/help    — this message")
         except Exception:
             pass
         time.sleep(3)
@@ -2966,8 +3001,8 @@ def main():
     # ---- Init mStock broker at boot (not lazily) ----
     _init_mstock_at_boot()
 
-    # ---- mStock execution self-test at boot ----
-    if EXECUTION_BROKER == "mstock_live" and _mstock_broker:
+    # ---- mStock execution self-test at boot (always — even in paper mode) ----
+    if _mstock_broker:
         linfo("[BOOT] Running mStock execution self-test (LIMIT order + cancel)...")
         _test_passed = False
         try:
@@ -2986,7 +3021,6 @@ def main():
                 linfo(f"[BOOT] ✅ mStock test BUY placed: {_test_ms_sym} oid={_test_oid}")
                 _mstock_broker.cancel_order(_test_oid)
                 linfo(f"[BOOT] ✅ mStock test BUY cancelled. BUY VERIFIED.")
-                # SELL test skipped — naked short requires margin; real exits are long-close (no margin)
                 _test_passed = True
             else:
                 _err = getattr(_mstock_broker, '_last_error', '') or 'unknown'
@@ -2994,14 +3028,17 @@ def main():
         except Exception as _te:
             lwarn(f"[BOOT] ❌ mStock self-test exception: {_te}")
         if not _test_passed:
-            _msg = ("⛔ ORION BOOT ABORTED — mStock self-test FAILED.\n"
-                    "Order execution is broken. Check mStock portal IP / credentials.\n"
-                    f"Error: {getattr(_mstock_broker, '_last_error', 'unknown')}")
+            _msg = ("⚠️ mStock self-test FAILED (IP/credentials issue).\n"
+                    f"Error: {getattr(_mstock_broker, '_last_error', 'unknown')}\n"
+                    f"Mode: {EXECUTION_BROKER} — "
+                    + ("⛔ ABORTING." if EXECUTION_BROKER == "mstock_live" else "Bot continues in PAPER mode."))
             TG.send(_msg)
             linfo(f"[BOOT] {_msg}")
-            linfo("[BOOT] Exiting. Fix mStock and restart manually.")
-            sys.exit(1)
-        TG.send("✅ mStock self-test PASSED — order execution verified at boot.")
+            if EXECUTION_BROKER == "mstock_live":
+                linfo("[BOOT] Exiting. Fix mStock and restart manually.")
+                sys.exit(1)
+        else:
+            TG.send(f"✅ mStock self-test PASSED — order execution verified at boot. Mode: {EXECUTION_BROKER}")
 
     # ---- Warmup ----
     df1h, df15, df5 = warmup_until_ready()
