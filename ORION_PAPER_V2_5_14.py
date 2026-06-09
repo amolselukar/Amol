@@ -1,6 +1,6 @@
 """
 =========================================================================
-ORION V2.5.12 - PAPER TRADING BOT  (Nifty Weekly Options)
+ORION V2.5.14 - PAPER TRADING BOT  (Nifty Weekly Options)
 =========================================================================
 Single-file live paper bot. Evolved from T10 V2.2.2 production baseline.
 18-month backtest on phase3_daily.pkl (2024-09-23 -> 2026-03-24).
@@ -449,7 +449,7 @@ def _init_mstock_at_boot():
 # =========================================================================
 STRATEGY_BOX = """
 +========================================================================+
-| ORION V2.5.12 — STRATEGY DESIGN                                        |
+| ORION V2.5.14 — STRATEGY DESIGN                                        |
 | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
 +========================================================================+
 | ENGINE V2 (fires every 15m close — regime: BULL/BEAR/TRANSITION only)  |
