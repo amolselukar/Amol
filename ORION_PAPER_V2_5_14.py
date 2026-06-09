@@ -5,10 +5,10 @@ ORION V2.5.14 - PAPER TRADING BOT  (Nifty Weekly Options)
 Single-file live paper bot. Evolved from T10 V2.2.2 production baseline.
 18-month backtest on phase3_daily.pkl (2024-09-23 -> 2026-03-24).
 
-V2.5.12 BACKTEST RESULT (CURRENT LOCKED VERSION):
+V2.5.14 BACKTEST RESULT (CURRENT LOCKED VERSION):
   Trades 363 | PnL Rs +6,88,158 | WR 64.5%
   Max DD -1,119 pts | Red months 5/18 (72% positive)
-  Params: HARDSL -18%, RI=12, Tier2 +24→+12, Tier3 +36→+24, RS=25, CB=3
+  Params: HARDSL -18%, Trail arms entry+15 SL=peak-5 floor=entry+10, CB=3
 
 V2.5.9 BASELINE (prior to V2.5.12 exit upgrades):
   Trades 357 | PnL Rs +6,70,425 | WR 66.9%
@@ -464,7 +464,7 @@ STRATEGY_BOX = """
 |   premium 30-180 CE / 30-300 PE                                        |
 |                                                                         |
 | ENGINE VWAP (triple confirmation — fires in any regime)                 |
-|   1. Nifty FUTURES 15m close crosses FUT VWAP, body>=50% (PRIMARY)     |
+|   1. Nifty FUTURES 15m close crosses FUT VWAP, body>=65% (PRIMARY)     |
 |   2. Nifty SPOT 15m close same direction above/below spot VWAP         |
 |   3. ATM CE/PE LTP also above/below its daily VWAP simultaneously      |
 |   premium 30-180 CE / 30-300 PE                                        |
@@ -474,11 +474,12 @@ STRATEGY_BOX = """
 |   Path B (post-exit): K reversal within 60min                          |
 |                                                                         |
 | UNIVERSAL EXIT (priority order):                                        |
-|   1. HARDSL -18%  2. Velvet Rope peak+12->SL entry+2                  |
-|   3. Ladder T2: peak+24->SL entry+12 (immediate, no time gate)         |
-|   4. Ladder T3: peak+36->SL entry+24 (immediate)                       |
-|   5. Runner +25/+25  6. SMA8(low) trail  7. Force close 15:25          |
-|   8. CB=3 non-flip losses                                               |
+|   1. HARDSL -18%                                                        |
+|   2. Continuous trail: arms when peak>=entry+15, SL=peak-5             |
+|      floor=entry+10, ratchets up with peak (never down)                |
+|   3. VWAP trades: exit when opt 15m close < opt VWAP                  |
+|   4. V2/V3/FLIP trades: SMA8(low) trail on 15m                        |
+|   5. Force close 15:25  6. CB=3 non-flip losses                        |
 |                                                                         |
 | INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
 +========================================================================+
