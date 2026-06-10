@@ -166,13 +166,23 @@ def auto_login():
             ActionChains(driver).send_keys(token).perform()
 
         time.sleep(0.5)
-        # Click Continue/Submit button
-        driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
+        # Click Continue/Submit button (Kite may have auto-submitted after 6 TOTP digits)
+        try:
+            driver.execute_script("document.querySelector('button[type=\"submit\"]').click();")
+        except Exception:
+            pass  # already redirected — safe to ignore
 
         print("⏳ Waiting for request_token...")
-        wait.until(EC.url_contains("request_token="))
-        current_url   = driver.current_url
-        request_token = current_url.split("request_token=")[1].split("&")[0]
+        # Handle both direct redirect (request_token=) and about:neterror (request_token%3D)
+        wait.until(lambda d: "request_token" in d.current_url)
+        current_url = driver.current_url
+        if "about:neterror" in current_url:
+            import urllib.parse
+            u_param = urllib.parse.parse_qs(current_url.split("?", 1)[1]).get("u", [""])[0]
+            target  = urllib.parse.unquote(u_param)
+            request_token = urllib.parse.parse_qs(urllib.parse.urlsplit(target).query)["request_token"][0]
+        else:
+            request_token = current_url.split("request_token=")[1].split("&")[0]
         print(f"✅ Got request_token: {request_token[:8]}...")
         driver.quit()
 
