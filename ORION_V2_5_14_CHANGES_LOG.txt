@@ -24,19 +24,22 @@ VERIFIED IN CODE — ALL CHANGES PRESENT AS OF 2026-06-06
    Logic: Sorted highest-first, first match wins. Only ratchets UP (never down).
    Source: Inspired by VRL (Vishal Rajput Trade v20) tick-based tiered exits.
 
-2. VWAP TRIPLE CONFIRMATION ENGINE (futures-first)
-   Location: Line ~1908 (check_vwap_signal function)
-   Old: Double confirmation — spot VWAP cross + option VWAP
-   New: TRIPLE confirmation:
-     Gate 1 (PRIMARY): Nifty FUTURES 15m close crosses futures VWAP
-       - Body must be >= 50% of candle range
-       - Bullish: close > futures VWAP and close > open (green candle)
-       - Bearish: close < futures VWAP and close < open (red candle)
-     Gate 2: Nifty SPOT 15m close agrees with direction
-       - Bullish: spot close > spot VWAP
-       - Bearish: spot close < spot VWAP
-     Gate 3: ATM option LTP > option's own VWAP (CE for bull, PE for bear)
-   Rationale: Futures lead spot by 2-30 minutes (confirmed from manual trading).
+2. VWAP ENGINE — GATE 1 ONLY (futures VWAP cross)
+   Location: Line ~1900 (check_vwap_signal function)
+   UPDATED 2026-06-08 (commit d946491): Gates 2+3 REMOVED after backtest.
+   Current logic (Gate 1 only):
+     Nifty FUTURES 15m close crosses futures VWAP
+       - Body must be >= 65% of candle range (VWAP_BODY_MIN_PCT)
+       - Bullish: close > futures VWAP (green candle) → CE
+       - Bearish: close < futures VWAP (red candle) → PE
+   Removed gates (DO NOT RESTORE without new backtest evidence):
+     Gate 2 (spot VWAP agreement) and Gate 3 (ATM option LTP vs own VWAP)
+     Backtest (14 days May 2026): Gate1-only Rs 96,216 vs all-gates Rs 42,047,
+     13/14 green days — Gates 2+3 cost Rs 54,168.
+     Commit trail: 1f0cace (remove) → 899f331 (revert pending backtest) →
+     c339010 (vwap_gate_comparison.py) → d946491 (final removal).
+   Rationale: Futures lead spot by 2-30 minutes (confirmed from manual trading);
+     extra confirmations only delayed/blocked profitable entries.
 
 3. NIFTY FUTURES TOKEN AUTO-RESOLUTION
    Location: Line ~927 (resolve_expiry_and_strikes)
@@ -90,8 +93,9 @@ ENTRY ENGINES (4 engines, checked in order):
      - Requires BULL/BEAR/TRANSITION regime
   3. V3 (Cluster): Break/reject of Grade A/B price clusters
      - No regime gate — self-confirming via cluster strength
-  4. VWAP (Triple): Futures VWAP (primary) + Spot VWAP + Option VWAP
-     - No regime gate — self-confirming via triple VWAP agreement
+  4. VWAP (Gate 1 only, since 2026-06-08): Futures 15m close crosses futures
+     VWAP, body >= 65%. Spot/option VWAP gates removed (see item 2).
+     - No regime gate — self-confirming via futures VWAP cross
 
 EXIT LOGIC (checked every tick in order):
   1. EOD_FORCE_CLOSE: after 15:25 IST
@@ -138,6 +142,8 @@ REVERSAL_FLIP=True   : WR 12% vs 33%
 K cap on CE          : hurts WR
 V2.5.10 macro SMA50  : -Rs 2.3L
 V2.5.11 straddle halt: halting removed profitable trades
+VWAP Gates 2+3      : -Rs 54,168 (spot VWAP + option VWAP confirmations;
+                      removed 2026-06-08, commit d946491 — Gate 1 only)
 
 ================================================================================
 END OF DOCUMENT

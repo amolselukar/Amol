@@ -42,8 +42,11 @@ sleep 1
 # 1. Pull latest code from GitHub (fetch + reset avoids diverged-branch errors)
 echo "[$(date '+%H:%M:%S')] Pulling latest code..." >> "$LOG"
 cd "$SCRIPT_DIR" || { echo "FATAL: $SCRIPT_DIR not found"; exit 1; }
-git fetch origin main >> "$LOG" 2>&1
-git reset --hard origin/main >> "$LOG" 2>&1
+if git fetch origin main >> "$LOG" 2>&1; then
+    git reset --hard origin/main >> "$LOG" 2>&1
+else
+    echo "[$(date '+%H:%M:%S')] WARN: git fetch failed — keeping local code (no reset)" >> "$LOG"
+fi
 
 # 2. Refresh Zerodha access token via TOTP auto-login
 echo "[$(date '+%H:%M:%S')] Refreshing Kite access token..." >> "$LOG"
