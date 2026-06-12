@@ -145,6 +145,33 @@ V2.5.11 straddle halt: halting removed profitable trades
 VWAP Gates 2+3      : -Rs 54,168 (spot VWAP + option VWAP confirmations;
                       removed 2026-06-08, commit d946491 — Gate 1 only)
 
+
+================================================================================
+V2.5.14b — STALE DATA GUARD (2026-06-12)
+================================================================================
+ROOT CAUSE FOUND for the Jun-12 13:30 PE loss (HARDSL -21.73) and likely the
+Jun-11 zero-trade day: Kite intermittently returned a 15m series ending ~2h in
+the past. Evidence: VWAP entries logged bar=198 at 11:30 but bar=197 at 13:30
+(bar index went BACKWARDS intraday); the 13:30 entry cited a 67% bearish bar
+and FUT 23375 while the live tape was +68 pts off the low in 4 minutes.
+Fresh-data replay (orion_analysis/backtest_may harness) confirms the VWAP
+signal does NOT fire at 13:30 with up-to-date frames, and finds 4 trades /
++35 pts on Jun-11 where live took zero.
+
+CHANGE (main loop, after data fetches, active 09:32 IST onwards):
+  - If the last 15m bar (spot or futures frame) is older than 16 minutes:
+      1. instant refetch from Kite
+      2. recovered  -> continue trading + Telegram info
+      3. still stale -> Telegram alert + ENTRIES blocked for that cycle only
+  - EXITS are NEVER blocked on data quality.
+  - Telegram alerts rate-limited to 1 per 10 minutes; log line every cycle.
+  - On 15m refetch, K / K_prev / DAY.last_K_seen are refreshed from new frame.
+
+NOT INCLUDED (backtested positive, awaiting decision after week of Jun 15-19):
+  - Confirmation veto on VWAP/FLIP entries (+Rs 3,969 on real May data)
+  - RVSL reversal engine with FLIP priority (+Rs 14,331 incl veto, n=3 events)
+  See ~/orion_analysis/backtest_may/REPORT.md
+
 ================================================================================
 END OF DOCUMENT
 ================================================================================
