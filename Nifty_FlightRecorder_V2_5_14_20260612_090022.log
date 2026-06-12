@@ -198,3 +198,6 @@
 2026-06-12 03:50:16,785 [INFO] [STRADDLE] Reference: ₹279.7 at 09:20
 2026-06-12 03:50:46,951 [INFO] [INDICATORS] spot=23443.8 | 1h: close=23186.5 sma20=23245.8 sma50=23290.6 rsi=44.3 macd=-26.41/-22.66(bear) | 15m: K=6.8↑(prev 0.0) | regime=PE-eligible halted=False active=False
 2026-06-12 03:50:46,951 [INFO] [SIGNAL] CE: reg=False K=False(K=6.8>=38,rising) Kextr=True RSI=False(44.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=6.8<=80,falling) Kextr=False RSI=True(44.3<47) MACD=True => BLOCK
+2026-06-12 03:50:49,106 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_14_20260612_090022.log, Nifty_BarLevel_V2_5_14_20260612_090022.csv
+2026-06-12 03:55:50,859 [INFO] [INDICATORS] spot=23424.5 | 1h: close=23186.5 sma20=23245.8 sma50=23290.6 rsi=44.3 macd=-26.41/-22.66(bear) | 15m: K=6.8↑(prev 0.0) | regime=PE-eligible halted=False active=False
+2026-06-12 03:55:50,859 [INFO] [SIGNAL] CE: reg=False K=False(K=6.8>=38,rising) Kextr=True RSI=False(44.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=6.8<=80,falling) Kextr=False RSI=True(44.3<47) MACD=True => BLOCK
