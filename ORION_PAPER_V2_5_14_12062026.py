@@ -613,20 +613,6 @@ V2.5.14 [TIERED PROFIT LOCK LADDER — inspired by VRL]
   + Futures VWAP is now the primary decision criterion — real margin-backed money
   + Nifty FUT token auto-resolved from Kite instruments at boot (no hardcoding)
 
-V2.5.14b [STALE DATA GUARD — 2026-06-12]
-  + ROOT CAUSE FOUND: Kite intermittently returned a 15m series ending ~2h in
-    the past. Evidence: VWAP entry logged bar=198 at 11:30 but bar=197 at 13:30
-    (bar index went BACKWARDS); the 13:30 entry cited a 67% bearish bar +
-    FUT 23375 while the live tape was +68 pts off the low in 4 min → bought PE
-    into a V-reversal → HARDSL -21.73. Fresh-data replay confirms the signal
-    does NOT fire at 13:30 with up-to-date frames. Likely also suppressed valid
-    signals (Jun-11 zero-trade day: fresh-data replay finds 4 trades / +35 pts).
-  + Guard (active 09:32+): if last 15m bar (spot or futures) is older than
-    16 min → instant refetch from Kite; if recovered, continue + Telegram info;
-    if still stale → Telegram alert + ENTRIES blocked for that cycle only.
-  + EXITS are never blocked on data quality.
-  + Telegram alerts rate-limited to 1 per 10 min; log line every cycle.
-
 === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
@@ -3202,65 +3188,6 @@ def main():
                 continue
             spot = float(df5['close'].iloc[-1])
 
-            # ---- V2.5.14b STALE DATA GUARD (2026-06-12) ----
-            # Kite intermittently returns 15m frames ending hours in the past
-            # (observed: bar index going backwards intraday). Acting on a stale
-            # frame caused the Jun-12 13:30 PE entry into a +68pt rally (HARDSL).
-            # If last bar older than 16 min: refetch once instantly; if still
-            # stale: Telegram alert + block ENTRIES this cycle. Exits unaffected.
-            stale_entry_block = False
-            if now.hour > 9 or (now.hour == 9 and now.minute >= 32):
-                try:
-                    _fresh_limit = now - timedelta(minutes=16)
-                    def _last_bar_ts(_df):
-                        if _df is None or len(_df) == 0 or 'date' not in _df.columns:
-                            return None
-                        _ts = _df['date'].iloc[-1]
-                        if hasattr(_ts, 'to_pydatetime'):
-                            _ts = _ts.to_pydatetime()
-                        if _ts.tzinfo is None:
-                            _ts = IST.localize(_ts)
-                        return _ts
-                    for _name in ("15m", "fut15"):
-                        _df = df15 if _name == "15m" else df15_fut
-                        _ts = _last_bar_ts(_df)
-                        if _ts is None or _ts >= _fresh_limit:
-                            continue
-                        lwarn(f"[STALE] {_name} last bar {_ts.strftime('%H:%M')} "
-                              f"(>16min old) — instant refetch")
-                        _df2 = fetch_nifty_15m() if _name == "15m" \
-                               else fetch_nifty_fut_15m(NIFTY_FUT_TOKEN)
-                        _ts2 = _last_bar_ts(_df2)
-                        _can_tg = (not hasattr(DAY, 'stale_tg_at')) or \
-                                  (time.time() - DAY.stale_tg_at > 600)
-                        if _ts2 is not None and _ts2 >= _fresh_limit:
-                            if _name == "15m":
-                                df15 = _df2
-                                K      = float(df15['K'].iloc[-2])
-                                K_prev = float(df15['K'].iloc[-3])
-                                DAY.last_K_seen = K
-                                DAY.last_K_prev_seen = K_prev
-                            else:
-                                df15_fut = _df2
-                            linfo(f"[STALE] {_name} recovered on refetch "
-                                  f"(last bar {_ts2.strftime('%H:%M')})")
-                            if _can_tg:
-                                DAY.stale_tg_at = time.time()
-                                TG.send(f"⚠️ Stale {_name} data (last bar "
-                                        f"{_ts.strftime('%H:%M')}) — recovered on "
-                                        f"instant refetch. Trading normally.")
-                        else:
-                            stale_entry_block = True
-                            lwarn(f"[STALE] {_name} STILL stale after refetch — "
-                                  f"entries blocked this cycle")
-                            if _can_tg:
-                                DAY.stale_tg_at = time.time()
-                                TG.send(f"🚨 <b>STALE DATA</b> {_name}: last bar "
-                                        f"{_ts.strftime('%H:%M')}, refetch failed. "
-                                        f"Entries blocked; exits unaffected.")
-                except Exception as _se:
-                    lwarn(f"[STALE] guard error: {_se}")
-
             # Cache for pulse
             c1h    = float(df1h['close'].iloc[-2])
             sma20  = float(df1h['SMA20'].iloc[-2])
@@ -3356,7 +3283,7 @@ def main():
                           f"{DAY.manual_exit_cooldown_until.strftime('%H:%M:%S')} IST")
                 # When halted in live mode: continue paper-only (no real orders)
                 _cb_paper_mode = (DAY.halted and EXECUTION_BROKER == "mstock_live")
-                _entry_allowed = (not DAY.halted or _cb_paper_mode) and not stale_entry_block
+                _entry_allowed = (not DAY.halted or _cb_paper_mode)
                 if _entry_allowed and not _manual_cooling and in_entry_window(now) and \
                    (DAY.gap_suppress_until is None or now >= DAY.gap_suppress_until):
                     sig = None

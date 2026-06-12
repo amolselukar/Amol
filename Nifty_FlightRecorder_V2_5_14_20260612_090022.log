@@ -473,3 +473,5 @@
 2026-06-12 10:00:16,466 [INFO] [EOD DATA] ATM tracker: 75 rows, CE=[23200, 23250, 23300, 23350, 23400, 23450, 23500, 23550, 23600, 23650, 23700], PE=[23200, 23250, 23300, 23350, 23400, 23450, 23500, 23550, 23600, 23650, 23700]
 2026-06-12 10:00:17,551 [INFO] [EOD DATA] Saved futures CSVs: ['5m', '15m', '1h']
 2026-06-12 10:00:56,311 [INFO] [EOD DATA] Capture complete. Folder: daily_option_data/2026-06-12, 66 OK, 15429 bars
+2026-06-12 10:00:58,856 [INFO] [EOD] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_14_20260612_090022.log, Nifty_BarLevel_V2_5_14_20260612_090022.csv
+2026-06-12 10:01:00,523 [INFO] Market closed. Bot exiting cleanly.

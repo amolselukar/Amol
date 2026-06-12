@@ -36,7 +36,7 @@ if [ -f "$PID_FILE" ]; then
     rm -f "$PID_FILE"
 fi
 # Also kill any stray ORION processes
-pkill -f "ORION_PAPER_V2_5_14.py" 2>/dev/null || true
+pkill -f "ORION_PAPER_V2_5_15.py" 2>/dev/null || true
 sleep 1
 
 # 1. Local code is the single source of truth (GitHub remote removed 2026-06-11)
@@ -65,7 +65,7 @@ rm -f "$SCRIPT_DIR/.orion_singleton.lock"
 
 # 4. Start the bot (output appended to log)
 echo "[$(date '+%H:%M:%S')] Starting ORION bot..." >> "$LOG"
-python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_14.py" >> "$LOG" 2>&1 &
+python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_15.py" >> "$LOG" 2>&1 &
 BOT_PID=$!
 echo "$BOT_PID" > "$PID_FILE"
 echo "[$(date '+%H:%M:%S')] ORION started (PID=$BOT_PID)" >> "$LOG"

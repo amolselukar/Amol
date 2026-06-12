@@ -147,7 +147,8 @@ VWAP Gates 2+3      : -Rs 54,168 (spot VWAP + option VWAP confirmations;
 
 
 ================================================================================
-V2.5.14b — STALE DATA GUARD (2026-06-12)
+V2.5.15 — STALE DATA GUARD (2026-06-12)  [file renamed ORION_PAPER_V2_5_15.py;
+pre-change V2.5.14 archived as ORION_PAPER_V2_5_14_12062026.py]
 ================================================================================
 ROOT CAUSE FOUND for the Jun-12 13:30 PE loss (HARDSL -21.73) and likely the
 Jun-11 zero-trade day: Kite intermittently returned a 15m series ending ~2h in
