@@ -68,7 +68,20 @@ echo "[$(date '+%H:%M:%S')] Starting ORION bot..." >> "$LOG"
 python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_15.py" >> "$LOG" 2>&1 &
 BOT_PID=$!
 echo "$BOT_PID" > "$PID_FILE"
-echo "[$(date '+%H:%M:%S')] ORION started (PID=$BOT_PID)" >> "$LOG"
+echo "[$(date '+%H:%M:%S')] ORION started (PID=$BOT_PID, V2.5.15)" >> "$LOG"
+
+# 4b. Boot-crash auto-fallback (added 2026-06-12): if V2.5.15 dies within
+# 90s of launch, start the archived pre-guard V2.5.14 build instead.
+# Detection: the Telegram boot message will then say V2.5.14, not V2.5.15.
+sleep 90
+if ! kill -0 "$BOT_PID" 2>/dev/null; then
+    echo "[$(date '+%H:%M:%S')] WARNING: V2.5.15 died within 90s — FALLBACK to ORION_PAPER_V2_5_14_12062026.py" >> "$LOG"
+    rm -f "$SCRIPT_DIR/.orion_singleton.lock"
+    python3 -u "$SCRIPT_DIR/ORION_PAPER_V2_5_14_12062026.py" >> "$LOG" 2>&1 &
+    BOT_PID=$!
+    echo "$BOT_PID" > "$PID_FILE"
+    echo "[$(date '+%H:%M:%S')] FALLBACK bot started (PID=$BOT_PID, V2.5.14 archive)" >> "$LOG"
+fi
 wait "$BOT_PID"
 rm -f "$PID_FILE"
 
