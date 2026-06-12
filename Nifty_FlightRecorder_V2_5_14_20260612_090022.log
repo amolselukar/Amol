@@ -442,3 +442,6 @@
 2026-06-12 09:10:50,708 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_14_20260612_090022.log, Nifty_BarLevel_V2_5_14_20260612_090022.csv
 2026-06-12 09:15:53,080 [INFO] [INDICATORS] spot=23570.8 | 1h: close=23527.5 sma20=23292.7 sma50=23300.3 rsi=65.2 macd=26.52/-2.00(bull) | 15m: K=100.0↓(prev 100.0) | regime=NEUTRAL halted=False active=False
 2026-06-12 09:15:53,081 [INFO] [SIGNAL] CE: reg=False K=False(K=100.0>=38,rising) Kextr=False RSI=True(65.2>53) MACD=True => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(65.2<47) MACD=False => BLOCK
+2026-06-12 09:15:55,384 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_14_20260612_090022.log, Nifty_BarLevel_V2_5_14_20260612_090022.csv
+2026-06-12 09:20:57,239 [INFO] [INDICATORS] spot=23594.4 | 1h: close=23527.5 sma20=23292.7 sma50=23300.3 rsi=65.2 macd=26.52/-2.00(bull) | 15m: K=100.0↓(prev 100.0) | regime=NEUTRAL halted=False active=False
+2026-06-12 09:20:57,239 [INFO] [SIGNAL] CE: reg=False K=False(K=100.0>=38,rising) Kextr=False RSI=True(65.2>53) MACD=True => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(65.2<47) MACD=False => BLOCK
