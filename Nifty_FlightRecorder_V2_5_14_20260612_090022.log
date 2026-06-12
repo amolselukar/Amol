@@ -403,3 +403,10 @@
 2026-06-12 08:35:08,801 [INFO] [INDICATORS] spot=23519.3 | 1h: close=23336.2 sma20=23278.6 sma50=23295.7 rsi=54.5 macd=7.89/-9.14(bull) | 15m: K=93.2↑(prev 66.6) | regime=NEUTRAL halted=False active=True
 2026-06-12 08:35:08,801 [INFO] [SIGNAL] CE: reg=False K=True(K=93.2>=38,rising) Kextr=True RSI=True(54.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=93.2<=80,falling) Kextr=True RSI=False(54.5<47) MACD=False => BLOCK
 2026-06-12 08:35:08,801 [INFO] [STATE] CE NFO:NIFTY2661623500CE ltp=156.25 entry=140.45 pnl=+15.80(+11.2%) sl=151.25 peak=156.25 tr_armed=True elapsed=14min
+2026-06-12 08:35:11,913 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_14_20260612_090022.log, Nifty_BarLevel_V2_5_14_20260612_090022.csv
+2026-06-12 08:35:42,100 [INFO] [TRAIL] SL ratcheted 151.25 → 152.70  (peak=157.70)
+2026-06-12 08:36:12,325 [INFO] EXIT: NFO:NIFTY2661623500CE @ 152.70 reason=TRAIL_+12 pnl/sh=+12.25 is_flip=False losses=1/3
+2026-06-12 08:36:43,356 [INFO] ENTRY: NFO:NIFTY2661623500CE @ 152.70  engine=V3  detail=Grade B G-cluster BREAK-CE at 23400
+2026-06-12 08:40:15,840 [INFO] [INDICATORS] spot=23509.3 | 1h: close=23336.2 sma20=23278.6 sma50=23295.7 rsi=54.5 macd=7.89/-9.14(bull) | 15m: K=93.2↑(prev 66.6) | regime=NEUTRAL halted=False active=True
+2026-06-12 08:40:15,841 [INFO] [SIGNAL] CE: reg=False K=True(K=93.2>=38,rising) Kextr=True RSI=True(54.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=93.2<=80,falling) Kextr=True RSI=False(54.5<47) MACD=False => BLOCK
+2026-06-12 08:40:15,842 [INFO] [STATE] CE NFO:NIFTY2661623500CE ltp=150.65 entry=152.70 pnl=-2.05(-1.3%) sl=125.21 peak=153.10 tr_armed=False elapsed=3min
