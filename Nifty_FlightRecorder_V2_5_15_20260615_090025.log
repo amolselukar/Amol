@@ -1,0 +1,210 @@
+2026-06-15 03:30:28,935 [INFO] [BOOT] Nifty FUT token: 15956226 expiry=2026-06-30 sym=NIFTY26JUNFUT
+2026-06-15 03:30:28,951 [INFO] [BOOT] Expiry: 2026-06-16, 99 strikes, 198 option contracts
+2026-06-15 03:30:29,137 [INFO] [mstock] login: status=True msg=Login Success
+2026-06-15 03:30:29,137 [INFO] [mstock] Initial JWT set.
+2026-06-15 03:30:29,592 [INFO] [mstock] verify_totp: status=True msg=SUCCESS data={'ClientName': 'AMOL RENUKADAS SELUKAR', 'ClientId': 'MA2091850', 'exchanges': ['BEQ', 'BFO', 'NEQ', 'NFO', 'NCR', 'BSEMF', 'NSEIPO', 'BSEIPO'], 'jwtToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSTkFNRSI6Ik1BMjA5MTg1MCIsIkNMSUVOVE5BTUUiOiJBTU9MIFJFTlVLQURBUyBTRUxVS0FSIiwiVVNFUl9ERVRBSUxTIjoiTWI4VWdEYWdYVm5rVXZ0ODRBMi9TZjNHSkcyc3pMV1Q4ODVtd2tqUkZOYThOZE1jdTgvcG8ydWlxS1NvWjBPdEt5OVdtVFg4bVA5RFFDbFRHMWZBT0NyQmtSNmpZWGFYYUQ4MHMxcUhkSDhXeVkzOVF1eEhIbmw1a052WGlvbjhNWGVrSEZZbnVmaFJST3lHZ21BYmhDbDRmMjlZanJRcm1WbjJaNmxrMkNIeWxvTVlqVldhTk5XV1JONXZjYlNZM1VLbnlqdkJKd1kwa0M4djludUdEbGJhRnllZlpBd1ZieURPandhazJsaklqc0syUmdJTElQRDRWY3J4TTJPRjE2c2ozRnJDYzZzaDFKbDV1WU15VEJQaVo1K1VSVFlRR0VOQWlFbUZwaEx5cXNYV21uUjkrR1NzV0lmdFFkRElSUmU4YTZRTFF4Wk02UDBadUp3U3JtbmNuQnhWQjJ5eFgwdVo5ZlJoWndjPSIsIlVTRVJJRCI6Ik1BMjA5MTg1MCIsIkFDQ0VTU19UT0tFTiI6ImV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoZFdRaU9pSnRhWEpoWlM1cGJpSXNJbVY0Y0NJNk1UYzRNVFU0TURZeU9Td2lhV0YwSWpveE56Z3hORGswTWpJNUxDSnBjM01pT2lKdGFYSmhaUzVwYmlJc0ltNWlaaUk2TVRRME5EUTNPRFF3TUN3aWNHWnRJam9pTVNJc0luUnBaQ0k2SWprNElpd2lkV2xrSWpvaU1UUTRNRFUySWl3aWRtbGtJam9pTWpJaWZRLk5FMV9wQjk2Ymc0NjRJNWtNdlZHaWZtM0FSS1FWV3BSUV9hczVHdmkyTHMiLCJBUElUWVBFIjoiVFlQRUIiLCJVSUQiOiIyYTZhM2Q1ZS0wMzAyLTRhOGMtYTM5NS1mYjM3OGZlZGQ3ZmQiLCJuYmYiOjE3ODE0OTQyMjksImV4cCI6MTc4MTU0ODIwMCwiaWF0IjoxNzgxNDk0MjI5fQ.dELPPWUgrybpSYCMnV-qxKzhpaDIr6xXYADu7reb1iA', 'refreshToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtaXJhZS5pbiIsImV4cCI6MTc4NDA4NjIyOSwiaWF0IjoxNzgxNDk0MjI5LCJpc3MiOiJtaXJhZS5pbiIsIm5iZiI6MTQ0NDQ3ODQwMCwicGZtIjoiMSIsInRpZCI6Ijk4IiwidWlkIjoiMTQ4MDU2IiwidmlkIjoiMjIifQ.JS1S11aGOtdvpjonwP-hnzzSlvfN8PL9SSa393Xo2Mk', 'feedToken': 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNQTIwOTE4NTAiLCJwYW4iOiIxNS0wNy0xOTg1Iiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzgxNTY2MjI5fQ.CRF9c8zWD1RrKc3KuOVaDMBjQNA9KpqyqzZj6o73-jhsDp44XBP923SmTdHLs6KPzkgZypqL_9TDrAAcWgQjDg'}
+2026-06-15 03:30:29,592 [INFO] [mstock] Final JWT explicitly set after verify_totp.
+2026-06-15 03:30:29,592 [INFO] [mstock] Login complete.
+2026-06-15 03:30:36,283 [INFO] [mstock] Instrument master: 172603 records, keys=['token', 'symbol', 'name', 'expiry', 'strike', 'lotsize', 'instrumenttype', 'exch_seg', 'tick_size']
+2026-06-15 03:30:36,400 [INFO] [mstock] Instrument cache: 140448 symbols
+2026-06-15 03:30:36,425 [INFO] [mstock] Sample NIFTY CE: [('BANKNIFTY26JUN65400CE', '35000'), ('BANKNIFTY26JUN65600CE', '35002'), ('BANKNIFTY26JUN65700CE', '35004'), ('BANKNIFTY26JUN65800CE', '35006'), ('BANKNIFTY26JUN82500CE', '35008')]
+2026-06-15 03:30:36,458 [INFO] [mstock] Broker initialised and logged in at boot.
+2026-06-15 03:30:36,458 [INFO] [BOOT] Running mStock execution self-test (LIMIT order + cancel)...
+2026-06-15 03:30:36,532 [INFO] [mstock] place_order resp: {'status': False, 'message': 'Error Occured Please Contact System Administrator', 'errorcode': 'MA200', 'data': None}
+2026-06-15 03:30:36,532 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'Error Occured Please Contact System Administrator', 'errorcode': 'MA200', 'data': None}
+2026-06-15 03:30:36,532 [WARNING] [BOOT] ❌ mStock test BUY FAILED: Error Occured Please Contact System Administrator
+2026-06-15 03:30:37,304 [INFO] [BOOT] ⚠️ mStock self-test FAILED (IP/credentials issue).
+Error: Error Occured Please Contact System Administrator
+Mode: kite_paper — Bot continues in PAPER mode.
+2026-06-15 03:30:37,461 [WARNING] [OI Plan] Stale plan (2026-06-01) — ignoring for today's levels
+2026-06-15 03:30:37,461 [INFO] [OI Plan] No valid plan found — running without OI levels (normal mode)
+2026-06-15 03:30:37,461 [INFO] 
+2026-06-15 03:30:37,461 [INFO] +========================================================================+
+2026-06-15 03:30:37,461 [INFO] | ORION V2.5.15 — STRATEGY DESIGN                                        |
+2026-06-15 03:30:37,461 [INFO] | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
+2026-06-15 03:30:37,461 [INFO] +========================================================================+
+2026-06-15 03:30:37,461 [INFO] | ENGINE V2 (fires every 15m close — regime: BULL/BEAR/TRANSITION only)  |
+2026-06-15 03:30:37,461 [INFO] |   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
+2026-06-15 03:30:37,461 [INFO] |        RSI>53 | MACD bull | premium 30-180                             |
+2026-06-15 03:30:37,461 [INFO] |   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
+2026-06-15 03:30:37,462 [INFO] |        RSI<47 | MACD bear | premium 30-300                             |
+2026-06-15 03:30:37,462 [INFO] |                                                                         |
+2026-06-15 03:30:37,462 [INFO] | ENGINE V3 (15m G/R cluster break/reject — fires in any regime)         |
+2026-06-15 03:30:37,462 [INFO] |   Grade A (>=3 source kinds) / Grade B (>=2)                           |
+2026-06-15 03:30:37,462 [INFO] |   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
+2026-06-15 03:30:37,462 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-06-15 03:30:37,462 [INFO] |                                                                         |
+2026-06-15 03:30:37,462 [INFO] | ENGINE VWAP (triple confirmation — fires in any regime)                 |
+2026-06-15 03:30:37,462 [INFO] |   1. Nifty FUTURES 15m close crosses FUT VWAP, body>=65% (PRIMARY)     |
+2026-06-15 03:30:37,462 [INFO] |   2. Nifty SPOT 15m close same direction above/below spot VWAP         |
+2026-06-15 03:30:37,462 [INFO] |   3. ATM CE/PE LTP also above/below its daily VWAP simultaneously      |
+2026-06-15 03:30:37,462 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-06-15 03:30:37,462 [INFO] |                                                                         |
+2026-06-15 03:30:37,462 [INFO] | ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
+2026-06-15 03:30:37,462 [INFO] |   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
+2026-06-15 03:30:37,462 [INFO] |   Path B (post-exit): K reversal within 60min                          |
+2026-06-15 03:30:37,462 [INFO] |                                                                         |
+2026-06-15 03:30:37,462 [INFO] | UNIVERSAL EXIT (priority order):                                        |
+2026-06-15 03:30:37,462 [INFO] |   1. HARDSL -18%                                                        |
+2026-06-15 03:30:37,462 [INFO] |   2. Continuous trail: arms when peak>=entry+15, SL=peak-5             |
+2026-06-15 03:30:37,462 [INFO] |      floor=entry+10, ratchets up with peak (never down)                |
+2026-06-15 03:30:37,462 [INFO] |   3. VWAP trades: exit when opt 15m close < opt VWAP                  |
+2026-06-15 03:30:37,462 [INFO] |   4. V2/V3/FLIP trades: SMA8(low) trail on 15m                        |
+2026-06-15 03:30:37,462 [INFO] |   5. Force close 15:25  6. CB=3 non-flip losses                        |
+2026-06-15 03:30:37,462 [INFO] |                                                                         |
+2026-06-15 03:30:37,462 [INFO] | INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
+2026-06-15 03:30:37,462 [INFO] +========================================================================+
+2026-06-15 03:30:37,462 [INFO] 
+2026-06-15 03:30:37,462 [INFO] === ORION CHANGE HISTORY (V2.2.2 -> V2.5.9) ===
+2026-06-15 03:30:37,462 [INFO] 
+2026-06-15 03:30:37,462 [INFO] V2.2.2 [PRODUCTION BASELINE — T10]
+2026-06-15 03:30:37,462 [INFO]   Entry : 1h SMA20/50 regime + 15m StochRSI K (CE>=38 rising, PE<=80 falling)
+2026-06-15 03:30:37,462 [INFO]   Exit  : HARDSL -35%, TIME_SL 210min/-20%, BE +15% -> option SMA8(low) trail
+2026-06-15 03:30:37,462 [INFO]   CB=2, 1 lot, no flip, no V3, no chop filter
+2026-06-15 03:30:37,462 [INFO] 
+2026-06-15 03:30:37,462 [INFO] V2.3  [+V3 CLUSTER LEVELS]
+2026-06-15 03:30:37,463 [INFO]   + PDH/PDL/round_50/round_100/PDC/1h swing pivots clustered within 20pts
+2026-06-15 03:30:37,463 [INFO]   + Grade A (>=3 source kinds) / Grade B (>=2)
+2026-06-15 03:30:37,463 [INFO]   + ADX regime classifier (BULL/BEAR/CHOP/TRANSITION)
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.4  [+EXIT UPGRADES]
+2026-06-15 03:30:37,463 [INFO]   + 15m option SMA8(low) trail (KEPT in all future versions)
+2026-06-15 03:30:37,463 [INFO]   + ATR-based exits (REMOVED — not robust enough)
+2026-06-15 03:30:37,463 [INFO]   + BE armor at +15% (REMOVED later — net negative in backtest)
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.5.0  [HYBRID V2+V3 + TIME-RATCHET]
+2026-06-15 03:30:37,463 [INFO]   + Hybrid V2+V3 entry (V2 priority on same-bar tiebreak)
+2026-06-15 03:30:37,463 [INFO]   + Time-ratchet exit: 90min / +20 step
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.5.1  [ENTRY REFINEMENT]
+2026-06-15 03:30:37,463 [INFO]   + V2 PE_floor=25 (K>=25 required for PE entry)
+2026-06-15 03:30:37,463 [INFO]   + V2 CE: no upper K cap (cap tested and REJECTED — hurts WR)
+2026-06-15 03:30:37,463 [INFO]   + V2 priority confirmed: +Rs 52k vs V3-priority
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.5.2  [FLIP RULE +Rs 130k]
+2026-06-15 03:30:37,463 [INFO]   + Path A flip (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10 + K reversed
+2026-06-15 03:30:37,463 [INFO]   + Path B flip (post-exit): K reversal within 60min
+2026-06-15 03:30:37,463 [INFO]   + Opposite-side only (same-side continuation REJECTED: -Rs 191k CATASTROPHIC)
+2026-06-15 03:30:37,463 [INFO]   + CE->PE: K falling, 25<=K<=80 | PE->CE: K rising, K>=38
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.5.3  [V3 SINGLETONS + HARDSL LOCKED]
+2026-06-15 03:30:37,463 [INFO]   + Promoted singletons: PDH/PDL/round_100(+-200 PDC)/swing pivots standalone Grade B
+2026-06-15 03:30:37,463 [INFO]   + HARDSL locked at -25% (swept -35% to -15%; -25% optimal)
+2026-06-15 03:30:37,463 [INFO]   + PnL Rs +3,14,418
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.5.4  [FLIP CAP]
+2026-06-15 03:30:37,463 [INFO]   + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
+2026-06-15 03:30:37,463 [INFO]   + PnL Rs +3,23,851
+2026-06-15 03:30:37,463 [INFO] 
+2026-06-15 03:30:37,463 [INFO] V2.5.5  [CHOP FILTER +Rs 49k]
+2026-06-15 03:30:37,463 [INFO]   + RSI [47,53] indecision band blocks ALL entries
+2026-06-15 03:30:37,464 [INFO]   + PnL Rs +3,72,598
+2026-06-15 03:30:37,464 [INFO] 
+2026-06-15 03:30:37,464 [INFO] V2.5.6  [V3 PDC CONTAMINATION FIX — LOCKED Rs 3,85,724 / WR 35.7%]
+2026-06-15 03:30:37,464 [INFO]   + Exclude PDC from clustering (PDC is reference, not tradeable level)
+2026-06-15 03:30:37,464 [INFO]   + G/R require >=25pt buffer from PDC (motivated by 2026-05-18 bad paper trade)
+2026-06-15 03:30:37,464 [INFO]   + PnL Rs +3,85,724 / MaxDD -1,331 / Red 5/18
+2026-06-15 03:30:37,464 [INFO] 
+2026-06-15 03:30:37,464 [INFO] V2.5.7  [VELVET ROPE + RATCHET +Rs 1,14,324 / WR 35.7%->55.4%]
+2026-06-15 03:30:37,464 [INFO]   + Velvet Rope: premium hits entry+15 -> SL immediately to entry+2
+2026-06-15 03:30:37,464 [INFO]   + Ratchet Gate: 30min elapsed + entry+25 -> SL to entry+15
+2026-06-15 03:30:37,464 [INFO]   + Runner Trail: +20 per +20pts peak (one-way)
+2026-06-15 03:30:37,464 [INFO]   + Trade-off: Red months 5->10/18, MaxDD -1,331->-1,885
+2026-06-15 03:30:37,464 [INFO] 
+2026-06-15 03:30:37,464 [INFO] V2.5.8  [K EXTREME + FULL SMA ALIGNMENT]
+2026-06-15 03:30:37,464 [INFO]   + K extreme filter: CE entry only if K<25 recently (3 bars); PE if K>75 recently
+2026-06-15 03:30:37,464 [INFO]   + Full SMA alignment: CE needs close>SMA20>SMA50 (was just close>SMA20)
+2026-06-15 03:30:37,464 [INFO] 
+2026-06-15 03:30:37,464 [INFO] V2.5.9  [Rs 6,70,425 / WR 66.9% / 357 trades / MaxDD -1,485 / Red 8/18]
+2026-06-15 03:30:37,464 [INFO]   + RSI DIRECTIONAL GATE replaces RSI [47,53] chop filter:
+2026-06-15 03:30:37,464 [INFO]       CE: 1h RSI>53 required | PE: 1h RSI<47 required
+2026-06-15 03:30:37,464 [INFO]   + MACD 1h alignment: CE needs MACD_line>signal; PE needs MACD_line<signal
+2026-06-15 03:30:37,464 [INFO]   + Premium gate: 30<=entry_LTP<=180 (blocks deep OTM and IV-spike entries)
+2026-06-15 03:30:37,464 [INFO]   + Tightened exit params: RI=12 (was 15), RT=20 (was 30), RS=25 (was 20)
+2026-06-15 03:30:37,464 [INFO]   + CB=3 (was 4)
+2026-06-15 03:30:37,464 [INFO]   + Straddle monitoring: informational Telegram at 9:45 and 11:30
+2026-06-15 03:30:37,464 [INFO]   + Options VWAP: informational context at entry/pulse/exit
+2026-06-15 03:30:37,464 [INFO] 
+2026-06-15 03:30:37,464 [INFO] V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 / Red 5/18]
+2026-06-15 03:30:37,464 [INFO]   SOURCE: VRL (Vishal Rajput) code analysis — peak-based ratchet ladder
+2026-06-15 03:30:37,464 [INFO]   + HARDSL tightened -25% → -18% (faster loss cut, less capital exposed)
+2026-06-15 03:30:37,464 [INFO]   + 20-min time gate REMOVED — purely peak-based ladder (no waiting)
+2026-06-15 03:30:37,464 [INFO]   + Ladder Tier2: peak >= entry+24 → SL = entry+12 (immediate)
+2026-06-15 03:30:37,464 [INFO]   + Ladder Tier3: peak >= entry+36 → SL = entry+24 (immediate)
+2026-06-15 03:30:37,464 [INFO]   + Entry logic UNCHANGED from V2.5.9
+2026-06-15 03:30:37,464 [INFO]   + Validated: real option data (May 4-21 2026, 12 days)
+2026-06-15 03:30:37,464 [INFO]   + Key improvement: MaxDD -1,485 → -1,119 (-25%), Red months 8 → 5
+2026-06-15 03:30:37,464 [INFO] 
+2026-06-15 03:30:37,464 [INFO] V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
+2026-06-15 03:30:37,464 [INFO]   + EXECUTION_BROKER switched from kite_paper → mstock_live
+2026-06-15 03:30:37,464 [INFO]   + mStock Type B API integrated: login → set_access_token → verify_totp (TOTP auto)
+2026-06-15 03:30:37,464 [INFO]   + Instrument master: direct fetch from OpenAPIScripMaster (173k symbols, name field)
+2026-06-15 03:30:37,465 [INFO]   + order_status: mStock returns 'Traded' status (not 'COMPLETE') — mapped correctly
+2026-06-15 03:30:37,465 [INFO]   + place_order: disclosedquantity="0" required (blank causes IA400 rejection)
+2026-06-15 03:30:37,465 [INFO]   + IP 18.212.243.203 (PythonAnywhere) whitelisted in mStock API settings
+2026-06-15 03:30:37,465 [INFO]   + BUY: 15s timeout, cancel-and-check on timeout, abort if not filled
+2026-06-15 03:30:37,465 [INFO]   + SELL: 3 retries × 5s, 🚨 CRITICAL Telegram alert if all fail, POS.active stays True
+2026-06-15 03:30:37,465 [INFO]   + V3 REGIME GATE REMOVED: V3 now fires in CHOP/INSUFFICIENT regime
+2026-06-15 03:30:37,465 [INFO]       Root cause of bug: regime gate wrapped ALL signals including V3;
+2026-06-15 03:30:37,465 [INFO]       V3 uses cluster break/reject as its own confirmation — ADX not needed
+2026-06-15 03:30:37,465 [INFO]       V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
+2026-06-15 03:30:37,465 [INFO]   + V3 engine: acts on ALL Grade A/B clusters simultaneously (not just nearest)
+2026-06-15 03:30:37,465 [INFO]   + PREMIUM_MAX asymmetric: CE=180 (unchanged), PE=300 (was 180, captures panic moves)
+2026-06-15 03:30:37,465 [INFO]   + VWAP double confirmation engine (new):
+2026-06-15 03:30:37,465 [INFO]       Fires when Nifty 15m bar crosses daily VWAP with body>=50% range
+2026-06-15 03:30:37,465 [INFO]       AND ATM CE/PE LTP is also above/below its daily VWAP simultaneously
+2026-06-15 03:30:37,465 [INFO]       Self-confirming like V3 — no regime gate
+2026-06-15 03:30:37,465 [INFO]   + LOTS_PER_TRADE = 2 (live)
+2026-06-15 03:30:37,465 [INFO] 
+2026-06-15 03:30:37,465 [INFO] V2.5.13 [VWAP TRAIL EXIT + BOOT SELF-TEST + STABILITY FIXES]
+2026-06-15 03:30:37,465 [INFO]   + VWAP engine trades: trail exit uses option's own VWAP (15m close < option VWAP)
+2026-06-15 03:30:37,465 [INFO]     instead of SMA8(low) trail — holds through pullbacks better on VWAP-confirmed moves
+2026-06-15 03:30:37,465 [INFO]   + V2/V3/FLIP trades: keep original SMA8(low) trail (unchanged)
+2026-06-15 03:30:37,465 [INFO]   + Boot self-test: BUY (LIMIT ₹0.05) + SELL (LIMIT ₹9999) on deep OTM option at startup
+2026-06-15 03:30:37,465 [INFO]     Both must succeed and cancel cleanly or bot aborts — confirms mStock connectivity + IP
+2026-06-15 03:30:37,465 [INFO]   + MStockBroker class inlined into single .py file (no separate mstock_broker.py)
+2026-06-15 03:30:37,465 [INFO]   + IA403 recovery: rebuilds SDK client from scratch on IP mismatch, 3 consecutive → halt
+2026-06-15 03:30:37,465 [INFO]   + Position sync cooldown: 180s → 300s (avoids false MANUAL_EXIT on slow fills)
+2026-06-15 03:30:37,465 [INFO]   + MANUAL_EXIT fix: clears buy_order_id before close_trade to prevent duplicate SELL
+2026-06-15 03:30:37,465 [INFO]   + State file: added date field, resets trades_today/losses on new day boundary
+2026-06-15 03:30:37,465 [INFO]   + VWAP dedup log spam removed (silent return on same-bar re-fire)
+2026-06-15 03:30:37,465 [INFO] 
+2026-06-15 03:30:37,465 [INFO] V2.5.14 [TIERED PROFIT LOCK LADDER — inspired by VRL]
+2026-06-15 03:30:37,465 [INFO]   + Replaced sparse 3-tier ratchet (Velvet Rope + T2 + T3 + Runner) with 7-tier ladder
+2026-06-15 03:30:37,465 [INFO]   + Ladder: +12→+2, +18→+8, +24→+12, +30→+20, +36→+24, +40→+30, +50→+40
+2026-06-15 03:30:37,465 [INFO]   + More tiers = less profit give-back on sharp reversals
+2026-06-15 03:30:37,465 [INFO]   + Checked every tick (not candle-based) — same as before but tighter protection
+2026-06-15 03:30:37,465 [INFO]   + Unified code: single loop replaces 3 separate sections (3a/3b/3c → 3)
+2026-06-15 03:30:37,465 [INFO]   + VWAP engine upgraded to TRIPLE confirmation:
+2026-06-15 03:30:37,465 [INFO]     Gate 1 (PRIMARY): Nifty FUTURES 15m close crosses futures VWAP, body >= 50%
+2026-06-15 03:30:37,465 [INFO]     Gate 2: Nifty SPOT 15m close same direction above/below spot VWAP
+2026-06-15 03:30:37,465 [INFO]     Gate 3: ATM option LTP above/below option's own VWAP
+2026-06-15 03:30:37,466 [INFO]   + Futures VWAP is now the primary decision criterion — real margin-backed money
+2026-06-15 03:30:37,466 [INFO]   + Nifty FUT token auto-resolved from Kite instruments at boot (no hardcoding)
+2026-06-15 03:30:37,466 [INFO] 
+2026-06-15 03:30:37,466 [INFO] V2.5.15 [STALE DATA GUARD — 2026-06-12]
+2026-06-15 03:30:37,466 [INFO]   + ROOT CAUSE FOUND: Kite intermittently returned a 15m series ending ~2h in
+2026-06-15 03:30:37,466 [INFO]     the past. Evidence: VWAP entry logged bar=198 at 11:30 but bar=197 at 13:30
+2026-06-15 03:30:37,466 [INFO]     (bar index went BACKWARDS); the 13:30 entry cited a 67% bearish bar +
+2026-06-15 03:30:37,466 [INFO]     FUT 23375 while the live tape was +68 pts off the low in 4 min → bought PE
+2026-06-15 03:30:37,466 [INFO]     into a V-reversal → HARDSL -21.73. Fresh-data replay confirms the signal
+2026-06-15 03:30:37,466 [INFO]     does NOT fire at 13:30 with up-to-date frames. Likely also suppressed valid
+2026-06-15 03:30:37,466 [INFO]     signals (Jun-11 zero-trade day: fresh-data replay finds 4 trades / +35 pts).
+2026-06-15 03:30:37,466 [INFO]   + Guard (active 09:32+): if last 15m bar (spot or futures) is older than
+2026-06-15 03:30:37,466 [INFO]     16 min → instant refetch from Kite; if recovered, continue + Telegram info;
+2026-06-15 03:30:37,466 [INFO]     if still stale → Telegram alert + ENTRIES blocked for that cycle only.
+2026-06-15 03:30:37,466 [INFO]   + EXITS are never blocked on data quality.
+2026-06-15 03:30:37,466 [INFO]   + Telegram alerts rate-limited to 1 per 10 min; log line every cycle.
+2026-06-15 03:30:37,466 [INFO] 
+2026-06-15 03:30:37,466 [INFO] === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
+2026-06-15 03:30:37,466 [INFO]   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
+2026-06-15 03:30:37,466 [INFO]   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
+2026-06-15 03:30:37,466 [INFO]   ADX<20 filter        : -Rs 16k
+2026-06-15 03:30:37,466 [INFO]   ADX<25 filter        : -Rs 34k
+2026-06-15 03:30:37,466 [INFO]   BE armor at +15%     : net negative
+2026-06-15 03:30:37,466 [INFO]   Same-side flip       : -Rs 191k CATASTROPHIC
+2026-06-15 03:30:37,466 [INFO]   REVERSAL_FLIP=True   : WR 12% vs 33%
+2026-06-15 03:30:37,466 [INFO]   K cap on CE          : hurts WR (no cap is better)
+2026-06-15 03:30:37,466 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
+2026-06-15 03:30:37,466 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
+2026-06-15 03:30:37,466 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
