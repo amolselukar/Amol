@@ -354,3 +354,16 @@
 2026-06-16 08:30:24,632 [WARNING] Premium 12.80 outside gate [30,180] (CE); skipping entry
 2026-06-16 08:30:24,633 [INFO] [INDICATORS] spot=23969.7 | 1h: close=23946.8 sma20=23680.7 sma50=23418.7 rsi=71.8 macd=165.63/152.25(bull) | 15m: K=76.9↑(prev 64.4) | regime=CE-eligible halted=False active=False
 2026-06-16 08:30:24,634 [INFO] [SIGNAL] CE: reg=True K=True(K=76.9>=38,rising) Kextr=True RSI=True(71.8>53) MACD=True => PASS | PE: reg=False K=False(K=76.9<=80,falling) Kextr=True RSI=False(71.8<47) MACD=False => BLOCK
+2026-06-16 08:30:26,764 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_15_20260616_114827.log, Nifty_BarLevel_V2_5_15_20260616_114827.csv
+2026-06-16 08:30:56,931 [WARNING] Premium 13.80 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:31:27,123 [WARNING] Premium 12.80 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:31:57,301 [WARNING] Premium 10.80 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:32:27,511 [WARNING] Premium 12.00 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:32:57,679 [WARNING] Premium 9.30 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:33:27,848 [WARNING] Premium 11.80 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:33:58,022 [WARNING] Premium 12.25 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:34:28,194 [WARNING] Premium 13.40 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:34:58,360 [WARNING] Premium 12.35 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:35:28,530 [WARNING] Premium 14.90 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:35:28,531 [INFO] [INDICATORS] spot=23974.2 | 1h: close=23946.8 sma20=23680.7 sma50=23418.7 rsi=71.8 macd=165.63/152.25(bull) | 15m: K=76.9↑(prev 64.4) | regime=CE-eligible halted=False active=False
+2026-06-16 08:35:28,531 [INFO] [SIGNAL] CE: reg=True K=True(K=76.9>=38,rising) Kextr=True RSI=True(71.8>53) MACD=True => PASS | PE: reg=False K=False(K=76.9<=80,falling) Kextr=True RSI=False(71.8<47) MACD=False => BLOCK
