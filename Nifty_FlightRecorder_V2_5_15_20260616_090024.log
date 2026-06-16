@@ -269,3 +269,10 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-16 04:41:37,310 [INFO] [INDICATORS] spot=23901.5 | 1h: close=23856.5 sma20=23541.6 sma50=23380.0 rsi=69.1 macd=167.55/130.25(bull) | 15m: K=58.8↑(prev 41.0) | regime=CE-eligible halted=False active=True
 2026-06-16 04:41:37,310 [INFO] [SIGNAL] CE: reg=True K=True(K=58.8>=38,rising) Kextr=True RSI=True(69.1>53) MACD=True => PASS | PE: reg=False K=False(K=58.8<=80,falling) Kextr=False RSI=False(69.1<47) MACD=False => BLOCK
 2026-06-16 04:41:37,311 [INFO] [STATE] CE NFO:NIFTY2661623900CE ltp=46.90 entry=50.25 pnl=-3.35(-6.7%) sl=41.21 peak=54.30 tr_armed=False elapsed=8min
+2026-06-16 04:41:39,585 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_15_20260616_090024.log, Nifty_BarLevel_V2_5_15_20260616_090024.csv
+2026-06-16 04:45:10,924 [INFO] [CB] losses=2/3 (reason=SMA8_LOW_TRAIL)
+2026-06-16 04:45:10,924 [INFO] EXIT: NFO:NIFTY2661623900CE @ 47.20 reason=SMA8_LOW_TRAIL pnl/sh=-3.05 is_flip=False losses=2/3
+2026-06-16 04:45:41,988 [INFO] ENTRY: NFO:NIFTY2661623900PE @ 41.80  engine=FLIP  detail=FLIP CE->PE K=47.8 (prev 58.8) age=1min flips_today=1/3
+2026-06-16 04:46:43,196 [INFO] [INDICATORS] spot=23916.1 | 1h: close=23910.0 sma20=23578.0 sma50=23389.4 rsi=71.2 macd=168.41/137.88(bull) | 15m: K=47.8↓(prev 58.8) | regime=CE-eligible halted=False active=True
+2026-06-16 04:46:43,197 [INFO] [SIGNAL] CE: reg=True K=False(K=47.8>=38,rising) Kextr=False RSI=True(71.2>53) MACD=True => BLOCK | PE: reg=False K=True(K=47.8<=80,falling) Kextr=False RSI=False(71.2<47) MACD=False => BLOCK
+2026-06-16 04:46:43,197 [INFO] [STATE] PE NFO:NIFTY2661623900PE ltp=38.20 entry=41.80 pnl=-3.60(-8.6%) sl=34.28 peak=42.30 tr_armed=False elapsed=1min
