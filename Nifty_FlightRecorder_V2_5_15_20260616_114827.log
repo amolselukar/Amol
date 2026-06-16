@@ -341,3 +341,16 @@
 2026-06-16 08:25:20,906 [WARNING] Premium 11.25 outside gate [30,180] (CE); skipping entry
 2026-06-16 08:25:20,907 [INFO] [INDICATORS] spot=23964.2 | 1h: close=23946.8 sma20=23680.7 sma50=23418.7 rsi=71.8 macd=165.63/152.25(bull) | 15m: K=64.4↑(prev 45.7) | regime=CE-eligible halted=False active=False
 2026-06-16 08:25:20,907 [INFO] [SIGNAL] CE: reg=True K=True(K=64.4>=38,rising) Kextr=True RSI=True(71.8>53) MACD=True => PASS | PE: reg=False K=False(K=64.4<=80,falling) Kextr=False RSI=False(71.8<47) MACD=False => BLOCK
+2026-06-16 08:25:22,867 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_15_20260616_114827.log, Nifty_BarLevel_V2_5_15_20260616_114827.csv
+2026-06-16 08:25:53,035 [WARNING] Premium 10.70 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:26:23,221 [WARNING] Premium 12.75 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:26:53,392 [WARNING] Premium 13.75 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:27:23,560 [WARNING] Premium 15.45 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:27:53,738 [WARNING] Premium 15.60 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:28:23,907 [WARNING] Premium 11.90 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:28:54,071 [WARNING] Premium 12.75 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:29:24,262 [WARNING] Premium 11.75 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:29:54,434 [WARNING] Premium 11.85 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:30:24,632 [WARNING] Premium 12.80 outside gate [30,180] (CE); skipping entry
+2026-06-16 08:30:24,633 [INFO] [INDICATORS] spot=23969.7 | 1h: close=23946.8 sma20=23680.7 sma50=23418.7 rsi=71.8 macd=165.63/152.25(bull) | 15m: K=76.9↑(prev 64.4) | regime=CE-eligible halted=False active=False
+2026-06-16 08:30:24,634 [INFO] [SIGNAL] CE: reg=True K=True(K=76.9>=38,rising) Kextr=True RSI=True(71.8>53) MACD=True => PASS | PE: reg=False K=False(K=76.9<=80,falling) Kextr=True RSI=False(71.8<47) MACD=False => BLOCK
