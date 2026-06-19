@@ -483,3 +483,6 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-19 09:30:21,599 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_17_20260619_090022.log, Nifty_BarLevel_V2_5_17_20260619_090022.csv
 2026-06-19 09:35:23,265 [INFO] [INDICATORS] spot=24016.4 | 1h: close=23992.3 sma20=24055.9 sma50=23770.7 rsi=51.9 macd=48.50/86.34(bear) | 15m: K=52.6↓(prev 79.6) | regime=NEUTRAL halted=False active=False
 2026-06-19 09:35:23,271 [INFO] [SIGNAL] CE: reg=False K=False(K=52.6>=38,rising) Kextr=False RSI=False(51.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=52.6<=80,falling) Kextr=True RSI=False(51.9<47) MACD=True => BLOCK
+2026-06-19 09:35:26,165 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_17_20260619_090022.log, Nifty_BarLevel_V2_5_17_20260619_090022.csv
+2026-06-19 09:40:27,774 [INFO] [INDICATORS] spot=24030.8 | 1h: close=23992.3 sma20=24055.9 sma50=23770.7 rsi=51.9 macd=48.50/86.34(bear) | 15m: K=52.6↓(prev 79.6) | regime=NEUTRAL halted=False active=False
+2026-06-19 09:40:27,776 [INFO] [SIGNAL] CE: reg=False K=False(K=52.6>=38,rising) Kextr=False RSI=False(51.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=52.6<=80,falling) Kextr=True RSI=False(51.9<47) MACD=True => BLOCK
