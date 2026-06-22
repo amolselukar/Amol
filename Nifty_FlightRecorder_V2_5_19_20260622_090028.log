@@ -404,3 +404,6 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-22 04:19:55,708 [INFO] [FUT5VWAP] Skip — close 24124 only 18pt from a pivot (need >20)
 2026-06-22 04:21:26,255 [INFO] [INDICATORS] spot=24119.0 | 1h: close=24042.7 sma20=24057.2 sma50=23801.7 rsi=55.8 macd=43.24/71.11(bear) | 15m: K=96.4↓(prev 100.0) | regime=NEUTRAL halted=False active=False
 2026-06-22 04:21:26,256 [INFO] [SIGNAL] CE: reg=False K=False(K=96.4>=38,rising) Kextr=False RSI=True(55.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=96.4<=80,falling) Kextr=True RSI=False(55.8<47) MACD=True => BLOCK
+2026-06-22 04:21:28,363 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260622_090028.log, Nifty_BarLevel_V2_5_19_20260622_090028.csv
+2026-06-22 04:26:31,222 [INFO] [INDICATORS] spot=24131.3 | 1h: close=24042.7 sma20=24057.2 sma50=23801.7 rsi=55.8 macd=43.24/71.11(bear) | 15m: K=96.4↓(prev 100.0) | regime=NEUTRAL halted=False active=False
+2026-06-22 04:26:31,222 [INFO] [SIGNAL] CE: reg=False K=False(K=96.4>=38,rising) Kextr=False RSI=True(55.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=96.4<=80,falling) Kextr=True RSI=False(55.8<47) MACD=True => BLOCK
