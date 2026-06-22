@@ -372,3 +372,16 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-22 04:06:12,744 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
 2026-06-22 04:06:12,745 [INFO] [INDICATORS] spot=24128.8 | 1h: close=24042.7 sma20=24057.2 sma50=23801.7 rsi=55.8 macd=43.24/71.11(bear) | 15m: K=100.0↑(prev 73.1) | regime=NEUTRAL halted=False active=False
 2026-06-22 04:06:12,745 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=True(55.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(55.8<47) MACD=True => BLOCK
+2026-06-22 04:06:14,871 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260622_090028.log, Nifty_BarLevel_V2_5_19_20260622_090028.csv
+2026-06-22 04:06:45,049 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:07:15,230 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:07:45,393 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:08:15,602 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:08:45,762 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:09:15,957 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:09:46,122 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:10:16,291 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:10:46,465 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:11:16,648 [INFO] [MVWAP] Skip — close 24139 only 4pt from a pivot (need >20)
+2026-06-22 04:11:16,648 [INFO] [INDICATORS] spot=24125.0 | 1h: close=24042.7 sma20=24057.2 sma50=23801.7 rsi=55.8 macd=43.24/71.11(bear) | 15m: K=100.0↑(prev 73.1) | regime=NEUTRAL halted=False active=False
+2026-06-22 04:11:16,648 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=True(55.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(55.8<47) MACD=True => BLOCK
