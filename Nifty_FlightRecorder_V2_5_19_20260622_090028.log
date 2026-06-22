@@ -664,3 +664,4 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-22 09:51:23,021 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260622_090028.log, Nifty_BarLevel_V2_5_19_20260622_090028.csv
 2026-06-22 09:56:24,549 [INFO] [INDICATORS] spot=24086.6 | 1h: close=24105.7 sma20=24077.6 sma50=23910.9 rsi=57.8 macd=51.41/57.91(bear) | 15m: K=23.2↓(prev 38.4) | regime=CE-eligible halted=False active=False
 2026-06-22 09:56:24,549 [INFO] [SIGNAL] CE: reg=True K=False(K=23.2>=38,rising) Kextr=True RSI=True(57.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=23.2<=80,falling) Kextr=False RSI=False(57.8<47) MACD=True => BLOCK
+2026-06-22 09:56:26,766 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260622_090028.log, Nifty_BarLevel_V2_5_19_20260622_090028.csv
