@@ -601,3 +601,15 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-22 08:25:09,323 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
 2026-06-22 08:25:09,323 [INFO] [INDICATORS] spot=24124.2 | 1h: close=24112.8 sma20=24074.6 sma50=23875.9 rsi=58.9 macd=54.48/61.01(bear) | 15m: K=7.2↑(prev 6.3) | regime=CE-eligible halted=False active=False
 2026-06-22 08:25:09,324 [INFO] [SIGNAL] CE: reg=True K=False(K=7.2>=38,rising) Kextr=True RSI=True(58.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=7.2<=80,falling) Kextr=False RSI=False(58.9<47) MACD=True => BLOCK
+2026-06-22 08:25:11,652 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260622_090028.log, Nifty_BarLevel_V2_5_19_20260622_090028.csv
+2026-06-22 08:25:41,797 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:26:11,941 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:26:42,085 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:27:12,236 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:27:42,381 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:28:12,537 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:28:42,695 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:29:12,854 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:29:43,026 [INFO] [FUT5VWAP] Skip — close 24153 only 10pt from a pivot (need >20)
+2026-06-22 08:30:13,180 [INFO] [INDICATORS] spot=24126.1 | 1h: close=24112.8 sma20=24074.6 sma50=23875.9 rsi=58.9 macd=54.48/61.01(bear) | 15m: K=15.0↑(prev 7.2) | regime=CE-eligible halted=False active=False
+2026-06-22 08:30:13,181 [INFO] [SIGNAL] CE: reg=True K=False(K=15.0>=38,rising) Kextr=True RSI=True(58.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=15.0<=80,falling) Kextr=False RSI=False(58.9<47) MACD=True => BLOCK
