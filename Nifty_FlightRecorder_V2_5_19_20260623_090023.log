@@ -548,3 +548,16 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-23 08:09:43,445 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260623_090023.log, Nifty_BarLevel_V2_5_19_20260623_090023.csv
 2026-06-23 08:14:45,489 [INFO] [INDICATORS] spot=23891.8 | 1h: close=23922.6 sma20=24062.9 sma50=23986.7 rsi=39.9 macd=16.76/41.81(bear) | 15m: K=0.0↓(prev 0.0) | regime=NEUTRAL halted=False active=False
 2026-06-23 08:14:45,490 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(39.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=True(39.9<47) MACD=True => BLOCK
+2026-06-23 08:14:47,540 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260623_090023.log, Nifty_BarLevel_V2_5_19_20260623_090023.csv
+2026-06-23 08:15:17,743 [WARNING] Premium 29.35 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:15:47,952 [WARNING] Premium 28.35 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:16:18,172 [WARNING] Premium 28.20 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:16:48,371 [WARNING] Premium 28.30 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:17:18,570 [WARNING] Premium 25.00 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:17:48,776 [WARNING] Premium 28.40 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:18:18,976 [WARNING] Premium 25.00 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:18:49,176 [WARNING] Premium 27.35 outside gate [30,180] (CE); skipping entry
+2026-06-23 08:19:19,422 [INFO] ENTRY: NFO:NIFTY2662323900CE @ 30.35  engine=V3  detail=Grade B R-cluster REJECT-CE at 23901
+2026-06-23 08:19:50,496 [INFO] [INDICATORS] spot=23896.0 | 1h: close=23922.6 sma20=24062.9 sma50=23986.7 rsi=39.9 macd=16.76/41.81(bear) | 15m: K=0.0↓(prev 0.0) | regime=NEUTRAL halted=False active=True
+2026-06-23 08:19:50,497 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(39.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=True(39.9<47) MACD=True => BLOCK
+2026-06-23 08:19:50,497 [INFO] [STATE] CE NFO:NIFTY2662323900CE ltp=28.30 entry=30.35 pnl=-2.05(-6.8%) sl=24.89 peak=30.35 tr_armed=False elapsed=0min
