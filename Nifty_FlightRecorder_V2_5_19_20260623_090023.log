@@ -337,3 +337,8 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-23 03:30:33,762 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
 2026-06-23 03:30:33,762 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-06-23 03:30:33,762 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-06-23 03:30:38,929 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260623_090023.log, Nifty_BarLevel_V2_5_19_20260623_090023.csv
+2026-06-23 03:30:39,069 [INFO] [INDICATORS] spot=24086.8 | 1h: close=24105.7 sma20=24077.6 sma50=23910.9 rsi=57.8 macd=51.41/57.91(bear) | 15m: K=23.2↓(prev 38.4) | regime=CE-eligible halted=False active=False
+2026-06-23 03:30:39,070 [INFO] [SIGNAL] CE: reg=True K=False(K=23.2>=38,rising) Kextr=True RSI=True(57.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=23.2<=80,falling) Kextr=False RSI=False(57.8<47) MACD=True => BLOCK
+2026-06-23 03:35:41,322 [INFO] [INDICATORS] spot=24086.8 | 1h: close=24105.7 sma20=24077.6 sma50=23910.9 rsi=57.8 macd=51.41/57.91(bear) | 15m: K=23.2↓(prev 38.4) | regime=CE-eligible halted=False active=False
+2026-06-23 03:35:41,322 [INFO] [SIGNAL] CE: reg=True K=False(K=23.2>=38,rising) Kextr=True RSI=True(57.8>53) MACD=False => BLOCK | PE: reg=False K=False(K=23.2<=80,falling) Kextr=False RSI=False(57.8<47) MACD=True => BLOCK
