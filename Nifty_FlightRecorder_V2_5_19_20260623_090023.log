@@ -401,3 +401,13 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-23 05:06:56,319 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260623_090023.log, Nifty_BarLevel_V2_5_19_20260623_090023.csv
 2026-06-23 05:11:57,926 [INFO] [INDICATORS] spot=24114.4 | 1h: close=24123.5 sma20=24078.6 sma50=23948.0 rsi=58.9 macd=46.90/54.05(bear) | 15m: K=59.9↓(prev 63.8) | regime=CE-eligible halted=False active=False
 2026-06-23 05:11:57,926 [INFO] [SIGNAL] CE: reg=True K=False(K=59.9>=38,rising) Kextr=True RSI=True(58.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=59.9<=80,falling) Kextr=False RSI=False(58.9<47) MACD=True => BLOCK
+2026-06-23 05:12:00,052 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260623_090023.log, Nifty_BarLevel_V2_5_19_20260623_090023.csv
+2026-06-23 05:15:31,131 [INFO] [VWAP] Signal (confirmed) — cross 24130>24124 body=66% confirm=24130 side=CE
+2026-06-23 05:15:31,169 [INFO] ENTRY: NFO:NIFTY2662324100CE @ 37.50  engine=VWAP  detail=FUT VWAP cross 24130>24124 body=66% +confirm | bar=155
+2026-06-23 05:16:02,274 [INFO] [VWAP_TRAIL] Option 15m close 38.35 < VWAP 45.40 — exiting
+2026-06-23 05:16:02,275 [INFO] [CB] losses=1/3 (reason=VWAP_TRAIL)
+2026-06-23 05:16:02,275 [INFO] EXIT: NFO:NIFTY2662324100CE @ 36.85 reason=VWAP_TRAIL pnl/sh=-0.65 is_flip=False losses=1/3
+2026-06-23 05:16:33,325 [WARNING] Premium 29.45 outside gate [30,300] (PE); skipping entry
+2026-06-23 05:17:03,476 [WARNING] Premium 28.65 outside gate [30,300] (PE); skipping entry
+2026-06-23 05:17:03,477 [INFO] [INDICATORS] spot=24101.0 | 1h: close=24123.5 sma20=24078.6 sma50=23948.0 rsi=58.9 macd=46.90/54.05(bear) | 15m: K=43.6↓(prev 59.9) | regime=CE-eligible halted=False active=False
+2026-06-23 05:17:03,477 [INFO] [SIGNAL] CE: reg=True K=False(K=43.6>=38,rising) Kextr=False RSI=True(58.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=43.6<=80,falling) Kextr=False RSI=False(58.9<47) MACD=True => BLOCK
