@@ -601,3 +601,9 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-24 09:56:45,641 [INFO] [INDICATORS] spot=24013.2 | 1h: close=24006.5 sma20=24024.3 sma50=24021.6 rsi=50.8 macd=-5.91/-6.92(bull) | 15m: K=41.7↓(prev 64.7) | regime=NEUTRAL halted=False active=False
 2026-06-24 09:56:45,642 [INFO] [SIGNAL] CE: reg=False K=False(K=41.7>=38,rising) Kextr=False RSI=False(50.8>53) MACD=True => BLOCK | PE: reg=False K=True(K=41.7<=80,falling) Kextr=True RSI=False(50.8<47) MACD=False => BLOCK
 2026-06-24 09:56:47,790 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260624_090027.log, Nifty_BarLevel_V2_5_19_20260624_090027.csv
+2026-06-24 10:00:22,475 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260624_090027.log, Nifty_BarLevel_V2_5_19_20260624_090027.csv
+2026-06-24 10:00:23,357 [INFO] [EOD DATA] Starting data capture for 2026-06-24
+2026-06-24 10:00:26,511 [INFO] [EOD DATA] Futures token: 15956226 (NIFTY26JUNFUT)
+2026-06-24 10:00:29,289 [INFO] [EOD DATA] ATM tracker: 75 rows, CE=[23700, 23750, 23800, 23850, 23900, 23950, 24000, 24050, 24100, 24150, 24200], PE=[23700, 23750, 23800, 23850, 23900, 23950, 24000, 24050, 24100, 24150, 24200]
+2026-06-24 10:00:29,884 [INFO] [EOD DATA] Saved futures CSVs: ['5m', '15m', '1h']
+2026-06-24 10:01:03,644 [INFO] [EOD DATA] Capture complete. Folder: daily_option_data/2026-06-24, 66 OK, 15869 bars
