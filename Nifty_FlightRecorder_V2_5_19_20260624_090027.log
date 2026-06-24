@@ -600,3 +600,4 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-24 09:55:14,143 [INFO] EXIT: NFO:NIFTY26JUN24100PE @ 160.35 reason=FORCE_CLOSE_15_25 pnl/sh=-0.30 is_flip=True losses=0/4
 2026-06-24 09:56:45,641 [INFO] [INDICATORS] spot=24013.2 | 1h: close=24006.5 sma20=24024.3 sma50=24021.6 rsi=50.8 macd=-5.91/-6.92(bull) | 15m: K=41.7↓(prev 64.7) | regime=NEUTRAL halted=False active=False
 2026-06-24 09:56:45,642 [INFO] [SIGNAL] CE: reg=False K=False(K=41.7>=38,rising) Kextr=False RSI=False(50.8>53) MACD=True => BLOCK | PE: reg=False K=True(K=41.7<=80,falling) Kextr=True RSI=False(50.8<47) MACD=False => BLOCK
+2026-06-24 09:56:47,790 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260624_090027.log, Nifty_BarLevel_V2_5_19_20260624_090027.csv
