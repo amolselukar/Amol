@@ -518,3 +518,10 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-25 06:59:00,530 [INFO] [INDICATORS] spot=24208.0 | 1h: close=24243.5 sma20=24029.3 sma50=24043.3 rsi=66.0 macd=38.07/9.80(bull) | 15m: K=97.7↑(prev 94.5) | regime=NEUTRAL halted=False active=True
 2026-06-25 06:59:00,530 [INFO] [SIGNAL] CE: reg=False K=True(K=97.7>=38,rising) Kextr=False RSI=True(66.0>53) MACD=True => BLOCK | PE: reg=False K=False(K=97.7<=80,falling) Kextr=True RSI=False(66.0<47) MACD=False => BLOCK
 2026-06-25 06:59:00,530 [INFO] [STATE] CE NFO:NIFTY26JUN24200CE ltp=124.55 entry=149.60 pnl=-25.05(-16.7%) sl=122.67 peak=159.55 tr_armed=False elapsed=21min
+2026-06-25 06:59:02,578 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260625_090020.log, Nifty_BarLevel_V2_5_19_20260625_090020.csv
+2026-06-25 06:59:32,766 [INFO] [CB] losses=1/4 (reason=HARDSL_-18pct)
+2026-06-25 06:59:32,766 [INFO] EXIT: NFO:NIFTY26JUN24200CE @ 122.67 reason=HARDSL_-18pct pnl/sh=-26.93 is_flip=False losses=1/4
+2026-06-25 07:00:03,855 [INFO] [VWAP] Signal — FUT 24224>24196 body=69% side=CE
+2026-06-25 07:00:03,855 [INFO] [REENTRY_CD] BLOCKED VWAP CE — same-side re-entry 0.5min after last CE exit (cooldown 5min)
+2026-06-25 07:04:06,286 [INFO] [INDICATORS] spot=24190.2 | 1h: close=24243.5 sma20=24029.3 sma50=24043.3 rsi=66.0 macd=38.07/9.80(bull) | 15m: K=84.8↓(prev 97.7) | regime=NEUTRAL halted=False active=False
+2026-06-25 07:04:06,287 [INFO] [SIGNAL] CE: reg=False K=False(K=84.8>=38,rising) Kextr=False RSI=True(66.0>53) MACD=True => BLOCK | PE: reg=False K=False(K=84.8<=80,falling) Kextr=True RSI=False(66.0<47) MACD=False => BLOCK
