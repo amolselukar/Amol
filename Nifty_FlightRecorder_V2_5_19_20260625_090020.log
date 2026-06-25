@@ -480,3 +480,14 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-25 06:28:23,038 [INFO] [INDICATORS] spot=24229.2 | 1h: close=24196.0 sma20=24022.8 sma50=24037.3 rsi=63.5 macd=24.49/2.74(bull) | 15m: K=93.5↓(prev 95.4) | regime=NEUTRAL halted=False active=True
 2026-06-25 06:28:23,038 [INFO] [SIGNAL] CE: reg=False K=False(K=93.5>=38,rising) Kextr=False RSI=True(63.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=93.5<=80,falling) Kextr=True RSI=False(63.5<47) MACD=False => BLOCK
 2026-06-25 06:28:23,038 [INFO] [STATE] CE NFO:NIFTY26JUN24200CE ltp=140.00 entry=102.35 pnl=+37.65(+36.8%) sl=135.00 peak=140.00 tr_armed=True elapsed=117min
+2026-06-25 06:28:25,102 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260625_090020.log, Nifty_BarLevel_V2_5_19_20260625_090020.csv
+2026-06-25 06:28:55,308 [INFO] [TRAIL] SL ratcheted 135.00 → 139.80  (peak=144.80)
+2026-06-25 06:30:26,027 [INFO] [TRAIL] SL ratcheted 139.80 → 144.60  (peak=149.60)
+2026-06-25 06:30:56,309 [INFO] [TRAIL] SL ratcheted 144.60 → 147.00  (peak=152.00)
+2026-06-25 06:31:56,804 [INFO] EXIT: NFO:NIFTY26JUN24200CE @ 147.00 reason=TRAIL_+45 pnl/sh=+44.65 is_flip=False losses=0/4
+2026-06-25 06:32:27,963 [INFO] [CHOPGATE] Clear to trade — ER=0.58 crosses=0 range=88pt
+2026-06-25 06:32:27,964 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 0.5min after last CE exit (cooldown 5min)
+2026-06-25 06:32:58,990 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.0min after last CE exit (cooldown 5min)
+2026-06-25 06:33:30,043 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.6min after last CE exit (cooldown 5min)
+2026-06-25 06:33:30,888 [INFO] [INDICATORS] spot=24241.2 | 1h: close=24196.0 sma20=24022.8 sma50=24037.3 rsi=63.5 macd=24.49/2.74(bull) | 15m: K=94.5↑(prev 93.5) | regime=NEUTRAL halted=False active=False
+2026-06-25 06:33:30,889 [INFO] [SIGNAL] CE: reg=False K=True(K=94.5>=38,rising) Kextr=False RSI=True(63.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=94.5<=80,falling) Kextr=True RSI=False(63.5<47) MACD=False => BLOCK
