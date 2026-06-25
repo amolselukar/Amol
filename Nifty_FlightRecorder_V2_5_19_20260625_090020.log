@@ -491,3 +491,14 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-25 06:33:30,043 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.6min after last CE exit (cooldown 5min)
 2026-06-25 06:33:30,888 [INFO] [INDICATORS] spot=24241.2 | 1h: close=24196.0 sma20=24022.8 sma50=24037.3 rsi=63.5 macd=24.49/2.74(bull) | 15m: K=94.5↑(prev 93.5) | regime=NEUTRAL halted=False active=False
 2026-06-25 06:33:30,889 [INFO] [SIGNAL] CE: reg=False K=True(K=94.5>=38,rising) Kextr=False RSI=True(63.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=94.5<=80,falling) Kextr=True RSI=False(63.5<47) MACD=False => BLOCK
+2026-06-25 06:33:33,696 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260625_090020.log, Nifty_BarLevel_V2_5_19_20260625_090020.csv
+2026-06-25 06:34:03,883 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.1min after last CE exit (cooldown 5min)
+2026-06-25 06:34:34,872 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.6min after last CE exit (cooldown 5min)
+2026-06-25 06:35:05,901 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 3.2min after last CE exit (cooldown 5min)
+2026-06-25 06:35:36,890 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 3.7min after last CE exit (cooldown 5min)
+2026-06-25 06:36:07,947 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.2min after last CE exit (cooldown 5min)
+2026-06-25 06:36:38,931 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.7min after last CE exit (cooldown 5min)
+2026-06-25 06:37:09,970 [INFO] ENTRY: NFO:NIFTY26JUN24200CE @ 149.60  engine=V3  detail=Grade B G-cluster BREAK-CE at 24200
+2026-06-25 06:38:41,629 [INFO] [INDICATORS] spot=24249.0 | 1h: close=24196.0 sma20=24022.8 sma50=24037.3 rsi=63.5 macd=24.49/2.74(bull) | 15m: K=94.5↑(prev 93.5) | regime=NEUTRAL halted=False active=True
+2026-06-25 06:38:41,629 [INFO] [SIGNAL] CE: reg=False K=True(K=94.5>=38,rising) Kextr=False RSI=True(63.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=94.5<=80,falling) Kextr=True RSI=False(63.5<47) MACD=False => BLOCK
+2026-06-25 06:38:41,629 [INFO] [STATE] CE NFO:NIFTY26JUN24200CE ltp=152.35 entry=149.60 pnl=+2.75(+1.8%) sl=122.67 peak=152.35 tr_armed=False elapsed=1min
