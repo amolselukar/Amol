@@ -467,3 +467,16 @@ Mode: kite_paper — Bot continues in PAPER mode.
 2026-06-25 06:23:18,613 [INFO] [INDICATORS] spot=24203.5 | 1h: close=24196.0 sma20=24022.8 sma50=24037.3 rsi=63.5 macd=24.49/2.74(bull) | 15m: K=93.5↓(prev 95.4) | regime=NEUTRAL halted=False active=True
 2026-06-25 06:23:18,613 [INFO] [SIGNAL] CE: reg=False K=False(K=93.5>=38,rising) Kextr=False RSI=True(63.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=93.5<=80,falling) Kextr=True RSI=False(63.5<47) MACD=False => BLOCK
 2026-06-25 06:23:18,613 [INFO] [STATE] CE NFO:NIFTY26JUN24200CE ltp=118.95 entry=102.35 pnl=+16.60(+16.2%) sl=113.95 peak=118.95 tr_armed=True elapsed=112min
+2026-06-25 06:23:20,676 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260625_090020.log, Nifty_BarLevel_V2_5_19_20260625_090020.csv
+2026-06-25 06:23:50,857 [INFO] [TRAIL] SL ratcheted 113.95 → 114.10  (peak=119.10)
+2026-06-25 06:24:51,346 [INFO] [TRAIL] SL ratcheted 114.10 → 114.45  (peak=119.45)
+2026-06-25 06:25:21,591 [INFO] [TRAIL] SL ratcheted 114.45 → 114.90  (peak=119.90)
+2026-06-25 06:25:51,819 [INFO] [TRAIL] SL ratcheted 114.90 → 117.00  (peak=122.00)
+2026-06-25 06:26:22,047 [INFO] [TRAIL] SL ratcheted 117.00 → 118.95  (peak=123.95)
+2026-06-25 06:26:52,291 [INFO] [TRAIL] SL ratcheted 118.95 → 121.00  (peak=126.00)
+2026-06-25 06:27:22,536 [INFO] [TRAIL] SL ratcheted 121.00 → 127.80  (peak=132.80)
+2026-06-25 06:27:52,780 [INFO] [TRAIL] SL ratcheted 127.80 → 132.15  (peak=137.15)
+2026-06-25 06:28:23,004 [INFO] [TRAIL] SL ratcheted 132.15 → 135.00  (peak=140.00)
+2026-06-25 06:28:23,038 [INFO] [INDICATORS] spot=24229.2 | 1h: close=24196.0 sma20=24022.8 sma50=24037.3 rsi=63.5 macd=24.49/2.74(bull) | 15m: K=93.5↓(prev 95.4) | regime=NEUTRAL halted=False active=True
+2026-06-25 06:28:23,038 [INFO] [SIGNAL] CE: reg=False K=False(K=93.5>=38,rising) Kextr=False RSI=True(63.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=93.5<=80,falling) Kextr=True RSI=False(63.5<47) MACD=False => BLOCK
+2026-06-25 06:28:23,038 [INFO] [STATE] CE NFO:NIFTY26JUN24200CE ltp=140.00 entry=102.35 pnl=+37.65(+36.8%) sl=135.00 peak=140.00 tr_armed=True elapsed=117min
