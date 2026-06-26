@@ -3384,3 +3384,6 @@
 2026-06-26 09:59:51,902 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
 2026-06-26 09:59:51,903 [WARNING] [STALE] fut15 last bar 15:15 (>16min old) — instant refetch
 2026-06-26 09:59:51,936 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-06-26 10:00:24,888 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260626_090020.log, Nifty_BarLevel_V2_5_19_20260626_090020.csv
+2026-06-26 10:00:25,684 [INFO] [EOD DATA] Starting data capture for 2026-06-26
+2026-06-26 10:00:28,888 [INFO] [EOD DATA] Futures token: 15956226 (NIFTY26JUNFUT)
