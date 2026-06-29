@@ -547,3 +547,4 @@
 2026-06-29 09:55:11,601 [INFO] EXIT: NFO:NIFTY26JUN23900PE @ 46.50 reason=FORCE_CLOSE_15_25 pnl/sh=-6.10 is_flip=False losses=2/4
 2026-06-29 09:58:43,413 [INFO] [INDICATORS] spot=23976.5 | 1h: close=23943.2 sma20=24051.5 sma50=24049.9 rsi=41.3 macd=-10.36/9.87(bear) | 15m: K=64.9↑(prev 49.3) | regime=NEUTRAL halted=False active=False
 2026-06-29 09:58:43,413 [INFO] [SIGNAL] CE: reg=False K=True(K=64.9>=38,rising) Kextr=False RSI=False(41.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=64.9<=80,falling) Kextr=False RSI=True(41.3<47) MACD=True => BLOCK
+2026-06-29 09:58:45,894 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260629_095913.log, Nifty_BarLevel_V2_5_19_20260629_095913.csv
