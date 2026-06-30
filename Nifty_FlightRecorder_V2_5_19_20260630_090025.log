@@ -552,3 +552,10 @@
 2026-06-30 08:45:55,683 [INFO] [INDICATORS] spot=23889.3 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=56.9↓(prev 70.9) | regime=NEUTRAL halted=False active=True
 2026-06-30 08:45:55,683 [INFO] [SIGNAL] CE: reg=False K=False(K=56.9>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=56.9<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
 2026-06-30 08:45:55,683 [INFO] [STATE] PE NFO:NIFTY26JUN23900PE ltp=33.50 entry=35.10 pnl=-1.60(-4.6%) sl=28.78 peak=35.10 tr_armed=False elapsed=0min
+2026-06-30 08:46:00,158 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
+2026-06-30 08:46:31,934 [INFO] [CB] losses=4/4 (reason=HARDSL_-18pct)
+2026-06-30 08:46:33,400 [INFO] EXIT: NFO:NIFTY26JUN23900PE @ 28.78 reason=HARDSL_-18pct pnl/sh=-6.32 is_flip=False losses=4/4
+2026-06-30 08:47:07,415 [INFO] [VWAP] Signal — FUT 23890<23931 body=78% side=PE
+2026-06-30 08:47:07,415 [INFO] [REENTRY_CD] BLOCKED VWAP PE — same-side re-entry 0.6min after last PE exit (cooldown 5min)
+2026-06-30 08:51:21,674 [INFO] [INDICATORS] spot=23876.6 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=56.9↓(prev 70.9) | regime=NEUTRAL halted=True active=False
+2026-06-30 08:51:21,674 [INFO] [SIGNAL] CE: reg=False K=False(K=56.9>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=56.9<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
