@@ -586,3 +586,14 @@
 2026-06-30 09:22:14,916 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
 2026-06-30 09:27:16,820 [INFO] [INDICATORS] spot=23938.2 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=61.4↑(prev 56.0) | regime=NEUTRAL halted=True active=False
 2026-06-30 09:27:16,820 [INFO] [SIGNAL] CE: reg=False K=True(K=61.4>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=61.4<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
+2026-06-30 09:27:18,895 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
+2026-06-30 09:30:20,685 [INFO] [VWAP] Signal — FUT 23910<23931 body=80% side=PE
+2026-06-30 09:30:20,735 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26JUN23900PE
+2026-06-30 09:30:20,740 [INFO] ENTRY: NFO:NIFTY26JUN23900PE @ 31.65  engine=VWAP  detail=FUT VWAP 23910<23931 body=80% | bar=147
+2026-06-30 09:30:51,814 [INFO] [VWAP_TRAIL] Option 15m close 17.15 < VWAP 28.78 — exiting
+2026-06-30 09:30:51,814 [INFO] EXIT: NFO:NIFTY26JUN23900PE @ 40.05 reason=VWAP_TRAIL pnl/sh=+8.40 is_flip=False losses=5/4
+2026-06-30 09:31:22,865 [INFO] [FUT5VWAP] Skip — close 23910 only 14pt from a pivot (need >20)
+2026-06-30 09:31:53,063 [INFO] [FUT5VWAP] Skip — close 23910 only 14pt from a pivot (need >20)
+2026-06-30 09:32:23,256 [INFO] [FUT5VWAP] Skip — close 23910 only 14pt from a pivot (need >20)
+2026-06-30 09:32:23,256 [INFO] [INDICATORS] spot=23840.4 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=67.3↑(prev 61.4) | regime=NEUTRAL halted=True active=False
+2026-06-30 09:32:23,257 [INFO] [SIGNAL] CE: reg=False K=True(K=67.3>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=67.3<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
