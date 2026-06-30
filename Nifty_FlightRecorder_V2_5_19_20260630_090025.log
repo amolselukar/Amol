@@ -450,3 +450,8 @@
 2026-06-30 06:07:50,296 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
 2026-06-30 06:12:52,103 [INFO] [INDICATORS] spot=23941.0 | 1h: close=23938.0 sma20=24047.6 sma50=24040.2 rsi=43.3 macd=-25.34/-5.27(bear) | 15m: K=73.6↑(prev 51.9) | regime=NEUTRAL halted=False active=False
 2026-06-30 06:12:52,103 [INFO] [SIGNAL] CE: reg=False K=True(K=73.6>=38,rising) Kextr=False RSI=False(43.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=73.6<=80,falling) Kextr=False RSI=True(43.3<47) MACD=True => BLOCK
+2026-06-30 06:12:54,196 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
+2026-06-30 06:15:25,094 [INFO] [VWAP] Signal — FUT 23936>23924 body=86% side=CE
+2026-06-30 06:15:25,150 [INFO] [MOMGATE] BLOCKED VWAP CE #4 mv=-13pt thr=12 — 3rd+ same-direction entry without momentum
+2026-06-30 06:17:56,882 [INFO] [INDICATORS] spot=23935.0 | 1h: close=23938.0 sma20=24047.6 sma50=24040.2 rsi=43.3 macd=-25.34/-5.27(bear) | 15m: K=89.7↑(prev 73.6) | regime=NEUTRAL halted=False active=False
+2026-06-30 06:17:56,883 [INFO] [SIGNAL] CE: reg=False K=True(K=89.7>=38,rising) Kextr=False RSI=False(43.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=89.7<=80,falling) Kextr=True RSI=True(43.3<47) MACD=True => BLOCK
