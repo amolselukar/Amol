@@ -605,3 +605,6 @@
 2026-06-30 09:34:56,587 [INFO] [FUT5VWAP] Skip — close 23910 only 14pt from a pivot (need >20)
 2026-06-30 09:37:28,396 [INFO] [INDICATORS] spot=23852.7 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=67.3↑(prev 61.4) | regime=NEUTRAL halted=True active=False
 2026-06-30 09:37:28,397 [INFO] [SIGNAL] CE: reg=False K=True(K=67.3>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=67.3<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
+2026-06-30 09:37:30,395 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
+2026-06-30 09:42:34,779 [INFO] [INDICATORS] spot=23865.2 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=67.3↑(prev 61.4) | regime=NEUTRAL halted=True active=False
+2026-06-30 09:42:34,780 [INFO] [SIGNAL] CE: reg=False K=True(K=67.3>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=67.3<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
