@@ -566,3 +566,8 @@
 2026-06-30 08:56:42,402 [INFO] [INDICATORS] spot=23965.9 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=56.9↓(prev 70.9) | regime=NEUTRAL halted=True active=True
 2026-06-30 08:56:42,402 [INFO] [SIGNAL] CE: reg=False K=False(K=56.9>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=56.9<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
 2026-06-30 08:56:42,402 [INFO] [STATE] CE NFO:NIFTY26JUN23900CE ltp=85.65 entry=75.10 pnl=+10.55(+14.0%) sl=61.58 peak=85.65 tr_armed=False elapsed=1min
+2026-06-30 08:56:48,179 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260630_090025.log, Nifty_BarLevel_V2_5_19_20260630_090025.csv
+2026-06-30 08:58:52,107 [INFO] [CB] losses=5/4 (reason=HARDSL_-18pct)
+2026-06-30 08:58:52,108 [INFO] EXIT: NFO:NIFTY26JUN23900CE @ 61.58 reason=HARDSL_-18pct pnl/sh=-13.52 is_flip=False losses=5/4
+2026-06-30 09:01:54,192 [INFO] [INDICATORS] spot=23938.2 | 1h: close=23885.2 sma20=24030.1 sma50=24029.5 rsi=39.4 macd=-34.52/-18.01(bear) | 15m: K=56.0↓(prev 56.9) | regime=NEUTRAL halted=True active=False
+2026-06-30 09:01:54,193 [INFO] [SIGNAL] CE: reg=False K=False(K=56.0>=38,rising) Kextr=False RSI=False(39.4>53) MACD=False => BLOCK | PE: reg=False K=True(K=56.0<=80,falling) Kextr=False RSI=True(39.4<47) MACD=True => BLOCK
