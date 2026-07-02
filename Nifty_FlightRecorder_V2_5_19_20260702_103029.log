@@ -510,3 +510,4 @@
 2026-07-02 09:55:00,114 [INFO] EXIT: NFO:NIFTY2670724200CE @ 105.60 reason=FORCE_CLOSE_15_25 pnl/sh=-8.40 is_flip=False losses=1/4
 2026-07-02 09:55:00,938 [INFO] [INDICATORS] spot=24167.1 | 1h: close=24176.5 sma20=24009.4 sma50=24021.0 rsi=65.9 macd=37.33/15.33(bull) | 15m: K=87.7↓(prev 93.8) | regime=NEUTRAL halted=False active=False
 2026-07-02 09:55:00,938 [INFO] [SIGNAL] CE: reg=False K=False(K=87.7>=38,rising) Kextr=False RSI=True(65.9>53) MACD=True => BLOCK | PE: reg=False K=False(K=87.7<=80,falling) Kextr=True RSI=False(65.9<47) MACD=False => BLOCK
+2026-07-02 09:55:03,606 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260702_103029.log, Nifty_BarLevel_V2_5_19_20260702_103029.csv
