@@ -544,3 +544,12 @@
 2026-07-03 08:50:09,850 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260703_090017.log, Nifty_BarLevel_V2_5_19_20260703_090017.csv
 2026-07-03 08:55:11,847 [INFO] [INDICATORS] spot=24272.1 | 1h: close=24287.4 sma20=24127.6 sma50=24050.6 rsi=64.9 macd=84.53/59.19(bull) | 15m: K=0.6↑(prev 0.0) | regime=CE-eligible halted=False active=False
 2026-07-03 08:55:11,850 [INFO] [SIGNAL] CE: reg=True K=False(K=0.6>=38,rising) Kextr=True RSI=True(64.9>53) MACD=True => BLOCK | PE: reg=False K=False(K=0.6<=80,falling) Kextr=False RSI=False(64.9<47) MACD=False => BLOCK
+2026-07-03 08:55:14,161 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260703_090017.log, Nifty_BarLevel_V2_5_19_20260703_090017.csv
+2026-07-03 09:00:15,964 [INFO] [CHOPGATE] RE-ARMED — FUT 24342 < FH_low 24366-15 body=76% regime=TRANSITION
+2026-07-03 09:00:16,570 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"\" at byte offset 44"}
+2026-07-03 09:00:16,570 [WARNING] HTML parse failed; retrying as plain text
+2026-07-03 09:00:18,456 [INFO] [VWAP] Signal — FUT 24342<24400 body=76% side=PE
+2026-07-03 09:00:18,517 [INFO] ENTRY: NFO:NIFTY2670724300PE @ 109.80  engine=VWAP  detail=FUT VWAP 24342<24400 body=76% | bar=173
+2026-07-03 09:00:19,429 [INFO] [INDICATORS] spot=24264.8 | 1h: close=24287.4 sma20=24127.6 sma50=24050.6 rsi=64.9 macd=84.53/59.19(bull) | 15m: K=0.6↓(prev 0.6) | regime=CE-eligible halted=False active=True
+2026-07-03 09:00:19,429 [INFO] [SIGNAL] CE: reg=True K=False(K=0.6>=38,rising) Kextr=True RSI=True(64.9>53) MACD=True => BLOCK | PE: reg=False K=False(K=0.6<=80,falling) Kextr=False RSI=False(64.9<47) MACD=False => BLOCK
+2026-07-03 09:00:19,430 [INFO] [STATE] PE NFO:NIFTY2670724300PE ltp=141.95 entry=109.80 pnl=+32.15(+29.3%) sl=90.04 peak=109.80 tr_armed=False elapsed=0min
