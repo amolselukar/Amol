@@ -531,3 +531,16 @@
 2026-07-06 06:53:46,363 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.6min after last CE exit (cooldown 5min)
 2026-07-06 06:53:47,195 [INFO] [INDICATORS] spot=24441.5 | 1h: close=24443.2 sma20=24217.4 sma50=24097.3 rsi=73.5 macd=96.50/78.74(bull) | 15m: K=95.1↑(prev 92.7) | regime=CE-eligible halted=False active=False
 2026-07-06 06:53:47,196 [INFO] [SIGNAL] CE: reg=True K=True(K=95.1>=38,rising) Kextr=False RSI=True(73.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=95.1<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False => BLOCK
+2026-07-06 06:53:49,259 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260706_090022.log, Nifty_BarLevel_V2_5_19_20260706_090022.csv
+2026-07-06 06:54:19,430 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 3.1min after last CE exit (cooldown 5min)
+2026-07-06 06:54:50,411 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 3.7min after last CE exit (cooldown 5min)
+2026-07-06 06:55:21,382 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.2min after last CE exit (cooldown 5min)
+2026-07-06 06:55:52,417 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.7min after last CE exit (cooldown 5min)
+2026-07-06 06:56:23,423 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=-1pt thr=12 — 3rd+ same-direction entry without momentum
+2026-07-06 06:56:54,430 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=-1pt thr=12 — 3rd+ same-direction entry without momentum
+2026-07-06 06:57:25,440 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=+2pt thr=12 — 3rd+ same-direction entry without momentum
+2026-07-06 06:57:56,456 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=+2pt thr=12 — 3rd+ same-direction entry without momentum
+2026-07-06 06:58:27,613 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=+3pt thr=12 — 3rd+ same-direction entry without momentum
+2026-07-06 06:58:58,637 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=+3pt thr=12 — 3rd+ same-direction entry without momentum
+2026-07-06 06:58:59,439 [INFO] [INDICATORS] spot=24438.6 | 1h: close=24443.2 sma20=24217.4 sma50=24097.3 rsi=73.5 macd=96.50/78.74(bull) | 15m: K=95.1↑(prev 92.7) | regime=CE-eligible halted=False active=False
+2026-07-06 06:58:59,440 [INFO] [SIGNAL] CE: reg=True K=True(K=95.1>=38,rising) Kextr=False RSI=True(73.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=95.1<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False => BLOCK
