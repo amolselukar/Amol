@@ -522,3 +522,12 @@
 2026-07-06 06:48:37,532 [INFO] [INDICATORS] spot=24440.8 | 1h: close=24443.2 sma20=24217.4 sma50=24097.3 rsi=73.5 macd=96.50/78.74(bull) | 15m: K=95.1↑(prev 92.7) | regime=CE-eligible halted=False active=True
 2026-07-06 06:48:37,532 [INFO] [SIGNAL] CE: reg=True K=True(K=95.1>=38,rising) Kextr=False RSI=True(73.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=95.1<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False => BLOCK
 2026-07-06 06:48:37,532 [INFO] [STATE] CE NFO:NIFTY2670724400CE ltp=89.25 entry=66.80 pnl=+22.45(+33.6%) sl=88.10 peak=93.10 tr_armed=True elapsed=98min
+2026-07-06 06:48:40,337 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260706_090022.log, Nifty_BarLevel_V2_5_19_20260706_090022.csv
+2026-07-06 06:51:11,399 [INFO] EXIT: NFO:NIFTY2670724400CE @ 88.10 reason=TRAIL_+21 pnl/sh=+21.30 is_flip=False losses=0/4
+2026-07-06 06:51:42,423 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 0.5min after last CE exit (cooldown 5min)
+2026-07-06 06:52:13,383 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.0min after last CE exit (cooldown 5min)
+2026-07-06 06:52:44,399 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.5min after last CE exit (cooldown 5min)
+2026-07-06 06:53:15,382 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.1min after last CE exit (cooldown 5min)
+2026-07-06 06:53:46,363 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.6min after last CE exit (cooldown 5min)
+2026-07-06 06:53:47,195 [INFO] [INDICATORS] spot=24441.5 | 1h: close=24443.2 sma20=24217.4 sma50=24097.3 rsi=73.5 macd=96.50/78.74(bull) | 15m: K=95.1↑(prev 92.7) | regime=CE-eligible halted=False active=False
+2026-07-06 06:53:47,196 [INFO] [SIGNAL] CE: reg=True K=True(K=95.1>=38,rising) Kextr=False RSI=True(73.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=95.1<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False => BLOCK
