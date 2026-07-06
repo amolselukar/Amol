@@ -340,3 +340,14 @@
 2026-07-06 08:22:53,073 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
 2026-07-06 08:22:53,073 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-07-06 08:22:53,073 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-07-06 08:22:57,756 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260706_135243.log, Nifty_BarLevel_V2_5_20_20260706_135243.csv
+2026-07-06 08:22:57,946 [INFO] [CHOPGATE] Clear to trade — ER=0.62 crosses=0 range=145pt
+2026-07-06 08:22:57,953 [INFO] [ORB] Signal — close 24285.5 broke OR[24287.1,24360.2] side=PE
+2026-07-06 08:22:58,133 [INFO] [mstock] place_order resp: {'status': False, 'message': 'RMS:22322607063258:NSE,OPTIDX,44655,NIFTY-07Jul2026-24400-PE,INTRADAY,,2026-07-07 00:00:00,MA2091850,B,130,I,64.65,FUND LIMIT INSUFFICIENT,AVAILABLE FUND =1590.69,ADDITIONAL REQUIRED FUND=6837.81,CALCULATED SPAN & EXPOSURE FOR ORDER=8428.5', 'errorcode': 'MA200', 'data': None}
+2026-07-06 08:22:58,133 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'RMS:22322607063258:NSE,OPTIDX,44655,NIFTY-07Jul2026-24400-PE,INTRADAY,,2026-07-07 00:00:00,MA2091850,B,130,I,64.65,FUND LIMIT INSUFFICIENT,AVAILABLE FUND =1590.69,ADDITIONAL REQUIRED FUND=6837.81,CALCULATED SPAN & EXPOSURE FOR ORDER=8428.5', 'errorcode': 'MA200', 'data': None}
+2026-07-06 08:22:58,134 [WARNING] [mstock] BUY place_order returned None — aborting trade. err=RMS:22322607063258:NSE,OPTIDX,44655,NIFTY-07Jul2026-24400-PE,INTRADAY,,2026-07-07 00:00:00,MA2091850,B,130,I,64.65,FUND LIMIT INSUFFICIENT,AVAILABLE FUND =1590.69,ADDITIONAL REQUIRED FUND=6837.81,CALCULATED SPAN & EXPOSURE FOR ORDER=8428.5
+2026-07-06 08:22:58,953 [WARNING] [mstock] BUY failed — insufficient funds (NIFTY2670724400PE). Signal firing continues normally.
+2026-07-06 08:22:58,954 [INFO] [INDICATORS] spot=24421.0 | 1h: close=24449.2 sma20=24238.1 sma50=24106.7 rsi=73.8 macd=100.71/83.14(bull) | 15m: K=49.1↓(prev 72.3) | regime=CE-eligible any_active=False
+2026-07-06 08:22:58,954 [INFO] [SIGNAL] CE: reg=True K=False(K=49.1>=38,rising) Kextr=False RSI=True(73.8>53) MACD=True => BLOCK | PE: reg=False K=True(K=49.1<=80,falling) Kextr=True RSI=False(73.8<47) MACD=False => BLOCK
+2026-07-06 08:28:01,935 [INFO] [INDICATORS] spot=24414.7 | 1h: close=24449.2 sma20=24238.1 sma50=24106.7 rsi=73.8 macd=100.71/83.14(bull) | 15m: K=49.1↓(prev 72.3) | regime=CE-eligible any_active=False
+2026-07-06 08:28:01,935 [INFO] [SIGNAL] CE: reg=True K=False(K=49.1>=38,rising) Kextr=False RSI=True(73.8>53) MACD=True => BLOCK | PE: reg=False K=True(K=49.1<=80,falling) Kextr=True RSI=False(73.8<47) MACD=False => BLOCK
