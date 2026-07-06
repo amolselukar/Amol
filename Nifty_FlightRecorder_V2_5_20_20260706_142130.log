@@ -343,3 +343,18 @@
 2026-07-06 08:51:39,332 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
 2026-07-06 08:51:39,332 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-07-06 08:51:39,332 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-07-06 08:51:43,922 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260706_142130.log, Nifty_BarLevel_V2_5_20_20260706_142130.csv
+2026-07-06 08:51:44,166 [INFO] [CHOPGATE] Clear to trade — ER=0.62 crosses=0 range=145pt
+2026-07-06 08:51:44,176 [INFO] [ORB] Signal — close 24267.8 broke OR[24287.1,24360.2] side=PE
+2026-07-06 08:51:44,409 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2670724400PE', 'orderid': '23622607063542', 'uniqueorderid': '23622607063542'}}
+2026-07-06 08:51:44,409 [INFO] [mstock] BUY placed: NIFTY2670724400PE qty=130 type=MARKET → orderid=23622607063542
+2026-07-06 08:51:45,056 [INFO] [mstock] BUY filled: NIFTY2670724400PE qty=130 fill=63.55 order=23622607063542
+2026-07-06 08:51:45,058 [INFO] ENTRY: NFO:NIFTY2670724400PE @ 63.55  engine=ORB  detail=ORB break 24268 vs OR[24287,24360]
+2026-07-06 08:51:45,874 [INFO] [INDICATORS] spot=24404.4 | 1h: close=24400.8 sma20=24257.8 sma50=24114.1 rsi=67.0 macd=99.00/86.31(bull) | 15m: K=0.0↓(prev 18.6) | regime=CE-eligible any_active=True
+2026-07-06 08:51:45,875 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(67.0>53) MACD=True => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(67.0<47) MACD=False => BLOCK
+2026-07-06 08:51:45,875 [INFO] [STATE][ORB] PE NFO:NIFTY2670724400PE ltp=0.00 entry=63.55 pnl=-63.55(-100.0%) sl=52.11 peak=63.55 tr_armed=False elapsed=0min
+2026-07-06 08:56:49,872 [WARNING] [sync][ORB] NIFTY2670724400PE net_qty=0 (BUY order 23622607063542 was COMPLETE) — manual exit detected
+2026-07-06 08:56:49,898 [INFO] [MANUAL_EXIT] CB not incremented (user-initiated). Cooldown until 14:31:49 IST
+2026-07-06 08:56:49,899 [INFO] EXIT: NFO:NIFTY2670724400PE @ 60.50 reason=MANUAL_EXIT pnl/sh=-3.05 is_flip=False losses=0/4
+2026-07-06 08:56:50,718 [INFO] [INDICATORS] spot=24412.5 | 1h: close=24400.8 sma20=24257.8 sma50=24114.1 rsi=67.0 macd=99.00/86.31(bull) | 15m: K=0.0↓(prev 18.6) | regime=CE-eligible any_active=False
+2026-07-06 08:56:50,718 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(67.0>53) MACD=True => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(67.0<47) MACD=False => BLOCK
