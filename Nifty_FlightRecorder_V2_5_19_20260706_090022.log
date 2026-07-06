@@ -371,3 +371,15 @@
 2026-07-06 04:10:58,775 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
 2026-07-06 04:10:58,776 [INFO] [INDICATORS] spot=24375.8 | 1h: close=24271.2 sma20=24159.5 sma50=24066.7 rsi=62.9 macd=79.23/66.88(bull) | 15m: K=31.5↑(prev 8.7) | regime=CE-eligible halted=False active=False
 2026-07-06 04:10:58,776 [INFO] [SIGNAL] CE: reg=True K=False(K=31.5>=38,rising) Kextr=True RSI=True(62.9>53) MACD=True => BLOCK | PE: reg=False K=False(K=31.5<=80,falling) Kextr=False RSI=False(62.9<47) MACD=False => BLOCK
+2026-07-06 04:11:00,816 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260706_090022.log, Nifty_BarLevel_V2_5_19_20260706_090022.csv
+2026-07-06 04:11:30,975 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:12:01,147 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:12:31,860 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:13:02,035 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:13:32,198 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:14:02,367 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:14:32,533 [INFO] [MVWAP] Skip — close 24408 only 18pt from a pivot (need >20)
+2026-07-06 04:15:03,701 [INFO] ENTRY: NFO:NIFTY2670724400CE @ 53.70  engine=V3  detail=Grade B G-cluster BREAK-CE at 24300
+2026-07-06 04:16:05,089 [INFO] [INDICATORS] spot=24377.5 | 1h: close=24271.2 sma20=24159.5 sma50=24066.7 rsi=62.9 macd=79.23/66.88(bull) | 15m: K=56.6↑(prev 31.5) | regime=CE-eligible halted=False active=True
+2026-07-06 04:16:05,089 [INFO] [SIGNAL] CE: reg=True K=True(K=56.6>=38,rising) Kextr=True RSI=True(62.9>53) MACD=True => PASS | PE: reg=False K=False(K=56.6<=80,falling) Kextr=False RSI=False(62.9<47) MACD=False => BLOCK
+2026-07-06 04:16:05,089 [INFO] [STATE] CE NFO:NIFTY2670724400CE ltp=59.20 entry=53.70 pnl=+5.50(+10.2%) sl=44.03 peak=59.20 tr_armed=False elapsed=1min
