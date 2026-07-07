@@ -354,3 +354,16 @@
 2026-07-07 04:15:58,583 [WARNING] Premium 22.75 outside gate [30,180] (CE); skipping entry
 2026-07-07 04:15:58,584 [INFO] [INDICATORS] spot=24458.4 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=52.0↑(prev 47.3) | regime=CE-eligible halted=False active=False
 2026-07-07 04:15:58,584 [INFO] [SIGNAL] CE: reg=True K=True(K=52.0>=38,rising) Kextr=True RSI=True(67.4>53) MACD=True => PASS | PE: reg=False K=False(K=52.0<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
+2026-07-07 04:16:01,414 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260707_090018.log, Nifty_BarLevel_V2_5_19_20260707_090018.csv
+2026-07-07 04:16:31,579 [WARNING] Premium 22.45 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:17:01,733 [WARNING] Premium 24.40 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:17:31,891 [WARNING] Premium 22.25 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:18:02,061 [WARNING] Premium 19.55 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:18:32,220 [WARNING] Premium 20.70 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:19:02,384 [WARNING] Premium 21.60 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:19:32,545 [WARNING] Premium 23.55 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:20:02,738 [WARNING] Premium 23.05 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:20:32,915 [WARNING] Premium 24.00 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:21:03,081 [WARNING] Premium 21.85 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:21:03,082 [INFO] [INDICATORS] spot=24460.9 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=52.0↑(prev 47.3) | regime=CE-eligible halted=False active=False
+2026-07-07 04:21:03,082 [INFO] [SIGNAL] CE: reg=True K=True(K=52.0>=38,rising) Kextr=True RSI=True(67.4>53) MACD=True => PASS | PE: reg=False K=False(K=52.0<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
