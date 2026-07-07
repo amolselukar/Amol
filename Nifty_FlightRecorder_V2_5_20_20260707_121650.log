@@ -472,3 +472,4 @@
 2026-07-07 09:55:01,233 [INFO] [INDICATORS] spot=24368.9 | 1h: close=24397.8 sma20=24395.7 sma50=24167.0 rsi=56.4 macd=83.59/93.25(bear) | 15m: K=17.0↓(prev 23.0) | regime=CE-eligible any_active=False
 2026-07-07 09:55:01,234 [INFO] [SIGNAL] CE: reg=True K=False(K=17.0>=38,rising) Kextr=True RSI=True(56.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=17.0<=80,falling) Kextr=False RSI=False(56.4<47) MACD=True => BLOCK
 2026-07-07 09:55:03,439 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_121650.log, Nifty_BarLevel_V2_5_20_20260707_121650.csv
+2026-07-07 10:00:08,808 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_121650.log, Nifty_BarLevel_V2_5_20_20260707_121650.csv
