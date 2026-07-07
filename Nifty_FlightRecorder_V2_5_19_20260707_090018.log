@@ -393,3 +393,16 @@
 2026-07-07 04:31:10,478 [WARNING] Premium 24.05 outside gate [30,180] (CE); skipping entry
 2026-07-07 04:31:10,479 [INFO] [INDICATORS] spot=24475.8 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=69.6↑(prev 52.0) | regime=CE-eligible halted=False active=False
 2026-07-07 04:31:10,479 [INFO] [SIGNAL] CE: reg=True K=True(K=69.6>=38,rising) Kextr=False RSI=True(67.4>53) MACD=True => BLOCK | PE: reg=False K=False(K=69.6<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
+2026-07-07 04:31:13,312 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260707_090018.log, Nifty_BarLevel_V2_5_19_20260707_090018.csv
+2026-07-07 04:31:43,466 [WARNING] Premium 26.90 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:32:13,619 [WARNING] Premium 26.00 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:32:43,773 [WARNING] Premium 27.85 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:33:13,933 [WARNING] Premium 28.10 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:33:44,103 [WARNING] Premium 26.95 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:34:14,266 [WARNING] Premium 26.40 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:34:44,444 [WARNING] Premium 24.70 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:35:14,607 [WARNING] Premium 24.85 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:35:44,768 [WARNING] Premium 23.10 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:36:14,929 [WARNING] Premium 22.45 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:36:14,930 [INFO] [INDICATORS] spot=24473.6 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=69.6↑(prev 52.0) | regime=CE-eligible halted=False active=False
+2026-07-07 04:36:14,930 [INFO] [SIGNAL] CE: reg=True K=True(K=69.6>=38,rising) Kextr=False RSI=True(67.4>53) MACD=True => BLOCK | PE: reg=False K=False(K=69.6<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
