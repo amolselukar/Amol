@@ -406,3 +406,16 @@
 2026-07-07 04:36:14,929 [WARNING] Premium 22.45 outside gate [30,180] (CE); skipping entry
 2026-07-07 04:36:14,930 [INFO] [INDICATORS] spot=24473.6 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=69.6↑(prev 52.0) | regime=CE-eligible halted=False active=False
 2026-07-07 04:36:14,930 [INFO] [SIGNAL] CE: reg=True K=True(K=69.6>=38,rising) Kextr=False RSI=True(67.4>53) MACD=True => BLOCK | PE: reg=False K=False(K=69.6<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
+2026-07-07 04:36:16,824 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260707_090018.log, Nifty_BarLevel_V2_5_19_20260707_090018.csv
+2026-07-07 04:36:46,974 [WARNING] Premium 22.05 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:37:17,131 [WARNING] Premium 23.55 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:37:47,304 [WARNING] Premium 26.50 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:38:17,466 [WARNING] Premium 26.50 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:38:47,653 [WARNING] Premium 27.75 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:39:17,812 [WARNING] Premium 27.30 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:39:47,975 [WARNING] Premium 29.05 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:40:18,133 [WARNING] Premium 27.90 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:40:48,310 [INFO] ENTRY: NFO:NIFTY2670724500CE @ 30.05  engine=V3  detail=Grade B G-cluster BREAK-CE at 24454
+2026-07-07 04:41:19,329 [INFO] [INDICATORS] spot=24490.7 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=69.6↑(prev 52.0) | regime=CE-eligible halted=False active=True
+2026-07-07 04:41:19,329 [INFO] [SIGNAL] CE: reg=True K=True(K=69.6>=38,rising) Kextr=False RSI=True(67.4>53) MACD=True => BLOCK | PE: reg=False K=False(K=69.6<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
+2026-07-07 04:41:19,329 [INFO] [STATE] CE NFO:NIFTY2670724500CE ltp=29.60 entry=30.05 pnl=-0.45(-1.5%) sl=24.64 peak=30.05 tr_armed=False elapsed=0min
