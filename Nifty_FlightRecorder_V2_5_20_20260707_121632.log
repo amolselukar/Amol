@@ -437,3 +437,18 @@
 2026-07-07 09:09:01,324 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_121632.log, Nifty_BarLevel_V2_5_20_20260707_121632.csv
 2026-07-07 09:14:03,936 [INFO] [INDICATORS] spot=24465.7 | 1h: close=24461.4 sma20=24384.2 sma50=24161.8 rsi=64.0 macd=92.86/95.66(bear) | 15m: K=20.4↑(prev 15.2) | regime=CE-eligible any_active=False
 2026-07-07 09:14:03,937 [INFO] [SIGNAL] CE: reg=True K=False(K=20.4>=38,rising) Kextr=True RSI=True(64.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=20.4<=80,falling) Kextr=False RSI=False(64.0<47) MACD=True => BLOCK
+2026-07-07 09:14:06,073 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_121632.log, Nifty_BarLevel_V2_5_20_20260707_121632.csv
+2026-07-07 09:15:06,495 [INFO] [VWAP] Signal — FUT 24505<24514 body=75% side=PE
+2026-07-07 09:15:06,779 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2670724500PE', 'orderid': '22922607077172', 'uniqueorderid': '22922607077172'}}
+2026-07-07 09:15:06,779 [INFO] [mstock] BUY placed: NIFTY2670724500PE qty=65 type=MARKET → orderid=22922607077172
+2026-07-07 09:15:07,080 [INFO] [mstock] BUY filled: NIFTY2670724500PE qty=65 fill=43.15 order=22922607077172
+2026-07-07 09:15:07,087 [INFO] ENTRY: NFO:NIFTY2670724500PE @ 43.15  engine=VWAP  detail=FUT VWAP 24505<24514 body=75% | bar=171
+2026-07-07 09:15:38,200 [INFO] [VWAP_TRAIL] Option 15m close 41.50 < VWAP 50.42 — exiting
+2026-07-07 09:15:38,201 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=4/4 (reason=VWAP_TRAIL)
+2026-07-07 09:15:39,002 [INFO] [CB] GLOBAL circuit breaker hit (4 total losses) — halting all engines' new entries
+2026-07-07 09:15:39,124 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2670724500PE', 'orderid': '22722607077058', 'uniqueorderid': '22722607077058'}}
+2026-07-07 09:15:39,124 [INFO] [mstock] SELL placed: NIFTY2670724500PE qty=65 type=MARKET → orderid=22722607077058
+2026-07-07 09:15:39,451 [INFO] [mstock] SELL filled: NIFTY2670724500PE qty=65 fill=41.70 order=22722607077058
+2026-07-07 09:15:39,451 [INFO] EXIT: NFO:NIFTY2670724500PE @ 41.70 reason=VWAP_TRAIL pnl/sh=-1.45 is_flip=False losses=1/4
+2026-07-07 09:19:11,750 [INFO] [INDICATORS] spot=24461.1 | 1h: close=24461.4 sma20=24384.2 sma50=24161.8 rsi=64.0 macd=92.86/95.66(bear) | 15m: K=24.8↑(prev 20.4) | regime=CE-eligible any_active=False
+2026-07-07 09:19:11,750 [INFO] [SIGNAL] CE: reg=True K=False(K=24.8>=38,rising) Kextr=True RSI=True(64.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=24.8<=80,falling) Kextr=False RSI=False(64.0<47) MACD=True => BLOCK
