@@ -437,3 +437,16 @@
 2026-07-07 09:09:16,674 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_121650.log, Nifty_BarLevel_V2_5_20_20260707_121650.csv
 2026-07-07 09:14:19,291 [INFO] [INDICATORS] spot=24464.2 | 1h: close=24461.4 sma20=24384.2 sma50=24161.8 rsi=64.0 macd=92.86/95.66(bear) | 15m: K=20.4↑(prev 15.2) | regime=CE-eligible any_active=False
 2026-07-07 09:14:19,291 [INFO] [SIGNAL] CE: reg=True K=False(K=20.4>=38,rising) Kextr=True RSI=True(64.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=20.4<=80,falling) Kextr=False RSI=False(64.0<47) MACD=True => BLOCK
+2026-07-07 09:14:21,382 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_121650.log, Nifty_BarLevel_V2_5_20_20260707_121650.csv
+2026-07-07 09:15:21,805 [INFO] [VWAP] Signal — FUT 24505<24514 body=75% side=PE
+2026-07-07 09:15:22,013 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2670724500PE', 'orderid': '23722607077107', 'uniqueorderid': '23722607077107'}}
+2026-07-07 09:15:22,013 [INFO] [mstock] BUY placed: NIFTY2670724500PE qty=65 type=MARKET → orderid=23722607077107
+2026-07-07 09:15:22,341 [INFO] [mstock] BUY filled: NIFTY2670724500PE qty=65 fill=42.70 order=23722607077107
+2026-07-07 09:15:22,342 [INFO] ENTRY: NFO:NIFTY2670724500PE @ 42.70  engine=VWAP  detail=FUT VWAP 24505<24514 body=75% | bar=171
+2026-07-07 09:15:53,451 [INFO] [VWAP_TRAIL] Option 15m close 41.50 < VWAP 50.42 — exiting
+2026-07-07 09:15:53,553 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2670724500PE', 'orderid': '22822607077009', 'uniqueorderid': '22822607077009'}}
+2026-07-07 09:15:53,553 [INFO] [mstock] SELL placed: NIFTY2670724500PE qty=65 type=MARKET → orderid=22822607077009
+2026-07-07 09:15:53,854 [INFO] [mstock] SELL filled: NIFTY2670724500PE qty=65 fill=42.80 order=22822607077009
+2026-07-07 09:15:53,854 [INFO] EXIT: NFO:NIFTY2670724500PE @ 42.80 reason=VWAP_TRAIL pnl/sh=+0.10 is_flip=False losses=0/4
+2026-07-07 09:19:26,253 [INFO] [INDICATORS] spot=24464.5 | 1h: close=24461.4 sma20=24384.2 sma50=24161.8 rsi=64.0 macd=92.86/95.66(bear) | 15m: K=24.8↑(prev 20.4) | regime=CE-eligible any_active=False
+2026-07-07 09:19:26,253 [INFO] [SIGNAL] CE: reg=True K=False(K=24.8>=38,rising) Kextr=True RSI=True(64.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=24.8<=80,falling) Kextr=False RSI=False(64.0<47) MACD=True => BLOCK
