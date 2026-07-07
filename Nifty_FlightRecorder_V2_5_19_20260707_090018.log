@@ -439,3 +439,11 @@
 2026-07-07 05:06:42,033 [INFO] [INDICATORS] spot=24491.3 | 1h: close=24483.2 sma20=24316.7 sma50=24139.5 rsi=71.1 macd=99.74/92.48(bull) | 15m: K=89.8↑(prev 78.2) | regime=CE-eligible halted=False active=True
 2026-07-07 05:06:42,033 [INFO] [SIGNAL] CE: reg=True K=True(K=89.8>=38,rising) Kextr=False RSI=True(71.1>53) MACD=True => BLOCK | PE: reg=False K=False(K=89.8<=80,falling) Kextr=True RSI=False(71.1<47) MACD=False => BLOCK
 2026-07-07 05:06:42,034 [INFO] [STATE] CE NFO:NIFTY2670724500CE ltp=27.80 entry=30.05 pnl=-2.25(-7.5%) sl=24.64 peak=34.20 tr_armed=False elapsed=25min
+2026-07-07 05:06:43,959 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260707_090018.log, Nifty_BarLevel_V2_5_19_20260707_090018.csv
+2026-07-07 05:10:15,536 [INFO] [CB] losses=1/4 (reason=HARDSL_-18pct)
+2026-07-07 05:10:15,537 [INFO] EXIT: NFO:NIFTY2670724500CE @ 24.64 reason=HARDSL_-18pct pnl/sh=-5.41 is_flip=False losses=1/4
+2026-07-07 05:10:46,566 [INFO] [CHOPGATE] Clear to trade — ER=1.00 crosses=0 range=77pt
+2026-07-07 05:10:46,602 [INFO] ENTRY: NFO:NIFTY2670724500PE @ 53.75  engine=V3  detail=Grade B G-cluster REJECT-PE at 24500
+2026-07-07 05:11:48,088 [INFO] [INDICATORS] spot=24472.5 | 1h: close=24483.2 sma20=24316.7 sma50=24139.5 rsi=71.1 macd=99.74/92.48(bull) | 15m: K=89.8↑(prev 78.2) | regime=CE-eligible halted=False active=True
+2026-07-07 05:11:48,089 [INFO] [SIGNAL] CE: reg=True K=True(K=89.8>=38,rising) Kextr=False RSI=True(71.1>53) MACD=True => BLOCK | PE: reg=False K=False(K=89.8<=80,falling) Kextr=True RSI=False(71.1<47) MACD=False => BLOCK
+2026-07-07 05:11:48,089 [INFO] [STATE] PE NFO:NIFTY2670724500PE ltp=57.60 entry=53.75 pnl=+3.85(+7.2%) sl=44.08 peak=57.60 tr_armed=False elapsed=1min
