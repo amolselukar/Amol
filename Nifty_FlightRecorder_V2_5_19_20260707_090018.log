@@ -380,3 +380,16 @@
 2026-07-07 04:26:06,731 [WARNING] Premium 22.35 outside gate [30,180] (CE); skipping entry
 2026-07-07 04:26:06,731 [INFO] [INDICATORS] spot=24469.4 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=52.0↑(prev 47.3) | regime=CE-eligible halted=False active=False
 2026-07-07 04:26:06,732 [INFO] [SIGNAL] CE: reg=True K=True(K=52.0>=38,rising) Kextr=True RSI=True(67.4>53) MACD=True => PASS | PE: reg=False K=False(K=52.0<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
+2026-07-07 04:26:08,674 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260707_090018.log, Nifty_BarLevel_V2_5_19_20260707_090018.csv
+2026-07-07 04:26:38,853 [WARNING] Premium 22.85 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:27:09,080 [WARNING] Premium 22.85 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:27:39,236 [WARNING] Premium 22.05 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:28:09,403 [WARNING] Premium 23.15 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:28:39,559 [WARNING] Premium 23.65 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:29:09,730 [WARNING] Premium 24.00 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:29:39,882 [WARNING] Premium 24.40 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:30:10,057 [WARNING] Premium 24.20 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:30:40,232 [WARNING] Premium 23.50 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:31:10,478 [WARNING] Premium 24.05 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:31:10,479 [INFO] [INDICATORS] spot=24475.8 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=69.6↑(prev 52.0) | regime=CE-eligible halted=False active=False
+2026-07-07 04:31:10,479 [INFO] [SIGNAL] CE: reg=True K=True(K=69.6>=38,rising) Kextr=False RSI=True(67.4>53) MACD=True => BLOCK | PE: reg=False K=False(K=69.6<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
