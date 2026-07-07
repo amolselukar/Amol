@@ -384,3 +384,16 @@
 2026-07-07 04:18:44,060 [WARNING] Premium 21.40 outside gate [30,180] (CE); skipping entry
 2026-07-07 04:18:44,071 [INFO] [INDICATORS] spot=24457.4 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=52.0↑(prev 47.3) | regime=CE-eligible any_active=False
 2026-07-07 04:18:44,071 [INFO] [SIGNAL] CE: reg=True K=True(K=52.0>=38,rising) Kextr=True RSI=True(67.4>53) MACD=True => PASS | PE: reg=False K=False(K=52.0<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
+2026-07-07 04:18:46,851 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260707_091801.log, Nifty_BarLevel_V2_5_20_20260707_091801.csv
+2026-07-07 04:19:17,080 [WARNING] Premium 22.75 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:19:47,322 [WARNING] Premium 23.20 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:20:17,573 [WARNING] Premium 23.75 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:20:47,800 [WARNING] Premium 22.75 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:21:18,039 [WARNING] Premium 23.70 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:21:48,280 [WARNING] Premium 24.35 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:22:18,521 [WARNING] Premium 22.75 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:22:48,765 [WARNING] Premium 21.75 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:23:19,019 [WARNING] Premium 22.65 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:23:49,265 [WARNING] Premium 22.45 outside gate [30,180] (CE); skipping entry
+2026-07-07 04:23:49,275 [INFO] [INDICATORS] spot=24464.2 | 1h: close=24424.0 sma20=24297.7 sma50=24130.1 rsi=67.4 macd=97.57/90.66(bull) | 15m: K=52.0↑(prev 47.3) | regime=CE-eligible any_active=False
+2026-07-07 04:23:49,275 [INFO] [SIGNAL] CE: reg=True K=True(K=52.0>=38,rising) Kextr=True RSI=True(67.4>53) MACD=True => PASS | PE: reg=False K=False(K=52.0<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False => BLOCK
