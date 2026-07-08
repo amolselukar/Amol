@@ -549,3 +549,12 @@
 2026-07-08 07:43:36,516 [INFO] [INDICATORS] spot=24218.8 | 1h: close=24222.4 sma20=24383.7 sma50=24184.2 rsi=42.0 macd=26.28/64.16(bear) | 15m: K=47.2↑(prev 44.4) | regime=NEUTRAL any_active=True
 2026-07-08 07:43:36,517 [INFO] [SIGNAL] CE: reg=False K=True(K=47.2>=38,rising) Kextr=False RSI=False(42.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=47.2<=80,falling) Kextr=False RSI=True(42.0<47) MACD=True => BLOCK
 2026-07-08 07:43:36,517 [INFO] [STATE][VWAP] PE NFO:NIFTY2671424200PE ltp=129.75 entry=133.85 pnl=-4.10(-3.1%) sl=109.76 peak=133.85 tr_armed=False elapsed=13min
+2026-07-08 07:43:39,393 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 07:45:10,513 [INFO] [VWAP_TRAIL] Option 15m close 132.30 < VWAP 132.74 — exiting
+2026-07-08 07:45:10,514 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=3/4 (reason=VWAP_TRAIL)
+2026-07-08 07:45:10,602 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424200PE', 'orderid': '22422607082166', 'uniqueorderid': '22422607082166'}}
+2026-07-08 07:45:10,602 [INFO] [mstock] SELL placed: NIFTY2671424200PE qty=65 type=MARKET → orderid=22422607082166
+2026-07-08 07:45:10,649 [INFO] [mstock] SELL filled: NIFTY2671424200PE qty=65 fill=131.25 order=22422607082166
+2026-07-08 07:45:10,649 [INFO] EXIT: NFO:NIFTY2671424200PE @ 131.25 reason=VWAP_TRAIL pnl/sh=-2.60 is_flip=False losses=2/4
+2026-07-08 07:48:43,153 [INFO] [INDICATORS] spot=24219.0 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=48.4↑(prev 47.2) | regime=NEUTRAL any_active=False
+2026-07-08 07:48:43,154 [INFO] [SIGNAL] CE: reg=False K=True(K=48.4>=38,rising) Kextr=False RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=48.4<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
