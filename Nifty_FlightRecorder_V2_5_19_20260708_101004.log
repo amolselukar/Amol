@@ -468,3 +468,15 @@
 2026-07-08 08:33:26,119 [INFO] [INDICATORS] spot=23980.0 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=21.9↓(prev 37.0) | regime=NEUTRAL halted=False active=True
 2026-07-08 08:33:26,119 [INFO] [SIGNAL] CE: reg=False K=False(K=21.9>=38,rising) Kextr=True RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.9<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
 2026-07-08 08:33:26,120 [INFO] [STATE] PE NFO:NIFTY2671424000PE ltp=198.00 entry=175.80 pnl=+22.20(+12.6%) sl=193.00 peak=198.00 tr_armed=True elapsed=3min
+2026-07-08 08:33:28,200 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260708_101004.log, Nifty_BarLevel_V2_5_19_20260708_101004.csv
+2026-07-08 08:33:58,406 [INFO] [TRAIL] SL ratcheted 193.00 → 194.75  (peak=199.75)
+2026-07-08 08:34:58,857 [INFO] [TRAIL] SL ratcheted 194.75 → 198.75  (peak=203.75)
+2026-07-08 08:35:29,077 [INFO] [TRAIL] SL ratcheted 198.75 → 207.70  (peak=212.70)
+2026-07-08 08:35:59,301 [INFO] [TRAIL] SL ratcheted 207.70 → 227.20  (peak=232.20)
+2026-07-08 08:36:29,525 [INFO] [TRAIL] SL ratcheted 227.20 → 232.30  (peak=237.30)
+2026-07-08 08:36:59,752 [INFO] EXIT: NFO:NIFTY2671424000PE @ 232.30 reason=TRAIL_+56 pnl/sh=+56.50 is_flip=False losses=1/4
+2026-07-08 08:37:30,739 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:38:01,567 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:38:31,750 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:38:31,752 [INFO] [INDICATORS] spot=23959.6 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=21.9↓(prev 37.0) | regime=NEUTRAL halted=False active=False
+2026-07-08 08:38:31,752 [INFO] [SIGNAL] CE: reg=False K=False(K=21.9>=38,rising) Kextr=True RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.9<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
