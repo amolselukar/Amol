@@ -362,3 +362,14 @@
 2026-07-08 05:00:38,047 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
 2026-07-08 05:00:38,052 [INFO] [INDICATORS] spot=24256.2 | 1h: close=24238.2 sma20=24392.7 sma50=24176.7 rsi=42.1 macd=52.71/81.74(bear) | 15m: K=17.9↑(prev 11.2) | regime=NEUTRAL any_active=False
 2026-07-08 05:00:38,052 [INFO] [SIGNAL] CE: reg=False K=False(K=17.9>=38,rising) Kextr=True RSI=False(42.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=17.9<=80,falling) Kextr=False RSI=True(42.1<47) MACD=True => BLOCK
+2026-07-08 05:00:40,041 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 05:01:10,499 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:01:40,738 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:02:11,010 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:02:41,272 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:03:11,523 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:03:41,768 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:04:12,040 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:04:42,338 [INFO] [FUT5VWAP] Skip — close 24275 only 17pt from a pivot (need >20)
+2026-07-08 05:05:42,831 [INFO] [INDICATORS] spot=24257.3 | 1h: close=24238.2 sma20=24392.7 sma50=24176.7 rsi=42.1 macd=52.71/81.74(bear) | 15m: K=17.9↑(prev 11.2) | regime=NEUTRAL any_active=False
+2026-07-08 05:05:42,832 [INFO] [SIGNAL] CE: reg=False K=False(K=17.9>=38,rising) Kextr=True RSI=False(42.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=17.9<=80,falling) Kextr=False RSI=True(42.1<47) MACD=True => BLOCK
