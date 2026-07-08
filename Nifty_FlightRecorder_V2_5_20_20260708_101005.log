@@ -406,3 +406,13 @@
 2026-07-08 05:41:22,953 [INFO] [INDICATORS] spot=24282.3 | 1h: close=24238.2 sma20=24392.7 sma50=24176.7 rsi=42.1 macd=52.71/81.73(bear) | 15m: K=38.9↑(prev 26.4) | regime=NEUTRAL any_active=True
 2026-07-08 05:41:22,953 [INFO] [SIGNAL] CE: reg=False K=True(K=38.9>=38,rising) Kextr=True RSI=False(42.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=38.9<=80,falling) Kextr=False RSI=True(42.1<47) MACD=True => BLOCK
 2026-07-08 05:41:22,953 [INFO] [STATE][VWAP] CE NFO:NIFTY2671424300CE ltp=122.55 entry=121.40 pnl=+1.15(+0.9%) sl=99.55 peak=129.00 tr_armed=False elapsed=26min
+2026-07-08 05:41:25,756 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 05:45:28,579 [INFO] [GAPBREAK] Confirmed — bar close 24284.8 > ref 24284.7
+2026-07-08 05:45:28,716 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424300CE', 'orderid': '23022607081339', 'uniqueorderid': '23022607081339'}}
+2026-07-08 05:45:28,716 [INFO] [mstock] BUY placed: NIFTY2671424300CE qty=65 type=MARKET → orderid=23022607081339
+2026-07-08 05:45:28,762 [INFO] [mstock] BUY filled: NIFTY2671424300CE qty=65 fill=122.15 order=23022607081339
+2026-07-08 05:45:28,764 [INFO] ENTRY: NFO:NIFTY2671424300CE @ 122.15  engine=GAPBREAK  detail=GAP break confirmed, gap=-96
+2026-07-08 05:46:30,358 [INFO] [INDICATORS] spot=24282.0 | 1h: close=24290.5 sma20=24388.8 sma50=24181.3 rsi=47.0 macd=41.20/73.63(bear) | 15m: K=49.3↑(prev 38.9) | regime=NEUTRAL any_active=True
+2026-07-08 05:46:30,358 [INFO] [SIGNAL] CE: reg=False K=True(K=49.3>=38,rising) Kextr=True RSI=False(47.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=49.3<=80,falling) Kextr=False RSI=True(47.0<47) MACD=True => BLOCK
+2026-07-08 05:46:30,358 [INFO] [STATE][VWAP] CE NFO:NIFTY2671424300CE ltp=122.20 entry=121.40 pnl=+0.80(+0.7%) sl=99.55 peak=129.00 tr_armed=False elapsed=31min
+2026-07-08 05:46:30,359 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY2671424300CE ltp=122.20 entry=122.15 pnl=+0.05(+0.0%) sl=100.16 peak=122.75 tr_armed=False elapsed=1min
