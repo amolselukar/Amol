@@ -582,3 +582,25 @@
 2026-07-08 08:24:19,530 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
 2026-07-08 08:29:22,222 [INFO] [INDICATORS] spot=24020.0 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=37.0↓(prev 49.7) | regime=NEUTRAL any_active=False
 2026-07-08 08:29:22,222 [INFO] [SIGNAL] CE: reg=False K=False(K=37.0>=38,rising) Kextr=False RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=True(K=37.0<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
+2026-07-08 08:29:25,050 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 08:30:25,584 [INFO] [CHOPGATE] RE-ARMED — FUT 24035 < FH_low 24235-15 body=94% regime=TRANSITION
+2026-07-08 08:30:26,191 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"\" at byte offset 44"}
+2026-07-08 08:30:26,191 [WARNING] HTML parse failed; retrying as plain text
+2026-07-08 08:30:28,295 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000PE', 'orderid': '218226070810964', 'uniqueorderid': '218226070810964'}}
+2026-07-08 08:30:28,295 [INFO] [mstock] BUY placed: NIFTY2671424000PE qty=65 type=MARKET → orderid=218226070810964
+2026-07-08 08:30:28,342 [INFO] [mstock] BUY filled: NIFTY2671424000PE qty=65 fill=173.40 order=218226070810964
+2026-07-08 08:30:28,350 [INFO] ENTRY: NFO:NIFTY2671424000PE @ 173.40  engine=V3  detail=Grade B R-cluster BREAK-PE at 24200
+2026-07-08 08:30:29,164 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:30:59,499 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:31:29,824 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:32:00,584 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:32:31,707 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:33:01,984 [INFO] [TRAIL] SL ratcheted 190.60 → 193.35  (peak=198.35)
+2026-07-08 08:33:02,030 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:33:32,312 [INFO] [TRAIL] SL ratcheted 193.35 → 194.90  (peak=199.90)
+2026-07-08 08:33:32,363 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:34:02,681 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:34:32,996 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:34:32,998 [INFO] [INDICATORS] spot=23985.7 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=21.9↓(prev 37.0) | regime=NEUTRAL any_active=True
+2026-07-08 08:34:32,999 [INFO] [SIGNAL] CE: reg=False K=False(K=21.9>=38,rising) Kextr=True RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.9<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
+2026-07-08 08:34:32,999 [INFO] [STATE][BASE] PE NFO:NIFTY2671424000PE ltp=197.95 entry=173.40 pnl=+24.55(+14.2%) sl=194.90 peak=199.90 tr_armed=True elapsed=4min
