@@ -353,3 +353,19 @@
 2026-07-08 03:38:50,241 [INFO] [SIGNAL] CE: reg=True K=False(K=17.0>=38,rising) Kextr=True RSI=True(56.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=17.0<=80,falling) Kextr=False RSI=False(56.4<47) MACD=True => BLOCK
 2026-07-08 03:43:53,524 [INFO] [INDICATORS] spot=24355.1 | 1h: close=24397.8 sma20=24395.7 sma50=24167.0 rsi=56.4 macd=83.59/93.25(bear) | 15m: K=17.0↓(prev 23.0) | regime=CE-eligible any_active=False
 2026-07-08 03:43:53,525 [INFO] [SIGNAL] CE: reg=True K=False(K=17.0>=38,rising) Kextr=True RSI=True(56.4>53) MACD=False => BLOCK | PE: reg=False K=False(K=17.0<=80,falling) Kextr=False RSI=False(56.4<47) MACD=True => BLOCK
+2026-07-08 03:43:55,519 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_090838.log, Nifty_BarLevel_V2_5_20_20260708_090838.csv
+2026-07-08 03:45:26,278 [INFO] [MVWAP] Signal — 24410>24299 body=80% side=CE (morning exception)
+2026-07-08 03:45:26,420 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424300CE', 'orderid': '2282260708115', 'uniqueorderid': '2282260708115'}}
+2026-07-08 03:45:26,420 [INFO] [mstock] BUY placed: NIFTY2671424300CE qty=65 type=MARKET → orderid=2282260708115
+2026-07-08 03:45:26,464 [INFO] [mstock] BUY filled: NIFTY2671424300CE qty=65 fill=117.20 order=2282260708115
+2026-07-08 03:45:26,466 [INFO] ENTRY: NFO:NIFTY2671424300CE @ 117.20  engine=VWAP  detail=MORNING FUT VWAP 24410>24299 body=80% pivΔ=64pt | bar=174
+2026-07-08 03:45:27,297 [INFO] [PIVOTBREAK] EARLY break — spot 24229.9 vs S1=24292.4 at 09:15 side=PE
+2026-07-08 03:45:27,463 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424200PE', 'orderid': '2402260708116', 'uniqueorderid': '2402260708116'}}
+2026-07-08 03:45:27,463 [INFO] [mstock] BUY placed: NIFTY2671424200PE qty=65 type=MARKET → orderid=2402260708116
+2026-07-08 03:45:27,505 [INFO] [mstock] BUY filled: NIFTY2671424200PE qty=65 fill=121.40 order=2402260708116
+2026-07-08 03:45:27,507 [INFO] ENTRY: NFO:NIFTY2671424200PE @ 121.40  engine=PIVOTBREAK  detail=Early pivot break vs prior-day S1
+2026-07-08 03:46:40,667 [WARNING] Kite call failed (historical_data) attempt 1: HTTPSConnectionPool(host='api.kite.trade', port=443): Read timed out. (read timeout=7)
+2026-07-08 03:49:14,449 [INFO] [INDICATORS] spot=24275.8 | 1h: close=24355.1 sma20=24397.0 sma50=24173.0 rsi=51.9 macd=71.97/88.99(bear) | 15m: K=6.9↓(prev 17.0) | regime=NEUTRAL any_active=True
+2026-07-08 03:49:14,449 [INFO] [SIGNAL] CE: reg=False K=False(K=6.9>=38,rising) Kextr=True RSI=False(51.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=6.9<=80,falling) Kextr=False RSI=False(51.9<47) MACD=True => BLOCK
+2026-07-08 03:49:14,450 [INFO] [STATE][VWAP] CE NFO:NIFTY2671424300CE ltp=131.55 entry=117.20 pnl=+14.35(+12.2%) sl=96.10 peak=132.00 tr_armed=False elapsed=3min
+2026-07-08 03:49:14,450 [INFO] [STATE][PIVOTBREAK] PE NFO:NIFTY2671424200PE ltp=117.80 entry=121.40 pnl=-3.60(-3.0%) sl=99.55 peak=121.40 tr_armed=False elapsed=3min
