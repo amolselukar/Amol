@@ -467,3 +467,11 @@
 2026-07-08 06:37:30,636 [INFO] [INDICATORS] spot=24237.7 | 1h: close=24290.5 sma20=24388.8 sma50=24181.3 rsi=47.0 macd=41.20/73.63(bear) | 15m: K=42.7↓(prev 46.8) | regime=NEUTRAL any_active=True
 2026-07-08 06:37:30,636 [INFO] [SIGNAL] CE: reg=False K=False(K=42.7>=38,rising) Kextr=False RSI=False(47.0>53) MACD=False => BLOCK | PE: reg=False K=True(K=42.7<=80,falling) Kextr=False RSI=True(47.0<47) MACD=True => BLOCK
 2026-07-08 06:37:30,636 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY2671424300CE ltp=102.25 entry=122.15 pnl=-19.90(-16.3%) sl=100.16 peak=128.10 tr_armed=False elapsed=52min
+2026-07-08 06:37:32,841 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 06:39:03,674 [INFO] [CB] GAPBREAK loss (own count 1) — TOTAL across all engines=2/4 (reason=HARDSL_-18pct)
+2026-07-08 06:39:03,771 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424300CE', 'orderid': '23022607081671', 'uniqueorderid': '23022607081671'}}
+2026-07-08 06:39:03,771 [INFO] [mstock] SELL placed: NIFTY2671424300CE qty=65 type=MARKET → orderid=23022607081671
+2026-07-08 06:39:03,824 [INFO] [mstock] SELL filled: NIFTY2671424300CE qty=65 fill=99.00 order=23022607081671
+2026-07-08 06:39:03,824 [INFO] EXIT: NFO:NIFTY2671424300CE @ 99.00 reason=HARDSL_-18pct pnl/sh=-23.15 is_flip=False losses=1/4
+2026-07-08 06:42:36,261 [INFO] [INDICATORS] spot=24227.5 | 1h: close=24290.5 sma20=24388.8 sma50=24181.3 rsi=47.0 macd=41.20/73.63(bear) | 15m: K=42.7↓(prev 46.8) | regime=NEUTRAL any_active=False
+2026-07-08 06:42:36,262 [INFO] [SIGNAL] CE: reg=False K=False(K=42.7>=38,rising) Kextr=False RSI=False(47.0>53) MACD=False => BLOCK | PE: reg=False K=True(K=42.7<=80,falling) Kextr=False RSI=True(47.0<47) MACD=True => BLOCK
