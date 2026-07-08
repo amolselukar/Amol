@@ -350,3 +350,6 @@
 2026-07-08 04:40:19,635 [INFO] [SIGNAL] CE: reg=False K=False(K=6.1>=38,rising) Kextr=True RSI=False(51.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=6.1<=80,falling) Kextr=False RSI=False(51.9<47) MACD=True => BLOCK
 2026-07-08 04:45:22,934 [INFO] [INDICATORS] spot=24231.5 | 1h: close=24238.2 sma20=24392.7 sma50=24176.7 rsi=42.1 macd=52.71/81.74(bear) | 15m: K=11.2↑(prev 6.1) | regime=NEUTRAL any_active=False
 2026-07-08 04:45:22,935 [INFO] [SIGNAL] CE: reg=False K=False(K=11.2>=38,rising) Kextr=True RSI=False(42.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=11.2<=80,falling) Kextr=False RSI=True(42.1<47) MACD=True => BLOCK
+2026-07-08 04:45:24,936 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 04:50:27,431 [INFO] [INDICATORS] spot=24242.8 | 1h: close=24238.2 sma20=24392.7 sma50=24176.7 rsi=42.1 macd=52.71/81.74(bear) | 15m: K=11.2↑(prev 6.1) | regime=NEUTRAL any_active=False
+2026-07-08 04:50:27,431 [INFO] [SIGNAL] CE: reg=False K=False(K=11.2>=38,rising) Kextr=True RSI=False(42.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=11.2<=80,falling) Kextr=False RSI=True(42.1<47) MACD=True => BLOCK
