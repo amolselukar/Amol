@@ -532,3 +532,12 @@
 2026-07-08 07:23:16,220 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
 2026-07-08 07:28:18,644 [INFO] [INDICATORS] spot=24215.8 | 1h: close=24222.4 sma20=24383.7 sma50=24184.2 rsi=42.0 macd=26.28/64.16(bear) | 15m: K=44.4↑(prev 44.0) | regime=NEUTRAL any_active=False
 2026-07-08 07:28:18,644 [INFO] [SIGNAL] CE: reg=False K=True(K=44.4>=38,rising) Kextr=False RSI=False(42.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=44.4<=80,falling) Kextr=False RSI=True(42.0<47) MACD=True => BLOCK
+2026-07-08 07:28:21,502 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 07:30:22,792 [INFO] [VWAP] Signal — FUT 24255<24271 body=73% side=PE
+2026-07-08 07:30:23,078 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424200PE', 'orderid': '23022607082034', 'uniqueorderid': '23022607082034'}}
+2026-07-08 07:30:23,078 [INFO] [mstock] BUY placed: NIFTY2671424200PE qty=65 type=MARKET → orderid=23022607082034
+2026-07-08 07:30:23,131 [INFO] [mstock] BUY filled: NIFTY2671424200PE qty=65 fill=133.85 order=23022607082034
+2026-07-08 07:30:23,134 [INFO] ENTRY: NFO:NIFTY2671424200PE @ 133.85  engine=VWAP  detail=FUT VWAP 24255<24271 body=73% | bar=189
+2026-07-08 07:33:25,685 [INFO] [INDICATORS] spot=24227.2 | 1h: close=24222.4 sma20=24383.7 sma50=24184.2 rsi=42.0 macd=26.28/64.16(bear) | 15m: K=47.2↑(prev 44.4) | regime=NEUTRAL any_active=True
+2026-07-08 07:33:25,685 [INFO] [SIGNAL] CE: reg=False K=True(K=47.2>=38,rising) Kextr=False RSI=False(42.0>53) MACD=False => BLOCK | PE: reg=False K=False(K=47.2<=80,falling) Kextr=False RSI=True(42.0<47) MACD=True => BLOCK
+2026-07-08 07:33:25,685 [INFO] [STATE][VWAP] PE NFO:NIFTY2671424200PE ltp=127.90 entry=133.85 pnl=-5.95(-4.4%) sl=109.76 peak=133.85 tr_armed=False elapsed=3min
