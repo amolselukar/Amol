@@ -630,3 +630,30 @@
 2026-07-08 08:39:41,188 [INFO] [INDICATORS] spot=23935.5 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=21.9↓(prev 37.0) | regime=NEUTRAL any_active=True
 2026-07-08 08:39:41,188 [INFO] [SIGNAL] CE: reg=False K=False(K=21.9>=38,rising) Kextr=True RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.9<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
 2026-07-08 08:39:41,188 [INFO] [STATE][BASE] PE NFO:NIFTY2671424000PE ltp=239.20 entry=223.20 pnl=+16.00(+7.2%) sl=234.20 peak=239.20 tr_armed=True elapsed=2min
+2026-07-08 08:39:43,297 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260708_101005.log, Nifty_BarLevel_V2_5_20_20260708_101005.csv
+2026-07-08 08:40:13,600 [INFO] [TRAIL] SL ratcheted 234.20 → 248.40  (peak=253.40)
+2026-07-08 08:40:13,645 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:40:43,929 [INFO] [TRAIL] SL ratcheted 248.40 → 256.05  (peak=261.05)
+2026-07-08 08:40:43,976 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:41:14,352 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000PE', 'orderid': '215226070812038', 'uniqueorderid': '215226070812038'}}
+2026-07-08 08:41:14,352 [INFO] [mstock] SELL placed: NIFTY2671424000PE qty=65 type=MARKET → orderid=215226070812038
+2026-07-08 08:41:14,401 [INFO] [mstock] SELL filled: NIFTY2671424000PE qty=65 fill=247.80 order=215226070812038
+2026-07-08 08:41:14,402 [INFO] EXIT: NFO:NIFTY2671424000PE @ 247.80 reason=TRAIL_+33 pnl/sh=+24.60 is_flip=False losses=0/4
+2026-07-08 08:41:15,209 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:41:45,650 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671423900PE', 'orderid': '23922607082759', 'uniqueorderid': '23922607082759'}}
+2026-07-08 08:41:45,651 [INFO] [mstock] BUY placed: NIFTY2671423900PE qty=65 type=MARKET → orderid=23922607082759
+2026-07-08 08:41:45,702 [INFO] [mstock] BUY filled: NIFTY2671423900PE qty=65 fill=201.70 order=23922607082759
+2026-07-08 08:41:45,704 [INFO] ENTRY: NFO:NIFTY2671423900PE @ 201.70  engine=V3  detail=Grade B R-cluster BREAK-PE at 24300
+2026-07-08 08:41:46,529 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:42:16,833 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:42:47,159 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:43:17,475 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:43:47,787 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:44:18,915 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:44:49,294 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671423900PE', 'orderid': '215226070812333', 'uniqueorderid': '215226070812333'}}
+2026-07-08 08:44:49,294 [INFO] [mstock] SELL placed: NIFTY2671423900PE qty=65 type=MARKET → orderid=215226070812333
+2026-07-08 08:44:49,350 [INFO] [mstock] SELL filled: NIFTY2671423900PE qty=65 fill=207.60 order=215226070812333
+2026-07-08 08:44:49,350 [INFO] EXIT: NFO:NIFTY2671423900PE @ 207.60 reason=TRAIL_+15 pnl/sh=+5.90 is_flip=False losses=0/4
+2026-07-08 08:44:50,156 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-08 08:44:50,159 [INFO] [INDICATORS] spot=23882.2 | 1h: close=24217.0 sma20=24380.2 sma50=24188.7 rsi=41.6 macd=13.85/54.10(bear) | 15m: K=21.9↓(prev 37.0) | regime=NEUTRAL any_active=False
+2026-07-08 08:44:50,159 [INFO] [SIGNAL] CE: reg=False K=False(K=21.9>=38,rising) Kextr=True RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.9<=80,falling) Kextr=False RSI=True(41.6<47) MACD=True => BLOCK
