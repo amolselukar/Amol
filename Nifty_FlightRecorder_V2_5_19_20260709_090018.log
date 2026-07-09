@@ -621,3 +621,12 @@
 2026-07-09 09:31:13,452 [INFO] [INDICATORS] spot=23994.2 | 1h: close=24049.0 sma20=24222.0 sma50=24196.0 rsi=41.0 macd=-75.36/-50.65(bear) | 15m: K=50.1↓(prev 57.2) | regime=NEUTRAL halted=False active=True
 2026-07-09 09:31:13,452 [INFO] [SIGNAL] CE: reg=False K=False(K=50.1>=38,rising) Kextr=False RSI=False(41.0>53) MACD=False => BLOCK | PE: reg=False K=True(K=50.1<=80,falling) Kextr=True RSI=True(41.0<47) MACD=True => BLOCK
 2026-07-09 09:31:13,452 [INFO] [STATE] PE NFO:NIFTY2671424000PE ltp=133.15 entry=128.40 pnl=+4.75(+3.7%) sl=105.29 peak=133.15 tr_armed=False elapsed=19min
+2026-07-09 09:31:15,566 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260709_090018.log, Nifty_BarLevel_V2_5_19_20260709_090018.csv
+2026-07-09 09:34:17,680 [INFO] [TRAIL] SL ratcheted 142.90 → 143.80  (peak=148.80)
+2026-07-09 09:34:47,901 [INFO] [TRAIL] SL ratcheted 143.80 → 147.50  (peak=152.50)
+2026-07-09 09:35:18,133 [INFO] [TRAIL] SL ratcheted 147.50 → 151.40  (peak=156.40)
+2026-07-09 09:35:48,400 [INFO] [TRAIL] SL ratcheted 151.40 → 153.55  (peak=158.55)
+2026-07-09 09:36:18,625 [INFO] [TRAIL] SL ratcheted 153.55 → 155.70  (peak=160.70)
+2026-07-09 09:36:18,657 [INFO] [INDICATORS] spot=23962.5 | 1h: close=24049.0 sma20=24222.0 sma50=24196.0 rsi=41.0 macd=-75.36/-50.65(bear) | 15m: K=50.1↓(prev 57.2) | regime=NEUTRAL halted=False active=True
+2026-07-09 09:36:18,657 [INFO] [SIGNAL] CE: reg=False K=False(K=50.1>=38,rising) Kextr=False RSI=False(41.0>53) MACD=False => BLOCK | PE: reg=False K=True(K=50.1<=80,falling) Kextr=True RSI=True(41.0<47) MACD=True => BLOCK
+2026-07-09 09:36:18,657 [INFO] [STATE] PE NFO:NIFTY2671424000PE ltp=160.70 entry=128.40 pnl=+32.30(+25.2%) sl=155.70 peak=160.70 tr_armed=True elapsed=24min
