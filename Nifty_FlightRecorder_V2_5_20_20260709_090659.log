@@ -491,3 +491,6 @@
 2026-07-09 06:00:14,041 [WARNING] [mstock] BUY failed — insufficient funds (NIFTY2671424100CE). Signal firing continues normally.
 2026-07-09 06:04:46,367 [INFO] [INDICATORS] spot=24055.4 | 1h: close=24015.2 sma20=24278.3 sma50=24188.8 rsi=38.2 macd=-78.99/-26.00(bear) | 15m: K=88.8↓(prev 88.8) | regime=NEUTRAL any_active=False
 2026-07-09 06:04:46,368 [INFO] [SIGNAL] CE: reg=False K=False(K=88.8>=38,rising) Kextr=False RSI=False(38.2>53) MACD=False => BLOCK | PE: reg=False K=False(K=88.8<=80,falling) Kextr=True RSI=True(38.2<47) MACD=True => BLOCK
+2026-07-09 06:04:48,470 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
+2026-07-09 06:09:51,017 [INFO] [INDICATORS] spot=24046.7 | 1h: close=24015.2 sma20=24278.3 sma50=24188.8 rsi=38.2 macd=-78.99/-26.00(bear) | 15m: K=88.8↓(prev 88.8) | regime=NEUTRAL any_active=False
+2026-07-09 06:09:51,017 [INFO] [SIGNAL] CE: reg=False K=False(K=88.8>=38,rising) Kextr=False RSI=False(38.2>53) MACD=False => BLOCK | PE: reg=False K=False(K=88.8<=80,falling) Kextr=True RSI=True(38.2<47) MACD=True => BLOCK
