@@ -560,3 +560,22 @@
 2026-07-09 07:21:08,609 [INFO] [VWAP] Climax skip — body=93% >= 87%
 2026-07-09 07:21:08,613 [INFO] [INDICATORS] spot=24033.0 | 1h: close=24060.4 sma20=24258.9 sma50=24191.2 rsi=41.6 macd=-77.90/-36.38(bear) | 15m: K=72.5↓(prev 93.3) | regime=NEUTRAL any_active=False
 2026-07-09 07:21:08,613 [INFO] [SIGNAL] CE: reg=False K=False(K=72.5>=38,rising) Kextr=False RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=True(K=72.5<=80,falling) Kextr=True RSI=True(41.6<47) MACD=True => BLOCK
+2026-07-09 07:21:11,273 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
+2026-07-09 07:21:41,529 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:22:11,792 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:22:42,041 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:23:12,305 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:23:42,555 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:24:12,854 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:24:12,856 [INFO] [FUT5VWAP] Signal — 24075>24068 body=75% side=CE (fixed +12pt target)
+2026-07-09 07:24:13,004 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '212226070913529', 'uniqueorderid': '212226070913529'}}
+2026-07-09 07:24:13,004 [INFO] [mstock] BUY placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=212226070913529
+2026-07-09 07:24:13,061 [INFO] [mstock] BUY filled: NIFTY2671424000CE qty=65 fill=167.45 order=212226070913529
+2026-07-09 07:24:13,065 [INFO] ENTRY: NFO:NIFTY2671424000CE @ 167.45  engine=FUT5VWAP  detail=FUT5 VWAP cross 24075>24068 body=75% pivΔ=120pt | bar=223
+2026-07-09 07:24:44,139 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:25:14,435 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:25:44,713 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:26:14,988 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-09 07:26:15,008 [INFO] [INDICATORS] spot=24053.8 | 1h: close=24060.4 sma20=24258.9 sma50=24191.2 rsi=41.6 macd=-77.90/-36.38(bear) | 15m: K=72.5↓(prev 93.3) | regime=NEUTRAL any_active=True
+2026-07-09 07:26:15,008 [INFO] [SIGNAL] CE: reg=False K=False(K=72.5>=38,rising) Kextr=False RSI=False(41.6>53) MACD=False => BLOCK | PE: reg=False K=True(K=72.5<=80,falling) Kextr=True RSI=True(41.6<47) MACD=True => BLOCK
+2026-07-09 07:26:15,009 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY2671424000CE ltp=169.75 entry=167.45 pnl=+2.30(+1.4%) sl=137.31 peak=170.40 tr_armed=False elapsed=2min
