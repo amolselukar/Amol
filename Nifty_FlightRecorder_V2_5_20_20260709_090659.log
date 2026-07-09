@@ -405,3 +405,6 @@
 2026-07-09 05:00:04,258 [INFO] [CHOPGATE] Clear to trade — ER=0.04 crosses=0 range=143pt
 2026-07-09 05:03:36,133 [INFO] [INDICATORS] spot=24036.3 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.1↓(prev 99.5) | regime=NEUTRAL any_active=False
 2026-07-09 05:03:36,133 [INFO] [SIGNAL] CE: reg=False K=False(K=99.1>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.1<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
+2026-07-09 05:03:38,202 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
+2026-07-09 05:08:40,779 [INFO] [INDICATORS] spot=24013.3 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.1↓(prev 99.5) | regime=NEUTRAL any_active=False
+2026-07-09 05:08:40,780 [INFO] [SIGNAL] CE: reg=False K=False(K=99.1>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.1<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
