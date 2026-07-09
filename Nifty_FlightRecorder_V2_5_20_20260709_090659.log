@@ -427,3 +427,19 @@
 2026-07-09 05:29:03,547 [INFO] [INDICATORS] spot=24022.1 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.3↑(prev 99.1) | regime=NEUTRAL any_active=True
 2026-07-09 05:29:03,547 [INFO] [SIGNAL] CE: reg=False K=True(K=99.3>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.3<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
 2026-07-09 05:29:03,548 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2671424000PE ltp=133.35 entry=137.05 pnl=-3.70(-2.7%) sl=112.38 peak=140.35 tr_armed=False elapsed=8min
+2026-07-09 05:29:06,053 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
+2026-07-09 05:30:06,702 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:30:36,959 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:31:07,322 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:31:37,588 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:32:07,944 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:32:38,211 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:33:08,577 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:33:38,871 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:34:09,224 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-07-09 05:34:09,350 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000PE', 'orderid': '24022607091261', 'uniqueorderid': '24022607091261'}}
+2026-07-09 05:34:09,350 [INFO] [mstock] SELL placed: NIFTY2671424000PE qty=65 type=MARKET → orderid=24022607091261
+2026-07-09 05:34:09,393 [INFO] [mstock] SELL filled: NIFTY2671424000PE qty=65 fill=137.10 order=24022607091261
+2026-07-09 05:34:09,394 [INFO] EXIT: NFO:NIFTY2671424000PE @ 137.10 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+0.05 is_flip=False losses=0/4
+2026-07-09 05:34:10,212 [INFO] [INDICATORS] spot=24012.3 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.75(bear) | 15m: K=93.9↓(prev 99.3) | regime=NEUTRAL any_active=False
+2026-07-09 05:34:10,212 [INFO] [SIGNAL] CE: reg=False K=False(K=93.9>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=93.9<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
