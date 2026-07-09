@@ -414,3 +414,12 @@
 2026-07-09 05:13:48,276 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
 2026-07-09 05:18:50,803 [INFO] [INDICATORS] spot=24038.6 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.3↑(prev 99.1) | regime=NEUTRAL any_active=False
 2026-07-09 05:18:50,804 [INFO] [SIGNAL] CE: reg=False K=True(K=99.3>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.3<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
+2026-07-09 05:18:52,823 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
+2026-07-09 05:20:23,568 [INFO] [FUT5VWAP] Signal — 24057<24063 body=82% side=PE (fixed +12pt target)
+2026-07-09 05:20:24,031 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000PE', 'orderid': '21122607096970', 'uniqueorderid': '21122607096970'}}
+2026-07-09 05:20:24,032 [INFO] [mstock] BUY placed: NIFTY2671424000PE qty=65 type=MARKET → orderid=21122607096970
+2026-07-09 05:20:24,074 [INFO] [mstock] BUY filled: NIFTY2671424000PE qty=65 fill=137.05 order=21122607096970
+2026-07-09 05:20:24,081 [INFO] ENTRY: NFO:NIFTY2671424000PE @ 137.05  engine=FUT5VWAP  detail=FUT5 VWAP cross 24057<24063 body=82% pivΔ=138pt | bar=224
+2026-07-09 05:23:56,804 [INFO] [INDICATORS] spot=24023.5 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.3↑(prev 99.1) | regime=NEUTRAL any_active=True
+2026-07-09 05:23:56,804 [INFO] [SIGNAL] CE: reg=False K=True(K=99.3>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.3<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
+2026-07-09 05:23:56,804 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2671424000PE ltp=134.00 entry=137.05 pnl=-3.05(-2.2%) sl=112.38 peak=140.35 tr_armed=False elapsed=3min
