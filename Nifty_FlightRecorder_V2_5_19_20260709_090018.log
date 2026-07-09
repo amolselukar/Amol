@@ -637,3 +637,8 @@
 2026-07-09 09:38:22,398 [INFO] EXIT: NFO:NIFTY2671424000PE @ 174.70 reason=TRAIL_+46 pnl/sh=+46.30 is_flip=True losses=1/4
 2026-07-09 09:41:24,287 [INFO] [INDICATORS] spot=23944.2 | 1h: close=24049.0 sma20=24222.0 sma50=24196.0 rsi=41.0 macd=-75.36/-50.65(bear) | 15m: K=50.1↓(prev 57.2) | regime=NEUTRAL halted=False active=False
 2026-07-09 09:41:24,288 [INFO] [SIGNAL] CE: reg=False K=False(K=50.1>=38,rising) Kextr=False RSI=False(41.0>53) MACD=False => BLOCK | PE: reg=False K=True(K=50.1<=80,falling) Kextr=True RSI=True(41.0<47) MACD=True => BLOCK
+2026-07-09 09:41:26,473 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260709_090018.log, Nifty_BarLevel_V2_5_19_20260709_090018.csv
+2026-07-09 09:45:28,238 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-09 09:45:58,426 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-09 09:46:28,594 [INFO] [INDICATORS] spot=23946.2 | 1h: close=23940.5 sma20=24197.9 sma50=24197.1 rsi=35.3 macd=-81.99/-56.92(bear) | 15m: K=21.2↓(prev 50.1) | regime=NEUTRAL halted=False active=False
+2026-07-09 09:46:28,595 [INFO] [SIGNAL] CE: reg=False K=False(K=21.2>=38,rising) Kextr=True RSI=False(35.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=True(35.3<47) MACD=True => BLOCK
