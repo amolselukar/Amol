@@ -649,3 +649,9 @@
 2026-07-09 09:56:38,732 [INFO] [INDICATORS] spot=23980.7 | 1h: close=23940.5 sma20=24197.9 sma50=24197.1 rsi=35.3 macd=-81.99/-56.92(bear) | 15m: K=21.2↓(prev 50.1) | regime=NEUTRAL halted=False active=False
 2026-07-09 09:56:38,733 [INFO] [SIGNAL] CE: reg=False K=False(K=21.2>=38,rising) Kextr=True RSI=False(35.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=True(35.3<47) MACD=True => BLOCK
 2026-07-09 09:56:40,839 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260709_090018.log, Nifty_BarLevel_V2_5_19_20260709_090018.csv
+2026-07-09 10:00:14,888 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260709_090018.log, Nifty_BarLevel_V2_5_19_20260709_090018.csv
+2026-07-09 10:00:15,699 [INFO] [EOD DATA] Starting data capture for 2026-07-09
+2026-07-09 10:00:17,555 [INFO] [EOD DATA] Futures token: 15639810 (NIFTY26JULFUT)
+2026-07-09 10:00:20,246 [INFO] [EOD DATA] ATM tracker: 75 rows, CE=[23800, 23850, 23900, 23950, 24000, 24050, 24100, 24150, 24200], PE=[23800, 23850, 23900, 23950, 24000, 24050, 24100, 24150, 24200]
+2026-07-09 10:00:20,733 [INFO] [EOD DATA] Saved futures CSVs: ['5m', '15m', '1h']
+2026-07-09 10:00:48,526 [INFO] [EOD DATA] Capture complete. Folder: daily_option_data/2026-07-09, 54 OK, 12785 bars
