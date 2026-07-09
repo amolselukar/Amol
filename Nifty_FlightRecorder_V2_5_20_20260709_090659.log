@@ -395,3 +395,6 @@
 2026-07-09 04:45:19,127 [INFO] [PIVOTBREAK] No early break by 10:00 — standing down for the day
 2026-07-09 04:48:20,654 [INFO] [INDICATORS] spot=24046.8 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.5↓(prev 99.8) | regime=NEUTRAL any_active=False
 2026-07-09 04:48:20,654 [INFO] [SIGNAL] CE: reg=False K=False(K=99.5>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.5<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
+2026-07-09 04:48:22,641 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260709_090659.log, Nifty_BarLevel_V2_5_20_20260709_090659.csv
+2026-07-09 04:53:25,163 [INFO] [INDICATORS] spot=24052.2 | 1h: close=24044.2 sma20=24299.7 sma50=24186.3 rsi=39.6 macd=-74.65/-12.74(bear) | 15m: K=99.5↓(prev 99.8) | regime=NEUTRAL any_active=False
+2026-07-09 04:53:25,164 [INFO] [SIGNAL] CE: reg=False K=False(K=99.5>=38,rising) Kextr=False RSI=False(39.6>53) MACD=False => BLOCK | PE: reg=False K=False(K=99.5<=80,falling) Kextr=True RSI=True(39.6<47) MACD=True => BLOCK
