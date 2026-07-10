@@ -413,3 +413,33 @@
 2026-07-10 03:42:36,666 [WARNING] [mstock] wait_for_fill timeout — order 526071028072 not confirmed.
 2026-07-10 03:42:36,666 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
 2026-07-10 03:42:36,666 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
+2026-07-10 03:42:39,662 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260710_090656.log, Nifty_BarLevel_V2_5_20_20260710_090656.csv
+2026-07-10 03:43:09,945 [INFO] [CB] FUT5VWAP loss (own count 5) — TOTAL across all engines=5/4 (reason=HARDSL_-18pct)
+2026-07-10 03:43:10,002 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071028942', 'uniqueorderid': '526071028942'}}
+2026-07-10 03:43:10,002 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071028942
+2026-07-10 03:43:25,428 [WARNING] [mstock] wait_for_fill timeout — order 526071028942 not confirmed.
+2026-07-10 03:43:25,428 [WARNING] [mstock] SELL attempt 1/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:43:30,490 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071029372', 'uniqueorderid': '526071029372'}}
+2026-07-10 03:43:30,490 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071029372
+2026-07-10 03:43:45,888 [WARNING] [mstock] wait_for_fill timeout — order 526071029372 not confirmed.
+2026-07-10 03:43:45,889 [WARNING] [mstock] SELL attempt 2/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:43:50,954 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071029802', 'uniqueorderid': '526071029802'}}
+2026-07-10 03:43:50,954 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071029802
+2026-07-10 03:44:06,476 [WARNING] [mstock] wait_for_fill timeout — order 526071029802 not confirmed.
+2026-07-10 03:44:06,476 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:44:06,476 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
+2026-07-10 03:44:07,372 [INFO] [INDICATORS] spot=23981.9 | 1h: close=23940.5 sma20=24197.9 sma50=24197.1 rsi=35.3 macd=-81.99/-56.92(bear) | 15m: K=21.2↓(prev 50.1) | regime=NEUTRAL any_active=True
+2026-07-10 03:44:07,372 [INFO] [SIGNAL] CE: reg=False K=False(K=21.2>=38,rising) Kextr=True RSI=False(35.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=True(35.3<47) MACD=True => BLOCK
+2026-07-10 03:44:07,373 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY2671424000CE ltp=120.10 entry=167.45 pnl=-47.35(-28.3%) sl=137.31 peak=167.45 tr_armed=False elapsed=1219min
+2026-07-10 03:44:37,657 [INFO] [CB] FUT5VWAP loss (own count 6) — TOTAL across all engines=6/4 (reason=HARDSL_-18pct)
+2026-07-10 03:44:37,725 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071030682', 'uniqueorderid': '526071030682'}}
+2026-07-10 03:44:37,725 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071030682
+2026-07-10 03:44:53,221 [WARNING] [mstock] wait_for_fill timeout — order 526071030682 not confirmed.
+2026-07-10 03:44:53,221 [WARNING] [mstock] SELL attempt 1/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:44:58,282 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071031152', 'uniqueorderid': '526071031152'}}
+2026-07-10 03:44:58,282 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071031152
+2026-07-10 03:45:05,902 [WARNING] [mstock] SELL attempt 2/3: status=REJECTED. Retrying in 5s...
+2026-07-10 03:45:10,997 [INFO] [mstock] place_order resp: {'status': False, 'message': 'RMS:2282260710112:NSE,OPTIDX,51370,NIFTY-14Jul2026-24000-CE,INTRADAY,,2026-07-14 00:00:00,MA2091850,S,65,I,216.3,FUND LIMIT INSUFFICIENT,AVAILABLE FUND =3964.34,ADDITIONAL REQUIRED FUND=169937.31,CALCULATED SPAN & EXPOSURE FOR ORDER=173901.65', 'errorcode': 'MA200', 'data': None}
+2026-07-10 03:45:10,997 [ERROR] [mstock] No orderid in response: {'status': False, 'message': 'RMS:2282260710112:NSE,OPTIDX,51370,NIFTY-14Jul2026-24000-CE,INTRADAY,,2026-07-14 00:00:00,MA2091850,S,65,I,216.3,FUND LIMIT INSUFFICIENT,AVAILABLE FUND =3964.34,ADDITIONAL REQUIRED FUND=169937.31,CALCULATED SPAN & EXPOSURE FOR ORDER=173901.65', 'errorcode': 'MA200', 'data': None}
+2026-07-10 03:45:10,997 [WARNING] [mstock] SELL attempt 3/3: place_order returned None. Retrying in 5s...
+2026-07-10 03:45:10,998 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
