@@ -348,3 +348,68 @@
 2026-07-10 03:37:04,796 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
 2026-07-10 03:37:04,796 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-07-10 03:37:04,796 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-07-10 03:37:09,470 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260710_090656.log, Nifty_BarLevel_V2_5_20_20260710_090656.csv
+2026-07-10 03:37:09,768 [INFO] [CB] FUT5VWAP loss (own count 1) — TOTAL across all engines=1/4 (reason=HARDSL_-18pct)
+2026-07-10 03:37:09,829 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071023022', 'uniqueorderid': '526071023022'}}
+2026-07-10 03:37:09,829 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071023022
+2026-07-10 03:37:25,146 [WARNING] [mstock] wait_for_fill timeout — order 526071023022 not confirmed.
+2026-07-10 03:37:25,146 [WARNING] [mstock] SELL attempt 1/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:37:30,216 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071023192', 'uniqueorderid': '526071023192'}}
+2026-07-10 03:37:30,216 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071023192
+2026-07-10 03:37:45,508 [WARNING] [mstock] wait_for_fill timeout — order 526071023192 not confirmed.
+2026-07-10 03:37:45,508 [WARNING] [mstock] SELL attempt 2/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:37:50,572 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071023302', 'uniqueorderid': '526071023302'}}
+2026-07-10 03:37:50,572 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071023302
+2026-07-10 03:38:05,865 [WARNING] [mstock] wait_for_fill timeout — order 526071023302 not confirmed.
+2026-07-10 03:38:05,866 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:38:05,866 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
+2026-07-10 03:38:06,666 [INFO] [INDICATORS] spot=23981.9 | 1h: close=23940.5 sma20=24197.9 sma50=24197.1 rsi=35.3 macd=-81.99/-56.92(bear) | 15m: K=21.2↓(prev 50.1) | regime=NEUTRAL any_active=True
+2026-07-10 03:38:06,667 [INFO] [SIGNAL] CE: reg=False K=False(K=21.2>=38,rising) Kextr=True RSI=False(35.3>53) MACD=False => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=True(35.3<47) MACD=True => BLOCK
+2026-07-10 03:38:06,667 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY2671424000CE ltp=120.10 entry=167.45 pnl=-47.35(-28.3%) sl=137.31 peak=167.45 tr_armed=False elapsed=1213min
+2026-07-10 03:38:06,680 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-10 03:38:07,693 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-10 03:38:09,707 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-10 03:38:13,707 [ERROR] Kite call historical_data terminal failure
+2026-07-10 03:38:44,804 [INFO] [CB] FUT5VWAP loss (own count 2) — TOTAL across all engines=2/4 (reason=HARDSL_-18pct)
+2026-07-10 03:38:44,867 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071024142', 'uniqueorderid': '526071024142'}}
+2026-07-10 03:38:44,867 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071024142
+2026-07-10 03:39:00,156 [WARNING] [mstock] wait_for_fill timeout — order 526071024142 not confirmed.
+2026-07-10 03:39:00,156 [WARNING] [mstock] SELL attempt 1/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:39:05,216 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071024492', 'uniqueorderid': '526071024492'}}
+2026-07-10 03:39:05,216 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071024492
+2026-07-10 03:39:20,512 [WARNING] [mstock] wait_for_fill timeout — order 526071024492 not confirmed.
+2026-07-10 03:39:20,512 [WARNING] [mstock] SELL attempt 2/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:39:25,578 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071024912', 'uniqueorderid': '526071024912'}}
+2026-07-10 03:39:25,578 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071024912
+2026-07-10 03:39:40,902 [WARNING] [mstock] wait_for_fill timeout — order 526071024912 not confirmed.
+2026-07-10 03:39:40,902 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:39:40,902 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
+2026-07-10 03:40:11,996 [INFO] [CB] FUT5VWAP loss (own count 3) — TOTAL across all engines=3/4 (reason=HARDSL_-18pct)
+2026-07-10 03:40:12,097 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071025722', 'uniqueorderid': '526071025722'}}
+2026-07-10 03:40:12,097 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071025722
+2026-07-10 03:40:27,463 [WARNING] [mstock] wait_for_fill timeout — order 526071025722 not confirmed.
+2026-07-10 03:40:27,464 [WARNING] [mstock] SELL attempt 1/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:40:32,530 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071026142', 'uniqueorderid': '526071026142'}}
+2026-07-10 03:40:32,530 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071026142
+2026-07-10 03:40:47,921 [WARNING] [mstock] wait_for_fill timeout — order 526071026142 not confirmed.
+2026-07-10 03:40:47,921 [WARNING] [mstock] SELL attempt 2/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:40:52,987 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071026612', 'uniqueorderid': '526071026612'}}
+2026-07-10 03:40:52,987 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071026612
+2026-07-10 03:41:08,369 [WARNING] [mstock] wait_for_fill timeout — order 526071026612 not confirmed.
+2026-07-10 03:41:08,369 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:41:08,369 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
+2026-07-10 03:41:39,466 [INFO] [CB] FUT5VWAP loss (own count 4) — TOTAL across all engines=4/4 (reason=HARDSL_-18pct)
+2026-07-10 03:41:40,287 [INFO] [CB] GLOBAL circuit breaker hit (4 total losses) — halting all engines' new entries
+2026-07-10 03:41:40,347 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071027442', 'uniqueorderid': '526071027442'}}
+2026-07-10 03:41:40,347 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071027442
+2026-07-10 03:41:55,714 [WARNING] [mstock] wait_for_fill timeout — order 526071027442 not confirmed.
+2026-07-10 03:41:55,714 [WARNING] [mstock] SELL attempt 1/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:42:00,782 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071027752', 'uniqueorderid': '526071027752'}}
+2026-07-10 03:42:00,782 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071027752
+2026-07-10 03:42:16,225 [WARNING] [mstock] wait_for_fill timeout — order 526071027752 not confirmed.
+2026-07-10 03:42:16,226 [WARNING] [mstock] SELL attempt 2/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:42:21,295 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424000CE', 'orderid': '526071028072', 'uniqueorderid': '526071028072'}}
+2026-07-10 03:42:21,296 [INFO] [mstock] SELL placed: NIFTY2671424000CE qty=65 type=MARKET → orderid=526071028072
+2026-07-10 03:42:36,666 [WARNING] [mstock] wait_for_fill timeout — order 526071028072 not confirmed.
+2026-07-10 03:42:36,666 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
+2026-07-10 03:42:36,666 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2671424000CE)
