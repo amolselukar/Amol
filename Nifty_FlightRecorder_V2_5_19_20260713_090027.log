@@ -392,3 +392,10 @@
 2026-07-13 04:56:51,490 [INFO] [INDICATORS] spot=24124.0 | 1h: close=24114.2 sma20=24086.1 sma50=24228.6 rsi=46.6 macd=-12.27/-30.11(bull) | 15m: K=41.0↑(prev 25.5) | regime=NEUTRAL halted=False active=True
 2026-07-13 04:56:51,491 [INFO] [SIGNAL] CE: reg=False K=True(K=41.0>=38,rising) Kextr=False RSI=False(46.6>53) MACD=True => BLOCK | PE: reg=False K=False(K=41.0<=80,falling) Kextr=False RSI=True(46.6<47) MACD=False => BLOCK
 2026-07-13 04:56:51,491 [INFO] [STATE] PE NFO:NIFTY2671424100PE ltp=94.65 entry=113.50 pnl=-18.85(-16.6%) sl=93.07 peak=115.35 tr_armed=False elapsed=41min
+2026-07-13 04:56:53,951 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260713_090027.log, Nifty_BarLevel_V2_5_19_20260713_090027.csv
+2026-07-13 04:57:24,136 [INFO] [CB] losses=2/4 (reason=HARDSL_-18pct)
+2026-07-13 04:57:24,136 [INFO] EXIT: NFO:NIFTY2671424100PE @ 93.07 reason=HARDSL_-18pct pnl/sh=-20.43 is_flip=False losses=2/4
+2026-07-13 04:57:55,197 [INFO] ENTRY: NFO:NIFTY2671424100CE @ 99.15  engine=FLIP  detail=FLIP PE->CE K=41.0 (prev 25.5) age=1min flips_today=1/3
+2026-07-13 05:01:57,833 [INFO] [INDICATORS] spot=24134.8 | 1h: close=24114.2 sma20=24086.1 sma50=24228.6 rsi=46.6 macd=-12.27/-30.11(bull) | 15m: K=52.4↑(prev 41.0) | regime=NEUTRAL halted=False active=True
+2026-07-13 05:01:57,833 [INFO] [SIGNAL] CE: reg=False K=True(K=52.4>=38,rising) Kextr=False RSI=False(46.6>53) MACD=True => BLOCK | PE: reg=False K=False(K=52.4<=80,falling) Kextr=False RSI=True(46.6<47) MACD=False => BLOCK
+2026-07-13 05:01:57,834 [INFO] [STATE] CE NFO:NIFTY2671424100CE ltp=100.80 entry=99.15 pnl=+1.65(+1.7%) sl=81.30 peak=112.95 tr_armed=False elapsed=4min
