@@ -363,3 +363,9 @@
 2026-07-14 03:47:26,580 [INFO] [INDICATORS] spot=24102.5 | 1h: close=24211.2 sma20=24137.2 sma50=24237.4 rsi=53.5 macd=7.82/-6.62(bull) | 15m: K=57.7↓(prev 73.3) | regime=NEUTRAL any_active=True
 2026-07-14 03:47:26,581 [INFO] [SIGNAL] CE: reg=False K=False(K=57.7>=38,rising) Kextr=False RSI=True(53.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=57.7<=80,falling) Kextr=True RSI=False(53.5<47) MACD=False(gate off) => BLOCK
 2026-07-14 03:47:26,581 [INFO] [STATE][PIVOTBREAK] PE NFO:NIFTY2671424100PE ltp=68.30 entry=89.00 pnl=-20.70(-23.3%) sl=0.00 peak=89.00 tr_armed=False elapsed=2min
+2026-07-14 03:47:28,672 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260714_090701.log, Nifty_BarLevel_V2_5_20_20260714_090701.csv
+2026-07-14 03:50:30,310 [INFO] [STRADDLE] Reference: ₹125.0 at 09:20
+2026-07-14 03:51:00,613 [INFO] [CB] PIVOTBREAK loss (own count 1) — TOTAL across all engines=1/4 (reason=PIVOTBREAK_STOP)
+2026-07-14 03:51:00,613 [INFO] EXIT: NFO:NIFTY2671424100PE @ 59.00 reason=PIVOTBREAK_STOP pnl/sh=-30.00 is_flip=False losses=1/4
+2026-07-14 03:52:32,109 [INFO] [INDICATORS] spot=24137.0 | 1h: close=24211.2 sma20=24137.2 sma50=24237.4 rsi=53.5 macd=7.82/-6.62(bull) | 15m: K=57.7↓(prev 73.3) | regime=NEUTRAL any_active=False
+2026-07-14 03:52:32,109 [INFO] [SIGNAL] CE: reg=False K=False(K=57.7>=38,rising) Kextr=False RSI=True(53.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=57.7<=80,falling) Kextr=True RSI=False(53.5<47) MACD=False(gate off) => BLOCK
