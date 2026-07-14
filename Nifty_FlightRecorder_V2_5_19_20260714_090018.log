@@ -447,3 +447,9 @@
 2026-07-14 06:12:41,780 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.6min after last CE exit (cooldown 5min)
 2026-07-14 06:12:42,626 [INFO] [INDICATORS] spot=24108.2 | 1h: close=24139.2 sma20=24144.7 sma50=24231.9 rsi=47.9 macd=-2.60/-4.83(bull) | 15m: K=47.7↑(prev 36.7) | regime=PE-eligible halted=False active=False
 2026-07-14 06:12:42,627 [INFO] [SIGNAL] CE: reg=False K=True(K=47.7>=38,rising) Kextr=True RSI=False(47.9>53) MACD=True => BLOCK | PE: reg=True K=False(K=47.7<=80,falling) Kextr=False RSI=False(47.9<47) MACD=False => BLOCK
+2026-07-14 06:12:44,705 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260714_090018.log, Nifty_BarLevel_V2_5_19_20260714_090018.csv
+2026-07-14 06:13:14,866 [INFO] [VETO] V3 CE BLOCKED — CE into a DOWNtrend: spot 24098.1 is -6.0 below FUT VWAP 24104.1 (buffer 5)
+2026-07-14 06:13:45,889 [INFO] ENTRY: NFO:NIFTY2671424100CE @ 37.10  engine=V3  detail=Grade B R-cluster REJECT-CE at 24142
+2026-07-14 06:17:48,383 [INFO] [INDICATORS] spot=24107.0 | 1h: close=24139.2 sma20=24144.7 sma50=24231.9 rsi=47.9 macd=-2.60/-4.83(bull) | 15m: K=44.9↓(prev 47.7) | regime=PE-eligible halted=False active=True
+2026-07-14 06:17:48,383 [INFO] [SIGNAL] CE: reg=False K=False(K=44.9>=38,rising) Kextr=True RSI=False(47.9>53) MACD=True => BLOCK | PE: reg=True K=True(K=44.9<=80,falling) Kextr=False RSI=False(47.9<47) MACD=False => BLOCK
+2026-07-14 06:17:48,383 [INFO] [STATE] CE NFO:NIFTY2671424100CE ltp=39.55 entry=37.10 pnl=+2.45(+6.6%) sl=30.42 peak=41.15 tr_armed=False elapsed=4min
