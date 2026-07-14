@@ -433,3 +433,17 @@
 2026-07-14 06:07:30,746 [INFO] [INDICATORS] spot=24123.0 | 1h: close=24139.2 sma20=24144.7 sma50=24231.9 rsi=47.9 macd=-2.60/-4.83(bull) | 15m: K=47.7↑(prev 36.7) | regime=PE-eligible halted=False active=True
 2026-07-14 06:07:30,746 [INFO] [SIGNAL] CE: reg=False K=True(K=47.7>=38,rising) Kextr=True RSI=False(47.9>53) MACD=True => BLOCK | PE: reg=True K=False(K=47.7<=80,falling) Kextr=False RSI=False(47.9<47) MACD=False => BLOCK
 2026-07-14 06:07:30,746 [INFO] [STATE] CE NFO:NIFTY2671424100CE ltp=47.55 entry=53.65 pnl=-6.10(-11.4%) sl=43.99 peak=65.20 tr_armed=False elapsed=47min
+2026-07-14 06:07:32,868 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260714_090018.log, Nifty_BarLevel_V2_5_19_20260714_090018.csv
+2026-07-14 06:08:03,036 [INFO] [CB] losses=1/4 (reason=HARDSL_-18pct)
+2026-07-14 06:08:03,036 [INFO] EXIT: NFO:NIFTY2671424100CE @ 43.99 reason=HARDSL_-18pct pnl/sh=-9.66 is_flip=False losses=1/4
+2026-07-14 06:08:34,013 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 0.5min after last CE exit (cooldown 5min)
+2026-07-14 06:09:05,000 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.0min after last CE exit (cooldown 5min)
+2026-07-14 06:09:35,940 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 1.5min after last CE exit (cooldown 5min)
+2026-07-14 06:10:06,919 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.1min after last CE exit (cooldown 5min)
+2026-07-14 06:10:37,886 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 2.6min after last CE exit (cooldown 5min)
+2026-07-14 06:11:08,866 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 3.1min after last CE exit (cooldown 5min)
+2026-07-14 06:11:39,822 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 3.6min after last CE exit (cooldown 5min)
+2026-07-14 06:12:10,798 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.1min after last CE exit (cooldown 5min)
+2026-07-14 06:12:41,780 [INFO] [REENTRY_CD] BLOCKED V3 CE — same-side re-entry 4.6min after last CE exit (cooldown 5min)
+2026-07-14 06:12:42,626 [INFO] [INDICATORS] spot=24108.2 | 1h: close=24139.2 sma20=24144.7 sma50=24231.9 rsi=47.9 macd=-2.60/-4.83(bull) | 15m: K=47.7↑(prev 36.7) | regime=PE-eligible halted=False active=False
+2026-07-14 06:12:42,627 [INFO] [SIGNAL] CE: reg=False K=True(K=47.7>=38,rising) Kextr=True RSI=False(47.9>53) MACD=True => BLOCK | PE: reg=True K=False(K=47.7<=80,falling) Kextr=False RSI=False(47.9<47) MACD=False => BLOCK
