@@ -353,3 +353,13 @@
 2026-07-14 03:37:14,968 [INFO] [SIGNAL] CE: reg=False K=False(K=73.3>=38,rising) Kextr=False RSI=True(53.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=73.3<=80,falling) Kextr=True RSI=False(53.1<47) MACD=False(gate off) => BLOCK
 2026-07-14 03:42:17,904 [INFO] [INDICATORS] spot=24211.2 | 1h: close=24205.7 sma20=24128.9 sma50=24236.7 rsi=53.1 macd=5.43/-10.22(bull) | 15m: K=73.3↓(prev 89.2) | regime=NEUTRAL any_active=False
 2026-07-14 03:42:17,904 [INFO] [SIGNAL] CE: reg=False K=False(K=73.3>=38,rising) Kextr=False RSI=True(53.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=73.3<=80,falling) Kextr=True RSI=False(53.1<47) MACD=False(gate off) => BLOCK
+2026-07-14 03:42:19,993 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260714_090701.log, Nifty_BarLevel_V2_5_20_20260714_090701.csv
+2026-07-14 03:45:21,285 [INFO] [PIVOTBREAK] EARLY break — spot 24050.5 vs S1=24054.3 at 09:15 side=PE
+2026-07-14 03:45:21,430 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424100PE', 'orderid': '2222260714125', 'uniqueorderid': '2222260714125'}}
+2026-07-14 03:45:21,431 [INFO] [mstock] BUY placed: NIFTY2671424100PE qty=65 type=MARKET → orderid=2222260714125
+2026-07-14 03:45:23,601 [WARNING] [mstock] BUY reported COMPLETE (fill=88.55, order=2222260714125) but NOT found in broker's position book — treating as a phantom fill (order-book/RMS race), falling back to PAPER. (NIFTY2671424100PE)
+2026-07-14 03:45:24,425 [INFO] [PAPER-FALLBACK] Real BUY failed for NIFTY2671424100PE — continuing as a PAPER trade (simulated fill 89.00) so its exit is still tracked.
+2026-07-14 03:45:24,428 [INFO] ENTRY: NFO:NIFTY2671424100PE @ 89.00  engine=PIVOTBREAK  detail=Early pivot break vs prior-day S1
+2026-07-14 03:47:26,580 [INFO] [INDICATORS] spot=24102.5 | 1h: close=24211.2 sma20=24137.2 sma50=24237.4 rsi=53.5 macd=7.82/-6.62(bull) | 15m: K=57.7↓(prev 73.3) | regime=NEUTRAL any_active=True
+2026-07-14 03:47:26,581 [INFO] [SIGNAL] CE: reg=False K=False(K=57.7>=38,rising) Kextr=False RSI=True(53.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=57.7<=80,falling) Kextr=True RSI=False(53.5<47) MACD=False(gate off) => BLOCK
+2026-07-14 03:47:26,581 [INFO] [STATE][PIVOTBREAK] PE NFO:NIFTY2671424100PE ltp=68.30 entry=89.00 pnl=-20.70(-23.3%) sl=0.00 peak=89.00 tr_armed=False elapsed=2min
