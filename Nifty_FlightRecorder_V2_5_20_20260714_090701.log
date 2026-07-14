@@ -391,3 +391,13 @@
 2026-07-14 04:25:04,830 [INFO] [V3PROBE] PLACED PE NFO:NIFTY2671424100PE limit=68.55 (LTP=76.55 - 8) window=15min — EARLY(10m) Grade B R-cluster BREAK-PE at 24100
 2026-07-14 04:28:07,195 [INFO] [INDICATORS] spot=24067.4 | 1h: close=24211.2 sma20=24137.2 sma50=24237.4 rsi=53.5 macd=7.82/-6.62(bull) | 15m: K=13.7↓(prev 27.8) | regime=NEUTRAL any_active=False
 2026-07-14 04:28:07,195 [INFO] [SIGNAL] CE: reg=False K=False(K=13.7>=38,rising) Kextr=True RSI=True(53.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=13.7<=80,falling) Kextr=False RSI=False(53.5<47) MACD=False(gate off) => BLOCK
+2026-07-14 04:28:09,189 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260714_090701.log, Nifty_BarLevel_V2_5_20_20260714_090701.csv
+2026-07-14 04:31:11,899 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2671424100PE @ 68.55 (LTP touched 67.40)
+2026-07-14 04:31:12,335 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2671424100PE', 'orderid': '22522607141643', 'uniqueorderid': '22522607141643'}}
+2026-07-14 04:31:12,335 [INFO] [mstock] BUY placed: NIFTY2671424100PE qty=65 type=MARKET → orderid=22522607141643
+2026-07-14 04:31:14,504 [WARNING] [mstock] BUY reported COMPLETE (fill=67.20, order=22522607141643) but NOT found in broker's position book — treating as a phantom fill (order-book/RMS race), falling back to PAPER. (NIFTY2671424100PE)
+2026-07-14 04:31:15,378 [INFO] [PAPER-FALLBACK] Real BUY failed for NIFTY2671424100PE — continuing as a PAPER trade (simulated fill 68.55) so its exit is still tracked.
+2026-07-14 04:31:15,382 [INFO] ENTRY: NFO:NIFTY2671424100PE @ 68.55  engine=V3  detail=EARLY(10m) Grade B R-cluster BREAK-PE at 24100
+2026-07-14 04:33:17,506 [INFO] [INDICATORS] spot=24081.7 | 1h: close=24211.2 sma20=24137.2 sma50=24237.4 rsi=53.5 macd=7.82/-6.62(bull) | 15m: K=0.0↓(prev 13.7) | regime=NEUTRAL any_active=True
+2026-07-14 04:33:17,506 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=True(53.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(53.5<47) MACD=False(gate off) => BLOCK
+2026-07-14 04:33:17,506 [INFO] [STATE][BASE] PE NFO:NIFTY2671424100PE ltp=67.45 entry=68.55 pnl=-1.10(-1.6%) sl=56.21 peak=70.90 tr_armed=False elapsed=2min
