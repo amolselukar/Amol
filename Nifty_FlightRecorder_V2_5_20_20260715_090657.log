@@ -548,3 +548,24 @@
 2026-07-15 06:09:59,421 [INFO] [INDICATORS] spot=24191.1 | 1h: close=24172.8 sma20=24150.7 sma50=24201.6 rsi=52.6 macd=-12.37/-15.03(bull) | 15m: K=80.9↓(prev 84.9) | regime=NEUTRAL any_active=True
 2026-07-15 06:09:59,421 [INFO] [SIGNAL] CE: reg=False K=False(K=80.9>=38,rising) Kextr=False RSI=False(52.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=80.9<=80,falling) Kextr=True RSI=False(52.6<47) MACD=False(gate off) => BLOCK
 2026-07-15 06:09:59,422 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=159.40 entry=171.30 pnl=-11.90(-6.9%) sl=0.00 peak=171.70 tr_armed=False elapsed=24min
+2026-07-15 06:10:01,680 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260715_090657.log, Nifty_BarLevel_V2_5_20_20260715_090657.csv
+2026-07-15 06:10:31,917 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:11:02,159 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:11:32,398 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:12:02,638 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:12:32,875 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:13:03,108 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:13:33,340 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:14:03,586 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:14:33,825 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:15:04,119 [INFO] [VWAP] Signal — FUT 24172<24177 body=75% side=PE
+2026-07-15 06:15:04,560 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200PE', 'orderid': '21522607155628', 'uniqueorderid': '21522607155628'}}
+2026-07-15 06:15:04,560 [INFO] [mstock] BUY placed: NIFTY2672124200PE qty=65 type=MARKET → orderid=21522607155628
+2026-07-15 06:15:23,072 [WARNING] [mstock] BUY NIFTY2672124200PE COMPLETE (fill=170.70, order=21522607155628) but the position book still does not show it after 20s. Treating it as a REAL position and managing it normally — NOT downgrading to paper.
+2026-07-15 06:15:23,690 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"24177\" at byte offset 552"}
+2026-07-15 06:15:23,690 [WARNING] HTML parse failed; retrying as plain text
+2026-07-15 06:15:25,493 [INFO] ENTRY: NFO:NIFTY2672124200PE @ 170.70  engine=VWAP  detail=FUT VWAP 24172<24177 body=75% | bar=184
+2026-07-15 06:15:26,323 [INFO] [INDICATORS] spot=24174.0 | 1h: close=24172.8 sma20=24150.7 sma50=24201.6 rsi=52.6 macd=-12.37/-15.03(bull) | 15m: K=76.2↓(prev 80.9) | regime=NEUTRAL any_active=True
+2026-07-15 06:15:26,323 [INFO] [SIGNAL] CE: reg=False K=False(K=76.2>=38,rising) Kextr=False RSI=False(52.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=76.2<=80,falling) Kextr=True RSI=False(52.6<47) MACD=False(gate off) => BLOCK
+2026-07-15 06:15:26,323 [INFO] [STATE][VWAP] PE NFO:NIFTY2672124200PE ltp=0.00 entry=170.70 pnl=-170.70(-100.0%) sl=139.97 peak=170.70 tr_armed=False elapsed=0min
+2026-07-15 06:15:26,323 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=170.85 entry=171.30 pnl=-0.45(-0.3%) sl=0.00 peak=171.70 tr_armed=False elapsed=29min
