@@ -371,3 +371,15 @@
 2026-07-15 04:11:00,495 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
 2026-07-15 04:11:00,495 [INFO] [INDICATORS] spot=24196.5 | 1h: close=24035.2 sma20=24149.2 sma50=24206.9 rsi=40.2 macd=-27.80/-15.13(bear) | 15m: K=58.0↑(prev 29.7) | regime=PE-eligible halted=False active=False
 2026-07-15 04:11:00,495 [INFO] [SIGNAL] CE: reg=False K=True(K=58.0>=38,rising) Kextr=True RSI=False(40.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=58.0<=80,falling) Kextr=False RSI=True(40.2<47) MACD=True => BLOCK
+2026-07-15 04:11:02,470 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260715_090021.log, Nifty_BarLevel_V2_5_19_20260715_090021.csv
+2026-07-15 04:11:32,627 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:12:02,786 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:12:33,088 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:13:03,256 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:13:33,417 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:14:03,578 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:14:33,742 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:15:04,801 [INFO] ENTRY: NFO:NIFTY2672124200CE @ 155.70  engine=V3  detail=Grade B G-cluster BREAK-CE at 24154
+2026-07-15 04:16:06,086 [INFO] [INDICATORS] spot=24202.3 | 1h: close=24035.2 sma20=24149.2 sma50=24206.9 rsi=40.2 macd=-27.80/-15.13(bear) | 15m: K=72.9↑(prev 58.0) | regime=PE-eligible halted=False active=True
+2026-07-15 04:16:06,086 [INFO] [SIGNAL] CE: reg=False K=True(K=72.9>=38,rising) Kextr=False RSI=False(40.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=72.9<=80,falling) Kextr=False RSI=True(40.2<47) MACD=True => BLOCK
+2026-07-15 04:16:06,086 [INFO] [STATE] CE NFO:NIFTY2672124200CE ltp=157.45 entry=155.70 pnl=+1.75(+1.1%) sl=127.67 peak=157.45 tr_armed=False elapsed=1min
