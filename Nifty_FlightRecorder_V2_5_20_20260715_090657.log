@@ -606,3 +606,14 @@
 2026-07-15 06:56:11,855 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260715_090657.log, Nifty_BarLevel_V2_5_20_20260715_090657.csv
 2026-07-15 07:01:14,130 [INFO] [INDICATORS] spot=24172.5 | 1h: close=24191.0 sma20=24151.0 sma50=24197.1 rsi=54.0 macd=-6.41/-13.31(bull) | 15m: K=69.1↓(prev 71.7) | regime=NEUTRAL any_active=False
 2026-07-15 07:01:14,130 [INFO] [SIGNAL] CE: reg=False K=False(K=69.1>=38,rising) Kextr=False RSI=True(54.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=69.1<=80,falling) Kextr=True RSI=False(54.0<47) MACD=False(gate off) => BLOCK
+2026-07-15 07:01:16,255 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260715_090657.log, Nifty_BarLevel_V2_5_20_20260715_090657.csv
+2026-07-15 07:05:18,034 [INFO] [FUT5VWAP] Signal — 24160<24177 body=84% side=PE (fixed +12pt target)
+2026-07-15 07:05:18,298 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200PE', 'orderid': '21622607156897', 'uniqueorderid': '21622607156897'}}
+2026-07-15 07:05:18,298 [INFO] [mstock] BUY placed: NIFTY2672124200PE qty=195 type=MARKET → orderid=21622607156897
+2026-07-15 07:05:36,792 [WARNING] [mstock] BUY NIFTY2672124200PE COMPLETE (fill=175.30, order=21622607156897) but the position book still does not show it after 20s. Treating it as a REAL position and managing it normally — NOT downgrading to paper.
+2026-07-15 07:05:37,391 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"24177\" at byte offset 563"}
+2026-07-15 07:05:37,391 [WARNING] HTML parse failed; retrying as plain text
+2026-07-15 07:05:39,243 [INFO] ENTRY: NFO:NIFTY2672124200PE @ 175.30  engine=FUT5VWAP  detail=FUT5 VWAP cross 24160<24177 body=84% pivΔ=39pt | bar=189
+2026-07-15 07:06:40,559 [INFO] [INDICATORS] spot=24156.8 | 1h: close=24191.0 sma20=24151.0 sma50=24197.1 rsi=54.0 macd=-6.41/-13.31(bull) | 15m: K=69.1↓(prev 71.7) | regime=NEUTRAL any_active=True
+2026-07-15 07:06:40,559 [INFO] [SIGNAL] CE: reg=False K=False(K=69.1>=38,rising) Kextr=False RSI=True(54.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=69.1<=80,falling) Kextr=True RSI=False(54.0<47) MACD=False(gate off) => BLOCK
+2026-07-15 07:06:40,560 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=177.20 entry=175.30 pnl=+1.90(+1.1%) sl=0.00 peak=177.20 tr_armed=False elapsed=1min
