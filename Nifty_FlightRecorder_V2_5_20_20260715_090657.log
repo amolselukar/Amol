@@ -472,3 +472,23 @@
 2026-07-15 05:38:59,942 [INFO] [VWAP] Climax skip — body=94% >= 87%
 2026-07-15 05:38:59,945 [INFO] [INDICATORS] spot=24191.3 | 1h: close=24202.3 sma20=24150.3 sma50=24205.5 rsi=55.1 macd=-17.95/-15.70(bear) | 15m: K=94.0↓(prev 99.9) | regime=NEUTRAL any_active=False
 2026-07-15 05:38:59,945 [INFO] [SIGNAL] CE: reg=False K=False(K=94.0>=38,rising) Kextr=False RSI=True(55.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=94.0<=80,falling) Kextr=True RSI=False(55.1<47) MACD=True(gate off) => BLOCK
+2026-07-15 05:39:02,833 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260715_090657.log, Nifty_BarLevel_V2_5_20_20260715_090657.csv
+2026-07-15 05:39:33,057 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:40:03,301 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:40:33,540 [INFO] [V3PROBE] PLACED CE NFO:NIFTY2672124200CE limit=141.10 (LTP=149.10 - 8) window=15min — EARLY(10m) Grade B G-cluster BREAK-CE at 24154
+2026-07-15 05:40:34,384 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:41:04,625 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:41:34,867 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:42:05,121 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:42:35,375 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:43:05,613 [INFO] [V3PROBE] FILLED CE NFO:NIFTY2672124200CE @ 141.10 (LTP touched 139.40)
+2026-07-15 05:43:05,869 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200CE', 'orderid': '23122607151218', 'uniqueorderid': '23122607151218'}}
+2026-07-15 05:43:05,869 [INFO] [mstock] BUY placed: NIFTY2672124200CE qty=65 type=MARKET → orderid=23122607151218
+2026-07-15 05:43:24,377 [WARNING] [mstock] BUY NIFTY2672124200CE COMPLETE (fill=138.85, order=23122607151218) but the position book still does not show it after 20s. Treating it as a REAL position and managing it normally — NOT downgrading to paper.
+2026-07-15 05:43:25,222 [INFO] ENTRY: NFO:NIFTY2672124200CE @ 138.85  engine=V3  detail=EARLY(10m) Grade B G-cluster BREAK-CE at 24154
+2026-07-15 05:43:26,029 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:43:56,325 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:44:26,605 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-07-15 05:44:26,608 [INFO] [INDICATORS] spot=24174.0 | 1h: close=24202.3 sma20=24150.3 sma50=24205.5 rsi=55.1 macd=-17.95/-15.70(bear) | 15m: K=94.0↓(prev 99.9) | regime=NEUTRAL any_active=True
+2026-07-15 05:44:26,608 [INFO] [SIGNAL] CE: reg=False K=False(K=94.0>=38,rising) Kextr=False RSI=True(55.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=94.0<=80,falling) Kextr=True RSI=False(55.1<47) MACD=True(gate off) => BLOCK
+2026-07-15 05:44:26,608 [INFO] [STATE][BASE] CE NFO:NIFTY2672124200CE ltp=134.15 entry=138.85 pnl=-4.70(-3.4%) sl=113.86 peak=138.85 tr_armed=False elapsed=1min
