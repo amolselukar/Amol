@@ -512,3 +512,11 @@
 2026-07-15 05:54:41,880 [INFO] [SIGNAL] CE: reg=False K=False(K=84.9>=38,rising) Kextr=False RSI=False(52.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.9<=80,falling) Kextr=True RSI=False(52.6<47) MACD=False(gate off) => BLOCK
 2026-07-15 05:54:41,880 [INFO] [STATE][BASE] CE NFO:NIFTY2672124200CE ltp=137.55 entry=138.85 pnl=-1.30(-0.9%) sl=113.86 peak=143.45 tr_armed=False elapsed=11min
 2026-07-15 05:54:41,880 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=167.70 entry=171.30 pnl=-3.60(-2.1%) sl=0.00 peak=171.70 tr_armed=False elapsed=9min
+2026-07-15 05:54:43,913 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260715_090657.log, Nifty_BarLevel_V2_5_20_20260715_090657.csv
+2026-07-15 05:59:17,076 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200CE', 'orderid': '23722607151331', 'uniqueorderid': '23722607151331'}}
+2026-07-15 05:59:17,076 [INFO] [mstock] SELL placed: NIFTY2672124200CE qty=65 type=MARKET → orderid=23722607151331
+2026-07-15 05:59:17,178 [INFO] [mstock] SELL filled: NIFTY2672124200CE qty=65 fill=149.50 order=23722607151331
+2026-07-15 05:59:17,179 [INFO] EXIT: NFO:NIFTY2672124200CE @ 149.50 reason=V3_FAST_TARGET pnl/sh=+10.65 is_flip=False losses=0/4
+2026-07-15 05:59:48,271 [INFO] [INDICATORS] spot=24205.2 | 1h: close=24172.8 sma20=24150.7 sma50=24201.6 rsi=52.6 macd=-12.37/-15.03(bull) | 15m: K=84.9↓(prev 94.0) | regime=NEUTRAL any_active=True
+2026-07-15 05:59:48,271 [INFO] [SIGNAL] CE: reg=False K=False(K=84.9>=38,rising) Kextr=False RSI=False(52.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.9<=80,falling) Kextr=True RSI=False(52.6<47) MACD=False(gate off) => BLOCK
+2026-07-15 05:59:48,272 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=155.15 entry=171.30 pnl=-16.15(-9.4%) sl=0.00 peak=171.70 tr_armed=False elapsed=14min
