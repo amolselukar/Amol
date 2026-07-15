@@ -534,3 +534,17 @@
 2026-07-15 06:04:53,995 [INFO] [INDICATORS] spot=24210.8 | 1h: close=24172.8 sma20=24150.7 sma50=24201.6 rsi=52.6 macd=-12.37/-15.03(bull) | 15m: K=80.9↓(prev 84.9) | regime=NEUTRAL any_active=True
 2026-07-15 06:04:53,995 [INFO] [SIGNAL] CE: reg=False K=False(K=80.9>=38,rising) Kextr=False RSI=False(52.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=80.9<=80,falling) Kextr=True RSI=False(52.6<47) MACD=False(gate off) => BLOCK
 2026-07-15 06:04:53,996 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=152.30 entry=171.30 pnl=-19.00(-11.1%) sl=0.00 peak=171.70 tr_armed=False elapsed=19min
+2026-07-15 06:04:56,154 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260715_090657.log, Nifty_BarLevel_V2_5_20_20260715_090657.csv
+2026-07-15 06:05:26,393 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:05:56,639 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:06:26,872 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:06:57,118 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:07:27,357 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:07:57,585 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:08:27,819 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:08:58,056 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:09:28,314 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:09:59,405 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-07-15 06:09:59,421 [INFO] [INDICATORS] spot=24191.1 | 1h: close=24172.8 sma20=24150.7 sma50=24201.6 rsi=52.6 macd=-12.37/-15.03(bull) | 15m: K=80.9↓(prev 84.9) | regime=NEUTRAL any_active=True
+2026-07-15 06:09:59,421 [INFO] [SIGNAL] CE: reg=False K=False(K=80.9>=38,rising) Kextr=False RSI=False(52.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=80.9<=80,falling) Kextr=True RSI=False(52.6<47) MACD=False(gate off) => BLOCK
+2026-07-15 06:09:59,422 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2672124200PE ltp=159.40 entry=171.30 pnl=-11.90(-6.9%) sl=0.00 peak=171.70 tr_armed=False elapsed=24min
