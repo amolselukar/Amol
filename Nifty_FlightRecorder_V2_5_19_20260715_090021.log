@@ -358,3 +358,16 @@
 2026-07-15 04:05:56,809 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
 2026-07-15 04:05:56,809 [INFO] [INDICATORS] spot=24201.1 | 1h: close=24035.2 sma20=24149.2 sma50=24206.9 rsi=40.2 macd=-27.80/-15.13(bear) | 15m: K=58.0↑(prev 29.7) | regime=PE-eligible halted=False active=False
 2026-07-15 04:05:56,810 [INFO] [SIGNAL] CE: reg=False K=True(K=58.0>=38,rising) Kextr=True RSI=False(40.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=58.0<=80,falling) Kextr=False RSI=True(40.2<47) MACD=True => BLOCK
+2026-07-15 04:05:58,844 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260715_090021.log, Nifty_BarLevel_V2_5_19_20260715_090021.csv
+2026-07-15 04:06:29,002 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:06:59,169 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:07:29,330 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:07:59,509 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:08:29,668 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:08:59,832 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:09:29,991 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:10:00,168 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:10:30,339 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:11:00,495 [INFO] [MVWAP] Skip — close 24189 only 16pt from a pivot (need >20)
+2026-07-15 04:11:00,495 [INFO] [INDICATORS] spot=24196.5 | 1h: close=24035.2 sma20=24149.2 sma50=24206.9 rsi=40.2 macd=-27.80/-15.13(bear) | 15m: K=58.0↑(prev 29.7) | regime=PE-eligible halted=False active=False
+2026-07-15 04:11:00,495 [INFO] [SIGNAL] CE: reg=False K=True(K=58.0>=38,rising) Kextr=True RSI=False(40.2>53) MACD=False => BLOCK | PE: reg=True K=False(K=58.0<=80,falling) Kextr=False RSI=True(40.2<47) MACD=True => BLOCK
