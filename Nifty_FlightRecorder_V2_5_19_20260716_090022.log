@@ -507,3 +507,19 @@
 2026-07-16 08:09:38,330 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260716_090022.log, Nifty_BarLevel_V2_5_19_20260716_090022.csv
 2026-07-16 08:14:40,231 [INFO] [INDICATORS] spot=24054.4 | 1h: close=24120.6 sma20=24118.2 sma50=24140.6 rsi=49.2 macd=-7.89/-12.12(bull) | 15m: K=0.0↓(prev 0.0) | regime=NEUTRAL halted=False active=False
 2026-07-16 08:14:40,231 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(49.2>53) MACD=True => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(49.2<47) MACD=False => BLOCK
+2026-07-16 08:14:42,707 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260716_090022.log, Nifty_BarLevel_V2_5_19_20260716_090022.csv
+2026-07-16 08:15:12,892 [INFO] [CHOPGATE] RE-ARMED — FUT 24060 < FH_low 24115-15 body=93% regime=CHOP
+2026-07-16 08:15:13,504 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"\" at byte offset 44"}
+2026-07-16 08:15:13,505 [WARNING] HTML parse failed; retrying as plain text
+2026-07-16 08:15:15,311 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:15:45,514 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:16:15,712 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:16:45,895 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:17:16,100 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:17:46,299 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:18:16,497 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:18:46,703 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:19:16,910 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:19:47,118 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-16 08:19:47,122 [INFO] [INDICATORS] spot=24058.0 | 1h: close=24120.6 sma20=24118.2 sma50=24140.6 rsi=49.2 macd=-7.89/-12.12(bull) | 15m: K=0.0↓(prev 0.0) | regime=NEUTRAL halted=False active=False
+2026-07-16 08:19:47,122 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(49.2>53) MACD=True => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(49.2<47) MACD=False => BLOCK
