@@ -462,3 +462,16 @@
 2026-07-17 06:23:17,158 [INFO] [VWAP] Climax skip — body=93% >= 87%
 2026-07-17 06:23:17,161 [INFO] [INDICATORS] spot=24276.5 | 1h: close=24235.7 sma20=24117.6 sma50=24117.3 rsi=59.2 macd=7.17/-6.57(bull) | 15m: K=72.8↓(prev 73.3) | regime=CE-eligible halted=False active=False
 2026-07-17 06:23:17,161 [INFO] [SIGNAL] CE: reg=True K=False(K=72.8>=38,rising) Kextr=False RSI=True(59.2>53) MACD=True => BLOCK | PE: reg=False K=True(K=72.8<=80,falling) Kextr=True RSI=False(59.2<47) MACD=False => BLOCK
+2026-07-17 06:23:19,263 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260717_090024.log, Nifty_BarLevel_V2_5_19_20260717_090024.csv
+2026-07-17 06:23:49,461 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:24:19,662 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:24:49,855 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:25:20,060 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:25:50,277 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:26:20,494 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:26:50,707 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:27:20,908 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:27:51,119 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:28:21,323 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-07-17 06:28:21,326 [INFO] [INDICATORS] spot=24275.5 | 1h: close=24235.7 sma20=24117.6 sma50=24117.3 rsi=59.2 macd=7.17/-6.57(bull) | 15m: K=72.8↓(prev 73.3) | regime=CE-eligible halted=False active=False
+2026-07-17 06:28:21,326 [INFO] [SIGNAL] CE: reg=True K=False(K=72.8>=38,rising) Kextr=False RSI=True(59.2>53) MACD=True => BLOCK | PE: reg=False K=True(K=72.8<=80,falling) Kextr=True RSI=False(59.2<47) MACD=False => BLOCK
