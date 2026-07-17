@@ -402,3 +402,8 @@
 2026-07-17 04:33:30,679 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260717_090658.log, Nifty_BarLevel_V2_5_20_20260717_090658.csv
 2026-07-17 04:38:34,104 [INFO] [INDICATORS] spot=24221.5 | 1h: close=24081.1 sma20=24105.4 sma50=24119.6 rsi=45.9 macd=-13.54/-12.07(bear) | 15m: K=99.5↑(prev 80.2) | regime=PE-eligible any_active=False
 2026-07-17 04:38:34,104 [INFO] [SIGNAL] CE: reg=False K=True(K=99.5>=38,rising) Kextr=False RSI=False(45.9>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=99.5<=80,falling) Kextr=True RSI=True(45.9<47) MACD=True(gate off) => BLOCK
+2026-07-17 04:38:36,121 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260717_090658.log, Nifty_BarLevel_V2_5_20_20260717_090658.csv
+2026-07-17 04:42:38,147 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2672124200PE @ 127.30 (LTP touched 125.95)
+2026-07-17 04:42:38,149 [INFO] [VETO] V3 PE BLOCKED — PE into an UPtrend: spot 24238.2 is +47.4 above FUT VWAP 24190.8 (buffer 5)
+2026-07-17 04:43:39,539 [INFO] [INDICATORS] spot=24246.0 | 1h: close=24081.1 sma20=24105.4 sma50=24119.6 rsi=45.9 macd=-13.54/-12.07(bear) | 15m: K=99.5↑(prev 80.2) | regime=PE-eligible any_active=False
+2026-07-17 04:43:39,539 [INFO] [SIGNAL] CE: reg=False K=True(K=99.5>=38,rising) Kextr=False RSI=False(45.9>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=99.5<=80,falling) Kextr=True RSI=True(45.9<47) MACD=True(gate off) => BLOCK
