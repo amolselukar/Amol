@@ -598,3 +598,12 @@
 2026-07-20 07:43:11,204 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260720_090701.log, Nifty_BarLevel_V2_5_20_20260720_090701.csv
 2026-07-20 07:48:13,579 [INFO] [INDICATORS] spot=24218.3 | 1h: close=24225.0 sma20=24188.2 sma50=24153.8 rsi=53.1 macd=28.72/28.58(bull) | 15m: K=54.2↑(prev 21.5) | regime=CE-eligible any_active=False
 2026-07-20 07:48:13,579 [INFO] [SIGNAL] CE: reg=True K=True(K=54.2>=38,rising) Kextr=True RSI=True(53.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=54.2<=80,falling) Kextr=False RSI=False(53.1<47) MACD=False(gate off) => BLOCK
+2026-07-20 07:48:15,717 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260720_090701.log, Nifty_BarLevel_V2_5_20_20260720_090701.csv
+2026-07-20 07:49:16,128 [INFO] [FUT5VWAP] Signal — 24229>24188 body=83% side=CE (fixed +12pt target)
+2026-07-20 07:49:16,451 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200CE', 'orderid': '23722607203907', 'uniqueorderid': '23722607203907'}}
+2026-07-20 07:49:16,451 [INFO] [mstock] BUY placed: NIFTY2672124200CE qty=195 type=MARKET → orderid=23722607203907
+2026-07-20 07:49:35,567 [WARNING] [mstock] BUY NIFTY2672124200CE COMPLETE (fill=86.37, order=23722607203907) but the position book still does not show it after 20s. Treating it as a REAL position and managing it normally — NOT downgrading to paper.
+2026-07-20 07:49:36,447 [INFO] ENTRY: NFO:NIFTY2672124200CE @ 86.37  engine=FUT5VWAP  detail=FUT5 VWAP cross 24229>24188 body=83% pivΔ=54pt | bar=73
+2026-07-20 07:53:39,113 [INFO] [INDICATORS] spot=24235.2 | 1h: close=24225.0 sma20=24188.2 sma50=24153.8 rsi=53.1 macd=28.72/28.58(bull) | 15m: K=54.2↑(prev 21.5) | regime=CE-eligible any_active=True
+2026-07-20 07:53:39,113 [INFO] [SIGNAL] CE: reg=True K=True(K=54.2>=38,rising) Kextr=True RSI=True(53.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=54.2<=80,falling) Kextr=False RSI=False(53.1<47) MACD=False(gate off) => BLOCK
+2026-07-20 07:53:39,114 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY2672124200CE ltp=98.25 entry=86.37 pnl=+11.88(+13.8%) sl=0.00 peak=101.35 tr_armed=False elapsed=4min
