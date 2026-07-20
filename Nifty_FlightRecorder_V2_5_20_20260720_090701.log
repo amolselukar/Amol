@@ -524,3 +524,13 @@
 2026-07-20 06:26:29,455 [INFO] [INDICATORS] spot=24185.2 | 1h: close=24214.6 sma20=24174.6 sma50=24147.0 rsi=52.2 macd=37.01/27.96(bull) | 15m: K=19.3↓(prev 24.5) | regime=CE-eligible any_active=True
 2026-07-20 06:26:29,455 [INFO] [SIGNAL] CE: reg=True K=False(K=19.3>=38,rising) Kextr=True RSI=False(52.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.3<=80,falling) Kextr=False RSI=False(52.2<47) MACD=False(gate off) => BLOCK
 2026-07-20 06:26:29,455 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY2672124200CE ltp=63.30 entry=89.80 pnl=-26.50(-29.5%) sl=0.00 peak=97.30 tr_armed=False elapsed=99min
+2026-07-20 06:26:31,546 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260720_090701.log, Nifty_BarLevel_V2_5_20_20260720_090701.csv
+2026-07-20 06:29:33,115 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2672124200PE @ 100.00 (LTP touched 99.45)
+2026-07-20 06:29:33,258 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200PE', 'orderid': '22422607202847', 'uniqueorderid': '22422607202847'}}
+2026-07-20 06:29:33,258 [INFO] [mstock] BUY placed: NIFTY2672124200PE qty=65 type=MARKET → orderid=22422607202847
+2026-07-20 06:29:51,743 [WARNING] [mstock] BUY NIFTY2672124200PE COMPLETE (fill=99.45, order=22422607202847) but the position book still does not show it after 20s. Treating it as a REAL position and managing it normally — NOT downgrading to paper.
+2026-07-20 06:29:52,554 [INFO] ENTRY: NFO:NIFTY2672124200PE @ 99.45  engine=V3  detail=EARLY(10m) Grade B R-cluster BREAK-PE at 24193
+2026-07-20 06:31:54,644 [INFO] [INDICATORS] spot=24184.5 | 1h: close=24214.6 sma20=24174.6 sma50=24147.0 rsi=52.2 macd=37.01/27.96(bull) | 15m: K=15.3↓(prev 19.3) | regime=CE-eligible any_active=True
+2026-07-20 06:31:54,644 [INFO] [SIGNAL] CE: reg=True K=False(K=15.3>=38,rising) Kextr=True RSI=False(52.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=15.3<=80,falling) Kextr=False RSI=False(52.2<47) MACD=False(gate off) => BLOCK
+2026-07-20 06:31:54,644 [INFO] [STATE][BASE] PE NFO:NIFTY2672124200PE ltp=104.10 entry=99.45 pnl=+4.65(+4.7%) sl=81.55 peak=104.10 tr_armed=False elapsed=2min
+2026-07-20 06:31:54,645 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY2672124200CE ltp=64.30 entry=89.80 pnl=-25.50(-28.4%) sl=0.00 peak=97.30 tr_armed=False elapsed=104min
