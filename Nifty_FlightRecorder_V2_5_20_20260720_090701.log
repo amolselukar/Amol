@@ -389,3 +389,14 @@
 2026-07-20 04:18:14,260 [INFO] [INDICATORS] spot=24163.2 | 1h: close=24346.7 sma20=24171.6 sma50=24137.4 rsi=66.9 macd=47.19/21.73(bull) | 15m: K=33.3↓(prev 66.7) | regime=CE-eligible any_active=True
 2026-07-20 04:18:14,261 [INFO] [SIGNAL] CE: reg=True K=False(K=33.3>=38,rising) Kextr=False RSI=True(66.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=33.3<=80,falling) Kextr=True RSI=False(66.9<47) MACD=False(gate off) => BLOCK
 2026-07-20 04:18:14,261 [INFO] [STATE][PIVOTBREAK] PE NFO:NIFTY2672124200PE ltp=120.20 entry=87.25 pnl=+32.95(+37.8%) sl=0.00 peak=123.85 tr_armed=False elapsed=32min
+2026-07-20 04:18:16,335 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260720_090701.log, Nifty_BarLevel_V2_5_20_20260720_090701.csv
+2026-07-20 04:19:16,828 [INFO] [GAPBREAK] Range-break detected — close 24158.0 broke [24159.6,24262.3] side=PE (gap=-156.7)
+2026-07-20 04:20:17,377 [INFO] [GAPBREAK] Confirmed — bar close 24166.2 > ref 24158.0
+2026-07-20 04:20:17,502 [INFO] [mstock] place_order resp: {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'NIFTY2672124200PE', 'orderid': '22622607201000', 'uniqueorderid': '22622607201000'}}
+2026-07-20 04:20:17,502 [INFO] [mstock] BUY placed: NIFTY2672124200PE qty=65 type=MARKET → orderid=22622607201000
+2026-07-20 04:20:35,998 [WARNING] [mstock] BUY NIFTY2672124200PE COMPLETE (fill=117.90, order=22622607201000) but the position book still does not show it after 20s. Treating it as a REAL position and managing it normally — NOT downgrading to paper.
+2026-07-20 04:20:36,806 [INFO] ENTRY: NFO:NIFTY2672124200PE @ 117.90  engine=GAPBREAK  detail=GAP break confirmed, gap=-157
+2026-07-20 04:23:40,322 [INFO] [INDICATORS] spot=24172.5 | 1h: close=24346.7 sma20=24171.6 sma50=24137.4 rsi=66.9 macd=47.19/21.73(bull) | 15m: K=33.3↓(prev 66.7) | regime=CE-eligible any_active=True
+2026-07-20 04:23:40,323 [INFO] [SIGNAL] CE: reg=True K=False(K=33.3>=38,rising) Kextr=False RSI=True(66.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=33.3<=80,falling) Kextr=True RSI=False(66.9<47) MACD=False(gate off) => BLOCK
+2026-07-20 04:23:40,323 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2672124200PE ltp=114.00 entry=117.90 pnl=-3.90(-3.3%) sl=0.00 peak=117.90 tr_armed=False elapsed=3min
+2026-07-20 04:23:40,323 [INFO] [STATE][PIVOTBREAK] PE NFO:NIFTY2672124200PE ltp=114.00 entry=87.25 pnl=+26.75(+30.7%) sl=0.00 peak=124.35 tr_armed=False elapsed=38min
