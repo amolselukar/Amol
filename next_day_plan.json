@@ -1,46 +1,51 @@
 {
-  "date": "2026-06-01",
-  "for_date": "2026-06-02",
-  "generated_at": "2026-06-01 10:32:39",
-  "atm": 23400,
-  "expiry": "2026-06-02",
-  "monthly_expiry": "2026-06-30",
+  "date": "2026-07-20",
+  "for_date": "2026-07-21",
+  "generated_at": "2026-07-20 12:55:14",
+  "atm": 24200,
+  "expiry": "2026-07-21",
+  "monthly_expiry": "2026-07-28",
   "is_monthly_expiry": false,
   "days_to_expiry": 1,
   "expiry_caution": true,
   "is_expiry_day": false,
-  "pcr": 0.858,
-  "bias": "NEUTRAL",
-  "max_pain": 23500,
-  "straddle_atm": 167.7,
+  "pcr": 1.268,
+  "bias": "BULLISH",
+  "max_pain": 24200,
+  "straddle_atm": 149.8,
   "oi_stats": {
-    "ce_mean": 5550065,
-    "ce_std": 5544553,
-    "pe_mean": 4764145,
-    "pe_std": 2850639,
-    "ce_wall_threshold": 16639172,
-    "pe_wall_threshold": 10465423
+    "ce_mean": 4599295,
+    "ce_std": 3857334,
+    "pe_mean": 5830480,
+    "pe_std": 4963934,
+    "ce_wall_threshold": 12313963,
+    "pe_wall_threshold": 15758348
   },
   "resistance_levels": [],
   "support_levels": [],
   "info_levels": [
     {
-      "strike": 23000,
-      "side": "PE",
-      "reason": "OI significant but stale/expiry caution"
-    },
-    {
-      "strike": 23200,
-      "side": "PE",
-      "reason": "OI significant but stale/expiry caution"
-    },
-    {
-      "strike": 23400,
-      "side": "PE",
-      "reason": "OI significant but stale/expiry caution"
-    },
-    {
       "strike": 24000,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24100,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24200,
+      "side": "PE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24300,
+      "side": "CE",
+      "reason": "OI significant but stale/expiry caution"
+    },
+    {
+      "strike": 24500,
       "side": "CE",
       "reason": "OI significant but stale/expiry caution"
     }
@@ -48,20 +53,12 @@
   "v3_resistance": [],
   "v3_support": [],
   "price_clusters": {
-    "pdh": 23733.7,
-    "pdl": 23358.0,
-    "pdc": 23379.2,
+    "pdh": 24266.1,
+    "pdl": 24135.8,
+    "pdc": 24239.5,
     "clusters_above": [
       {
-        "center": 23492.4,
-        "kinds": [
-          "round_100",
-          "swing_low"
-        ],
-        "grade": "B"
-      },
-      {
-        "center": 23600.0,
+        "center": 24300.0,
         "kinds": [
           "round_100"
         ],
@@ -69,9 +66,17 @@
         "promoted": true
       },
       {
-        "center": 23733.7,
+        "center": 24358.7,
         "kinds": [
-          "PDH"
+          "round_50",
+          "swing_high"
+        ],
+        "grade": "B"
+      },
+      {
+        "center": 24400.0,
+        "kinds": [
+          "round_100"
         ],
         "grade": "B",
         "promoted": true
@@ -79,15 +84,24 @@
     ],
     "clusters_below": [
       {
-        "center": 23354.0,
+        "center": 24140.6,
         "kinds": [
           "PDL",
-          "round_50"
+          "round_50",
+          "swing_low"
+        ],
+        "grade": "A"
+      },
+      {
+        "center": 24193.2,
+        "kinds": [
+          "round_100",
+          "swing_high"
         ],
         "grade": "B"
       },
       {
-        "center": 23300.0,
+        "center": 24100.0,
         "kinds": [
           "round_100"
         ],
@@ -95,7 +109,15 @@
         "promoted": true
       },
       {
-        "center": 23200.0,
+        "center": 24050.0,
+        "kinds": [
+          "round_50",
+          "swing_low"
+        ],
+        "grade": "B"
+      },
+      {
+        "center": 24000.0,
         "kinds": [
           "round_100"
         ],
