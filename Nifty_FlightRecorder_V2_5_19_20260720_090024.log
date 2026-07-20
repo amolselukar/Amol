@@ -335,3 +335,7 @@
 2026-07-20 03:45:11,721 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 24222.5 is -18.4 below FUT VWAP 24240.9 (buffer 5)
 2026-07-20 03:45:42,698 [INFO] [INDICATORS] spot=24238.8 | 1h: close=24346.7 sma20=24171.6 sma50=24137.4 rsi=66.9 macd=47.19/21.73(bull) | 15m: K=94.8↓(prev 94.8) | regime=CE-eligible halted=False active=False
 2026-07-20 03:45:42,698 [INFO] [SIGNAL] CE: reg=True K=False(K=94.8>=38,rising) Kextr=False RSI=True(66.9>53) MACD=True => BLOCK | PE: reg=False K=False(K=94.8<=80,falling) Kextr=True RSI=False(66.9<47) MACD=False => BLOCK
+2026-07-20 03:45:45,567 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_19_20260720_090024.log, Nifty_BarLevel_V2_5_19_20260720_090024.csv
+2026-07-20 03:50:16,981 [INFO] [STRADDLE] Reference: ₹194.5 at 09:20
+2026-07-20 03:50:47,140 [INFO] [INDICATORS] spot=24202.2 | 1h: close=24346.7 sma20=24171.6 sma50=24137.4 rsi=66.9 macd=47.19/21.73(bull) | 15m: K=94.8↓(prev 94.8) | regime=CE-eligible halted=False active=False
+2026-07-20 03:50:47,140 [INFO] [SIGNAL] CE: reg=True K=False(K=94.8>=38,rising) Kextr=False RSI=True(66.9>53) MACD=True => BLOCK | PE: reg=False K=False(K=94.8<=80,falling) Kextr=True RSI=False(66.9<47) MACD=False => BLOCK
