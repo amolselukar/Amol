@@ -526,3 +526,4 @@
 2026-07-20 10:01:01,259 [WARNING] [mstock] wait_for_fill timeout — order 526072032622 not confirmed.
 2026-07-20 10:01:01,259 [WARNING] [mstock] SELL attempt 3/3: status=TIMEOUT. Retrying in 5s...
 2026-07-20 10:01:01,259 [WARNING] [mstock] SELL FAILED after 3 attempts — position still OPEN on exchange! (NIFTY2672124200CE) RMS: unknown
+2026-07-20 10:01:05,042 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260720_134946.log, Nifty_BarLevel_V2_5_20_20260720_134946.csv
