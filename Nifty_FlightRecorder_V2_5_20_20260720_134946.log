@@ -345,3 +345,11 @@
 2026-07-20 08:19:57,054 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
 2026-07-20 08:19:57,054 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-07-20 08:19:57,054 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-07-20 08:20:01,664 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260720_134946.log, Nifty_BarLevel_V2_5_20_20260720_134946.csv
+2026-07-20 08:20:02,037 [INFO] [CHOPGATE] Clear to trade — ER=0.36 crosses=1 range=148pt
+2026-07-20 08:20:02,059 [INFO] [INDICATORS] spot=24252.0 | 1h: close=24225.0 sma20=24188.2 sma50=24153.8 rsi=53.1 macd=28.72/28.58(bull) | 15m: K=94.6↑(prev 87.5) | regime=CE-eligible any_active=True
+2026-07-20 08:20:02,059 [INFO] [SIGNAL] CE: reg=True K=True(K=94.6>=38,rising) Kextr=True RSI=True(53.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=94.6<=80,falling) Kextr=True RSI=False(53.1<47) MACD=False(gate off) => BLOCK
+2026-07-20 08:20:02,059 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY2672124200CE ltp=112.00 entry=86.37 pnl=+25.63(+29.7%) sl=0.00 peak=112.00 tr_armed=False elapsed=30min
+2026-07-20 08:25:05,851 [INFO] [INDICATORS] spot=24239.2 | 1h: close=24225.0 sma20=24188.2 sma50=24153.8 rsi=53.1 macd=28.72/28.58(bull) | 15m: K=94.6↑(prev 87.5) | regime=CE-eligible any_active=True
+2026-07-20 08:25:05,851 [INFO] [SIGNAL] CE: reg=True K=True(K=94.6>=38,rising) Kextr=True RSI=True(53.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=94.6<=80,falling) Kextr=True RSI=False(53.1<47) MACD=False(gate off) => BLOCK
+2026-07-20 08:25:05,852 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY2672124200CE ltp=100.00 entry=86.37 pnl=+13.63(+15.8%) sl=0.00 peak=112.00 tr_armed=False elapsed=35min
