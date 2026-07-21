@@ -484,3 +484,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-21 03:53:56,506 [INFO] [INDICATORS] spot=24241.5 | 1h: close=24239.5 sma20=24210.8 sma50=24167.5 rsi=54.1 macd=26.22/27.95(bear) | 15m: K=77.6↑(prev 76.8) | regime=CE-eligible any_active=True
 2026-07-21 03:53:56,506 [INFO] [SIGNAL] CE: reg=True K=True(K=77.6>=38,rising) Kextr=False RSI=True(54.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=77.6<=80,falling) Kextr=True RSI=False(54.1<47) MACD=True(gate off) => BLOCK
 2026-07-21 03:53:56,506 [INFO] [STATE][VWAP] CE NFO:NIFTY2672124200CE ltp=72.00 entry=72.60 pnl=-0.60(-0.8%) sl=59.53 peak=84.30 tr_armed=False elapsed=8min
+2026-07-21 03:58:30,285 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-21 03:59:00,548 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 03:59:00,548 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 03:59:00,548 [INFO] [INDICATORS] spot=24251.8 | 1h: close=24239.5 sma20=24210.8 sma50=24167.5 rsi=54.1 macd=26.22/27.95(bear) | 15m: K=77.6↑(prev 76.8) | regime=CE-eligible any_active=True
+2026-07-21 03:59:00,549 [INFO] [SIGNAL] CE: reg=True K=True(K=77.6>=38,rising) Kextr=False RSI=True(54.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=77.6<=80,falling) Kextr=True RSI=False(54.1<47) MACD=True(gate off) => BLOCK
+2026-07-21 03:59:00,549 [INFO] [STATE][VWAP] CE NFO:NIFTY2672124200CE ltp=78.45 entry=72.60 pnl=+5.85(+8.1%) sl=59.53 peak=84.30 tr_armed=False elapsed=13min
+2026-07-21 04:00:31,365 [INFO] [VWAP_TRAIL] Option 15m close 75.45 < VWAP 79.00 — exiting
+2026-07-21 04:00:31,365 [INFO] EXIT: NFO:NIFTY2672124200CE @ 73.60 reason=VWAP_TRAIL pnl/sh=+1.00 is_flip=False losses=0/4
