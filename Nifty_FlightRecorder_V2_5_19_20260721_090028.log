@@ -416,3 +416,42 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-21 03:41:11,809 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
 2026-07-21 03:41:13,834 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
 2026-07-21 03:41:17,835 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:41:19,222 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-21 03:41:49,398 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:41:50,418 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:41:52,434 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:41:56,435 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:41:56,435 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 03:41:56,436 [INFO] [INDICATORS] spot=24239.5 | 1h: close=24238.2 sma20=24205.1 sma50=24161.6 rsi=53.9 macd=27.45/28.38(bear) | 15m: K=76.8↓(prev 83.3) | regime=CE-eligible halted=False active=False
+2026-07-21 03:41:56,437 [INFO] [SIGNAL] CE: reg=True K=False(K=76.8>=38,rising) Kextr=False RSI=True(53.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=76.8<=80,falling) Kextr=True RSI=False(53.9<47) MACD=True => BLOCK
+2026-07-21 03:42:26,668 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:42:27,686 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:42:29,703 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:42:33,704 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:43:03,874 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:43:04,892 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:43:06,910 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:43:10,910 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:43:41,083 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:43:42,100 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:43:44,117 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:43:48,117 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:44:18,289 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:44:19,308 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:44:21,325 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:44:25,326 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:44:55,503 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:44:56,521 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:44:58,537 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:45:02,538 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:45:32,704 [INFO] [MVWAP] Signal — 24269>24244 body=80% side=CE (morning exception)
+2026-07-21 03:45:32,745 [INFO] ENTRY: NFO:NIFTY2672124200CE @ 95.05  engine=VWAP  detail=MORNING FUT VWAP 24269>24244 body=80% pivΔ=23pt | bar=149
+2026-07-21 03:46:03,880 [INFO] [CB] losses=1/4 (reason=HARDSL_-18pct)
+2026-07-21 03:46:03,881 [INFO] EXIT: NFO:NIFTY2672124200CE @ 77.94 reason=HARDSL_-18pct pnl/sh=-17.11 is_flip=False losses=1/4
