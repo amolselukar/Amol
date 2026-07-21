@@ -638,3 +638,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-21 05:03:08,428 [INFO] [INDICATORS] spot=24194.0 | 1h: close=24212.3 sma20=24213.5 sma50=24172.1 rsi=50.9 macd=22.78/26.92(bear) | 15m: K=15.2↓(prev 40.6) | regime=NEUTRAL halted=False active=True
 2026-07-21 05:03:08,428 [INFO] [SIGNAL] CE: reg=False K=False(K=15.2>=38,rising) Kextr=True RSI=False(50.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=15.2<=80,falling) Kextr=True RSI=False(50.9<47) MACD=True => BLOCK
 2026-07-21 05:03:08,429 [INFO] [STATE] PE NFO:NIFTY2672124200PE ltp=47.55 entry=42.20 pnl=+5.35(+12.7%) sl=34.60 peak=50.00 tr_armed=False elapsed=17min
+2026-07-21 05:07:42,367 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-21 05:08:12,646 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 05:08:12,647 [INFO] [INDICATORS] spot=24190.8 | 1h: close=24212.3 sma20=24213.5 sma50=24172.1 rsi=50.9 macd=22.78/26.92(bear) | 15m: K=15.2↓(prev 40.6) | regime=NEUTRAL halted=False active=True
+2026-07-21 05:08:12,647 [INFO] [SIGNAL] CE: reg=False K=False(K=15.2>=38,rising) Kextr=True RSI=False(50.9>53) MACD=False => BLOCK | PE: reg=False K=False(K=15.2<=80,falling) Kextr=True RSI=False(50.9<47) MACD=True => BLOCK
+2026-07-21 05:08:12,647 [INFO] [STATE] PE NFO:NIFTY2672124200PE ltp=48.25 entry=42.20 pnl=+6.05(+14.3%) sl=34.60 peak=51.45 tr_armed=False elapsed=22min
+2026-07-21 05:11:15,034 [INFO] EXIT: NFO:NIFTY2672124200PE @ 55.00 reason=TRAIL_+13 pnl/sh=+12.80 is_flip=False losses=1/4
+2026-07-21 05:11:46,073 [INFO] [CHOPGATE] Clear to trade — ER=1.00 crosses=1 range=99pt
