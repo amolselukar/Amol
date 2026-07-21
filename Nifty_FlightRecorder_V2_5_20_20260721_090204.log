@@ -636,3 +636,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-21 04:54:56,768 [INFO] [INDICATORS] spot=24192.3 | 1h: close=24212.3 sma20=24213.5 sma50=24172.1 rsi=50.9 macd=22.78/26.92(bear) | 15m: K=40.6↓(prev 70.9) | regime=NEUTRAL any_active=True
 2026-07-21 04:54:56,768 [INFO] [SIGNAL] CE: reg=False K=False(K=40.6>=38,rising) Kextr=False RSI=False(50.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=40.6<=80,falling) Kextr=True RSI=False(50.9<47) MACD=True(gate off) => BLOCK
 2026-07-21 04:54:56,768 [INFO] [STATE][VWAP] PE NFO:NIFTY2672124200PE ltp=47.05 entry=44.55 pnl=+2.50(+5.6%) sl=36.53 peak=50.10 tr_armed=False elapsed=9min
+2026-07-21 04:59:31,590 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-21 05:00:01,878 [INFO] [CHOPGATE] Clear to trade — ER=1.00 crosses=1 range=99pt
+2026-07-21 05:00:02,005 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 05:00:02,108 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 05:00:02,109 [INFO] [INDICATORS] spot=24199.5 | 1h: close=24212.3 sma20=24213.5 sma50=24172.1 rsi=50.9 macd=22.78/26.92(bear) | 15m: K=40.6↓(prev 70.9) | regime=NEUTRAL any_active=True
+2026-07-21 05:00:02,109 [INFO] [SIGNAL] CE: reg=False K=False(K=40.6>=38,rising) Kextr=False RSI=False(50.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=40.6<=80,falling) Kextr=True RSI=False(50.9<47) MACD=True(gate off) => BLOCK
+2026-07-21 05:00:02,109 [INFO] [STATE][VWAP] PE NFO:NIFTY2672124200PE ltp=42.25 entry=44.55 pnl=-2.30(-5.2%) sl=36.53 peak=52.20 tr_armed=False elapsed=14min
