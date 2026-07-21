@@ -431,3 +431,29 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-21 03:42:47,874 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
 2026-07-21 03:42:49,889 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
 2026-07-21 03:42:53,889 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:42:55,228 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-21 03:43:25,433 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:43:26,448 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:43:28,462 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:43:32,463 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:43:32,463 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 03:43:32,463 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-21 03:43:32,464 [INFO] [INDICATORS] spot=24239.5 | 1h: close=24238.2 sma20=24205.1 sma50=24161.6 rsi=53.9 macd=27.45/28.38(bear) | 15m: K=76.8↓(prev 83.3) | regime=CE-eligible any_active=False
+2026-07-21 03:43:32,464 [INFO] [SIGNAL] CE: reg=True K=False(K=76.8>=38,rising) Kextr=False RSI=True(53.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=76.8<=80,falling) Kextr=True RSI=False(53.9<47) MACD=True(gate off) => BLOCK
+2026-07-21 03:44:02,683 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:44:03,698 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:44:05,713 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:44:09,713 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:44:39,948 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-21 03:44:40,963 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-21 03:44:42,981 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-21 03:44:46,982 [ERROR] Kite call historical_data terminal failure
+2026-07-21 03:45:17,192 [INFO] [MVWAP] Signal — 24269>24230 body=80% side=CE (morning exception)
+2026-07-21 03:45:17,230 [INFO] ENTRY: NFO:NIFTY2672124200CE @ 72.60  engine=VWAP  detail=MORNING FUT VWAP 24269>24230 body=80% pivΔ=23pt | bar=149
