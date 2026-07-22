@@ -1238,3 +1238,26 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 08:32:22,417 [INFO] [VWAP] Climax skip — body=90% >= 87%
 2026-07-22 08:32:52,753 [INFO] [VWAP] Climax skip — body=90% >= 87%
 2026-07-22 08:33:23,104 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:33:24,646 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 08:33:54,888 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:33:54,933 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 08:33:55,013 [INFO] [T5] open=1 trades=1 realized=-11.3pt/Rs-738 unreal=-14.7pt/Rs-955
+2026-07-22 08:33:55,014 [INFO] [INDICATORS] spot=23979.0 | 1h: close=23978.8 sma20=24176.4 sma50=24157.8 rsi=30.7 macd=-42.78/-13.76(bear) | 15m: K=78.1↑(prev 74.8) | regime=NEUTRAL any_active=False
+2026-07-22 08:33:55,014 [INFO] [SIGNAL] CE: reg=False K=True(K=78.1>=38,rising) Kextr=False RSI=False(30.7>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=78.1<=80,falling) Kextr=True RSI=True(30.7<47) MACD=True(gate off) => BLOCK
+2026-07-22 08:34:25,266 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:34:55,609 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:35:25,945 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:35:56,341 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:36:26,688 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:36:57,016 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:37:27,365 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:37:58,540 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:37:58,599 [INFO] [T5] EXIT CE 24000 156.3->138.8 -17.6pt Rs-1144 [stop] | day -28.9pt Rs-1882
+2026-07-22 08:38:29,641 [INFO] [VWAP] Climax skip — body=90% >= 87%
