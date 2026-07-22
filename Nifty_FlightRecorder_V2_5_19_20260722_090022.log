@@ -369,3 +369,50 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 03:35:29,406 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
 2026-07-22 03:35:31,420 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
 2026-07-22 03:35:35,421 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:35:36,860 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 03:36:07,039 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:36:08,054 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:36:10,069 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:36:14,069 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:36:14,069 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 03:36:14,070 [INFO] [INDICATORS] spot=24193.0 | 1h: close=24184.1 sma20=24231.4 sma50=24170.8 rsi=48.7 macd=1.53/13.19(bear) | 15m: K=90.4↑(prev 78.0) | regime=NEUTRAL halted=False active=False
+2026-07-22 03:36:14,070 [INFO] [SIGNAL] CE: reg=False K=True(K=90.4>=38,rising) Kextr=False RSI=False(48.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=90.4<=80,falling) Kextr=True RSI=False(48.7<47) MACD=True => BLOCK
+2026-07-22 03:36:44,251 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:36:45,265 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:36:47,280 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:36:51,280 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:37:21,451 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:37:22,464 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:37:24,478 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:37:28,478 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:37:58,653 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:37:59,668 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:38:01,681 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:38:05,681 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:38:35,860 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:38:36,875 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:38:38,889 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:38:42,890 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:39:13,066 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:39:14,081 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:39:16,096 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:39:20,097 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:39:50,291 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:39:51,306 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:39:53,322 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:39:57,322 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:40:27,489 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:40:28,506 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:40:30,520 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:40:34,521 [ERROR] Kite call historical_data terminal failure
+2026-07-22 03:41:04,696 [WARNING] Kite call failed (historical_data) attempt 1: from date cannot be after to date
+2026-07-22 03:41:05,710 [WARNING] Kite call failed (historical_data) attempt 2: from date cannot be after to date
+2026-07-22 03:41:07,724 [WARNING] Kite call failed (historical_data) attempt 3: from date cannot be after to date
+2026-07-22 03:41:11,725 [ERROR] Kite call historical_data terminal failure
