@@ -1136,3 +1136,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 08:25:57,384 [INFO] [INDICATORS] spot=23979.9 | 1h: close=23978.8 sma20=24176.4 sma50=24157.8 rsi=30.7 macd=-42.78/-13.76(bear) | 15m: K=74.8↑(prev 72.5) | regime=NEUTRAL halted=False active=False
 2026-07-22 08:25:57,384 [INFO] [SIGNAL] CE: reg=False K=True(K=74.8>=38,rising) Kextr=False RSI=False(30.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=74.8<=80,falling) Kextr=False RSI=True(30.7<47) MACD=True => BLOCK
 2026-07-22 08:30:29,759 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:30:31,217 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 08:31:01,473 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:31:01,518 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 08:31:01,519 [INFO] [INDICATORS] spot=23979.0 | 1h: close=23978.8 sma20=24176.4 sma50=24157.8 rsi=30.7 macd=-42.78/-13.76(bear) | 15m: K=78.1↑(prev 74.8) | regime=NEUTRAL halted=False active=False
+2026-07-22 08:31:01,519 [INFO] [SIGNAL] CE: reg=False K=True(K=78.1>=38,rising) Kextr=False RSI=False(30.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=78.1<=80,falling) Kextr=True RSI=True(30.7<47) MACD=True => BLOCK
+2026-07-22 08:31:31,694 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:32:01,910 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:32:32,144 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:33:02,384 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:33:32,619 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:34:02,845 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:34:33,075 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:35:03,315 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:35:34,401 [INFO] [VWAP] Climax skip — body=90% >= 87%
