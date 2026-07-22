@@ -838,3 +838,23 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 05:50:56,643 [INFO] [INDICATORS] spot=24024.7 | 1h: close=24013.7 sma20=24205.8 sma50=24164.9 rsi=33.1 macd=-23.50/0.31(bear) | 15m: K=20.6↑(prev 12.7) | regime=NEUTRAL any_active=True
 2026-07-22 05:50:56,643 [INFO] [SIGNAL] CE: reg=False K=False(K=20.6>=38,rising) Kextr=True RSI=False(33.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=20.6<=80,falling) Kextr=False RSI=True(33.1<47) MACD=True(gate off) => BLOCK
 2026-07-22 05:50:56,644 [INFO] [STATE][VWAP] PE NFO:NIFTY26JUL24000PE ltp=151.45 entry=171.00 pnl=-19.55(-11.4%) sl=140.22 peak=171.00 tr_armed=False elapsed=35min
+2026-07-22 05:55:31,195 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 05:56:01,557 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 05:56:01,558 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 05:56:01,558 [INFO] [INDICATORS] spot=24039.3 | 1h: close=24013.7 sma20=24205.8 sma50=24164.9 rsi=33.1 macd=-23.50/0.31(bear) | 15m: K=20.6↑(prev 12.7) | regime=NEUTRAL any_active=True
+2026-07-22 05:56:01,558 [INFO] [SIGNAL] CE: reg=False K=False(K=20.6>=38,rising) Kextr=True RSI=False(33.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=20.6<=80,falling) Kextr=False RSI=True(33.1<47) MACD=True(gate off) => BLOCK
+2026-07-22 05:56:01,558 [INFO] [STATE][VWAP] PE NFO:NIFTY26JUL24000PE ltp=142.60 entry=171.00 pnl=-28.40(-16.6%) sl=140.22 peak=171.00 tr_armed=False elapsed=40min
+2026-07-22 06:00:05,319 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=2/4 (reason=HARDSL_-18pct)
+2026-07-22 06:00:05,319 [INFO] EXIT: NFO:NIFTY26JUL24000PE @ 140.22 reason=HARDSL_-18pct pnl/sh=-30.78 is_flip=False losses=2/4
+2026-07-22 06:00:06,213 [INFO] [VWAP_TRAIL] Option 15m close 142.85 < VWAP 150.11 — exiting
+2026-07-22 06:00:06,213 [INFO] [CB] VWAP loss (own count 3) — TOTAL across all engines=3/4 (reason=VWAP_TRAIL)
+2026-07-22 06:00:06,213 [INFO] EXIT: NFO:NIFTY26JUL24000PE @ 140.85 reason=VWAP_TRAIL pnl/sh=-17.40 is_flip=False losses=3/4
+2026-07-22 06:00:07,261 [INFO] [VWAP] Signal — FUT 24029<24031 body=79% side=PE
+2026-07-22 06:00:07,264 [INFO] [VETO] VWAP PE BLOCKED — PE into an UPtrend: spot 24040.0 is +8.1 above FUT VWAP 24031.9 (buffer 5)
