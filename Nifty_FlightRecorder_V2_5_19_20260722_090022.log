@@ -517,3 +517,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 04:05:44,359 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
 2026-07-22 04:06:14,544 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
 2026-07-22 04:06:44,739 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:06:46,135 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 04:07:16,304 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:07:16,324 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 04:07:16,325 [INFO] [INDICATORS] spot=24018.7 | 1h: close=24193.0 sma20=24229.0 sma50=24170.4 rsi=49.9 macd=1.17/10.79(bear) | 15m: K=66.7↓(prev 98.7) | regime=NEUTRAL halted=False active=False
+2026-07-22 04:07:16,325 [INFO] [SIGNAL] CE: reg=False K=False(K=66.7>=38,rising) Kextr=False RSI=False(49.9>53) MACD=False => BLOCK | PE: reg=False K=True(K=66.7<=80,falling) Kextr=True RSI=False(49.9<47) MACD=True => BLOCK
+2026-07-22 04:07:46,491 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:08:16,673 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:08:46,862 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:09:17,050 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:09:47,245 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:10:17,431 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:10:47,620 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:11:17,803 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
+2026-07-22 04:11:47,988 [INFO] [MVWAP] Skip — close 24051 only 19pt from a pivot (need >20)
