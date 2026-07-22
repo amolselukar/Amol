@@ -1157,3 +1157,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 08:34:33,075 [INFO] [VWAP] Climax skip — body=90% >= 87%
 2026-07-22 08:35:03,315 [INFO] [VWAP] Climax skip — body=90% >= 87%
 2026-07-22 08:35:34,401 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:35:35,807 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 08:36:05,988 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:36:06,036 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 08:36:06,037 [INFO] [INDICATORS] spot=23976.5 | 1h: close=23978.8 sma20=24176.4 sma50=24157.8 rsi=30.7 macd=-42.78/-13.76(bear) | 15m: K=78.1↑(prev 74.8) | regime=NEUTRAL halted=False active=False
+2026-07-22 08:36:06,037 [INFO] [SIGNAL] CE: reg=False K=True(K=78.1>=38,rising) Kextr=False RSI=False(30.7>53) MACD=False => BLOCK | PE: reg=False K=False(K=78.1<=80,falling) Kextr=True RSI=True(30.7<47) MACD=True => BLOCK
+2026-07-22 08:36:36,231 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:37:06,447 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:37:36,670 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:38:06,892 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:38:37,119 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:39:07,343 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:39:37,582 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:40:07,811 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-22 08:40:38,035 [INFO] [VWAP] Climax skip — body=90% >= 87%
