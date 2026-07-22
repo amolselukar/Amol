@@ -798,3 +798,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-22 05:53:48,557 [INFO] [INDICATORS] spot=24039.5 | 1h: close=24013.7 sma20=24205.8 sma50=24164.9 rsi=33.1 macd=-23.50/0.31(bear) | 15m: K=20.6↑(prev 12.7) | regime=NEUTRAL halted=False active=True
 2026-07-22 05:53:48,557 [INFO] [SIGNAL] CE: reg=False K=False(K=20.6>=38,rising) Kextr=True RSI=False(33.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=20.6<=80,falling) Kextr=False RSI=True(33.1<47) MACD=True => BLOCK
 2026-07-22 05:53:48,557 [INFO] [STATE] PE NFO:NIFTY26JUL24000PE ltp=143.95 entry=170.55 pnl=-26.60(-15.6%) sl=139.85 peak=170.55 tr_armed=False elapsed=38min
+2026-07-22 05:58:22,354 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-22 05:58:52,637 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-22 05:58:52,638 [INFO] [INDICATORS] spot=24039.7 | 1h: close=24013.7 sma20=24205.8 sma50=24164.9 rsi=33.1 macd=-23.50/0.31(bear) | 15m: K=20.6↑(prev 12.7) | regime=NEUTRAL halted=False active=True
+2026-07-22 05:58:52,638 [INFO] [SIGNAL] CE: reg=False K=False(K=20.6>=38,rising) Kextr=True RSI=False(33.1>53) MACD=False => BLOCK | PE: reg=False K=False(K=20.6<=80,falling) Kextr=False RSI=True(33.1<47) MACD=True => BLOCK
+2026-07-22 05:58:52,638 [INFO] [STATE] PE NFO:NIFTY26JUL24000PE ltp=142.70 entry=170.55 pnl=-27.85(-16.3%) sl=139.85 peak=170.55 tr_armed=False elapsed=43min
+2026-07-22 06:00:24,380 [INFO] [CB] losses=2/4 (reason=SMA8_LOW_TRAIL)
+2026-07-22 06:00:24,380 [INFO] EXIT: NFO:NIFTY26JUL24000PE @ 140.90 reason=SMA8_LOW_TRAIL pnl/sh=-29.65 is_flip=False losses=2/4
+2026-07-22 06:00:55,511 [INFO] [VWAP] Signal — FUT 24029<24031 body=79% side=PE
+2026-07-22 06:00:55,511 [INFO] [REENTRY_CD] BLOCKED VWAP PE — same-side re-entry 0.5min after last PE exit (cooldown 5min)
