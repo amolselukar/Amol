@@ -944,3 +944,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 07:04:19,577 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 1.6min after last PE exit (cooldown 5min)
 2026-07-23 07:04:50,646 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 2.1min after last PE exit (cooldown 5min)
 2026-07-23 07:05:22,602 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 2.6min after last PE exit (cooldown 5min)
+2026-07-23 07:05:24,939 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 07:05:55,158 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 3.1min after last PE exit (cooldown 5min)
+2026-07-23 07:05:56,015 [INFO] [APEX] open=0 trades=6 realized=-45.7pt/Rs-2970 unreal=+0.0pt/Rs+0
+2026-07-23 07:05:56,016 [INFO] [INDICATORS] spot=23892.1 | 1h: close=23934.8 sma20=24093.3 sma50=24133.2 rsi=31.9 macd=-62.71/-45.96(bear) | 15m: K=47.2↓(prev 56.6) | regime=PE-eligible halted=False active=False
+2026-07-23 07:05:56,016 [INFO] [SIGNAL] CE: reg=False K=False(K=47.2>=38,rising) Kextr=False RSI=False(31.9>53) MACD=False => BLOCK | PE: reg=True K=True(K=47.2<=80,falling) Kextr=False RSI=True(31.9<47) MACD=True => BLOCK
+2026-07-23 07:06:26,231 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 3.7min after last PE exit (cooldown 5min)
+2026-07-23 07:06:57,330 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 4.2min after last PE exit (cooldown 5min)
+2026-07-23 07:07:28,410 [INFO] [REENTRY_CD] BLOCKED V3 PE — same-side re-entry 4.7min after last PE exit (cooldown 5min)
+2026-07-23 07:07:59,565 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 143.85  engine=V3  detail=Grade A R-cluster BREAK-PE at 23958
