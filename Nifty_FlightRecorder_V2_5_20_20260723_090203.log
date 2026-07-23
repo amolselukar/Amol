@@ -600,3 +600,25 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 04:33:29,168 [INFO] [GAPBREAK] Range-break detected — close 23954.4 broke [23876.2,23952.0] side=CE (gap=-86.2)
 2026-07-23 04:34:00,486 [INFO] [CB] V2 loss (own count 3) — TOTAL across all engines=3/4 (reason=HARDSL_-18pct)
 2026-07-23 04:34:00,486 [INFO] EXIT: NFO:NIFTY26JUL23900PE @ 102.58 reason=HARDSL_-18pct pnl/sh=-22.52 is_flip=False losses=3/4
+2026-07-23 04:34:33,337 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 04:35:03,809 [INFO] [APEX] open=0 trades=2 realized=-12.9pt/Rs-839 unreal=+0.0pt/Rs+0
+2026-07-23 04:35:03,884 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-23 04:35:03,885 [INFO] [INDICATORS] spot=23961.2 | 1h: close=23991.0 sma20=24131.4 sma50=24144.7 rsi=35.1 macd=-53.64/-32.30(bear) | 15m: K=18.7↓(prev 25.3) | regime=PE-eligible any_active=True
+2026-07-23 04:35:03,885 [INFO] [SIGNAL] CE: reg=False K=False(K=18.7>=38,rising) Kextr=True RSI=False(35.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=18.7<=80,falling) Kextr=True RSI=True(35.1<47) MACD=True(gate off) => BLOCK
+2026-07-23 04:35:03,885 [INFO] [STATE][BASE] PE NFO:NIFTY26JUL23900PE ltp=102.85 entry=121.15 pnl=-18.30(-15.1%) sl=99.34 peak=128.30 tr_armed=False elapsed=19min
+2026-07-23 04:35:03,886 [INFO] [STATE][VWAP] CE NFO:NIFTY26JUL23900CE ltp=172.35 entry=159.15 pnl=+13.20(+8.3%) sl=130.50 peak=172.80 tr_armed=False elapsed=4min
+2026-07-23 04:35:03,886 [INFO] [STATE][ORB] CE NFO:NIFTY26JUL24000CE ltp=119.60 entry=114.90 pnl=+4.70(+4.1%) sl=0.00 peak=119.60 tr_armed=False elapsed=2min
+2026-07-23 04:35:34,290 [INFO] [GAPBREAK] Confirmed — bar close 23960.8 > ref 23954.4
+2026-07-23 04:35:34,325 [INFO] ENTRY: NFO:NIFTY26JUL24000CE @ 118.40  engine=GAPBREAK  detail=GAP break confirmed, gap=-86
+2026-07-23 04:39:08,637 [INFO] [CB] V2 loss (own count 4) — TOTAL across all engines=4/4 (reason=HARDSL_-18pct)
+2026-07-23 04:39:09,438 [INFO] EXIT: NFO:NIFTY26JUL23900PE @ 100.94 reason=HARDSL_-18pct pnl/sh=-22.16 is_flip=False losses=4/4
+2026-07-23 04:39:41,445 [INFO] [CB] V2 loss (own count 5) — TOTAL across all engines=5/4 (reason=HARDSL_-18pct)
+2026-07-23 04:39:41,445 [INFO] EXIT: NFO:NIFTY26JUL23900PE @ 99.34 reason=HARDSL_-18pct pnl/sh=-21.81 is_flip=False losses=5/4
+2026-07-23 04:39:42,290 [INFO] [TRAIL] SL ratcheted 170.10 → 172.70  (peak=177.70)
