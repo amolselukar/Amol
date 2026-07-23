@@ -626,3 +626,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 04:53:19,506 [INFO] [APEX] open=2 trades=2 realized=-16.6pt/Rs-1079 unreal=+6.1pt/Rs+393
 2026-07-23 04:53:19,508 [INFO] [INDICATORS] spot=23948.2 | 1h: close=23957.3 sma20=24118.5 sma50=24139.6 rsi=32.5 macd=-57.83/-37.40(bear) | 15m: K=36.5↑(prev 18.7) | regime=PE-eligible halted=False active=False
 2026-07-23 04:53:19,508 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(32.5>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(32.5<47) MACD=True => BLOCK
+2026-07-23 04:57:54,592 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 04:58:24,855 [INFO] [APEX] EXIT PE 24000 152.3->142.0 -10.3pt Rs-670 [stop] | day -26.9pt Rs-1749
+2026-07-23 04:58:25,775 [INFO] [APEX] open=1 trades=3 realized=-26.9pt/Rs-1749 unreal=-9.0pt/Rs-588
+2026-07-23 04:58:25,776 [INFO] [INDICATORS] spot=23968.3 | 1h: close=23957.3 sma20=24118.5 sma50=24139.6 rsi=32.5 macd=-57.83/-37.40(bear) | 15m: K=36.5↑(prev 18.7) | regime=PE-eligible halted=False active=False
+2026-07-23 04:58:25,776 [INFO] [SIGNAL] CE: reg=False K=False(K=36.5>=38,rising) Kextr=True RSI=False(32.5>53) MACD=False => BLOCK | PE: reg=True K=False(K=36.5<=80,falling) Kextr=False RSI=True(32.5<47) MACD=True => BLOCK
+2026-07-23 04:59:26,375 [INFO] [APEX] EXIT PE 24000 151.4->143.8 -7.7pt Rs-500 [exhaust] | day -34.6pt Rs-2249
+2026-07-23 05:00:27,925 [INFO] [CHOPGATE] Clear to trade — ER=0.72 crosses=2 range=105pt
+2026-07-23 05:00:27,976 [INFO] ENTRY: NFO:NIFTY26JUL24000CE @ 120.80  engine=FLIP  detail=FLIP PE->CE K=62.3 (prev 36.5) age=21min flips_today=2/3
