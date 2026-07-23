@@ -540,3 +540,25 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 04:16:27,427 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 125.10  engine=V2  detail=K=25.3↓ RSI=35.2 MACD✓
 2026-07-23 04:16:58,954 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 126.95  engine=V2  detail=K=25.3↓ RSI=35.2 MACD✓
 2026-07-23 04:17:30,450 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 127.25  engine=V2  detail=K=25.3↓ RSI=35.2 MACD✓
+2026-07-23 04:19:05,757 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 04:19:36,383 [INFO] [APEX] open=0 trades=2 realized=-12.9pt/Rs-839 unreal=+0.0pt/Rs+0
+2026-07-23 04:19:36,463 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-23 04:19:36,464 [INFO] [INDICATORS] spot=23913.9 | 1h: close=23991.0 sma20=24131.4 sma50=24144.7 rsi=35.2 macd=-53.64/-32.30(bear) | 15m: K=25.3↓(prev 58.6) | regime=PE-eligible any_active=True
+2026-07-23 04:19:36,464 [INFO] [SIGNAL] CE: reg=False K=False(K=25.3>=38,rising) Kextr=False RSI=False(35.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=25.3<=80,falling) Kextr=True RSI=True(35.2<47) MACD=True(gate off) => PASS
+2026-07-23 04:19:36,464 [INFO] [STATE][BASE] PE NFO:NIFTY26JUL23900PE ltp=122.15 entry=121.15 pnl=+1.00(+0.8%) sl=99.34 peak=128.30 tr_armed=False elapsed=4min
+2026-07-23 04:20:07,040 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:20:37,698 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:21:08,364 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:21:38,921 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:22:09,457 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:22:40,057 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:23:10,661 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:23:41,264 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
+2026-07-23 04:24:11,854 [INFO] [FUT5VWAP] Skip — close 23929 only 16pt from a pivot (need >20)
