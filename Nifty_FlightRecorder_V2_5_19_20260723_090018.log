@@ -1296,3 +1296,14 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 09:12:50,160 [INFO] [APEX] open=0 trades=6 realized=-45.7pt/Rs-2970 unreal=+0.0pt/Rs+0
 2026-07-23 09:12:50,161 [INFO] [INDICATORS] spot=23839.8 | 1h: close=23850.6 sma20=24052.9 sma50=24123.4 rsi=28.3 macd=-78.55/-56.79(bear) | 15m: K=43.3↑(prev 35.5) | regime=PE-eligible halted=False active=False
 2026-07-23 09:12:50,161 [INFO] [SIGNAL] CE: reg=False K=True(K=43.3>=38,rising) Kextr=True RSI=False(28.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=43.3<=80,falling) Kextr=False RSI=True(28.3<47) MACD=True => BLOCK
+2026-07-23 09:17:24,466 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 09:17:54,735 [INFO] [APEX] open=0 trades=6 realized=-45.7pt/Rs-2970 unreal=+0.0pt/Rs+0
+2026-07-23 09:17:54,736 [INFO] [INDICATORS] spot=23828.3 | 1h: close=23850.6 sma20=24052.9 sma50=24123.4 rsi=28.3 macd=-78.55/-56.79(bear) | 15m: K=41.4↓(prev 43.3) | regime=PE-eligible halted=False active=False
+2026-07-23 09:17:54,736 [INFO] [SIGNAL] CE: reg=False K=False(K=41.4>=38,rising) Kextr=False RSI=False(28.3>53) MACD=False => BLOCK | PE: reg=True K=True(K=41.4<=80,falling) Kextr=False RSI=True(28.3<47) MACD=True => BLOCK
