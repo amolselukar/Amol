@@ -996,3 +996,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 07:19:41,755 [INFO] [VWAP] Climax skip — body=89% >= 87%
 2026-07-23 07:20:12,010 [INFO] [VWAP] Climax skip — body=89% >= 87%
 2026-07-23 07:20:43,095 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:20:44,559 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 07:21:14,764 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:21:14,812 [INFO] [APEX] open=0 trades=6 realized=-45.7pt/Rs-2970 unreal=+0.0pt/Rs+0
+2026-07-23 07:21:14,813 [INFO] [INDICATORS] spot=23847.8 | 1h: close=23934.8 sma20=24093.3 sma50=24133.2 rsi=31.9 macd=-62.71/-45.96(bear) | 15m: K=25.1↓(prev 47.2) | regime=PE-eligible halted=False active=False
+2026-07-23 07:21:14,813 [INFO] [SIGNAL] CE: reg=False K=False(K=25.1>=38,rising) Kextr=False RSI=False(31.9>53) MACD=False => BLOCK | PE: reg=True K=True(K=25.1<=80,falling) Kextr=False RSI=True(31.9<47) MACD=True => BLOCK
+2026-07-23 07:21:45,033 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:22:15,320 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:22:45,544 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:23:15,760 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:23:45,978 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:24:16,206 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:24:46,430 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:25:16,651 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:25:46,874 [INFO] [VWAP] Climax skip — body=89% >= 87%
