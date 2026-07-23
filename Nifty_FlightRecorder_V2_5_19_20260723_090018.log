@@ -1205,3 +1205,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 08:45:55,475 [INFO] [VWAP] Climax skip — body=90% >= 87%
 2026-07-23 08:46:25,725 [INFO] [VWAP] Climax skip — body=90% >= 87%
 2026-07-23 08:46:55,965 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:46:57,399 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 08:47:27,602 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:47:27,650 [INFO] [APEX] open=0 trades=6 realized=-45.7pt/Rs-2970 unreal=+0.0pt/Rs+0
+2026-07-23 08:47:27,651 [INFO] [INDICATORS] spot=23861.8 | 1h: close=23850.6 sma20=24052.9 sma50=24123.4 rsi=28.3 macd=-78.55/-56.79(bear) | 15m: K=35.5↑(prev 26.7) | regime=PE-eligible halted=False active=False
+2026-07-23 08:47:27,651 [INFO] [SIGNAL] CE: reg=False K=False(K=35.5>=38,rising) Kextr=True RSI=False(28.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=35.5<=80,falling) Kextr=False RSI=True(28.3<47) MACD=True => BLOCK
+2026-07-23 08:47:57,846 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:48:28,102 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:48:58,354 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:49:28,658 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:49:58,923 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:50:29,181 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:50:59,446 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:51:29,711 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-07-23 08:52:00,791 [INFO] [VWAP] Climax skip — body=90% >= 87%
