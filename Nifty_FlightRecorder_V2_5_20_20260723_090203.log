@@ -456,3 +456,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 03:44:46,394 [ERROR] Kite call historical_data terminal failure
 2026-07-23 03:45:16,646 [INFO] [MVWAP] Signal — 23983>23891 body=85% side=CE (morning exception)
 2026-07-23 03:45:16,649 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 23884.9 is -5.9 below FUT VWAP 23890.8 (buffer 5)
+2026-07-23 03:48:21,530 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 03:48:51,826 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-23 03:48:51,870 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-23 03:48:51,871 [INFO] [INDICATORS] spot=23897.4 | 1h: close=23991.0 sma20=24131.4 sma50=24144.7 rsi=35.2 macd=-53.64/-32.30(bear) | 15m: K=79.9↑(prev 77.8) | regime=PE-eligible any_active=False
+2026-07-23 03:48:51,871 [INFO] [SIGNAL] CE: reg=False K=True(K=79.9>=38,rising) Kextr=False RSI=False(35.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=79.9<=80,falling) Kextr=True RSI=True(35.2<47) MACD=True(gate off) => BLOCK
+2026-07-23 03:50:22,793 [INFO] [STRADDLE] Reference: ₹276.2 at 09:20
