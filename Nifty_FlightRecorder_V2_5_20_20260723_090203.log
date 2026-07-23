@@ -1019,3 +1019,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 06:33:45,079 [WARNING] Kite call failed (historical_data) attempt 1: Too many requests
 2026-07-23 06:37:23,159 [INFO] [APEX] EXIT CE 24000 107.7->103.7 -4.0pt Rs-263 [exhaust] | day -30.7pt Rs-1996
 2026-07-23 06:37:24,036 [INFO] [APEX] EXIT CE 24000 107.1->103.5 -3.5pt Rs-231 [exhaust] | day -34.2pt Rs-2226
+2026-07-23 06:37:56,994 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 06:38:27,743 [INFO] [APEX] open=0 trades=6 realized=-34.2pt/Rs-2226 unreal=+0.0pt/Rs+0
+2026-07-23 06:38:27,743 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-23 06:38:27,744 [INFO] [INDICATORS] spot=23948.2 | 1h: close=23972.1 sma20=24107.8 sma50=24137.3 rsi=34.8 macd=-59.28/-41.78(bear) | 15m: K=59.0↓(prev 63.9) | regime=PE-eligible any_active=True
+2026-07-23 06:38:27,744 [INFO] [SIGNAL] CE: reg=False K=False(K=59.0>=38,rising) Kextr=False RSI=False(34.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=59.0<=80,falling) Kextr=True RSI=True(34.8<47) MACD=True(gate off) => PASS
+2026-07-23 06:38:27,744 [INFO] [STATE][BASE] PE NFO:NIFTY26JUL23900PE ltp=105.60 entry=113.05 pnl=-7.45(-6.6%) sl=92.70 peak=114.75 tr_armed=False elapsed=14min
+2026-07-23 06:38:27,745 [INFO] [STATE][ORB] CE NFO:NIFTY26JUL24000CE ltp=104.80 entry=114.90 pnl=-10.10(-8.8%) sl=0.00 peak=128.95 tr_armed=False elapsed=125min
+2026-07-23 06:38:27,745 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26JUL24000CE ltp=104.80 entry=118.40 pnl=-13.60(-11.5%) sl=0.00 peak=128.95 tr_armed=False elapsed=122min
+2026-07-23 06:40:30,824 [INFO] [FUT5VWAP] Signal — 23955>23951 body=83% side=CE (fixed +12pt target)
+2026-07-23 06:40:30,881 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26JUL24000CE
+2026-07-23 06:40:30,893 [INFO] ENTRY: NFO:NIFTY26JUL24000CE @ 108.50  engine=FUT5VWAP  detail=FUT5 VWAP cross 23955>23951 body=83% pivΔ=42pt | bar=224
