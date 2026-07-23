@@ -1036,3 +1036,14 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 07:28:50,316 [INFO] [VWAP] Climax skip — body=89% >= 87%
 2026-07-23 07:29:20,547 [INFO] [VWAP] Climax skip — body=89% >= 87%
 2026-07-23 07:29:50,765 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-07-23 07:30:52,696 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 07:31:22,916 [INFO] [APEX] open=0 trades=6 realized=-45.7pt/Rs-2970 unreal=+0.0pt/Rs+0
+2026-07-23 07:31:22,916 [INFO] [INDICATORS] spot=23846.2 | 1h: close=23934.8 sma20=24093.3 sma50=24133.2 rsi=31.9 macd=-62.71/-45.96(bear) | 15m: K=9.6↓(prev 25.1) | regime=PE-eligible halted=False active=False
+2026-07-23 07:31:22,916 [INFO] [SIGNAL] CE: reg=False K=False(K=9.6>=38,rising) Kextr=True RSI=False(31.9>53) MACD=False => BLOCK | PE: reg=True K=False(K=9.6<=80,falling) Kextr=False RSI=True(31.9<47) MACD=True => BLOCK
