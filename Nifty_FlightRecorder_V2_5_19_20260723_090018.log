@@ -513,3 +513,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-23 04:07:16,511 [INFO] [INDICATORS] spot=23901.7 | 1h: close=23991.0 sma20=24131.4 sma50=24144.7 rsi=35.2 macd=-53.64/-32.30(bear) | 15m: K=58.6↓(prev 79.9) | regime=PE-eligible halted=False active=False
 2026-07-23 04:07:16,511 [INFO] [SIGNAL] CE: reg=False K=False(K=58.6>=38,rising) Kextr=False RSI=False(35.2>53) MACD=False => BLOCK | PE: reg=True K=True(K=58.6<=80,falling) Kextr=True RSI=True(35.2<47) MACD=True => PASS
 2026-07-23 04:08:17,202 [INFO] [APEX] ENTRY PE 23900 @ 137.4 (level+RSI-turn+energy+diverge) open=2
+2026-07-23 04:11:52,038 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-23 04:12:22,500 [INFO] [APEX] open=2 trades=0 realized=+0.0pt/Rs+0 unreal=-22.2pt/Rs-1446
+2026-07-23 04:12:22,501 [INFO] [INDICATORS] spot=23913.8 | 1h: close=23991.0 sma20=24131.4 sma50=24144.7 rsi=35.2 macd=-53.64/-32.30(bear) | 15m: K=58.6↓(prev 79.9) | regime=PE-eligible halted=False active=False
+2026-07-23 04:12:22,501 [INFO] [SIGNAL] CE: reg=False K=False(K=58.6>=38,rising) Kextr=False RSI=False(35.2>53) MACD=False => BLOCK | PE: reg=True K=True(K=58.6<=80,falling) Kextr=True RSI=True(35.2<47) MACD=True => PASS
+2026-07-23 04:13:23,162 [INFO] [APEX] EXIT PE 23900 136.7->128.8 -7.8pt Rs-510 [exhaust] | day -7.8pt Rs-510
+2026-07-23 04:13:24,017 [INFO] [APEX] EXIT PE 23900 137.4->128.7 -8.8pt Rs-569 [exhaust] | day -16.6pt Rs-1079
+2026-07-23 04:15:26,846 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 120.80  engine=FLIP  detail=FLIP CE->PE K=25.3 (prev 58.6) dK=-33.3 age=24min flips_today=1/3
+2026-07-23 04:16:31,536 [WARNING] Kite call failed (historical_data) attempt 1: Too many requests
