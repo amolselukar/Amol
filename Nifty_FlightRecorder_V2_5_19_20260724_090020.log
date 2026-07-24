@@ -901,3 +901,22 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 06:49:20,873 [INFO] [SIGNAL] CE: reg=False K=True(K=84.4>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False => BLOCK | PE: reg=True K=False(K=84.4<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True => BLOCK
 2026-07-24 06:49:20,873 [INFO] [STATE] CE NFO:NIFTY26JUL23700CE ltp=141.90 entry=131.45 pnl=+10.45(+7.9%) sl=107.79 peak=144.60 tr_armed=False elapsed=31min
 2026-07-24 06:53:54,605 [INFO] [TRAIL] SL ratcheted 142.80 → 142.85  (peak=147.85)
+2026-07-24 06:53:56,058 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 06:54:26,266 [INFO] [TRAIL] SL ratcheted 142.85 → 148.75  (peak=153.75)
+2026-07-24 06:54:26,340 [INFO] [APEX] open=0 trades=2 realized=-26.2pt/Rs-1703 unreal=+0.0pt/Rs+0
+2026-07-24 06:54:26,340 [INFO] [INDICATORS] spot=23732.1 | 1h: close=23702.8 sma20=23938.8 sma50=24086.5 rsi=30.4 macd=-118.16/-88.48(bear) | 15m: K=84.4↑(prev 71.6) | regime=PE-eligible halted=False active=True
+2026-07-24 06:54:26,340 [INFO] [SIGNAL] CE: reg=False K=True(K=84.4>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False => BLOCK | PE: reg=True K=False(K=84.4<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True => BLOCK
+2026-07-24 06:54:26,341 [INFO] [STATE] CE NFO:NIFTY26JUL23700CE ltp=153.75 entry=131.45 pnl=+22.30(+17.0%) sl=148.75 peak=153.75 tr_armed=True elapsed=36min
+2026-07-24 06:54:56,531 [INFO] [TRAIL] SL ratcheted 148.75 → 151.85  (peak=156.85)
+2026-07-24 06:55:26,872 [INFO] [TRAIL] SL ratcheted 151.85 → 154.20  (peak=159.20)
+2026-07-24 06:55:57,177 [INFO] [TRAIL] SL ratcheted 154.20 → 158.75  (peak=163.75)
+2026-07-24 06:56:27,439 [INFO] [TRAIL] SL ratcheted 158.75 → 169.95  (peak=174.95)
+2026-07-24 06:56:57,706 [INFO] [TRAIL] SL ratcheted 169.95 → 173.45  (peak=178.45)
+2026-07-24 06:57:28,089 [INFO] EXIT: NFO:NIFTY26JUL23700CE @ 173.45 reason=TRAIL_+42 pnl/sh=+42.00 is_flip=True losses=2/4
