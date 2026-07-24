@@ -584,3 +584,23 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 04:29:20,429 [INFO] [STATE][BASE] PE NFO:NIFTY26JUL23600PE ltp=96.35 entry=98.80 pnl=-2.45(-2.5%) sl=81.02 peak=98.80 tr_armed=False elapsed=5min
 2026-07-24 04:29:20,430 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23600PE ltp=96.35 entry=101.40 pnl=-5.05(-5.0%) sl=0.00 peak=108.00 tr_armed=False elapsed=8min
 2026-07-24 04:29:20,430 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23700PE ltp=142.00 entry=139.30 pnl=+2.70(+1.9%) sl=0.00 peak=142.70 tr_armed=False elapsed=4min
+2026-07-24 04:29:21,825 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 04:33:28,894 [INFO] [TRAIL] SL ratcheted 152.00 → 157.00  (peak=162.00)
+2026-07-24 04:33:28,947 [INFO] [TRAIL] SL ratcheted 152.75 → 157.00  (peak=162.00)
+2026-07-24 04:34:30,883 [INFO] EXIT: NFO:NIFTY26JUL23700PE @ 157.00 reason=TRAIL_+16 pnl/sh=+15.60 is_flip=False losses=0/4
+2026-07-24 04:34:31,746 [INFO] EXIT: NFO:NIFTY26JUL23700PE @ 157.00 reason=TRAIL_+17 pnl/sh=+17.10 is_flip=False losses=0/4
+2026-07-24 04:34:32,597 [INFO] EXIT: NFO:NIFTY26JUL23700PE @ 157.00 reason=TRAIL_+14 pnl/sh=+13.70 is_flip=False losses=0/4
+2026-07-24 04:34:33,545 [INFO] EXIT: NFO:NIFTY26JUL23700PE @ 154.30 reason=GAPBREAK_LOCK_FLOOR pnl/sh=+15.00 is_flip=False losses=0/4
+2026-07-24 04:34:34,447 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 04:34:34,448 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 04:34:34,448 [INFO] [INDICATORS] spot=23627.5 | 1h: close=23871.7 sma20=24017.6 sma50=24116.0 rsi=31.5 macd=-80.87/-65.37(bear) | 15m: K=0.0↓(prev 32.8) | regime=PE-eligible any_active=True
+2026-07-24 04:34:34,448 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(31.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=0.0<=80,falling) Kextr=True RSI=True(31.5<47) MACD=True(gate off) => BLOCK
+2026-07-24 04:34:34,448 [INFO] [STATE][BASE] PE NFO:NIFTY26JUL23600PE ltp=106.00 entry=98.80 pnl=+7.20(+7.3%) sl=81.02 peak=112.90 tr_armed=False elapsed=10min
+2026-07-24 04:34:34,449 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23600PE ltp=105.90 entry=101.40 pnl=+4.50(+4.4%) sl=0.00 peak=111.45 tr_armed=False elapsed=14min
