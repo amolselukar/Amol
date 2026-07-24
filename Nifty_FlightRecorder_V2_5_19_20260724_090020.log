@@ -738,3 +738,20 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 05:48:15,373 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-07-24 05:48:15,373 [INFO] [INDICATORS] spot=23641.6 | 1h: close=23624.2 sma20=23961.2 sma50=24095.9 rsi=21.3 macd=-115.03/-81.06(bear) | 15m: K=25.9↑(prev 22.0) | regime=PE-eligible halted=False active=False
 2026-07-24 05:48:15,374 [INFO] [SIGNAL] CE: reg=False K=False(K=25.9>=38,rising) Kextr=True RSI=False(21.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=25.9<=80,falling) Kextr=False RSI=True(21.3<47) MACD=True => BLOCK
+2026-07-24 05:52:49,002 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 05:53:19,249 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 05:53:19,250 [INFO] [INDICATORS] spot=23669.5 | 1h: close=23624.2 sma20=23961.2 sma50=24095.9 rsi=21.3 macd=-115.03/-81.06(bear) | 15m: K=25.9↑(prev 22.0) | regime=PE-eligible halted=False active=False
+2026-07-24 05:53:19,250 [INFO] [SIGNAL] CE: reg=False K=False(K=25.9>=38,rising) Kextr=True RSI=False(21.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=25.9<=80,falling) Kextr=False RSI=True(21.3<47) MACD=True => BLOCK
+2026-07-24 05:55:20,165 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:55:50,411 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:56:20,654 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:56:50,898 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:57:21,141 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:57:51,398 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
