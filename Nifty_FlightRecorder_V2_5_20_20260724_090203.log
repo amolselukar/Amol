@@ -833,3 +833,26 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 05:56:07,404 [INFO] [INDICATORS] spot=23670.9 | 1h: close=23624.2 sma20=23961.2 sma50=24095.9 rsi=21.3 macd=-115.03/-81.06(bear) | 15m: K=25.9↑(prev 22.0) | regime=PE-eligible any_active=True
 2026-07-24 05:56:07,404 [INFO] [SIGNAL] CE: reg=False K=False(K=25.9>=38,rising) Kextr=True RSI=False(21.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=25.9<=80,falling) Kextr=False RSI=True(21.3<47) MACD=True(gate off) => BLOCK
 2026-07-24 05:56:07,405 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23600PE ltp=88.10 entry=101.40 pnl=-13.30(-13.1%) sl=0.00 peak=117.25 tr_armed=False elapsed=95min
+2026-07-24 05:56:08,807 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 05:56:39,053 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:57:09,362 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:57:39,688 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:58:10,429 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:58:40,751 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:59:11,050 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:59:41,349 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 06:00:12,507 [INFO] [FUT5VWAP] Signal — 23683<23690 body=70% side=PE (fixed +12pt target)
+2026-07-24 06:00:12,553 [INFO] ENTRY: NFO:NIFTY26JUL23700PE @ 141.00  engine=FUT5VWAP  detail=FUT5 VWAP cross 23683<23690 body=70% pivΔ=24pt | bar=224
+2026-07-24 06:01:14,080 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 06:01:14,081 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 06:01:14,081 [INFO] [INDICATORS] spot=23653.8 | 1h: close=23624.2 sma20=23961.2 sma50=24095.9 rsi=21.3 macd=-115.03/-81.06(bear) | 15m: K=34.0↑(prev 25.9) | regime=PE-eligible any_active=True
+2026-07-24 06:01:14,081 [INFO] [SIGNAL] CE: reg=False K=False(K=34.0>=38,rising) Kextr=True RSI=False(21.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=34.0<=80,falling) Kextr=False RSI=True(21.3<47) MACD=True(gate off) => BLOCK
+2026-07-24 06:01:14,081 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26JUL23700PE ltp=140.70 entry=141.00 pnl=-0.30(-0.2%) sl=0.00 peak=141.00 tr_armed=False elapsed=1min
+2026-07-24 06:01:14,082 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23600PE ltp=95.00 entry=101.40 pnl=-6.40(-6.3%) sl=0.00 peak=117.25 tr_armed=False elapsed=100min
