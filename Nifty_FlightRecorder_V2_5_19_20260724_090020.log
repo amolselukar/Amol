@@ -1370,3 +1370,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 09:57:44,916 [INFO] [APEX] open=0 trades=6 realized=-14.7pt/Rs-952 unreal=+0.0pt/Rs+0
 2026-07-24 09:57:44,917 [INFO] [INDICATORS] spot=23780.7 | 1h: close=23771.9 sma20=23879.4 sma50=24066.9 rsi=38.0 macd=-101.91/-97.12(bear) | 15m: K=73.8↓(prev 80.1) | regime=PE-eligible halted=False active=False
 2026-07-24 09:57:44,917 [INFO] [SIGNAL] CE: reg=False K=False(K=73.8>=38,rising) Kextr=False RSI=False(38.0>53) MACD=False => BLOCK | PE: reg=True K=True(K=73.8<=80,falling) Kextr=True RSI=True(38.0<47) MACD=True => PASS
+2026-07-24 10:00:18,001 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 10:00:18,811 [INFO] [EOD DATA] Starting data capture for 2026-07-24
+2026-07-24 10:00:21,094 [INFO] [EOD DATA] Futures token: 15639810 (NIFTY26JULFUT)
+2026-07-24 10:00:24,869 [INFO] [EOD DATA] ATM tracker: 75 rows, CE=[23500, 23550, 23600, 23650, 23700, 23750, 23800, 23850, 23900], PE=[23500, 23550, 23600, 23650, 23700, 23750, 23800, 23850, 23900]
+2026-07-24 10:00:25,677 [INFO] [EOD DATA] Saved futures CSVs: ['1m', '5m', '15m', '1h']
+2026-07-24 10:01:02,694 [INFO] [EOD DATA] Capture complete. Folder: daily_option_data/2026-07-24, 72 OK, 26481 bars
