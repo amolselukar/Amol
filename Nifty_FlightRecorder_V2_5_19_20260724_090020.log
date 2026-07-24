@@ -1029,3 +1029,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 07:40:14,983 [INFO] [INDICATORS] spot=23769.3 | 1h: close=23702.8 sma20=23938.8 sma50=24086.5 rsi=30.4 macd=-118.16/-88.48(bear) | 15m: K=100.0↑(prev 97.1) | regime=PE-eligible halted=False active=True
 2026-07-24 07:40:14,983 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True => BLOCK
 2026-07-24 07:40:14,983 [INFO] [STATE] CE NFO:NIFTY26JUL23800CE ltp=120.40 entry=134.85 pnl=-14.45(-10.7%) sl=110.58 peak=147.95 tr_armed=False elapsed=24min
+2026-07-24 07:44:50,092 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 07:45:20,580 [INFO] [APEX] open=2 trades=2 realized=-26.2pt/Rs-1703 unreal=-3.1pt/Rs-202
+2026-07-24 07:45:20,581 [INFO] [INDICATORS] spot=23785.0 | 1h: close=23783.8 sma20=23919.8 sma50=24078.3 rsi=38.3 macd=-112.80/-93.34(bear) | 15m: K=97.9↓(prev 100.0) | regime=PE-eligible halted=False active=True
+2026-07-24 07:45:20,581 [INFO] [SIGNAL] CE: reg=False K=False(K=97.9>=38,rising) Kextr=False RSI=False(38.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=97.9<=80,falling) Kextr=True RSI=True(38.3<47) MACD=True => BLOCK
+2026-07-24 07:45:20,581 [INFO] [STATE] CE NFO:NIFTY26JUL23800CE ltp=126.30 entry=134.85 pnl=-8.55(-6.3%) sl=110.58 peak=147.95 tr_armed=False elapsed=30min
+2026-07-24 07:46:21,334 [INFO] [APEX] EXIT PE 23800 114.4->121.3 +6.9pt Rs+448 [exhaust] | day -19.3pt Rs-1255
+2026-07-24 07:46:22,202 [INFO] [APEX] EXIT PE 23800 121.3->121.1 -0.2pt Rs-13 [exhaust] | day -19.5pt Rs-1268
