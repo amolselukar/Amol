@@ -755,3 +755,20 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 05:56:50,898 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
 2026-07-24 05:57:21,141 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
 2026-07-24 05:57:51,398 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:57:52,849 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 05:58:23,051 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:58:23,084 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 05:58:23,085 [INFO] [INDICATORS] spot=23665.0 | 1h: close=23624.2 sma20=23961.2 sma50=24095.9 rsi=21.3 macd=-115.03/-81.06(bear) | 15m: K=25.9↑(prev 22.0) | regime=PE-eligible halted=False active=False
+2026-07-24 05:58:23,085 [INFO] [SIGNAL] CE: reg=False K=False(K=25.9>=38,rising) Kextr=True RSI=False(21.3>53) MACD=False => BLOCK | PE: reg=True K=False(K=25.9<=80,falling) Kextr=False RSI=True(21.3<47) MACD=True => BLOCK
+2026-07-24 05:58:53,284 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:59:23,527 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 05:59:53,781 [INFO] [FUT5VWAP] Skip — close 23699 only 7pt from a pivot (need >20)
+2026-07-24 06:00:24,938 [INFO] [FUT5VWAP] Signal — 23683<23690 body=70% side=PE (fixed +12pt target)
+2026-07-24 06:00:24,990 [INFO] ENTRY: NFO:NIFTY26JUL23700PE @ 141.25  engine=FUT5VWAP  detail=FUT5 VWAP cross 23683<23690 body=70% pivΔ=24pt | bar=224
