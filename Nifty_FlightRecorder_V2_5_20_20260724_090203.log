@@ -1117,3 +1117,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-24 07:33:10,034 [INFO] [INDICATORS] spot=23789.4 | 1h: close=23702.8 sma20=23938.8 sma50=24086.5 rsi=30.4 macd=-118.16/-88.48(bear) | 15m: K=100.0↑(prev 97.1) | regime=PE-eligible any_active=True
 2026-07-24 07:33:10,034 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True(gate off) => BLOCK
 2026-07-24 07:33:10,034 [INFO] [STATE][ORB] CE NFO:NIFTY26JUL23600CE ltp=263.40 entry=207.25 pnl=+56.15(+27.1%) sl=0.00 peak=288.15 tr_armed=False elapsed=58min
+2026-07-24 07:33:11,484 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-24 07:33:41,858 [INFO] [APEX] ENTRY PE 23800 @ 116.5 (level+RSI-turn+energy+diverge) open=1
+2026-07-24 07:34:13,191 [INFO] [APEX] ENTRY PE 23800 @ 119.0 (level+RSI-turn+energy+diverge) open=2
+2026-07-24 07:38:19,366 [INFO] [APEX] open=2 trades=2 realized=-26.6pt/Rs-1729 unreal=+6.3pt/Rs+406
+2026-07-24 07:38:19,366 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-24 07:38:19,367 [INFO] [INDICATORS] spot=23769.3 | 1h: close=23702.8 sma20=23938.8 sma50=24086.5 rsi=30.4 macd=-118.16/-88.48(bear) | 15m: K=100.0↑(prev 97.1) | regime=PE-eligible any_active=True
+2026-07-24 07:38:19,367 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True(gate off) => BLOCK
+2026-07-24 07:38:19,368 [INFO] [STATE][ORB] CE NFO:NIFTY26JUL23600CE ltp=250.15 entry=207.25 pnl=+42.90(+20.7%) sl=0.00 peak=288.15 tr_armed=False elapsed=63min
