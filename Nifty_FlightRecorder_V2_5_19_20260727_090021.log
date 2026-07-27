@@ -633,3 +633,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 05:42:04,628 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-07-27 05:42:04,629 [INFO] [INDICATORS] spot=23925.4 | 1h: close=23933.3 sma20=23863.1 sma50=24058.3 rsi=51.8 macd=-78.89/-93.32(bull) | 15m: K=75.4↓(prev 78.3) | regime=NEUTRAL halted=False active=False
 2026-07-27 05:42:04,629 [INFO] [SIGNAL] CE: reg=False K=False(K=75.4>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True => BLOCK | PE: reg=False K=True(K=75.4<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False => BLOCK
+2026-07-27 05:42:06,119 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-27 05:45:07,335 [INFO] [VWAP] Signal — FUT 23940<23946 body=66% side=PE
+2026-07-27 05:45:07,380 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 54.25  engine=VWAP  detail=FUT VWAP 23940<23946 body=66% | bar=148
+2026-07-27 05:47:09,343 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:47:09,344 [INFO] [INDICATORS] spot=23929.3 | 1h: close=23924.8 sma20=23859.5 sma50=24054.3 rsi=51.1 macd=-65.14/-87.68(bull) | 15m: K=74.4↓(prev 75.4) | regime=NEUTRAL halted=False active=True
+2026-07-27 05:47:09,344 [INFO] [SIGNAL] CE: reg=False K=False(K=74.4>=38,rising) Kextr=False RSI=False(51.1>53) MACD=True => BLOCK | PE: reg=False K=True(K=74.4<=80,falling) Kextr=True RSI=False(51.1<47) MACD=False => BLOCK
+2026-07-27 05:47:09,344 [INFO] [STATE] PE NFO:NIFTY26JUL23900PE ltp=53.35 entry=54.25 pnl=-0.90(-1.7%) sl=44.49 peak=54.25 tr_armed=False elapsed=2min
