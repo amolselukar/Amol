@@ -952,3 +952,11 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 07:54:31,992 [INFO] [INDICATORS] spot=23972.7 | 1h: close=23970.1 sma20=23858.2 sma50=24047.0 rsi=54.5 macd=-38.44/-71.98(bull) | 15m: K=43.9↑(prev 38.0) | regime=NEUTRAL halted=False active=True
 2026-07-27 07:54:31,993 [INFO] [SIGNAL] CE: reg=False K=True(K=43.9>=38,rising) Kextr=False RSI=True(54.5>53) MACD=True => BLOCK | PE: reg=False K=False(K=43.9<=80,falling) Kextr=True RSI=False(54.5<47) MACD=False => BLOCK
 2026-07-27 07:54:31,993 [INFO] [STATE] CE NFO:NIFTY26JUL24000CE ltp=57.95 entry=60.30 pnl=-2.35(-3.9%) sl=49.45 peak=62.80 tr_armed=False elapsed=8min
+2026-07-27 07:54:33,458 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
