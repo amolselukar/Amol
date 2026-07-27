@@ -699,3 +699,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 06:07:38,982 [INFO] [INDICATORS] spot=23959.7 | 1h: close=23924.8 sma20=23859.5 sma50=24054.3 rsi=51.1 macd=-65.14/-87.68(bull) | 15m: K=78.4↑(prev 74.4) | regime=NEUTRAL halted=False active=True
 2026-07-27 06:07:38,982 [INFO] [SIGNAL] CE: reg=False K=True(K=78.4>=38,rising) Kextr=False RSI=False(51.1>53) MACD=True => BLOCK | PE: reg=False K=False(K=78.4<=80,falling) Kextr=True RSI=False(51.1<47) MACD=False => BLOCK
 2026-07-27 06:07:38,982 [INFO] [STATE] CE NFO:NIFTY26JUL24000CE ltp=58.30 entry=64.70 pnl=-6.40(-9.9%) sl=53.05 peak=64.70 tr_armed=False elapsed=7min
+2026-07-27 06:07:40,373 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-27 06:12:46,866 [WARNING] Kite call failed (historical_data) attempt 1: Too many requests
+2026-07-27 06:12:47,932 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 06:12:47,933 [INFO] [INDICATORS] spot=23966.0 | 1h: close=23924.8 sma20=23859.5 sma50=24054.3 rsi=51.1 macd=-65.14/-87.68(bull) | 15m: K=78.4↑(prev 74.4) | regime=NEUTRAL halted=False active=True
+2026-07-27 06:12:47,933 [INFO] [SIGNAL] CE: reg=False K=True(K=78.4>=38,rising) Kextr=False RSI=False(51.1>53) MACD=True => BLOCK | PE: reg=False K=False(K=78.4<=80,falling) Kextr=True RSI=False(51.1<47) MACD=False => BLOCK
+2026-07-27 06:12:47,933 [INFO] [STATE] CE NFO:NIFTY26JUL24000CE ltp=61.10 entry=64.70 pnl=-3.60(-5.6%) sl=53.05 peak=64.70 tr_armed=False elapsed=12min
