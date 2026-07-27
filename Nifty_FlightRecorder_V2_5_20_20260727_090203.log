@@ -673,3 +673,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 05:33:57,268 [INFO] [SIGNAL] CE: reg=False K=False(K=75.4>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=75.4<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
 2026-07-27 05:33:57,268 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23900PE ltp=53.60 entry=74.45 pnl=-20.85(-28.0%) sl=0.00 peak=74.45 tr_armed=False elapsed=24min
 2026-07-27 05:33:57,268 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23950PE ltp=74.55 entry=78.95 pnl=-4.40(-5.6%) sl=0.00 peak=86.45 tr_armed=False elapsed=18min
+2026-07-27 05:33:59,571 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-27 05:34:29,837 [INFO] [FUT5VWAP] Skip — close 23955 only 1pt from a pivot (need >20)
+2026-07-27 05:35:00,095 [INFO] [FUT5VWAP] Skip — close 23955 only 1pt from a pivot (need >20)
+2026-07-27 05:39:02,202 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:39:02,202 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:39:02,202 [INFO] [INDICATORS] spot=23928.9 | 1h: close=23933.3 sma20=23863.1 sma50=24058.3 rsi=51.8 macd=-78.89/-93.32(bull) | 15m: K=75.4↓(prev 78.3) | regime=NEUTRAL any_active=True
+2026-07-27 05:39:02,202 [INFO] [SIGNAL] CE: reg=False K=False(K=75.4>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=75.4<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-07-27 05:39:02,203 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23900PE ltp=53.00 entry=74.45 pnl=-21.45(-28.8%) sl=0.00 peak=74.45 tr_armed=False elapsed=29min
+2026-07-27 05:39:02,203 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23950PE ltp=74.35 entry=78.95 pnl=-4.60(-5.8%) sl=0.00 peak=86.45 tr_armed=False elapsed=23min
