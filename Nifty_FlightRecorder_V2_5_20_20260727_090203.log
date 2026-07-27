@@ -745,3 +745,23 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 05:54:16,929 [INFO] [STATE][VWAP] PE NFO:NIFTY26JUL23900PE ltp=45.20 entry=54.10 pnl=-8.90(-16.5%) sl=44.36 peak=54.10 tr_armed=False elapsed=9min
 2026-07-27 05:54:16,929 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23900PE ltp=45.20 entry=74.45 pnl=-29.25(-39.3%) sl=0.00 peak=74.45 tr_armed=False elapsed=44min
 2026-07-27 05:54:16,930 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23950PE ltp=64.60 entry=78.95 pnl=-14.35(-18.2%) sl=0.00 peak=86.45 tr_armed=False elapsed=39min
+2026-07-27 05:54:18,334 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-27 05:55:18,993 [INFO] [V3PROBE] PLACED CE NFO:NIFTY26JUL24000CE limit=46.30 (LTP=54.30 - 8) window=15min — EARLY(10m) Grade B G-cluster BREAK-CE at 23900
+2026-07-27 05:55:19,806 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=2/4 (reason=HARDSL_-18pct)
+2026-07-27 05:55:19,806 [INFO] EXIT: NFO:NIFTY26JUL23900PE @ 44.36 reason=HARDSL_-18pct pnl/sh=-9.74 is_flip=False losses=1/4
+2026-07-27 05:55:20,688 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=3/4 (reason=ORB_STOP)
+2026-07-27 05:55:20,688 [INFO] EXIT: NFO:NIFTY26JUL23900PE @ 44.45 reason=ORB_STOP pnl/sh=-30.00 is_flip=False losses=1/4
+2026-07-27 05:55:21,542 [INFO] ENTRY: NFO:NIFTY26JUL23900CE @ 110.45  engine=ORB  detail=ORB flip-on-stop
+2026-07-27 05:59:25,474 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:59:25,540 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:59:25,541 [INFO] [INDICATORS] spot=23966.2 | 1h: close=23924.8 sma20=23859.5 sma50=24054.3 rsi=51.1 macd=-65.14/-87.68(bull) | 15m: K=74.4↓(prev 75.4) | regime=NEUTRAL any_active=True
+2026-07-27 05:59:25,541 [INFO] [SIGNAL] CE: reg=False K=False(K=74.4>=38,rising) Kextr=False RSI=False(51.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=74.4<=80,falling) Kextr=True RSI=False(51.1<47) MACD=False(gate off) => BLOCK
+2026-07-27 05:59:25,541 [INFO] [STATE][ORB] CE NFO:NIFTY26JUL23900CE ltp=120.75 entry=110.45 pnl=+10.30(+9.3%) sl=0.00 peak=120.75 tr_armed=False elapsed=4min
+2026-07-27 05:59:25,541 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23950PE ltp=57.60 entry=78.95 pnl=-21.35(-27.0%) sl=0.00 peak=86.45 tr_armed=False elapsed=44min
