@@ -591,3 +591,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 05:08:33,758 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-07-27 05:08:33,758 [INFO] [INDICATORS] spot=23897.0 | 1h: close=23933.3 sma20=23863.1 sma50=24058.3 rsi=51.8 macd=-78.89/-93.32(bull) | 15m: K=81.8↓(prev 91.1) | regime=NEUTRAL any_active=False
 2026-07-27 05:08:33,759 [INFO] [SIGNAL] CE: reg=False K=False(K=81.8>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=81.8<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-07-27 05:08:35,169 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-27 05:09:35,688 [INFO] [ORB] Signal — close 23894.7 broke OR[23896.7,23964.5] side=PE
+2026-07-27 05:09:35,737 [INFO] ENTRY: NFO:NIFTY26JUL23900PE @ 74.45  engine=ORB  detail=ORB break 23895 vs OR[23897,23964]
+2026-07-27 05:09:36,558 [INFO] [GAPBREAK] Range-break detected — close 23894.7 broke [23896.7,23964.5] side=PE (gap=+141.4)
+2026-07-27 05:13:39,102 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:13:39,103 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:13:39,103 [INFO] [INDICATORS] spot=23916.8 | 1h: close=23933.3 sma20=23863.1 sma50=24058.3 rsi=51.8 macd=-78.89/-93.32(bull) | 15m: K=81.8↓(prev 91.1) | regime=NEUTRAL any_active=True
+2026-07-27 05:13:39,103 [INFO] [SIGNAL] CE: reg=False K=False(K=81.8>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=81.8<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-07-27 05:13:39,104 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23900PE ltp=61.05 entry=74.45 pnl=-13.40(-18.0%) sl=0.00 peak=74.45 tr_armed=False elapsed=4min
