@@ -623,3 +623,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-27 05:18:44,022 [INFO] [SIGNAL] CE: reg=False K=False(K=78.3>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=78.3<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
 2026-07-27 05:18:44,022 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23900PE ltp=57.55 entry=74.45 pnl=-16.90(-22.7%) sl=0.00 peak=74.45 tr_armed=False elapsed=9min
 2026-07-27 05:18:44,022 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23950PE ltp=79.70 entry=78.95 pnl=+0.75(+0.9%) sl=0.00 peak=82.55 tr_armed=False elapsed=3min
+2026-07-27 05:18:46,293 [WARNING] [periodic] Git push failed: To https://github.com/amolselukar/Amol.git
+ ! [rejected]        HEAD -> claude/general-session-YfHuZ (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-07-27 05:23:48,983 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:23:48,983 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-07-27 05:23:48,984 [INFO] [INDICATORS] spot=23924.1 | 1h: close=23933.3 sma20=23863.1 sma50=24058.3 rsi=51.8 macd=-78.89/-93.32(bull) | 15m: K=78.3↓(prev 81.8) | regime=NEUTRAL any_active=True
+2026-07-27 05:23:48,984 [INFO] [SIGNAL] CE: reg=False K=False(K=78.3>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=78.3<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-07-27 05:23:48,984 [INFO] [STATE][ORB] PE NFO:NIFTY26JUL23900PE ltp=58.45 entry=74.45 pnl=-16.00(-21.5%) sl=0.00 peak=74.45 tr_armed=False elapsed=14min
+2026-07-27 05:23:48,984 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26JUL23950PE ltp=81.05 entry=78.95 pnl=+2.10(+2.7%) sl=0.00 peak=85.20 tr_armed=False elapsed=8min
