@@ -497,3 +497,23 @@
 2026-08-03 04:38:35,285 [INFO] [INDICATORS] spot=24565.0 | 1h: close=24366.7 sma20=24302.2 sma50=24067.1 rsi=67.6 macd=86.99/86.79(bull) | 15m: K=100.0↑(prev 68.1) | regime=CE-eligible any_active=True
 2026-08-03 04:38:35,285 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(67.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(67.6<47) MACD=False(gate off) => BLOCK
 2026-08-03 04:38:35,286 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=73.80 entry=54.70 pnl=+19.10(+34.9%) sl=0.00 peak=77.75 tr_armed=False elapsed=53min
+2026-08-03 04:38:37,780 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260803_090217.log, Nifty_BarLevel_V2_5_20_20260803_090217.csv
+2026-08-03 04:39:07,978 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24562.3 is -63.4 below FUT VWAP 24625.8 (buffer 5)
+2026-08-03 04:39:38,277 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24564.6 is -61.3 below FUT VWAP 24625.9 (buffer 5)
+2026-08-03 04:40:08,571 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24568.2 is -58.0 below FUT VWAP 24626.1 (buffer 5)
+2026-08-03 04:40:38,876 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24566.1 is -60.1 below FUT VWAP 24626.2 (buffer 5)
+2026-08-03 04:41:09,173 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24565.5 is -60.7 below FUT VWAP 24626.2 (buffer 5)
+2026-08-03 04:41:39,444 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24567.2 is -59.1 below FUT VWAP 24626.3 (buffer 5)
+2026-08-03 04:42:09,742 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24570.0 is -56.4 below FUT VWAP 24626.3 (buffer 5)
+2026-08-03 04:42:40,023 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24572.6 is -53.8 below FUT VWAP 24626.4 (buffer 5)
+2026-08-03 04:43:10,352 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24571.1 is -55.4 below FUT VWAP 24626.5 (buffer 5)
+2026-08-03 04:43:40,637 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24576.8 is -49.8 below FUT VWAP 24626.6 (buffer 5)
+2026-08-03 04:43:40,644 [INFO] [ORB] Signal — close 24576.8 broke OR[24515.2,24576.5] side=CE
+2026-08-03 04:43:40,725 [INFO] ENTRY: NFO:NIFTY2680424550CE @ 77.10  engine=ORB  detail=ORB break 24577 vs OR[24515,24576]
+2026-08-03 04:43:41,551 [INFO] [GAPBREAK] Range-break detected — close 24576.8 broke [24515.2,24576.5] side=CE (gap=+206.0)
+2026-08-03 04:43:41,634 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 04:43:41,635 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 04:43:41,636 [INFO] [INDICATORS] spot=24576.8 | 1h: close=24366.7 sma20=24302.2 sma50=24067.1 rsi=67.6 macd=86.99/86.79(bull) | 15m: K=100.0↑(prev 68.1) | regime=CE-eligible any_active=True
+2026-08-03 04:43:41,636 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(67.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(67.6<47) MACD=False(gate off) => BLOCK
+2026-08-03 04:43:41,636 [INFO] [STATE][ORB] CE NFO:NIFTY2680424550CE ltp=0.00 entry=77.10 pnl=-77.10(-100.0%) sl=0.00 peak=77.10 tr_armed=False elapsed=0min
+2026-08-03 04:43:41,636 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=77.30 entry=54.70 pnl=+22.60(+41.3%) sl=0.00 peak=77.75 tr_armed=False elapsed=58min
