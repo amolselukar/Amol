@@ -418,3 +418,18 @@
 2026-08-03 04:13:04,425 [INFO] [INDICATORS] spot=24556.2 | 1h: close=24366.7 sma20=24302.2 sma50=24067.1 rsi=67.6 macd=86.99/86.79(bull) | 15m: K=45.1↑(prev 11.8) | regime=CE-eligible any_active=True
 2026-08-03 04:13:04,425 [INFO] [SIGNAL] CE: reg=True K=True(K=45.1>=38,rising) Kextr=True RSI=True(67.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=45.1<=80,falling) Kextr=False RSI=False(67.6<47) MACD=False(gate off) => BLOCK
 2026-08-03 04:13:04,426 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=69.90 entry=54.70 pnl=+15.20(+27.8%) sl=0.00 peak=75.30 tr_armed=False elapsed=27min
+2026-08-03 04:13:07,276 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260803_090217.log, Nifty_BarLevel_V2_5_20_20260803_090217.csv
+2026-08-03 04:15:08,953 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24557.2 is -62.2 below FUT VWAP 24619.4 (buffer 5)
+2026-08-03 04:15:09,762 [INFO] [VWAP] Signal — FUT 24637>24619 body=76% side=CE
+2026-08-03 04:15:09,764 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 24557.2 is -62.2 below FUT VWAP 24619.4 (buffer 5)
+2026-08-03 04:15:40,869 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24554.7 is -64.8 below FUT VWAP 24619.5 (buffer 5)
+2026-08-03 04:16:11,117 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24552.1 is -67.5 below FUT VWAP 24619.6 (buffer 5)
+2026-08-03 04:16:41,356 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24555.0 is -64.6 below FUT VWAP 24619.6 (buffer 5)
+2026-08-03 04:17:11,594 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24552.4 is -67.3 below FUT VWAP 24619.7 (buffer 5)
+2026-08-03 04:17:41,836 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24548.5 is -71.2 below FUT VWAP 24619.7 (buffer 5)
+2026-08-03 04:18:12,073 [INFO] [VETO] V2 CE BLOCKED — CE into a DOWNtrend: spot 24548.9 is -70.9 below FUT VWAP 24619.8 (buffer 5)
+2026-08-03 04:18:12,150 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 04:18:12,150 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 04:18:12,151 [INFO] [INDICATORS] spot=24548.9 | 1h: close=24366.7 sma20=24302.2 sma50=24067.1 rsi=67.6 macd=86.99/86.79(bull) | 15m: K=68.1↑(prev 45.1) | regime=CE-eligible any_active=True
+2026-08-03 04:18:12,151 [INFO] [SIGNAL] CE: reg=True K=True(K=68.1>=38,rising) Kextr=True RSI=True(67.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=68.1<=80,falling) Kextr=False RSI=False(67.6<47) MACD=False(gate off) => BLOCK
+2026-08-03 04:18:12,152 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=68.00 entry=54.70 pnl=+13.30(+24.3%) sl=0.00 peak=75.30 tr_armed=False elapsed=33min
