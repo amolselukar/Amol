@@ -612,3 +612,12 @@
 2026-08-03 05:39:54,702 [INFO] [STATE][ORB] CE NFO:NIFTY2680424550CE ltp=87.95 entry=77.10 pnl=+10.85(+14.1%) sl=0.00 peak=93.25 tr_armed=False elapsed=56min
 2026-08-03 05:39:54,702 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY2680424550CE ltp=87.95 entry=80.30 pnl=+7.65(+9.5%) sl=0.00 peak=93.25 tr_armed=False elapsed=54min
 2026-08-03 05:39:54,702 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=87.95 entry=54.70 pnl=+33.25(+60.8%) sl=0.00 peak=93.25 tr_armed=False elapsed=114min
+2026-08-03 05:39:57,202 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260803_090217.log, Nifty_BarLevel_V2_5_20_20260803_090217.csv
+2026-08-03 05:40:27,449 [INFO] [V3PROBE] PLACED PE NFO:NIFTY2680424600PE limit=60.25 (LTP=68.25 - 8) window=15min — EARLY(10m) Grade B G-cluster REJECT-PE at 24600
+2026-08-03 05:45:02,131 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 05:45:02,235 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 05:45:02,236 [INFO] [INDICATORS] spot=24589.2 | 1h: close=24589.5 sma20=24337.1 sma50=24091.5 rsi=80.4 macd=109.39/93.38(bull) | 15m: K=100.0↓(prev 100.0) | regime=CE-eligible any_active=True
+2026-08-03 05:45:02,236 [INFO] [SIGNAL] CE: reg=True K=False(K=100.0>=38,rising) Kextr=False RSI=True(80.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(80.4<47) MACD=False(gate off) => BLOCK
+2026-08-03 05:45:02,237 [INFO] [STATE][ORB] CE NFO:NIFTY2680424550CE ltp=86.70 entry=77.10 pnl=+9.60(+12.5%) sl=0.00 peak=93.25 tr_armed=False elapsed=61min
+2026-08-03 05:45:02,237 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY2680424550CE ltp=86.70 entry=80.30 pnl=+6.40(+8.0%) sl=0.00 peak=93.25 tr_armed=False elapsed=59min
+2026-08-03 05:45:02,237 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=86.70 entry=54.70 pnl=+32.00(+58.5%) sl=0.00 peak=93.25 tr_armed=False elapsed=119min
