@@ -363,3 +363,20 @@
 2026-08-03 03:47:38,731 [INFO] [INDICATORS] spot=24561.1 | 1h: close=24366.7 sma20=24302.2 sma50=24067.1 rsi=67.6 macd=86.99/86.79(bull) | 15m: K=11.8↑(prev 10.4) | regime=CE-eligible any_active=True
 2026-08-03 03:47:38,731 [INFO] [SIGNAL] CE: reg=True K=False(K=11.8>=38,rising) Kextr=True RSI=True(67.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=11.8<=80,falling) Kextr=False RSI=False(67.6<47) MACD=False(gate off) => BLOCK
 2026-08-03 03:47:38,732 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=74.15 entry=54.70 pnl=+19.45(+35.6%) sl=0.00 peak=75.30 tr_armed=False elapsed=2min
+2026-08-03 03:47:41,984 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260803_090217.log, Nifty_BarLevel_V2_5_20_20260803_090217.csv
+2026-08-03 03:48:12,168 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:48:42,383 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:49:12,601 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:49:42,803 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:50:13,040 [INFO] [STRADDLE] Reference: ₹142.8 at 09:20
+2026-08-03 03:50:13,044 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:50:43,278 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:51:13,500 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:51:43,706 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:52:13,914 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:52:44,124 [INFO] [MVWAP] Skip — close 24438 only 7pt from a pivot (need >20)
+2026-08-03 03:52:44,183 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 03:52:44,184 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-03 03:52:44,184 [INFO] [INDICATORS] spot=24522.1 | 1h: close=24366.7 sma20=24302.2 sma50=24067.1 rsi=67.6 macd=86.99/86.79(bull) | 15m: K=11.8↑(prev 10.4) | regime=CE-eligible any_active=True
+2026-08-03 03:52:44,184 [INFO] [SIGNAL] CE: reg=True K=False(K=11.8>=38,rising) Kextr=True RSI=True(67.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=11.8<=80,falling) Kextr=False RSI=False(67.6<47) MACD=False(gate off) => BLOCK
+2026-08-03 03:52:44,185 [INFO] [STATE][PIVOTBREAK] CE NFO:NIFTY2680424550CE ltp=62.20 entry=54.70 pnl=+7.50(+13.7%) sl=0.00 peak=75.30 tr_armed=False elapsed=7min
