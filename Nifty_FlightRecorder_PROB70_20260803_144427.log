@@ -321,3 +321,15 @@
 2026-08-03 09:14:29,481 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
 2026-08-03 09:14:29,481 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-08-03 09:14:29,481 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-08-03 09:15:12,069 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_PROB70_20260803_144427.log, Nifty_BarLevel_PROB70_20260803_144427.csv
+2026-08-03 09:15:12,337 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:15:12,338 [INFO] [INDICATORS] spot=24596.7 | 1h: close=24593.5 sma20=24387.0 sma50=24132.2 rsi=77.7 macd=121.00/106.01(bull) | 15m: K=8.4↑(prev 3.8) | regime=CE-eligible any_active=False
+2026-08-03 09:15:12,338 [INFO] [SIGNAL] CE: reg=True K=False(K=8.4>=38,rising) Kextr=True RSI=True(77.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=8.4<=80,falling) Kextr=False RSI=False(77.7<47) MACD=False(gate off) => BLOCK
+2026-08-03 09:15:43,435 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:16:13,669 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:16:43,896 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:17:14,141 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:17:44,382 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:18:14,644 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:18:44,911 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
+2026-08-03 09:19:15,182 [INFO] [PROB70][G0] BLOCK — yesterday's daily RSI 48.3 <= 50 (not bullish regime)
