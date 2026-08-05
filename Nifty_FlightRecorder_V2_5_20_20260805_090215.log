@@ -1,0 +1,337 @@
+2026-08-05 03:32:15,235 [INFO] [STATE][BASE] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,235 [INFO] [STATE][BASE] Loaded prior state. active=False losses=0
+2026-08-05 03:32:15,235 [INFO] [STATE][VWAP] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,235 [INFO] [STATE][VWAP] Loaded prior state. active=False losses=0
+2026-08-05 03:32:15,235 [INFO] [STATE][FUT5VWAP] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,235 [INFO] [STATE][FUT5VWAP] Loaded prior state. active=False losses=0
+2026-08-05 03:32:15,236 [INFO] [STATE][ORB] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,236 [INFO] [STATE][ORB] Loaded prior state. active=False losses=0
+2026-08-05 03:32:15,236 [INFO] [STATE][GAPBREAK] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,236 [INFO] [STATE][GAPBREAK] Loaded prior state. active=False losses=0
+2026-08-05 03:32:15,236 [INFO] [STATE][PIVOTBREAK] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,236 [INFO] [STATE][PIVOTBREAK] Loaded prior state. active=False losses=0
+2026-08-05 03:32:15,236 [INFO] [STATE][EXPIRY] State from 2026-08-04 — resetting trades_today for 2026-08-05
+2026-08-05 03:32:15,236 [INFO] [STATE][EXPIRY] Loaded prior state. active=False losses=0
+2026-08-05 03:32:16,749 [INFO] [BOOT] Nifty FUT token: 14866434 expiry=2026-08-25 sym=NIFTY26AUGFUT
+2026-08-05 03:32:16,760 [INFO] [BOOT] Expiry: 2026-08-11, 113 strikes, 226 option contracts
+2026-08-05 03:32:16,760 [INFO] [BOOT] PAPER mode (kite_paper) — mStock init + self-test SKIPPED (bypassed).
+2026-08-05 03:32:16,876 [INFO] [PIVOTS] P=24582 R1=24737 R2=24858 S1=24461 S2=24306
+2026-08-05 03:32:16,876 [WARNING] [OI Plan] Stale plan (2026-07-20) — ignoring for today's levels
+2026-08-05 03:32:16,876 [INFO] [OI Plan] No valid plan found — running without OI levels (normal mode)
+2026-08-05 03:32:16,876 [INFO] [V2.5.20] 7 independent engines armed: BASE, VWAP, FUT5VWAP, ORB, GAPBREAK, PIVOTBREAK, EXPIRY (regime=BULL, gap_suppress_until=n/a)
+2026-08-05 03:32:16,877 [INFO] 
+2026-08-05 03:32:16,877 [INFO] +========================================================================+
+2026-08-05 03:32:16,877 [INFO] | ORION V2.5.15 — STRATEGY DESIGN                                        |
+2026-08-05 03:32:16,877 [INFO] | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
+2026-08-05 03:32:16,877 [INFO] +========================================================================+
+2026-08-05 03:32:16,877 [INFO] | ENGINE V2 (fires every 15m close — regime: BULL/BEAR/TRANSITION only)  |
+2026-08-05 03:32:16,877 [INFO] |   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
+2026-08-05 03:32:16,877 [INFO] |        RSI>53 | MACD bull | premium 30-180                             |
+2026-08-05 03:32:16,877 [INFO] |   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
+2026-08-05 03:32:16,877 [INFO] |        RSI<47 | MACD bear | premium 30-300                             |
+2026-08-05 03:32:16,877 [INFO] |                                                                         |
+2026-08-05 03:32:16,877 [INFO] | ENGINE V3 (15m G/R cluster break/reject — fires in any regime)         |
+2026-08-05 03:32:16,877 [INFO] |   Grade A (>=3 source kinds) / Grade B (>=2)                           |
+2026-08-05 03:32:16,877 [INFO] |   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
+2026-08-05 03:32:16,877 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-08-05 03:32:16,877 [INFO] |                                                                         |
+2026-08-05 03:32:16,877 [INFO] | ENGINE VWAP (triple confirmation — fires in any regime)                 |
+2026-08-05 03:32:16,877 [INFO] |   1. Nifty FUTURES 15m close crosses FUT VWAP, body>=65% (PRIMARY)     |
+2026-08-05 03:32:16,877 [INFO] |   2. Nifty SPOT 15m close same direction above/below spot VWAP         |
+2026-08-05 03:32:16,877 [INFO] |   3. ATM CE/PE LTP also above/below its daily VWAP simultaneously      |
+2026-08-05 03:32:16,877 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-08-05 03:32:16,877 [INFO] |                                                                         |
+2026-08-05 03:32:16,877 [INFO] | ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
+2026-08-05 03:32:16,877 [INFO] |   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
+2026-08-05 03:32:16,877 [INFO] |   Path B (post-exit): K reversal within 60min                          |
+2026-08-05 03:32:16,877 [INFO] |                                                                         |
+2026-08-05 03:32:16,877 [INFO] | UNIVERSAL EXIT (priority order):                                        |
+2026-08-05 03:32:16,877 [INFO] |   1. HARDSL -18%                                                        |
+2026-08-05 03:32:16,877 [INFO] |   2. Continuous trail: arms when peak>=entry+15, SL=peak-5             |
+2026-08-05 03:32:16,877 [INFO] |      floor=entry+10, ratchets up with peak (never down)                |
+2026-08-05 03:32:16,877 [INFO] |   3. VWAP trades: exit when opt 15m close < opt VWAP                  |
+2026-08-05 03:32:16,877 [INFO] |   4. V2/V3/FLIP trades: SMA8(low) trail on 15m                        |
+2026-08-05 03:32:16,877 [INFO] |   5. Force close 15:25  6. CB=3 non-flip losses                        |
+2026-08-05 03:32:16,877 [INFO] |                                                                         |
+2026-08-05 03:32:16,877 [INFO] | INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
+2026-08-05 03:32:16,877 [INFO] +========================================================================+
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] === ORION CHANGE HISTORY (V2.2.2 -> V2.5.9) ===
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.2.2 [PRODUCTION BASELINE — T10]
+2026-08-05 03:32:16,878 [INFO]   Entry : 1h SMA20/50 regime + 15m StochRSI K (CE>=38 rising, PE<=80 falling)
+2026-08-05 03:32:16,878 [INFO]   Exit  : HARDSL -35%, TIME_SL 210min/-20%, BE +15% -> option SMA8(low) trail
+2026-08-05 03:32:16,878 [INFO]   CB=2, 1 lot, no flip, no V3, no chop filter
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.3  [+V3 CLUSTER LEVELS]
+2026-08-05 03:32:16,878 [INFO]   + PDH/PDL/round_50/round_100/PDC/1h swing pivots clustered within 20pts
+2026-08-05 03:32:16,878 [INFO]   + Grade A (>=3 source kinds) / Grade B (>=2)
+2026-08-05 03:32:16,878 [INFO]   + ADX regime classifier (BULL/BEAR/CHOP/TRANSITION)
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.4  [+EXIT UPGRADES]
+2026-08-05 03:32:16,878 [INFO]   + 15m option SMA8(low) trail (KEPT in all future versions)
+2026-08-05 03:32:16,878 [INFO]   + ATR-based exits (REMOVED — not robust enough)
+2026-08-05 03:32:16,878 [INFO]   + BE armor at +15% (REMOVED later — net negative in backtest)
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.5.0  [HYBRID V2+V3 + TIME-RATCHET]
+2026-08-05 03:32:16,878 [INFO]   + Hybrid V2+V3 entry (V2 priority on same-bar tiebreak)
+2026-08-05 03:32:16,878 [INFO]   + Time-ratchet exit: 90min / +20 step
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.5.1  [ENTRY REFINEMENT]
+2026-08-05 03:32:16,878 [INFO]   + V2 PE_floor=25 (K>=25 required for PE entry)
+2026-08-05 03:32:16,878 [INFO]   + V2 CE: no upper K cap (cap tested and REJECTED — hurts WR)
+2026-08-05 03:32:16,878 [INFO]   + V2 priority confirmed: +Rs 52k vs V3-priority
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.5.2  [FLIP RULE +Rs 130k]
+2026-08-05 03:32:16,878 [INFO]   + Path A flip (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10 + K reversed
+2026-08-05 03:32:16,878 [INFO]   + Path B flip (post-exit): K reversal within 60min
+2026-08-05 03:32:16,878 [INFO]   + Opposite-side only (same-side continuation REJECTED: -Rs 191k CATASTROPHIC)
+2026-08-05 03:32:16,878 [INFO]   + CE->PE: K falling, 25<=K<=80 | PE->CE: K rising, K>=38
+2026-08-05 03:32:16,878 [INFO] 
+2026-08-05 03:32:16,878 [INFO] V2.5.3  [V3 SINGLETONS + HARDSL LOCKED]
+2026-08-05 03:32:16,878 [INFO]   + Promoted singletons: PDH/PDL/round_100(+-200 PDC)/swing pivots standalone Grade B
+2026-08-05 03:32:16,878 [INFO]   + HARDSL locked at -25% (swept -35% to -15%; -25% optimal)
+2026-08-05 03:32:16,878 [INFO]   + PnL Rs +3,14,418
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.4  [FLIP CAP]
+2026-08-05 03:32:16,879 [INFO]   + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
+2026-08-05 03:32:16,879 [INFO]   + PnL Rs +3,23,851
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.5  [CHOP FILTER +Rs 49k]
+2026-08-05 03:32:16,879 [INFO]   + RSI [47,53] indecision band blocks ALL entries
+2026-08-05 03:32:16,879 [INFO]   + PnL Rs +3,72,598
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.6  [V3 PDC CONTAMINATION FIX — LOCKED Rs 3,85,724 / WR 35.7%]
+2026-08-05 03:32:16,879 [INFO]   + Exclude PDC from clustering (PDC is reference, not tradeable level)
+2026-08-05 03:32:16,879 [INFO]   + G/R require >=25pt buffer from PDC (motivated by 2026-05-18 bad paper trade)
+2026-08-05 03:32:16,879 [INFO]   + PnL Rs +3,85,724 / MaxDD -1,331 / Red 5/18
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.7  [VELVET ROPE + RATCHET +Rs 1,14,324 / WR 35.7%->55.4%]
+2026-08-05 03:32:16,879 [INFO]   + Velvet Rope: premium hits entry+15 -> SL immediately to entry+2
+2026-08-05 03:32:16,879 [INFO]   + Ratchet Gate: 30min elapsed + entry+25 -> SL to entry+15
+2026-08-05 03:32:16,879 [INFO]   + Runner Trail: +20 per +20pts peak (one-way)
+2026-08-05 03:32:16,879 [INFO]   + Trade-off: Red months 5->10/18, MaxDD -1,331->-1,885
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.8  [K EXTREME + FULL SMA ALIGNMENT]
+2026-08-05 03:32:16,879 [INFO]   + K extreme filter: CE entry only if K<25 recently (3 bars); PE if K>75 recently
+2026-08-05 03:32:16,879 [INFO]   + Full SMA alignment: CE needs close>SMA20>SMA50 (was just close>SMA20)
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.9  [Rs 6,70,425 / WR 66.9% / 357 trades / MaxDD -1,485 / Red 8/18]
+2026-08-05 03:32:16,879 [INFO]   + RSI DIRECTIONAL GATE replaces RSI [47,53] chop filter:
+2026-08-05 03:32:16,879 [INFO]       CE: 1h RSI>53 required | PE: 1h RSI<47 required
+2026-08-05 03:32:16,879 [INFO]   + MACD 1h alignment: CE needs MACD_line>signal; PE needs MACD_line<signal
+2026-08-05 03:32:16,879 [INFO]   + Premium gate: 30<=entry_LTP<=180 (blocks deep OTM and IV-spike entries)
+2026-08-05 03:32:16,879 [INFO]   + Tightened exit params: RI=12 (was 15), RT=20 (was 30), RS=25 (was 20)
+2026-08-05 03:32:16,879 [INFO]   + CB=3 (was 4)
+2026-08-05 03:32:16,879 [INFO]   + Straddle monitoring: informational Telegram at 9:45 and 11:30
+2026-08-05 03:32:16,879 [INFO]   + Options VWAP: informational context at entry/pulse/exit
+2026-08-05 03:32:16,879 [INFO] 
+2026-08-05 03:32:16,879 [INFO] V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 / Red 5/18]
+2026-08-05 03:32:16,879 [INFO]   SOURCE: VRL (Vishal Rajput) code analysis — peak-based ratchet ladder
+2026-08-05 03:32:16,879 [INFO]   + HARDSL tightened -25% → -18% (faster loss cut, less capital exposed)
+2026-08-05 03:32:16,879 [INFO]   + 20-min time gate REMOVED — purely peak-based ladder (no waiting)
+2026-08-05 03:32:16,879 [INFO]   + Ladder Tier2: peak >= entry+24 → SL = entry+12 (immediate)
+2026-08-05 03:32:16,879 [INFO]   + Ladder Tier3: peak >= entry+36 → SL = entry+24 (immediate)
+2026-08-05 03:32:16,880 [INFO]   + Entry logic UNCHANGED from V2.5.9
+2026-08-05 03:32:16,880 [INFO]   + Validated: real option data (May 4-21 2026, 12 days)
+2026-08-05 03:32:16,880 [INFO]   + Key improvement: MaxDD -1,485 → -1,119 (-25%), Red months 8 → 5
+2026-08-05 03:32:16,880 [INFO] 
+2026-08-05 03:32:16,880 [INFO] V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
+2026-08-05 03:32:16,880 [INFO]   + EXECUTION_BROKER switched from kite_paper → mstock_live
+2026-08-05 03:32:16,880 [INFO]   + mStock Type B API integrated: login → set_access_token → verify_totp (TOTP auto)
+2026-08-05 03:32:16,880 [INFO]   + Instrument master: direct fetch from OpenAPIScripMaster (173k symbols, name field)
+2026-08-05 03:32:16,880 [INFO]   + order_status: mStock returns 'Traded' status (not 'COMPLETE') — mapped correctly
+2026-08-05 03:32:16,880 [INFO]   + place_order: disclosedquantity="0" required (blank causes IA400 rejection)
+2026-08-05 03:32:16,880 [INFO]   + IP 18.212.243.203 (PythonAnywhere) whitelisted in mStock API settings
+2026-08-05 03:32:16,880 [INFO]   + BUY: 15s timeout, cancel-and-check on timeout, abort if not filled
+2026-08-05 03:32:16,880 [INFO]   + SELL: 3 retries × 5s, 🚨 CRITICAL Telegram alert if all fail, POS.active stays True
+2026-08-05 03:32:16,880 [INFO]   + V3 REGIME GATE REMOVED: V3 now fires in CHOP/INSUFFICIENT regime
+2026-08-05 03:32:16,880 [INFO]       Root cause of bug: regime gate wrapped ALL signals including V3;
+2026-08-05 03:32:16,880 [INFO]       V3 uses cluster break/reject as its own confirmation — ADX not needed
+2026-08-05 03:32:16,880 [INFO]       V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
+2026-08-05 03:32:16,880 [INFO]   + V3 engine: acts on ALL Grade A/B clusters simultaneously (not just nearest)
+2026-08-05 03:32:16,880 [INFO]   + PREMIUM_MAX asymmetric: CE=180 (unchanged), PE=300 (was 180, captures panic moves)
+2026-08-05 03:32:16,880 [INFO]   + VWAP double confirmation engine (new):
+2026-08-05 03:32:16,880 [INFO]       Fires when Nifty 15m bar crosses daily VWAP with body>=50% range
+2026-08-05 03:32:16,880 [INFO]       AND ATM CE/PE LTP is also above/below its daily VWAP simultaneously
+2026-08-05 03:32:16,880 [INFO]       Self-confirming like V3 — no regime gate
+2026-08-05 03:32:16,880 [INFO]   + LOTS_PER_TRADE = 2 (live)
+2026-08-05 03:32:16,880 [INFO] 
+2026-08-05 03:32:16,880 [INFO] V2.5.13 [VWAP TRAIL EXIT + BOOT SELF-TEST + STABILITY FIXES]
+2026-08-05 03:32:16,880 [INFO]   + VWAP engine trades: trail exit uses option's own VWAP (15m close < option VWAP)
+2026-08-05 03:32:16,880 [INFO]     instead of SMA8(low) trail — holds through pullbacks better on VWAP-confirmed moves
+2026-08-05 03:32:16,880 [INFO]   + V2/V3/FLIP trades: keep original SMA8(low) trail (unchanged)
+2026-08-05 03:32:16,880 [INFO]   + Boot self-test: BUY (LIMIT ₹0.05) + SELL (LIMIT ₹9999) on deep OTM option at startup
+2026-08-05 03:32:16,880 [INFO]     Both must succeed and cancel cleanly or bot aborts — confirms mStock connectivity + IP
+2026-08-05 03:32:16,880 [INFO]   + MStockBroker class inlined into single .py file (no separate mstock_broker.py)
+2026-08-05 03:32:16,880 [INFO]   + IA403 recovery: rebuilds SDK client from scratch on IP mismatch, 3 consecutive → halt
+2026-08-05 03:32:16,880 [INFO]   + Position sync cooldown: 180s → 300s (avoids false MANUAL_EXIT on slow fills)
+2026-08-05 03:32:16,880 [INFO]   + MANUAL_EXIT fix: clears buy_order_id before close_trade to prevent duplicate SELL
+2026-08-05 03:32:16,880 [INFO]   + State file: added date field, resets trades_today/losses on new day boundary
+2026-08-05 03:32:16,881 [INFO]   + VWAP dedup log spam removed (silent return on same-bar re-fire)
+2026-08-05 03:32:16,881 [INFO] 
+2026-08-05 03:32:16,881 [INFO] V2.5.14 [TIERED PROFIT LOCK LADDER — inspired by VRL]
+2026-08-05 03:32:16,881 [INFO]   + Replaced sparse 3-tier ratchet (Velvet Rope + T2 + T3 + Runner) with 7-tier ladder
+2026-08-05 03:32:16,881 [INFO]   + Ladder: +12→+2, +18→+8, +24→+12, +30→+20, +36→+24, +40→+30, +50→+40
+2026-08-05 03:32:16,881 [INFO]   + More tiers = less profit give-back on sharp reversals
+2026-08-05 03:32:16,881 [INFO]   + Checked every tick (not candle-based) — same as before but tighter protection
+2026-08-05 03:32:16,881 [INFO]   + Unified code: single loop replaces 3 separate sections (3a/3b/3c → 3)
+2026-08-05 03:32:16,881 [INFO]   + VWAP engine upgraded to TRIPLE confirmation:
+2026-08-05 03:32:16,881 [INFO]     Gate 1 (PRIMARY): Nifty FUTURES 15m close crosses futures VWAP, body >= 50%
+2026-08-05 03:32:16,881 [INFO]     Gate 2: Nifty SPOT 15m close same direction above/below spot VWAP
+2026-08-05 03:32:16,881 [INFO]     Gate 3: ATM option LTP above/below option's own VWAP
+2026-08-05 03:32:16,881 [INFO]   + Futures VWAP is now the primary decision criterion — real margin-backed money
+2026-08-05 03:32:16,881 [INFO]   + Nifty FUT token auto-resolved from Kite instruments at boot (no hardcoding)
+2026-08-05 03:32:16,881 [INFO] 
+2026-08-05 03:32:16,881 [INFO] V2.5.15 [STALE DATA GUARD — 2026-06-12]
+2026-08-05 03:32:16,881 [INFO]   + ROOT CAUSE FOUND: Kite intermittently returned a 15m series ending ~2h in
+2026-08-05 03:32:16,881 [INFO]     the past. Evidence: VWAP entry logged bar=198 at 11:30 but bar=197 at 13:30
+2026-08-05 03:32:16,881 [INFO]     (bar index went BACKWARDS); the 13:30 entry cited a 67% bearish bar +
+2026-08-05 03:32:16,881 [INFO]     FUT 23375 while the live tape was +68 pts off the low in 4 min → bought PE
+2026-08-05 03:32:16,881 [INFO]     into a V-reversal → HARDSL -21.73. Fresh-data replay confirms the signal
+2026-08-05 03:32:16,881 [INFO]     does NOT fire at 13:30 with up-to-date frames. Likely also suppressed valid
+2026-08-05 03:32:16,881 [INFO]     signals (Jun-11 zero-trade day: fresh-data replay finds 4 trades / +35 pts).
+2026-08-05 03:32:16,881 [INFO]   + Guard (active 09:32+): if last 15m bar (spot or futures) is older than
+2026-08-05 03:32:16,881 [INFO]     16 min → instant refetch from Kite; if recovered, continue + Telegram info;
+2026-08-05 03:32:16,881 [INFO]     if still stale → Telegram alert + ENTRIES blocked for that cycle only.
+2026-08-05 03:32:16,881 [INFO]   + EXITS are never blocked on data quality.
+2026-08-05 03:32:16,881 [INFO]   + Telegram alerts rate-limited to 1 per 10 min; log line every cycle.
+2026-08-05 03:32:16,881 [INFO] 
+2026-08-05 03:32:16,881 [INFO] V2.5.16 [MOMENTUM GATE ON SAME-SIDE STREAKS + SMA8 TODAY-ONLY FIX — 2026-06-17]
+2026-08-05 03:32:16,881 [INFO]   + PROBLEM: in choppy markets the bot ran 3+ rapid same-direction trades —
+2026-08-05 03:32:16,881 [INFO]     first 1-2 win small, the 3rd buys into the reversal and takes the full
+2026-08-05 03:32:16,881 [INFO]     -18% HARDSL, then keeps buying the same side, wiping the day's gains.
+2026-08-05 03:32:16,881 [INFO]     Diagnosis (May+June real-opt data): the persistence is the VWAP engine
+2026-08-05 03:32:16,881 [INFO]     (no regime filter, re-fires same side each 15m bar). The 1st/2nd winners
+2026-08-05 03:32:16,881 [INFO]     exit on the peak ladder (TRAIL_+N); the 3rd dies on HARDSL/VWAP_TRAIL.
+2026-08-05 03:32:16,881 [INFO]   + MOMENTUM GATE: the 3rd+ CONSECUTIVE same-direction entry (any engine) is
+2026-08-05 03:32:16,881 [INFO]     blocked unless spot has moved >= MOM_GATE_PTS (12) WITH the trade over the
+2026-08-05 03:32:16,881 [INFO]     last MOM_GATE_BARS (5) closed 1m bars. 1st/2nd same-side entries untouched.
+2026-08-05 03:32:16,882 [INFO]     Run counted from DAY.trades_today (closed trades). New fetch_nifty_1m() +
+2026-08-05 03:32:16,882 [INFO]     momentum_gate_ok(); fails OPEN if 1m data unavailable; "🚧 Momentum-gate
+2026-08-05 03:32:16,882 [INFO]     BLOCK" Telegram on a block. Backtest (May real-opt): baseline -7.3 pt →
+2026-08-05 03:32:16,882 [INFO]     gate +104.0 pt, 0 winners blocked (blocks only flat-momentum |mv|<=8 chop).
+2026-08-05 03:32:16,882 [INFO]   + SMA8 TODAY-ONLY FIX: sma8_low_of_option() now averages ONLY today's closed
+2026-08-05 03:32:16,882 [INFO]     15m option lows (arms after SMA_TRAIL_MIN_BARS=4 today-bars). Previously it
+2026-08-05 03:32:16,882 [INFO]     averaged 8 bars from a 10-day fetch, mixing yesterday's different-level /
+2026-08-05 03:32:16,882 [INFO]     illiquid lows → false trail exits. NOT removed: backtest showed deleting
+2026-08-05 03:32:16,882 [INFO]     SMA8 costs -66 pt (it is a tighter stop than the -18% HARDSL).
+2026-08-05 03:32:16,882 [INFO]   + Ladder exit, HARDSL, flip logic, stale-data guard all UNCHANGED.
+2026-08-05 03:32:16,882 [INFO]   + start_orion.sh now launches V2.5.16 (90s crash-fallback still → V2.5.14).
+2026-08-05 03:32:16,882 [INFO] 
+2026-08-05 03:32:16,882 [INFO] V2.5.17 [3 CHOP-BLEED GUARDS — 2026-06-18]
+2026-08-05 03:32:16,882 [INFO]   + CONTEXT: 06-16 (-20.4pt/7trades) and 06-17 (-44.0pt/4trades) were both
+2026-08-05 03:32:16,882 [INFO]     compressed chop days (full range 141pt & 107pt; 06-17 had 9 mean-crosses in
+2026-08-05 03:32:16,882 [INFO]     a 107pt box). The regime classifier stayed BULL all 76 bars both days and
+2026-08-05 03:32:16,882 [INFO]     chop_block fired 0 times, so the breakout engines kept firing into noise.
+2026-08-05 03:32:16,882 [INFO]     See ~/orion_backtest_lab/results/RESULTS.md (2026-06-18 post-mortem).
+2026-08-05 03:32:16,882 [INFO]   + #1 MORNING CHOP GATE (CHOP_GATE_ENABLED): decided ONCE after ~10:30 IST from
+2026-08-05 03:32:16,882 [INFO]     the first-hour (09:15-10:15) FUT bars. Stand aside (block ALL new entries for
+2026-08-05 03:32:16,882 [INFO]     the day) when early efficiency-ratio <= CHOP_ER_MAX (0.25) AND (first-hour
+2026-08-05 03:32:16,882 [INFO]     FUT-VWAP cross-count >= CHOP_VWAP_CROSSES_MIN (3) OR first-hour range <
+2026-08-05 03:32:16,882 [INFO]     CHOP_RANGE_PT_MAX (110pt)). Exits always allowed. Fails OPEN (not enough
+2026-08-05 03:32:16,882 [INFO]     bars yet -> no decision -> trade normally). morning_chop_verdict().
+2026-08-05 03:32:16,882 [INFO]   + #2 VWAP BODY BAND (VWAP_BODY_CLIMAX_PCT): VWAP entry now takes only the
+2026-08-05 03:32:16,882 [INFO]     65-86% body band — existing >=65% min kept, NEW >=87% climax/exhaustion bars
+2026-08-05 03:32:16,882 [INFO]     skipped (climax bars fade). One added guard line in check_vwap_signal().
+2026-08-05 03:32:16,882 [INFO]   + #3 MOMENTUM-FADE GATE (FADE_GATE_ENABLED): for a 3rd+ consecutive same-side
+2026-08-05 03:32:16,882 [INFO]     entry that follows >= FADE_MIN_PRIOR_WINS (2) consecutive same-side WINS,
+2026-08-05 03:32:16,882 [INFO]     inspect 3-min option premiums of BOTH the trend-side and opposite-side ATM
+2026-08-05 03:32:16,882 [INFO]     strikes over the last FADE_OPT_BARS (3) closed bars. Enter ONLY IF the
+2026-08-05 03:32:16,882 [INFO]     trend-side option is NOT decaying AND the opposite-side option IS decaying;
+2026-08-05 03:32:16,882 [INFO]     otherwise skip (momentum has faded / is rotating to the other side). Fails
+2026-08-05 03:32:16,882 [INFO]     OPEN on missing data. fade_gate_ok() + fetch_option_3m(). Complements the
+2026-08-05 03:32:16,882 [INFO]     V2.5.16 spot-move momentum gate (both must pass).
+2026-08-05 03:32:16,882 [INFO]   + All three guards are ADDITIVE; ladder/HARDSL/flip/SMA8/stale-guard UNCHANGED.
+2026-08-05 03:32:16,882 [INFO]   + NOT yet sim-A/B'd — shipped on user direction; 2026-06-18 is paper-only, so
+2026-08-05 03:32:16,882 [INFO]     the live paper session is the first validation. WATCH first CHOP-GATE day +
+2026-08-05 03:32:16,882 [INFO]     first FADE block + that #2 climax-skip doesn't starve VWAP.
+2026-08-05 03:32:16,882 [INFO]   + start_orion.sh now launches V2.5.17 (pkill pattern V2_5_1[567];
+2026-08-05 03:32:16,883 [INFO]     90s crash-fallback still → V2.5.14 archive).
+2026-08-05 03:32:16,883 [INFO] 
+2026-08-05 03:32:16,883 [INFO] V2.5.18 [SMA8 ENTRY-AWARE FIX + CHOP-GATE RE-ARM — 2026-06-19]
+2026-08-05 03:32:16,883 [INFO]   + CONTEXT: 2026-06-19 (paper) — gap-down day. One V3 PE (24000PE @114) entered
+2026-08-05 03:32:16,883 [INFO]     correctly at 10:15 on a Grade-A R-cluster break, but SMA8_LOW_TRAIL exited it
+2026-08-05 03:32:16,883 [INFO]     31s later at +1.6 (the trail evaluated the 10:00 bar — which CLOSED BEFORE
+2026-08-05 03:32:16,883 [INFO]     entry — against today's lows-avg). Spot then fell 24040->23926 without us;
+2026-08-05 03:32:16,883 [INFO]     morning chop-gate (ER=0.01, range=70pt) then stood aside the rest of the day.
+2026-08-05 03:32:16,883 [INFO]   + FIX A (SMA8 pre-entry bar): the SMA8(low) trail now NEVER acts on a 15m bar
+2026-08-05 03:32:16,883 [INFO]     whose CLOSE time (bar-start + 15m) is <= POS.entry_time. A fresh entry can no
+2026-08-05 03:32:16,883 [INFO]     longer be ejected on price action that happened before it was opened.
+2026-08-05 03:32:16,883 [INFO]   + FIX C (SMA8 arm window): trail arms on bars-SINCE-ENTRY, not bars-of-day.
+2026-08-05 03:32:16,883 [INFO]     sma8_low_of_option() now averages only TODAY's closed bars that closed AFTER
+2026-08-05 03:32:16,883 [INFO]     entry and needs >= SMA_TRAIL_MIN_BARS_SINCE_ENTRY (1) of them. With 1 own bar
+2026-08-05 03:32:16,883 [INFO]     SMA8L == that bar's own low, so close(>=low) can't trigger -> first real
+2026-08-05 03:32:16,883 [INFO]     trigger needs >=2 own bars. SMA_TRAIL_MIN_BARS (4, bars-of-day) is now only
+2026-08-05 03:32:16,883 [INFO]     the fallback when entry_time is unknown (state-load edge). NOT a BE-gate.
+2026-08-05 03:32:16,883 [INFO]   + CHOP-GATE RE-ARM (CHOP_REARM_ENABLED): after a morning stand-aside, release
+2026-08-05 03:32:16,883 [INFO]     the block when a CLOSED FUT 15m bar breaks the recorded first-hour range by
+2026-08-05 03:32:16,883 [INFO]     >= CHOP_REARM_BUFFER_PT (15pt) with body >= CHOP_REARM_BODY_MIN (65%), in the
+2026-08-05 03:32:16,883 [INFO]     regime direction (BULL=>up-break only, BEAR=>down-break only, else either).
+2026-08-05 03:32:16,883 [INFO]     FUT leads spot, so this triggers earlier than a spot-range break. Re-arm is
+2026-08-05 03:32:16,883 [INFO]     one-way for the day (stays live once released); per-trade momentum/fade/CB
+2026-08-05 03:32:16,883 [INFO]     guards still apply. _morning_chop_verdict_impl() stashes FH hi/lo;
+2026-08-05 03:32:16,883 [INFO]     chop_rearm_check() evaluated each cycle while blocked. Logs [CHOPGATE] RE-ARMED.
+2026-08-05 03:32:16,883 [INFO]   + Ladder/HARDSL/flip/VWAP-trail/stale-guard UNCHANGED. SMA8 KEPT (deleting it
+2026-08-05 03:32:16,883 [INFO]     cost -66pt, V2.5.16) — this only changes WHEN it may fire, not whether.
+2026-08-05 03:32:16,883 [INFO]   + NOT yet sim-A/B'd — shipped on user direction 2026-06-19; backtest the
+2026-08-05 03:32:16,883 [INFO]     re-arm thresholds on post-chop trend days before relying on it live.
+2026-08-05 03:32:16,883 [INFO] 
+2026-08-05 03:32:16,883 [INFO] V2.5.19 [THREE FUT-VWAP ENTRY PATHWAYS — 2026-06-21]
+2026-08-05 03:32:16,883 [INFO]   + Built on user direction 2026-06-21. THREE new VWAP-cross entry pathways.
+2026-08-05 03:32:16,883 [INFO]     NOT yet sim-A/B'd — BACKTEST before flipping start_orion.sh to V2.5.19.
+2026-08-05 03:32:16,883 [INFO]     All three are flag-gated (default ON). Existing V2/V3/FLIP UNCHANGED.
+2026-08-05 03:32:16,883 [INFO] 
+2026-08-05 03:32:16,883 [INFO]   + FEATURE 1 — FUT 15m VWAP cross + CONFIRMATION CANDLE (all-day).
+2026-08-05 03:32:16,883 [INFO]     VWAP15_CONFIRM_ENABLED. The existing VWAP engine no longer fires on the
+2026-08-05 03:32:16,883 [INFO]     cross bar alone: it now requires the cross bar (iloc[-3], body 65-86% band)
+2026-08-05 03:32:16,883 [INFO]     PLUS the next closed bar (iloc[-2]) to CONFIRM in the same direction —
+2026-08-05 03:32:16,883 [INFO]     same-colour candle that still closes on the same side of FUT-VWAP. Fires in
+2026-08-05 03:32:16,884 [INFO]     either direction, any time in the entry window. Re-entries are governed by
+2026-08-05 03:32:16,884 [INFO]     the existing momentum gate (no extra cap). check_vwap_signal().
+2026-08-05 03:32:16,884 [INFO]     INTERPRETATION: "confirmation candle in same direction" = next 15m candle
+2026-08-05 03:32:16,884 [INFO]     closes same side of its open (same colour) AND same side of VWAP as the
+2026-08-05 03:32:16,884 [INFO]     cross. Confirmation candle has NO body-size requirement (only the cross bar
+2026-08-05 03:32:16,884 [INFO]     does). If wrong, adjust _vwap15_confirm_ok().
+2026-08-05 03:32:16,884 [INFO] 
+2026-08-05 03:32:16,884 [INFO]   + FEATURE 2 — FUT 5m VWAP cross + S/R distance, FIXED +12 TARGET scalp.
+2026-08-05 03:32:16,884 [INFO]     FUT5_SCALP_ENABLED. New engine 'FUT5VWAP'. On each closed FUT 5m bar that
+2026-08-05 03:32:16,884 [INFO]     CROSSES its session VWAP (bar opens one side, closes the other) with body
+2026-08-05 03:32:16,884 [INFO]     65-86% AND whose close is > FUT5_SCALP_SR_MIN_DIST (20pt) from EVERY one of
+2026-08-05 03:32:16,884 [INFO]     yesterday's classic pivots S1/R1/S2/R2 → buy in the cross direction. Exit is
+2026-08-05 03:32:16,884 [INFO]     a FIXED +FUT5_SCALP_TARGET_PTS (12) option points (HARDSL + 15:25 force-close
+2026-08-05 03:32:16,884 [INFO]     still apply; NO trail/SMA8). One trade per event: deduped on the 5m bar ts,
+2026-08-05 03:32:16,884 [INFO]     so the next entry needs a fresh qualifying cross. check_fut5m_vwap_scalp_signal().
+2026-08-05 03:32:16,884 [INFO]     INTERPRETATION: ">20 points away from s1/r1/s2/r2" = min distance to ALL four
+2026-08-05 03:32:16,884 [INFO]     pivots > 20pt (price in clear space, not hugging a pivot). "cross" = bar
+2026-08-05 03:32:16,884 [INFO]     open & close on opposite sides of VWAP. Pivots = classic floor-trader pivots
+2026-08-05 03:32:16,884 [INFO]     from the prior trading day's H/L/C. If wrong, adjust compute_classic_pivots()
+2026-08-05 03:32:16,884 [INFO]     / check_fut5m_vwap_scalp_signal().
+2026-08-05 03:32:16,884 [INFO] 
+2026-08-05 03:32:16,884 [INFO]   + FEATURE 3 — MORNING 09:15-10:15 exception (bypasses the 09:45 start gate).
+2026-08-05 03:32:16,884 [INFO]     MORNING_VWAP_ENABLED. Before the normal 09:45 entry start, between
+2026-08-05 03:32:16,884 [INFO]     MORNING_WIN_START (09:15) and MORNING_WIN_END (10:15): if a closed FUT 15m
+2026-08-05 03:32:16,884 [INFO]     bar crosses its VWAP (body 65-86%) AND its close is > MORNING_VWAP_SR_MIN_DIST
+2026-08-05 03:32:16,884 [INFO]     (20pt) from every pivot S1/R1/S2/R2 → buy in the cross direction. Re-entries
+2026-08-05 03:32:16,884 [INFO]     per momentum gate. Uses engine 'VWAP' (so it inherits the VWAP option-VWAP
+2026-08-05 03:32:16,884 [INFO]     trail exit). Runs even when in_entry_window() is False; still respects
+2026-08-05 03:32:16,884 [INFO]     stale-guard, gap-suppress, CB/halt, manual cooldown. check_morning_vwap15_signal().
+2026-08-05 03:32:16,884 [INFO]     INTERPRETATION: this only ADDS the pre-09:45 window; from 09:45 on, the
+2026-08-05 03:32:16,884 [INFO]     normal engines (incl. Feature 1) already run. No confirmation candle is
+2026-08-05 03:32:16,884 [INFO]     required here (spec did not ask for one).
+2026-08-05 03:32:16,884 [INFO] 
+2026-08-05 03:32:16,884 [INFO]   + Classic pivots computed at boot from prior-day H/L/C → DAY.pivots
+2026-08-05 03:32:16,884 [INFO]     {P,S1,R1,S2,R2}; min_dist_to_pivots() helper. New fetch_nifty_fut_5m().
+2026-08-05 03:32:16,884 [INFO] 
+2026-08-05 03:32:16,884 [INFO] === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
+2026-08-05 03:32:16,884 [INFO]   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
+2026-08-05 03:32:16,885 [INFO]   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
+2026-08-05 03:32:16,885 [INFO]   ADX<20 filter        : -Rs 16k
+2026-08-05 03:32:16,885 [INFO]   ADX<25 filter        : -Rs 34k
+2026-08-05 03:32:16,885 [INFO]   BE armor at +15%     : net negative
+2026-08-05 03:32:16,885 [INFO]   Same-side flip       : -Rs 191k CATASTROPHIC
+2026-08-05 03:32:16,885 [INFO]   REVERSAL_FLIP=True   : WR 12% vs 33%
+2026-08-05 03:32:16,885 [INFO]   K cap on CE          : hurts WR (no cap is better)
+2026-08-05 03:32:16,885 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
+2026-08-05 03:32:16,885 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
+2026-08-05 03:32:16,885 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
