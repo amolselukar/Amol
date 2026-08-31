@@ -949,3 +949,4 @@
 2026-08-31 11:54:51,461 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-08-31 11:54:51,461 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-08-31 11:54:53,101 [INFO] [CHANGELOG] up to date (last entry 2026-08-31)
+2026-08-31 11:54:57,369 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260831_172449.log, Nifty_BarLevel_V2_5_20_20260831_172449.csv
