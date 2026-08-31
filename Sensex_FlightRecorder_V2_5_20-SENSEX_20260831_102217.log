@@ -1139,3 +1139,14 @@
 2026-08-31 08:43:57,880 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-08-31 08:43:57,880 [INFO] [INDICATORS] spot=76868.5 | 1h: close=77010.2 sma20=77170.4 sma50=77359.8 rsi=44.2 macd=-123.33/-101.46(bear) | 15m: K=75.8↓(prev 88.6) | regime=PE-eligible any_active=False
 2026-08-31 08:43:57,880 [INFO] [SIGNAL] CE: reg=False K=False(K=75.8>=38,rising) Kextr=False RSI=False(44.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=75.8<=80,falling) Kextr=True RSI=True(44.2<47) MACD=True(gate off) => PASS
+2026-08-31 08:44:31,889 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260831_102217.log, Sensex_BarLevel_V2_5_20-SENSEX_20260831_102217.csv
+2026-08-31 08:45:02,311 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+4.7pt persist=True (last 2x5m vs FUTvwap=77552.3)
+2026-08-31 08:45:32,692 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+4.4pt persist=True (last 2x5m vs FUTvwap=77552.7)
+2026-08-31 08:46:03,021 [WARNING] [STALE] 15m last bar 14:00 (>16min old) — instant refetch
+2026-08-31 08:46:03,079 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-08-31 08:46:03,882 [WARNING] [STALE] fut15 last bar 14:00 (>16min old) — instant refetch
+2026-08-31 08:46:03,922 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-08-31 08:49:05,962 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-31 08:49:05,962 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-31 08:49:05,963 [INFO] [INDICATORS] spot=76874.9 | 1h: close=76862.5 sma20=77133.3 sma50=77345.6 rsi=40.4 macd=-130.34/-107.23(bear) | 15m: K=58.3↓(prev 75.8) | regime=PE-eligible any_active=False
+2026-08-31 08:49:05,963 [INFO] [SIGNAL] CE: reg=False K=False(K=58.3>=38,rising) Kextr=False RSI=False(40.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=58.3<=80,falling) Kextr=True RSI=True(40.4<47) MACD=True(gate off) => PASS
