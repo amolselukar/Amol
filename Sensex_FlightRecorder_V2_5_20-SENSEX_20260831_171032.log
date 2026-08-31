@@ -874,3 +874,4 @@
 2026-08-31 11:40:33,514 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-08-31 11:40:35,136 [INFO] [CHANGELOG] up to date (last entry 2026-08-31)
 2026-08-31 11:40:39,111 [INFO] [boot] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260831_171032.log, Sensex_BarLevel_V2_5_20-SENSEX_20260831_171032.csv
+2026-08-31 11:40:43,573 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260831_171032.log, Sensex_BarLevel_V2_5_20-SENSEX_20260831_171032.csv
