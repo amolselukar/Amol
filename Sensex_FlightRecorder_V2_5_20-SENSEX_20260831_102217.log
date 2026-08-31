@@ -1174,3 +1174,18 @@
 2026-08-31 09:04:28,176 [INFO] [INDICATORS] spot=76858.7 | 1h: close=76862.5 sma20=77133.3 sma50=77345.6 rsi=40.4 macd=-130.34/-107.23(bear) | 15m: K=42.2↓(prev 58.3) | regime=PE-eligible any_active=False
 2026-08-31 09:04:28,177 [INFO] [SIGNAL] CE: reg=False K=False(K=42.2>=38,rising) Kextr=False RSI=False(40.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=42.2<=80,falling) Kextr=True RSI=True(40.4<47) MACD=True(gate off) => PASS
 2026-08-31 09:04:58,421 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:05:01,333 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260831_102217.log, Sensex_BarLevel_V2_5_20-SENSEX_20260831_102217.csv
+2026-08-31 09:05:31,585 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:06:01,900 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:06:32,198 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:07:02,444 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:07:32,799 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:08:03,055 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:08:33,299 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:09:03,547 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:09:33,799 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-08-31 09:09:33,823 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-31 09:09:33,823 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-31 09:09:33,823 [INFO] [INDICATORS] spot=76875.3 | 1h: close=76862.5 sma20=77133.3 sma50=77345.6 rsi=40.4 macd=-130.34/-107.23(bear) | 15m: K=42.2↓(prev 58.3) | regime=PE-eligible any_active=False
+2026-08-31 09:09:33,823 [INFO] [SIGNAL] CE: reg=False K=False(K=42.2>=38,rising) Kextr=False RSI=False(40.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=42.2<=80,falling) Kextr=True RSI=True(40.4<47) MACD=True(gate off) => PASS
+2026-08-31 09:10:04,044 [INFO] [VWAP] Climax skip — body=100% >= 87%
