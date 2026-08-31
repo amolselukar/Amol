@@ -855,3 +855,13 @@
 2026-08-31 05:43:39,811 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-08-31 05:43:39,811 [INFO] [INDICATORS] spot=76764.9 | 1h: close=76841.1 sma20=77278.7 sma50=77392.3 rsi=37.5 macd=-103.32/-78.91(bear) | 15m: K=2.9↑(prev 1.8) | regime=PE-eligible any_active=False
 2026-08-31 05:43:39,811 [INFO] [SIGNAL] CE: reg=False K=False(K=2.9>=38,rising) Kextr=True RSI=False(37.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=2.9<=80,falling) Kextr=False RSI=True(37.5<47) MACD=True(gate off) => BLOCK
+2026-08-31 05:43:42,555 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260831_102217.log, Sensex_BarLevel_V2_5_20-SENSEX_20260831_102217.csv
+2026-08-31 05:46:14,132 [WARNING] [STALE] fut15 last bar 11:00 (>16min old) — instant refetch
+2026-08-31 05:46:14,177 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-08-31 05:46:45,288 [INFO] [VWAP] Signal — FUT 77457<77506 body=70% side=PE | persist_gate=dist=-50.7pt persist=True (last 2x5m vs FUTvwap=77507.3)
+2026-08-31 05:46:45,360 [INFO] ENTRY: BFO:SENSEX2690376800PE @ 296.25  engine=VWAP  detail=FUT VWAP 77457<77506 body=70% | bar=154
+2026-08-31 05:48:47,903 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-31 05:48:47,967 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-08-31 05:48:47,968 [INFO] [INDICATORS] spot=76811.6 | 1h: close=76789.6 sma20=77234.6 sma50=77378.2 rsi=36.3 macd=-124.77/-88.08(bear) | 15m: K=1.1↓(prev 2.9) | regime=PE-eligible any_active=True
+2026-08-31 05:48:47,968 [INFO] [SIGNAL] CE: reg=False K=False(K=1.1>=38,rising) Kextr=True RSI=False(36.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=1.1<=80,falling) Kextr=False RSI=True(36.3<47) MACD=True(gate off) => BLOCK
+2026-08-31 05:48:47,968 [INFO] [STATE][VWAP] PE BFO:SENSEX2690376800PE ltp=296.50 entry=296.25 pnl=+0.25(+0.1%) sl=242.93 peak=299.95 tr_armed=False elapsed=2min
