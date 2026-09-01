@@ -1543,3 +1543,4 @@
 2026-09-01 09:57:52,016 [INFO] [EXP12] M=24000 open=1[EXP2:23950PE] trades=0 realized=Rs+0 triggers=0 | by-engine none
 2026-09-01 09:58:52,804 [INFO] [EXP12] EXP2 EXIT 23950PE 18.95->0.15 Rs-1222 [EOD_1528] | day Rs-1222
 2026-09-01 09:59:55,244 [INFO] [EXP12] EOD why/why-not report sent
+2026-09-01 10:00:29,440 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260901_090205.log, Nifty_BarLevel_V2_5_20_20260901_090205.csv
