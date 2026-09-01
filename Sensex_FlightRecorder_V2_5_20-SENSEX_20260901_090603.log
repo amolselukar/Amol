@@ -1296,3 +1296,18 @@
 2026-09-01 07:51:36,938 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-01 07:51:36,938 [INFO] [INDICATORS] spot=76953.2 | 1h: close=76955.7 sma20=77039.4 sma50=77278.9 rsi=45.1 macd=-83.69/-103.24(bull) | 15m: K=55.8↓(prev 78.2) | regime=PE-eligible any_active=False
 2026-09-01 07:51:36,938 [INFO] [SIGNAL] CE: reg=False K=False(K=55.8>=38,rising) Kextr=False RSI=False(45.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=55.8<=80,falling) Kextr=True RSI=True(45.1<47) MACD=False(gate off) => PASS
+2026-09-01 07:51:39,549 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260901_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260901_090603.csv
+2026-09-01 07:52:09,750 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:52:40,050 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:53:10,273 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:53:40,511 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:54:10,849 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:54:41,132 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:55:11,464 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:55:41,786 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:56:12,054 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:56:42,368 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-01 07:56:42,392 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 07:56:42,392 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 07:56:42,393 [INFO] [INDICATORS] spot=76975.8 | 1h: close=76955.7 sma20=77039.4 sma50=77278.9 rsi=45.1 macd=-83.69/-103.24(bull) | 15m: K=55.8↓(prev 78.2) | regime=PE-eligible any_active=False
+2026-09-01 07:56:42,393 [INFO] [SIGNAL] CE: reg=False K=False(K=55.8>=38,rising) Kextr=False RSI=False(45.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=55.8<=80,falling) Kextr=True RSI=True(45.1<47) MACD=False(gate off) => PASS
