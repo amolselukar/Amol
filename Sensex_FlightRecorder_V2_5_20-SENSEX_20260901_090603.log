@@ -1145,3 +1145,10 @@
 2026-09-01 06:09:27,230 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-01 06:09:27,230 [INFO] [INDICATORS] spot=77159.3 | 1h: close=77115.0 sma20=77060.0 sma50=77300.2 rsi=49.8 macd=-106.02/-114.30(bull) | 15m: K=100.0↑(prev 99.1) | regime=NEUTRAL any_active=False
 2026-09-01 06:09:27,230 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(49.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(49.8<47) MACD=False(gate off) => BLOCK
+2026-09-01 06:09:30,468 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260901_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260901_090603.csv
+2026-09-01 06:12:02,231 [INFO] [V3PROBE] EXPIRED unfilled CE BFO:SENSEX2690377200CE limit=278.50
+2026-09-01 06:12:33,453 [INFO] [V3PROBE] PLACED CE BFO:SENSEX2690377200CE limit=288.20 (LTP=301.20 - 13) window=25min — Grade B G-cluster BREAK-CE at 77177
+2026-09-01 06:14:35,686 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 06:14:35,686 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 06:14:35,687 [INFO] [INDICATORS] spot=77154.4 | 1h: close=77115.0 sma20=77060.0 sma50=77300.2 rsi=49.8 macd=-106.02/-114.30(bull) | 15m: K=100.0↑(prev 99.1) | regime=NEUTRAL any_active=False
+2026-09-01 06:14:35,687 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(49.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(49.8<47) MACD=False(gate off) => BLOCK
