@@ -978,3 +978,17 @@
 2026-09-01 04:22:10,394 [INFO] [INDICATORS] spot=76820.0 | 1h: close=76957.3 sma20=77086.0 sma50=77322.3 rsi=43.8 macd=-124.22/-114.10(bear) | 15m: K=59.5↓(prev 73.1) | regime=PE-eligible any_active=True
 2026-09-01 04:22:10,394 [INFO] [SIGNAL] CE: reg=False K=False(K=59.5>=38,rising) Kextr=False RSI=False(43.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=59.5<=80,falling) Kextr=True RSI=True(43.8<47) MACD=True(gate off) => PASS
 2026-09-01 04:22:10,394 [INFO] [STATE][ORB] PE BFO:SENSEX2690376800PE ltp=250.90 entry=262.55 pnl=-11.65(-4.4%) sl=0.00 peak=264.25 tr_armed=False elapsed=4min
+2026-09-01 04:23:14,812 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:23:45,043 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:24:15,256 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:24:45,490 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:25:15,746 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:25:45,968 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:26:16,248 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:26:46,545 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:27:16,786 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-01 04:27:16,825 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 04:27:16,825 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 04:27:16,825 [INFO] [INDICATORS] spot=76824.4 | 1h: close=76957.3 sma20=77086.0 sma50=77322.3 rsi=43.8 macd=-124.22/-114.10(bear) | 15m: K=59.5↓(prev 73.1) | regime=PE-eligible any_active=True
+2026-09-01 04:27:16,826 [INFO] [SIGNAL] CE: reg=False K=False(K=59.5>=38,rising) Kextr=False RSI=False(43.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=59.5<=80,falling) Kextr=True RSI=True(43.8<47) MACD=True(gate off) => PASS
+2026-09-01 04:27:16,826 [INFO] [STATE][ORB] PE BFO:SENSEX2690376800PE ltp=259.50 entry=262.55 pnl=-3.05(-1.2%) sl=0.00 peak=264.25 tr_armed=False elapsed=9min
