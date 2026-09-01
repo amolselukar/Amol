@@ -1363,3 +1363,14 @@
 2026-09-01 08:37:29,466 [INFO] [INDICATORS] spot=76741.1 | 1h: close=76955.7 sma20=77039.4 sma50=77278.9 rsi=45.1 macd=-83.69/-103.24(bull) | 15m: K=0.0↓(prev 6.5) | regime=PE-eligible any_active=True
 2026-09-01 08:37:29,466 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(45.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=0.0<=80,falling) Kextr=False RSI=True(45.1<47) MACD=False(gate off) => BLOCK
 2026-09-01 08:37:29,467 [INFO] [STATE][VWAP] PE BFO:SENSEX2690376800PE ltp=296.25 entry=269.30 pnl=+26.95(+10.0%) sl=220.83 peak=297.40 tr_armed=False elapsed=6min
+2026-09-01 08:37:31,853 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260901_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260901_090603.csv
+2026-09-01 08:40:04,098 [INFO] [TRAIL] SL ratcheted 317.70 → 328.55  (peak=344.55)
+2026-09-01 08:41:04,677 [INFO] [V3PROBE] PLACED PE BFO:SENSEX2690376700PE limit=263.20 (LTP=276.20 - 13) window=25min — EARLY(10m) Grade A R-cluster BREAK-PE at 76751
+2026-09-01 08:41:05,647 [INFO] EXIT: BFO:SENSEX2690376800PE @ 328.55 reason=TRAIL_+59 pnl/sh=+59.25 is_flip=False losses=0/4
+2026-09-01 08:41:36,862 [INFO] [V3PROBE] FILLED PE BFO:SENSEX2690376700PE @ 263.20 (LTP touched 263.15)
+2026-09-01 08:41:36,901 [INFO] ENTRY: BFO:SENSEX2690376700PE @ 263.20  engine=V3  detail=EARLY(10m) Grade A R-cluster BREAK-PE at 76751
+2026-09-01 08:42:38,346 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 08:42:38,346 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 08:42:38,346 [INFO] [INDICATORS] spot=76712.9 | 1h: close=76955.7 sma20=77039.4 sma50=77278.9 rsi=45.1 macd=-83.69/-103.24(bull) | 15m: K=0.0↓(prev 6.5) | regime=PE-eligible any_active=True
+2026-09-01 08:42:38,346 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(45.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=0.0<=80,falling) Kextr=False RSI=True(45.1<47) MACD=False(gate off) => BLOCK
+2026-09-01 08:42:38,347 [INFO] [STATE][BASE] PE BFO:SENSEX2690376700PE ltp=275.10 entry=263.20 pnl=+11.90(+4.5%) sl=215.82 peak=275.10 tr_armed=False elapsed=1min
