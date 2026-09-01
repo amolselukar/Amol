@@ -1265,3 +1265,8 @@
 2026-09-01 07:31:15,424 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-01 07:31:15,424 [INFO] [INDICATORS] spot=77085.9 | 1h: close=77192.7 sma20=77050.6 sma50=77290.9 rsi=52.2 macd=-83.43/-108.12(bull) | 15m: K=78.2↓(prev 89.9) | regime=NEUTRAL any_active=False
 2026-09-01 07:31:15,424 [INFO] [SIGNAL] CE: reg=False K=False(K=78.2>=38,rising) Kextr=False RSI=False(52.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=78.2<=80,falling) Kextr=True RSI=False(52.2<47) MACD=False(gate off) => BLOCK
+2026-09-01 07:31:17,957 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260901_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260901_090603.csv
+2026-09-01 07:36:20,479 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 07:36:20,479 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-01 07:36:20,480 [INFO] [INDICATORS] spot=77044.8 | 1h: close=77192.7 sma20=77050.6 sma50=77290.9 rsi=52.2 macd=-83.43/-108.12(bull) | 15m: K=78.2↓(prev 89.9) | regime=NEUTRAL any_active=False
+2026-09-01 07:36:20,480 [INFO] [SIGNAL] CE: reg=False K=False(K=78.2>=38,rising) Kextr=False RSI=False(52.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=78.2<=80,falling) Kextr=True RSI=False(52.2<47) MACD=False(gate off) => BLOCK
