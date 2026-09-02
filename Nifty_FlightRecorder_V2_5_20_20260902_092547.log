@@ -1145,3 +1145,13 @@
 2026-09-02 05:22:36,495 [INFO] [INDICATORS] spot=23863.7 | 1h: close=23848.3 sma20=24054.9 sma50=24143.8 rsi=34.4 macd=-49.89/-38.44(bear) | 15m: K=28.8↑(prev 24.4) | regime=PE-eligible any_active=True
 2026-09-02 05:22:36,495 [INFO] [SIGNAL] CE: reg=False K=False(K=28.8>=38,rising) Kextr=True RSI=False(34.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=28.8<=80,falling) Kextr=False RSI=True(34.4<47) MACD=True(gate off) => BLOCK
 2026-09-02 05:22:36,495 [INFO] [STATE][BASE] PE NFO:NIFTY2690823900PE ltp=138.10 entry=132.65 pnl=+5.45(+4.1%) sl=108.77 peak=138.10 tr_armed=False elapsed=3min
+2026-09-02 05:22:39,172 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260902_092547.log, Nifty_BarLevel_V2_5_20_20260902_092547.csv
+2026-09-02 05:23:39,970 [INFO] EXIT: NFO:NIFTY2690823900PE @ 142.65 reason=V3_FAST_TARGET pnl/sh=+10.00 is_flip=False losses=0/4
+2026-09-02 05:24:11,236 [INFO] [V3PROBE] PLACED PE NFO:NIFTY2690823800PE limit=98.25 (LTP=102.25 - 4) window=25min — Grade B R-cluster BREAK-PE at 24001
+2026-09-02 05:24:42,419 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2690823800PE @ 98.25 (LTP touched 97.25)
+2026-09-02 05:24:42,476 [INFO] ENTRY: NFO:NIFTY2690823800PE @ 98.25  engine=V3  detail=Grade B R-cluster BREAK-PE at 24001
+2026-09-02 05:27:46,221 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 05:27:46,278 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 05:27:46,279 [INFO] [INDICATORS] spot=23863.1 | 1h: close=23848.3 sma20=24054.9 sma50=24143.8 rsi=34.4 macd=-49.89/-38.44(bear) | 15m: K=28.8↑(prev 24.4) | regime=PE-eligible any_active=True
+2026-09-02 05:27:46,279 [INFO] [SIGNAL] CE: reg=False K=False(K=28.8>=38,rising) Kextr=True RSI=False(34.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=28.8<=80,falling) Kextr=False RSI=True(34.4<47) MACD=True(gate off) => BLOCK
+2026-09-02 05:27:46,279 [INFO] [STATE][BASE] PE NFO:NIFTY2690823800PE ltp=93.90 entry=98.25 pnl=-4.35(-4.4%) sl=80.57 peak=98.25 tr_armed=False elapsed=3min
