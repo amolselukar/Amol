@@ -1455,3 +1455,22 @@
 2026-09-02 09:02:24,819 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-02 09:02:24,820 [INFO] [INDICATORS] spot=76507.4 | 1h: close=76495.6 sma20=76802.1 sma50=77128.6 rsi=40.2 macd=-201.71/-163.28(bear) | 15m: K=98.5↑(prev 96.2) | regime=PE-eligible any_active=False
 2026-09-02 09:02:24,820 [INFO] [SIGNAL] CE: reg=False K=True(K=98.5>=38,rising) Kextr=False RSI=False(40.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=98.5<=80,falling) Kextr=True RSI=True(40.2<47) MACD=True(gate off) => BLOCK
+2026-09-02 09:02:28,874 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260902_092549.log, Sensex_BarLevel_V2_5_20-SENSEX_20260902_092549.csv
+2026-09-02 09:02:59,194 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76512.9 is -371.6 below FUT VWAP 76884.5 (buffer 16)
+2026-09-02 09:03:29,546 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76524.2 is -360.7 below FUT VWAP 76884.9 (buffer 16)
+2026-09-02 09:03:59,899 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76524.2 is -360.7 below FUT VWAP 76884.9 (buffer 16)
+2026-09-02 09:04:30,287 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76525.6 is -359.3 below FUT VWAP 76884.9 (buffer 16)
+2026-09-02 09:05:00,706 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76525.6 is -359.3 below FUT VWAP 76884.9 (buffer 16)
+2026-09-02 09:05:00,720 [INFO] [GAPBREAK] Range-break detected — close 76525.6 broke [76135.7,76521.7] side=CE (gap=-473.0)
+2026-09-02 09:05:31,168 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76531.2 is -372.0 below FUT VWAP 76903.2 (buffer 16)
+2026-09-02 09:06:01,545 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76531.2 is -372.0 below FUT VWAP 76903.2 (buffer 16)
+2026-09-02 09:06:31,941 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76566.2 is -337.2 below FUT VWAP 76903.4 (buffer 16)
+2026-09-02 09:06:31,948 [INFO] [GAPBREAK] Confirmed — bar close 76566.2 > ref 76525.6
+2026-09-02 09:06:32,033 [INFO] ENTRY: BFO:SENSEX2690376600CE @ 222.05  engine=GAPBREAK  detail=GAP break confirmed, gap=-473
+2026-09-02 09:07:03,150 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76566.2 is -337.2 below FUT VWAP 76903.4 (buffer 16)
+2026-09-02 09:07:33,520 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76552.9 is -350.8 below FUT VWAP 76903.7 (buffer 16)
+2026-09-02 09:07:33,575 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 09:07:33,575 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 09:07:33,576 [INFO] [INDICATORS] spot=76552.9 | 1h: close=76495.6 sma20=76802.1 sma50=77128.6 rsi=40.2 macd=-201.71/-163.28(bear) | 15m: K=98.5↑(prev 96.2) | regime=PE-eligible any_active=True
+2026-09-02 09:07:33,576 [INFO] [SIGNAL] CE: reg=False K=True(K=98.5>=38,rising) Kextr=False RSI=False(40.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=98.5<=80,falling) Kextr=True RSI=True(40.2<47) MACD=True(gate off) => BLOCK
+2026-09-02 09:07:33,577 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX2690376600CE ltp=225.10 entry=222.05 pnl=+3.05(+1.4%) sl=0.00 peak=225.10 tr_armed=False elapsed=1min
