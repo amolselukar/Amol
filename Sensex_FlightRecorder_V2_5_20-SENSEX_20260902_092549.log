@@ -1139,3 +1139,20 @@
 2026-09-02 05:43:07,705 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-02 05:43:07,706 [INFO] [INDICATORS] spot=76311.6 | 1h: close=76344.7 sma20=76942.1 sma50=77209.6 rsi=34.9 macd=-146.03/-114.03(bear) | 15m: K=42.0↑(prev 36.3) | regime=PE-eligible any_active=False
 2026-09-02 05:43:07,706 [INFO] [SIGNAL] CE: reg=False K=True(K=42.0>=38,rising) Kextr=True RSI=False(34.9>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=42.0<=80,falling) Kextr=False RSI=True(34.9<47) MACD=True(gate off) => BLOCK
+2026-09-02 05:43:11,095 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260902_092549.log, Sensex_BarLevel_V2_5_20-SENSEX_20260902_092549.csv
+2026-09-02 05:43:41,367 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76315.4 is -534.5 below FUT VWAP 76849.9 (buffer 16)
+2026-09-02 05:44:11,658 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76315.4 is -534.4 below FUT VWAP 76849.8 (buffer 16)
+2026-09-02 05:44:41,946 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76312.6 is -537.2 below FUT VWAP 76849.8 (buffer 16)
+2026-09-02 05:45:12,304 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76312.6 is -537.2 below FUT VWAP 76849.8 (buffer 16)
+2026-09-02 05:45:42,613 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76309.2 is -540.6 below FUT VWAP 76849.8 (buffer 16)
+2026-09-02 05:46:13,002 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76309.2 is -540.6 below FUT VWAP 76849.8 (buffer 16)
+2026-09-02 05:46:13,005 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-02 05:46:43,396 [INFO] [V3PROBE] PLACED PE BFO:SENSEX2690376300PE limit=224.10 (LTP=237.10 - 13) window=25min — Grade B R-cluster BREAK-PE at 76340
+2026-09-02 05:46:44,172 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-02 05:47:14,503 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-02 05:47:44,817 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-02 05:48:15,215 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-02 05:48:15,248 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 05:48:15,310 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 05:48:15,311 [INFO] [INDICATORS] spot=76302.5 | 1h: close=76309.2 sma20=76906.2 sma50=77183.2 rsi=34.3 macd=-177.97/-126.81(bear) | 15m: K=34.9↓(prev 42.0) | regime=PE-eligible any_active=False
+2026-09-02 05:48:15,311 [INFO] [SIGNAL] CE: reg=False K=False(K=34.9>=38,rising) Kextr=False RSI=False(34.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=34.9<=80,falling) Kextr=False RSI=True(34.3<47) MACD=True(gate off) => BLOCK
