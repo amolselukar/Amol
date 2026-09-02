@@ -1317,3 +1317,10 @@
 2026-09-02 07:25:20,664 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-02 07:25:20,664 [INFO] [INDICATORS] spot=76417.7 | 1h: close=76340.3 sma20=76869.8 sma50=77161.8 rsi=35.3 macd=-198.48/-141.15(bear) | 15m: K=61.6↑(prev 35.8) | regime=PE-eligible any_active=False
 2026-09-02 07:25:20,664 [INFO] [SIGNAL] CE: reg=False K=True(K=61.6>=38,rising) Kextr=True RSI=False(35.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=61.6<=80,falling) Kextr=False RSI=True(35.3<47) MACD=True(gate off) => BLOCK
+2026-09-02 07:25:23,293 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260902_092549.log, Sensex_BarLevel_V2_5_20-SENSEX_20260902_092549.csv
+2026-09-02 07:26:24,110 [INFO] [V3PROBE] PLACED CE BFO:SENSEX2690376400CE limit=280.05 (LTP=293.05 - 13) window=25min — EARLY(10m) Grade B R-cluster REJECT-CE at 76440
+2026-09-02 07:30:27,300 [INFO] [ORB] CHOP-KILL @13:00 — range-so-far 0.52% < p33 0.58% and 5 TWAP flips >= 4. ORB entries+flips OFF for the day.
+2026-09-02 07:30:28,118 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 07:30:28,118 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 07:30:28,119 [INFO] [INDICATORS] spot=76427.0 | 1h: close=76340.3 sma20=76869.8 sma50=77161.8 rsi=35.3 macd=-198.48/-141.15(bear) | 15m: K=80.5↑(prev 61.6) | regime=PE-eligible any_active=False
+2026-09-02 07:30:28,119 [INFO] [SIGNAL] CE: reg=False K=True(K=80.5>=38,rising) Kextr=True RSI=False(35.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.5<=80,falling) Kextr=False RSI=True(35.3<47) MACD=True(gate off) => BLOCK
