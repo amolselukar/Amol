@@ -1062,3 +1062,17 @@
 2026-09-02 04:16:16,512 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-02 04:16:16,512 [INFO] [INDICATORS] spot=23841.6 | 1h: close=24055.8 sma20=24070.5 sma50=24151.8 rsi=47.0 macd=-36.40/-35.58(bear) | 15m: K=28.1↓(prev 33.6) | regime=PE-eligible any_active=False
 2026-09-02 04:16:16,513 [INFO] [SIGNAL] CE: reg=False K=False(K=28.1>=38,rising) Kextr=True RSI=False(47.0>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=28.1<=80,falling) Kextr=False RSI=True(47.0<47) MACD=True(gate off) => BLOCK
+2026-09-02 04:16:19,152 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260902_092547.log, Nifty_BarLevel_V2_5_20_20260902_092547.csv
+2026-09-02 04:16:49,446 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:17:19,722 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:17:50,010 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:18:20,318 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:18:50,622 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:19:20,925 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:19:51,233 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:20:21,531 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:20:51,829 [INFO] [FUT5VWAP] Skip — close 23976 only 19pt from a pivot (need >20)
+2026-09-02 04:21:22,145 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 04:21:22,145 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 04:21:22,146 [INFO] [INDICATORS] spot=23835.3 | 1h: close=24055.8 sma20=24070.5 sma50=24151.8 rsi=47.0 macd=-36.40/-35.58(bear) | 15m: K=28.1↓(prev 33.6) | regime=PE-eligible any_active=False
+2026-09-02 04:21:22,146 [INFO] [SIGNAL] CE: reg=False K=False(K=28.1>=38,rising) Kextr=True RSI=False(47.0>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=28.1<=80,falling) Kextr=False RSI=True(47.0<47) MACD=True(gate off) => BLOCK
