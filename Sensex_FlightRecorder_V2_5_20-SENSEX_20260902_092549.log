@@ -1490,3 +1490,15 @@
 2026-09-02 09:12:40,069 [INFO] [INDICATORS] spot=76526.6 | 1h: close=76495.6 sma20=76802.1 sma50=77128.6 rsi=40.2 macd=-201.71/-163.28(bear) | 15m: K=98.5↑(prev 96.2) | regime=PE-eligible any_active=True
 2026-09-02 09:12:40,069 [INFO] [SIGNAL] CE: reg=False K=True(K=98.5>=38,rising) Kextr=False RSI=False(40.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=98.5<=80,falling) Kextr=True RSI=True(40.2<47) MACD=True(gate off) => BLOCK
 2026-09-02 09:12:40,069 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX2690376600CE ltp=198.55 entry=222.05 pnl=-23.50(-10.6%) sl=0.00 peak=225.10 tr_armed=False elapsed=6min
+2026-09-02 09:12:42,862 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260902_092549.log, Sensex_BarLevel_V2_5_20-SENSEX_20260902_092549.csv
+2026-09-02 09:13:13,172 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76526.6 is -377.5 below FUT VWAP 76904.1 (buffer 16)
+2026-09-02 09:13:43,568 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76515.1 is -389.5 below FUT VWAP 76904.6 (buffer 16)
+2026-09-02 09:14:13,936 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76515.1 is -389.5 below FUT VWAP 76904.6 (buffer 16)
+2026-09-02 09:14:44,291 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76498.8 is -405.9 below FUT VWAP 76904.8 (buffer 16)
+2026-09-02 09:15:14,730 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76498.8 is -405.9 below FUT VWAP 76904.8 (buffer 16)
+2026-09-02 09:15:45,179 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76473.1 is -431.7 below FUT VWAP 76904.9 (buffer 16)
+2026-09-02 09:17:46,812 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 09:17:46,813 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 09:17:46,813 [INFO] [INDICATORS] spot=76477.8 | 1h: close=76495.6 sma20=76802.1 sma50=77128.6 rsi=40.2 macd=-201.71/-163.28(bear) | 15m: K=95.6↓(prev 98.5) | regime=PE-eligible any_active=True
+2026-09-02 09:17:46,813 [INFO] [SIGNAL] CE: reg=False K=False(K=95.6>=38,rising) Kextr=False RSI=False(40.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=95.6<=80,falling) Kextr=True RSI=True(40.2<47) MACD=True(gate off) => BLOCK
+2026-09-02 09:17:46,814 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX2690376600CE ltp=198.30 entry=222.05 pnl=-23.75(-10.7%) sl=0.00 peak=225.10 tr_armed=False elapsed=11min
