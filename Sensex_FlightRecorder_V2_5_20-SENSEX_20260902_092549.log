@@ -1387,3 +1387,19 @@
 2026-09-02 08:11:14,728 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-02 08:11:14,729 [INFO] [INDICATORS] spot=76403.8 | 1h: close=76447.4 sma20=76837.1 sma50=77143.7 rsi=38.7 macd=-203.75/-153.67(bear) | 15m: K=99.4↓(prev 100.0) | regime=PE-eligible any_active=False
 2026-09-02 08:11:14,729 [INFO] [SIGNAL] CE: reg=False K=False(K=99.4>=38,rising) Kextr=False RSI=False(38.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=99.4<=80,falling) Kextr=True RSI=True(38.7<47) MACD=True(gate off) => BLOCK
+2026-09-02 08:11:17,402 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260902_092549.log, Sensex_BarLevel_V2_5_20-SENSEX_20260902_092549.csv
+2026-09-02 08:11:47,684 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:12:18,080 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:12:48,399 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:13:18,707 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:13:49,037 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:14:19,367 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:14:49,716 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:15:20,045 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:15:50,382 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-09-02 08:16:20,724 [INFO] [VWAP] Signal — FUT 76989>76862 body=84% side=CE | persist_gate=dist=+125.4pt persist=True (last 2x5m vs FUTvwap=76863.6)
+2026-09-02 08:16:20,727 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 76441.4 is -422.2 below FUT VWAP 76863.6 (buffer 16)
+2026-09-02 08:16:21,544 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 08:16:21,544 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-02 08:16:21,544 [INFO] [INDICATORS] spot=76441.4 | 1h: close=76447.4 sma20=76837.1 sma50=77143.7 rsi=38.7 macd=-203.75/-153.67(bear) | 15m: K=96.0↓(prev 99.4) | regime=PE-eligible any_active=False
+2026-09-02 08:16:21,544 [INFO] [SIGNAL] CE: reg=False K=False(K=96.0>=38,rising) Kextr=False RSI=False(38.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=96.0<=80,falling) Kextr=True RSI=True(38.7<47) MACD=True(gate off) => BLOCK
