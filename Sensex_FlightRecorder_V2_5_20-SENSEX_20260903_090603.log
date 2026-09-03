@@ -1032,3 +1032,11 @@
 2026-09-03 04:11:48,057 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-03 04:11:48,058 [INFO] [INDICATORS] spot=76884.4 | 1h: close=76570.4 sma20=76748.9 sma50=77098.4 rsi=43.0 macd=-188.07/-174.08(bear) | 15m: K=97.5↑(prev 87.3) | regime=PE-eligible any_active=False
 2026-09-03 04:11:48,058 [INFO] [SIGNAL] CE: reg=False K=True(K=97.5>=38,rising) Kextr=False RSI=False(43.0>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=97.5<=80,falling) Kextr=True RSI=True(43.0<47) MACD=True(gate off) => BLOCK
+2026-09-03 04:11:50,643 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260903_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260903_090603.csv
+2026-09-03 04:15:24,083 [INFO] [V3PROBE] PLACED CE BFO:SENSEX2690376900CE limit=141.15 (LTP=154.15 - 13) window=25min — EARLY(10m) Grade B G-cluster BREAK-CE at 76754
+2026-09-03 04:16:25,621 [INFO] [VWAP] Signal — FUT 77350>77304 body=66% side=CE | persist_gate=dist=+64.7pt persist=True (last 2x5m vs FUTvwap=77285.3)
+2026-09-03 04:16:25,624 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 76908.8 is -376.5 below FUT VWAP 77285.3 (buffer 16)
+2026-09-03 04:16:56,770 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 04:16:56,842 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 04:16:56,843 [INFO] [INDICATORS] spot=76908.8 | 1h: close=76570.4 sma20=76748.9 sma50=77098.4 rsi=43.0 macd=-188.07/-174.08(bear) | 15m: K=100.0↑(prev 97.5) | regime=PE-eligible any_active=False
+2026-09-03 04:16:56,843 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(43.0>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(43.0<47) MACD=True(gate off) => BLOCK
