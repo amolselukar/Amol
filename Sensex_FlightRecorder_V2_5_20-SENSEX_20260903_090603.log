@@ -1364,3 +1364,15 @@
 2026-09-03 06:50:35,777 [INFO] [SIGNAL] CE: reg=False K=False(K=40.0>=38,rising) Kextr=False RSI=False(47.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=40.0<=80,falling) Kextr=False RSI=True(47.0<47) MACD=False(gate off) => BLOCK
 2026-09-03 06:50:35,777 [INFO] [STATE][VWAP] PE BFO:SENSEX2690376700PE ltp=169.00 entry=121.15 pnl=+47.85(+39.5%) sl=157.60 peak=173.60 tr_armed=True elapsed=19min
 2026-09-03 06:50:35,778 [INFO] [STATE][ORB] PE BFO:SENSEX2690376700PE ltp=169.00 entry=137.15 pnl=+31.85(+23.2%) sl=0.00 peak=181.60 tr_armed=False elapsed=85min
+2026-09-03 06:50:38,367 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260903_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260903_090603.csv
+2026-09-03 06:52:09,825 [INFO] [TRAIL] SL ratcheted 157.60 → 158.20  (peak=174.20)
+2026-09-03 06:52:40,236 [INFO] [TRAIL] SL ratcheted 158.20 → 162.70  (peak=178.70)
+2026-09-03 06:53:10,584 [INFO] [TRAIL] SL ratcheted 162.70 → 171.60  (peak=187.60)
+2026-09-03 06:54:11,428 [INFO] [TRAIL] SL ratcheted 171.60 → 173.90  (peak=189.90)
+2026-09-03 06:54:41,875 [INFO] [TRAIL] SL ratcheted 173.90 → 175.00  (peak=191.00)
+2026-09-03 06:55:42,841 [INFO] [APEX] open=0 trades=1 realized=+22.0pt/Rs+440 unreal=+0.0pt/Rs+0
+2026-09-03 06:55:42,841 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 06:55:42,842 [INFO] [INDICATORS] spot=76583.4 | 1h: close=76677.5 sma20=76717.2 sma50=77065.1 rsi=47.0 macd=-132.35/-159.30(bull) | 15m: K=40.0↓(prev 50.6) | regime=PE-eligible any_active=True
+2026-09-03 06:55:42,842 [INFO] [SIGNAL] CE: reg=False K=False(K=40.0>=38,rising) Kextr=False RSI=False(47.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=40.0<=80,falling) Kextr=False RSI=True(47.0<47) MACD=False(gate off) => BLOCK
+2026-09-03 06:55:42,842 [INFO] [STATE][VWAP] PE BFO:SENSEX2690376700PE ltp=184.70 entry=121.15 pnl=+63.55(+52.5%) sl=175.00 peak=191.00 tr_armed=True elapsed=24min
+2026-09-03 06:55:42,843 [INFO] [STATE][ORB] PE BFO:SENSEX2690376700PE ltp=184.70 entry=137.15 pnl=+47.55(+34.7%) sl=0.00 peak=191.00 tr_armed=False elapsed=90min
