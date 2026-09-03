@@ -1322,3 +1322,20 @@
 2026-09-03 06:35:12,045 [INFO] [SIGNAL] CE: reg=False K=True(K=50.6>=38,rising) Kextr=False RSI=False(45.5>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=50.6<=80,falling) Kextr=False RSI=True(45.5<47) MACD=False(gate off) => BLOCK
 2026-09-03 06:35:12,045 [INFO] [STATE][VWAP] PE BFO:SENSEX2690376700PE ltp=131.70 entry=121.15 pnl=+10.55(+8.7%) sl=99.34 peak=145.40 tr_armed=False elapsed=4min
 2026-09-03 06:35:12,045 [INFO] [STATE][ORB] PE BFO:SENSEX2690376700PE ltp=131.10 entry=137.15 pnl=-6.05(-4.4%) sl=0.00 peak=181.60 tr_armed=False elapsed=69min
+2026-09-03 06:35:14,447 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260903_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260903_090603.csv
+2026-09-03 06:35:44,745 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76657.9 is -592.7 below FUT VWAP 77250.6 (buffer 16)
+2026-09-03 06:36:15,233 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76657.9 is -592.0 below FUT VWAP 77249.8 (buffer 16)
+2026-09-03 06:36:45,717 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76668.1 is -581.7 below FUT VWAP 77249.8 (buffer 16)
+2026-09-03 06:37:16,176 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76668.1 is -581.7 below FUT VWAP 77249.8 (buffer 16)
+2026-09-03 06:37:46,671 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76668.6 is -581.3 below FUT VWAP 77249.8 (buffer 16)
+2026-09-03 06:38:17,136 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76668.6 is -580.7 below FUT VWAP 77249.3 (buffer 16)
+2026-09-03 06:38:47,655 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76652.3 is -597.0 below FUT VWAP 77249.3 (buffer 16)
+2026-09-03 06:39:18,086 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76652.3 is -596.4 below FUT VWAP 77248.7 (buffer 16)
+2026-09-03 06:39:48,561 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76661.0 is -587.7 below FUT VWAP 77248.7 (buffer 16)
+2026-09-03 06:40:19,005 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76661.0 is -582.7 below FUT VWAP 77243.8 (buffer 16)
+2026-09-03 06:40:19,129 [INFO] [APEX] open=0 trades=1 realized=+22.0pt/Rs+440 unreal=+0.0pt/Rs+0
+2026-09-03 06:40:19,129 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 06:40:19,129 [INFO] [INDICATORS] spot=76661.0 | 1h: close=76628.0 sma20=76733.8 sma50=77075.6 rsi=45.5 macd=-146.75/-166.03(bull) | 15m: K=50.6↑(prev 42.5) | regime=PE-eligible any_active=True
+2026-09-03 06:40:19,129 [INFO] [SIGNAL] CE: reg=False K=True(K=50.6>=38,rising) Kextr=False RSI=False(45.5>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=50.6<=80,falling) Kextr=False RSI=True(45.5<47) MACD=False(gate off) => BLOCK
+2026-09-03 06:40:19,130 [INFO] [STATE][VWAP] PE BFO:SENSEX2690376700PE ltp=139.80 entry=121.15 pnl=+18.65(+15.4%) sl=99.34 peak=150.80 tr_armed=False elapsed=9min
+2026-09-03 06:40:19,130 [INFO] [STATE][ORB] PE BFO:SENSEX2690376700PE ltp=139.80 entry=137.15 pnl=+2.65(+1.9%) sl=0.00 peak=181.60 tr_armed=False elapsed=74min
