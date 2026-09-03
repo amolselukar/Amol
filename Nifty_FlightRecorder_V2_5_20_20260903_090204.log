@@ -1080,3 +1080,18 @@
 2026-09-03 04:18:00,708 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-03 04:18:00,709 [INFO] [INDICATORS] spot=24017.5 | 1h: close=23914.5 sma20=23984.4 sma50=24104.8 rsi=41.9 macd=-67.05/-60.87(bear) | 15m: K=100.0↑(prev 99.0) | regime=PE-eligible any_active=False
 2026-09-03 04:18:00,709 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(41.9>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(41.9<47) MACD=True(gate off) => BLOCK
+2026-09-03 04:18:04,116 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260903_090204.log, Nifty_BarLevel_V2_5_20_20260903_090204.csv
+2026-09-03 04:18:34,314 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:19:04,557 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:19:34,778 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:20:05,065 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:20:35,361 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:21:05,607 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:21:35,828 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:22:06,063 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:22:36,315 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:23:06,610 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-03 04:23:06,635 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 04:23:06,677 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 04:23:06,677 [INFO] [INDICATORS] spot=24010.8 | 1h: close=23914.5 sma20=23984.4 sma50=24104.8 rsi=41.9 macd=-67.05/-60.87(bear) | 15m: K=100.0↑(prev 99.0) | regime=PE-eligible any_active=False
+2026-09-03 04:23:06,677 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(41.9>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(41.9<47) MACD=True(gate off) => BLOCK
