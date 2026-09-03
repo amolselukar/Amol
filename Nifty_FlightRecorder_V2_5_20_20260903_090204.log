@@ -1199,3 +1199,18 @@
 2026-09-03 05:44:41,079 [INFO] [INDICATORS] spot=23931.7 | 1h: close=23991.2 sma20=23983.9 sma50=24100.2 rsi=49.2 macd=-57.26/-60.15(bull) | 15m: K=57.4↓(prev 66.9) | regime=NEUTRAL any_active=True
 2026-09-03 05:44:41,079 [INFO] [SIGNAL] CE: reg=False K=False(K=57.4>=38,rising) Kextr=False RSI=False(49.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=57.4<=80,falling) Kextr=True RSI=False(49.2<47) MACD=False(gate off) => BLOCK
 2026-09-03 05:44:41,080 [INFO] [STATE][ORB] PE NFO:NIFTY2690824000PE ltp=138.20 entry=119.20 pnl=+19.00(+15.9%) sl=0.00 peak=138.20 tr_armed=False elapsed=19min
+2026-09-03 05:44:43,671 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260903_090204.log, Nifty_BarLevel_V2_5_20_20260903_090204.csv
+2026-09-03 05:45:13,930 [INFO] EXIT: NFO:NIFTY2690824000PE @ 137.20 reason=ORB_LOCK_FLOOR pnl/sh=+18.00 is_flip=False losses=0/4
+2026-09-03 05:46:45,426 [INFO] [CHOPGATE] RE-ARMED — FUT 24040 < FH_low 24076-15 body=75% regime=TRANSITION
+2026-09-03 05:46:46,006 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"\" at byte offset 44"}
+2026-09-03 05:46:46,006 [WARNING] HTML parse failed; retrying as plain text
+2026-09-03 05:46:47,858 [INFO] ENTRY: NFO:NIFTY2690823900PE @ 87.30  engine=V2  detail=K=40.1↓ RSI=44.2 MACD✓
+2026-09-03 05:46:48,632 [INFO] [VWAP] Signal — FUT 24040<24104 body=75% side=PE | persist_gate=dist=-62.3pt persist=True (last 2x5m vs FUTvwap=24102.3)
+2026-09-03 05:46:48,687 [INFO] ENTRY: NFO:NIFTY2690823900PE @ 87.75  engine=VWAP  detail=FUT VWAP 24040<24104 body=75% | bar=206
+2026-09-03 05:46:49,497 [INFO] [GAPBREAK] No confirm within 3 bars — skipping for the day
+2026-09-03 05:49:51,806 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 05:49:51,807 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-03 05:49:51,807 [INFO] [INDICATORS] spot=23939.6 | 1h: close=23926.9 sma20=23977.4 sma50=24095.9 rsi=44.2 macd=-54.06/-58.93(bull) | 15m: K=40.1↓(prev 57.4) | regime=PE-eligible any_active=True
+2026-09-03 05:49:51,807 [INFO] [SIGNAL] CE: reg=False K=False(K=40.1>=38,rising) Kextr=False RSI=False(44.2>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=40.1<=80,falling) Kextr=True RSI=True(44.2<47) MACD=False(gate off) => PASS
+2026-09-03 05:49:51,807 [INFO] [STATE][BASE] PE NFO:NIFTY2690823900PE ltp=79.75 entry=87.30 pnl=-7.55(-8.6%) sl=72.30 peak=87.30 tr_armed=False elapsed=3min
+2026-09-03 05:49:51,808 [INFO] [STATE][VWAP] PE NFO:NIFTY2690823900PE ltp=79.75 entry=87.75 pnl=-8.00(-9.1%) sl=71.96 peak=87.75 tr_armed=False elapsed=3min
