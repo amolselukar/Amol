@@ -1233,3 +1233,13 @@
 2026-09-04 06:04:30,861 [INFO] [STATE][BASE] PE BFO:SENSEX2691076700PE ltp=337.40 entry=351.45 pnl=-14.05(-4.0%) sl=288.19 peak=363.00 tr_armed=False elapsed=33min
 2026-09-04 06:04:30,861 [INFO] [STATE][ORB] CE BFO:SENSEX2691076500CE ltp=681.05 entry=651.00 pnl=+30.05(+4.6%) sl=0.00 peak=683.00 tr_armed=False elapsed=64min
 2026-09-04 06:04:30,861 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX2691076800CE ltp=493.50 entry=471.60 pnl=+21.90(+4.6%) sl=0.00 peak=495.65 tr_armed=False elapsed=32min
+2026-09-04 06:04:33,306 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260904_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260904_090603.csv
+2026-09-04 06:09:06,067 [INFO] [CB] V3 loss (own count 1) — TOTAL across all engines=2/4 (reason=V3_FAST_STOP)
+2026-09-04 06:09:06,069 [INFO] EXIT: BFO:SENSEX2691076700PE @ 325.45 reason=V3_FAST_STOP pnl/sh=-26.00 is_flip=False losses=1/4
+2026-09-04 06:09:37,159 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 76852.2 is -228.8 below FUT VWAP 77081.0 (buffer 16)
+2026-09-04 06:09:37,969 [INFO] EXIT: BFO:SENSEX2691076500CE @ 708.60 reason=ORB_LOCK_FLOOR pnl/sh=+57.60 is_flip=False losses=1/4
+2026-09-04 06:09:38,781 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 06:09:38,781 [INFO] [T5] open=0 trades=1 realized=-19.1pt/Rs-383 unreal=+0.0pt/Rs+0
+2026-09-04 06:09:38,782 [INFO] [INDICATORS] spot=76852.2 | 1h: close=76748.3 sma20=76588.6 sma50=76956.8 rsi=51.1 macd=-100.63/-128.97(bull) | 15m: K=99.7↑(prev 99.0) | regime=NEUTRAL any_active=True
+2026-09-04 06:09:38,782 [INFO] [SIGNAL] CE: reg=False K=True(K=99.7>=38,rising) Kextr=False RSI=False(51.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=99.7<=80,falling) Kextr=True RSI=False(51.1<47) MACD=False(gate off) => BLOCK
+2026-09-04 06:09:38,782 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX2691076800CE ltp=513.80 entry=471.60 pnl=+42.20(+8.9%) sl=0.00 peak=517.10 tr_armed=False elapsed=37min
