@@ -1237,3 +1237,11 @@
 2026-09-04 06:00:28,796 [INFO] [INDICATORS] spot=23982.2 | 1h: close=23965.0 sma20=23925.3 sma50=24054.2 rsi=49.9 macd=-34.28/-45.62(bull) | 15m: K=98.9↑(prev 94.5) | regime=NEUTRAL any_active=True
 2026-09-04 06:00:28,797 [INFO] [SIGNAL] CE: reg=False K=True(K=98.9>=38,rising) Kextr=False RSI=False(49.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=98.9<=80,falling) Kextr=True RSI=False(49.9<47) MACD=False(gate off) => BLOCK
 2026-09-04 06:00:28,797 [INFO] [STATE][ORB] CE NFO:NIFTY2690823900CE ltp=164.65 entry=150.95 pnl=+13.70(+9.1%) sl=0.00 peak=165.00 tr_armed=False elapsed=96min
+2026-09-04 06:00:31,798 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260904_090204.log, Nifty_BarLevel_V2_5_20_20260904_090204.csv
+2026-09-04 06:01:32,542 [INFO] [VWAP] Signal — FUT 24102>24065 body=70% side=CE | persist_gate=dist=+35.5pt persist=True (last 2x5m vs FUTvwap=24066.5)
+2026-09-04 06:01:32,544 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 23984.8 is -81.7 below FUT VWAP 24066.5 (buffer 5)
+2026-09-04 06:05:37,611 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 06:05:37,612 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 06:05:37,612 [INFO] [INDICATORS] spot=23987.6 | 1h: close=23965.0 sma20=23925.3 sma50=24054.2 rsi=49.9 macd=-34.28/-45.62(bull) | 15m: K=98.9↑(prev 94.5) | regime=NEUTRAL any_active=True
+2026-09-04 06:05:37,612 [INFO] [SIGNAL] CE: reg=False K=True(K=98.9>=38,rising) Kextr=False RSI=False(49.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=98.9<=80,falling) Kextr=True RSI=False(49.9<47) MACD=False(gate off) => BLOCK
+2026-09-04 06:05:37,613 [INFO] [STATE][ORB] CE NFO:NIFTY2690823900CE ltp=171.15 entry=150.95 pnl=+20.20(+13.4%) sl=0.00 peak=171.15 tr_armed=False elapsed=102min
