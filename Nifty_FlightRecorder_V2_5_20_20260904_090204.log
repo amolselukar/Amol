@@ -1305,3 +1305,18 @@
 2026-09-04 06:51:39,564 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-04 06:51:39,564 [INFO] [INDICATORS] spot=23944.9 | 1h: close=23952.8 sma20=23920.5 sma50=24046.7 rsi=48.6 macd=-29.86/-42.46(bull) | 15m: K=85.5↓(prev 98.1) | regime=NEUTRAL any_active=False
 2026-09-04 06:51:39,565 [INFO] [SIGNAL] CE: reg=False K=False(K=85.5>=38,rising) Kextr=False RSI=False(48.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=85.5<=80,falling) Kextr=True RSI=False(48.6<47) MACD=False(gate off) => BLOCK
+2026-09-04 06:51:42,300 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260904_090204.log, Nifty_BarLevel_V2_5_20_20260904_090204.csv
+2026-09-04 06:52:12,591 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=24073.4)
+2026-09-04 06:52:42,940 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=24073.4)
+2026-09-04 06:53:13,264 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.7pt persist=True (last 2x5m vs FUTvwap=24073.3)
+2026-09-04 06:53:43,568 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.7pt persist=True (last 2x5m vs FUTvwap=24073.3)
+2026-09-04 06:54:13,921 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.7pt persist=True (last 2x5m vs FUTvwap=24073.3)
+2026-09-04 06:54:44,246 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.7pt persist=True (last 2x5m vs FUTvwap=24073.3)
+2026-09-04 06:55:14,560 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.7pt persist=True (last 2x5m vs FUTvwap=24073.3)
+2026-09-04 06:55:44,864 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.7pt persist=True (last 2x5m vs FUTvwap=24073.3)
+2026-09-04 06:56:15,225 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=-15.3pt persist=False (last 2x5m vs FUTvwap=24073.2)
+2026-09-04 06:56:45,506 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=-15.3pt persist=False (last 2x5m vs FUTvwap=24073.2)
+2026-09-04 06:56:45,529 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 06:56:45,529 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 06:56:45,529 [INFO] [INDICATORS] spot=23941.3 | 1h: close=23952.8 sma20=23920.5 sma50=24046.7 rsi=48.6 macd=-29.86/-42.46(bull) | 15m: K=85.5↓(prev 98.1) | regime=NEUTRAL any_active=False
+2026-09-04 06:56:45,529 [INFO] [SIGNAL] CE: reg=False K=False(K=85.5>=38,rising) Kextr=False RSI=False(48.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=85.5<=80,falling) Kextr=True RSI=False(48.6<47) MACD=False(gate off) => BLOCK
