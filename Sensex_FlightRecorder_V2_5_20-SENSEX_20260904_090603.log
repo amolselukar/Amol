@@ -1132,3 +1132,20 @@
 2026-09-04 05:08:11,202 [INFO] [INDICATORS] spot=76702.6 | 1h: close=76646.4 sma20=76610.8 sma50=76979.0 rsi=48.7 macd=-124.37/-136.06(bull) | 15m: K=97.8↑(prev 95.7) | regime=NEUTRAL any_active=True
 2026-09-04 05:08:11,203 [INFO] [SIGNAL] CE: reg=False K=True(K=97.8>=38,rising) Kextr=False RSI=False(48.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=97.8<=80,falling) Kextr=True RSI=False(48.7<47) MACD=False(gate off) => BLOCK
 2026-09-04 05:08:11,203 [INFO] [STATE][ORB] CE BFO:SENSEX2691076500CE ltp=653.15 entry=651.00 pnl=+2.15(+0.3%) sl=0.00 peak=660.00 tr_armed=False elapsed=8min
+2026-09-04 05:08:14,709 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260904_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260904_090603.csv
+2026-09-04 05:08:44,978 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:09:15,314 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:09:45,652 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:10:15,982 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:10:46,321 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:11:16,650 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:11:47,029 [INFO] [V3PROBE] PLACED PE BFO:SENSEX2691076700PE limit=351.45 (LTP=364.45 - 13) window=25min — EARLY(10m) Grade B G-cluster REJECT-PE at 76755
+2026-09-04 05:11:47,816 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:12:18,180 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:12:48,556 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:13:18,918 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-04 05:13:18,969 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 05:13:18,969 [INFO] [T5] open=0 trades=1 realized=-19.1pt/Rs-383 unreal=+0.0pt/Rs+0
+2026-09-04 05:13:18,969 [INFO] [INDICATORS] spot=76714.1 | 1h: close=76646.4 sma20=76610.8 sma50=76979.0 rsi=48.7 macd=-124.37/-136.06(bull) | 15m: K=97.8↑(prev 95.7) | regime=NEUTRAL any_active=True
+2026-09-04 05:13:18,969 [INFO] [SIGNAL] CE: reg=False K=True(K=97.8>=38,rising) Kextr=False RSI=False(48.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=97.8<=80,falling) Kextr=True RSI=False(48.7<47) MACD=False(gate off) => BLOCK
+2026-09-04 05:13:18,970 [INFO] [STATE][ORB] CE BFO:SENSEX2691076500CE ltp=636.15 entry=651.00 pnl=-14.85(-2.3%) sl=0.00 peak=660.00 tr_armed=False elapsed=13min
