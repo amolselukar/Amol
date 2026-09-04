@@ -1382,3 +1382,24 @@
 2026-09-04 07:47:46,499 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-04 07:47:46,499 [INFO] [INDICATORS] spot=23952.5 | 1h: close=23946.3 sma20=23919.5 sma50=24040.0 rsi=48.0 macd=-26.56/-39.28(bull) | 15m: K=10.9↓(prev 21.4) | regime=NEUTRAL any_active=False
 2026-09-04 07:47:46,499 [INFO] [SIGNAL] CE: reg=False K=False(K=10.9>=38,rising) Kextr=True RSI=False(48.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=10.9<=80,falling) Kextr=False RSI=False(48.0<47) MACD=False(gate off) => BLOCK
+2026-09-04 07:47:49,263 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260904_090204.log, Nifty_BarLevel_V2_5_20_20260904_090204.csv
+2026-09-04 07:48:19,571 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:48:19,574 [INFO] [FUT5VWAP] Skip — close 24077 only 1pt from a pivot (need >20)
+2026-09-04 07:48:49,917 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:48:49,920 [INFO] [FUT5VWAP] Skip — close 24077 only 1pt from a pivot (need >20)
+2026-09-04 07:49:20,255 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:49:20,257 [INFO] [FUT5VWAP] Skip — close 24077 only 1pt from a pivot (need >20)
+2026-09-04 07:49:50,598 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:49:50,601 [INFO] [FUT5VWAP] Skip — close 24077 only 1pt from a pivot (need >20)
+2026-09-04 07:50:20,961 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:50:20,963 [INFO] [FUT5VWAP] Skip — close 24077 only 1pt from a pivot (need >20)
+2026-09-04 07:50:51,310 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:50:51,313 [INFO] [FUT5VWAP] Skip — close 24077 only 1pt from a pivot (need >20)
+2026-09-04 07:51:21,684 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:51:52,003 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:52:22,376 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:52:53,509 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:52:53,536 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 07:52:53,537 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 07:52:53,537 [INFO] [INDICATORS] spot=23949.2 | 1h: close=23946.3 sma20=23919.5 sma50=24040.0 rsi=48.0 macd=-26.56/-39.28(bull) | 15m: K=10.9↓(prev 21.4) | regime=NEUTRAL any_active=False
+2026-09-04 07:52:53,537 [INFO] [SIGNAL] CE: reg=False K=False(K=10.9>=38,rising) Kextr=True RSI=False(48.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=10.9<=80,falling) Kextr=False RSI=False(48.0<47) MACD=False(gate off) => BLOCK
