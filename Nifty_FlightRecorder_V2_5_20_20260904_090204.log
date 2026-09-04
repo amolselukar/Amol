@@ -1418,3 +1418,18 @@
 2026-09-04 07:57:59,772 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-04 07:57:59,773 [INFO] [INDICATORS] spot=23948.1 | 1h: close=23946.3 sma20=23919.5 sma50=24040.0 rsi=48.0 macd=-26.56/-39.28(bull) | 15m: K=10.9↓(prev 21.4) | regime=NEUTRAL any_active=False
 2026-09-04 07:57:59,773 [INFO] [SIGNAL] CE: reg=False K=False(K=10.9>=38,rising) Kextr=True RSI=False(48.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=10.9<=80,falling) Kextr=False RSI=False(48.0<47) MACD=False(gate off) => BLOCK
+2026-09-04 07:58:02,560 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260904_090204.log, Nifty_BarLevel_V2_5_20_20260904_090204.csv
+2026-09-04 07:58:32,876 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:59:03,364 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 07:59:33,719 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 08:00:04,091 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 08:00:34,472 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 08:01:04,797 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-04 08:01:35,117 [INFO] [FUT5VWAP] Skip — close 24069 only 7pt from a pivot (need >20)
+2026-09-04 08:02:05,433 [INFO] [FUT5VWAP] Skip — close 24069 only 7pt from a pivot (need >20)
+2026-09-04 08:02:35,771 [INFO] [FUT5VWAP] Skip — close 24069 only 7pt from a pivot (need >20)
+2026-09-04 08:03:06,125 [INFO] [FUT5VWAP] Skip — close 24069 only 7pt from a pivot (need >20)
+2026-09-04 08:03:06,151 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 08:03:06,151 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 08:03:06,152 [INFO] [INDICATORS] spot=23936.3 | 1h: close=23946.3 sma20=23919.5 sma50=24040.0 rsi=48.0 macd=-26.56/-39.28(bull) | 15m: K=11.0↑(prev 10.9) | regime=NEUTRAL any_active=False
+2026-09-04 08:03:06,152 [INFO] [SIGNAL] CE: reg=False K=False(K=11.0>=38,rising) Kextr=True RSI=False(48.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=11.0<=80,falling) Kextr=False RSI=False(48.0<47) MACD=False(gate off) => BLOCK
