@@ -1321,3 +1321,18 @@
 2026-09-04 06:45:23,734 [INFO] [T5] open=0 trades=1 realized=-19.1pt/Rs-383 unreal=+0.0pt/Rs+0
 2026-09-04 06:45:23,735 [INFO] [INDICATORS] spot=76727.5 | 1h: close=76727.5 sma20=76577.2 sma50=76935.1 rsi=51.1 macd=-100.63/-128.97(bull) | 15m: K=91.4↓(prev 97.2) | regime=NEUTRAL any_active=False
 2026-09-04 06:45:23,735 [INFO] [SIGNAL] CE: reg=False K=False(K=91.4>=38,rising) Kextr=False RSI=False(51.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=91.4<=80,falling) Kextr=True RSI=False(51.1<47) MACD=False(gate off) => BLOCK
+2026-09-04 06:45:26,299 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260904_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260904_090603.csv
+2026-09-04 06:45:56,584 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-04 06:46:26,927 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:46:57,300 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:47:27,662 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:47:58,051 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:48:28,454 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:48:58,940 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:49:29,343 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:49:59,670 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:50:30,003 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-04 06:50:30,032 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 06:50:30,033 [INFO] [T5] open=0 trades=1 realized=-19.1pt/Rs-383 unreal=+0.0pt/Rs+0
+2026-09-04 06:50:30,033 [INFO] [INDICATORS] spot=76717.9 | 1h: close=76727.5 sma20=76577.2 sma50=76935.1 rsi=50.6 macd=-82.55/-119.69(bull) | 15m: K=91.4↓(prev 97.2) | regime=NEUTRAL any_active=False
+2026-09-04 06:50:30,033 [INFO] [SIGNAL] CE: reg=False K=False(K=91.4>=38,rising) Kextr=False RSI=False(50.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=91.4<=80,falling) Kextr=True RSI=False(50.6<47) MACD=False(gate off) => BLOCK
