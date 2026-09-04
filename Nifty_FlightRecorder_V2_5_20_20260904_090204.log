@@ -1496,3 +1496,22 @@
 2026-09-04 08:49:07,626 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-04 08:49:07,626 [INFO] [INDICATORS] spot=23944.8 | 1h: close=23948.2 sma20=23917.7 sma50=24033.6 rsi=48.2 macd=-23.54/-36.14(bull) | 15m: K=19.1↑(prev 12.3) | regime=NEUTRAL any_active=False
 2026-09-04 08:49:07,627 [INFO] [SIGNAL] CE: reg=False K=False(K=19.1>=38,rising) Kextr=True RSI=False(48.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.1<=80,falling) Kextr=False RSI=False(48.2<47) MACD=False(gate off) => BLOCK
+2026-09-04 08:49:10,327 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260904_090204.log, Nifty_BarLevel_V2_5_20_20260904_090204.csv
+2026-09-04 08:49:40,648 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+3.4pt persist=False (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:49:40,650 [INFO] [FUT5VWAP] Skip — close 24075 only 1pt from a pivot (need >20)
+2026-09-04 08:50:11,049 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+3.4pt persist=False (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:50:11,051 [INFO] [FUT5VWAP] Skip — close 24075 only 1pt from a pivot (need >20)
+2026-09-04 08:50:41,479 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+3.4pt persist=False (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:50:41,481 [INFO] [FUT5VWAP] Skip — close 24075 only 1pt from a pivot (need >20)
+2026-09-04 08:51:11,832 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+3.4pt persist=False (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:51:11,834 [INFO] [FUT5VWAP] Skip — close 24075 only 1pt from a pivot (need >20)
+2026-09-04 08:51:42,162 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+1.7pt persist=True (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:52:12,480 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+1.7pt persist=True (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:52:42,941 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+1.7pt persist=True (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:53:13,315 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+1.7pt persist=True (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:53:43,706 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+1.7pt persist=True (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:54:14,883 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+1.7pt persist=True (last 2x5m vs FUTvwap=24071.6)
+2026-09-04 08:54:14,912 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 08:54:14,913 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 08:54:14,913 [INFO] [INDICATORS] spot=23945.5 | 1h: close=23948.2 sma20=23917.7 sma50=24033.6 rsi=48.2 macd=-23.54/-36.14(bull) | 15m: K=19.1↑(prev 12.3) | regime=NEUTRAL any_active=False
+2026-09-04 08:54:14,913 [INFO] [SIGNAL] CE: reg=False K=False(K=19.1>=38,rising) Kextr=True RSI=False(48.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.1<=80,falling) Kextr=False RSI=False(48.2<47) MACD=False(gate off) => BLOCK
