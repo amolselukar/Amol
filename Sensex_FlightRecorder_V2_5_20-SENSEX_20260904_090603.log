@@ -1071,3 +1071,12 @@
 2026-09-04 04:37:24,788 [INFO] [INDICATORS] spot=76698.0 | 1h: close=76152.9 sma20=76634.3 sma50=76999.2 rsi=34.3 macd=-142.47/-138.99(bear) | 15m: K=96.5↑(prev 63.1) | regime=PE-eligible any_active=True
 2026-09-04 04:37:24,788 [INFO] [SIGNAL] CE: reg=False K=True(K=96.5>=38,rising) Kextr=True RSI=False(34.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=96.5<=80,falling) Kextr=True RSI=True(34.3<47) MACD=True(gate off) => BLOCK
 2026-09-04 04:37:24,789 [INFO] [STATE][ORB] PE BFO:SENSEX2691076500PE ltp=298.15 entry=335.45 pnl=-37.30(-11.1%) sl=0.00 peak=342.85 tr_armed=False elapsed=27min
+2026-09-04 04:37:28,125 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260904_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260904_090603.csv
+2026-09-04 04:39:29,702 [INFO] [V3PROBE] FILLED CE BFO:SENSEX2691076700CE @ 503.00 (LTP touched 496.95)
+2026-09-04 04:39:29,706 [INFO] [VETO] V3 CE BLOCKED — CE into a DOWNtrend: spot 76690.8 is -370.1 below FUT VWAP 77060.9 (buffer 16)
+2026-09-04 04:42:02,924 [INFO] [T5] ENTRY PE 76700 @ 385.9 tgt476.5 stp367.9 (bo+12.6 CEdec-43.0) open=1
+2026-09-04 04:42:34,075 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-04 04:42:34,221 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-1.1pt/Rs-22
+2026-09-04 04:42:34,222 [INFO] [INDICATORS] spot=76668.3 | 1h: close=76152.9 sma20=76634.3 sma50=76999.2 rsi=34.3 macd=-142.47/-138.99(bear) | 15m: K=96.5↑(prev 63.1) | regime=PE-eligible any_active=True
+2026-09-04 04:42:34,222 [INFO] [SIGNAL] CE: reg=False K=True(K=96.5>=38,rising) Kextr=True RSI=False(34.3>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=96.5<=80,falling) Kextr=True RSI=True(34.3<47) MACD=True(gate off) => BLOCK
+2026-09-04 04:42:34,222 [INFO] [STATE][ORB] PE BFO:SENSEX2691076500PE ltp=307.45 entry=335.45 pnl=-28.00(-8.3%) sl=0.00 peak=342.85 tr_armed=False elapsed=32min
