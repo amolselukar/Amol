@@ -992,3 +992,12 @@
 2026-09-07 03:36:04,204 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-09-07 03:36:04,204 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-09-07 03:36:05,867 [INFO] [CHANGELOG] up to date (last entry 2026-09-02)
+2026-09-07 03:36:09,237 [INFO] [boot] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260907_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260907_090603.csv
+2026-09-07 03:36:09,404 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 03:36:09,406 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 03:36:09,406 [INFO] [INDICATORS] spot=76515.4 | 1h: close=76647.9 sma20=76561.5 sma50=76877.8 rsi=48.4 macd=-53.63/-90.32(bull) | 15m: K=0.0↓(prev 15.1) | regime=NEUTRAL any_active=False
+2026-09-07 03:36:09,406 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(48.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(48.4<47) MACD=False(gate off) => BLOCK
+2026-09-07 03:41:11,803 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 03:41:11,804 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 03:41:11,805 [INFO] [INDICATORS] spot=76515.4 | 1h: close=76647.9 sma20=76561.5 sma50=76877.8 rsi=48.4 macd=-53.63/-90.32(bull) | 15m: K=0.0↓(prev 15.1) | regime=NEUTRAL any_active=False
+2026-09-07 03:41:11,805 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(48.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(48.4<47) MACD=False(gate off) => BLOCK
