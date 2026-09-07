@@ -1526,3 +1526,9 @@ error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
 2026-09-07 08:17:04,308 [INFO] [INDICATORS] spot=76051.2 | 1h: close=76025.8 sma20=76514.5 sma50=76758.8 rsi=34.2 macd=-159.41/-112.17(bear) | 15m: K=83.1↑(prev 52.1) | regime=PE-eligible any_active=True
 2026-09-07 08:17:04,308 [INFO] [SIGNAL] CE: reg=False K=True(K=83.1>=38,rising) Kextr=True RSI=False(34.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=83.1<=80,falling) Kextr=True RSI=True(34.2<47) MACD=True(gate off) => BLOCK
 2026-09-07 08:17:04,309 [INFO] [STATE][VWAP] PE BFO:SENSEX2691076000PE ltp=230.95 entry=267.15 pnl=-36.20(-13.6%) sl=219.06 peak=278.75 tr_armed=False elapsed=75min
+2026-09-07 08:17:06,855 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260907_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260907_090603.csv
+2026-09-07 08:22:10,713 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 08:22:10,713 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 08:22:10,714 [INFO] [INDICATORS] spot=76068.9 | 1h: close=76025.8 sma20=76514.5 sma50=76758.8 rsi=34.2 macd=-159.41/-112.17(bear) | 15m: K=83.1↑(prev 52.1) | regime=PE-eligible any_active=True
+2026-09-07 08:22:10,714 [INFO] [SIGNAL] CE: reg=False K=True(K=83.1>=38,rising) Kextr=True RSI=False(34.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=83.1<=80,falling) Kextr=True RSI=True(34.2<47) MACD=True(gate off) => BLOCK
+2026-09-07 08:22:10,714 [INFO] [STATE][VWAP] PE BFO:SENSEX2691076000PE ltp=230.70 entry=267.15 pnl=-36.45(-13.6%) sl=219.06 peak=278.75 tr_armed=False elapsed=80min
