@@ -1461,3 +1461,18 @@
 2026-09-07 07:01:23,077 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-07 07:01:23,077 [INFO] [INDICATORS] spot=23756.5 | 1h: close=23786.0 sma20=23905.2 sma50=23995.6 rsi=34.4 macd=-45.80/-35.66(bear) | 15m: K=24.1↑(prev 17.4) | regime=PE-eligible any_active=False
 2026-09-07 07:01:23,078 [INFO] [SIGNAL] CE: reg=False K=False(K=24.1>=38,rising) Kextr=True RSI=False(34.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=24.1<=80,falling) Kextr=False RSI=True(34.4<47) MACD=True(gate off) => BLOCK
+2026-09-07 07:01:25,735 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260907_090204.log, Nifty_BarLevel_V2_5_20_20260907_090204.csv
+2026-09-07 07:01:55,929 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:02:26,148 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:02:56,462 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:03:26,675 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:03:56,989 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:04:27,217 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:04:57,542 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:05:27,800 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:05:58,207 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:06:28,430 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-07 07:06:28,556 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 07:06:28,556 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-07 07:06:28,557 [INFO] [INDICATORS] spot=23757.1 | 1h: close=23786.0 sma20=23905.2 sma50=23995.6 rsi=34.4 macd=-45.80/-35.66(bear) | 15m: K=24.1↑(prev 17.4) | regime=PE-eligible any_active=False
+2026-09-07 07:06:28,557 [INFO] [SIGNAL] CE: reg=False K=False(K=24.1>=38,rising) Kextr=True RSI=False(34.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=24.1<=80,falling) Kextr=False RSI=True(34.4<47) MACD=True(gate off) => BLOCK
