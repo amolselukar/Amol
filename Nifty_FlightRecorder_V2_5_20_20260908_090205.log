@@ -1769,3 +1769,8 @@
 2026-09-08 09:58:28,665 [INFO] [T5] open=0 trades=1 realized=-18.8pt/Rs-1225 unreal=+0.0pt/Rs+0
 2026-09-08 09:58:28,666 [INFO] [INDICATORS] spot=23640.0 | 1h: close=23641.1 sma20=23800.0 sma50=23909.9 rsi=28.2 macd=-79.91/-67.86(bear) | 15m: K=71.9↓(prev 84.8) | regime=PE-eligible any_active=False
 2026-09-08 09:58:28,666 [INFO] [SIGNAL] CE: reg=False K=False(K=71.9>=38,rising) Kextr=False RSI=False(28.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=71.9<=80,falling) Kextr=True RSI=True(28.2<47) MACD=True(gate off) => PASS
+2026-09-08 09:58:31,204 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
+2026-09-08 09:59:01,577 [INFO] [EXP12] EXP2 EXIT 23650CE 36.10->0.50 Rs-2314 [EOD_1528] | day Rs-2314
+2026-09-08 09:59:02,459 [INFO] [EXP12] EXP2W EXIT 23650CE 36.10->0.50 Rs-2314 [EOD_1528] | day Rs-4628
+2026-09-08 09:59:04,076 [INFO] [EXP12] EOD why/why-not report sent
+2026-09-08 09:59:04,877 [INFO] [CRUSH] EOD why/why-not report sent
