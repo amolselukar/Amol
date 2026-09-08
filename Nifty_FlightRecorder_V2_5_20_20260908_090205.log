@@ -1303,3 +1303,14 @@
 2026-09-08 04:28:27,176 [INFO] [STATE][BASE] PE NFO:NIFTY2690823700PE ltp=54.90 entry=51.95 pnl=+2.95(+5.7%) sl=42.60 peak=54.90 tr_armed=False elapsed=8min
 2026-09-08 04:28:27,176 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2690823700PE ltp=54.90 entry=53.15 pnl=+1.75(+3.3%) sl=0.00 peak=54.90 tr_armed=False elapsed=11min
 2026-09-08 04:28:27,176 [INFO] [STATE][ORB] PE NFO:NIFTY2690823700PE ltp=54.90 entry=57.70 pnl=-2.80(-4.9%) sl=0.00 peak=57.70 tr_armed=False elapsed=27min
+2026-09-08 04:28:29,700 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
+2026-09-08 04:30:01,124 [INFO] EXIT: NFO:NIFTY2690823700PE @ 57.15 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+4.00 is_flip=False losses=0/4
+2026-09-08 04:31:33,663 [INFO] [FUT5VWAP] Signal — 23775<23787 body=84% side=PE (fixed +12pt target)
+2026-09-08 04:31:33,732 [INFO] ENTRY: NFO:NIFTY2690823700PE @ 55.45  engine=FUT5VWAP  detail=FUT5 VWAP cross 23775<23787 body=84% pivΔ=60pt | bar=85
+2026-09-08 04:33:44,291 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-08 04:33:44,292 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-08 04:33:44,293 [INFO] [INDICATORS] spot=23666.0 | 1h: close=23779.2 sma20=23874.6 sma50=23964.6 rsi=37.1 macd=-57.20/-47.61(bear) | 15m: K=16.1↓(prev 44.7) | regime=PE-eligible any_active=True
+2026-09-08 04:33:44,293 [INFO] [SIGNAL] CE: reg=False K=False(K=16.1>=38,rising) Kextr=True RSI=False(37.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=16.1<=80,falling) Kextr=True RSI=True(37.1<47) MACD=True(gate off) => BLOCK
+2026-09-08 04:33:44,293 [INFO] [STATE][BASE] PE NFO:NIFTY2690823700PE ltp=60.30 entry=51.95 pnl=+8.35(+16.1%) sl=42.60 peak=60.30 tr_armed=False elapsed=14min
+2026-09-08 04:33:44,293 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2690823700PE ltp=60.30 entry=55.45 pnl=+4.85(+8.7%) sl=0.00 peak=60.30 tr_armed=False elapsed=2min
+2026-09-08 04:33:44,293 [INFO] [STATE][ORB] PE NFO:NIFTY2690823700PE ltp=60.30 entry=57.70 pnl=+2.60(+4.5%) sl=0.00 peak=60.30 tr_armed=False elapsed=33min
