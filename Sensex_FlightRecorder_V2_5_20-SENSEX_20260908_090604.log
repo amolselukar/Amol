@@ -1206,3 +1206,10 @@
 2026-09-08 05:54:17,729 [WARNING] Telegram send returned 429: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 311","parameters":{"retry_after":311}}
 2026-09-08 05:54:20,520 [WARNING] Telegram send returned 429: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 493","parameters":{"retry_after":493}}
 2026-09-08 05:54:24,521 [ERROR] Telegram unreachable; appended to telegram_fallback_V2_5_20-SENSEX_20260908_090604.log
+2026-09-08 05:54:27,114 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260908_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260908_090604.csv
+2026-09-08 05:59:30,341 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-08 05:59:30,341 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-08 05:59:30,342 [INFO] [INDICATORS] spot=75716.6 | 1h: close=75725.0 sma20=76349.1 sma50=76636.4 rsi=30.4 macd=-221.32/-167.98(bear) | 15m: K=27.6↓(prev 31.2) | regime=PE-eligible any_active=True
+2026-09-08 05:59:30,342 [INFO] [SIGNAL] CE: reg=False K=False(K=27.6>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=27.6<=80,falling) Kextr=False RSI=True(30.4<47) MACD=True(gate off) => BLOCK
+2026-09-08 05:59:30,342 [INFO] [STATE][VWAP] PE BFO:SENSEX2691075700PE ltp=226.70 entry=223.80 pnl=+2.90(+1.3%) sl=183.52 peak=237.90 tr_armed=False elapsed=43min
+2026-09-08 05:59:30,342 [INFO] [STATE][ORB] PE BFO:SENSEX2691075700PE ltp=226.70 entry=235.40 pnl=-8.70(-3.7%) sl=0.00 peak=249.45 tr_armed=False elapsed=104min
