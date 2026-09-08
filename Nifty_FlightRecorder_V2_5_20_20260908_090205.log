@@ -1373,3 +1373,12 @@
 2026-09-08 04:59:34,814 [INFO] [SIGNAL] CE: reg=False K=False(K=32.6>=38,rising) Kextr=True RSI=False(31.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=32.6<=80,falling) Kextr=False RSI=True(31.5<47) MACD=True(gate off) => BLOCK
 2026-09-08 04:59:34,814 [INFO] [STATE][ORB] CE NFO:NIFTY2690823700CE ltp=46.90 entry=53.10 pnl=-6.20(-11.7%) sl=0.00 peak=61.60 tr_armed=False elapsed=16min
 2026-09-08 04:59:34,814 [INFO] [STATE][EXPIRY] CE NFO:NIFTY2690823700CE ltp=46.90 entry=54.30 pnl=-7.40(-13.6%) sl=44.53 peak=56.25 tr_armed=False elapsed=13min
+2026-09-08 04:59:38,066 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
+2026-09-08 05:00:08,424 [INFO] [CHOPGATE] Clear to trade — ER=0.40 crosses=1 range=65pt
+2026-09-08 05:02:41,655 [INFO] [CB] EXPIRY loss (own count 1) — TOTAL across all engines=3/4 (reason=HARDSL_-18pct)
+2026-09-08 05:02:41,656 [INFO] EXIT: NFO:NIFTY2690823700CE @ 44.53 reason=HARDSL_-18pct pnl/sh=-9.77 is_flip=False losses=1/4
+2026-09-08 05:04:45,524 [INFO] [APEX] open=0 trades=1 realized=+4.0pt/Rs+260 unreal=+0.0pt/Rs+0
+2026-09-08 05:04:45,659 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-9.0pt/Rs-588
+2026-09-08 05:04:45,660 [INFO] [INDICATORS] spot=23690.0 | 1h: close=23707.9 sma20=23863.6 sma50=23956.9 rsi=31.5 macd=-62.06/-50.50(bear) | 15m: K=44.1↑(prev 32.6) | regime=PE-eligible any_active=True
+2026-09-08 05:04:45,660 [INFO] [SIGNAL] CE: reg=False K=True(K=44.1>=38,rising) Kextr=True RSI=False(31.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=44.1<=80,falling) Kextr=False RSI=True(31.5<47) MACD=True(gate off) => BLOCK
+2026-09-08 05:04:45,660 [INFO] [STATE][ORB] CE NFO:NIFTY2690823700CE ltp=44.50 entry=53.10 pnl=-8.60(-16.2%) sl=0.00 peak=61.60 tr_armed=False elapsed=21min
