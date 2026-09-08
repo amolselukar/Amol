@@ -1285,3 +1285,13 @@
 2026-09-08 04:18:09,513 [INFO] [SIGNAL] CE: reg=False K=False(K=44.7>=38,rising) Kextr=False RSI=False(37.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=44.7<=80,falling) Kextr=True RSI=True(37.1<47) MACD=True(gate off) => PASS
 2026-09-08 04:18:09,514 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2690823700PE ltp=54.15 entry=53.15 pnl=+1.00(+1.9%) sl=0.00 peak=54.15 tr_armed=False elapsed=1min
 2026-09-08 04:18:09,514 [INFO] [STATE][ORB] PE NFO:NIFTY2690823700PE ltp=54.15 entry=57.70 pnl=-3.55(-6.2%) sl=0.00 peak=57.70 tr_armed=False elapsed=17min
+2026-09-08 04:18:12,821 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
+2026-09-08 04:19:44,195 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2690823700PE @ 51.95 (LTP touched 47.85)
+2026-09-08 04:19:44,242 [INFO] ENTRY: NFO:NIFTY2690823700PE @ 51.95  engine=V3  detail=Grade B R-cluster BREAK-PE at 23744
+2026-09-08 04:23:19,221 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-08 04:23:19,222 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-08 04:23:19,222 [INFO] [INDICATORS] spot=23678.8 | 1h: close=23779.2 sma20=23874.6 sma50=23964.6 rsi=37.1 macd=-57.20/-47.61(bear) | 15m: K=44.7↓(prev 64.2) | regime=PE-eligible any_active=True
+2026-09-08 04:23:19,222 [INFO] [SIGNAL] CE: reg=False K=False(K=44.7>=38,rising) Kextr=False RSI=False(37.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=44.7<=80,falling) Kextr=True RSI=True(37.1<47) MACD=True(gate off) => PASS
+2026-09-08 04:23:19,222 [INFO] [STATE][BASE] PE NFO:NIFTY2690823700PE ltp=52.50 entry=51.95 pnl=+0.55(+1.1%) sl=42.60 peak=52.50 tr_armed=False elapsed=3min
+2026-09-08 04:23:19,223 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2690823700PE ltp=52.30 entry=53.15 pnl=-0.85(-1.6%) sl=0.00 peak=54.15 tr_armed=False elapsed=6min
+2026-09-08 04:23:19,223 [INFO] [STATE][ORB] PE NFO:NIFTY2690823700PE ltp=52.30 entry=57.70 pnl=-5.40(-9.4%) sl=0.00 peak=57.70 tr_armed=False elapsed=22min
