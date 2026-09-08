@@ -1774,3 +1774,4 @@
 2026-09-08 09:59:02,459 [INFO] [EXP12] EXP2W EXIT 23650CE 36.10->0.50 Rs-2314 [EOD_1528] | day Rs-4628
 2026-09-08 09:59:04,076 [INFO] [EXP12] EOD why/why-not report sent
 2026-09-08 09:59:04,877 [INFO] [CRUSH] EOD why/why-not report sent
+2026-09-08 10:00:17,194 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
