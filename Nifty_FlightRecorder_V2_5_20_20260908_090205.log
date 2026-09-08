@@ -1334,3 +1334,23 @@
 2026-09-08 04:44:05,253 [INFO] [INDICATORS] spot=23689.5 | 1h: close=23779.2 sma20=23874.6 sma50=23964.6 rsi=37.1 macd=-57.20/-47.61(bear) | 15m: K=16.1↓(prev 44.7) | regime=PE-eligible any_active=True
 2026-09-08 04:44:05,254 [INFO] [SIGNAL] CE: reg=False K=False(K=16.1>=38,rising) Kextr=True RSI=False(37.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=16.1<=80,falling) Kextr=True RSI=True(37.1<47) MACD=True(gate off) => BLOCK
 2026-09-08 04:44:05,254 [INFO] [STATE][ORB] CE NFO:NIFTY2690823700CE ltp=50.95 entry=53.10 pnl=-2.15(-4.0%) sl=0.00 peak=53.10 tr_armed=False elapsed=0min
+2026-09-08 04:44:07,715 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
+2026-09-08 04:44:38,355 [INFO] [T5] ENTRY CE 23700 @ 53.5 tgt75.4 stp35.7 (bo+3.0 PEdec-15.7) open=1
+2026-09-08 04:46:10,786 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.4pt persist=False (last 2x5m vs FUTvwap=23787.6)
+2026-09-08 04:46:10,815 [INFO] [EXPIRY] Signal — round-level cross 23682->23708 (zone 473->474) side=CE at 2026-09-08 10:10:00+05:30
+2026-09-08 04:46:10,886 [INFO] ENTRY: NFO:NIFTY2690823700CE @ 54.30  engine=EXPIRY  detail=Expiry-day round-level break 23682->23708, near-ATM convergence
+2026-09-08 04:46:42,330 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.4pt persist=False (last 2x5m vs FUTvwap=23787.6)
+2026-09-08 04:47:13,054 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.2pt persist=False (last 2x5m vs FUTvwap=23787.8)
+2026-09-08 04:47:43,670 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.2pt persist=False (last 2x5m vs FUTvwap=23787.8)
+2026-09-08 04:48:14,460 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.0pt persist=False (last 2x5m vs FUTvwap=23788.0)
+2026-09-08 04:48:14,639 [INFO] [WCR] 23650CE — OI 14.7M @10:06 -> 10.3M (30% unwound in 12m), price 64.05 -> 90.70, spot 23704 through 23650
+2026-09-08 04:48:14,640 [INFO] [WCR] resting limit BUY @ 70.45, valid 20m (no chase)
+2026-09-08 04:48:14,663 [INFO] [APEX] EXIT CE 23700 45.0->49.0 +4.0pt Rs+260 [trail] | day +4.0pt Rs+260
+2026-09-08 04:48:46,719 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.0pt persist=False (last 2x5m vs FUTvwap=23788.0)
+2026-09-08 04:49:17,331 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.1pt persist=False (last 2x5m vs FUTvwap=23787.9)
+2026-09-08 04:49:17,421 [INFO] [APEX] open=0 trades=1 realized=+4.0pt/Rs+260 unreal=+0.0pt/Rs+0
+2026-09-08 04:49:17,577 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+0.2pt/Rs+10
+2026-09-08 04:49:17,579 [INFO] [INDICATORS] spot=23698.5 | 1h: close=23707.9 sma20=23863.6 sma50=23956.9 rsi=31.5 macd=-62.06/-50.50(bear) | 15m: K=32.6↑(prev 16.1) | regime=PE-eligible any_active=True
+2026-09-08 04:49:17,579 [INFO] [SIGNAL] CE: reg=False K=False(K=32.6>=38,rising) Kextr=True RSI=False(31.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=32.6<=80,falling) Kextr=False RSI=True(31.5<47) MACD=True(gate off) => BLOCK
+2026-09-08 04:49:17,579 [INFO] [STATE][ORB] CE NFO:NIFTY2690823700CE ltp=53.70 entry=53.10 pnl=+0.60(+1.1%) sl=0.00 peak=61.60 tr_armed=False elapsed=5min
+2026-09-08 04:49:17,579 [INFO] [STATE][EXPIRY] CE NFO:NIFTY2690823700CE ltp=53.70 entry=54.30 pnl=-0.60(-1.1%) sl=44.53 peak=56.25 tr_armed=False elapsed=3min
