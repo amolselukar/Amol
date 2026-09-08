@@ -1406,3 +1406,9 @@
 2026-09-08 05:20:15,057 [INFO] [INDICATORS] spot=23689.2 | 1h: close=23707.9 sma20=23863.6 sma50=23956.9 rsi=31.5 macd=-62.06/-50.50(bear) | 15m: K=50.8↑(prev 44.1) | regime=PE-eligible any_active=True
 2026-09-08 05:20:15,057 [INFO] [SIGNAL] CE: reg=False K=True(K=50.8>=38,rising) Kextr=True RSI=False(31.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=50.8<=80,falling) Kextr=False RSI=True(31.5<47) MACD=True(gate off) => BLOCK
 2026-09-08 05:20:15,057 [INFO] [STATE][VWAP] PE NFO:NIFTY2690823700PE ltp=42.75 entry=47.25 pnl=-4.50(-9.5%) sl=38.75 peak=47.85 tr_armed=False elapsed=3min
+2026-09-08 05:20:17,599 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260908_090205.log, Nifty_BarLevel_V2_5_20_20260908_090205.csv
+2026-09-08 05:25:23,433 [INFO] [APEX] open=0 trades=1 realized=+4.0pt/Rs+260 unreal=+0.0pt/Rs+0
+2026-09-08 05:25:23,433 [INFO] [T5] open=0 trades=1 realized=-18.8pt/Rs-1225 unreal=+0.0pt/Rs+0
+2026-09-08 05:25:23,434 [INFO] [INDICATORS] spot=23682.3 | 1h: close=23707.9 sma20=23863.6 sma50=23956.9 rsi=31.5 macd=-62.06/-50.50(bear) | 15m: K=50.8↑(prev 44.1) | regime=PE-eligible any_active=True
+2026-09-08 05:25:23,434 [INFO] [SIGNAL] CE: reg=False K=True(K=50.8>=38,rising) Kextr=True RSI=False(31.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=50.8<=80,falling) Kextr=False RSI=True(31.5<47) MACD=True(gate off) => BLOCK
+2026-09-08 05:25:23,434 [INFO] [STATE][VWAP] PE NFO:NIFTY2690823700PE ltp=44.95 entry=47.25 pnl=-2.30(-4.9%) sl=38.75 peak=47.85 tr_armed=False elapsed=8min
