@@ -1398,3 +1398,18 @@
 2026-09-09 04:59:23,138 [INFO] [SIGNAL] CE: reg=False K=False(K=14.9>=38,rising) Kextr=True RSI=False(19.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=14.9<=80,falling) Kextr=False RSI=True(19.4<47) MACD=True(gate off) => BLOCK
 2026-09-09 04:59:23,139 [INFO] [STATE][ORB] CE NFO:NIFTY2691523500CE ltp=183.70 entry=180.05 pnl=+3.65(+2.0%) sl=0.00 peak=183.70 tr_armed=False elapsed=3min
 2026-09-09 04:59:23,139 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=87.05 entry=107.10 pnl=-20.05(-18.7%) sl=0.00 peak=107.10 tr_armed=False elapsed=12min
+2026-09-09 04:59:25,655 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260909_090204.log, Nifty_BarLevel_V2_5_20_20260909_090204.csv
+2026-09-09 05:00:26,635 [INFO] [CHOPGATE] Clear to trade — ER=0.34 crosses=3 range=98pt
+2026-09-09 05:01:27,635 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:01:58,106 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:02:28,617 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:02:59,126 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:03:29,591 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:04:00,020 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:04:30,540 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-09-09 05:04:30,651 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 05:04:30,713 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 05:04:30,714 [INFO] [INDICATORS] spot=23534.0 | 1h: close=23484.8 sma20=23760.7 sma50=23885.9 rsi=19.4 macd=-92.34/-74.81(bear) | 15m: K=33.3↑(prev 14.9) | regime=PE-eligible any_active=True
+2026-09-09 05:04:30,714 [INFO] [SIGNAL] CE: reg=False K=False(K=33.3>=38,rising) Kextr=True RSI=False(19.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=33.3<=80,falling) Kextr=False RSI=True(19.4<47) MACD=True(gate off) => BLOCK
+2026-09-09 05:04:30,714 [INFO] [STATE][ORB] CE NFO:NIFTY2691523500CE ltp=176.05 entry=180.05 pnl=-4.00(-2.2%) sl=0.00 peak=187.55 tr_armed=False elapsed=8min
+2026-09-09 05:04:30,714 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=92.20 entry=107.10 pnl=-14.90(-13.9%) sl=0.00 peak=107.10 tr_armed=False elapsed=17min
