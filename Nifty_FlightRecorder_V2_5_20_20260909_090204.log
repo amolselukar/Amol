@@ -1559,3 +1559,20 @@
 2026-09-09 05:35:29,952 [INFO] [SIGNAL] CE: reg=False K=True(K=78.5>=38,rising) Kextr=True RSI=False(19.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=78.5<=80,falling) Kextr=True RSI=True(19.4<47) MACD=True(gate off) => BLOCK
 2026-09-09 05:35:29,952 [INFO] [STATE][ORB] PE NFO:NIFTY2691523500PE ltp=90.90 entry=97.70 pnl=-6.80(-7.0%) sl=0.00 peak=101.45 tr_armed=False elapsed=26min
 2026-09-09 05:35:29,952 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=90.90 entry=107.10 pnl=-16.20(-15.1%) sl=0.00 peak=107.10 tr_armed=False elapsed=48min
+2026-09-09 05:35:32,699 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260909_090204.log, Nifty_BarLevel_V2_5_20_20260909_090204.csv
+2026-09-09 05:36:02,888 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23537.0 is -85.3 below FUT VWAP 23622.2 (buffer 5)
+2026-09-09 05:36:33,256 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23534.0 is -88.2 below FUT VWAP 23622.2 (buffer 5)
+2026-09-09 05:37:03,572 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23534.0 is -88.2 below FUT VWAP 23622.2 (buffer 5)
+2026-09-09 05:37:33,972 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23530.2 is -92.1 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:38:04,298 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23530.2 is -92.1 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:38:34,683 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23532.5 is -89.8 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:39:04,996 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23532.5 is -89.8 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:39:35,395 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23532.5 is -89.9 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:40:05,717 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23532.5 is -89.9 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:40:36,120 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 23531.6 is -90.7 below FUT VWAP 23622.3 (buffer 5)
+2026-09-09 05:40:36,176 [INFO] [APEX] open=0 trades=3 realized=-7.2pt/Rs-465 unreal=+0.0pt/Rs+0
+2026-09-09 05:40:36,217 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 05:40:36,218 [INFO] [INDICATORS] spot=23531.6 | 1h: close=23484.8 sma20=23760.7 sma50=23885.9 rsi=19.4 macd=-92.34/-74.81(bear) | 15m: K=78.5↑(prev 51.1) | regime=PE-eligible any_active=True
+2026-09-09 05:40:36,218 [INFO] [SIGNAL] CE: reg=False K=True(K=78.5>=38,rising) Kextr=True RSI=False(19.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=78.5<=80,falling) Kextr=True RSI=True(19.4<47) MACD=True(gate off) => BLOCK
+2026-09-09 05:40:36,218 [INFO] [STATE][ORB] PE NFO:NIFTY2691523500PE ltp=90.70 entry=97.70 pnl=-7.00(-7.2%) sl=0.00 peak=101.45 tr_armed=False elapsed=31min
+2026-09-09 05:40:36,218 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=90.70 entry=107.10 pnl=-16.40(-15.3%) sl=0.00 peak=107.10 tr_armed=False elapsed=54min
