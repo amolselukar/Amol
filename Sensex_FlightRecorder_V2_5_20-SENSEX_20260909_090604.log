@@ -1774,3 +1774,22 @@
 2026-09-09 08:54:29,103 [INFO] [SIGNAL] CE: reg=False K=False(K=90.4>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=90.4<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True(gate off) => BLOCK
 2026-09-09 08:54:29,103 [INFO] [STATE][BASE] PE BFO:SENSEX2691075200PE ltp=225.20 entry=205.70 pnl=+19.50(+9.5%) sl=168.67 peak=230.45 tr_armed=False elapsed=86min
 2026-09-09 08:54:29,103 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX2691075000PE ltp=142.15 entry=216.50 pnl=-74.35(-34.3%) sl=0.00 peak=233.25 tr_armed=False elapsed=257min
+2026-09-09 08:54:31,791 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260909_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260909_090604.csv
+2026-09-09 08:55:02,081 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-8.2pt persist=True (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:55:32,498 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-8.2pt persist=True (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:56:02,838 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.8pt persist=False (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:56:02,840 [INFO] [FUT5VWAP] Signal — 75570>75553 body=76% side=CE (fixed +40pt target)
+2026-09-09 08:56:02,842 [INFO] [VETO] FUT5VWAP CE BLOCKED — CE into a DOWNtrend: spot 75126.2 is -427.0 below FUT VWAP 75553.2 (buffer 16)
+2026-09-09 08:56:33,970 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.8pt persist=False (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:57:04,283 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.8pt persist=False (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:57:34,595 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.8pt persist=False (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:58:04,906 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.8pt persist=False (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:58:35,223 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.8pt persist=False (last 2x5m vs FUTvwap=75553.2)
+2026-09-09 08:59:06,488 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.7pt persist=False (last 2x5m vs FUTvwap=75553.3)
+2026-09-09 08:59:36,857 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+16.7pt persist=False (last 2x5m vs FUTvwap=75553.3)
+2026-09-09 08:59:36,894 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 08:59:36,968 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 08:59:36,969 [INFO] [INDICATORS] spot=75110.5 | 1h: close=75145.7 sma20=75712.4 sma50=76294.6 rsi=30.4 macd=-375.31/-323.62(bear) | 15m: K=90.4↓(prev 95.5) | regime=PE-eligible any_active=True
+2026-09-09 08:59:36,969 [INFO] [SIGNAL] CE: reg=False K=False(K=90.4>=38,rising) Kextr=False RSI=False(30.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=90.4<=80,falling) Kextr=True RSI=True(30.4<47) MACD=True(gate off) => BLOCK
+2026-09-09 08:59:36,969 [INFO] [STATE][BASE] PE BFO:SENSEX2691075200PE ltp=230.75 entry=205.70 pnl=+25.05(+12.2%) sl=168.67 peak=234.80 tr_armed=False elapsed=91min
+2026-09-09 08:59:36,970 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX2691075000PE ltp=145.90 entry=216.50 pnl=-70.60(-32.6%) sl=0.00 peak=233.25 tr_armed=False elapsed=263min
