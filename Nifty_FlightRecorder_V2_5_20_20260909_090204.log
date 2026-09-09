@@ -1942,3 +1942,32 @@
 2026-09-09 09:16:48,432 [INFO] [INDICATORS] spot=23479.0 | 1h: close=23546.8 sma20=23676.6 sma50=23845.0 rsi=32.4 macd=-99.39/-89.92(bear) | 15m: K=57.1↓(prev 79.4) | regime=PE-eligible any_active=True
 2026-09-09 09:16:48,432 [INFO] [SIGNAL] CE: reg=False K=False(K=57.1>=38,rising) Kextr=False RSI=False(32.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=57.1<=80,falling) Kextr=True RSI=True(32.4<47) MACD=True(gate off) => PASS
 2026-09-09 09:16:48,432 [INFO] [STATE][BASE] PE NFO:NIFTY2691523500PE ltp=101.15 entry=84.25 pnl=+16.90(+20.1%) sl=96.94 peak=101.15 tr_armed=True elapsed=15min
+2026-09-09 09:16:51,084 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260909_090204.log, Nifty_BarLevel_V2_5_20_20260909_090204.csv
+2026-09-09 09:17:27,562 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:17:34,653 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:17:42,742 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:17:46,743 [ERROR] Kite call ltp terminal failure
+2026-09-09 09:17:46,746 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:18:23,553 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:18:30,631 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:18:38,736 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:18:42,736 [ERROR] Kite call ltp terminal failure
+2026-09-09 09:18:42,740 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:19:19,473 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:19:26,546 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:19:34,622 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-09 09:19:38,623 [ERROR] Kite call ltp terminal failure
+2026-09-09 09:19:38,625 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:20:09,298 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:20:39,892 [INFO] EXIT: NFO:NIFTY2691523500PE @ 96.94 reason=TRAIL_+13 pnl/sh=+12.69 is_flip=False losses=1/4
+2026-09-09 09:20:40,711 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:21:11,163 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY2691523500PE
+2026-09-09 09:21:11,165 [INFO] ENTRY: NFO:NIFTY2691523500PE @ 93.30  engine=V2  detail=K=57.1↓ RSI=32.4 MACD✓
+2026-09-09 09:21:12,010 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:21:42,796 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:22:13,333 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-09-09 09:22:13,566 [INFO] [APEX] open=0 trades=5 realized=+9.3pt/Rs+605 unreal=+0.0pt/Rs+0
+2026-09-09 09:22:13,635 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 09:22:13,635 [INFO] [INDICATORS] spot=23489.8 | 1h: close=23546.8 sma20=23676.6 sma50=23845.0 rsi=32.4 macd=-99.39/-89.92(bear) | 15m: K=57.1↓(prev 79.4) | regime=PE-eligible any_active=True
+2026-09-09 09:22:13,635 [INFO] [SIGNAL] CE: reg=False K=False(K=57.1>=38,rising) Kextr=False RSI=False(32.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=57.1<=80,falling) Kextr=True RSI=True(32.4<47) MACD=True(gate off) => PASS
+2026-09-09 09:22:13,635 [INFO] [STATE][BASE] PE NFO:NIFTY2691523500PE ltp=94.65 entry=93.30 pnl=+1.35(+1.4%) sl=78.30 peak=96.20 tr_armed=False elapsed=1min
