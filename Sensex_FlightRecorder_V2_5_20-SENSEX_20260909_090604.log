@@ -1097,3 +1097,14 @@
 2026-09-09 04:47:48,733 [INFO] [STATE][VWAP] PE BFO:SENSEX2691075100PE ltp=247.45 entry=235.30 pnl=+12.15(+5.2%) sl=192.95 peak=284.15 tr_armed=False elapsed=46min
 2026-09-09 04:47:48,733 [INFO] [STATE][ORB] PE BFO:SENSEX2691075000PE ltp=202.00 entry=214.95 pnl=-12.95(-6.0%) sl=0.00 peak=234.20 tr_armed=False elapsed=12min
 2026-09-09 04:47:48,734 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX2691075000PE ltp=202.00 entry=216.50 pnl=-14.50(-6.7%) sl=0.00 peak=233.25 tr_armed=False elapsed=11min
+2026-09-09 04:47:51,130 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260909_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260909_090604.csv
+2026-09-09 04:49:52,523 [INFO] [V3PROBE] FILLED PE BFO:SENSEX2691075000PE @ 186.20 (LTP touched 184.85)
+2026-09-09 04:49:52,570 [INFO] ENTRY: BFO:SENSEX2691075000PE @ 186.20  engine=V3  detail=EARLY(10m) Grade B R-cluster BREAK-PE at 75040
+2026-09-09 04:52:56,289 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 04:52:56,289 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 04:52:56,289 [INFO] [INDICATORS] spot=75074.6 | 1h: close=74968.1 sma20=76035.1 sma50=76439.9 rsi=19.1 macd=-326.22/-252.80(bear) | 15m: K=22.7↑(prev 17.0) | regime=PE-eligible any_active=True
+2026-09-09 04:52:56,289 [INFO] [SIGNAL] CE: reg=False K=False(K=22.7>=38,rising) Kextr=True RSI=False(19.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=22.7<=80,falling) Kextr=False RSI=True(19.1<47) MACD=True(gate off) => BLOCK
+2026-09-09 04:52:56,290 [INFO] [STATE][BASE] PE BFO:SENSEX2691075000PE ltp=182.70 entry=186.20 pnl=-3.50(-1.9%) sl=152.68 peak=186.20 tr_armed=False elapsed=3min
+2026-09-09 04:52:56,290 [INFO] [STATE][VWAP] PE BFO:SENSEX2691075100PE ltp=223.75 entry=235.30 pnl=-11.55(-4.9%) sl=192.95 peak=284.15 tr_armed=False elapsed=51min
+2026-09-09 04:52:56,290 [INFO] [STATE][ORB] PE BFO:SENSEX2691075000PE ltp=182.70 entry=214.95 pnl=-32.25(-15.0%) sl=0.00 peak=234.20 tr_armed=False elapsed=17min
+2026-09-09 04:52:56,290 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX2691075000PE ltp=182.70 entry=216.50 pnl=-33.80(-15.6%) sl=0.00 peak=233.25 tr_armed=False elapsed=16min
