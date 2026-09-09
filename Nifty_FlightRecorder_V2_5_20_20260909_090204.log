@@ -1342,3 +1342,23 @@
 2026-09-09 04:38:46,772 [INFO] [SIGNAL] CE: reg=False K=False(K=11.8>=38,rising) Kextr=True RSI=False(27.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=11.8<=80,falling) Kextr=False RSI=True(27.8<47) MACD=True(gate off) => BLOCK
 2026-09-09 04:38:46,772 [INFO] [STATE][BASE] PE NFO:NIFTY2691523500PE ltp=115.90 entry=95.80 pnl=+20.10(+21.0%) sl=111.91 peak=116.70 tr_armed=True elapsed=23min
 2026-09-09 04:38:46,772 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2691523500PE ltp=115.90 entry=105.95 pnl=+9.95(+9.4%) sl=0.00 peak=116.70 tr_armed=False elapsed=17min
+2026-09-09 04:38:49,300 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260909_090204.log, Nifty_BarLevel_V2_5_20_20260909_090204.csv
+2026-09-09 04:39:19,617 [INFO] [VWAP] Cooldown BLOCK — PE 22.7min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:39:50,125 [INFO] [VWAP] Cooldown BLOCK — PE 23.2min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:40:20,604 [INFO] [VWAP] Cooldown BLOCK — PE 23.7min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:40:20,638 [INFO] [GAPBREAK] Range-break detected — close 23475.8 broke [23477.5,23536.5] side=PE (gap=-113.0)
+2026-09-09 04:40:51,150 [INFO] [VWAP] Cooldown BLOCK — PE 24.2min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:41:21,505 [INFO] [TRAIL] SL ratcheted 111.91 → 113.41  (peak=118.20)
+2026-09-09 04:41:21,549 [INFO] [VWAP] Cooldown BLOCK — PE 24.7min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:41:52,116 [INFO] [VWAP] Cooldown BLOCK — PE 25.2min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:42:22,518 [INFO] [VWAP] Cooldown BLOCK — PE 25.7min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:42:53,005 [INFO] EXIT: NFO:NIFTY2691523500PE @ 113.41 reason=TRAIL_+18 pnl/sh=+17.61 is_flip=False losses=0/4
+2026-09-09 04:42:53,823 [INFO] [VWAP] Cooldown BLOCK — PE 26.2min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:43:24,198 [INFO] [V3PROBE] PLACED PE NFO:NIFTY2691523500PE limit=105.40 (LTP=109.40 - 4) window=25min — Grade B R-cluster BREAK-PE at 23500
+2026-09-09 04:43:25,009 [INFO] [VWAP] Cooldown BLOCK — PE 26.7min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:43:25,035 [INFO] EXIT: NFO:NIFTY2691523500PE @ 109.95 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+4.00 is_flip=False losses=0/4
+2026-09-09 04:43:56,272 [INFO] [VWAP] Cooldown BLOCK — PE 27.3min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:43:56,305 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 04:43:56,305 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 04:43:56,305 [INFO] [INDICATORS] spot=23480.3 | 1h: close=23635.1 sma20=23784.7 sma50=23899.7 rsi=27.8 macd=-80.68/-70.43(bear) | 15m: K=11.8↓(prev 22.4) | regime=PE-eligible any_active=False
+2026-09-09 04:43:56,305 [INFO] [SIGNAL] CE: reg=False K=False(K=11.8>=38,rising) Kextr=True RSI=False(27.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=11.8<=80,falling) Kextr=False RSI=True(27.8<47) MACD=True(gate off) => BLOCK
