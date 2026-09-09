@@ -1686,3 +1686,20 @@
 2026-09-09 06:37:09,909 [INFO] [SIGNAL] CE: reg=False K=False(K=85.1>=38,rising) Kextr=False RSI=False(25.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=85.1<=80,falling) Kextr=True RSI=True(25.8<47) MACD=True(gate off) => BLOCK
 2026-09-09 06:37:09,909 [INFO] [STATE][ORB] PE NFO:NIFTY2691523500PE ltp=110.65 entry=97.70 pnl=+12.95(+13.3%) sl=0.00 peak=111.00 tr_armed=False elapsed=88min
 2026-09-09 06:37:09,909 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=110.65 entry=107.10 pnl=+3.55(+3.3%) sl=0.00 peak=111.00 tr_armed=False elapsed=110min
+2026-09-09 06:37:12,432 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260909_090204.log, Nifty_BarLevel_V2_5_20_20260909_090204.csv
+2026-09-09 06:37:42,673 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:38:13,120 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:38:43,561 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:39:14,027 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:39:44,457 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:40:14,895 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:40:45,368 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:41:15,833 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:41:46,272 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:42:16,703 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-09-09 06:42:16,933 [INFO] [APEX] open=2 trades=3 realized=-7.2pt/Rs-465 unreal=+18.7pt/Rs+1212
+2026-09-09 06:42:16,934 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 06:42:16,934 [INFO] [INDICATORS] spot=23474.3 | 1h: close=23525.0 sma20=23739.3 sma50=23876.1 rsi=25.8 macd=-97.23/-79.29(bear) | 15m: K=85.1↓(prev 88.6) | regime=PE-eligible any_active=True
+2026-09-09 06:42:16,934 [INFO] [SIGNAL] CE: reg=False K=False(K=85.1>=38,rising) Kextr=False RSI=False(25.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=85.1<=80,falling) Kextr=True RSI=True(25.8<47) MACD=True(gate off) => BLOCK
+2026-09-09 06:42:16,935 [INFO] [STATE][ORB] PE NFO:NIFTY2691523500PE ltp=106.65 entry=97.70 pnl=+8.95(+9.2%) sl=0.00 peak=111.95 tr_armed=False elapsed=93min
+2026-09-09 06:42:16,935 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=106.65 entry=107.10 pnl=-0.45(-0.4%) sl=0.00 peak=111.95 tr_armed=False elapsed=115min
