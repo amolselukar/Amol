@@ -1362,3 +1362,18 @@
 2026-09-09 04:43:56,305 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-09 04:43:56,305 [INFO] [INDICATORS] spot=23480.3 | 1h: close=23635.1 sma20=23784.7 sma50=23899.7 rsi=27.8 macd=-80.68/-70.43(bear) | 15m: K=11.8↓(prev 22.4) | regime=PE-eligible any_active=False
 2026-09-09 04:43:56,305 [INFO] [SIGNAL] CE: reg=False K=False(K=11.8>=38,rising) Kextr=True RSI=False(27.8>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=11.8<=80,falling) Kextr=False RSI=True(27.8<47) MACD=True(gate off) => BLOCK
+2026-09-09 04:43:58,782 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260909_090204.log, Nifty_BarLevel_V2_5_20_20260909_090204.csv
+2026-09-09 04:44:29,092 [INFO] [VWAP] Cooldown BLOCK — PE 27.8min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:44:59,554 [INFO] [VWAP] Cooldown BLOCK — PE 28.3min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:45:29,892 [INFO] [VWAP] Cooldown BLOCK — PE 28.8min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:46:00,379 [INFO] [VWAP] Cooldown BLOCK — PE 29.3min since last VWAP PE loss (cooldown 30min)
+2026-09-09 04:46:30,866 [INFO] [GAPBREAK] Confirmed — bar close 23487.1 > ref 23470.1
+2026-09-09 04:46:30,954 [INFO] ENTRY: NFO:NIFTY2691523500PE @ 107.10  engine=GAPBREAK  detail=GAP break confirmed, gap=-113
+2026-09-09 04:47:02,107 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2691523500PE @ 105.40 (LTP touched 104.50)
+2026-09-09 04:47:02,157 [INFO] ENTRY: NFO:NIFTY2691523500PE @ 105.40  engine=V3  detail=Grade B R-cluster BREAK-PE at 23500
+2026-09-09 04:49:05,390 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 04:49:05,450 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-09 04:49:05,451 [INFO] [INDICATORS] spot=23502.0 | 1h: close=23484.8 sma20=23760.7 sma50=23885.9 rsi=19.4 macd=-92.34/-74.81(bear) | 15m: K=14.9↑(prev 11.8) | regime=PE-eligible any_active=True
+2026-09-09 04:49:05,451 [INFO] [SIGNAL] CE: reg=False K=False(K=14.9>=38,rising) Kextr=True RSI=False(19.4>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=14.9<=80,falling) Kextr=False RSI=True(19.4<47) MACD=True(gate off) => BLOCK
+2026-09-09 04:49:05,451 [INFO] [STATE][BASE] PE NFO:NIFTY2691523500PE ltp=98.50 entry=105.40 pnl=-6.90(-6.5%) sl=86.43 peak=105.40 tr_armed=False elapsed=2min
+2026-09-09 04:49:05,451 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY2691523500PE ltp=98.50 entry=107.10 pnl=-8.60(-8.0%) sl=0.00 peak=107.10 tr_armed=False elapsed=2min
