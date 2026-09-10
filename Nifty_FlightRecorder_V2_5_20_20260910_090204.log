@@ -1485,3 +1485,18 @@
 2026-09-10 05:55:33,870 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-10 05:55:33,871 [INFO] [INDICATORS] spot=23433.8 | 1h: close=23439.0 sma20=23601.0 sma50=23795.9 rsi=28.7 macd=-110.43/-100.98(bear) | 15m: K=48.9↑(prev 32.3) | regime=PE-eligible any_active=False
 2026-09-10 05:55:33,871 [INFO] [SIGNAL] CE: reg=False K=True(K=48.9>=38,rising) Kextr=True RSI=False(28.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=48.9<=80,falling) Kextr=False RSI=True(28.7<47) MACD=True(gate off) => BLOCK
+2026-09-10 05:55:36,420 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260910_090204.log, Nifty_BarLevel_V2_5_20_20260910_090204.csv
+2026-09-10 05:56:06,766 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:56:37,426 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:57:07,862 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:57:38,499 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:58:08,939 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:58:39,602 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:59:10,152 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 05:59:40,919 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 06:00:13,179 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 06:00:44,589 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-09-10 06:00:44,628 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-10 06:00:44,740 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-10 06:00:44,740 [INFO] [INDICATORS] spot=23426.7 | 1h: close=23439.0 sma20=23601.0 sma50=23795.9 rsi=28.7 macd=-110.43/-100.98(bear) | 15m: K=52.5↑(prev 48.9) | regime=PE-eligible any_active=False
+2026-09-10 06:00:44,740 [INFO] [SIGNAL] CE: reg=False K=True(K=52.5>=38,rising) Kextr=True RSI=False(28.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=52.5<=80,falling) Kextr=False RSI=True(28.7<47) MACD=True(gate off) => BLOCK
