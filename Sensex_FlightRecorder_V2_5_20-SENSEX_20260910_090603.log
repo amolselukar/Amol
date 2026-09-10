@@ -1629,3 +1629,4 @@
 2026-09-10 09:59:59,568 [INFO] [EXP12] anchor=spot M=74600 (max-OI would be 75000, diverged by +400) spot=74629.5
 2026-09-10 10:00:00,570 [INFO] [EXP12] EOD why/why-not report sent
 2026-09-10 10:00:00,571 [INFO] [EXP12] M=74600 open=0[-] trades=6 realized=Rs-2005 triggers=1 | by-engine EXP1:1tr/Rs+2769 EXP2:3tr/Rs-2523 EXP2W:2tr/Rs-2251
+2026-09-10 10:00:34,870 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260910_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260910_090603.csv
