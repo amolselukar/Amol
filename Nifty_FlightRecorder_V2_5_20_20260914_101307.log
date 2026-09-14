@@ -4191,3 +4191,17 @@
 2026-09-14 09:54:27,252 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-14 09:54:27,253 [INFO] [INDICATORS] spot=23398.1 | 1h: close=23398.1 sma20=23429.8 sma50=23662.0 rsi=44.0 macd=-84.21/-97.32(bull) | 15m: K=76.3↓(prev 92.9) | regime=PE-eligible any_active=False
 2026-09-14 09:54:27,253 [INFO] [SIGNAL] CE: reg=False K=False(K=76.3>=38,rising) Kextr=False RSI=False(44.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=76.3<=80,falling) Kextr=True RSI=True(44.0<47) MACD=False(gate off) => PASS
+2026-09-14 09:54:29,841 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260914_101307.log, Nifty_BarLevel_V2_5_20_20260914_101307.csv
+2026-09-14 09:55:00,052 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-09-14 09:55:00,084 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-09-14 09:55:00,085 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-09-14 09:55:00,116 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-09-14 09:55:30,318 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:56:00,505 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:56:30,701 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:57:00,874 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:57:31,042 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:58:01,217 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:58:31,390 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:59:01,564 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 09:59:31,745 [WARNING] Data fetch returned None; skipping cycle
