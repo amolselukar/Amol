@@ -4199,3 +4199,4 @@
 2026-09-14 09:58:31,214 [WARNING] Data fetch returned None; skipping cycle
 2026-09-14 09:59:01,379 [WARNING] Data fetch returned None; skipping cycle
 2026-09-14 09:59:31,558 [WARNING] Data fetch returned None; skipping cycle
+2026-09-14 10:00:05,515 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260914_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260914_090604.csv
