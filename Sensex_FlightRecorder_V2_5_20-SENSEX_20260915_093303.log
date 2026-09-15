@@ -1326,3 +1326,12 @@
 2026-09-15 06:24:39,976 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-10.5pt/Rs-210
 2026-09-15 06:24:39,977 [INFO] [INDICATORS] spot=74616.0 | 1h: close=74667.7 sma20=74759.9 sma50=75572.1 rsi=40.4 macd=-231.59/-298.10(bull) | 15m: K=9.0↑(prev 1.9) | regime=PE-eligible any_active=False
 2026-09-15 06:24:39,977 [INFO] [SIGNAL] CE: reg=False K=False(K=9.0>=38,rising) Kextr=True RSI=False(40.4>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=9.0<=80,falling) Kextr=False RSI=True(40.4<47) MACD=False(gate off) => BLOCK
+2026-09-15 06:24:43,663 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260915_093303.log, Sensex_BarLevel_V2_5_20-SENSEX_20260915_093303.csv
+2026-09-15 06:26:14,939 [INFO] [V3PROBE] PLACED PE BFO:SENSEX2691774600PE limit=346.55 (LTP=359.55 - 13) window=25min — EARLY(10m) Grade B R-cluster BREAK-PE at 74683
+2026-09-15 06:28:47,496 [INFO] [V3PROBE] FILLED PE BFO:SENSEX2691774600PE @ 346.55 (LTP touched 342.95)
+2026-09-15 06:28:47,547 [INFO] ENTRY: BFO:SENSEX2691774600PE @ 346.55  engine=V3  detail=EARLY(10m) Grade B R-cluster BREAK-PE at 74683
+2026-09-15 06:29:49,653 [INFO] [APEX] open=0 trades=1 realized=-12.0pt/Rs-240 unreal=+0.0pt/Rs+0
+2026-09-15 06:29:49,747 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+0.9pt/Rs+19
+2026-09-15 06:29:49,748 [INFO] [INDICATORS] spot=74657.0 | 1h: close=74667.7 sma20=74759.9 sma50=75572.1 rsi=40.4 macd=-231.59/-298.10(bull) | 15m: K=9.0↑(prev 1.9) | regime=PE-eligible any_active=True
+2026-09-15 06:29:49,748 [INFO] [SIGNAL] CE: reg=False K=False(K=9.0>=38,rising) Kextr=True RSI=False(40.4>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=9.0<=80,falling) Kextr=False RSI=True(40.4<47) MACD=False(gate off) => BLOCK
+2026-09-15 06:29:49,748 [INFO] [STATE][BASE] PE BFO:SENSEX2691774600PE ltp=346.00 entry=346.55 pnl=-0.55(-0.2%) sl=284.17 peak=346.55 tr_armed=False elapsed=1min
