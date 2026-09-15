@@ -1554,3 +1554,21 @@
 2026-09-15 08:26:37,406 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-09-15 08:26:37,406 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-09-15 08:26:39,167 [INFO] [CHANGELOG] up to date (last entry 2026-09-15)
+2026-09-15 08:26:42,992 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260915_135635.log, Nifty_BarLevel_V2_5_20_20260915_135635.csv
+2026-09-15 08:26:43,205 [INFO] [RENKO] dir=-1 (DOWN) bricks=23 brick=12.66 last5=[-1, -1, -1, -1, -1]
+2026-09-15 08:26:43,212 [INFO] [CHOPGATE] Clear to trade — ER=1.00 crosses=0 range=188pt
+2026-09-15 08:26:43,236 [INFO] [VWAP] GAP_REVERSAL_TREND holding — 15m close 23263.2 vs VWAP 23352.0 (ltp 135.50, peak 135.50)
+2026-09-15 08:26:43,443 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-15 08:26:43,492 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-15 08:26:43,514 [INFO] [EXP12] universe resolved: M=23300 legs=[(23250, 'CE'), (23250, 'PE'), (23300, 'CE'), (23300, 'PE'), (23350, 'CE'), (23350, 'PE')]
+2026-09-15 08:26:43,617 [INFO] [EXP12] M=23300 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-15 08:26:43,618 [INFO] [INDICATORS] spot=23269.2 | 1h: close=23295.0 sma20=23392.7 sma50=23613.9 rsi=33.8 macd=-75.10/-82.21(bull) | 15m: K=0.0↓(prev 0.0) | regime=PE-eligible any_active=True
+2026-09-15 08:26:43,618 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(33.8>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=0.0<=80,falling) Kextr=False RSI=True(33.8<47) MACD=False(gate off) => BLOCK
+2026-09-15 08:26:43,618 [INFO] [STATE][VWAP] PE NFO:NIFTY2691523400PE ltp=135.50 entry=72.20 pnl=+63.30(+87.7%) sl=59.20 peak=135.50 tr_armed=False elapsed=235min
+2026-09-15 08:30:17,445 [INFO] [VWAP] GAP_REVERSAL_TREND holding — 15m close 23272.3 vs VWAP 23347.7 (ltp 137.35, peak 137.35)
+2026-09-15 08:31:48,960 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-15 08:31:49,008 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-15 08:31:49,146 [INFO] [EXP12] M=23300 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-15 08:31:49,147 [INFO] [INDICATORS] spot=23274.3 | 1h: close=23295.0 sma20=23392.7 sma50=23613.9 rsi=33.8 macd=-75.10/-82.21(bull) | 15m: K=7.2↑(prev 0.0) | regime=PE-eligible any_active=True
+2026-09-15 08:31:49,147 [INFO] [SIGNAL] CE: reg=False K=False(K=7.2>=38,rising) Kextr=True RSI=False(33.8>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=7.2<=80,falling) Kextr=False RSI=True(33.8<47) MACD=False(gate off) => BLOCK
+2026-09-15 08:31:49,148 [INFO] [STATE][VWAP] PE NFO:NIFTY2691523400PE ltp=138.90 entry=72.20 pnl=+66.70(+92.4%) sl=59.20 peak=138.90 tr_armed=False elapsed=240min
