@@ -1631,3 +1631,23 @@
 2026-09-15 09:17:47,294 [INFO] [INDICATORS] spot=23191.5 | 1h: close=23230.2 sma20=23381.1 sma50=23600.0 rsi=29.8 macd=-80.87/-81.94(bull) | 15m: K=6.6↓(prev 7.2) | regime=PE-eligible any_active=True
 2026-09-15 09:17:47,295 [INFO] [SIGNAL] CE: reg=False K=False(K=6.6>=38,rising) Kextr=True RSI=False(29.8>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=6.6<=80,falling) Kextr=False RSI=True(29.8<47) MACD=False(gate off) => BLOCK
 2026-09-15 09:17:47,295 [INFO] [STATE][VWAP] PE NFO:NIFTY2691523400PE ltp=199.30 entry=72.20 pnl=+127.10(+176.0%) sl=59.20 peak=200.55 tr_armed=False elapsed=286min
+2026-09-15 09:17:50,990 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260915_143214.log, Nifty_BarLevel_V2_5_20_20260915_143214.csv
+2026-09-15 09:18:21,345 [INFO] [RENKO] dir=-1 (DOWN) bricks=30 brick=12.66 last5=[-1, -1, -1, -1, -1]
+2026-09-15 09:18:27,433 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:18:34,513 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:18:42,590 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:18:46,591 [ERROR] Kite call ltp terminal failure
+2026-09-15 09:18:52,877 [WARNING] Kite call failed (quote) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:18:59,970 [WARNING] Kite call failed (quote) attempt 2: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:19:08,057 [WARNING] Kite call failed (quote) attempt 3: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:19:12,057 [ERROR] Kite call quote terminal failure
+2026-09-15 09:19:12,306 [INFO] [EXP12] M=23200 open=3[EXP1:23150CE EXP1:23200CE EXP1:23250CE] trades=0 realized=Rs+0 triggers=3 | by-engine none
+2026-09-15 09:19:48,749 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-15 09:19:52,823 [INFO] [VWAP] TREND LOCK floor 162.05 -> 185.39 (peak 233.90)
+2026-09-15 09:19:53,089 [INFO] [LSC] WASHOUT 23200CE — vol 11,563,240 = 4.5x median, OI 15.21M -> 17.87M (fresh writing), close 36.75 = lowest of 30 bars
+2026-09-15 09:21:25,089 [INFO] [LSC] WASHOUT 23200CE — vol 11,538,345 = 4.5x median, OI 17.87M -> 20.22M (fresh writing), close 31.20 = lowest of 30 bars
+2026-09-15 09:22:56,940 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-15 09:22:57,030 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-15 09:22:57,235 [INFO] [INDICATORS] spot=23189.7 | 1h: close=23230.2 sma20=23381.1 sma50=23600.0 rsi=29.8 macd=-80.87/-81.94(bull) | 15m: K=6.6↓(prev 7.2) | regime=PE-eligible any_active=True
+2026-09-15 09:22:57,235 [INFO] [SIGNAL] CE: reg=False K=False(K=6.6>=38,rising) Kextr=True RSI=False(29.8>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=6.6<=80,falling) Kextr=False RSI=True(29.8<47) MACD=False(gate off) => BLOCK
+2026-09-15 09:22:57,235 [INFO] [STATE][VWAP] PE NFO:NIFTY2691523400PE ltp=215.70 entry=72.20 pnl=+143.50(+198.8%) sl=59.20 peak=233.90 tr_armed=False elapsed=291min
