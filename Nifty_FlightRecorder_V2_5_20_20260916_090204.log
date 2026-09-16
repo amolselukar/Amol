@@ -2147,3 +2147,4 @@
 2026-09-16 09:55:55,160 [INFO] [SIGNAL] CE: reg=False K=False(K=48.3>=38,rising) Kextr=False RSI=False(38.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=48.3<=80,falling) Kextr=False RSI=True(38.7<47) MACD=False(gate off) => BLOCK
 2026-09-16 09:55:58,561 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260916_090204.log, Nifty_BarLevel_V2_5_20_20260916_090204.csv
 2026-09-16 09:59:00,669 [INFO] [RENKO] dir=-1 (DOWN) bricks=25 brick=18.03 last5=[-1, 1, 1, -1, -1]
+2026-09-16 10:00:05,375 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260916_090204.log, Nifty_BarLevel_V2_5_20_20260916_090204.csv
