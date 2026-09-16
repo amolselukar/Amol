@@ -1208,3 +1208,28 @@
 2026-09-16 04:47:43,496 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-16 04:47:43,496 [INFO] [INDICATORS] spot=74237.1 | 1h: close=74192.3 sma20=74584.9 sma50=75305.0 rsi=34.7 macd=-282.80/-268.12(bear) | 15m: K=73.7↑(prev 69.8) | regime=PE-eligible any_active=False
 2026-09-16 04:47:43,496 [INFO] [SIGNAL] CE: reg=False K=True(K=73.7>=38,rising) Kextr=False RSI=False(34.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=73.7<=80,falling) Kextr=False RSI=True(34.7<47) MACD=True(gate off) => BLOCK
+2026-09-16 04:47:46,418 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260916_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260916_090603.csv
+2026-09-16 04:48:16,709 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74237.1 is -195.0 below FUT VWAP 74432.1 (buffer 16)
+2026-09-16 04:48:16,713 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.1pt persist=True (last 2x5m vs FUTvwap=74432.1)
+2026-09-16 04:48:47,037 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74277.5 is -154.6 below FUT VWAP 74432.1 (buffer 16)
+2026-09-16 04:48:47,041 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.1pt persist=True (last 2x5m vs FUTvwap=74432.1)
+2026-09-16 04:49:17,393 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74277.5 is -154.6 below FUT VWAP 74432.1 (buffer 16)
+2026-09-16 04:49:17,397 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.1pt persist=True (last 2x5m vs FUTvwap=74432.1)
+2026-09-16 04:49:47,798 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74272.8 is -159.3 below FUT VWAP 74432.1 (buffer 16)
+2026-09-16 04:49:47,802 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.1pt persist=True (last 2x5m vs FUTvwap=74432.1)
+2026-09-16 04:50:18,108 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74272.8 is -159.4 below FUT VWAP 74432.2 (buffer 16)
+2026-09-16 04:50:18,111 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.2pt persist=True (last 2x5m vs FUTvwap=74432.2)
+2026-09-16 04:50:48,481 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74249.0 is -183.2 below FUT VWAP 74432.2 (buffer 16)
+2026-09-16 04:50:48,485 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.2pt persist=True (last 2x5m vs FUTvwap=74432.2)
+2026-09-16 04:51:18,822 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74249.0 is -183.2 below FUT VWAP 74432.2 (buffer 16)
+2026-09-16 04:51:18,826 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+14.8pt persist=False (last 2x5m vs FUTvwap=74432.2)
+2026-09-16 04:51:49,136 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74267.9 is -164.3 below FUT VWAP 74432.2 (buffer 16)
+2026-09-16 04:51:49,139 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+14.8pt persist=False (last 2x5m vs FUTvwap=74432.2)
+2026-09-16 04:52:19,463 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74267.9 is -164.3 below FUT VWAP 74432.2 (buffer 16)
+2026-09-16 04:52:19,466 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+14.8pt persist=False (last 2x5m vs FUTvwap=74432.2)
+2026-09-16 04:52:49,793 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74256.0 is -176.1 below FUT VWAP 74432.2 (buffer 16)
+2026-09-16 04:52:49,796 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+14.8pt persist=False (last 2x5m vs FUTvwap=74432.2)
+2026-09-16 04:52:49,826 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-16 04:52:49,826 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-16 04:52:49,827 [INFO] [INDICATORS] spot=74256.0 | 1h: close=74192.3 sma20=74584.9 sma50=75305.0 rsi=34.7 macd=-282.80/-268.12(bear) | 15m: K=73.7↑(prev 69.8) | regime=PE-eligible any_active=False
+2026-09-16 04:52:49,827 [INFO] [SIGNAL] CE: reg=False K=True(K=73.7>=38,rising) Kextr=False RSI=False(34.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=73.7<=80,falling) Kextr=False RSI=True(34.7<47) MACD=True(gate off) => BLOCK
