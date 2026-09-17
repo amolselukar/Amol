@@ -1796,3 +1796,4 @@
 2026-09-17 09:58:52,194 [INFO] [EXP12] EXP2W EXIT 74400CE 56.95->0.30 Rs-1133 [EOD_1528] | day Rs-4398
 2026-09-17 09:58:53,001 [INFO] [EXP12] M=74400 open=0[-] trades=10 realized=Rs-4398 triggers=0 | by-engine EXP2:5tr/Rs-2210 EXP2W:5tr/Rs-2188
 2026-09-17 09:59:54,860 [INFO] [EXP12] EOD why/why-not report sent
+2026-09-17 10:00:28,481 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260917_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260917_090603.csv
