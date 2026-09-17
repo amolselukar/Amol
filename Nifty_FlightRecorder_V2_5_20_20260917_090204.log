@@ -1791,3 +1791,14 @@
 2026-09-17 04:59:03,797 [INFO] [INDICATORS] spot=23291.5 | 1h: close=23311.1 sma20=23285.8 sma50=23458.4 rsi=48.4 macd=-64.02/-79.46(bull) | 15m: K=100.0↓(prev 100.0) | regime=NEUTRAL any_active=True
 2026-09-17 04:59:03,797 [INFO] [SIGNAL] CE: reg=False K=False(K=100.0>=38,rising) Kextr=False RSI=False(48.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(48.4<47) MACD=False(gate off) => BLOCK
 2026-09-17 04:59:03,798 [INFO] [STATE][VWAP] CE NFO:NIFTY2692223300CE ltp=129.05 entry=146.20 pnl=-17.15(-11.7%) sl=119.88 peak=147.80 tr_armed=False elapsed=12min
+2026-09-17 04:59:06,317 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260917_090204.log, Nifty_BarLevel_V2_5_20_20260917_090204.csv
+2026-09-17 05:00:07,451 [INFO] [CHOPGATE] Clear to trade — ER=0.39 crosses=0 range=138pt
+2026-09-17 05:00:07,813 [INFO] [STOCH] SIGNAL 23300PE @121.30 -- 15m Stoch(5,3) crossed INTO >=80 (K 74.9->81.7) bar 10:15; scalp +14/-10 Rs, 60min
+2026-09-17 05:00:07,856 [INFO] ENTRY: NFO:NIFTY2692223300PE @ 121.30  engine=STOCH  detail=15m Stoch(5,3) crossed INTO >=80 (K 74.9->81.7) bar 10:15; scalp +14/-10 Rs, 60min
+2026-09-17 05:03:42,834 [INFO] [RENKO] dir=+1 (UP) bricks=9 brick=18.57 last5=[-1, -1, 1, 1, 1]
+2026-09-17 05:04:13,839 [INFO] [APEX] open=1 trades=1 realized=-17.2pt/Rs-1121 unreal=+10.8pt/Rs+702
+2026-09-17 05:04:13,895 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-17 05:04:13,896 [INFO] [INDICATORS] spot=23279.1 | 1h: close=23311.1 sma20=23285.8 sma50=23458.4 rsi=48.4 macd=-64.02/-79.46(bull) | 15m: K=92.8↓(prev 100.0) | regime=NEUTRAL any_active=True
+2026-09-17 05:04:13,896 [INFO] [SIGNAL] CE: reg=False K=False(K=92.8>=38,rising) Kextr=False RSI=False(48.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.8<=80,falling) Kextr=True RSI=False(48.4<47) MACD=False(gate off) => BLOCK
+2026-09-17 05:04:13,896 [INFO] [STATE][VWAP] CE NFO:NIFTY2692223300CE ltp=123.80 entry=146.20 pnl=-22.40(-15.3%) sl=119.88 peak=147.80 tr_armed=False elapsed=18min
+2026-09-17 05:04:13,896 [INFO] [STATE][STOCH] PE NFO:NIFTY2692223300PE ltp=127.80 entry=121.30 pnl=+6.50(+5.4%) sl=0.00 peak=128.20 tr_armed=False elapsed=4min
