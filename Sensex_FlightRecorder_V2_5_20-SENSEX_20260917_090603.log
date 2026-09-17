@@ -1766,3 +1766,15 @@
 2026-09-17 09:50:22,027 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-17 09:50:22,235 [INFO] [INDICATORS] spot=74414.2 | 1h: close=74414.2 sma20=74416.2 sma50=74818.8 rsi=46.0 macd=-109.46/-158.43(bull) | 15m: K=23.3↓(prev 26.2) | regime=PE-eligible any_active=False
 2026-09-17 09:50:22,235 [INFO] [SIGNAL] CE: reg=False K=False(K=23.3>=38,rising) Kextr=True RSI=False(46.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=23.3<=80,falling) Kextr=False RSI=True(46.0<47) MACD=False(gate off) => BLOCK
+2026-09-17 09:50:25,124 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260917_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20260917_090603.csv
+2026-09-17 09:52:27,315 [INFO] [EXP12] EXP2 ENTRY 74500CE @ 50.50 (cheap-ladder bar@15:20=64.30 dist=-86 oi15=-13.5%)
+2026-09-17 09:52:28,237 [INFO] [EXP12] EXP2W ENTRY 74500CE @ 50.50 (was-expensive afthi=216.85 bar@15:20=64.30 dist=-86 oi15=-13.5%)
+2026-09-17 09:53:30,288 [INFO] [EXP12] EXP2 ENTRY 74300PE @ 44.35 (cheap-ladder bar@15:21=32.70 dist=-114 oi15=-4.3%)
+2026-09-17 09:53:31,102 [INFO] [EXP12] EXP2W ENTRY 74300PE @ 44.35 (was-expensive afthi=154.75 bar@15:21=32.70 dist=-114 oi15=-4.3%)
+2026-09-17 09:53:31,952 [INFO] [EXP12] EXP2 ENTRY 74400PE @ 86.80 (cheap-ladder bar@15:21=62.85 dist=-14 oi15=-13.6%)
+2026-09-17 09:53:32,762 [INFO] [EXP12] EXP2W ENTRY 74400PE @ 86.80 (was-expensive afthi=208.10 bar@15:21=62.85 dist=-14 oi15=-13.6%)
+2026-09-17 09:53:33,582 [INFO] [EXP12] M=74400 open=6[EXP2:74500CE EXP2W:74500CE EXP2:74300PE EXP2W:74300PE EXP2:74400PE EXP2W:74400PE] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-17 09:55:35,456 [INFO] [APEX] open=0 trades=3 realized=-64.3pt/Rs-1285 unreal=+0.0pt/Rs+0
+2026-09-17 09:55:35,456 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-17 09:55:35,671 [INFO] [INDICATORS] spot=74414.2 | 1h: close=74414.2 sma20=74416.2 sma50=74818.8 rsi=46.0 macd=-109.46/-158.43(bull) | 15m: K=23.3↓(prev 26.2) | regime=PE-eligible any_active=False
+2026-09-17 09:55:35,671 [INFO] [SIGNAL] CE: reg=False K=False(K=23.3>=38,rising) Kextr=True RSI=False(46.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=23.3<=80,falling) Kextr=False RSI=True(46.0<47) MACD=False(gate off) => BLOCK
