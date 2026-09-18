@@ -1272,3 +1272,14 @@
 2026-09-18 04:57:47,931 [INFO] [SIGNAL] CE: reg=False K=True(K=73.6>=38,rising) Kextr=True RSI=False(49.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=73.6<=80,falling) Kextr=False RSI=False(49.2<47) MACD=False(gate off) => BLOCK
 2026-09-18 04:57:47,931 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26SEP74400PE ltp=414.90 entry=421.55 pnl=-6.65(-1.6%) sl=0.00 peak=421.55 tr_armed=False elapsed=41min
 2026-09-18 04:57:47,931 [INFO] [STATE][ORB] CE BFO:SENSEX26SEP74400CE ltp=510.65 entry=556.20 pnl=-45.55(-8.2%) sl=0.00 peak=556.20 tr_armed=False elapsed=13min
+2026-09-18 04:57:50,552 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 05:00:21,797 [INFO] [CHOPGATE] STAND ASIDE for the day — ER=0.01 crosses=2 range=165pt
+2026-09-18 05:01:23,151 [INFO] [VWAP] Signal — FUT 74519<74563 body=79% side=PE | persist_gate=dist=-54.5pt persist=True (last 2x5m vs FUTvwap=74573.5)
+2026-09-18 05:01:23,205 [INFO] ENTRY: BFO:SENSEX26SEP74500PE @ 439.85  engine=VWAP  detail=FUT VWAP 74519<74563 body=79% | bar=180
+2026-09-18 05:02:55,047 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 05:02:55,047 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 05:02:55,048 [INFO] [INDICATORS] spot=74445.9 | 1h: close=74505.8 sma20=74384.2 sma50=74751.5 rsi=49.2 macd=-95.23/-138.15(bull) | 15m: K=77.5↑(prev 73.6) | regime=NEUTRAL any_active=True
+2026-09-18 05:02:55,048 [INFO] [SIGNAL] CE: reg=False K=True(K=77.5>=38,rising) Kextr=False RSI=False(49.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=77.5<=80,falling) Kextr=True RSI=False(49.2<47) MACD=False(gate off) => BLOCK
+2026-09-18 05:02:55,048 [INFO] [STATE][VWAP] PE BFO:SENSEX26SEP74500PE ltp=459.30 entry=439.85 pnl=+19.45(+4.4%) sl=360.68 peak=459.30 tr_armed=False elapsed=1min
+2026-09-18 05:02:55,049 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26SEP74400PE ltp=412.70 entry=421.55 pnl=-8.85(-2.1%) sl=0.00 peak=421.55 tr_armed=False elapsed=46min
+2026-09-18 05:02:55,049 [INFO] [STATE][ORB] CE BFO:SENSEX26SEP74400CE ltp=511.95 entry=556.20 pnl=-44.25(-8.0%) sl=0.00 peak=556.20 tr_armed=False elapsed=18min
