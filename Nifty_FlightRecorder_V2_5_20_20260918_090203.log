@@ -2177,3 +2177,20 @@
 2026-09-18 08:55:00,582 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 08:55:00,583 [INFO] [INDICATORS] spot=23356.5 | 1h: close=23348.5 sma20=23269.4 sma50=23363.2 rsi=53.2 macd=-9.04/-27.42(bull) | 15m: K=61.6↑(prev 50.5) | regime=NEUTRAL any_active=False
 2026-09-18 08:55:00,583 [INFO] [SIGNAL] CE: reg=False K=True(K=61.6>=38,rising) Kextr=False RSI=True(53.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=61.6<=80,falling) Kextr=True RSI=False(53.2<47) MACD=False(gate off) => BLOCK
+2026-09-18 08:55:04,521 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
+2026-09-18 08:56:05,564 [INFO] [V3PROBE] PLACED PE NFO:NIFTY2692223400PE limit=112.75 (LTP=116.75 - 4) window=25min — EARLY(10m) Grade A G-cluster REJECT-PE at 23359
+2026-09-18 08:58:39,794 [INFO] [V3PROBE] FILLED PE NFO:NIFTY2692223400PE @ 112.75 (LTP touched 112.00)
+2026-09-18 08:58:39,798 [INFO] [VETO] V3 PE BLOCKED — PE into an UPtrend: spot 23359.5 is +40.3 above SPOT VWAP 23319.2 (buffer 5)
+2026-09-18 08:59:11,473 [INFO] [FAST] CE23350 score=138 vol=3.46 U=11.6 skipped: leader score=138 vol=3.46 U=11.6
+2026-09-18 09:00:12,607 [INFO] [RENKO] dir=+1 (UP) bricks=3 brick=19.07 last5=[-1, 1, 1]
+2026-09-18 09:00:12,625 [INFO] [GAPBREAK] Range-break detected — close 23366.0 broke [23286.6,23360.5] side=CE (gap=+64.1)
+2026-09-18 09:00:12,866 [INFO] [STOCH] PE cross (K 49.1->81.5) bar 14:15 BLOCKED -- 1m renko UP opposes PE with a WEAK trend (net bricks +1, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-09-18 09:00:13,502 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 111"}
+2026-09-18 09:00:13,503 [WARNING] HTML parse failed; retrying as plain text
+2026-09-18 09:00:15,454 [INFO] [FAST] SIGNAL 1m momentum CE23350 score=182 vol=3.9x U=+20 momN=12.8% trend=CE bar 14:29; trail 15
+2026-09-18 09:00:15,552 [INFO] ENTRY: NFO:NIFTY2692223350CE @ 106.25  engine=FAST  detail=1m momentum CE23350 score=182 vol=3.9x U=+20 momN=12.8% trend=CE bar 14:29; trail 15
+2026-09-18 09:00:16,490 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 09:00:16,573 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 09:00:16,574 [INFO] [INDICATORS] spot=23366.0 | 1h: close=23348.5 sma20=23269.4 sma50=23363.2 rsi=53.2 macd=-9.04/-27.42(bull) | 15m: K=91.7↑(prev 61.6) | regime=NEUTRAL any_active=True
+2026-09-18 09:00:16,575 [INFO] [SIGNAL] CE: reg=False K=True(K=91.7>=38,rising) Kextr=False RSI=True(53.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=91.7<=80,falling) Kextr=True RSI=False(53.2<47) MACD=False(gate off) => BLOCK
+2026-09-18 09:00:16,579 [INFO] [STATE][FAST] CE NFO:NIFTY2692223350CE ltp=0.00 entry=106.25 pnl=-106.25(-100.0%) sl=0.00 peak=106.25 tr_armed=False elapsed=0min
