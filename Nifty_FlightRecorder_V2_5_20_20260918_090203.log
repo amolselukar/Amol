@@ -1,0 +1,1720 @@
+2026-09-18 03:32:03,892 [INFO] [STATE][BASE] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,892 [INFO] [STATE][BASE] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,892 [INFO] [STATE][BASE] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,892 [INFO] [STATE][VWAP] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,893 [INFO] [STATE][VWAP] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,893 [INFO] [STATE][VWAP] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,893 [INFO] [STATE][FUT5VWAP] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,893 [INFO] [STATE][FUT5VWAP] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,893 [INFO] [STATE][FUT5VWAP] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,893 [INFO] [STATE][ORB] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,893 [INFO] [STATE][ORB] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,893 [INFO] [STATE][ORB] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,893 [INFO] [STATE][GAPBREAK] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,893 [INFO] [STATE][GAPBREAK] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,893 [INFO] [STATE][GAPBREAK] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,893 [INFO] [STATE][EXPIRY] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,893 [INFO] [STATE][EXPIRY] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,893 [INFO] [STATE][EXPIRY] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,893 [INFO] [STATE][CRUSH] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,894 [INFO] [STATE][CRUSH] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,894 [INFO] [STATE][CRUSH] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,894 [INFO] [STATE][WCR] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,894 [INFO] [STATE][WCR] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,894 [INFO] [STATE][WCR] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,894 [INFO] [STATE][LSC] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,894 [INFO] [STATE][LSC] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,894 [INFO] [STATE][LSC] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,894 [INFO] [STATE][PGB] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,894 [INFO] [STATE][PGB] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,894 [INFO] [STATE][PGB] Loaded prior state. active=False losses=0
+2026-09-18 03:32:03,894 [INFO] [STATE][STOCH] State from 2026-09-17 — resetting trades_today for 2026-09-18
+2026-09-18 03:32:03,894 [INFO] [STATE][STOCH] Circuit breaker was halted (losses=0) — RESET on bot restart.
+2026-09-18 03:32:03,895 [INFO] [STATE][STOCH] Loaded prior state. active=False losses=0
+2026-09-18 03:32:05,036 [INFO] [BOOT] Nifty FUT token: NSE_FO|68407 expiry=2026-09-29 sym=NIFTY26SEPFUT
+2026-09-18 03:32:05,036 [INFO] [BOOT] Expiry: 2026-09-22, 96 strikes, 192 option contracts
+2026-09-18 03:32:05,036 [INFO] [BOOT] PAPER mode (kite_paper) — mStock init + self-test SKIPPED (bypassed).
+2026-09-18 03:32:05,297 [INFO] [RENKO] brick=19.07 pts = mean session range 228.9 (115, 217, 474, 169, 170) / 12; sessions 2026-09-10..2026-09-17
+2026-09-18 03:32:05,297 [INFO] [PIVOTS] P=23276 R1=23358 R2=23446 S1=23188 S2=23106
+2026-09-18 03:32:05,298 [WARNING] [OI Plan] Stale plan (2026-07-20) — ignoring for today's levels
+2026-09-18 03:32:05,298 [INFO] [OI Plan] No valid plan found — running without OI levels (normal mode)
+2026-09-18 03:32:05,299 [INFO] [GAP] +1.31% gap; suppressing entries until 10:15
+2026-09-18 03:32:05,299 [INFO] [V2.5.20] 12 independent engines armed: BASE, VWAP, FUT5VWAP, ORB, GAPBREAK, EXPIRY, CRUSH, WCR, LSC, PGB, STOCH, FAST (regime=CHOP, gap_suppress_until=10:15)
+2026-09-18 03:32:05,299 [INFO] 
+2026-09-18 03:32:05,299 [INFO] +========================================================================+
+2026-09-18 03:32:05,299 [INFO] | ORION V2.5.15 — STRATEGY DESIGN                                        |
+2026-09-18 03:32:05,299 [INFO] | Backtest: 363 trades | PnL Rs +6,88,158 | WR 64.5% | MaxDD -1,119     |
+2026-09-18 03:32:05,299 [INFO] +========================================================================+
+2026-09-18 03:32:05,299 [INFO] | ENGINE V2 (fires every 15m close — regime: BULL/BEAR/TRANSITION only)  |
+2026-09-18 03:32:05,299 [INFO] |   CE: 1h close>SMA20>SMA50 | K>=38 rising | K<25 recently             |
+2026-09-18 03:32:05,299 [INFO] |        RSI>53 | MACD bull | premium 30-180                             |
+2026-09-18 03:32:05,300 [INFO] |   PE: 1h close<SMA20<SMA50 | K<=80 falling K>=25 | K>75 recently      |
+2026-09-18 03:32:05,300 [INFO] |        RSI<47 | MACD bear | premium 30-300                             |
+2026-09-18 03:32:05,300 [INFO] |                                                                         |
+2026-09-18 03:32:05,300 [INFO] | ENGINE V3 (15m G/R cluster break/reject — fires in any regime)         |
+2026-09-18 03:32:05,300 [INFO] |   Grade A (>=3 source kinds) / Grade B (>=2)                           |
+2026-09-18 03:32:05,300 [INFO] |   PDC excluded from clusters; G/R need >=25pt buffer from PDC          |
+2026-09-18 03:32:05,300 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-09-18 03:32:05,300 [INFO] |                                                                         |
+2026-09-18 03:32:05,300 [INFO] | ENGINE VWAP (triple confirmation — fires in any regime)                 |
+2026-09-18 03:32:05,300 [INFO] |   1. Nifty FUTURES 15m close crosses FUT VWAP, body>=65% (PRIMARY)     |
+2026-09-18 03:32:05,300 [INFO] |   2. Nifty SPOT 15m close same direction above/below spot VWAP         |
+2026-09-18 03:32:05,300 [INFO] |   3. ATM CE/PE LTP also above/below its daily VWAP simultaneously      |
+2026-09-18 03:32:05,300 [INFO] |   premium 30-180 CE / 30-300 PE                                        |
+2026-09-18 03:32:05,300 [INFO] |                                                                         |
+2026-09-18 03:32:05,300 [INFO] | ENGINE FLIP (opposite-side only, max 3/day, excluded from CB)          |
+2026-09-18 03:32:05,300 [INFO] |   Path A (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10      |
+2026-09-18 03:32:05,300 [INFO] |   Path B (post-exit): K reversal within 60min                          |
+2026-09-18 03:32:05,300 [INFO] |                                                                         |
+2026-09-18 03:32:05,301 [INFO] | UNIVERSAL EXIT (priority order):                                        |
+2026-09-18 03:32:05,301 [INFO] |   1. HARDSL -18%                                                        |
+2026-09-18 03:32:05,301 [INFO] |   2. Continuous trail: arms when peak>=entry+15, SL=peak-5             |
+2026-09-18 03:32:05,301 [INFO] |      floor=entry+10, ratchets up with peak (never down)                |
+2026-09-18 03:32:05,301 [INFO] |   3. VWAP trades: exit when opt 15m close < opt VWAP                  |
+2026-09-18 03:32:05,301 [INFO] |   4. V2/V3/FLIP trades: SMA8(low) trail on 15m                        |
+2026-09-18 03:32:05,301 [INFO] |   5. Force close 15:25  6. CB=3 non-flip losses                        |
+2026-09-18 03:32:05,301 [INFO] |                                                                         |
+2026-09-18 03:32:05,301 [INFO] | INFORMATIONAL (no trade gate): Straddle alerts | Options VWAP          |
+2026-09-18 03:32:05,301 [INFO] +========================================================================+
+2026-09-18 03:32:05,302 [INFO] 
+2026-09-18 03:32:05,302 [INFO] V2.5.20 [2026-09-17] *** FAST ENGINE (1-minute option momentum) + SAME-SIDE GATE + CB EXCLUSION *** (FAST_ENABLED)
+2026-09-18 03:32:05,302 [INFO]   User: "deploy fast as a separate engine, also feed fast as a gate as discussed to
+2026-09-18 03:32:05,302 [INFO]   existing agreed engines, but dont count fast trades in circuit breaker decision.
+2026-09-18 03:32:05,302 [INFO]   this is for nifty only and should be done on the latest v2520".
+2026-09-18 03:32:05,302 [INFO]   ORIGIN: user's other bot VRLIVE (vrlivenifty.py, saved ~/Amol/vrlive_reference/)
+2026-09-18 03:32:05,302 [INFO]   replayed on 10 NIFTY chain days 09-03..09-17: +17,121 / 27 tr / 70% W vs ORION
+2026-09-18 03:32:05,302 [INFO]   +1,642. Rule-by-rule ablation (~/Amol/slcheck/vr_ablate.py): the P&L is the
+2026-09-18 03:32:05,303 [INFO]   15-pt trail x a JOINT leader gate (option 1m volume >= 2x median AND synthetic
+2026-09-18 03:32:05,303 [INFO]   spot (ATM CE-PE) moved >= 20 pts in 5 bars AND row score >= 110) + VR-TREND
+2026-09-18 03:32:05,303 [INFO]   counter block; breadth/slope/spike/DEADCAT/ITM strike cosmetic. Entry on ATM.
+2026-09-18 03:32:05,303 [INFO]   ENGINE "FAST": window 09:30-15:00, one look per completed 1m bar on the ATM CE
+2026-09-18 03:32:05,303 [INFO]   and PE, exit = trail max(peak-15, 0.6x entry), square-off 15:15 (dte-0 winner
+2026-09-18 03:32:05,303 [INFO]   rides to the 15:25 global force close), 2-min side cooldown, premium 30-400,
+2026-09-18 03:32:05,303 [INFO]   halt-exempt, exempt from countertrend + stoch-zone vetoes (renko gate never
+2026-09-18 03:32:05,303 [INFO]   applied to it). NO %-HARDSL.
+2026-09-18 03:32:05,303 [INFO]   GATE: VWAP/ORB/GAPBREAK/V3/FUT5VWAP/EXPIRY may not enter a side FAST currently
+2026-09-18 03:32:05,303 [INFO]   holds (open_trade, after the vetoes, "[FAST] <engine> <side> BLOCKED"); opposite
+2026-09-18 03:32:05,303 [INFO]   side untouched; ORION keeps its own exits; block ends when FAST exits. Basis:
+2026-09-18 03:32:05,303 [INFO]   combined sim of 10 late same-side duplicates = 7 stops / -5,970; blocking beyond
+2026-09-18 03:32:05,303 [INFO]   FAST's exit would have killed the 09-15 trend hold. STOCH/V2/FLIP never consult it.
+2026-09-18 03:32:05,303 [INFO]   CB: a FAST loss does NOT increment TOTAL_LOSSES_TODAY / DAY.losses (close_trade).
+2026-09-18 03:32:05,303 [INFO]   EVIDENCE (full-bot replay harness ~/Amol/slcheck/replay/, real V2520 file on
+2026-09-18 03:32:05,303 [INFO]   recorded 1m data, reproduced 09-17 live to the minute): 5 completed days
+2026-09-18 03:32:05,303 [INFO]   tomorrow's code +5,519 -> +7,083 with FAST (FAST 10 tr +2,294, 8 blocks); final
+2026-09-18 03:32:05,303 [INFO]   10-day report ~/Amol/V2520_FAST_REPLAY_REPORT_2026-09-17.md (job detached).
+2026-09-18 03:32:05,303 [INFO]   CAVEATS: in-sample (10 days, parameters from the same days), no chain flow,
+2026-09-18 03:32:05,304 [INFO]   1m-candle fills. SENSEX untouched. Known separate bug left as-is: WCR/LSC/PGB
+2026-09-18 03:32:05,304 [INFO]   signal dicts lack 'trigger' -> open_trade KeyError (those engines cannot open).
+2026-09-18 03:32:05,304 [INFO]   REVERT: FAST_ENABLED = False (engine + gate off; CB exclusion moot), or
+2026-09-18 03:32:05,304 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260917_pre_fast_engine.py
+2026-09-18 03:32:05,304 [INFO]   PROOF: boot "[CHANGELOG] up to date (last entry 2026-09-17)" + "12 independent
+2026-09-18 03:32:05,304 [INFO]          engines armed: ... FAST"; first "[FAST] SIGNAL" / "[FAST] ... BLOCKED".
+2026-09-18 03:32:05,304 [INFO]   STATUS: applied 2026-09-17 ~16:30 IST, market closed, live from the 09-18 09:02
+2026-09-18 03:32:05,304 [INFO]           boot. NOT boot-proven, NOT trade-proven.
+2026-09-18 03:32:05,304 [INFO] 
+2026-09-18 03:32:05,304 [INFO] V2.5.20 [2026-09-17] *** EMA9 LIMIT ENTRY (NIFTY ONLY) *** (EMA9_LIMIT_ENABLED)
+2026-09-18 03:32:05,304 [INFO]   User: "can we avoid sl hit today and in future" -> "deploy". Study
+2026-09-18 03:32:05,304 [INFO]   ~/Amol/slcheck on real 1m premiums of every trade 09-01..09-17 (127 both
+2026-09-18 03:32:05,304 [INFO]   bots): the option's OWN-chart trend at entry does NOT predict a stop (NIFTY
+2026-09-18 03:32:05,304 [INFO]   inverted), but the price paid does. RULE: for ORB/VWAP/V3/GAPBREAK, if the
+2026-09-18 03:32:05,304 [INFO]   signal LTP is above the EMA9 of the option's COMPLETED 15m bars, rest ONE
+2026-09-18 03:32:05,304 [INFO]   limit at that EMA9 for 15 min (EMA9_PENDING, polled every tick, persisted);
+2026-09-18 03:32:05,304 [INFO]   fill on LTP <= limit, else the trade is skipped. Fill re-enters open_trade()
+2026-09-18 03:32:05,305 [INFO]   with _ema9_filled=True (vetoes already passed at signal time). V2/FUT5VWAP/
+2026-09-18 03:32:05,307 [INFO]   STOCH/EXPIRY/FLIP untouched (V2 and FUT5VWAP measured WORSE under it).
+2026-09-18 03:32:05,307 [INFO]   EVIDENCE: NIFTY 66 tr +1,804 -> +14,347 (10/12 days better); ex-09-15
+2026-09-18 03:32:05,307 [INFO]   -10,328 -> +127 (9/11); 30 skipped trades net -992; robust to wait 15/30/60
+2026-09-18 03:32:05,307 [INFO]   and 0.5-1% fill-through; fixed 3-12% discounts do NOT replicate (all still
+2026-09-18 03:32:05,307 [INFO]   -5k..-11k ex-09-15). 09-17 itself: -2,569 -> +509. SENSEX is the MIRROR
+2026-09-18 03:32:05,307 [INFO]   (top-of-range buys win, every pullback level loses) -- do NOT port.
+2026-09-18 03:32:05,307 [INFO]   CAVEATS: 12 sessions, rule picked among 6 variants in-sample, limit fill
+2026-09-18 03:32:05,308 [INFO]   assumed at touch, exit = -18% from fill then the bot's real exit minute.
+2026-09-18 03:32:05,308 [INFO]   REVERT: EMA9_LIMIT_ENABLED = False, or ORION_PAPER_V2_5_20_BACKUP_20260917_pre_ema9_limit.py
+2026-09-18 03:32:05,308 [INFO]   PROOF: boot "[CHANGELOG] up to date (last entry 2026-09-17)"; first live
+2026-09-18 03:32:05,308 [INFO]          "[EMA9] LIMIT PLACED ..." / "[EMA9] ... buy as-is" line.
+2026-09-18 03:32:05,308 [INFO]   STATUS: applied 2026-09-17 14:55 IST while the bot was running (old code
+2026-09-18 03:32:05,308 [INFO]           stays live till the 09-18 09:02 boot). NOT boot-proven, NOT trade-proven.
+2026-09-18 03:32:05,308 [INFO] 
+2026-09-18 03:32:05,308 [INFO] V2.5.20 [2026-09-16] *** STOCH-ZONE VETO (NIFTY ONLY) *** (STOCH_ZONE_VETO_ENABLED)
+2026-09-18 03:32:05,308 [INFO]   User: "which is more beneficial, apply it" after "if bots could have avoided
+2026-09-18 03:32:05,308 [INFO]   some trades those were sl hit". RULE: inside open_trade(), after the renko
+2026-09-18 03:32:05,308 [INFO]   gate, any engine except STOCH/EXPIRY/FLIP (+ the untraded expiry-study
+2026-09-18 03:32:05,308 [INFO]   engines) is BLOCKED from buying PE while the 15m Stoch(5,3) K <= 20 and from
+2026-09-18 03:32:05,308 [INFO]   buying CE while K >= 80 -- the zone the STOCH engine itself fades (72% IS /
+2026-09-18 03:32:05,308 [INFO]   88% OOS onset study 09-14). K is _stoch_k() on the completed 15m spot bars
+2026-09-18 03:32:05,308 [INFO]   (LAST_DF15, published from the main loop), identical to the STOCH engine.
+2026-09-18 03:32:05,308 [INFO]   EVIDENCE: stoch_veto_bt.py on the live NIFTY book 09-01..09-16 (60 trades):
+2026-09-18 03:32:05,308 [INFO]     zone entries 22 = 8 W / 14 L = Rs-5,984; book +4,371 -> +10,355
+2026-09-18 03:32:05,308 [INFO]     week1 -1,962 (9 tr) / week2 -4,022 (13 tr); K 15/20/25 all ~-6,000;
+2026-09-18 03:32:05,308 [INFO]     blocked winners never re-caught the same day: 4 (+4,114)
+2026-09-18 03:32:05,309 [INFO]     09-16: V3 09:46 -520 + VWAP 09:46 -1,525 both at K=18.0 -> day -1,626 -> +159
+2026-09-18 03:32:05,309 [INFO]   Variants rejected: onset-only (crossed within 60 min) -1,457 and week1
+2026-09-18 03:32:05,309 [INFO]   POSITIVE; onset+zone -3,060 (gentler, kept as fallback: same code, add a
+2026-09-18 03:32:05,309 [INFO]   crossed-within-4-bars condition).
+2026-09-18 03:32:05,309 [INFO]   SENSEX: NOT applied -- zone entries there are the strong-trend winners
+2026-09-18 03:32:05,309 [INFO]   (+5,604, both weeks positive; 09-15 memory "strong-trend fades = best bucket").
+2026-09-18 03:32:05,309 [INFO]   REVERT: STOCH_ZONE_VETO_ENABLED = False, or
+2026-09-18 03:32:05,309 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260916_pre_stoch_zone_veto.py
+2026-09-18 03:32:05,309 [INFO]   PROOF: boot "[CHANGELOG] up to date (last entry 2026-09-16)"; first live
+2026-09-18 03:32:05,309 [INFO]          "[STOCHZONE] <engine> <side> BLOCKED — 15m Stoch K=..." line.
+2026-09-18 03:32:05,309 [INFO]   STATUS: applied 2026-09-16 evening, market closed, no process running; picked
+2026-09-18 03:32:05,309 [INFO]           up by the 09-17 09:02 boot. NOT boot-proven, NOT trade-proven.
+2026-09-18 03:32:05,309 [INFO] 
+2026-09-18 03:32:05,309 [INFO] V2.5.20 [2026-09-16] *** TRADEREC: expiry restored from state is a str -> trade row silently lost ***
+2026-09-18 03:32:05,309 [INFO]   WHY: 2026-09-15 the VWAP 23400PE trend-hold (72.20 -> FORCE_CLOSE_15_25 @254.60,
+2026-09-18 03:32:05,309 [INFO]   +182.40/sh = Rs+11,856, the best trade of the month) never reached the trades CSV.
+2026-09-18 03:32:05,309 [INFO]   run.log: "[TRADEREC] could not record trade: unsupported operand type(s) for -:
+2026-09-18 03:32:05,309 [INFO]   'str' and 'datetime.date'". The position had been restored across the 13:56
+2026-09-18 03:32:05,310 [INFO]   restart; state_*.json stores expiry_date as an ISO string and the restore does
+2026-09-18 03:32:05,310 [INFO]   not parse it back, so record_trade()'s dte = exp - today raised and the whole
+2026-09-18 03:32:05,310 [INFO]   row was dropped (record_trade swallows exceptions by design so the exit path
+2026-09-18 03:32:05,310 [INFO]   never breaks). Same failure at 14:12 on the phantom SHUTDOWN_SQUAREOFF.
+2026-09-18 03:32:05,310 [INFO]   CHANGE: record_trade() coerces a str expiry to date before the dte subtraction.
+2026-09-18 03:32:05,310 [INFO]   CSV: the missing 09-15 row was appended by hand from run.log/FlightRecorder
+2026-09-18 03:32:05,310 [INFO]   (entry 10:01:15, exit 15:25:14, mfe 303.20, mae 67.45, spots 23383.1/23172.3);
+2026-09-18 03:32:05,310 [INFO]   backup Nifty_Trades_V2_5_20_BACKUP_20260916_pre_23400PE_fix.csv.
+2026-09-18 03:32:05,310 [INFO]   CHANGE 2 (same day, user: "fix the state restore also"): load_state() now parses
+2026-09-18 03:32:05,310 [INFO]   expiry_date back to a date when restoring a position, so POS.expiry_date is a
+2026-09-18 03:32:05,310 [INFO]   date everywhere again; the record_trade() coercion stays as a belt-and-braces.
+2026-09-18 03:32:05,310 [INFO]   REVERT: remove the isinstance(exp, str) block and the expiry_date elif in
+2026-09-18 03:32:05,310 [INFO]   load_state(). Applies to NIFTY and SENSEX.
+2026-09-18 03:32:05,310 [INFO]   PROOF: next restored-position exit writes its row; no [TRADEREC] warning.
+2026-09-18 03:32:05,310 [INFO] 
+2026-09-18 03:32:05,310 [INFO] V2.5.20 [2026-09-15] EXPIRY AFT WATCH PERSISTED ACROSS RESTARTS (bug found in today's EOD)
+2026-09-18 03:32:05,310 [INFO]   MISS: the 10:45 round-level cross set DAY.expiry_watch = 23300PE (morning
+2026-09-18 03:32:05,310 [INFO]   premium 39.40) in memory only. My 13:56 IST mid-session restart (trend-lock
+2026-09-18 03:32:05,311 [INFO]   deploy) wiped it. At 14:00 the 23300PE printed 58.70, INSIDE the [5,60] band
+2026-09-18 03:32:05,311 [INFO]   -> the afternoon rule should have bought; by 14:30 it was 111.25. The first
+2026-09-18 03:32:05,311 [INFO]   live test of EXPIRY_AFT_MODE was lost to a restart, not to the rule.
+2026-09-18 03:32:05,311 [INFO]   FIX: expiry_watch is now saved in the EXPIRY engine snapshot and restored on
+2026-09-18 03:32:05,311 [INFO]   the same day (cleared on a new day), same pattern as expiry_fired. No logic
+2026-09-18 03:32:05,311 [INFO]   change. Effective next boot; nothing to restore today (window closed 15:00).
+2026-09-18 03:32:05,311 [INFO] V2.5.20 [2026-09-15] PULSE CARD: show the trend-hold LOCK, not the shared ladder (display only)
+2026-09-18 03:32:05,311 [INFO]   User (14:25 IST): "why telegram message saying trail arm at 87 (entry+15) why
+2026-09-18 03:32:05,311 [INFO]   not 144, entry of pe was 72, LTP just crossed 194". The 30-min pulse card
+2026-09-18 03:32:05,311 [INFO]   printed the SHARED ladder fields ("trail arms at entry+15", SL = HARDSL) for
+2026-09-18 03:32:05,311 [INFO]   every non-ORB engine; the VWAP trend-hold never uses that ladder (it returns
+2026-09-18 03:32:05,311 [INFO]   before step 3 of check_exits), so the card described an exit that does not
+2026-09-18 03:32:05,311 [INFO]   exist while the real floor was 161.97 at peak 200.45. Same cosmetic gap the
+2026-09-18 03:32:05,311 [INFO]   SENSEX ORB "Target" line had this morning. Now: trend-hold rows show
+2026-09-18 03:32:05,311 [INFO]   "TREND LOCK floor=... (+N pts locked)" or "lock arms at 2x entry", and the
+2026-09-18 03:32:05,311 [INFO]   SL field takes the lock floor. No logic change. Effective from the next boot
+2026-09-18 03:32:05,311 [INFO]   (not restarted mid-session; see feedback-midsession-restart-procedure).
+2026-09-18 03:32:05,311 [INFO] V2.5.20 [2026-09-15] *** STOCH RENKO CHOP GATE *** (STOCH_RENKO_GATE_ENABLED, STOCH_RENKO_WEAK_NET=4)
+2026-09-18 03:32:05,311 [INFO]   User first asked "if it is a trending day ... this stoch engine should not
+2026-09-18 03:32:05,312 [INFO]   fire" after both 09-15 STOCH CEs stopped (-10, -10) with renko DOWN. TESTED
+2026-09-18 03:32:05,312 [INFO]   (72 STOCH T14/S10 events, real ATM premiums, 35 sessions, live _stoch_k +
+2026-09-18 03:32:05,312 [INFO]   live _renko_bricks, base ~/Amol/renko/g2_live_check.py):
+2026-09-18 03:32:05,312 [INFO]       ALL                         n=72 54% Rs+12,480
+2026-09-18 03:32:05,312 [INFO]       renko OPPOSES the scalp     n=58 52% Rs +6,516   <- "trending day" gate would drop these
+2026-09-18 03:32:05,312 [INFO]       renko NEUTRAL               n=13 62% Rs +5,054
+2026-09-18 03:32:05,312 [INFO]       OPPOSES & strong |net|>=4   n=24 58% Rs +5,493   <- BEST bucket
+2026-09-18 03:32:05,312 [INFO]       OPPOSES & weak   |net|<4    n=34 47% Rs +1,024   <- the dud
+2026-09-18 03:32:05,312 [INFO]   A stochastic extreme sits inside an established renko trend by construction,
+2026-09-18 03:32:05,312 [INFO]   so "no fire on a trending day" blocks 80% of the engine and its best bucket.
+2026-09-18 03:32:05,312 [INFO]   User then chose the data-supported form: "apply the renko supported, data
+2026-09-18 03:32:05,312 [INFO]   supported 4 net bricks version". RULE: at signal time, if the 1m renko
+2026-09-18 03:32:05,312 [INFO]   direction opposes the scalp side AND |sum of today's brick colours| < 4,
+2026-09-18 03:32:05,312 [INFO]   skip the signal (logged [STOCH] ... BLOCKED, TG "STOCH gate"). Keeps 38 of
+2026-09-18 03:32:05,312 [INFO]   72 events = Rs+11,456 (92% of the money on 53% of the trades). IN-SAMPLE,
+2026-09-18 03:32:05,312 [INFO]   one split, ~Rs120/trade costs make the dropped bucket a net loser anyway.
+2026-09-18 03:32:05,312 [INFO]   Renko net exposed as _RENKO['net'] (renko_update). Fails open without a brick.
+2026-09-18 03:32:05,312 [INFO]   REVERT: STOCH_RENKO_GATE_ENABLED = False, or
+2026-09-18 03:32:05,312 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260915_pre_stoch_renko_gate.py
+2026-09-18 03:32:05,312 [INFO]   STATUS: applied 2026-09-15 ~14:15 IST, mid-session restart for proof.
+2026-09-18 03:32:05,313 [INFO] V2.5.20 [2026-09-15] *** VWAP TREND-HOLD PEAK LOCK *** (VWAP_TREND_LOCK_*)
+2026-09-18 03:32:05,313 [INFO]   User (13:40 IST, with the 23400PE trend-hold at +50 pts and no protection):
+2026-09-18 03:32:05,313 [INFO]   "apply a peak based lock on vwap, it is a must and also not harmful".
+2026-09-18 03:32:05,313 [INFO]   GAP: _manage_vwap_trend_exit() (09-14) had NO profit exit at all -- only a
+2026-09-18 03:32:05,313 [INFO]   completed 15m spot close through spot VWAP, HARDSL_-18pct (59.20 = below
+2026-09-18 03:32:05,313 [INFO]   entry while +Rs3,400 unrealised) and the 15:25 force close.
+2026-09-18 03:32:05,313 [INFO]   RULE: once peak >= entry*VWAP_TREND_LOCK_ARM_MULT (2.0), floor = entry +
+2026-09-18 03:32:05,313 [INFO]   (peak-entry)*(1-VWAP_TREND_LOCK_GIVEBACK) (keep 70% of the gain), ratchets up
+2026-09-18 03:32:05,313 [INFO]   only, every tick; ltp <= floor -> VWAP_TREND_LOCK. The 15m VWAP test,
+2026-09-18 03:32:05,313 [INFO]   HARDSL and 15:25 are unchanged. Persisted in POS (vt_lock_armed/floor).
+2026-09-18 03:32:05,313 [INFO]   EVIDENCE (real 1m premiums, the only 2 trend-hold trades that exist):
+2026-09-18 03:32:05,313 [INFO]       09-11 23300CE 99.65 @10:17 (peak 228): hold-to-15:25 +Rs5,769
+2026-09-18 03:32:05,313 [INFO]         1.5x/25% +2,984 @11:19 | 1.5x/40% +2,387 | 2.0x/30% +5,840 @14:10
+2026-09-18 03:32:05,313 [INFO]       09-15 23400PE 72.20 @10:01 (peak 154.3 @13:52, running):
+2026-09-18 03:32:05,313 [INFO]         1.5x/25% +1,911 @13:00 | 1.5x/30% +1,927 | 2.0x/30% still open +4,053
+2026-09-18 03:32:05,313 [INFO]   A 1.5x arm is NOT harmless: it cut both trades in the first pullback of a
+2026-09-18 03:32:05,313 [INFO]   trend. 2.0x/30% is the loosest setting that still locks something, and on
+2026-09-18 03:32:05,313 [INFO]   today's trade it fixes a floor at 129.7 (+Rs3,738) instead of 59.20.
+2026-09-18 03:32:05,313 [INFO]   n=2 BY CONSTRUCTION -- the trend-hold itself is 2 trades old. Not a backtest.
+2026-09-18 03:32:05,314 [INFO]   REVERT: VWAP_TREND_LOCK_ENABLED = False, or
+2026-09-18 03:32:05,314 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260915_pre_vwap_trend_lock.py
+2026-09-18 03:32:05,314 [INFO]   STATUS: applied 2026-09-15 ~13:45 IST, mid-session restart for proof; the
+2026-09-18 03:32:05,314 [INFO]   open VWAP PE and STOCH CE positions are restored from state_V2_5_20.json.
+2026-09-18 03:32:05,314 [INFO] V2.5.20 [2026-09-14] *** EXPIRY ENGINE -> AFTERNOON MODE + EXP2 FILL GUARD/CUTOFF *** (NIFTY only)
+2026-09-18 03:32:05,314 [INFO]   User: "what is actual and what is your analysis to get it in profit" -> "do it
+2026-09-18 03:32:05,314 [INFO]   and deploy also". Evidence: 48 real NIFTY expiries 2025-10-14..2026-09-08
+2026-09-18 03:32:05,314 [INFO]   pulled from the Upstox expired-instruments feed (~/Amol/expiry_bt/data,
+2026-09-18 03:32:05,314 [INFO]   pull_nifty48.py), replay ~/Amol/expiry_bt/nifty_aft/bt.py.
+2026-09-18 03:32:05,314 [INFO]   ACTUAL: live EXPIRY rule (morning round-50 cross -> buy at once, -18% stop +
+2026-09-18 03:32:05,314 [INFO]     ladder) = 48/48 expiries fired, 25% win, Rs-10,454, NEGATIVE in both halves
+2026-09-18 03:32:05,314 [INFO]     (-3,854 / -6,600). Live book 07-28..09-08: 7 trades, 6 stopped, Rs-176.
+2026-09-18 03:32:05,314 [INFO]     NO exit rescues the morning entry: no-stop/1.5x-lock -26,489, -40% stop
+2026-09-18 03:32:05,314 [INFO]     -19,761, +14/-10 scalp -9,288. The entry is early, not the exit: on 3 of the
+2026-09-18 03:32:05,314 [INFO]     last 6 the SAME strike later multiplied (08-04 41->171, 09-01 25->64, 08-18
+2026-09-18 03:32:05,314 [INFO]     34->70), every peak between 13:57 and 15:27.
+2026-09-18 03:32:05,314 [INFO]   CHANGE 1 (EXPIRY_AFT_MODE=True): the morning cross now only PICKS the strike
+2026-09-18 03:32:05,314 [INFO]     (DAY.expiry_watch); the buy happens at the first tick >= 14:00 with premium
+2026-09-18 03:32:05,315 [INFO]     in [5, 60] (EXPIRY_AFT_PREM_MAX), no stop, lock arms at 1.5x and keeps half
+2026-09-18 03:32:05,315 [INFO]     of the gain above entry (ratchets up), generic 15:25 force close. Grid of 18
+2026-09-18 03:32:05,315 [INFO]     (entry 13:00/13:30/14:00 x cap 40/60/none x lock / lock+stop40): only TWO
+2026-09-18 03:32:05,315 [INFO]     cells positive in both halves; the 13:00/no-cap cell is 2025-only money
+2026-09-18 03:32:05,315 [INFO]     (+11,928 vs -146 in 2026) and rejected. 14:00/cap60/lock: n=34, 68% win,
+2026-09-18 03:32:05,315 [INFO]     Rs+6,021, older +4,964 / recent +1,056, 2025 +1,750 / 2026 +4,270, median
+2026-09-18 03:32:05,315 [INFO]     +349, ex-best-2 +2,829, ex-best-5 -705, worst -2,340. THIN: ~Rs177/expiry
+2026-09-18 03:32:05,315 [INFO]     before ~Rs120 costs, and it is 1 cell of 18 = a grid pick. Deployed on the
+2026-09-18 03:32:05,315 [INFO]     PAPER book as a forward test because the alternative (the morning rule) is
+2026-09-18 03:32:05,315 [INFO]     -Rs218/expiry with no exit that saves it. Kill: EXPIRY_AFT_MODE=False
+2026-09-18 03:32:05,315 [INFO]     restores the morning buy + ladder byte-for-byte.
+2026-09-18 03:32:05,315 [INFO]   CHANGE 2 (EXP2 shadow): fill guard -- the band [8,20] was checked on the
+2026-09-18 03:32:05,315 [INFO]     completed-bar close but the fill was the live LTP; 09-08 15:15 bar 14.60,
+2026-09-18 03:32:05,315 [INFO]     fill 36.10 during a burst of Upstox 429s, 11 min to expiry, -Rs2,314 twice
+2026-09-18 03:32:05,315 [INFO]     (EXP2 + EXP2W). The LTP must now also be inside the band. EXP2_WIN_HI
+2026-09-18 03:32:05,315 [INFO]     15:25 -> 15:00. Removes Rs-4,628 of the shadow book's Rs-5,850 with no
+2026-09-18 03:32:05,315 [INFO]     other change.
+2026-09-18 03:32:05,315 [INFO]   NOT changed: CRUSH (0 signals in 1 expiry since 09-04 -- waiting, not
+2026-09-18 03:32:05,315 [INFO]     failing), PGB, STOCH (already +Rs2,840 on the 7 expiry days in replay).
+2026-09-18 03:32:05,316 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260914_pre_expiry_aft.py.
+2026-09-18 03:32:05,316 [INFO]   STATUS: code-applied 2026-09-14 evening with the RENKO/STOCH change, same
+2026-09-18 03:32:05,316 [INFO]     boot pending (09-15 09:02 IST). Next NIFTY expiry 2026-09-15 is the first
+2026-09-18 03:32:05,316 [INFO]     live test. Not boot-proven, not trade-proven.
+2026-09-18 03:32:05,316 [INFO] 
+2026-09-18 03:32:05,316 [INFO] V2.5.20 [2026-09-14] *** RENKO DIRECTION GATE + V2 RENKO REGIME BYPASS + STOCH SCALP ENGINE ***
+2026-09-18 03:32:05,316 [INFO]   User (2026-09-14): "deploy ... with 1 improvement ... keep 14 [rupees] fixed target
+2026-09-18 03:32:05,316 [INFO]   ... deploy only on nifty bot, do not deploy on sensex."
+2026-09-18 03:32:05,316 [INFO]   PART 1 -- RENKO GATE (renko_gate(), inside open_trade next to the veto).
+2026-09-18 03:32:05,316 [INFO]     Brick = mean(last RENKO_BRICK_SESSIONS session high-low from the prior 1h
+2026-09-18 03:32:05,316 [INFO]     bars) / RENKO_BRICK_DIV, fixed at boot. Close-based renko on today's
+2026-09-18 03:32:05,316 [INFO]     COMPLETED 1m spot closes (LAST_DF1M), 2-brick reversal, recomputed every
+2026-09-18 03:32:05,316 [INFO]     cycle. Direction is ESTABLISHED only when the last RENKO_NEED_BRICKS bricks
+2026-09-18 03:32:05,316 [INFO]     are the same colour, else NEUTRAL. VWAP / ORB / FUT5VWAP / V2 entries need
+2026-09-18 03:32:05,316 [INFO]     the established direction to AGREE with the side (CE=up, PE=down); neutral
+2026-09-18 03:32:05,316 [INFO]     = blocked. EVIDENCE (~/Amol/renko/gate_test.py, robust.py): 114 live NIFTY
+2026-09-18 03:32:05,316 [INFO]     trades 07-27..09-11 (50 exact from Nifty_Trades_V2_5_20.csv + 64 rebuilt
+2026-09-18 03:32:05,316 [INFO]     from run.log + BarLevel snapshots, method verified 50/50 on Sept): book
+2026-09-18 03:32:05,316 [INFO]     Rs-3,821 -> Rs+7,962; blocks 44 (26 losers, 18 winners), removes Rs-11,783;
+2026-09-18 03:32:05,316 [INFO]     holds at both ends of the 5-min entry window, at divisor 16, and removes
+2026-09-18 03:32:05,317 [INFO]     loss in all three time slices. Per engine after: VWAP +931->+5,010, ORB
+2026-09-18 03:32:05,317 [INFO]     +2,058->+5,149, FUT5VWAP -1,437->+780, V2 +3,974->+4,043. V3/GAPBREAK/
+2026-09-18 03:32:05,317 [INFO]     EXPIRY/CRUSH/WCR/LSC/PGB/FLIP NOT gated (V3+GAPBREAK stayed negative; the
+2026-09-18 03:32:05,317 [INFO]     rest were not studied). 5m-close renko tested WORSE (kept Rs-1,410) -- the
+2026-09-18 03:32:05,317 [INFO]     gate MUST read 1m closes. A daily-trend veto was tested and REFUTED on the
+2026-09-18 03:32:05,317 [INFO]     same book (it removed Rs+4,996 of profit) -- deliberately NOT added.
+2026-09-18 03:32:05,317 [INFO]     CAVEAT: blocked-in-replay is not the live counterfactual (a blocked engine
+2026-09-18 03:32:05,317 [INFO]     may enter later once direction establishes). FAILS OPEN on missing data.
+2026-09-18 03:32:05,317 [INFO]   PART 2 -- V2 RENKO REGIME BYPASS (V2_RENKO_REGIME_BYPASS). Day #2 of the
+2026-09-18 03:32:05,317 [INFO]     1-day/1-engine ledger: 2026-09-01 (expiry, grind-down 24140 -> 23966,
+2026-09-18 03:32:05,317 [INFO]     24100PE 65 -> 136 from 13:15). check_v2_signal() fired PE at 13:15 in
+2026-09-18 03:32:05,317 [INFO]     replay but the loop never evaluated V2 because DAY.regime = CHOP (1h ADX
+2026-09-18 03:32:05,317 [INFO]     13.7-14.9 < 20 all session). Fast renko was DOWN-established from 12:24
+2026-09-18 03:32:05,317 [INFO]     (brick 14.05; red bricks 12:24/13:03/13:10/13:13). Now V2 is evaluated when
+2026-09-18 03:32:05,317 [INFO]     regime_allows_trade() OR the renko direction is established; the gate in
+2026-09-18 03:32:05,317 [INFO]     PART 1 then requires that direction to agree. FLIP keeps the old regime rule.
+2026-09-18 03:32:05,317 [INFO]   PART 3 -- STOCH counter-trend scalp engine ("STOCH", 11th engine).
+2026-09-18 03:32:05,317 [INFO]     Signal: Stochastic %K (STOCH_K_LEN=5, SMA STOCH_SMOOTH=3) on COMPLETED 15m
+2026-09-18 03:32:05,317 [INFO]     spot bars crosses INTO >= STOCH_OB (80) -> buy nearest-50 ATM PE, or INTO
+2026-09-18 03:32:05,318 [INFO]     <= STOCH_OS (20) -> buy ATM CE. One entry per 15m bar. Exit: FIXED premium
+2026-09-18 03:32:05,318 [INFO]     target +STOCH_TARGET_PTS (14 Rs/share, user), stop -STOCH_STOP_PTS (10),
+2026-09-18 03:32:05,318 [INFO]     STOCH_MAX_MIN (60) time-out, square-off 15:20. NO trail, NO hold -- user:
+2026-09-18 03:32:05,318 [INFO]     "it is not meant for holding, simply take the small profit against the
+2026-09-18 03:32:05,318 [INFO]     trend". EVIDENCE (~/Amol/renko/obos2.py, obos2_shot.py): 74 threshold sets
+2026-09-18 03:32:05,318 [INFO]     x 8 indicators screened on 20 sessions, OOS on 15 earlier: this is the only
+2026-09-18 03:32:05,318 [INFO]     set clearly above the fade-any-3-bar baseline (50-57%) in BOTH halves:
+2026-09-18 03:32:05,318 [INFO]     spot +20/-20 shot 72% IS / 88% OOS. On REAL ATM premiums (option chain,
+2026-09-18 03:32:05,318 [INFO]     next-1m open fill) T14/S10: IS n=28 57% +2.3/sh, OOS n=16 56% +3.2/sh, all
+2026-09-18 03:32:05,318 [INFO]     44 trades Rs+7,550 before costs -- THIN; ~Rs120/trade costs eat most of it.
+2026-09-18 03:32:05,318 [INFO]     Deployed as PAPER on user instruction to measure forward. Exempt from the
+2026-09-18 03:32:05,318 [INFO]     counter-trend veto and from the renko gate (it is counter-trend by design).
+2026-09-18 03:32:05,318 [INFO]     NOT halt-exempt.
+2026-09-18 03:32:05,318 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260914_pre_renko_stoch.py, or
+2026-09-18 03:32:05,318 [INFO]     RENKO_GATE_ENABLED=False / V2_RENKO_REGIME_BYPASS=False / STOCH_ENABLED=False
+2026-09-18 03:32:05,318 [INFO]     (or drop "STOCH" from ENGINE_LIST).
+2026-09-18 03:32:05,318 [INFO]   STATUS: code-applied 2026-09-14 evening (market shut). G2 harness
+2026-09-18 03:32:05,318 [INFO]     (~/Amol/renko/g2_live_check.py) drove the LIVE functions on real data:
+2026-09-18 03:32:05,319 [INFO]     09-01 brick 14.05 = study, direction DOWN at 13:15; live _stoch_k with
+2026-09-18 03:32:05,319 [INFO]     continuous prior-day bars reproduces all 45 study events; the 09:45-11:44
+2026-09-18 03:32:05,319 [INFO]     window (not in the screen) is also positive: n=28, 50%, +2.7 Rs/sh, both
+2026-09-18 03:32:05,319 [INFO]     halves; all 72 events 09:30-15:00 = Rs+12,480 before costs / 35 sessions. NOT boot-proven until the 09:02
+2026-09-18 03:32:05,319 [INFO]     IST cron boot prints "[CHANGELOG] up to date" + "[RENKO] brick=" +
+2026-09-18 03:32:05,319 [INFO]     "11 independent engines armed". Not trade-proven. SENSEX bot untouched.
+2026-09-18 03:32:05,319 [INFO] 
+2026-09-18 03:32:05,319 [INFO] V2.5.20 [2026-09-14] *** VETO BASIS BUG + VWAP GAP_REVERSAL_TREND HOLD *** (day 2026-09-11)
+2026-09-18 03:32:05,319 [INFO]   Protocol (user, 2026-09-14): "1 day 1 engine 1 move" -- pick a day with a real
+2026-09-18 03:32:05,319 [INFO]   move, repair the one engine suited to it until it captures that move, label
+2026-09-18 03:32:05,319 [INFO]   the day. DAY: 2026-09-11 (gap -208, one-way climb 23231 -> 23435, 23300CE
+2026-09-18 03:32:05,319 [INFO]   96 -> 228). ENGINE: VWAP (its CE signal fired 10:16, 10:30, 10:46, 11:00).
+2026-09-18 03:32:05,319 [INFO]   BUG 1 -- countertrend_veto() compared SPOT with the FUTURES session VWAP.
+2026-09-18 03:32:05,319 [INFO]          Futures sit 30-150 pts above spot, so CE was "below VWAP" almost
+2026-09-18 03:32:05,319 [INFO]          always: since 08-31 the veto blocked CE 125x and PE 0x (FlightRecorder
+2026-09-18 03:32:05,319 [INFO]          grep). The validated 07-13 rule is spot vs SPOT session TWAP. FIX: the
+2026-09-18 03:32:05,320 [INFO]          veto now reads compute_nifty_vwap_today(LAST_DF1M) (spot 1m typical
+2026-09-18 03:32:05,320 [INFO]          price). Replay of the 13 live VWAP trades 09-01..09-11: the corrected
+2026-09-18 03:32:05,320 [INFO]          veto blocks NONE of them (all were with-trend by spot VWAP). It would
+2026-09-18 03:32:05,320 [INFO]          have ALLOWED 6 of the 7 blocked CE signals (09-02 09:16 stays blocked).
+2026-09-18 03:32:05,320 [INFO]          This fix applies to every engine that goes through the veto.
+2026-09-18 03:32:05,320 [INFO]   BUG 2 -- even unblocked, the shared ladder (SL=max(entry+10, peak-5)) exits
+2026-09-18 03:32:05,320 [INFO]          the 09-11 trade at 10:24 for +11 pts (Rs715) on the first 5-pt dip of
+2026-09-18 03:32:05,320 [INFO]          a 4-hour trend. On this day-type the trend IS the exit: hold while
+2026-09-18 03:32:05,320 [INFO]          completed 15m spot bars close above the spot VWAP, leave when one
+2026-09-18 03:32:05,320 [INFO]          closes below. New _manage_vwap_trend_exit(), reason VWAP_TREND_LOST.
+2026-09-18 03:32:05,320 [INFO]          Applied ONLY when |gap| >= VWAP_TREND_GAP_PTS (100) and the VWAP signal
+2026-09-18 03:32:05,320 [INFO]          is AGAINST the gap (reversal) -> sig['_trend_mode'] -> POS.vwap_trend.
+2026-09-18 03:32:05,320 [INFO]          Every other VWAP trade keeps the ladder: on the 13 live trades the
+2026-09-18 03:32:05,320 [INFO]          trend exit was WORSE (-3,501 vs -573), so it must not be global.
+2026-09-18 03:32:05,320 [INFO]   CAPTURE (replay, real 1m premiums): 23300CE in 99.65 @10:17, out 188.4 @15:25
+2026-09-18 03:32:05,320 [INFO]          = Rs+5,769 of a Rs8,339 maximum (69%). Live that day VWAP made +2,075
+2026-09-18 03:32:05,320 [INFO]          from three afternoon trades; with one trend-hold position open from
+2026-09-18 03:32:05,320 [INFO]          10:17 those would not have been taken (one position per engine).
+2026-09-18 03:32:05,320 [INFO]   LABEL : 2026-09-11 = GAP_REVERSAL_TREND (|gap|>=100, reversal signal, spot
+2026-09-18 03:32:05,320 [INFO]          never closes a 15m bar back under its VWAP after the cross).
+2026-09-18 03:32:05,321 [INFO]          Engine suited: VWAP with trend-hold. n=1 BY DESIGN (protocol).
+2026-09-18 03:32:05,321 [INFO]   RISK  : HARDSL_-18pct and the 15:25 force-close still protect the trend hold.
+2026-09-18 03:32:05,321 [INFO]          A 15m close through VWAP exits at market. Persisted in POS (vwap_trend).
+2026-09-18 03:32:05,321 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260914_pre_vwap_veto_basis.py;
+2026-09-18 03:32:05,321 [INFO]          VWAP_TREND_HOLD_ENABLED=False keeps only the veto fix.
+2026-09-18 03:32:05,321 [INFO]   STATUS: applied 2026-09-14 ~10:35 IST, mid-session restart for proof.
+2026-09-18 03:32:05,321 [INFO] 
+2026-09-18 03:32:05,321 [INFO] V2.5.20 [2026-09-14] *** ORB H3: CONFIRM + PULLBACK ENTRY, SPOT STOP, NO FLIP *** (ORB_H3_ENABLED)
+2026-09-18 03:32:05,321 [INFO]   User (2026-09-14): "deployt it" -- the H3 rule from the 09-13 ORB study.
+2026-09-18 03:32:05,321 [INFO]   WHY  : ORB as-is was a coin flip with a fixed payoff (every winner +18, every
+2026-09-18 03:32:05,321 [INFO]          loser -15; 33 entries/35 sessions 45% win) and the flip-on-stop was the
+2026-09-18 03:32:05,321 [INFO]          leak (17 flips, 35% win, negative in BOTH windows and both tick modes).
+2026-09-18 03:32:05,321 [INFO]          The false-vs-real OR-break study (~/Amol/orb_sim/orbstudy.py, 35
+2026-09-18 03:32:05,321 [INFO]          sessions 07-27..09-11 of real Upstox 1m chains) found: 97% of first
+2026-09-18 03:32:05,321 [INFO]          5m breaks close back inside the OR (median 5 min), 94% retest the edge
+2026-09-18 03:32:05,321 [INFO]          within 45 min, nothing BEFORE the break separates real from false
+2026-09-18 03:32:05,322 [INFO]          (candle size, volume, gap, pre-break OI: no difference) and the only
+2026-09-18 03:32:05,322 [INFO]          causal tell is the NEXT 5m bar closing further out (43-48% real vs 4%).
+2026-09-18 03:32:05,322 [INFO]          A confirm bar alone made ORB WORSE (-Rs6.7k/35d): the later entry gets
+2026-09-18 03:32:05,322 [INFO]          stopped by the -15 premium stop on the near-universal retest.
+2026-09-18 03:32:05,322 [INFO]   WHAT : check_orb_signal() now dispatches to check_orb_signal_h3() (old scan
+2026-09-18 03:32:05,322 [INFO]          kept verbatim as _check_orb_signal_legacy(), ORB_H3_ENABLED=False
+2026-09-18 03:32:05,322 [INFO]          restores it byte-for-byte in behaviour).
+2026-09-18 03:32:05,322 [INFO]          1. break bar (completed 5m, body>50%, close outside OR, 09:25-15:00)
+2026-09-18 03:32:05,322 [INFO]          2. NEXT 5m bar must close further out and still outside = confirm;
+2026-09-18 03:32:05,322 [INFO]             a failed confirm is dropped and the scan continues (one confirmed
+2026-09-18 03:32:05,322 [INFO]             break traded per day; a cancelled pending never re-arms)
+2026-09-18 03:32:05,322 [INFO]          3. pending state (DAY.orb_pending, persisted): walk completed 1m spot
+2026-09-18 03:32:05,322 [INFO]             closes for ORB_H3_RETEST_WAIT_MIN=45 after the confirm close;
+2026-09-18 03:32:05,322 [INFO]             close back inside the OR by >ORB_H3_SPOT_IN_PTS=10 -> cancel (day
+2026-09-18 03:32:05,322 [INFO]             done); close within ORB_H3_RETEST_TOL_PTS=8 of the edge -> BUY
+2026-09-18 03:32:05,323 [INFO]             (strike via pick_strike_by_premium off that 1m close, band 20-300)
+2026-09-18 03:32:05,323 [INFO]          4. EXIT (_manage_touch_exit, ORB only): NO premium stop. Stop = last
+2026-09-18 03:32:05,323 [INFO]             completed 1m spot close back inside the OR by >10 (DAY.orb_or,
+2026-09-18 03:32:05,323 [INFO]             LAST_DF1M published per loop cycle). +18 lock unchanged; once
+2026-09-18 03:32:05,323 [INFO]             armed floor=max(floor, peak-8) chandelier (ORB_H3_CHAND_PTS);
+2026-09-18 03:32:05,323 [INFO]             ride 40/20 kept but dominated. allow_flip=False. 15:15 sqoff kept.
+2026-09-18 03:32:05,323 [INFO]          Chop-kill, SIDEWAYS filter, countertrend veto, CB-exemption: untouched.
+2026-09-18 03:32:05,323 [INFO]   EVIDENCE (orbsim.py H3 params, Rs/1 lot, close-tick / wick-tick):
+2026-09-18 03:32:05,323 [INFO]          last20 08-17..09-11  +4,817 / +3,848
+2026-09-18 03:32:05,323 [INFO]          prior15 07-27..08-14 +3,725 / +1,034
+2026-09-18 03:32:05,323 [INFO]          35 sessions          +8,542 / +4,882   23 trades, 43% win,
+2026-09-18 03:32:05,323 [INFO]          avg win ~+1,660 vs avg loss ~-630. Positive in 33/36 sensitivity
+2026-09-18 03:32:05,323 [INFO]          cells; fragile at spot_in=5 and lock=15. Compare as-is -2,671/-1,427,
+2026-09-18 03:32:05,323 [INFO]          and "no flip + chandelier" only +1,989/+1,836 with prior15 NEGATIVE.
+2026-09-18 03:32:05,323 [INFO]   G2   : the LIVE functions (check_orb_signal_h3 + _manage_touch_exit) were
+2026-09-18 03:32:05,323 [INFO]          driven tick-by-tick over the same 35 sessions (scratchpad h3_replay.py):
+2026-09-18 03:32:05,323 [INFO]          all 23 entries identical to the sim (day, minute, strike, premium);
+2026-09-18 03:32:05,324 [INFO]          every winner exits identically; stops differ by exactly one 1m bar
+2026-09-18 03:32:05,324 [INFO]          (live sees the inside-close on the next tick) -> Rs8,473 vs 8,542.
+2026-09-18 03:32:05,324 [INFO]          The one extra harness trade (08-14) is the day the sim chop-killed;
+2026-09-18 03:32:05,324 [INFO]          the live chop-kill is unchanged and would do the same.
+2026-09-18 03:32:05,324 [INFO]   RISK : n=23 trades. No premium cap on the loss: a fast move that never
+2026-09-18 03:32:05,324 [INFO]          prints a 1m close inside the OR keeps the position (sim max loss
+2026-09-18 03:32:05,324 [INFO]          -Rs1,037; the generic 15:25 force-close and 15:15 sqoff still apply).
+2026-09-18 03:32:05,324 [INFO]          Requires LAST_DF1M fresh every cycle; the stop fails OPEN (skips the
+2026-09-18 03:32:05,324 [INFO]          tick) if the 1m frame is missing. SENSEX bot untouched (not studied).
+2026-09-18 03:32:05,324 [INFO]   REVERT : ORION_PAPER_V2_5_20_BACKUP_20260914_pre_orb_h3.py, or ORB_H3_ENABLED=False.
+2026-09-18 03:32:05,324 [INFO]   STATUS : code-applied 2026-09-14 06:50 IST before the 09:02 boot; NOT boot-
+2026-09-18 03:32:05,324 [INFO]            proven at stamp time -- check run.log for "[CHANGELOG] up to date"
+2026-09-18 03:32:05,324 [INFO]            and the first "[ORB] H3" line.
+2026-09-18 03:32:05,324 [INFO] 
+2026-09-18 03:32:05,324 [INFO] V2.5.20 [2026-09-11] *** EXP12 PROFIT LOCK — NIFTY ONLY *** (EXP12_PROFIT_LOCK)
+2026-09-18 03:32:05,324 [INFO]   User: "this should not exit like this, why we are not booking profit when
+2026-09-18 03:32:05,324 [INFO]   they make high, check they made high in backtest?"  Correct, and this
+2026-09-18 03:32:05,324 [INFO]   PARTLY REVERSES the EXP12_HOLD_TO_1528 change made earlier the same day.
+2026-09-18 03:32:05,325 [INFO]   I checked the peaks: over the 10 NIFTY expiries in ~/Amol/expiry_bt, 18 of
+2026-09-18 03:32:05,325 [INFO]   the 35 losing trades had already reached >= 1.5x entry before dying. They
+2026-09-18 03:32:05,325 [INFO]   booked -Rs13,643 while +Rs19,867 of peak value ran through them
+2026-09-18 03:32:05,325 [INFO]   (09-08 23650CE 26.65 -> 44.40 one minute later -> booked -Rs1,700;
+2026-09-18 03:32:05,325 [INFO]    08-18 24200CE 17.20 -> 35.95 -> -Rs1,034; 07-28 24000PE 16.95 -> 56.95 -> -Rs198).
+2026-09-18 03:32:05,325 [INFO]   WHY THE OLD TRAIL DESERVED REMOVAL BUT THE IDEA DID NOT: LADDER_TRAIL_20pct
+2026-09-18 03:32:05,325 [INFO]   armed at EXP2_ARM = Rs40 ABSOLUTE. NIFTY EXP2 buys Rs8-20 -> Rs40 is 2-5x
+2026-09-18 03:32:05,325 [INFO]   entry, so it armed far too late or never. SENSEX buys Rs26-66 -> Rs40 is
+2026-09-18 03:32:05,325 [INFO]   0.6-1.5x entry, so it armed instantly. One constant, opposite behaviour per
+2026-09-18 03:32:05,325 [INFO]   index. The defect was the ABSOLUTE arm; the arm is now a MULTIPLE of entry.
+2026-09-18 03:32:05,325 [INFO]   NEW RULE (EXP1/EXP2/EXP2W; the live EXPIRY engine's velvet ladder untouched):
+2026-09-18 03:32:05,325 [INFO]       peak >= 1.5 x entry  ->  exit on first 1m close <= peak * 0.75
+2026-09-18 03:32:05,325 [INFO]   Peak tracks the bar HIGH (EXP12_BAR_HIGH, stashed by _exp12_hist_oi without
+2026-09-18 03:32:05,325 [INFO]   changing its tuple shape); the trigger uses the CLOSE. Tracking the peak on
+2026-09-18 03:32:05,325 [INFO]   closes only was measured too and is worth just +Rs3,270 vs +Rs10,920 — the
+2026-09-18 03:32:05,326 [INFO]   high matters, hence the stash.
+2026-09-18 03:32:05,326 [INFO]   EVIDENCE — 10 NIFTY expiries, real Upstox 1-min premiums, EXP12 only:
+2026-09-18 03:32:05,326 [INFO]       deployed hold-to-15:28    Rs -4,010
+2026-09-18 03:32:05,326 [INFO]       arm 1.5x / giveback 25%   Rs +6,910   delta +Rs10,920
+2026-09-18 03:32:05,326 [INFO]       expiries better 7 / worse 1 / unchanged 2 ; 22 of 36 trades arm and book
+2026-09-18 03:32:05,326 [INFO]       (-Rs4,670 -> +Rs6,250); the other 14 still ride to 15:28.
+2026-09-18 03:32:05,326 [INFO]   Sign is stable over the whole arm 1.3-1.5 x giveback 20-35% block; it decays
+2026-09-18 03:32:05,326 [INFO]   above a 1.75x arm because too few trades ever arm. COST, honestly: it cuts
+2026-09-18 03:32:05,326 [INFO]   three winners (07-07 24450PE +2,467->+708, 08-18 24200PE +1,914->+188,
+2026-09-18 03:32:05,326 [INFO]   07-21 24150CE +1,248->+588).
+2026-09-18 03:32:05,326 [INFO]   *** NOT APPLIED TO SENSEX — user instruction "dont change sensex", and every
+2026-09-18 03:32:05,326 [INFO]   one of the 14 rules tested cost SENSEX Rs3,191-20,676; its two biggest
+2026-09-18 03:32:05,326 [INFO]   winners (08-27 77200PE, 09-03 76400PE) are exactly what a trail cuts.
+2026-09-18 03:32:05,326 [INFO]   ORION_SENSEX_V2520.py is UNCHANGED and stays hold-to-15:28. ***
+2026-09-18 03:32:05,326 [INFO]   EXP12_HOLD_TO_1528 stays True: it is now only the fallback for a position
+2026-09-18 03:32:05,326 [INFO]   that never arms. EXP12 still carries NO stop-loss.
+2026-09-18 03:32:05,326 [INFO]   REVERT: EXP12_PROFIT_LOCK = False, or
+2026-09-18 03:32:05,326 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260911_pre_exp12_profit_lock.py
+2026-09-18 03:32:05,327 [INFO]   STATUS: [BT] 10 NIFTY expiries / 36 EXP12 trades, in-sample; NOT trade-proven.
+2026-09-18 03:32:05,327 [INFO] 
+2026-09-18 03:32:05,327 [INFO] V2.5.20 [2026-09-11] *** V3 BREAK MUST BE A REAL CROSS *** (V3_BREAK_REQUIRE_TOUCH)
+2026-09-18 03:32:05,327 [INFO]   User: "modify nifty engines who took PE trades today ... when market is falling,
+2026-09-18 03:32:05,327 [INFO]   bot taking ce, market is rising bot taking pe."
+2026-09-18 03:32:05,327 [INFO]   Both of today's PE trades were V3 (-Rs520 each). detect_v3_signal_on_bar()'s
+2026-09-18 03:32:05,327 [INFO]   BREAK branch tested only "close beyond the level" -- never "did the bar reach
+2026-09-18 03:32:05,327 [INFO]   the level". Cluster ROLES are fixed relative to PDC, so on a gap day every
+2026-09-18 03:32:05,327 [INFO]   level the market jumped over stays a live R (or G) all session and any
+2026-09-18 03:32:05,327 [INFO]   ordinary bar re-fires it from any distance. Today's 10:03 PE fired
+2026-09-18 03:32:05,327 [INFO]   "BREAK-PE at 23394" off the 09:45 bar (h 23263.35) -- 131pt below a level
+2026-09-18 03:32:05,327 [INFO]   NIFTY never traded at today, at the session low, into a +88pt rally.
+2026-09-18 03:32:05,327 [INFO]   EVIDENCE: 170 sessions 2025-12-26 -> 2026-09-10, real Upstox expired-
+2026-09-18 03:32:05,327 [INFO]   instruments option 1-min premiums, V3's own probe entry (LTP-4, 25min) and
+2026-09-18 03:32:05,327 [INFO]   fast +10/-8 exit, EARLY(10m) + FULL paths sharing fired_levels:
+2026-09-18 03:32:05,327 [INFO]       break bar DID touch the level : n=166  win 63.3%  net Rs +34,934
+2026-09-18 03:32:05,327 [INFO]       break bar did NOT touch it    : n=115  win 43.5%  net Rs  -1,073
+2026-09-18 03:32:05,328 [INFO]   Survives every split tried: sample halves (+204/+20 vs +218/-52), entry path
+2026-09-18 03:32:05,328 [INFO]   (EARLY +274/-34, FULL +135/+20), side (PE +219/+22, CE +199/-50), and matched
+2026-09-18 03:32:05,328 [INFO]   distance (30-60pt: +309 @70.8% vs -102 @33.3%) -- so it is NOT a disguised
+2026-09-18 03:32:05,328 [INFO]   distance filter. Trend-alignment filters were tested on the SAME data and
+2026-09-18 03:32:05,328 [INFO]   REFUTED (with-day +138 vs against-day +36; with-hour +165 vs against-hour -3),
+2026-09-18 03:32:05,328 [INFO]   so the user-suggested "don't buy PE while the market rises" rule is NOT what
+2026-09-18 03:32:05,328 [INFO]   was applied. The REJECT branch already required this touch; only BREAK lacked it.
+2026-09-18 03:32:05,328 [INFO]   EFFECT: drops ~41% of V3 break signals. Blocks today's 10:03 PE (level never
+2026-09-18 03:32:05,328 [INFO]   touched); does NOT block today's 10:37 PE (bar h 23311.80 >= 23300 = a genuine
+2026-09-18 03:32:05,328 [INFO]   cross that simply failed).
+2026-09-18 03:32:05,328 [INFO]   NOT applied to ORION_SENSEX_V2520.py -- same code there, but the measurement
+2026-09-18 03:32:05,328 [INFO]   is NIFTY-only.
+2026-09-18 03:32:05,328 [INFO]   REVERT: V3_BREAK_REQUIRE_TOUCH = False, or
+2026-09-18 03:32:05,328 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260911_pre_v3_break_touch.py
+2026-09-18 03:32:05,328 [INFO]   STATUS: [BT] 170 sessions real premiums; NOT trade-proven.
+2026-09-18 03:32:05,328 [INFO] 
+2026-09-18 03:32:05,328 [INFO] V2.5.20 [2026-09-11] *** EXPIRY EXITS — NO PRE-15:28 EXIT ON A WINNER ***
+2026-09-18 03:32:05,329 [INFO]   WHY: user instruction "ok now deploy both, restart bots, now", after a two-
+2026-09-18 03:32:05,329 [INFO]   session forensic on the 6 expiry sessions 2026-08-25 .. 2026-09-10 (NIFTY
+2026-09-18 03:32:05,329 [INFO]   08-25/09-01/09-08, SENSEX 08-27/09-03/09-10), every trade re-priced against
+2026-09-18 03:32:05,329 [INFO]   real Upstox expired-instrument 1-min option candles and real index closes.
+2026-09-18 03:32:05,329 [INFO]   Finding: every repairable loss on the expiry books came from a PROFIT-LOCK or
+2026-09-18 03:32:05,329 [INFO]   TRAIL closing a WINNER before the 15:28 force close. Three mechanisms did it:
+2026-09-18 03:32:05,329 [INFO]     * EXP12 EXP2 LADDER_TRAIL_20pct — SENSEX 09-03 76400PE entry 62.70 trailed
+2026-09-18 03:32:05,329 [INFO]       out 104.05 (+Rs827) while 15:28 was 246.50 (+Rs3,676): +Rs2,849 left.
+2026-09-18 03:32:05,329 [INFO]       SENSEX 09-10 74700CE entry 296.50 trailed out 212.70 (-Rs1,676) while
+2026-09-18 03:32:05,329 [INFO]       15:28 was 303.95 (+Rs149): +Rs1,825 left.
+2026-09-18 03:32:05,329 [INFO]     * EXP12 EXP1 trail — NIFTY 08-25 24150CE entry 38.55 trailed out 30.00
+2026-09-18 03:32:05,329 [INFO]       (-Rs556) while 15:28 was 184.60 (+Rs9,493): +Rs10,049 left. (That day the
+2026-09-18 03:32:05,329 [INFO]       trail was TRAIL_10pct; it is now TRAIL_20pct_after_2x — removed as well.)
+2026-09-18 03:32:05,329 [INFO]     * EXPIRY EXPIRY_VELVET_1.7x — SENSEX 09-03 76800PE entry 144.70, peak
+2026-09-18 03:32:05,329 [INFO]       243.15: velvet armed at the 1.5x tier, which sets SL = ENTRY (breakeven),
+2026-09-18 03:32:05,330 [INFO]       and closed the trade at 144.70 for Rs0 at 11:23 IST. A lock that arms
+2026-09-18 03:32:05,330 [INFO]       after a 1.5x run and then protects ZERO profit is never right.
+2026-09-18 03:32:05,330 [INFO] 
+2026-09-18 03:32:05,330 [INFO]   WHAT (both bots, identical edits):
+2026-09-18 03:32:05,330 [INFO]   (1) EXP12_HOLD_TO_1528 = True — EXP12 positions (EXP1/EXP2/EXP2W) no longer
+2026-09-18 03:32:05,330 [INFO]       take ANY trail exit; the only exit is the existing 15:28 force close
+2026-09-18 03:32:05,330 [INFO]       (EOD_1528). EXP12 legs already carry no stop-loss by design, so that is
+2026-09-18 03:32:05,330 [INFO]       now the whole exit path. Revert = set False.
+2026-09-18 03:32:05,330 [INFO]   (2) EXPIRY_VELVET_ARM_LOCK = False — the 1.5x tier that locked SL at breakeven
+2026-09-18 03:32:05,330 [INFO]       no longer arms. UNCHANGED: T2 (peak>=2.0x -> SL=entry*1.5), T3 (peak>=3.0x
+2026-09-18 03:32:05,330 [INFO]       -> SL=entry*2.0), the beyond-T3 30%-giveback ride trail, and HARDSL_-18pct.
+2026-09-18 03:32:05,330 [INFO]       Revert = set True.
+2026-09-18 03:32:05,330 [INFO] 
+2026-09-18 03:32:05,330 [INFO]   NOT DEPLOYED, AND WHY — moving EXPIRY_SQOFF 15:15 -> 15:28. The Rs10,050 first
+2026-09-18 03:32:05,330 [INFO]   quoted for the 09-03 velvet trade required a 15:28 square-off. The NIFTY
+2026-09-18 03:32:05,330 [INFO]   live-EXPIRY history REFUTES that: across the 6 NIFTY EXPIRY legs in
+2026-09-18 03:32:05,330 [INFO]   ~/orion_v2520_run.log, squaring off at 15:15 totals -Rs270 vs -Rs9,217 at
+2026-09-18 03:32:05,330 [INFO]   15:28, driven by 08-04 24600PE (+Rs5,353 at 15:15, -Rs2,252 at 15:28 — it
+2026-09-18 03:32:05,330 [INFO]   expired worthless). EXPIRY_SQOFF STAYS 15:15. With sqoff at 15:15 the velvet
+2026-09-18 03:32:05,331 [INFO]   fix is worth +Rs1,549 on the 09-03 trade (222.15 at 15:15), not +Rs10,050.
+2026-09-18 03:32:05,331 [INFO] 
+2026-09-18 03:32:05,331 [INFO]   ALSO NOT IN THIS CHANGE: the NIFTY 09-08 EXP2 stale entry fill (filled 36.10
+2026-09-18 03:32:05,331 [INFO]   while the 15:15 bar it cited was o30.35 h32.20 c14.60 — Rs36.10 only exists in
+2026-09-18 03:32:05,331 [INFO]   the 15:14 bar). Separate fix, not yet applied.
+2026-09-18 03:32:05,331 [INFO] 
+2026-09-18 03:32:05,331 [INFO]   EVIDENCE / SIZE over the 6 expiry sessions: (1) touches 3 trades and improves
+2026-09-18 03:32:05,331 [INFO]   all 3 (+Rs2,849 +Rs1,825 +Rs10,049 = +Rs14,723). (2) touches 1 trade
+2026-09-18 03:32:05,331 [INFO]   (+Rs1,549). Total +Rs16,272. Verified: the -18% hard stop on the 09-03
+2026-09-18 03:32:05,331 [INFO]   76800PE was never breached after the velvet exit (low 126.60 vs SL 118.65), so
+2026-09-18 03:32:05,331 [INFO]   the trade really does survive to the square-off; all booked fills sit inside
+2026-09-18 03:32:05,331 [INFO]   the real 1-min bar.
+2026-09-18 03:32:05,331 [INFO] 
+2026-09-18 03:32:05,331 [INFO]   STATUS / RISK: n = 4 repaired trades on 6 expiry sessions and Rs10,049 of the
+2026-09-18 03:32:05,331 [INFO]   Rs16,272 is ONE NIFTY trade. EXP12 now has NO exit of any kind before 15:28 —
+2026-09-18 03:32:05,331 [INFO]   a winner that round-trips gives it all back. This is NOT a validated edge; it
+2026-09-18 03:32:05,331 [INFO]   is deployed on explicit user instruction. Next step: full-expiry-history replay.
+2026-09-18 03:32:05,332 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260911_pre_expiry_exit_repair.py /
+2026-09-18 03:32:05,332 [INFO]           ORION_SENSEX_V2520_BACKUP_20260911_pre_expiry_exit_repair.py
+2026-09-18 03:32:05,332 [INFO] 
+2026-09-18 03:32:05,332 [INFO] V2.5.20 [2026-09-05] *** WCR / LSC / PGB — THREE NEW MOVE-CAPTURE ENGINES ***
+2026-09-18 03:32:05,332 [INFO]   WHY: user instruction "deploy", after a session that built these one at a time
+2026-09-18 03:32:05,332 [INFO]   against specific historical moves. Origin: the 30-day census
+2026-09-18 03:32:05,332 [INFO]   (~/Amol/LAST30_MOVES_REPORT.md) showed the bot was in only 39 of 429 tradeable
+2026-09-18 03:32:05,332 [INFO]   Rs20+ moves (9.1%), and after 13:30 only 6 of 110 (5.5%) with ZERO entries in
+2026-09-18 03:32:05,332 [INFO]   any move starting after 14:30. The user then narrowed it to the cohort he
+2026-09-18 03:32:05,332 [INFO]   cares about: options trading Rs20-30 near the money that go 2x+ after 13:30.
+2026-09-18 03:32:05,332 [INFO]   There are exactly 5 such moves in the cached window and the bot missed all 5.
+2026-09-18 03:32:05,332 [INFO] 
+2026-09-18 03:32:05,332 [INFO]   WHAT: three independent engines, each built against ONE of those moves and
+2026-09-18 03:32:05,332 [INFO]   then locked. Source of record: ~/Amol/movecapture/ (01_wcr..., 02_lsc...,
+2026-09-18 03:32:05,332 [INFO]   03_pgb..., README.md, 3_LOGICS_PLAIN.md). Ported verbatim; parameters
+2026-09-18 03:32:05,332 [INFO]   unchanged. All three buy a cheap option (Rs15-30) in the afternoon with NO
+2026-09-18 03:32:05,332 [INFO]   stop-loss, and all three read OPEN INTEREST as the primary signal.
+2026-09-18 03:32:05,332 [INFO] 
+2026-09-18 03:32:05,333 [INFO]     WCR "writer capitulation rebound" -- buys the writers LEAVING. Day-max OI
+2026-09-18 03:32:05,333 [INFO]       >= 2x the leg's OPENING OI, peak < 30 min old, OI now 30% below it within
+2026-09-18 03:32:05,333 [INFO]       20 min of the peak, price above the price at the OI peak, spot through the
+2026-09-18 03:32:05,333 [INFO]       strike. Does NOT chase: rests a limit at (close at the OI-peak minute)
+2026-09-18 03:32:05,333 [INFO]       x 1.10 for 20 min. Exit: no stop, trail arms at 3x, 40% giveback, 15:25.
+2026-09-18 03:32:05,333 [INFO]       TARGET MOVE 2026-08-25 24150CE 25.35 -> 184.95 (Rs+10,374 available):
+2026-09-18 03:32:05,333 [INFO]       filled 25.85 at 14:00, out 158.55 at 15:25 = Rs+8,626, 83% of maximum.
+2026-09-18 03:32:05,333 [INFO] 
+2026-09-18 03:32:05,333 [INFO]     LSC "last seller climax" -- buys the ONE bar where the last seller sold the
+2026-09-18 03:32:05,333 [INFO]       low. Same bar: volume >= 4x the leg's 30-bar median, OI HIGHER than the
+2026-09-18 03:32:05,333 [INFO]       previous bar (fresh writing, not covering), lowest close of 30 bars,
+2026-09-18 03:32:05,333 [INFO]       premium Rs15-40. Then within 15 min: price closes back above that low AND
+2026-09-18 03:32:05,333 [INFO]       that bar's OI starts leaving. Market entry -- no pullback ever comes on
+2026-09-18 03:32:05,333 [INFO]       this shape (measured: a 0.80x limit is never filled). Exit as WCR, 15:28.
+2026-09-18 03:32:05,333 [INFO]       TARGET MOVE 2026-08-18 24250PE 25.00 -> 102.35 (Rs+5,028 available):
+2026-09-18 03:32:05,333 [INFO]       bought 27.25 at 15:03, out 96.55 at 15:28 = Rs+4,504, 90% of maximum.
+2026-09-18 03:32:05,333 [INFO] 
+2026-09-18 03:32:05,334 [INFO]     PGB "pinned gamma build" -- expiry day only, buys the writers ARRIVING.
+2026-09-18 03:32:05,334 [INFO]       OI at its day max AND doubled in 30 min while their own selling crushed
+2026-09-18 03:32:05,334 [INFO]       the premium below half of what it was 30 min earlier, premium Rs15-30,
+2026-09-18 03:32:05,334 [INFO]       spot within 50 pts of the strike, leg OTM. Limit at 0.85x the signal close
+2026-09-18 03:32:05,334 [INFO]       for 20 min. Exit: hard 3x TARGET, NO TRAIL, square-off 15:28.
+2026-09-18 03:32:05,334 [INFO]       TARGET MOVE 2026-09-01 24000CE 20.30 -> 76.20 (Rs+3,634 available):
+2026-09-18 03:32:05,334 [INFO]       filled 23.12 at 14:04, target hit 69.36 at 15:20 = Rs+3,006, 83%.
+2026-09-18 03:32:05,334 [INFO] 
+2026-09-18 03:32:05,334 [INFO]   EVIDENCE — AND ITS LIMITS, STATED PLAINLY:
+2026-09-18 03:32:05,334 [INFO]   Across the 27 cached days the three produce 6 trades, 4 wins:
+2026-09-18 03:32:05,334 [INFO]     WCR  08-25 +Rs8,626 | 09-01 +Rs5,105 | 09-02 -Rs1,177   net +Rs12,554
+2026-09-18 03:32:05,334 [INFO]     LSC  08-18 +Rs4,504 | 08-25 -Rs3,208                     net  +Rs1,296
+2026-09-18 03:32:05,334 [INFO]     PGB  09-01 +Rs3,006                                      net  +Rs3,006
+2026-09-18 03:32:05,334 [INFO]   *** EVERY WINNER IS ON AN EXPIRY DAY. The only non-expiry trade is a loss. ***
+2026-09-18 03:32:05,334 [INFO]   Only 5 of the 27 cached days are expiries, and the 5 target moves sit on just
+2026-09-18 03:32:05,334 [INFO]   THREE of them (08-18, 08-25, 09-01); 07-28 and 08-04 produced none. So the
+2026-09-18 03:32:05,334 [INFO]   real sample is 3 DAYS, not 27. Each rule is fitted to one move by construction
+2026-09-18 03:32:05,334 [INFO]   -- that was the exercise. This is NOT a validated edge and must not be treated
+2026-09-18 03:32:05,335 [INFO]   as one. Forward paper is the referee. A 4th move (08-18 24200CE) was attempted
+2026-09-18 03:32:05,335 [INFO]   and FAILED after four variants; it is not deployed.
+2026-09-18 03:32:05,335 [INFO] 
+2026-09-18 03:32:05,335 [INFO]   RISK SHAPE: no stop-loss on any of the three is deliberate -- the Rs15-30
+2026-09-18 03:32:05,335 [INFO]   premium is the entire risk per trade, so the worst case is the premium x 65
+2026-09-18 03:32:05,335 [INFO]   shares = about Rs1,000-2,000 a trade. Deliberately NOT added to _halt_exempt:
+2026-09-18 03:32:05,335 [INFO]   unlike ORB/EXPIRY these have no track record, so the 4-loss circuit breaker
+2026-09-18 03:32:05,335 [INFO]   still stops them. One entry per leg per engine per day.
+2026-09-18 03:32:05,335 [INFO] 
+2026-09-18 03:32:05,335 [INFO]   ENGINEERING NOTES:
+2026-09-18 03:32:05,335 [INFO]   + _mc_bars() caches the 1m OHLCV+OI series per token per minute. All three
+2026-09-18 03:32:05,335 [INFO]     engines scan the same 6 legs (ATM +/-1, CE+PE); without the cache that is 18
+2026-09-18 03:32:05,335 [INFO]     historical_data calls a minute instead of 6.
+2026-09-18 03:32:05,335 [INFO]   + The offline files use a put-call-parity synthetic spot because the index
+2026-09-18 03:32:05,335 [INFO]     feed FROZE on 3 of the 27 days -- 08-04 stuck at 24463.45 for 13 minutes,
+2026-09-18 03:32:05,335 [INFO]     08-18 at 24166.35 for 14, 09-01 at 23980.55 for 13, each straight through
+2026-09-18 03:32:05,335 [INFO]     that day's biggest move. Live uses the bot's own spot instead: re-running all
+2026-09-18 03:32:05,336 [INFO]     three targets on raw feed spot reproduces every entry and exit exactly, and
+2026-09-18 03:32:05,336 [INFO]     since every entry window here closes by 15:10 and every exit is premium-only,
+2026-09-18 03:32:05,336 [INFO]     a late feed freeze cannot reach these engines. The synthetic-vs-feed
+2026-09-18 03:32:05,336 [INFO]     disagreement is otherwise unresolved (on 08-18 the synthetic ran 12-14 pts
+2026-09-18 03:32:05,336 [INFO]     ABOVE the feed) and is deliberately NOT imported into the live bot.
+2026-09-18 03:32:05,336 [INFO]   + Offline the limit fills AT the limit on a bar low; live it fills at LTP when
+2026-09-18 03:32:05,336 [INFO]     LTP <= limit, i.e. at or better than the offline fill.
+2026-09-18 03:32:05,336 [INFO] 
+2026-09-18 03:32:05,336 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260905_pre_movecapture.py, or simply drop
+2026-09-18 03:32:05,336 [INFO]   "WCR","LSC","PGB" from ENGINE_LIST -- with no other change they go inert.
+2026-09-18 03:32:05,336 [INFO]   STATUS: [FWD] forward-paper only. NIFTY only; the Sensex port would need the
+2026-09-18 03:32:05,336 [INFO]   strike grid and premium bands re-derived and is NOT done.
+2026-09-18 03:32:05,336 [INFO] 
+2026-09-18 03:32:05,336 [INFO] V2.5.20 [2026-09-04] *** CRUSH — NEW ENGINE (6th slot, main book) ***
+2026-09-18 03:32:05,336 [INFO]   WHY: user, after the 2026-09-01 NIFTY 24100PE went 20.70 -> 149.00 (+128.3pt
+2026-09-18 03:32:05,336 [INFO]   = +Rs8,340/lot) and ORION captured Rs1,534 of it: "need to catch such move".
+2026-09-18 03:32:05,336 [INFO]   The deployed EXP2 cheap-ladder is structurally incapable of it — gate audit
+2026-09-18 03:32:05,337 [INFO]   over the 266 minutes 11:00-15:25 of that option showed the 14:30-15:25 window
+2026-09-18 03:32:05,337 [INFO]   blocked 210 of them AND the Rs8-20 premium band blocked all 266 (the option's
+2026-09-18 03:32:05,337 [INFO]   lowest close all day was 21.70). The OI15<=+5% gate additionally rejects the
+2026-09-18 03:32:05,337 [INFO]   writing-climax that CREATES the setup.
+2026-09-18 03:32:05,337 [INFO] 
+2026-09-18 03:32:05,337 [INFO]   THE SIGNAL (all four gates causal, day-so-far data only):
+2026-09-18 03:32:05,337 [INFO]     1. was-expensive : the option's own session high close >= CRUSH_WASEXP (60)
+2026-09-18 03:32:05,337 [INFO]     2. crushed       : current close <= CRUSH_MAX_FRAC (0.35) x that high
+2026-09-18 03:32:05,337 [INFO]     3. band          : CRUSH_PREM_LO (12) <= close <= CRUSH_PREM_HI (35)
+2026-09-18 03:32:05,337 [INFO]     4. OI climax     : current OI >= CRUSH_OI_FRAC (0.95) x its day-max OI
+2026-09-18 03:32:05,337 [INFO]     5. turn-up       : close > previous 1m close (never buy the falling knife)
+2026-09-18 03:32:05,337 [INFO]   Universe: spot-ATM +/-1 strike, CE+PE (6 legs), re-anchored every 5 min --
+2026-09-18 03:32:05,337 [INFO]   the SAME leg set exp12 already resolves. Window 09:30-14:45, expiry day only,
+2026-09-18 03:32:05,337 [INFO]   one entry per leg per day, no re-entry.
+2026-09-18 03:32:05,337 [INFO] 
+2026-09-18 03:32:05,337 [INFO]   THE EXIT — this is where the 09-01 money actually went:
+2026-09-18 03:32:05,338 [INFO]     NO stop-loss (the premium is the max risk). Trail ARMS only at 3x entry,
+2026-09-18 03:32:05,338 [INFO]     then SL = peak x 0.60 ratcheting up. Force exit 15:20.
+2026-09-18 03:32:05,338 [INFO]     The shared trail (arm entry+15, SL=peak-5) is what capped 09-01 at 73.70
+2026-09-18 03:32:05,338 [INFO]     against a 149.00 peak: on a Rs50 option that arms at 1.3x with a 10%
+2026-09-18 03:32:05,338 [INFO]     giveback and cannot hold a 3x run. Measured on the identical entry set:
+2026-09-18 03:32:05,338 [INFO]       arm 2x / 20% giveback  +Rs10,056
+2026-09-18 03:32:05,338 [INFO]       hold to close          +Rs81,618
+2026-09-18 03:32:05,338 [INFO]       arm 3x / 40% giveback  +Rs72,886   <- chosen (plateau: 25-45% all similar)
+2026-09-18 03:32:05,338 [INFO]     A 50% hard stop looked sturdy at n=14 expiries and was clearly WORSE at
+2026-09-18 03:32:05,338 [INFO]     n=35 (+Rs28,456 vs +Rs72,886) — no stop is the validated choice.
+2026-09-18 03:32:05,338 [INFO] 
+2026-09-18 03:32:05,339 [INFO]   BACKTEST (Upstox expired-instruments, real 1-min OHLC+OI, ATM+/-1 universe,
+2026-09-18 03:32:05,339 [INFO]   1 lot, script ~/Amol/bigrun/final.py, data ~/Amol/bigrun/*.json.gz):
+2026-09-18 03:32:05,339 [INFO]     35 NIFTY expiries: 131 trades, +Rs77,203 = +Rs2,206/expiry, +Rs589/trade,
+2026-09-18 03:32:05,339 [INFO]     18/35 green expiries, wins 59/131, worst trade -Rs2,262, best +Rs16,114.
+2026-09-18 03:32:05,339 [INFO]     HOLDOUT: the rule was designed ONLY on the 14 expiries 2026-06-02..09-01
+2026-09-18 03:32:05,339 [INFO]     (+Rs2,652/expiry). The 21 expiries 2025-07-17..2025-12-02 were pulled
+2026-09-18 03:32:05,339 [INFO]     afterward and never inspected during design: +Rs40,074 = +Rs1,908/expiry,
+2026-09-18 03:32:05,339 [INFO]     11/21 green. ~28% OOS degradation, sign and magnitude hold.
+2026-09-18 03:32:05,339 [INFO]     Universe choice is not fitted — it is monotone: ATM only +Rs63,936,
+2026-09-18 03:32:05,339 [INFO]     ATM+/-1 +Rs81,886, ATM+/-2 +Rs74,420, ATM+/-3 +Rs72,886 (the +/-2 and +/-3
+2026-09-18 03:32:05,339 [INFO]     rings LOSE money). +/-1 both maximises P&L and matches exp12's leg set.
+2026-09-18 03:32:05,339 [INFO]   On 2026-09-01 this rule enters 24100PE at 26.65 @11:22 (two hours before, and
+2026-09-18 03:32:05,339 [INFO]   at half the price of, the VWAP engine's actual 50.10 fill), arms at 13:41 when
+2026-09-18 03:32:05,340 [INFO]   peak hits 82.40, trails to 89.40 as the option runs to 149.00, exits 15:14 =
+2026-09-18 03:32:05,340 [INFO]   +Rs4,079 vs the +Rs1,534 actually booked.
+2026-09-18 03:32:05,340 [INFO]   REFUTED and NOT included, so nobody re-tries them: side-lockout (block the
+2026-09-18 03:32:05,340 [INFO]   opposite side once one side hits Nx) is non-monotonic across 1.5/2/2.5/3x =
+2026-09-18 03:32:05,340 [INFO]   noise; staged/tightened giveback after 5x/6x/8x; close-out earlier than 15:20.
+2026-09-18 03:32:05,340 [INFO]   WHAT: ENGINE_LIST gains "CRUSH"; _halt_exempt gains "CRUSH" (expiry-day
+2026-09-18 03:32:05,340 [INFO]   engine, same reasoning as the 2026-08-30 ORB/EXPIRY exemption);
+2026-09-18 03:32:05,340 [INFO]   check_crush_signal() + _manage_crush_trail(); open_trade sets
+2026-09-18 03:32:05,340 [INFO]   hardsl_premium=-1e9 for CRUSH; check_exits dispatches CRUSH to its own trail.
+2026-09-18 03:32:05,340 [INFO]   MAIN BOOK, not a shadow book — both bots have run EXECUTION_BROKER=
+2026-09-18 03:32:05,340 [INFO]   "kite_paper" since 2026-07-20, so every engine is already paper; a separate
+2026-09-18 03:32:05,340 [INFO]   ledger would only have hidden it from the EOD report.
+2026-09-18 03:32:05,340 [INFO]   NIFTY ONLY for now: same params x3.3 on 13 SENSEX expiries give +Rs9,574 with
+2026-09-18 03:32:05,340 [INFO]   only 1 of 72 signals reaching 5x — not ported until that is understood.
+2026-09-18 03:32:05,340 [INFO]   --- SAME DAY, AFTER THE FULL 60-EXPIRY PULL LANDED (read this before trusting
+2026-09-18 03:32:05,340 [INFO]       the numbers above, which were computed on 14 and then 35 expiries) ---
+2026-09-18 03:32:05,340 [INFO]   The per-expiry figure DECAYED as the sample grew: 14 exp +Rs2,517 -> 35 exp
+2026-09-18 03:32:05,340 [INFO]   +Rs2,206 -> 49 exp +Rs1,242 -> 60 exp +Rs556 (+Rs33,383 / 247 trades /
+2026-09-18 03:32:05,341 [INFO]   green 26/58). Driver: a sustained four-month bleed 2026-02..2026-05 of
+2026-09-18 03:32:05,341 [INFO]   -Rs46,319 over 86 trades, exactly the window NIFTY went 25,600 -> 22,850.
+2026-09-18 03:32:05,341 [INFO]   CORRECTION to the claim above that the 40% giveback is "a plateau, not a
+2026-09-18 03:32:05,341 [INFO]   fitted number": on 35 expiries it looked flat, on 60 it is NOISE --
+2026-09-18 03:32:05,341 [INFO]   15%:+41,987 20%:+37,211 25%:+43,336 30%:+31,906 35%:+24,978 40%:+33,383
+2026-09-18 03:32:05,341 [INFO]   50%:+41,428 60%:+53,453. The exit giveback is NOT identifiable from this
+2026-09-18 03:32:05,341 [INFO]   data. 40% is kept because it is mid-range, it is what protects the move the
+2026-09-18 03:32:05,341 [INFO]   user actually asked about (09-01 24100PE: Rs4,079 vs Rs1,108 on a pure hold),
+2026-09-18 03:32:05,341 [INFO]   and because a trail is what makes re-entry possible at all. Do NOT tune it
+2026-09-18 03:32:05,341 [INFO]   from a single day.
+2026-09-18 03:32:05,341 [INFO]   TWO ADDITIONS, both applied 2026-09-04:
+2026-09-18 03:32:05,341 [INFO]   (1) CRUSH_MAX_DAYRANGE_PCT = 0.8 -- skip when the day's realised spot range
+2026-09-18 03:32:05,341 [INFO]       so far exceeds 0.8% of spot. Rs/trade is MONOTONE in the range bucket
+2026-09-18 03:32:05,341 [INFO]       over all 60 expiries (80-120pt +977, 120-160 +220, 160-200 -84, 200+
+2026-09-18 03:32:05,341 [INFO]       -189) and the mechanism is clean: in a trending tape the option is
+2026-09-18 03:32:05,341 [INFO]       crushed because the move is REAL. Book +Rs33,383 -> +Rs49,461; the
+2026-09-18 03:32:05,341 [INFO]       Feb-May bleed -Rs46,319 -> -Rs6,646 (March produces no trades at all).
+2026-09-18 03:32:05,341 [INFO]       HONESTY: this filter was chosen AFTER seeing Feb-May fail, so it is
+2026-09-18 03:32:05,341 [INFO]       IN-SAMPLE. The 0.6-1.0% threshold span is flat (+Rs39k..+Rs51k) so the
+2026-09-18 03:32:05,341 [INFO]       exact number is not fitted, but the +Rs49,461 figure is optimistic.
+2026-09-18 03:32:05,341 [INFO]       Forward paper is the referee. Set to 0 to disable.
+2026-09-18 03:32:05,341 [INFO]   (2) CRUSH_RECLAIM re-entry, per user 2026-09-04 "we need to pick the second
+2026-09-18 03:32:05,342 [INFO]       entry too, if it is moving in again". After a trail exit the leg is
+2026-09-18 03:32:05,342 [INFO]       re-bought if it takes BACK the stop level. It does NOT have to crush
+2026-09-18 03:32:05,342 [INFO]       again -- requiring a second crush fires 4 times in 60 expiries, because
+2026-09-18 03:32:05,342 [INFO]       after a run the session high is far higher. Worth +Rs20,934 over 31
+2026-09-18 03:32:05,342 [INFO]       re-entries. Reclaiming the pre-exit PEAK instead LOSES (-Rs3,438): that
+2026-09-18 03:32:05,342 [INFO]       pays up at the top. Cutoff is CRUSH_WIN_HI (14:45) because later is
+2026-09-18 03:32:05,342 [INFO]       monotonically worse (14:45 +20,934 / 15:00 +13,771 / 15:15 +8,967) --
+2026-09-18 03:32:05,342 [INFO]       expiry theta kills anything bought late; a 15:15 re-entry at 114.65 died
+2026-09-18 03:32:05,342 [INFO]       to 43.70 for -Rs4,612. CRUSH_MAX_ENTRIES=2 (first crush + one reclaim).
+2026-09-18 03:32:05,342 [INFO]   ALSO VERIFIED 2026-09-04: entry timing is NOT fragile -- the live bot acts on
+2026-09-18 03:32:05,342 [INFO]   the bar AFTER the signal bar completes (confirmed by replaying the shipped
+2026-09-18 03:32:05,342 [INFO]   check_crush_signal() against the 09-01 tape: it fires 24100PE @26.65 at 11:23,
+2026-09-18 03:32:05,342 [INFO]   one minute after the backtest's 11:22, same price). Re-pricing every entry at
+2026-09-18 03:32:05,342 [INFO]   the next bar's OPEN gives +Rs70,733 vs +Rs70,475 at the idealised signal-bar
+2026-09-18 03:32:05,342 [INFO]   close, and it stays positive out to +5 minutes. This is the test that killed
+2026-09-18 03:32:05,342 [INFO]   the 2026-08-22 afternoon-fade idea; CRUSH passes it.
+2026-09-18 03:32:05,342 [INFO]   TWO BUGS CAUGHT BY THAT REPLAY BEFORE SHIPPING: round_to_atm() rounds to 100,
+2026-09-18 03:32:05,342 [INFO]   not the 50-pt strike grid (would have shifted the whole ATM+/-1 leg set -- see
+2026-09-18 03:32:05,342 [INFO]   _crush_atm); and the block-reason strings embedded the premium value, which
+2026-09-18 03:32:05,342 [INFO]   produced 27 distinct "reasons" and made the 15:29 message unreadable.
+2026-09-18 03:32:05,342 [INFO]   STATUS: applied 2026-09-04 post-close. NOT live-proven -- the bot had already
+2026-09-18 03:32:05,342 [INFO]   exited for the day, so there is NO boot line yet. Verify on the next boot that
+2026-09-18 03:32:05,343 [INFO]   the armed-engines banner lists CRUSH; first expiry Tue 2026-09-08.
+2026-09-18 03:32:05,343 [INFO]   Revert = ORION_PAPER_V2_5_20_BACKUP_20260904_pre_crush.py
+2026-09-18 03:32:05,343 [INFO] V2.5.20 [2026-09-02] ORB ENTRY premium floor lowered — user instruction.
+2026-09-18 03:32:05,343 [INFO]   WHAT: ORB_PREM_MIN NIFTY 60.0 -> 20.0, SENSEX 200.0 -> 66.7 (proportional carry
+2026-09-18 03:32:05,343 [INFO]   at the 3.333x port scaling). This is the ENTRY strike-pick floor read by
+2026-09-18 03:32:05,343 [INFO]   check_orb_signal() -> pick_strike_by_premium(). ORB_FLIP_PREM_MIN (added
+2026-09-18 03:32:05,343 [INFO]   earlier today) is unchanged at 20.0 / 66.7.
+2026-09-18 03:32:05,343 [INFO]   EFFECT: pick_strike_by_premium walks 50pt rings outward from ATM and takes the
+2026-09-18 03:32:05,343 [INFO]   FIRST strike whose premium is in band, so a lower floor means ORB now buys a
+2026-09-18 03:32:05,343 [INFO]   strike much CLOSER to ATM and much cheaper (10-expiry replay: entries move from
+2026-09-18 03:32:05,343 [INFO]   ~Rs73-97 to ~Rs20-47).
+2026-09-18 03:32:05,343 [INFO]   MEASURED, and deployed anyway on explicit user instruction: over the same 10
+2026-09-18 03:32:05,343 [INFO]   NIFTY expiries on the bug-fixed engine this scores -Rs1,605 vs -Rs653 for the
+2026-09-18 03:32:05,343 [INFO]   floor-60 config, i.e. Rs952 WORSE. Cause is that the fixed-POINT exits stop
+2026-09-18 03:32:05,343 [INFO]   scaling: the -15pt stop is 19.5% of a Rs76.90 entry but 72.5% of a Rs20.70
+2026-09-18 03:32:05,343 [INFO]   entry. Making the exits percentage-of-premium instead was tested at three
+2026-09-18 03:32:05,343 [INFO]   calibrations and is worse still in both floors (-Rs1,430 / -Rs2,272 / -Rs1,780
+2026-09-18 03:32:05,343 [INFO]   at floor 20). The floor-60 + fixed-point config was the best of all 8 tested
+2026-09-18 03:32:05,343 [INFO]   combinations. n=10 expiry days only — thin sample, NIFTY-only, and ORB runs
+2026-09-18 03:32:05,343 [INFO]   daily, so live forward evidence may differ from the replay.
+2026-09-18 03:32:05,344 [INFO]   REVERT (one line, restores the best-measured config):
+2026-09-18 03:32:05,344 [INFO]     ORION_PAPER_V2_5_20_BACKUP_20260902_035530_pre_entryfloor20.py /
+2026-09-18 03:32:05,344 [INFO]     ORION_SENSEX_V2520_BACKUP_20260902_035530_pre_entryfloor20.py
+2026-09-18 03:32:05,344 [INFO]   STATUS: applied 2026-09-02 ~09:20 IST, bots restarted same minute. NOT
+2026-09-18 03:32:05,344 [INFO]           live-proven. WATCH the ORB entry premium in the next [ORB] Signal /
+2026-09-18 03:32:05,344 [INFO]           ENTRY pair — expect a near-ATM strike at Rs20-50 rather than Rs60-100.
+2026-09-18 03:32:05,344 [INFO] V2.5.20 [2026-09-02] (A) FORMING-BAR FIX — ORB/GAPBREAK could fire off an
+2026-09-18 03:32:05,344 [INFO]   INCOMPLETE 5m bar.  (B) ORB flip-on-stop premium floor lowered.
+2026-09-18 03:32:05,344 [INFO]   --- (A) FORMING-BAR ---
+2026-09-18 03:32:05,344 [INFO]   WHAT: check_orb_signal() and check_gapbreak_signal() both scan
+2026-09-18 03:32:05,344 [INFO]   `for _, b in df5.iterrows()` filtering only on minute-of-day, so df5's LAST
+2026-09-18 03:32:05,344 [INFO]   row — the still-forming bucket — was a valid signal bar. With a 30s loop that
+2026-09-18 03:32:05,344 [INFO]   bucket can hold as little as ONE 1m candle. For ORB this defeats the
+2026-09-18 03:32:05,344 [INFO]   `body > 50% of range` filter entirely: that test exists to demand a decisive
+2026-09-18 03:32:05,344 [INFO]   FIVE-minute bar, and a single 1m candle passes it trivially. For GAPBREAK the
+2026-09-18 03:32:05,344 [INFO]   range-break was tested against an intra-bar tick, not a settled 5m close.
+2026-09-18 03:32:05,344 [INFO]   FIX: both loops skip any bucket whose end time has not passed
+2026-09-18 03:32:05,344 [INFO]   (`if b_min + 5 > _now_min: continue`). Mirrors the two sites that already did
+2026-09-18 03:32:05,344 [INFO]   this correctly — check_fut5m_vwap_scalp_signal() reads iloc[-2] (last CLOSED
+2026-09-18 03:32:05,344 [INFO]   bar) and is_orb_day_chop_killed() drops the forming bar via d15.iloc[:-1].
+2026-09-18 03:32:05,344 [INFO]   FUT5VWAP was checked and is NOT affected.
+2026-09-18 03:32:05,344 [INFO]   EVIDENCE (2026-09-01, reproduced from ~/orion_v2520_run.log): ORB logged
+2026-09-18 03:32:05,344 [INFO]   "[ORB] Signal — close 24026.6 broke OR[24027.8,24082.6] side=PE" at 09:45 and
+2026-09-18 03:32:05,345 [INFO]   entered 24100PE @83.00 at 09:46:34, stopping for -Rs975. 24026.6 is the
+2026-09-18 03:32:05,345 [INFO]   1-MINUTE close at 09:45; the bucket held exactly one candle (body 0.664).
+2026-09-18 03:32:05,345 [INFO]   NEITHER completed 5m bar qualified: 09:40-09:44 closed 24028.35, ABOVE the OR
+2026-09-18 03:32:05,345 [INFO]   low, no break; 09:45-09:49 had body 0.433 < 0.5. That trade should never have
+2026-09-18 03:32:05,345 [INFO]   existed. Loop simulation on 09-01 1m data: BEFORE fires 09:45 off 1 candle
+2026-09-18 03:32:05,345 [INFO]   (PE); AFTER fires 10:55 off 5 candles (CE) — worth +Rs1,170 instead of -Rs975.
+2026-09-18 03:32:05,345 [INFO]   SCALE: replay of the last 10 NIFTY expiries (harness G1-verified against the
+2026-09-18 03:32:05,345 [INFO]   09-01 log) — the bug flips the traded SIDE on 3 of 10 days (07-14, 08-18,
+2026-09-18 03:32:05,345 [INFO]   09-01). Net P&L similar (-Rs2,145 buggy vs -Rs2,018 clean) but only by luck.
+2026-09-18 03:32:05,345 [INFO]   --- (B) FLIP FLOOR ---
+2026-09-18 03:32:05,345 [INFO]   WHAT: new constant ORB_FLIP_PREM_MIN, read by _touch_flip_reentry() for ORB.
+2026-09-18 03:32:05,345 [INFO]   NIFTY 20.0, SENSEX 66.7 (proportional carry at the 3.333x port scaling, same
+2026-09-18 03:32:05,345 [INFO]   convention as the 08-31 GAP_THRESH and lock-arm entries).
+2026-09-18 03:32:05,345 [INFO]   WHY A SEPARATE CONSTANT: ORB_PREM_MIN is read in TWO places — the ENTRY strike
+2026-09-18 03:32:05,345 [INFO]   pick in check_orb_signal() and the FLIP in _touch_flip_reentry(). The replay
+2026-09-18 03:32:05,345 [INFO]   held the ENTRY floor at 60 and varied ONLY the flip floor, so lowering
+2026-09-18 03:32:05,345 [INFO]   ORB_PREM_MIN itself would have deployed an untested combination and changed
+2026-09-18 03:32:05,345 [INFO]   which strike every ORB entry buys. Entry floor is UNCHANGED (60 / 200).
+2026-09-18 03:32:05,345 [INFO]   EVIDENCE: 10 NIFTY expiries. Flip floor 60 -> 20 gains +Rs2,535 on the
+2026-09-18 03:32:05,345 [INFO]   as-is engine and +Rs1,365 on the bug-fixed engine — the gain survives the fix,
+2026-09-18 03:32:05,345 [INFO]   which was the check that mattered. Decomposition: ORB ENTRIES lose -Rs3,315
+2026-09-18 03:32:05,346 [INFO]   (3/10 win); the FLIPS make +Rs3,705 (4/5). The flip carries the engine.
+2026-09-18 03:32:05,346 [INFO]   CAVEATS, stated plainly: n=10 with only 5 flips — CIs include zero. Every
+2026-09-18 03:32:05,346 [INFO]   winner exits at EXACTLY +18 (ORB_LOCK_PTS); the +40 ride trigger never engaged
+2026-09-18 03:32:05,346 [INFO]   once in 10 expiries, so ORB is a +18/-15 coin flip. Left as-is per user
+2026-09-18 03:32:05,346 [INFO]   2026-09-02. Floor 20 is still NET NEGATIVE on the bug-fixed engine (-Rs653):
+2026-09-18 03:32:05,346 [INFO]   this makes ORB less bad, not profitable. Expiry days only; ORB runs daily.
+2026-09-18 03:32:05,346 [INFO]   SENSEX has NO supporting replay — NIFTY-only evidence, carried on convention.
+2026-09-18 03:32:05,346 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260902_034429_pre_formingbar_flipfloor.py /
+2026-09-18 03:32:05,346 [INFO]           ORION_SENSEX_V2520_BACKUP_20260902_034429_pre_formingbar_flipfloor.py
+2026-09-18 03:32:05,346 [INFO]   STATUS: applied 2026-09-02 ~09:15 IST and bots RESTARTED the same minute on
+2026-09-18 03:32:05,346 [INFO]           user instruction (both were flat, 0 trades, market had just opened;
+2026-09-18 03:32:05,346 [INFO]           ORB entry window opens 09:25 so the restart preceded any signal).
+2026-09-18 03:32:05,346 [INFO]           NOT live-proven. VERIFY today: grep "[ORB] Signal" in the run log —
+2026-09-18 03:32:05,346 [INFO]           the quoted close must be a COMPLETED 5m bar close, never a bare 1m
+2026-09-18 03:32:05,346 [INFO]           close mid-bucket; and any flip must show a premium >= the new floor.
+2026-09-18 03:32:05,346 [INFO] V2.5.20 [2026-08-31] GAP_THRESH 75->50 + ORB REGIME GATE OPENED TO CHOP.
+2026-09-18 03:32:05,346 [INFO]   (A) GAP_THRESH_PTS 75.0 -> 50.0. User: "it was 75 when nifty shares a lot=75,
+2026-09-18 03:32:05,346 [INFO]   current is 65, so it should be 65, but considering nifty small but sharp
+2026-09-18 03:32:05,346 [INFO]   movement, i am asking u to set it to 50." GAPBREAK stands down for the whole
+2026-09-18 03:32:05,346 [INFO]   day when abs(today_open - prev_close) <= GAP_THRESH_PTS, so this is the gate
+2026-09-18 03:32:05,346 [INFO]   that decides whether GAPBREAK exists at all on a given day. 08-31 gapped
+2026-09-18 03:32:05,346 [INFO]   -58.10 and was skipped under 75; under 50 it would have traded.
+2026-09-18 03:32:05,346 [INFO]   (B) ORB_ALLOWED_REGIMES ('BULL','BEAR','TRANSITION') -> + 'CHOP'. Only
+2026-09-18 03:32:05,347 [INFO]   is_orb_day_sideways_live() reads this constant and only check_orb_signal()
+2026-09-18 03:32:05,347 [INFO]   calls that, so the blast radius is ORB alone. ADX_CHOP_MAX was deliberately
+2026-09-18 03:32:05,347 [INFO]   NOT touched: it feeds classify_regime() -> DAY.regime, which V2 also gates on
+2026-09-18 03:32:05,347 [INFO]   via regime_allows_trade(), so moving it would silently loosen V2 too.
+2026-09-18 03:32:05,347 [INFO]   MEASUREMENT (145 sessions, 2026-01-19..08-31, bot's own classify_regime on
+2026-09-18 03:32:05,347 [INFO]   the same prior-1h bar the live boot uses): ORB stood down on 43/145 = 29.7%
+2026-09-18 03:32:05,347 [INFO]   of sessions, rising to 35.0% over the last 40 and 62.5% since 08-20.
+2026-09-18 03:32:05,347 [INFO]   Spot-excursion outcome of the ORB breakout (entry -> 15:15), by regime:
+2026-09-18 03:32:05,347 [INFO]       regime        n   medMFE  medMAE  med-edge  MFE>=25  win%
+2026-09-18 03:32:05,347 [INFO]       BULL         17     36.9    51.9      +0.5     76%    53%
+2026-09-18 03:32:05,347 [INFO]       BEAR         23     70.2   157.8    -119.0     70%    22%
+2026-09-18 03:32:05,347 [INFO]       TRANSITION   44     78.5    60.9     +39.9     82%    57%
+2026-09-18 03:32:05,347 [INFO]       CHOP         39     71.5    78.6     -17.2     90%    46%
+2026-09-18 03:32:05,347 [INFO]       ALLOWED-now  84     70.3    69.6      -9.9     77%    46%
+2026-09-18 03:32:05,347 [INFO]   CHOP is NOT separable from the days already allowed: same win rate (46% vs
+2026-09-18 03:32:05,347 [INFO]   46%), higher median MFE (71.5 vs 70.3), and it reaches +25 spot points MORE
+2026-09-18 03:32:05,347 [INFO]   often than the allowed set (90% vs 77%). The gate was removing days that look
+2026-09-18 03:32:05,347 [INFO]   like the ones it keeps. Note also that BEAR -- the regime the older notes call
+2026-09-18 03:32:05,347 [INFO]   ORB's edge -- is by far the WORST bucket here (win 22%, edge -119).
+2026-09-18 03:32:05,347 [INFO]   LIMITS: the metric is a SPOT-excursion proxy (max favourable/adverse move to
+2026-09-18 03:32:05,348 [INFO]   15:15), NOT a premium-level ORB P&L replay -- it ignores stop/lock sequencing,
+2026-09-18 03:32:05,348 [INFO]   so a day with large MFE can still have hit the stop first. It says the gate
+2026-09-18 03:32:05,348 [INFO]   does not DISCRIMINATE; it does NOT prove ORB is profitable in CHOP. This
+2026-09-18 03:32:05,348 [INFO]   loosens rather than tightens, so it will increase trade count and drawdown
+2026-09-18 03:32:05,348 [INFO]   exposure. The in-day ORB_CHOP_KILL (>=4 VWAP crosses, ORB_CHOP_MIN_CROSSES=4)
+2026-09-18 03:32:05,348 [INFO]   is UNCHANGED and remains the intraday chop protection.
+2026-09-18 03:32:05,348 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260831_pre_orbgate_gapthresh.py
+2026-09-18 03:32:05,348 [INFO]   STATUS: code applied 2026-08-31 post-close, boot-verified, NOT trade-proven.
+2026-09-18 03:32:05,348 [INFO] V2.5.20 [2026-08-31] ORB/GAPBREAK LOCK-ARM THRESHOLDS LOWERED (25->18, 15->8).
+2026-09-18 03:32:05,348 [INFO]   WHAT: ORB_LOCK_PTS 25.0 -> 18.0; GAP_LOCK_PTS 15.0 -> 8.0. These are the
+2026-09-18 03:32:05,348 [INFO]   lock-FLOOR ARM thresholds in _manage_touch_exit(), not targets: while
+2026-09-18 03:32:05,348 [INFO]   DAY.floor is None the position is exposed to the full stop; once premium
+2026-09-18 03:32:05,348 [INFO]   touches entry+lock the floor arms and the stop is bypassed entirely.
+2026-09-18 03:32:05,348 [INFO]   WHY (user instruction 2026-08-31, after the 08-31 replay): both engines were
+2026-09-18 03:32:05,348 [INFO]   replayed on 08-31 NIFTY using the live functions with a replay-clock ltp()
+2026-09-18 03:32:05,348 [INFO]   override. ORB signalled 09:40 PE 24050 @64.40 (OR 09:15-09:20 =
+2026-09-18 03:32:05,348 [INFO]   [24038.40,24128.70], break bar body 95%); GAPBREAK at a 50pt threshold
+2026-09-18 03:32:05,348 [INFO]   signalled 09:55 PE 24050 @74.45. The 24050PE peaked at 83.30 -- i.e. +18.90
+2026-09-18 03:32:05,348 [INFO]   over the ORB entry and +8.85 over the GAPBREAK entry. Both arms (89.40 /
+2026-09-18 03:32:05,348 [INFO]   89.45) were missed by ~6 premium points, so NEITHER floor armed, both sat
+2026-09-18 03:32:05,348 [INFO]   fully exposed, and both took the full stop at 11:54 on the reversal:
+2026-09-18 03:32:05,349 [INFO]   ORB -15pt/-Rs975, GAPBREAK -30pt/-Rs1950. 18 and 8 sit just under those
+2026-09-18 03:32:05,349 [INFO]   observed peaks and would have armed (82.40 / 82.45 vs peak 83.30).
+2026-09-18 03:32:05,349 [INFO]   EVIDENCE / LIMITS: n=1. ONE day, one trade per engine, replayed not traded --
+2026-09-18 03:32:05,349 [INFO]   neither signal could have been taken live on 08-31 because the bot was dead
+2026-09-18 03:32:05,349 [INFO]   09:15-10:21 IST (see the SCRIPT_DIR hotfix entry above). The thresholds were
+2026-09-18 03:32:05,349 [INFO]   chosen to clear a single observed peak, which is curve-fitting to one sample;
+2026-09-18 03:32:05,349 [INFO]   a 30/60/90-day replay has NOT been run. Lowering the arm also banks smaller
+2026-09-18 03:32:05,349 [INFO]   wins more often and cuts the number of trades that survive to the RIDE stage
+2026-09-18 03:32:05,349 [INFO]   (ORB_RIDE_TRIGGER_PTS 40 / GAP 65 are unchanged), so mean win size should be
+2026-09-18 03:32:05,349 [INFO]   expected to FALL even if win-rate rises. Watch giveback and win-rate over the
+2026-09-18 03:32:05,349 [INFO]   next several ORB/GAPBREAK trades, not one.
+2026-09-18 03:32:05,349 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260831_pre_lock_change.py
+2026-09-18 03:32:05,349 [INFO]   STATUS: code applied 2026-08-31 post-close. NOT live-proven -- bots exited
+2026-09-18 03:32:05,349 [INFO]   cleanly at 15:30 IST and next boot is the 09:02 IST cron on 2026-09-01.
+2026-09-18 03:32:05,349 [INFO] V2.5.20 [2026-08-31] STALE-DATA GUARD THRESHOLD 16 -> 20 MIN (15m + fut15).
+2026-09-18 03:32:05,349 [INFO]   WHAT : in the V2.5.15 stale-data guard, _fresh_limit = now - 16min becomes
+2026-09-18 03:32:05,349 [INFO]          now - _stale_max_min (20). The [STALE] log line now prints the
+2026-09-18 03:32:05,349 [INFO]          constant instead of a hardcoded ">16min". NO entry/exit RULE, no
+2026-09-18 03:32:05,349 [INFO]          engine, no indicator touched -- this only changes when the guard
+2026-09-18 03:32:05,349 [INFO]          declares the frame unusable and blocks entries for one cycle.
+2026-09-18 03:32:05,349 [INFO]   WHY  : a bar's LABEL is its bucket START, so a perfectly current 15m bar is
+2026-09-18 03:32:05,349 [INFO]          already 15 min old by label the instant the next bucket opens. 16 min
+2026-09-18 03:32:05,349 [INFO]          left only ~60s of headroom, and the tick samples the new bucket a few
+2026-09-18 03:32:05,350 [INFO]          seconds BEFORE its first 1m candle exists, so the shim (correctly) has
+2026-09-18 03:32:05,350 [INFO]          no bar to build yet and returns the previous bucket. The guard then
+2026-09-18 03:32:05,350 [INFO]          fired once per bucket, always at :01/:16/:31/:46, always recovering on
+2026-09-18 03:32:05,350 [INFO]          the very next tick. This is a threshold artefact, NOT stale data.
+2026-09-18 03:32:05,350 [INFO]          Supersedes the 08-29 note "Deliberately NOT raising the 16-min stale
+2026-09-18 03:32:05,350 [INFO]          guard": that reasoning assumed the shim would make the forming bar
+2026-09-18 03:32:05,350 [INFO]          available immediately, which it cannot do inside the first ~60s of a
+2026-09-18 03:32:05,350 [INFO]          bucket. 20 = 15 (bar width) + 5 (publish/tick tolerance).
+2026-09-18 03:32:05,350 [INFO]   EVIDENCE: 2026-08-31 live logs, first full day on the resampling shim.
+2026-09-18 03:32:05,350 [INFO]          Nifty 18 [STALE] events, Sensex 18 -- each one blocking entries for a
+2026-09-18 03:32:05,350 [INFO]          cycle. Replayed every one of the 36 against the recorded tick time and
+2026-09-18 03:32:05,350 [INFO]          bar label: bar-label age ranged 16.00-16.45 min, i.e. ALL 36 sat
+2026-09-18 03:32:05,350 [INFO]          inside a 0.45-min band just past the old line. Under 20 min: 0 of 36
+2026-09-18 03:32:05,350 [INFO]          trip. Margin to the new line is 3.55 min.
+2026-09-18 03:32:05,350 [INFO]          The failure this guard exists for is untouched: the 2026-06-12
+2026-09-18 03:32:05,350 [INFO]          incident served bars HOURS in the past (13:30 PE entry into a +68pt
+2026-09-18 03:32:05,350 [INFO]          rally, HARDSL) and is still caught by a wide margin.
+2026-09-18 03:32:05,350 [INFO]   DIAGNOSIS NOTE: the shim itself was verified NOT to be at fault -- a live
+2026-09-18 03:32:05,350 [INFO]          probe at 14:02:04 IST on 08-31 returned the 14:00 15m bar (fresh) and
+2026-09-18 03:32:05,350 [INFO]          1m candles through 14:01, resampling correctly. The bug was only ever
+2026-09-18 03:32:05,351 [INFO]          the guard's threshold.
+2026-09-18 03:32:05,351 [INFO]   SECOND, DEPENDENT CHANGE -- _completed_idx() (REQUIRED, not optional):
+2026-09-18 03:32:05,351 [INFO]          raising the threshold ALONE would have been a net regression, and the
+2026-09-18 03:32:05,351 [INFO]          08-29 note "raising the guard is the WRONG FIX" was right about why.
+2026-09-18 03:32:05,351 [INFO]          The engines read df15['K'].iloc[-2] (and df1h iloc[-2]) assuming
+2026-09-18 03:32:05,351 [INFO]          iloc[-1] is ALWAYS the forming bar. In the boundary window it is not,
+2026-09-18 03:32:05,351 [INFO]          so simply unblocking those cycles would have had the engines evaluate
+2026-09-18 03:32:05,351 [INFO]          a K one bar (15 min) STALE -- silently. Measured: the guard's instant
+2026-09-18 03:32:05,351 [INFO]          refetch, 28ms later, recovered 0 of 18 trips, confirming the forming
+2026-09-18 03:32:05,351 [INFO]          bar is genuinely absent, not merely slow.
+2026-09-18 03:32:05,351 [INFO]          New module-level _completed_idx(df, now, minutes) returns the offset of
+2026-09-18 03:32:05,351 [INFO]          the last COMPLETED bar: -2 when the forming bar is present, -1 in the
+2026-09-18 03:32:05,351 [INFO]          boundary window. Wired into the 2 K/1h read sites (main tick + the
+2026-09-18 03:32:05,351 [INFO]          guard's recovery branch). The boot-time read at the "Live state + first
+2026-09-18 03:32:05,351 [INFO]          pulse" block is left on -2 deliberately (one-shot, pre-market-loop).
+2026-09-18 03:32:05,351 [INFO]          SAFETY PROPERTY: it returns -2 on every tick that today reaches the
+2026-09-18 03:32:05,351 [INFO]          engines, so it CANNOT change any tick that currently produces a trade;
+2026-09-18 03:32:05,351 [INFO]          it only differs inside the window that today is unconditionally
+2026-09-18 03:32:05,351 [INFO]          blocked. Unit-tested 8 cases + a 96-tick sweep: 0 normal ticks return
+2026-09-18 03:32:05,351 [INFO]          anything but -2.
+2026-09-18 03:32:05,351 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260831_pre_stale_threshold.py /
+2026-09-18 03:32:05,352 [INFO]           ORION_SENSEX_V2520_BACKUP_20260831_pre_stale_threshold.py
+2026-09-18 03:32:05,352 [INFO]           (both changes are in these backups -- revert restores 16-min + iloc[-2])
+2026-09-18 03:32:05,352 [INFO]   STATUS: applied 2026-08-31 14:2x IST during market hours. The RUNNING
+2026-09-18 03:32:05,352 [INFO]           processes still hold the old 16-min value (Python loaded the file at
+2026-09-18 03:32:05,352 [INFO]           the 10:21 IST restart) -- this takes effect at the next boot, Tue
+2026-09-18 03:32:05,352 [INFO]           2026-09-01. NOT live-proven. Confirm on 09-01 by grepping the
+2026-09-18 03:32:05,352 [INFO]           FlightRecorder for [STALE]: expect ZERO. If any remain, the cause is
+2026-09-18 03:32:05,352 [INFO]           NOT this threshold and the shim/feed must be re-examined.
+2026-09-18 03:32:05,352 [INFO] V2.5.20 [2026-08-31] HOTFIX: NameError SCRIPT_DIR crashed the bot on every boot.
+2026-09-18 03:32:05,352 [INFO]   The 2026-08-29 trade-recorder addition referenced `SCRIPT_DIR`, but this file
+2026-09-18 03:32:05,352 [INFO]   only ever defines `_SCRIPT_DIR` (underscore). Bot died in <2s on all 50 restart
+2026-09-18 03:32:05,352 [INFO]   attempts this morning and gave up before EOD -- no trades taken 08-31 09:15-10:21
+2026-09-18 03:32:05,352 [INFO]   IST. Fixed TRADES_CSV to use `_SCRIPT_DIR`. Evidence: ~/orion_v2520_run.log,
+2026-09-18 03:32:05,352 [INFO]   attempts 1-50, all identical traceback at line 5893. Revert:
+2026-09-18 03:32:05,352 [INFO]   ORION_PAPER_V2_5_20_BACKUP_20260831_pre_scriptdir_fix.py. Status: fixed,
+2026-09-18 03:32:05,352 [INFO]   restarted manually intraday 10:21 IST -- pending confirmation of clean boot.
+2026-09-18 03:32:05,352 [INFO] V2.5.20 [2026-08-30] ORB + EXPIRY EXEMPTED FROM THE CROSS-ENGINE CIRCUIT BREAKER.
+2026-09-18 03:32:05,352 [INFO]   User, after the 08-29 changelog review: "no. of trades limit or sl hit
+2026-09-18 03:32:05,353 [INFO]   halting should not be applied to orb and expiry engines. these are
+2026-09-18 03:32:05,353 [INFO]   required." (Also confirmed the 08-29 stacking fix does NOT need to change:
+2026-09-18 03:32:05,353 [INFO]   ORB/EXPIRY were never in _OVERLAP_ENGINES = [BASE, VWAP, FUT5VWAP], so they
+2026-09-18 03:32:05,353 [INFO]   never stacked and nothing there needed touching. EXP12/EXP1/EXP2 shadow book
+2026-09-18 03:32:05,353 [INFO]   already runs with no gates at all, unaffected either way.)
+2026-09-18 03:32:05,353 [INFO]   WHAT: added _halt_exempt = (_base in ("ORB", "EXPIRY")) to the entry gate;
+2026-09-18 03:32:05,353 [INFO]   _entry_allowed now ignores DAY.halted / GLOBAL_HALTED for these two engines
+2026-09-18 03:32:05,353 [INFO]   unconditionally, in both PAPER and LIVE broker modes. Previously the global
+2026-09-18 03:32:05,353 [INFO]   4-loss circuit breaker (any engine's losses, not just its own) set
+2026-09-18 03:32:05,353 [INFO]   DAY.halted=True on every engine including these two, and in LIVE mode that
+2026-09-18 03:32:05,353 [INFO]   fully blocked their new entries (paper mode already happened to be
+2026-09-18 03:32:05,353 [INFO]   permissive via _cb_paper_mode, but only incidentally -- this makes it
+2026-09-18 03:32:05,353 [INFO]   explicit and mode-independent). BASE/VWAP/FUT5VWAP/GAPBREAK are UNCHANGED
+2026-09-18 03:32:05,353 [INFO]   and still halt normally.
+2026-09-18 03:32:05,353 [INFO]   NO BACKTEST -- pure gating change per explicit user instruction, not a
+2026-09-18 03:32:05,353 [INFO]   measured edge claim.
+2026-09-18 03:32:05,353 [INFO]   REVERT: delete the _halt_exempt line and its `or _halt_exempt` use, or
+2026-09-18 03:32:05,354 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260830_pre_halt_exempt.py
+2026-09-18 03:32:05,354 [INFO]   STATUS: [USER] live on the next boot, Mon 2026-08-31.
+2026-09-18 03:32:05,354 [INFO] 
+2026-09-18 03:32:05,354 [INFO] V2.5.20 [2026-08-29] CE_BUY_ENABLED flag added (default True, NO behaviour change).
+2026-09-18 03:32:05,354 [INFO]   Buying a CALL measured EV -1.067 pts over 91 sessions / 262,911 CE option-
+2026-09-18 03:32:05,354 [INFO]   minutes, 95% CI [-2.179,-0.192] -- excludes zero, an ESTABLISHED loser. Puts
+2026-09-18 03:32:05,354 [INFO]   are -0.088 (CI includes zero). Half-sizing was tried first and is a NO-OP:
+2026-09-18 03:32:05,354 [INFO]   every engine is at 1 lot, so max(1, round(1*0.5)) == 1. At 1-lot sizing this
+2026-09-18 03:32:05,354 [INFO]   is binary. Left ENABLED because disabling halves trade count and the user
+2026-09-18 03:32:05,354 [INFO]   wants trades firing, and because the PE-minus-CE difference CI still includes
+2026-09-18 03:32:05,354 [INFO]   zero -- only the CE loss is established, not the asymmetry.
+2026-09-18 03:32:05,354 [INFO]   Set CE_BUY_ENABLED = False to act on it. Flag is declared and documented but
+2026-09-18 03:32:05,354 [INFO]   NOT yet wired into the entry path -- wiring it is the next step if chosen.
+2026-09-18 03:32:05,354 [INFO]   REVERT: *_BACKUP_20260829_pre_ce_halfsize.py
+2026-09-18 03:32:05,354 [INFO]   STATUS: [BT] measured; flag inert by default.
+2026-09-18 03:32:05,354 [INFO] 
+2026-09-18 03:32:05,354 [INFO] V2.5.20 [2026-08-29] MAKE THE SILENT ENGINES FIRE — ORB regime gate + V3 probe fills.
+2026-09-18 03:32:05,354 [INFO]   User: "i want all engines repaired and trades should be firing."
+2026-09-18 03:32:05,355 [INFO]   Two engines were producing signals that never became trades.
+2026-09-18 03:32:05,355 [INFO]   (1) ORB — was standing down on 27 of 40 live days (TRANSITION 14, CHOP 13) and
+2026-09-18 03:32:05,355 [INFO]       there had been NO BULL/BEAR day since 08-17, so it fired zero times for six
+2026-09-18 03:32:05,355 [INFO]       straight sessions, including 08-27 (NIFTY -187 closing on the low, SENSEX
+2026-09-18 03:32:05,355 [INFO]       -643 on the low) which is the exact one-way trend an opening-range break is
+2026-09-18 03:32:05,355 [INFO]       built for. The gate was also stricter than anything validated: only
+2026-09-18 03:32:05,355 [INFO]       SIDEWAYS-skip was ever backtested; the live proxy collapsed TRANSITION AND
+2026-09-18 03:32:05,355 [INFO]       CHOP into skip and its own comment admits it is "stricter (skip-more)".
+2026-09-18 03:32:05,355 [INFO]       V2's regime_allows_trade() already permits TRANSITION.
+2026-09-18 03:32:05,355 [INFO]       198-session check (spot pts, OR break, live ORB exit params):
+2026-09-18 03:32:05,355 [INFO]         SENSEX BULL +8.71  BEAR +10.52  TRANSITION +3.34  CHOP +1.75
+2026-09-18 03:32:05,355 [INFO]         NIFTY  BULL +1.30  BEAR  -0.88  TRANSITION +0.19  CHOP +2.62
+2026-09-18 03:32:05,355 [INFO]       TRANSITION is positive on both, lower quality than BULL/BEAR but not
+2026-09-18 03:32:05,355 [INFO]       harmful. => ORB_ALLOWED_REGIMES = (BULL, BEAR, TRANSITION); CHOP still out.
+2026-09-18 03:32:05,355 [INFO]       Expected effect: ORB active on ~68% of days instead of ~32%.
+2026-09-18 03:32:05,355 [INFO]   (2) V3 PROBE — the engine committed to a signal, placed a resting limit, then
+2026-09-18 03:32:05,355 [INFO]       never got filled. NIFTY filled 13 of 30 (43%); SENSEX filled 0 of 8.
+2026-09-18 03:32:05,356 [INFO]       Pullback NIFTY 8.0 -> 4.0, SENSEX 26.0 -> 13.0, window 15 -> 25 min.
+2026-09-18 03:32:05,356 [INFO]       Trades a slightly worse entry price for actually being in the trade.
+2026-09-18 03:32:05,356 [INFO]   NOT VALIDATED AS PROFIT. Both are frequency fixes measured in spot points;
+2026-09-18 03:32:05,356 [INFO]   forward paper is the only referee. If ORB's win rate on TRANSITION days comes
+2026-09-18 03:32:05,356 [INFO]   in worse than on BULL/BEAR over a real forward sample, revert first.
+2026-09-18 03:32:05,356 [INFO]   REVERT: ORB_ALLOWED_REGIMES = ('BULL','BEAR'); probe pullback 8.0/26.0,
+2026-09-18 03:32:05,356 [INFO]           window 15; or *_BACKUP_20260829_pre_firing.py
+2026-09-18 03:32:05,356 [INFO]   STATUS: [USER][FWD] live on the next boot, Mon 2026-08-31.
+2026-09-18 03:32:05,356 [INFO] 
+2026-09-18 03:32:05,356 [INFO] V2.5.20 [2026-08-29] *** V2 PE-SIDE REGIME GATE DROPPED (NIFTY) — the one
+2026-09-18 03:32:05,356 [INFO]   change today intended to ADD profit, not cut loss. ***
+2026-09-18 03:32:05,356 [INFO]   User: "we are not here to find 1000 ways of failure, we want 1 way of success."
+2026-09-18 03:32:05,356 [INFO]   CONTEXT: V2 is the best engine in the live book (+Rs9,694 over 31 trades, 55%
+2026-09-18 03:32:05,356 [INFO]   win) and it had fired ZERO times since 08-21 across 835 evaluations. Cause was
+2026-09-18 03:32:05,356 [INFO]   not one bad threshold: four AND-ed gates (reg/K/Kextr/RSI) each passing ~30%
+2026-09-18 03:32:05,356 [INFO]   of the time. Log analysis showed K is the dominant SOLE blocker (627 of 898
+2026-09-18 03:32:05,356 [INFO]   single-gate blocks) -- but K turned out to be the gate WORTH keeping.
+2026-09-18 03:32:05,356 [INFO]   BACKTEST: 198 sessions (2025-11-12..2026-08-28), V2's own gates reproduced by
+2026-09-18 03:32:05,356 [INFO]   importing rsi()/stochrsi_k()/classify inputs from this file, 9,838 evaluations.
+2026-09-18 03:32:05,357 [INFO]   Leave-one-out on the 4 gates (forward spot move at +60m):
+2026-09-18 03:32:05,357 [INFO]       ALL 4 GATES (live)   n= 253   +7.22pt   60% win
+2026-09-18 03:32:05,357 [INFO]       drop K               n=1086   -1.15     52%   <- K is essential
+2026-09-18 03:32:05,357 [INFO]       drop Kextr           n= 610   -0.01     56%   <- Kextr is essential
+2026-09-18 03:32:05,357 [INFO]       drop RSI             n= 265   +4.43     58%   <- RSI pays
+2026-09-18 03:32:05,357 [INFO]       drop reg             n= 386   +7.08     59%   <- reg pays for NOTHING
+2026-09-18 03:32:05,357 [INFO]       no gates             n=9838   +0.00     50%
+2026-09-18 03:32:05,357 [INFO]   V2's edge is a PE edge: PE +10.45pt/trade (n=155) vs CE +2.11 (n=98). Dropping
+2026-09-18 03:32:05,357 [INFO]   reg on CE made CE worse (+2.11 -> -0.03), so CE keeps all four gates.
+2026-09-18 03:32:05,357 [INFO]   APPLIED = drop reg on the PE side only:
+2026-09-18 03:32:05,357 [INFO]       signals 253 -> 332 (+31%)    forward points +1,828 -> +2,942 (+61%)
+2026-09-18 03:32:05,357 [INFO]       mean/trade +7.22 -> +8.86    win@60m 60% -> 60% (unchanged)
+2026-09-18 03:32:05,357 [INFO]   Mean AND volume both improve -- this is not volume bought with quality.
+2026-09-18 03:32:05,357 [INFO]   Better in 2 of 3 sub-periods (P2 +923, P3 +423; P1 -232, a window where V2 lost
+2026-09-18 03:32:05,357 [INFO]   under BOTH configs).
+2026-09-18 03:32:05,358 [INFO]   NOT APPLIED TO SENSEX: V2 there is negative in every configuration tested
+2026-09-18 03:32:05,358 [INFO]   (-4.70pt/60m with all gates on) -- SENSEX's profitable engine is VWAP, not V2.
+2026-09-18 03:32:05,358 [INFO]   *** OUT-OF-SAMPLE RE-TEST, same day, after the user challenged the result ***
+2026-09-18 03:32:05,358 [INFO]   The numbers above were selected AFTER seeing all 198 sessions (4 leave-one-out
+2026-09-18 03:32:05,358 [INFO]   variants, then split by side and the better half kept) = data mining. Redone
+2026-09-18 03:32:05,358 [INFO]   properly: choose on 2025-11-13..2026-05-07 (118 sessions), test on
+2026-09-18 03:32:05,358 [INFO]   2026-05-08..2026-08-28 (79 sessions) never looked at, and enter at the NEXT
+2026-09-18 03:32:05,358 [INFO]   bar rather than the signal bar's close (removes look-ahead).
+2026-09-18 03:32:05,358 [INFO]     - Picking the winner honestly on the decide window gives "drop Kextr on CE
+2026-09-18 03:32:05,358 [INFO]       only", NOT this rule -- and that choice FAILED out-of-sample (-532pt).
+2026-09-18 03:32:05,358 [INFO]       So the selection method was wrong, and it is luck that this rule survived.
+2026-09-18 03:32:05,359 [INFO]     - THIS rule, tested out-of-sample:  +254pt  (CONFIRMED, but marginal)
+2026-09-18 03:32:05,359 [INFO]         current  n= 96  total +1,170  mean +12.19  win 64%
+2026-09-18 03:32:05,359 [INFO]         deployed n=126  total +1,424  mean +11.30  win 60%
+2026-09-18 03:32:05,359 [INFO]       => the out-of-sample gain is MORE TRADES, not better trades. Mean/trade
+2026-09-18 03:32:05,359 [INFO]       and win rate both got slightly WORSE. The in-sample claim that mean AND
+2026-09-18 03:32:05,359 [INFO]       volume improve does NOT hold out-of-sample -- treat that line as void.
+2026-09-18 03:32:05,359 [INFO]   KEPT anyway on the specific ground that V2 currently fires ZERO times, so more
+2026-09-18 03:32:05,359 [INFO]   signals at approximately the same quality is the point. This is NOT a
+2026-09-18 03:32:05,359 [INFO]   demonstrated quality improvement. If forward paper shows V2's win rate
+2026-09-18 03:32:05,359 [INFO]   dropping below the current 55%, revert first.
+2026-09-18 03:32:05,359 [INFO]   LIMIT: measured in SPOT points; option P&L needs premium data, so this is a
+2026-09-18 03:32:05,359 [INFO]   signal-quality result, NOT a rupee forecast. Forward paper is the referee.
+2026-09-18 03:32:05,359 [INFO]   REVERT: set V2_PE_REGIME_GATE = True, or
+2026-09-18 03:32:05,359 [INFO]           ORION_PAPER_V2_5_20_BACKUP_20260829_pre_v2_pe_reg.py
+2026-09-18 03:32:05,359 [INFO]   STATUS: [BT][USER] live on the next boot, Mon 2026-08-31.
+2026-09-18 03:32:05,359 [INFO] 
+2026-09-18 03:32:05,360 [INFO] V2.5.20 [2026-08-29] VWAP REPAIR — LEGACY_OVERLAP_SLOTS 4 -> 0 (both bots).
+2026-09-18 03:32:05,360 [INFO]   User: "but also repair vwap".
+2026-09-18 03:32:05,360 [INFO]   WHAT WAS ACTUALLY WRONG (measured, all 165 live trades 07-06..08-28):
+2026-09-18 03:32:05,360 [INFO]   BASE/VWAP/FUT5VWAP each had 5 concurrent position slots and dedup ran per-BAR
+2026-09-18 03:32:05,360 [INFO]   only -- nothing checked whether that strike was already open. Result:
+2026-09-18 03:32:05,360 [INFO]       single positions  n=41  win 46%  mean +0.74pt
+2026-09-18 03:32:05,360 [INFO]       stacked positions n=124 win 48%  mean +0.68pt
+2026-09-18 03:32:05,360 [INFO]   Identical per-trade expectancy => the extra slots add NO EDGE, they only
+2026-09-18 03:32:05,360 [INFO]   multiply size and variance. 24 of 40 stack events finished worse than the
+2026-09-18 03:32:05,360 [INFO]   first slot alone; net cost Rs2,261; the damage is all in the tails (07-23
+2026-09-18 03:32:05,360 [INFO]   stacked 4x into 24000CE -Rs7,248 vs -Rs1,398 for one slot; 08-13 stacked 7x
+2026-09-18 03:32:05,360 [INFO]   -Rs7,213 vs -Rs959). 08-28 bought 24100PE twice 14 minutes apart and stopped
+2026-09-18 03:32:05,360 [INFO]   both: -Rs1,739 instead of -Rs875. It also silently broke the standing 1-LOT
+2026-09-18 03:32:05,360 [INFO]   rule -- VWAP could hold 5 lots at once. SLOT_LIST goes 18 -> 6.
+2026-09-18 03:32:05,360 [INFO]   WHAT I DID **NOT** CHANGE, AND WHY:
+2026-09-18 03:32:05,360 [INFO]    * CLIMAX FILTER (body>=87%) -- a 6-session n=14 sample suggested it was
+2026-09-18 03:32:05,360 [INFO]      vetoing the best bars (79% continuation, +47pt/60m vs 52%/+13pt). RE-TESTED
+2026-09-18 03:32:05,361 [INFO]      on 147 sessions (2025-12-24..2026-08-28, 3,381 15m bars/index): NIFTY shows
+2026-09-18 03:32:05,361 [INFO]      NO difference (+60m +3.74 vetoed vs +4.37 kept, t=-0.14); SENSEX is
+2026-09-18 03:32:05,361 [INFO]      suggestive but NOT significant (+14.27 vs +3.01, t=+0.77). The n=14 result
+2026-09-18 03:32:05,361 [INFO]      was noise. Filter left exactly as is.
+2026-09-18 03:32:05,361 [INFO]    * HARDSL_PCT -- the 08-29 study showed -18% sits inside the option's own
+2026-09-18 03:32:05,361 [INFO]      noise (5 of 7 stops fired on index moves <0.1%), but the ATR-stop backtest
+2026-09-18 03:32:05,361 [INFO]      could not clear G1 (34/53 entries locatable) and its baseline was Rs8,037
+2026-09-18 03:32:05,361 [INFO]      from live, so NO stop change is justified yet. The trade recorder added the
+2026-09-18 03:32:05,361 [INFO]      same day is what will settle it.
+2026-09-18 03:32:05,361 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260829_pre_overlapslots.py
+2026-09-18 03:32:05,361 [INFO]           ORION_SENSEX_V2520_BACKUP_20260829_pre_overlapslots.py
+2026-09-18 03:32:05,361 [INFO]   STATUS: [BT][USER] effective on the next boot, Mon 2026-08-31.
+2026-09-18 03:32:05,361 [INFO] 
+2026-09-18 03:32:05,361 [INFO] V2.5.20 [2026-08-29] TRADE RECORDER — per-trade CSV with DTE, MFE/MAE, option ATR.
+2026-09-18 03:32:05,361 [INFO]   User: "write its expiry-1 days also, so will know the decay part also."
+2026-09-18 03:32:05,361 [INFO]   WHY: the ENTRY: log line carries NO timestamp, so a closed trade cannot be
+2026-09-18 03:32:05,362 [INFO]   located on the option's 1-minute tape afterwards. Reconstructing entries by
+2026-09-18 03:32:05,362 [INFO]   price-matching failed for 19 of 53 VWAP trades (64%), which is exactly why the
+2026-09-18 03:32:05,362 [INFO]   2026-08-29 ATR-stop backtest could not clear its G1 gate (and its baseline came
+2026-09-18 03:32:05,362 [INFO]   out Rs8,037 away from the live result, because it had to discard the 19 TRAIL
+2026-09-18 03:32:05,362 [INFO]   exits worth +Rs18,807 that it could not model). Bar-level CSVs cannot recover
+2026-09-18 03:32:05,362 [INFO]   this either -- they sample ~5min and hold only ONE position, so with 5 overlap
+2026-09-18 03:32:05,362 [INFO]   slots they produced 32 phantom entries for 3 real trades on 08-26.
+2026-09-18 03:32:05,362 [INFO]   WHAT: Nifty_Trades_V2_5_20.csv / Sensex_Trades_V2_5_20.csv, one row per closed
+2026-09-18 03:32:05,362 [INFO]   trade: entry_ts, exit_ts, held_min, engine+detail, symbol/side/strike,
+2026-09-18 03:32:05,362 [INFO]   expiry, DTE, lots, entry/exit premium, reason, pts, rupees, MFE/MAE premium
+2026-09-18 03:32:05,362 [INFO]   and points, the OPTION's own 14x1min ATR at entry and as % of premium,
+2026-09-18 03:32:05,362 [INFO]   sl_level, entry/exit spot and spot_move.
+2026-09-18 03:32:05,362 [INFO]   DTE answers the decay question: whether a stop was hit by direction or by
+2026-09-18 03:32:05,362 [INFO]   theta as expiry approached. MFE/MAE answers whether a stop cut a real loser
+2026-09-18 03:32:05,363 [INFO]   or ejected a trade that was working.
+2026-09-18 03:32:05,363 [INFO]   EXPIRY IS TAKEN FROM TARGET_EXPIRY_DATE, NOT PARSED from the tradingsymbol:
+2026-09-18 03:32:05,363 [INFO]   a monthly symbol does not encode the day, and "last Thursday" is wrong on both
+2026-09-18 03:32:05,363 [INFO]   exchanges now (NSE weekly = Tuesday, BSE = Thursday) -- an end-to-end test
+2026-09-18 03:32:05,363 [INFO]   decoded NIFTY26AUG as 2026-08-31 when the real expiry was 08-25.
+2026-09-18 03:32:05,363 [INFO]   _expiry_from_symbol() is a weekly-only fallback and returns None for monthly
+2026-09-18 03:32:05,363 [INFO]   rather than guessing.
+2026-09-18 03:32:05,363 [INFO]   RECORDING ONLY -- no entry, exit or sizing behaviour changes. POS gains
+2026-09-18 03:32:05,363 [INFO]   trough_premium (MAE), atr_entry, expiry_date; LAST_SPOT global refreshed each
+2026-09-18 03:32:05,363 [INFO]   pulse in check_exits() so the recorder has a spot at every call site; the whole
+2026-09-18 03:32:05,363 [INFO]   writer is wrapped in try/except so a logging fault can never break an exit.
+2026-09-18 03:32:05,363 [INFO]   VERIFIED end-to-end against the real 2026-08-28 VWAP trade (74.80 -> 61.34,
+2026-09-18 03:32:05,363 [INFO]   -Rs875): every field reproduced, DTE=2, atr_pct=4.36%.
+2026-09-18 03:32:05,363 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260829_pre_traderecorder.py
+2026-09-18 03:32:05,363 [INFO]           ORION_SENSEX_V2520_BACKUP_20260829_pre_traderecorder.py
+2026-09-18 03:32:05,363 [INFO]   STATUS: [USER][FWD] first rows land Mon 2026-08-31. Nothing recoverable for the
+2026-09-18 03:32:05,363 [INFO]   37 days already logged.
+2026-09-18 03:32:05,364 [INFO] 
+2026-09-18 03:32:05,364 [INFO] V2.5.20 [2026-08-29] FUT5VWAP 3 lots -> 1 lot (BOTH bots), user-directed.
+2026-09-18 03:32:05,364 [INFO]   User: "i want that one engine which takes 3 lots, is it working fine, if not
+2026-09-18 03:32:05,364 [INFO]   reduce to 1 lot."  It is not working fine.
+2026-09-18 03:32:05,364 [INFO]   EVIDENCE (live log 2026-07-06..08-28, orion_v2520_run.log, 155 exits parsed):
+2026-09-18 03:32:05,364 [INFO]     FUT5VWAP  18 trades  14 wins (77.8%)  net -42.88pt  = -Rs8,362 at 3 lots
+2026-09-18 03:32:05,364 [INFO]   The high win rate is an artifact of the exit shape, not edge: wins are capped
+2026-09-18 03:32:05,364 [INFO]   at the +4.00pt LOCK_FLOOR (avg win +5.51pt) while the 4 losses each ran the
+2026-09-18 03:32:05,364 [INFO]   full -30.00pt stop. Break-even win rate at that payoff = 84.5%; actual 77.8%.
+2026-09-18 03:32:05,364 [INFO]   It was the single worst engine in the book by rupees, purely because of the 3x.
+2026-09-18 03:32:05,364 [INFO]   NUANCE, stated so it is not lost: all 4 losses are BEFORE the 08-17 stop
+2026-09-18 03:32:05,364 [INFO]   tightening (30->25pt). Since then only 2 trades have closed (08-25 +4.00,
+2026-09-18 03:32:05,364 [INFO]   08-28 +4.00), both wins. So the 08-17 fix may well work -- but n=2 is not
+2026-09-18 03:32:05,364 [INFO]   evidence, and an unproven engine should not carry triple size. Re-raise to 3
+2026-09-18 03:32:05,365 [INFO]   only after a forward sample large enough to beat the 84.5% break-even bar.
+2026-09-18 03:32:05,365 [INFO]   REVERT: ORION_PAPER_V2_5_20_BACKUP_20260829_pre_fut5_1lot.py
+2026-09-18 03:32:05,365 [INFO]           ORION_SENSEX_V2520_BACKUP_20260829_pre_fut5_1lot.py
+2026-09-18 03:32:05,365 [INFO]   STATUS: [USER][FWD] takes effect on the next boot (Mon 2026-08-31).
+2026-09-18 03:32:05,365 [INFO] 
+2026-09-18 03:32:05,365 [INFO] === ORION CHANGE HISTORY (V2.2.2 -> V2.5.9) ===
+2026-09-18 03:32:05,365 [INFO] 
+2026-09-18 03:32:05,365 [INFO] V2.2.2 [PRODUCTION BASELINE — T10]
+2026-09-18 03:32:05,365 [INFO]   Entry : 1h SMA20/50 regime + 15m StochRSI K (CE>=38 rising, PE<=80 falling)
+2026-09-18 03:32:05,365 [INFO]   Exit  : HARDSL -35%, TIME_SL 210min/-20%, BE +15% -> option SMA8(low) trail
+2026-09-18 03:32:05,365 [INFO]   CB=2, 1 lot, no flip, no V3, no chop filter
+2026-09-18 03:32:05,365 [INFO] 
+2026-09-18 03:32:05,365 [INFO] V2.3  [+V3 CLUSTER LEVELS]
+2026-09-18 03:32:05,365 [INFO]   + PDH/PDL/round_50/round_100/PDC/1h swing pivots clustered within 20pts
+2026-09-18 03:32:05,365 [INFO]   + Grade A (>=3 source kinds) / Grade B (>=2)
+2026-09-18 03:32:05,365 [INFO]   + ADX regime classifier (BULL/BEAR/CHOP/TRANSITION)
+2026-09-18 03:32:05,365 [INFO] 
+2026-09-18 03:32:05,365 [INFO] V2.4  [+EXIT UPGRADES]
+2026-09-18 03:32:05,366 [INFO]   + 15m option SMA8(low) trail (KEPT in all future versions)
+2026-09-18 03:32:05,366 [INFO]   + ATR-based exits (REMOVED — not robust enough)
+2026-09-18 03:32:05,366 [INFO]   + BE armor at +15% (REMOVED later — net negative in backtest)
+2026-09-18 03:32:05,366 [INFO] 
+2026-09-18 03:32:05,366 [INFO] V2.5.0  [HYBRID V2+V3 + TIME-RATCHET]
+2026-09-18 03:32:05,366 [INFO]   + Hybrid V2+V3 entry (V2 priority on same-bar tiebreak)
+2026-09-18 03:32:05,366 [INFO]   + Time-ratchet exit: 90min / +20 step
+2026-09-18 03:32:05,366 [INFO] 
+2026-09-18 03:32:05,366 [INFO] V2.5.1  [ENTRY REFINEMENT]
+2026-09-18 03:32:05,366 [INFO]   + V2 PE_floor=25 (K>=25 required for PE entry)
+2026-09-18 03:32:05,366 [INFO]   + V2 CE: no upper K cap (cap tested and REJECTED — hurts WR)
+2026-09-18 03:32:05,366 [INFO]   + V2 priority confirmed: +Rs 52k vs V3-priority
+2026-09-18 03:32:05,366 [INFO] 
+2026-09-18 03:32:05,366 [INFO] V2.5.2  [FLIP RULE +Rs 130k]
+2026-09-18 03:32:05,366 [INFO]   + Path A flip (in-trade): elapsed>=30 + peak>=entry+15 + LTP<=entry+10 + K reversed
+2026-09-18 03:32:05,366 [INFO]   + Path B flip (post-exit): K reversal within 60min
+2026-09-18 03:32:05,367 [INFO]   + Opposite-side only (same-side continuation REJECTED: -Rs 191k CATASTROPHIC)
+2026-09-18 03:32:05,367 [INFO]   + CE->PE: K falling, 25<=K<=80 | PE->CE: K rising, K>=38
+2026-09-18 03:32:05,367 [INFO] 
+2026-09-18 03:32:05,367 [INFO] V2.5.3  [V3 SINGLETONS + HARDSL LOCKED]
+2026-09-18 03:32:05,367 [INFO]   + Promoted singletons: PDH/PDL/round_100(+-200 PDC)/swing pivots standalone Grade B
+2026-09-18 03:32:05,367 [INFO]   + HARDSL locked at -25% (swept -35% to -15%; -25% optimal)
+2026-09-18 03:32:05,367 [INFO]   + PnL Rs +3,14,418
+2026-09-18 03:32:05,367 [INFO] 
+2026-09-18 03:32:05,367 [INFO] V2.5.4  [FLIP CAP]
+2026-09-18 03:32:05,367 [INFO]   + MAX_FLIPS_PER_DAY=3 (flips 1-3 win Rs 131k; flips 4+ lose Rs 21k)
+2026-09-18 03:32:05,367 [INFO]   + PnL Rs +3,23,851
+2026-09-18 03:32:05,367 [INFO] 
+2026-09-18 03:32:05,367 [INFO] V2.5.5  [CHOP FILTER +Rs 49k]
+2026-09-18 03:32:05,367 [INFO]   + RSI [47,53] indecision band blocks ALL entries
+2026-09-18 03:32:05,367 [INFO]   + PnL Rs +3,72,598
+2026-09-18 03:32:05,367 [INFO] 
+2026-09-18 03:32:05,367 [INFO] V2.5.6  [V3 PDC CONTAMINATION FIX — LOCKED Rs 3,85,724 / WR 35.7%]
+2026-09-18 03:32:05,367 [INFO]   + Exclude PDC from clustering (PDC is reference, not tradeable level)
+2026-09-18 03:32:05,367 [INFO]   + G/R require >=25pt buffer from PDC (motivated by 2026-05-18 bad paper trade)
+2026-09-18 03:32:05,368 [INFO]   + PnL Rs +3,85,724 / MaxDD -1,331 / Red 5/18
+2026-09-18 03:32:05,368 [INFO] 
+2026-09-18 03:32:05,368 [INFO] V2.5.7  [VELVET ROPE + RATCHET +Rs 1,14,324 / WR 35.7%->55.4%]
+2026-09-18 03:32:05,368 [INFO]   + Velvet Rope: premium hits entry+15 -> SL immediately to entry+2
+2026-09-18 03:32:05,368 [INFO]   + Ratchet Gate: 30min elapsed + entry+25 -> SL to entry+15
+2026-09-18 03:32:05,368 [INFO]   + Runner Trail: +20 per +20pts peak (one-way)
+2026-09-18 03:32:05,368 [INFO]   + Trade-off: Red months 5->10/18, MaxDD -1,331->-1,885
+2026-09-18 03:32:05,368 [INFO] 
+2026-09-18 03:32:05,368 [INFO] V2.5.8  [K EXTREME + FULL SMA ALIGNMENT]
+2026-09-18 03:32:05,368 [INFO]   + K extreme filter: CE entry only if K<25 recently (3 bars); PE if K>75 recently
+2026-09-18 03:32:05,368 [INFO]   + Full SMA alignment: CE needs close>SMA20>SMA50 (was just close>SMA20)
+2026-09-18 03:32:05,368 [INFO] 
+2026-09-18 03:32:05,368 [INFO] V2.5.9  [Rs 6,70,425 / WR 66.9% / 357 trades / MaxDD -1,485 / Red 8/18]
+2026-09-18 03:32:05,368 [INFO]   + RSI DIRECTIONAL GATE replaces RSI [47,53] chop filter:
+2026-09-18 03:32:05,368 [INFO]       CE: 1h RSI>53 required | PE: 1h RSI<47 required
+2026-09-18 03:32:05,368 [INFO]   + MACD 1h alignment: CE needs MACD_line>signal; PE needs MACD_line<signal
+2026-09-18 03:32:05,368 [INFO]   + Premium gate: 30<=entry_LTP<=180 (blocks deep OTM and IV-spike entries)
+2026-09-18 03:32:05,368 [INFO]   + Tightened exit params: RI=12 (was 15), RT=20 (was 30), RS=25 (was 20)
+2026-09-18 03:32:05,369 [INFO]   + CB=3 (was 4)
+2026-09-18 03:32:05,369 [INFO]   + Straddle monitoring: informational Telegram at 9:45 and 11:30
+2026-09-18 03:32:05,369 [INFO]   + Options VWAP: informational context at entry/pulse/exit
+2026-09-18 03:32:05,369 [INFO] 
+2026-09-18 03:32:05,369 [INFO] V2.5.12 [CURRENT LOCKED — Rs 6,88,158 / WR 64.5% / 363 trades / MaxDD -1,119 / Red 5/18]
+2026-09-18 03:32:05,369 [INFO]   SOURCE: VRL (Vishal Rajput) code analysis — peak-based ratchet ladder
+2026-09-18 03:32:05,369 [INFO]   + HARDSL tightened -25% → -18% (faster loss cut, less capital exposed)
+2026-09-18 03:32:05,369 [INFO]   + 20-min time gate REMOVED — purely peak-based ladder (no waiting)
+2026-09-18 03:32:05,369 [INFO]   + Ladder Tier2: peak >= entry+24 → SL = entry+12 (immediate)
+2026-09-18 03:32:05,369 [INFO]   + Ladder Tier3: peak >= entry+36 → SL = entry+24 (immediate)
+2026-09-18 03:32:05,369 [INFO]   + Entry logic UNCHANGED from V2.5.9
+2026-09-18 03:32:05,369 [INFO]   + Validated: real option data (May 4-21 2026, 12 days)
+2026-09-18 03:32:05,369 [INFO]   + Key improvement: MaxDD -1,485 → -1,119 (-25%), Red months 8 → 5
+2026-09-18 03:32:05,369 [INFO] 
+2026-09-18 03:32:05,369 [INFO] V2.5.12-LIVE [2026-05-29 — FIRST LIVE TRADING SESSION WITH mSTOCK EXECUTION]
+2026-09-18 03:32:05,369 [INFO]   + EXECUTION_BROKER switched from kite_paper → mstock_live
+2026-09-18 03:32:05,370 [INFO]   + mStock Type B API integrated: login → set_access_token → verify_totp (TOTP auto)
+2026-09-18 03:32:05,370 [INFO]   + Instrument master: direct fetch from OpenAPIScripMaster (173k symbols, name field)
+2026-09-18 03:32:05,370 [INFO]   + order_status: mStock returns 'Traded' status (not 'COMPLETE') — mapped correctly
+2026-09-18 03:32:05,370 [INFO]   + place_order: disclosedquantity="0" required (blank causes IA400 rejection)
+2026-09-18 03:32:05,370 [INFO]   + IP 18.212.243.203 (PythonAnywhere) whitelisted in mStock API settings
+2026-09-18 03:32:05,370 [INFO]   + BUY: 15s timeout, cancel-and-check on timeout, abort if not filled
+2026-09-18 03:32:05,370 [INFO]   + SELL: 3 retries × 5s, 🚨 CRITICAL Telegram alert if all fail, POS.active stays True
+2026-09-18 03:32:05,370 [INFO]   + V3 REGIME GATE REMOVED: V3 now fires in CHOP/INSUFFICIENT regime
+2026-09-18 03:32:05,370 [INFO]       Root cause of bug: regime gate wrapped ALL signals including V3;
+2026-09-18 03:32:05,370 [INFO]       V3 uses cluster break/reject as its own confirmation — ADX not needed
+2026-09-18 03:32:05,370 [INFO]       V2 and FLIP remain regime-gated (BULL/BEAR/TRANSITION only)
+2026-09-18 03:32:05,370 [INFO]   + V3 engine: acts on ALL Grade A/B clusters simultaneously (not just nearest)
+2026-09-18 03:32:05,370 [INFO]   + PREMIUM_MAX asymmetric: CE=180 (unchanged), PE=300 (was 180, captures panic moves)
+2026-09-18 03:32:05,370 [INFO]   + VWAP double confirmation engine (new):
+2026-09-18 03:32:05,370 [INFO]       Fires when Nifty 15m bar crosses daily VWAP with body>=50% range
+2026-09-18 03:32:05,370 [INFO]       AND ATM CE/PE LTP is also above/below its daily VWAP simultaneously
+2026-09-18 03:32:05,370 [INFO]       Self-confirming like V3 — no regime gate
+2026-09-18 03:32:05,370 [INFO]   + LOTS_PER_TRADE = 2 (live)
+2026-09-18 03:32:05,371 [INFO] 
+2026-09-18 03:32:05,371 [INFO] V2.5.13 [VWAP TRAIL EXIT + BOOT SELF-TEST + STABILITY FIXES]
+2026-09-18 03:32:05,371 [INFO]   + VWAP engine trades: trail exit uses option's own VWAP (15m close < option VWAP)
+2026-09-18 03:32:05,371 [INFO]     instead of SMA8(low) trail — holds through pullbacks better on VWAP-confirmed moves
+2026-09-18 03:32:05,371 [INFO]   + V2/V3/FLIP trades: keep original SMA8(low) trail (unchanged)
+2026-09-18 03:32:05,371 [INFO]   + Boot self-test: BUY (LIMIT ₹0.05) + SELL (LIMIT ₹9999) on deep OTM option at startup
+2026-09-18 03:32:05,371 [INFO]     Both must succeed and cancel cleanly or bot aborts — confirms mStock connectivity + IP
+2026-09-18 03:32:05,371 [INFO]   + MStockBroker class inlined into single .py file (no separate mstock_broker.py)
+2026-09-18 03:32:05,371 [INFO]   + IA403 recovery: rebuilds SDK client from scratch on IP mismatch, 3 consecutive → halt
+2026-09-18 03:32:05,371 [INFO]   + Position sync cooldown: 180s → 300s (avoids false MANUAL_EXIT on slow fills)
+2026-09-18 03:32:05,371 [INFO]   + MANUAL_EXIT fix: clears buy_order_id before close_trade to prevent duplicate SELL
+2026-09-18 03:32:05,371 [INFO]   + State file: added date field, resets trades_today/losses on new day boundary
+2026-09-18 03:32:05,371 [INFO]   + VWAP dedup log spam removed (silent return on same-bar re-fire)
+2026-09-18 03:32:05,371 [INFO] 
+2026-09-18 03:32:05,371 [INFO] V2.5.14 [TIERED PROFIT LOCK LADDER — inspired by VRL]
+2026-09-18 03:32:05,371 [INFO]   + Replaced sparse 3-tier ratchet (Velvet Rope + T2 + T3 + Runner) with 7-tier ladder
+2026-09-18 03:32:05,371 [INFO]   + Ladder: +12→+2, +18→+8, +24→+12, +30→+20, +36→+24, +40→+30, +50→+40
+2026-09-18 03:32:05,372 [INFO]   + More tiers = less profit give-back on sharp reversals
+2026-09-18 03:32:05,372 [INFO]   + Checked every tick (not candle-based) — same as before but tighter protection
+2026-09-18 03:32:05,372 [INFO]   + Unified code: single loop replaces 3 separate sections (3a/3b/3c → 3)
+2026-09-18 03:32:05,372 [INFO]   + VWAP engine upgraded to TRIPLE confirmation:
+2026-09-18 03:32:05,372 [INFO]     Gate 1 (PRIMARY): Nifty FUTURES 15m close crosses futures VWAP, body >= 50%
+2026-09-18 03:32:05,372 [INFO]     Gate 2: Nifty SPOT 15m close same direction above/below spot VWAP
+2026-09-18 03:32:05,372 [INFO]     Gate 3: ATM option LTP above/below option's own VWAP
+2026-09-18 03:32:05,372 [INFO]   + Futures VWAP is now the primary decision criterion — real margin-backed money
+2026-09-18 03:32:05,372 [INFO]   + Nifty FUT token auto-resolved from Kite instruments at boot (no hardcoding)
+2026-09-18 03:32:05,372 [INFO] 
+2026-09-18 03:32:05,372 [INFO] V2.5.15 [STALE DATA GUARD — 2026-06-12]
+2026-09-18 03:32:05,372 [INFO]   + ROOT CAUSE FOUND: Kite intermittently returned a 15m series ending ~2h in
+2026-09-18 03:32:05,372 [INFO]     the past. Evidence: VWAP entry logged bar=198 at 11:30 but bar=197 at 13:30
+2026-09-18 03:32:05,372 [INFO]     (bar index went BACKWARDS); the 13:30 entry cited a 67% bearish bar +
+2026-09-18 03:32:05,372 [INFO]     FUT 23375 while the live tape was +68 pts off the low in 4 min → bought PE
+2026-09-18 03:32:05,372 [INFO]     into a V-reversal → HARDSL -21.73. Fresh-data replay confirms the signal
+2026-09-18 03:32:05,373 [INFO]     does NOT fire at 13:30 with up-to-date frames. Likely also suppressed valid
+2026-09-18 03:32:05,373 [INFO]     signals (Jun-11 zero-trade day: fresh-data replay finds 4 trades / +35 pts).
+2026-09-18 03:32:05,373 [INFO]   + Guard (active 09:32+): if last 15m bar (spot or futures) is older than
+2026-09-18 03:32:05,373 [INFO]     16 min → instant refetch from Kite; if recovered, continue + Telegram info;
+2026-09-18 03:32:05,373 [INFO]     if still stale → Telegram alert + ENTRIES blocked for that cycle only.
+2026-09-18 03:32:05,373 [INFO]   + EXITS are never blocked on data quality.
+2026-09-18 03:32:05,373 [INFO]   + Telegram alerts rate-limited to 1 per 10 min; log line every cycle.
+2026-09-18 03:32:05,373 [INFO] 
+2026-09-18 03:32:05,373 [INFO] V2.5.16 [MOMENTUM GATE ON SAME-SIDE STREAKS + SMA8 TODAY-ONLY FIX — 2026-06-17]
+2026-09-18 03:32:05,373 [INFO]   + PROBLEM: in choppy markets the bot ran 3+ rapid same-direction trades —
+2026-09-18 03:32:05,373 [INFO]     first 1-2 win small, the 3rd buys into the reversal and takes the full
+2026-09-18 03:32:05,373 [INFO]     -18% HARDSL, then keeps buying the same side, wiping the day's gains.
+2026-09-18 03:32:05,373 [INFO]     Diagnosis (May+June real-opt data): the persistence is the VWAP engine
+2026-09-18 03:32:05,373 [INFO]     (no regime filter, re-fires same side each 15m bar). The 1st/2nd winners
+2026-09-18 03:32:05,373 [INFO]     exit on the peak ladder (TRAIL_+N); the 3rd dies on HARDSL/VWAP_TRAIL.
+2026-09-18 03:32:05,373 [INFO]   + MOMENTUM GATE: the 3rd+ CONSECUTIVE same-direction entry (any engine) is
+2026-09-18 03:32:05,373 [INFO]     blocked unless spot has moved >= MOM_GATE_PTS (12) WITH the trade over the
+2026-09-18 03:32:05,374 [INFO]     last MOM_GATE_BARS (5) closed 1m bars. 1st/2nd same-side entries untouched.
+2026-09-18 03:32:05,374 [INFO]     Run counted from DAY.trades_today (closed trades). New fetch_nifty_1m() +
+2026-09-18 03:32:05,374 [INFO]     momentum_gate_ok(); fails OPEN if 1m data unavailable; "🚧 Momentum-gate
+2026-09-18 03:32:05,374 [INFO]     BLOCK" Telegram on a block. Backtest (May real-opt): baseline -7.3 pt →
+2026-09-18 03:32:05,374 [INFO]     gate +104.0 pt, 0 winners blocked (blocks only flat-momentum |mv|<=8 chop).
+2026-09-18 03:32:05,374 [INFO]   + SMA8 TODAY-ONLY FIX: sma8_low_of_option() now averages ONLY today's closed
+2026-09-18 03:32:05,374 [INFO]     15m option lows (arms after SMA_TRAIL_MIN_BARS=4 today-bars). Previously it
+2026-09-18 03:32:05,374 [INFO]     averaged 8 bars from a 10-day fetch, mixing yesterday's different-level /
+2026-09-18 03:32:05,374 [INFO]     illiquid lows → false trail exits. NOT removed: backtest showed deleting
+2026-09-18 03:32:05,374 [INFO]     SMA8 costs -66 pt (it is a tighter stop than the -18% HARDSL).
+2026-09-18 03:32:05,374 [INFO]   + Ladder exit, HARDSL, flip logic, stale-data guard all UNCHANGED.
+2026-09-18 03:32:05,374 [INFO]   + start_orion.sh now launches V2.5.16 (90s crash-fallback still → V2.5.14).
+2026-09-18 03:32:05,374 [INFO] 
+2026-09-18 03:32:05,374 [INFO] V2.5.17 [3 CHOP-BLEED GUARDS — 2026-06-18]
+2026-09-18 03:32:05,374 [INFO]   + CONTEXT: 06-16 (-20.4pt/7trades) and 06-17 (-44.0pt/4trades) were both
+2026-09-18 03:32:05,374 [INFO]     compressed chop days (full range 141pt & 107pt; 06-17 had 9 mean-crosses in
+2026-09-18 03:32:05,374 [INFO]     a 107pt box). The regime classifier stayed BULL all 76 bars both days and
+2026-09-18 03:32:05,374 [INFO]     chop_block fired 0 times, so the breakout engines kept firing into noise.
+2026-09-18 03:32:05,375 [INFO]     See ~/orion_backtest_lab/results/RESULTS.md (2026-06-18 post-mortem).
+2026-09-18 03:32:05,375 [INFO]   + #1 MORNING CHOP GATE (CHOP_GATE_ENABLED): decided ONCE after ~10:30 IST from
+2026-09-18 03:32:05,375 [INFO]     the first-hour (09:15-10:15) FUT bars. Stand aside (block ALL new entries for
+2026-09-18 03:32:05,375 [INFO]     the day) when early efficiency-ratio <= CHOP_ER_MAX (0.25) AND (first-hour
+2026-09-18 03:32:05,375 [INFO]     FUT-VWAP cross-count >= CHOP_VWAP_CROSSES_MIN (3) OR first-hour range <
+2026-09-18 03:32:05,375 [INFO]     CHOP_RANGE_PT_MAX (110pt)). Exits always allowed. Fails OPEN (not enough
+2026-09-18 03:32:05,375 [INFO]     bars yet -> no decision -> trade normally). morning_chop_verdict().
+2026-09-18 03:32:05,375 [INFO]   + #2 VWAP BODY BAND (VWAP_BODY_CLIMAX_PCT): VWAP entry now takes only the
+2026-09-18 03:32:05,375 [INFO]     65-86% body band — existing >=65% min kept, NEW >=87% climax/exhaustion bars
+2026-09-18 03:32:05,375 [INFO]     skipped (climax bars fade). One added guard line in check_vwap_signal().
+2026-09-18 03:32:05,375 [INFO]   + #3 MOMENTUM-FADE GATE (FADE_GATE_ENABLED): for a 3rd+ consecutive same-side
+2026-09-18 03:32:05,375 [INFO]     entry that follows >= FADE_MIN_PRIOR_WINS (2) consecutive same-side WINS,
+2026-09-18 03:32:05,375 [INFO]     inspect 3-min option premiums of BOTH the trend-side and opposite-side ATM
+2026-09-18 03:32:05,375 [INFO]     strikes over the last FADE_OPT_BARS (3) closed bars. Enter ONLY IF the
+2026-09-18 03:32:05,375 [INFO]     trend-side option is NOT decaying AND the opposite-side option IS decaying;
+2026-09-18 03:32:05,375 [INFO]     otherwise skip (momentum has faded / is rotating to the other side). Fails
+2026-09-18 03:32:05,375 [INFO]     OPEN on missing data. fade_gate_ok() + fetch_option_3m(). Complements the
+2026-09-18 03:32:05,375 [INFO]     V2.5.16 spot-move momentum gate (both must pass).
+2026-09-18 03:32:05,375 [INFO]   + All three guards are ADDITIVE; ladder/HARDSL/flip/SMA8/stale-guard UNCHANGED.
+2026-09-18 03:32:05,376 [INFO]   + NOT yet sim-A/B'd — shipped on user direction; 2026-06-18 is paper-only, so
+2026-09-18 03:32:05,376 [INFO]     the live paper session is the first validation. WATCH first CHOP-GATE day +
+2026-09-18 03:32:05,376 [INFO]     first FADE block + that #2 climax-skip doesn't starve VWAP.
+2026-09-18 03:32:05,376 [INFO]   + start_orion.sh now launches V2.5.17 (pkill pattern V2_5_1[567];
+2026-09-18 03:32:05,376 [INFO]     90s crash-fallback still → V2.5.14 archive).
+2026-09-18 03:32:05,376 [INFO] 
+2026-09-18 03:32:05,376 [INFO] V2.5.18 [SMA8 ENTRY-AWARE FIX + CHOP-GATE RE-ARM — 2026-06-19]
+2026-09-18 03:32:05,376 [INFO]   + CONTEXT: 2026-06-19 (paper) — gap-down day. One V3 PE (24000PE @114) entered
+2026-09-18 03:32:05,376 [INFO]     correctly at 10:15 on a Grade-A R-cluster break, but SMA8_LOW_TRAIL exited it
+2026-09-18 03:32:05,376 [INFO]     31s later at +1.6 (the trail evaluated the 10:00 bar — which CLOSED BEFORE
+2026-09-18 03:32:05,376 [INFO]     entry — against today's lows-avg). Spot then fell 24040->23926 without us;
+2026-09-18 03:32:05,376 [INFO]     morning chop-gate (ER=0.01, range=70pt) then stood aside the rest of the day.
+2026-09-18 03:32:05,376 [INFO]   + FIX A (SMA8 pre-entry bar): the SMA8(low) trail now NEVER acts on a 15m bar
+2026-09-18 03:32:05,376 [INFO]     whose CLOSE time (bar-start + 15m) is <= POS.entry_time. A fresh entry can no
+2026-09-18 03:32:05,376 [INFO]     longer be ejected on price action that happened before it was opened.
+2026-09-18 03:32:05,376 [INFO]   + FIX C (SMA8 arm window): trail arms on bars-SINCE-ENTRY, not bars-of-day.
+2026-09-18 03:32:05,377 [INFO]     sma8_low_of_option() now averages only TODAY's closed bars that closed AFTER
+2026-09-18 03:32:05,377 [INFO]     entry and needs >= SMA_TRAIL_MIN_BARS_SINCE_ENTRY (1) of them. With 1 own bar
+2026-09-18 03:32:05,377 [INFO]     SMA8L == that bar's own low, so close(>=low) can't trigger -> first real
+2026-09-18 03:32:05,377 [INFO]     trigger needs >=2 own bars. SMA_TRAIL_MIN_BARS (4, bars-of-day) is now only
+2026-09-18 03:32:05,377 [INFO]     the fallback when entry_time is unknown (state-load edge). NOT a BE-gate.
+2026-09-18 03:32:05,377 [INFO]   + CHOP-GATE RE-ARM (CHOP_REARM_ENABLED): after a morning stand-aside, release
+2026-09-18 03:32:05,377 [INFO]     the block when a CLOSED FUT 15m bar breaks the recorded first-hour range by
+2026-09-18 03:32:05,377 [INFO]     >= CHOP_REARM_BUFFER_PT (15pt) with body >= CHOP_REARM_BODY_MIN (65%), in the
+2026-09-18 03:32:05,377 [INFO]     regime direction (BULL=>up-break only, BEAR=>down-break only, else either).
+2026-09-18 03:32:05,377 [INFO]     FUT leads spot, so this triggers earlier than a spot-range break. Re-arm is
+2026-09-18 03:32:05,377 [INFO]     one-way for the day (stays live once released); per-trade momentum/fade/CB
+2026-09-18 03:32:05,377 [INFO]     guards still apply. _morning_chop_verdict_impl() stashes FH hi/lo;
+2026-09-18 03:32:05,377 [INFO]     chop_rearm_check() evaluated each cycle while blocked. Logs [CHOPGATE] RE-ARMED.
+2026-09-18 03:32:05,377 [INFO]   + Ladder/HARDSL/flip/VWAP-trail/stale-guard UNCHANGED. SMA8 KEPT (deleting it
+2026-09-18 03:32:05,377 [INFO]     cost -66pt, V2.5.16) — this only changes WHEN it may fire, not whether.
+2026-09-18 03:32:05,377 [INFO]   + NOT yet sim-A/B'd — shipped on user direction 2026-06-19; backtest the
+2026-09-18 03:32:05,377 [INFO]     re-arm thresholds on post-chop trend days before relying on it live.
+2026-09-18 03:32:05,377 [INFO] 
+2026-09-18 03:32:05,377 [INFO] V2.5.19 [THREE FUT-VWAP ENTRY PATHWAYS — 2026-06-21]
+2026-09-18 03:32:05,378 [INFO]   + Built on user direction 2026-06-21. THREE new VWAP-cross entry pathways.
+2026-09-18 03:32:05,378 [INFO]     NOT yet sim-A/B'd — BACKTEST before flipping start_orion.sh to V2.5.19.
+2026-09-18 03:32:05,378 [INFO]     All three are flag-gated (default ON). Existing V2/V3/FLIP UNCHANGED.
+2026-09-18 03:32:05,378 [INFO] 
+2026-09-18 03:32:05,378 [INFO]   + FEATURE 1 — FUT 15m VWAP cross + CONFIRMATION CANDLE (all-day).
+2026-09-18 03:32:05,378 [INFO]     VWAP15_CONFIRM_ENABLED. The existing VWAP engine no longer fires on the
+2026-09-18 03:32:05,378 [INFO]     cross bar alone: it now requires the cross bar (iloc[-3], body 65-86% band)
+2026-09-18 03:32:05,378 [INFO]     PLUS the next closed bar (iloc[-2]) to CONFIRM in the same direction —
+2026-09-18 03:32:05,378 [INFO]     same-colour candle that still closes on the same side of FUT-VWAP. Fires in
+2026-09-18 03:32:05,378 [INFO]     either direction, any time in the entry window. Re-entries are governed by
+2026-09-18 03:32:05,378 [INFO]     the existing momentum gate (no extra cap). check_vwap_signal().
+2026-09-18 03:32:05,378 [INFO]     INTERPRETATION: "confirmation candle in same direction" = next 15m candle
+2026-09-18 03:32:05,378 [INFO]     closes same side of its open (same colour) AND same side of VWAP as the
+2026-09-18 03:32:05,378 [INFO]     cross. Confirmation candle has NO body-size requirement (only the cross bar
+2026-09-18 03:32:05,378 [INFO]     does). If wrong, adjust _vwap15_confirm_ok().
+2026-09-18 03:32:05,378 [INFO] 
+2026-09-18 03:32:05,378 [INFO]   + FEATURE 2 — FUT 5m VWAP cross + S/R distance, FIXED +12 TARGET scalp.
+2026-09-18 03:32:05,379 [INFO]     FUT5_SCALP_ENABLED. New engine 'FUT5VWAP'. On each closed FUT 5m bar that
+2026-09-18 03:32:05,379 [INFO]     CROSSES its session VWAP (bar opens one side, closes the other) with body
+2026-09-18 03:32:05,379 [INFO]     65-86% AND whose close is > FUT5_SCALP_SR_MIN_DIST (20pt) from EVERY one of
+2026-09-18 03:32:05,379 [INFO]     yesterday's classic pivots S1/R1/S2/R2 → buy in the cross direction. Exit is
+2026-09-18 03:32:05,379 [INFO]     a FIXED +FUT5_SCALP_TARGET_PTS (12) option points (HARDSL + 15:25 force-close
+2026-09-18 03:32:05,379 [INFO]     still apply; NO trail/SMA8). One trade per event: deduped on the 5m bar ts,
+2026-09-18 03:32:05,379 [INFO]     so the next entry needs a fresh qualifying cross. check_fut5m_vwap_scalp_signal().
+2026-09-18 03:32:05,379 [INFO]     INTERPRETATION: ">20 points away from s1/r1/s2/r2" = min distance to ALL four
+2026-09-18 03:32:05,379 [INFO]     pivots > 20pt (price in clear space, not hugging a pivot). "cross" = bar
+2026-09-18 03:32:05,379 [INFO]     open & close on opposite sides of VWAP. Pivots = classic floor-trader pivots
+2026-09-18 03:32:05,379 [INFO]     from the prior trading day's H/L/C. If wrong, adjust compute_classic_pivots()
+2026-09-18 03:32:05,379 [INFO]     / check_fut5m_vwap_scalp_signal().
+2026-09-18 03:32:05,379 [INFO] 
+2026-09-18 03:32:05,379 [INFO]   + FEATURE 3 — MORNING 09:15-10:15 exception (bypasses the 09:45 start gate).
+2026-09-18 03:32:05,379 [INFO]     MORNING_VWAP_ENABLED. Before the normal 09:45 entry start, between
+2026-09-18 03:32:05,379 [INFO]     MORNING_WIN_START (09:15) and MORNING_WIN_END (10:15): if a closed FUT 15m
+2026-09-18 03:32:05,379 [INFO]     bar crosses its VWAP (body 65-86%) AND its close is > MORNING_VWAP_SR_MIN_DIST
+2026-09-18 03:32:05,379 [INFO]     (20pt) from every pivot S1/R1/S2/R2 → buy in the cross direction. Re-entries
+2026-09-18 03:32:05,380 [INFO]     per momentum gate. Uses engine 'VWAP' (so it inherits the VWAP option-VWAP
+2026-09-18 03:32:05,380 [INFO]     trail exit). Runs even when in_entry_window() is False; still respects
+2026-09-18 03:32:05,380 [INFO]     stale-guard, gap-suppress, CB/halt, manual cooldown. check_morning_vwap15_signal().
+2026-09-18 03:32:05,380 [INFO]     INTERPRETATION: this only ADDS the pre-09:45 window; from 09:45 on, the
+2026-09-18 03:32:05,380 [INFO]     normal engines (incl. Feature 1) already run. No confirmation candle is
+2026-09-18 03:32:05,380 [INFO]     required here (spec did not ask for one).
+2026-09-18 03:32:05,380 [INFO] 
+2026-09-18 03:32:05,380 [INFO]   + Classic pivots computed at boot from prior-day H/L/C → DAY.pivots
+2026-09-18 03:32:05,380 [INFO]     {P,S1,R1,S2,R2}; min_dist_to_pivots() helper. New fetch_nifty_fut_5m().
+2026-09-18 03:32:05,380 [INFO] 
+2026-09-18 03:32:05,380 [INFO] =========================================================================
+2026-09-18 03:32:05,380 [INFO] BACKFILL 2026-08-29 — V2.5.19 (06-21) -> 2026-08-28
+2026-09-18 03:32:05,380 [INFO] =========================================================================
+2026-09-18 03:32:05,380 [INFO] Reconstructed 2026-08-29 from the dated inline comments at each code site and
+2026-09-18 03:32:05,380 [INFO] the research notes. The banner below had not been updated since V2.5.19
+2026-09-18 03:32:05,380 [INFO] (2026-06-21) while 24 changes went in; an audit on 2026-08-27 confirmed NO
+2026-09-18 03:32:05,380 [INFO] engine was silently removed or disabled, but the history was unreadable from
+2026-09-18 03:32:05,381 [INFO] the top of the file. Enforcement now exists (see CODE_FINGERPRINT / the boot
+2026-09-18 03:32:05,381 [INFO] UNDOCUMENTED-CHANGE check) so this cannot silently recur.
+2026-09-18 03:32:05,381 [INFO] 
+2026-09-18 03:32:05,381 [INFO] KNOWN GAP, stated plainly: the *_BACKUP_*.py chain jumps from 2026-08-01 to
+2026-09-18 03:32:05,381 [INFO] 2026-08-25. The nine changes dated 08-08 through 08-20 have NO pre-change
+2026-09-18 03:32:05,381 [INFO] backup file. They are reconstructable from the inline comments below, but they
+2026-09-18 03:32:05,381 [INFO] cannot be diffed back to their exact prior code. Every change from 08-25 on has
+2026-09-18 03:32:05,381 [INFO] a backup.
+2026-09-18 03:32:05,381 [INFO] 
+2026-09-18 03:32:05,381 [INFO] STATUS legend: [BT] backtested   [FWD] forward-paper only, no backtest
+2026-09-18 03:32:05,381 [INFO]                [USER] user-directed   [FIX] bug fix   [UNVAL] unvalidated
+2026-09-18 03:32:05,381 [INFO] 
+2026-09-18 03:32:05,381 [INFO] V2.5.20 [2026-06-23] Same-direction re-entry cooldown.
+2026-09-18 03:32:05,381 [INFO]   WHY: 06-23 a PE won +42 and re-entered PE 33 s later straight into HARDSL.
+2026-09-18 03:32:05,381 [INFO]   The momentum/fade gates only look at the signal, not at how the last trade in
+2026-09-18 03:32:05,381 [INFO]   that direction ended.  [FIX]
+2026-09-18 03:32:05,381 [INFO] 
+2026-09-18 03:32:05,381 [INFO] V2.5.20 [2026-06-24] VWAP15_CONFIRM_ENABLED = False.
+2026-09-18 03:32:05,381 [INFO]   WHY: user call. The V2.5.19 confirmation candle delayed entries into already-
+2026-09-18 03:32:05,382 [INFO]   declining trends. VWAP now fires on the FUT 15m VWAP cross bar itself.
+2026-09-18 03:32:05,382 [INFO]   RE-REVIEW TRIGGER: if a chop regime returns and VWAP false-starts rise, the
+2026-09-18 03:32:05,382 [INFO]   confirm candle is the first thing to switch back on.  [USER]
+2026-09-18 03:32:05,382 [INFO] 
+2026-09-18 03:32:05,382 [INFO] V2.5.20 [2026-06-29] Paper-mode order bypass — kite_paper places no real orders.
+2026-09-18 03:32:05,382 [INFO] 
+2026-09-18 03:32:05,382 [INFO] V2.5.20 [2026-07-06] Rebuilt on the concurrent-backtest architecture; all
+2026-09-18 03:32:05,382 [INFO]   engines run simultaneously with no suppression. Plus two CRITICAL fixes:
+2026-09-18 03:32:05,382 [INFO]   (a) ORB/GAPBREAK stale-data — fetch_nifty_1m/5m returned frames whose last
+2026-09-18 03:32:05,382 [INFO]       bar was days old; a 2-lot PE went in on a close from 07-03. (b) position-
+2026-09-18 03:32:05,382 [INFO]       sync false MANUAL_EXIT.  [FIX]
+2026-09-18 03:32:05,382 [INFO] 
+2026-09-18 03:32:05,382 [INFO] V2.5.20 [2026-07-07] LOTS_PER_TRADE 2 -> 1 (user instruction). ATM strike
+2026-09-18 03:32:05,382 [INFO]   resolution fix (old round_to_atm(24000)+2000 path).  [USER][FIX]
+2026-09-18 03:32:05,382 [INFO] 
+2026-09-18 03:32:05,382 [INFO] V2.5.20 [2026-07-08] V2.5.20 given its OWN Telegram bot (was sharing V2.5.19's).
+2026-09-18 03:32:05,382 [INFO]   MANUAL_EXIT detected via the bot's own order-ids, never account-wide net_qty.
+2026-09-18 03:32:05,382 [INFO]   [FIX]
+2026-09-18 03:32:05,382 [INFO] 
+2026-09-18 03:32:05,383 [INFO] V2.5.20 [2026-07-10 .. 07-14] Broker-integrity hardening after the 07-09
+2026-09-18 03:32:05,383 [INFO]   NIFTY24000CE incident and the 07-14 stranded lots: order-book/RMS race fixes
+2026-09-18 03:32:05,383 [INFO]   on both BUY and SELL, per-position is_paper flag, unconfirmed_fill flag,
+2026-09-18 03:32:05,383 [INFO]   bot order-id registry, orphan-position resume, HALT_NEW_ENTRIES_ON_DATE
+2026-09-18 03:32:05,383 [INFO]   replacing a bare NO_NEW_ENTRIES_TODAY that had been left True since 07-09.
+2026-09-18 03:32:05,383 [INFO]   [FIX]
+2026-09-18 03:32:05,383 [INFO] 
+2026-09-18 03:32:05,383 [INFO] V2.5.20 [2026-07-12] V2 params from the real-30-day grid search (k_extreme=ON,
+2026-09-18 03:32:05,383 [INFO]   rsi_gate=ON, macd_align=OFF) on 05-15..07-10 — 7 trades / 71.4% WR / +45.96pt.
+2026-09-18 03:32:05,383 [INFO]   CAVEAT RECORDED AT THE TIME: 7-trade sample. MACD gate left in the code behind
+2026-09-18 03:32:05,383 [INFO]   V2_MACD_GATE_ENABLED so it can be flipped back.
+2026-09-18 03:32:05,383 [INFO]   Also: V3 probe entry (limit, replacing market entry, user instruction), V3
+2026-09-18 03:32:05,383 [INFO]   early-entry + fast exit, ORB in-day CHOPPY kill, MOM_GATE_V3 re-enable.
+2026-09-18 03:32:05,383 [INFO]   [BT-weak][USER]
+2026-09-18 03:32:05,383 [INFO] 
+2026-09-18 03:32:05,383 [INFO] V2.5.20 [2026-07-13] PUT-FLIP QUALITY GATE — V2.5.19 flipped a winning CE to PE
+2026-09-18 03:32:05,383 [INFO]   on a 0.5pt K move (58.9 -> 58.4). Gate requires a real reversal.  [FIX]
+2026-09-18 03:32:05,384 [INFO] V2.5.20 [2026-07-13] *** COUNTER-TREND VETO *** — single choke point for EVERY
+2026-09-18 03:32:05,384 [INFO]   engine. The day's low printed 09:15 and Nifty ran one-way to 24259 while the
+2026-09-18 03:32:05,384 [INFO]   bot kept buying PEs. BIGGEST VALIDATED EDGE TO DATE: +697.9 pts / +Rs45,362
+2026-09-18 03:32:05,384 [INFO]   out-of-sample. Do not weaken without equivalent evidence.  [BT]
+2026-09-18 03:32:05,384 [INFO] 
+2026-09-18 03:32:05,384 [INFO] V2.5.20 [2026-07-20] EXECUTION_BROKER LIVE -> PAPER, explicit user instruction;
+2026-09-18 03:32:05,384 [INFO]   no real orders since. T5 engine (levels + premium-divergence). APEX engine
+2026-09-18 03:32:05,384 [INFO]   (the user's actual method) — shadow only. 1-minute capture added (Kite
+2026-09-18 03:32:05,384 [INFO]   interval is 'minute', not '1minute'). Unlimited engine overlap in paper.
+2026-09-18 03:32:05,384 [INFO]   [USER]
+2026-09-18 03:32:05,384 [INFO] 
+2026-09-18 03:32:05,384 [INFO] V2.5.20 [2026-07-24] VWAP/APEX frm>now precession fix.  [FIX]
+2026-09-18 03:32:05,384 [INFO] 
+2026-09-18 03:32:05,384 [INFO] V2.5.20 [2026-07-26] FUT5VWAP dedup fix (<= not ==; a stale/out-of-order refetch
+2026-09-18 03:32:05,384 [INFO]   reopened a second real position on an already-seen signal, seen 07-24).
+2026-09-18 03:32:05,384 [INFO]   EXPIRY engine — OTM premium-multiplication pop, expiry day only, one shot.
+2026-09-18 03:32:05,384 [INFO]   Expiry-specific velvet-rope/ladder expressed as MULTIPLES not points (user
+2026-09-18 03:32:05,384 [INFO]   instruction: a Rs8 option cannot use a +12pt ladder).  [FIX][USER]
+2026-09-18 03:32:05,385 [INFO] 
+2026-09-18 03:32:05,385 [INFO] V2.5.20 [2026-07-27] push_logs_to_github(): added `git rebase --autostash`.
+2026-09-18 03:32:05,385 [INFO]   WHY: a dirty tree made plain `git rebase` abort silently, so every push had
+2026-09-18 03:32:05,385 [INFO]   been rejected non-fast-forward since 07-20 (~365 rejects/day/bot).
+2026-09-18 03:32:05,385 [INFO]   *** SIDE EFFECT DISCOVERED 2026-08-27: this is what orphaned the logging
+2026-09-18 03:32:05,385 [INFO]   FileHandler's inode and blanked the FlightRecorder logs. Fixed 08-29 with
+2026-09-18 03:32:05,385 [INFO]   WatchedFileHandler. DO NOT remove --autostash. ***  [FIX]
+2026-09-18 03:32:05,385 [INFO] 
+2026-09-18 03:32:05,385 [INFO] V2.5.20 [2026-07-29] Counter-trend-veto Telegram dedup (spam fix).  [FIX]
+2026-09-18 03:32:05,385 [INFO] 
+2026-09-18 03:32:05,385 [INFO] V2.5.20 [2026-08-01] APEX entry filter: APEX_RSI_MIN_DELTA = 5.0 — require a
+2026-09-18 03:32:05,385 [INFO]   decisive RSI turn, not any turn. Re-sim -3,835 -> +234, IN-SAMPLE ONLY.
+2026-09-18 03:32:05,385 [INFO]   [UNVAL]
+2026-09-18 03:32:05,385 [INFO] 
+2026-09-18 03:32:05,385 [INFO] V2.5.20 [2026-08-08] VWAP same-day loss cap, from the real 3-month simulated
+2026-09-18 03:32:05,385 [INFO]   backtest on Upstox real premiums. Same pass disabled PIVOTBREAK.  [BT]
+2026-09-18 03:32:05,385 [INFO] 
+2026-09-18 03:32:05,386 [INFO] V2.5.20 [2026-08-09] PIVOTBREAK REMOVED ENTIRELY (code deleted, syntax-clean).
+2026-09-18 03:32:05,386 [INFO]   WHY: kill-switch (08-08) then a full professional rebuild (08-09) both failed;
+2026-09-18 03:32:05,386 [INFO]   losses were structural exit-logic, not day-type. Do not re-add without new
+2026-09-18 03:32:05,386 [INFO]   evidence — see the rebuild trail before trying.  [BT]
+2026-09-18 03:32:05,386 [INFO] 
+2026-09-18 03:32:05,386 [INFO] V2.5.20 [2026-08-13] V2 per-bar dedup on the closed 15m bar, same convention as
+2026-09-18 03:32:05,386 [INFO]   VWAP/FUT5VWAP. WHY: V2 had NO dedup, so a Kite rate-limit retry stacked 5 V2
+2026-09-18 03:32:05,386 [INFO]   lots on one signal — this is what produced the phantom +Rs8,492 on 08-12 that
+2026-09-18 03:32:05,386 [INFO]   looked like edge and was not. Also fixed a POS.engine comparison against the
+2026-09-18 03:32:05,386 [INFO]   literal 'BASE'.  [FIX]
+2026-09-18 03:32:05,386 [INFO] 
+2026-09-18 03:32:05,386 [INFO] V2.5.20 [2026-08-16] V2_DAILY_LOSS_CAP = 1. From a real 3-month re-port of V2's
+2026-09-18 03:32:05,387 [INFO]   own logic (05-04..08-06): capping V2 at one loss/day was the only no-trade-
+2026-09-18 03:32:05,387 [INFO]   zone variant that survived; all the others failed.  [BT]
+2026-09-18 03:32:05,387 [INFO] 
+2026-09-18 03:32:05,387 [INFO] V2.5.20 [2026-08-17] FUT5VWAP min pivot distance 30 -> 25 pt, from a real
+2026-09-18 03:32:05,387 [INFO]   re-port at native 1-min granularity. NOTE: the corrected FUT5VWAP baseline is
+2026-09-18 03:32:05,387 [INFO]   88.9% WR / +Rs53,315 over 380 days — the earlier 94% / +Rs104k figure was a
+2026-09-18 03:32:05,387 [INFO]   same-bar exit-ambiguity BUG and is void.  [BT]
+2026-09-18 03:32:05,387 [INFO] 
+2026-09-18 03:32:05,387 [INFO] V2.5.20 [2026-08-20] Four VWAP/V2/ORB changes from a real 40-trade backtest on
+2026-09-18 03:32:05,387 [INFO]   the live 07-07..08-20 log:
+2026-09-18 03:32:05,387 [INFO]    (1) VWAP 5m persistence + distance-from-VWAP gate;
+2026-09-18 03:32:05,387 [INFO]    (2) VWAP post-loss same-side cooldown;
+2026-09-18 03:32:05,387 [INFO]    (3) V2 trail scaled to entry premium (arm = entry x 1.15) instead of fixed
+2026-09-18 03:32:05,387 [INFO]        points — V2 entries range from ~Rs73 upward, a fixed +15 is not
+2026-09-18 03:32:05,387 [INFO]        comparable across them;  [USER]
+2026-09-18 03:32:05,387 [INFO]    (4) V2 hard stop fixed at -15 pt, replacing the generic -18% HARDSL;  [USER]
+2026-09-18 03:32:05,387 [INFO]    (5) ORB exit tightened: stop 15 / ride 40 / giveback 20.
+2026-09-18 03:32:05,387 [INFO]   Neither VWAP gate alone made VWAP profitable — they reduce the loss. Expect a
+2026-09-18 03:32:05,388 [INFO]   smaller drawdown, not profit.  [BT]
+2026-09-18 03:32:05,388 [INFO] 
+2026-09-18 03:32:05,388 [INFO] V2.5.20 [2026-08-22] *** EXPIRY ENGINES 1 & 2 (EXP12) — SHADOW PAPER BOOK ***
+2026-09-18 03:32:05,388 [INFO]   E1 RSI-snap + OI/strike gates: recent 40 expiries 9 trades / 89% WR /
+2026-09-18 03:32:05,388 [INFO]   +Rs18,944 (older 57 dormant, -Rs819).
+2026-09-18 03:32:05,388 [INFO]   E2 cheap-ladder Rs8-16 + spot-through-strike + OI <= +5%, NO stop, trail 20%
+2026-09-18 03:32:05,388 [INFO]   after 40: recent 40 +Rs12,760 (older 57 -Rs4,910).
+2026-09-18 03:32:05,388 [INFO]   User instruction: NO restrictions — no trade-count or SL-count limits.
+2026-09-18 03:32:05,388 [INFO]   SEPARATE BOOK: own lot size, own CSV, EXCLUDED from fmt_eod_summary by
+2026-09-18 03:32:05,388 [INFO]   design. (Reporting confusion this caused was raised 08-27; being fixed in a
+2026-09-18 03:32:05,388 [INFO]   later item.)  [BT][USER]
+2026-09-18 03:32:05,388 [INFO] 
+2026-09-18 03:32:05,388 [INFO] V2.5.20 [2026-08-25] EXP12 relaxed gates, user override after the 08-25 miss
+2026-09-18 03:32:05,388 [INFO]   (premium out-ran spot, so E2's "Rs8-16 AND spot>=strike in the SAME minute"
+2026-09-18 03:32:05,388 [INFO]   never overlapped): E1 no SL / trail after 2x; entries 14:30-15:25; dist >= -35
+2026-09-18 03:32:05,389 [INFO]   (-115 Sensex) OR crossed within 30 min; E2 band hi 20 (66 Sensex); universe
+2026-09-18 03:32:05,389 [INFO]   re-resolve every 5 min. Replay on 08-25 = +Rs3,416 vs actual 0.
+2026-09-18 03:32:05,389 [INFO]   *** KNOWN REMAINING FLAW (08-27, 2nd confirmation): the universe re-resolves
+2026-09-18 03:32:05,389 [INFO]   only when the MAX-OI strike M moves, and max-OI is sticky while spot is not.
+2026-09-18 03:32:05,389 [INFO]   On 08-27 legs froze at 77500 while Sensex fell to 77182 — nothing near the
+2026-09-18 03:32:05,389 [INFO]   money for two hours. Anchor to SPOT, but re-backtest evaluate_day_e2() first.
+2026-09-18 03:32:05,389 [INFO]   ***  [USER][UNVAL]
+2026-09-18 03:32:05,389 [INFO] 
+2026-09-18 03:32:05,389 [INFO] V2.5.20 [2026-08-26] *** KITE RETIRED — UPSTOX MIGRATION ***
+2026-09-18 03:32:05,389 [INFO]   All bots moved to Upstox behind a drop-in Kite-compatible shim
+2026-09-18 03:32:05,389 [INFO]   (upstox_kite_shim.py). Long-lived read-only token, no daily login; launchers'
+2026-09-18 03:32:05,389 [INFO]   auto_login removed. Candle/quote/OI parity verified live pre-deploy.
+2026-09-18 03:32:05,389 [INFO]   *** REGRESSION FOUND 08-27: zero [STALE] events in ~37 Kite days, 50 on the
+2026-09-18 03:32:05,389 [INFO]   FIRST Upstox day. CAUSE (corrected 08-29): the shim asks the intraday
+2026-09-18 03:32:05,389 [INFO]   endpoint for 15-MINUTE candles, and that endpoint is built around COMPLETED
+2026-09-18 03:32:05,389 [INFO]   intervals, so the forming bar appears 0-6 min late; Kite returned the partial
+2026-09-18 03:32:05,389 [INFO]   bar from the first tick. Upstox is NOT slower — its 1m/tick data is as fast.
+2026-09-18 03:32:05,390 [INFO]   Wrong endpoint granularity, not a vendor fault. Real fix = fetch 1m and
+2026-09-18 03:32:05,390 [INFO]   resample to 15m in the shim (raising the 16-min guard is the WRONG fix: it
+2026-09-18 03:32:05,390 [INFO]   would let the engines read a 30-45 min old iloc[-2] silently). ***  [FIX]
+2026-09-18 03:32:05,390 [INFO] 
+2026-09-18 03:32:05,390 [INFO] V2.5.20 [2026-08-26] EXP2W = EXP2 + the user's "was-expensive" SELECTION filter,
+2026-09-18 03:32:05,390 [INFO]   run as a PARALLEL tag beside plain EXP2 — same legs, same data, same exits, so
+2026-09-18 03:32:05,390 [INFO]   the two isolate the filter's effect. In-sample replay: NIFTY -3,308 -> +1,873,
+2026-09-18 03:32:05,390 [INFO]   SENSEX +2,970 -> +2,552, ~60% fewer trades.
+2026-09-18 03:32:05,390 [INFO]   *** LIVE A/B DATA POINT #1 (08-27): EXP2W DECLINED the day's only winner
+2026-09-18 03:32:05,390 [INFO]   (77100PE, afternoon high 46.95 < the Rs130 floor) — cost Rs3,378. n=1, against
+2026-09-18 03:32:05,390 [INFO]   the filter. Do not act on one day. ***  [USER][BT-insample]
+2026-09-18 03:32:05,390 [INFO] 
+2026-09-18 03:32:05,390 [INFO] V2.5.20 [2026-08-26] SENSEX bot given its own Telegram bot/chat; Nifty chat
+2026-09-18 03:32:05,390 [INFO]   unchanged.  [USER]
+2026-09-18 03:32:05,390 [INFO] 
+2026-09-18 03:32:05,390 [INFO] V2.5.20 [EXP12 UNIVERSE ANCHORED TO SPOT — 2026-08-29]  (item 4)
+2026-09-18 03:32:05,390 [INFO]   WHAT: EXP12_ANCHOR = 'spot'. _exp12_resolve_m() now returns the strike
+2026-09-18 03:32:05,391 [INFO]   NEAREST SPOT instead of the max-OI strike among ATM+/-4. Max-OI is still
+2026-09-18 03:32:05,391 [INFO]   computed and logged when it diverges, so the failure mode stays visible.
+2026-09-18 03:32:05,391 [INFO]   Set EXP12_ANCHOR='maxoi' to revert the behaviour without touching code.
+2026-09-18 03:32:05,391 [INFO] 
+2026-09-18 03:32:05,391 [INFO]   WHY: max-OI is sticky, spot is not. 08-25 (Nifty) and 08-27 (Sensex: legs
+2026-09-18 03:32:05,391 [INFO]   frozen at 77500 while spot fell to 77182, >200pt below the lowest leg) both
+2026-09-18 03:32:05,391 [INFO]   left BOTH engines with no near-the-money contract for hours. The 5-minute
+2026-09-18 03:32:05,391 [INFO]   re-resolve added 08-25 only swapped legs when M moved, so it never fired.
+2026-09-18 03:32:05,391 [INFO] 
+2026-09-18 03:32:05,391 [INFO]   BACKTEST (this gate was NOT skipped — the 08-27 note said re-backtest first):
+2026-09-18 03:32:05,391 [INFO]   40 recent Nifty expiries, real Upstox 1-min premiums.
+2026-09-18 03:32:05,391 [INFO]   *** The existing step12/step16 datasets could NOT answer this: they contain
+2026-09-18 03:32:05,391 [INFO]   ONLY the 3 max-OI-anchored strikes per day, i.e. only the strikes the flawed
+2026-09-18 03:32:05,391 [INFO]   rule already picks. A WIDE 11-strike band was pulled specially
+2026-09-18 03:32:05,391 [INFO]   (exp_wide_universe_data.json) via the Expired Instruments API. ***
+2026-09-18 03:32:05,391 [INFO]     GATE G1 baseline reproduced EXACTLY: max-OI n=26, +Rs12,760 (published)
+2026-09-18 03:32:05,391 [INFO]     A max-OI x3          n=26  WR 46.2%  +Rs12,760  median day  -Rs29
+2026-09-18 03:32:05,392 [INFO]     C spot x3 @14:30     n=29  WR 51.7%  +Rs13,959  median day +Rs111
+2026-09-18 03:32:05,392 [INFO]                          -> 3 days better, 0 WORSE, 21 unchanged
+2026-09-18 03:32:05,392 [INFO]     B spot re-anchored   n=32  WR 53.1%  +Rs18,242  5 better, 1 worse
+2026-09-18 03:32:05,392 [INFO]   Live behaviour sits between C and B (legs re-resolve every 5 min).
+2026-09-18 03:32:05,392 [INFO] 
+2026-09-18 03:32:05,392 [INFO]   OUT-OF-WINDOW (older 57 expiries 2024-10..2025-11, the regime where E2 is
+2026-09-18 03:32:05,392 [INFO]   known to LOSE). Question was not "does E2 work there" -- it does not -- but
+2026-09-18 03:32:05,392 [INFO]   "does spot anchoring make it WORSE". It does not:
+2026-09-18 03:32:05,392 [INFO]     A max-OI x3  n=40  WR 35.0%  -Rs3,958
+2026-09-18 03:32:05,392 [INFO]     C spot x3    n=43  WR 37.2%  -Rs2,954   (2 days better, 1 worse)
+2026-09-18 03:32:05,392 [INFO]     B re-anchor  n=44  WR 36.4%  -Rs3,162
+2026-09-18 03:32:05,392 [INFO]   CAVEAT, stated rather than buried: this OOS baseline is -Rs3,958 against the
+2026-09-18 03:32:05,392 [INFO]   published -Rs4,910. The Expired-Instruments API returned NO contracts for 1 of
+2026-09-18 03:32:05,392 [INFO]   the 57 days and only 15 of 22 for another, so the OOS run covers 56 days with
+2026-09-18 03:32:05,392 [INFO]   some gaps. Treat the OOS numbers as DIRECTIONAL. The recent-40 window, which
+2026-09-18 03:32:05,392 [INFO]   is what this change is justified on, reproduced its baseline EXACTLY.
+2026-09-18 03:32:05,392 [INFO] 
+2026-09-18 03:32:05,392 [INFO]   HONEST READING: the in-sample gain is SMALL (+Rs1,199 at equal breadth)
+2026-09-18 03:32:05,393 [INFO]   because max-OI and spot-ATM usually COINCIDE — they differed on only 3 of 24
+2026-09-18 03:32:05,393 [INFO]   traded days. This change is not an edge improvement; it removes a blind spot
+2026-09-18 03:32:05,393 [INFO]   in the tail. Its value is that at equal breadth it was never worse on any of
+2026-09-18 03:32:05,393 [INFO]   the 40 expiries, and the two live misses are exactly the case it fixes.
+2026-09-18 03:32:05,393 [INFO] 
+2026-09-18 03:32:05,393 [INFO]   REVERT: *_BACKUP_20260829_pre_spot_anchor.py, or EXP12_ANCHOR='maxoi'
+2026-09-18 03:32:05,393 [INFO]   STATUS: applied 2026-08-29. Confirm on the next expiry that the log shows
+2026-09-18 03:32:05,393 [INFO]   "[EXP12] anchor=spot M=..." and that legs track spot.  [BT][USER]
+2026-09-18 03:32:05,393 [INFO] 
+2026-09-18 03:32:05,393 [INFO] V2.5.20 [EXPIRY REPORTING + INTRADAY BAR FIX — 2026-08-29]
+2026-09-18 03:32:05,393 [INFO]   Four changes, all from the user's 2026-08-27 review. NO entry/exit RULE was
+2026-09-18 03:32:05,393 [INFO]   changed — these are data-plumbing and reporting only.
+2026-09-18 03:32:05,393 [INFO] 
+2026-09-18 03:32:05,393 [INFO]   (1) SHIM 1-MINUTE RESAMPLING (item 3). upstox_kite_shim.historical_data() now
+2026-09-18 03:32:05,393 [INFO]       builds TODAY's 5m/15m/1h bars from 1-MINUTE intraday instead of asking the
+2026-09-18 03:32:05,393 [INFO]       intraday endpoint for them directly, because that endpoint only emits a
+2026-09-18 03:32:05,393 [INFO]       forming bar 0-6 min late and the engines read iloc[-2] assuming iloc[-1]
+2026-09-18 03:32:05,393 [INFO]       is the forming bar. Deliberately NOT raising the 16-min stale guard —
+2026-09-18 03:32:05,394 [INFO]       that would hide stale indicators instead of surfacing them.
+2026-09-18 03:32:05,394 [INFO]       52/52 instrument-day-interval combos reproduce Upstox's own O/H/L/C/vol/OI
+2026-09-18 03:32:05,394 [INFO]       EXACTLY. See upstox_kite_shim.py CHANGE_HISTORY.  [FIX]
+2026-09-18 03:32:05,394 [INFO] 
+2026-09-18 03:32:05,394 [INFO]   (2) EXPIRY "WHY / WHY NOT" TELEGRAM at 15:29 (item 5). User: "no message about
+2026-09-18 03:32:05,394 [INFO]       why a trade was not taken". Every EXP12 gate now increments a counter
+2026-09-18 03:32:05,394 [INFO]       (_exp12_block) and records the closest miss (_exp12_near);
+2026-09-18 03:32:05,394 [INFO]       _exp12_eod_report() sends one consolidated per-engine message. On the
+2026-09-18 03:32:05,394 [INFO]       08-27 book this renders as "EXP2: no trade — blocked by spot too far from
+2026-09-18 03:32:05,394 [INFO]       strike x148 ... closest: 77400CE prem 12.30 OK but dist -318", which is
+2026-09-18 03:32:05,394 [INFO]       the universe flaw made visible.  [USER]
+2026-09-18 03:32:05,394 [INFO] 
+2026-09-18 03:32:05,394 [INFO]   (3) EXP12 TELEGRAM COLOUR + SHADOW TAG (item 7a). Entries/exits were plain
+2026-09-18 03:32:05,394 [INFO]       🎯/⚫ with no green/red, so a +Rs3,378 day on 08-27 read like nothing had
+2026-09-18 03:32:05,394 [INFO]       happened. Now 🟢/🔴 by CE/PE, 🟩/🟥 by result, and a persistent
+2026-09-18 03:32:05,394 [INFO]       "⚫ SHADOW BOOK (not in main PnL)" tag.  [USER]
+2026-09-18 03:32:05,394 [INFO] 
+2026-09-18 03:32:05,395 [INFO]   (4) SHADOW TOTAL IN THE EOD SUMMARY (item 7b). EXP12 is a separate book (own
+2026-09-18 03:32:05,395 [INFO]       lot size, own CSV) and stays EXCLUDED from Net PnL — but it is now printed
+2026-09-18 03:32:05,395 [INFO]       as its own clearly-labelled block, so 08-27's "Rs0" on a +Rs3,378 day
+2026-09-18 03:32:05,395 [INFO]       cannot recur. The two totals are visible without ever being mixed.  [USER]
+2026-09-18 03:32:05,395 [INFO] 
+2026-09-18 03:32:05,395 [INFO]   REVERT: *_BACKUP_20260829_pre_changelog_backfill.py (and, for the shim,
+2026-09-18 03:32:05,395 [INFO]           upstox_kite_shim_BACKUP_20260829_pre_1m_resample.py)
+2026-09-18 03:32:05,395 [INFO]   STATUS: applied 2026-08-29 (Sat, market closed). Item (1) is offline-verified
+2026-09-18 03:32:05,395 [INFO]           only and MUST be confirmed against the live feed at the next open:
+2026-09-18 03:32:05,395 [INFO]           [STALE] events should drop to zero. Items (2)-(4) are cosmetic/report
+2026-09-18 03:32:05,395 [INFO]           paths and are proven by rendering tests, but (2) only fires on an
+2026-09-18 03:32:05,395 [INFO]           expiry day — next Nifty expiry Tue 2026-09-01.
+2026-09-18 03:32:05,395 [INFO] 
+2026-09-18 03:32:05,395 [INFO] V2.5.20 [FLIGHT-RECORDER LOG FIX — 2026-08-29]
+2026-09-18 03:32:05,395 [INFO]   WHAT : logging.basicConfig(filename=LOG_FN) -> logging.handlers.
+2026-09-18 03:32:05,395 [INFO]          WatchedFileHandler(LOG_FN). One handler swap in the LOGGING block;
+2026-09-18 03:32:05,395 [INFO]          added `import logging.handlers`. No engine/strategy code touched.
+2026-09-18 03:32:05,395 [INFO]   WHY  : every Nifty & Sensex FlightRecorder *.log had been BOOT-BANNER-ONLY
+2026-09-18 03:32:05,396 [INFO]          for ~a week (08-20 -> 08-28): 32,891 bytes, last line 8 seconds after
+2026-09-18 03:32:05,396 [INFO]          boot, while the BarLevel CSV ran to 15:25. push_logs_to_github() runs
+2026-09-18 03:32:05,396 [INFO]          `git rebase --autostash` every 5 min; with a dirty tree the autostash
+2026-09-18 03:32:05,396 [INFO]          push/pop deletes and recreates every modified tracked file, including
+2026-09-18 03:32:05,396 [INFO]          the log being written. The plain FileHandler held its fd on the old
+2026-09-18 03:32:05,396 [INFO]          inode, so all later lines went to an orphaned inode. This is why the
+2026-09-18 03:32:05,396 [INFO]          "check the Thursday log" instructions left for EXP2W / EXP12-relax /
+2026-09-18 03:32:05,396 [INFO]          Upstox were all uncheckable. Real record was ~/orion_*_run.log (stdout).
+2026-09-18 03:32:05,396 [INFO]   EVIDENCE : reproduced against a REAL two-bot `git rebase --autostash` cycle
+2026-09-18 03:32:05,396 [INFO]          (scratchpad/wfhtest/repro3.py): FileHandler -> on-disk log holds ONLY
+2026-09-18 03:32:05,396 [INFO]          the boot banner (inode swapped mid-run); WatchedFileHandler -> all
+2026-09-18 03:32:05,396 [INFO]          lines through EOD survive the identical swap. Control that confirms
+2026-09-18 03:32:05,396 [INFO]          the diagnosis in production: stocks_run.log is NOT git-tracked, is
+2026-09-18 03:32:05,396 [INFO]          never touched by the push, and is complete through 15:30 IST on the
+2026-09-18 03:32:05,396 [INFO]          same sessions. csv_append() and the Telegram fallback log open by
+2026-09-18 03:32:05,396 [INFO]          name per write and were never affected.
+2026-09-18 03:32:05,396 [INFO]   NOT DONE : dropping --autostash. It was added 2026-07-27 to fix a different
+2026-09-18 03:32:05,397 [INFO]          failure (365+ push rejects/day since 07-20). Do not remove it.
+2026-09-18 03:32:05,397 [INFO]   REVERT : ORION_PAPER_V2_5_20_BACKUP_20260829_pre_watchedfilehandler.py /
+2026-09-18 03:32:05,397 [INFO]            ORION_SENSEX_V2520_BACKUP_20260829_pre_watchedfilehandler.py
+2026-09-18 03:32:05,397 [INFO]   STATUS : code-applied 2026-08-29 (Sat, market closed). NOT yet proven live —
+2026-09-18 03:32:05,397 [INFO]            confirm on the next session's boot that the FlightRecorder log keeps
+2026-09-18 03:32:05,397 [INFO]            growing past 09:07 and its last line is ~15:25, not ~09:02.
+2026-09-18 03:32:05,397 [INFO] 
+2026-09-18 03:32:05,397 [INFO] === REJECTED DECISIONS (DO NOT RE-ADD WITHOUT NEW BACKTEST EVIDENCE) ===
+2026-09-18 03:32:05,397 [INFO]   SKIP_HOUR_13         : -Rs 46k (kills profitable flips in that window)
+2026-09-18 03:32:05,397 [INFO]   SKIP_TUESDAYS        : +Rs 56k but calendar-overfit; RSI gate replaces
+2026-09-18 03:32:05,397 [INFO]   ADX<20 filter        : -Rs 16k
+2026-09-18 03:32:05,397 [INFO]   ADX<25 filter        : -Rs 34k
+2026-09-18 03:32:05,397 [INFO]   BE armor at +15%     : net negative
+2026-09-18 03:32:05,397 [INFO]   Same-side flip       : -Rs 191k CATASTROPHIC
+2026-09-18 03:32:05,397 [INFO]   REVERSAL_FLIP=True   : WR 12% vs 33%
+2026-09-18 03:32:05,397 [INFO]   K cap on CE          : hurts WR (no cap is better)
+2026-09-18 03:32:05,397 [INFO]   V2.5.10 macro SMA50  : -Rs 2.3L vs V2.5.9; lagging filter blocked PE in bear phases
+2026-09-18 03:32:05,398 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
+2026-09-18 03:32:05,398 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
+2026-09-18 03:32:07,703 [INFO] [CHANGELOG] up to date (last entry 2026-09-17)
