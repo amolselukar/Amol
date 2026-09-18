@@ -1509,3 +1509,20 @@
 2026-09-18 07:05:53,882 [INFO] [INDICATORS] spot=74495.8 | 1h: close=74489.6 sma20=74369.2 sma50=74698.4 rsi=48.9 macd=-76.60/-117.81(bull) | 15m: K=92.1↑(prev 77.4) | regime=NEUTRAL any_active=True
 2026-09-18 07:05:53,882 [INFO] [SIGNAL] CE: reg=False K=True(K=92.1>=38,rising) Kextr=False RSI=False(48.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.1<=80,falling) Kextr=True RSI=False(48.9<47) MACD=False(gate off) => BLOCK
 2026-09-18 07:05:53,882 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26SEP74400PE ltp=355.40 entry=421.55 pnl=-66.15(-15.7%) sl=0.00 peak=424.40 tr_armed=False elapsed=169min
+2026-09-18 07:05:56,519 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 07:06:26,736 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:06:57,071 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:07:27,432 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:07:27,450 [INFO] [CB] FUT5VWAP loss (own count 1) — TOTAL across all engines=3/4 (reason=FUT5VWAP_STOP)
+2026-09-18 07:07:27,453 [INFO] EXIT: BFO:SENSEX26SEP74400PE @ 341.55 reason=FUT5VWAP_STOP pnl/sh=-80.00 is_flip=False losses=1/4
+2026-09-18 07:07:58,528 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:08:28,799 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:08:59,055 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:09:29,315 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:09:59,612 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:10:29,933 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:11:00,245 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:11:00,274 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 07:11:00,335 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 07:11:00,335 [INFO] [INDICATORS] spot=74501.7 | 1h: close=74489.6 sma20=74369.2 sma50=74698.4 rsi=48.9 macd=-76.60/-117.81(bull) | 15m: K=92.1↑(prev 77.4) | regime=NEUTRAL any_active=False
+2026-09-18 07:11:00,336 [INFO] [SIGNAL] CE: reg=False K=True(K=92.1>=38,rising) Kextr=False RSI=False(48.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.1<=80,falling) Kextr=True RSI=False(48.9<47) MACD=False(gate off) => BLOCK
