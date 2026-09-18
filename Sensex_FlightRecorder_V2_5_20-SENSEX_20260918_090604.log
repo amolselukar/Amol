@@ -1493,3 +1493,19 @@
 2026-09-18 07:00:47,729 [INFO] [INDICATORS] spot=74489.8 | 1h: close=74489.6 sma20=74369.2 sma50=74698.4 rsi=48.9 macd=-76.60/-117.81(bull) | 15m: K=92.1↑(prev 77.4) | regime=NEUTRAL any_active=True
 2026-09-18 07:00:47,729 [INFO] [SIGNAL] CE: reg=False K=True(K=92.1>=38,rising) Kextr=False RSI=False(48.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.1<=80,falling) Kextr=True RSI=False(48.9<47) MACD=False(gate off) => BLOCK
 2026-09-18 07:00:47,730 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26SEP74400PE ltp=354.85 entry=421.55 pnl=-66.70(-15.8%) sl=0.00 peak=424.40 tr_armed=False elapsed=164min
+2026-09-18 07:00:50,483 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 07:01:20,704 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:01:51,023 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:02:21,345 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:02:51,664 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:03:22,010 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:03:52,355 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:04:22,687 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:04:53,030 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:05:23,393 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:05:53,752 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 07:05:53,800 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 07:05:53,881 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 07:05:53,882 [INFO] [INDICATORS] spot=74495.8 | 1h: close=74489.6 sma20=74369.2 sma50=74698.4 rsi=48.9 macd=-76.60/-117.81(bull) | 15m: K=92.1↑(prev 77.4) | regime=NEUTRAL any_active=True
+2026-09-18 07:05:53,882 [INFO] [SIGNAL] CE: reg=False K=True(K=92.1>=38,rising) Kextr=False RSI=False(48.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.1<=80,falling) Kextr=True RSI=False(48.9<47) MACD=False(gate off) => BLOCK
+2026-09-18 07:05:53,882 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26SEP74400PE ltp=355.40 entry=421.55 pnl=-66.15(-15.7%) sl=0.00 peak=424.40 tr_armed=False elapsed=169min
