@@ -2233,3 +2233,9 @@
 2026-09-18 09:26:18,462 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 09:26:18,463 [INFO] [INDICATORS] spot=23383.4 | 1h: close=23348.5 sma20=23269.4 sma50=23363.2 rsi=53.2 macd=-9.04/-27.42(bull) | 15m: K=90.2↓(prev 91.7) | regime=NEUTRAL any_active=False
 2026-09-18 09:26:18,463 [INFO] [SIGNAL] CE: reg=False K=False(K=90.2>=38,rising) Kextr=False RSI=True(53.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=90.2<=80,falling) Kextr=True RSI=False(53.2<47) MACD=False(gate off) => BLOCK
+2026-09-18 09:26:21,400 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
+2026-09-18 09:30:24,082 [INFO] [RENKO] dir=+1 (UP) bricks=4 brick=19.07 last5=[-1, 1, 1, 1]
+2026-09-18 09:31:24,956 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 09:31:25,017 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 09:31:25,018 [INFO] [INDICATORS] spot=23368.0 | 1h: close=23348.5 sma20=23269.4 sma50=23363.2 rsi=53.2 macd=-9.04/-27.42(bull) | 15m: K=90.2↓(prev 90.2) | regime=NEUTRAL any_active=False
+2026-09-18 09:31:25,018 [INFO] [SIGNAL] CE: reg=False K=False(K=90.2>=38,rising) Kextr=False RSI=True(53.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=90.2<=80,falling) Kextr=True RSI=False(53.2<47) MACD=False(gate off) => BLOCK
