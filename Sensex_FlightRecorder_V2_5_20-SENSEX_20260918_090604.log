@@ -1145,3 +1145,19 @@
 2026-09-18 03:56:31,991 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 03:56:31,991 [INFO] [INDICATORS] spot=74488.2 | 1h: close=74314.6 sma20=74392.3 sma50=74784.0 rsi=43.5 macd=-110.74/-148.89(bull) | 15m: K=15.4↓(prev 23.3) | regime=PE-eligible any_active=False
 2026-09-18 03:56:31,991 [INFO] [SIGNAL] CE: reg=False K=False(K=15.4>=38,rising) Kextr=True RSI=False(43.5>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=15.4<=80,falling) Kextr=False RSI=True(43.5<47) MACD=False(gate off) => BLOCK
+2026-09-18 03:56:34,493 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 03:57:04,666 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 03:57:34,903 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 03:58:05,101 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 03:58:35,294 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 03:59:05,504 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 03:59:35,702 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 04:00:05,909 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 04:00:05,914 [INFO] [ORB] Signal — close 74417.4 broke OR[74440.8,74593.8] side=PE
+2026-09-18 04:00:05,966 [INFO] ENTRY: BFO:SENSEX26SEP74400PE @ 423.45  engine=ORB  detail=ORB break 74417 vs OR[74441,74594]
+2026-09-18 04:00:38,119 [INFO] [MVWAP] Skip — close 74640 only 33pt from a pivot (need >65)
+2026-09-18 04:01:38,596 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 04:01:38,642 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 04:01:38,643 [INFO] [INDICATORS] spot=74409.1 | 1h: close=74314.6 sma20=74392.3 sma50=74784.0 rsi=43.5 macd=-110.74/-148.89(bull) | 15m: K=24.3↑(prev 15.4) | regime=PE-eligible any_active=True
+2026-09-18 04:01:38,643 [INFO] [SIGNAL] CE: reg=False K=False(K=24.3>=38,rising) Kextr=True RSI=False(43.5>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=24.3<=80,falling) Kextr=False RSI=True(43.5<47) MACD=False(gate off) => BLOCK
+2026-09-18 04:01:38,644 [INFO] [STATE][ORB] PE BFO:SENSEX26SEP74400PE ltp=431.15 entry=423.45 pnl=+7.70(+1.8%) sl=0.00 peak=447.25 tr_armed=False elapsed=1min
