@@ -1742,3 +1742,14 @@
 2026-09-18 08:43:09,126 [INFO] [INDICATORS] spot=74635.9 | 1h: close=74549.2 sma20=74380.2 sma50=74676.6 rsi=50.7 macd=-62.06/-106.66(bull) | 15m: K=61.4↓(prev 70.0) | regime=NEUTRAL any_active=True
 2026-09-18 08:43:09,126 [INFO] [SIGNAL] CE: reg=False K=False(K=61.4>=38,rising) Kextr=False RSI=False(50.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=61.4<=80,falling) Kextr=True RSI=False(50.7<47) MACD=False(gate off) => BLOCK
 2026-09-18 08:43:09,127 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26SEP74600CE ltp=443.05 entry=462.20 pnl=-19.15(-4.1%) sl=0.00 peak=463.10 tr_armed=False elapsed=2min
+2026-09-18 08:43:12,728 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 08:43:43,551 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 08:44:14,076 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 08:44:44,816 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 08:45:15,429 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 08:45:46,025 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 08:48:19,084 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 08:48:19,085 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 08:48:19,086 [INFO] [INDICATORS] spot=74628.4 | 1h: close=74606.3 sma20=74401.8 sma50=74655.4 rsi=52.4 macd=-45.40/-94.41(bull) | 15m: K=67.5↑(prev 61.4) | regime=NEUTRAL any_active=True
+2026-09-18 08:48:19,086 [INFO] [SIGNAL] CE: reg=False K=True(K=67.5>=38,rising) Kextr=False RSI=False(52.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=67.5<=80,falling) Kextr=True RSI=False(52.4<47) MACD=False(gate off) => BLOCK
+2026-09-18 08:48:19,087 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26SEP74600CE ltp=446.75 entry=462.20 pnl=-15.45(-3.3%) sl=0.00 peak=463.10 tr_armed=False elapsed=7min
