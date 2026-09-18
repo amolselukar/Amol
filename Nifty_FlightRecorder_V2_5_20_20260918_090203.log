@@ -2267,3 +2267,4 @@
 2026-09-18 09:56:57,795 [INFO] [INDICATORS] spot=23341.8 | 1h: close=23341.8 sma20=23280.6 sma50=23357.0 rsi=52.5 macd=-5.53/-23.05(bull) | 15m: K=63.5↓(prev 90.2) | regime=NEUTRAL any_active=False
 2026-09-18 09:56:57,795 [INFO] [SIGNAL] CE: reg=False K=False(K=63.5>=38,rising) Kextr=False RSI=False(52.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=63.5<=80,falling) Kextr=True RSI=False(52.5<47) MACD=False(gate off) => BLOCK
 2026-09-18 09:57:00,468 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
+2026-09-18 10:00:06,382 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
