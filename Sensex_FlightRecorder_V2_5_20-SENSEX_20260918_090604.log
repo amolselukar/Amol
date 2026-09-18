@@ -1541,3 +1541,18 @@
 2026-09-18 07:16:06,956 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 07:16:06,957 [INFO] [INDICATORS] spot=74532.1 | 1h: close=74489.6 sma20=74369.2 sma50=74698.4 rsi=48.9 macd=-76.60/-117.81(bull) | 15m: K=95.2↑(prev 92.1) | regime=NEUTRAL any_active=False
 2026-09-18 07:16:06,957 [INFO] [SIGNAL] CE: reg=False K=True(K=95.2>=38,rising) Kextr=False RSI=False(48.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=95.2<=80,falling) Kextr=True RSI=False(48.9<47) MACD=False(gate off) => BLOCK
+2026-09-18 07:16:09,966 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 07:16:40,202 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:17:10,465 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:17:40,732 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:18:11,005 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:18:41,285 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:19:11,564 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:19:41,831 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:20:12,116 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:20:42,405 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:21:12,751 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-09-18 07:21:12,780 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 07:21:12,840 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 07:21:12,841 [INFO] [INDICATORS] spot=74511.9 | 1h: close=74489.6 sma20=74369.2 sma50=74698.4 rsi=48.9 macd=-76.60/-117.81(bull) | 15m: K=95.2↑(prev 92.1) | regime=NEUTRAL any_active=False
+2026-09-18 07:21:12,841 [INFO] [SIGNAL] CE: reg=False K=True(K=95.2>=38,rising) Kextr=False RSI=False(48.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=95.2<=80,falling) Kextr=True RSI=False(48.9<47) MACD=False(gate off) => BLOCK
