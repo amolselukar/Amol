@@ -1815,3 +1815,13 @@
 2026-09-18 04:23:13,667 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 04:23:13,668 [INFO] [INDICATORS] spot=23313.1 | 1h: close=23270.6 sma20=23256.8 sma50=23400.1 rsi=46.1 macd=-32.68/-50.47(bull) | 15m: K=35.5↑(prev 29.1) | regime=NEUTRAL any_active=False
 2026-09-18 04:23:13,668 [INFO] [SIGNAL] CE: reg=False K=False(K=35.5>=38,rising) Kextr=True RSI=False(46.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=35.5<=80,falling) Kextr=False RSI=True(46.1<47) MACD=False(gate off) => BLOCK
+2026-09-18 04:23:16,403 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
+2026-09-18 04:26:17,862 [INFO] [FUT5VWAP] Skip — close 23345 only 13pt from a pivot (need >20)
+2026-09-18 04:26:48,148 [INFO] [FUT5VWAP] Skip — close 23345 only 13pt from a pivot (need >20)
+2026-09-18 04:27:18,354 [INFO] [FUT5VWAP] Skip — close 23345 only 13pt from a pivot (need >20)
+2026-09-18 04:27:48,643 [INFO] [FUT5VWAP] Skip — close 23345 only 13pt from a pivot (need >20)
+2026-09-18 04:28:18,841 [INFO] [FUT5VWAP] Skip — close 23345 only 13pt from a pivot (need >20)
+2026-09-18 04:28:18,954 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 04:28:18,954 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 04:28:18,954 [INFO] [INDICATORS] spot=23329.0 | 1h: close=23270.6 sma20=23256.8 sma50=23400.1 rsi=46.1 macd=-32.68/-50.47(bull) | 15m: K=35.5↑(prev 29.1) | regime=NEUTRAL any_active=False
+2026-09-18 04:28:18,955 [INFO] [SIGNAL] CE: reg=False K=False(K=35.5>=38,rising) Kextr=True RSI=False(46.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=35.5<=80,falling) Kextr=False RSI=True(46.1<47) MACD=False(gate off) => BLOCK
