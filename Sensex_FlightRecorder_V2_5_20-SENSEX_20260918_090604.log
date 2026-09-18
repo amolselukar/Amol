@@ -1799,3 +1799,13 @@
 2026-09-18 09:19:13,640 [INFO] [INDICATORS] spot=74651.9 | 1h: close=74606.3 sma20=74401.8 sma50=74655.4 rsi=52.4 macd=-45.40/-94.41(bull) | 15m: K=92.0↑(prev 91.4) | regime=NEUTRAL any_active=True
 2026-09-18 09:19:13,640 [INFO] [SIGNAL] CE: reg=False K=True(K=92.0>=38,rising) Kextr=False RSI=False(52.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.0<=80,falling) Kextr=True RSI=False(52.4<47) MACD=False(gate off) => BLOCK
 2026-09-18 09:19:13,642 [INFO] [STATE][VWAP] CE BFO:SENSEX26SEP74600CE ltp=457.75 entry=443.20 pnl=+14.55(+3.3%) sl=363.42 peak=461.30 tr_armed=False elapsed=3min
+2026-09-18 09:19:16,510 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20260918_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20260918_090604.csv
+2026-09-18 09:19:52,957 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-18 09:20:00,035 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-18 09:20:08,114 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v2/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-18 09:20:12,115 [ERROR] Kite call ltp terminal failure
+2026-09-18 09:24:15,497 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 09:24:15,579 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 09:24:15,580 [INFO] [INDICATORS] spot=74697.3 | 1h: close=74606.3 sma20=74401.8 sma50=74655.4 rsi=52.4 macd=-45.40/-94.41(bull) | 15m: K=92.0↑(prev 91.4) | regime=NEUTRAL any_active=True
+2026-09-18 09:24:15,580 [INFO] [SIGNAL] CE: reg=False K=True(K=92.0>=38,rising) Kextr=False RSI=False(52.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=92.0<=80,falling) Kextr=True RSI=False(52.4<47) MACD=False(gate off) => BLOCK
+2026-09-18 09:24:15,581 [INFO] [STATE][VWAP] CE BFO:SENSEX26SEP74600CE ltp=485.90 entry=443.20 pnl=+42.70(+9.6%) sl=363.42 peak=487.40 tr_armed=False elapsed=9min
