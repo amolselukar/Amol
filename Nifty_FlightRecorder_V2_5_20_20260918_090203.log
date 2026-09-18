@@ -1787,3 +1787,11 @@
 2026-09-18 04:02:45,841 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 04:02:45,842 [INFO] [INDICATORS] spot=23297.1 | 1h: close=23270.6 sma20=23256.8 sma50=23400.1 rsi=46.1 macd=-32.68/-50.47(bull) | 15m: K=29.1↑(prev 23.0) | regime=NEUTRAL any_active=False
 2026-09-18 04:02:45,842 [INFO] [SIGNAL] CE: reg=False K=False(K=29.1>=38,rising) Kextr=True RSI=False(46.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=29.1<=80,falling) Kextr=False RSI=True(46.1<47) MACD=False(gate off) => BLOCK
+2026-09-18 04:02:49,295 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
+2026-09-18 04:05:21,499 [INFO] [ORB] H3 CONFIRMED PE break 23301.0 -> 23292.9 vs OR[23305.0,23360.5]; waiting for pullback to 23305.0±8 until 10:20
+2026-09-18 04:07:24,741 [INFO] [FAST] CE23300 score=129 vol=2.49 U=16.0 skipped: slope5=-1.04
+2026-09-18 04:07:55,001 [INFO] [ORB] H3 pending CANCELLED — 1m close 23315.8 back inside OR by >10pt before any pullback. ORB done for the day.
+2026-09-18 04:07:55,825 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 04:07:55,825 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 04:07:55,826 [INFO] [INDICATORS] spot=23315.8 | 1h: close=23270.6 sma20=23256.8 sma50=23400.1 rsi=46.1 macd=-32.68/-50.47(bull) | 15m: K=29.1↑(prev 23.0) | regime=NEUTRAL any_active=False
+2026-09-18 04:07:55,826 [INFO] [SIGNAL] CE: reg=False K=False(K=29.1>=38,rising) Kextr=True RSI=False(46.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=29.1<=80,falling) Kextr=False RSI=True(46.1<47) MACD=False(gate off) => BLOCK
