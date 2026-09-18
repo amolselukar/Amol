@@ -1966,3 +1966,18 @@
 2026-09-18 06:10:43,735 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-18 06:10:43,736 [INFO] [INDICATORS] spot=23301.6 | 1h: close=23304.3 sma20=23254.3 sma50=23383.0 rsi=49.1 macd=-22.71/-41.04(bull) | 15m: K=39.7↓(prev 49.5) | regime=NEUTRAL any_active=False
 2026-09-18 06:10:43,736 [INFO] [SIGNAL] CE: reg=False K=False(K=39.7>=38,rising) Kextr=False RSI=False(49.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=39.7<=80,falling) Kextr=False RSI=False(49.1<47) MACD=False(gate off) => BLOCK
+2026-09-18 06:10:46,624 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20260918_090203.log, Nifty_BarLevel_V2_5_20_20260918_090203.csv
+2026-09-18 06:11:16,832 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:11:47,229 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:12:17,509 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:12:47,952 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:13:18,256 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:13:48,645 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:14:18,920 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:14:49,303 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:15:19,582 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:15:50,008 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-09-18 06:15:50,035 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 06:15:50,083 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-18 06:15:50,083 [INFO] [INDICATORS] spot=23298.5 | 1h: close=23304.3 sma20=23254.3 sma50=23383.0 rsi=49.1 macd=-22.71/-41.04(bull) | 15m: K=30.4↓(prev 39.7) | regime=NEUTRAL any_active=False
+2026-09-18 06:15:50,084 [INFO] [SIGNAL] CE: reg=False K=False(K=30.4>=38,rising) Kextr=False RSI=False(49.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=30.4<=80,falling) Kextr=False RSI=False(49.1<47) MACD=False(gate off) => BLOCK
