@@ -2220,3 +2220,36 @@ valuable there.
 2026-09-21 08:46:00,608 [INFO] [INDICATORS] spot=74942.7 | 1h: close=74942.7 sma20=74542.6 sma50=74572.9 rsi=57.4 macd=34.36/-25.40(bull) | 15m: K=89.1↓(prev 99.5) | regime=NEUTRAL any_active=True
 2026-09-21 08:46:00,608 [INFO] [SIGNAL] CE: reg=False K=False(K=89.1>=38,rising) Kextr=False RSI=True(57.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=89.1<=80,falling) Kextr=True RSI=False(57.4<47) MACD=False(gate off) => BLOCK
 2026-09-21 08:46:00,609 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26SEP74800CE ltp=396.00 entry=360.65 pnl=+35.35(+9.8%) sl=0.00 peak=441.45 tr_armed=False elapsed=139min
+2026-09-21 08:46:01,463 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-21 08:46:31,707 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:47:02,014 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:47:32,367 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:48:02,724 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:48:08,797 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:48:15,859 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:48:23,923 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:48:27,934 [ERROR] Kite call ltp terminal failure
+2026-09-21 08:48:58,202 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:49:04,262 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:49:11,323 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:49:19,387 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:49:23,388 [ERROR] Kite call ltp terminal failure
+2026-09-21 08:49:53,666 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:49:59,730 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:50:06,797 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-21 08:50:39,082 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:51:09,369 [INFO] [VWAP] Climax skip — body=97% >= 87%
+2026-09-21 08:51:09,421 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-21 08:51:09,421 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-21 08:51:09,422 [INFO] [INDICATORS] spot=74951.4 | 1h: close=74942.7 sma20=74542.6 sma50=74572.9 rsi=60.6 macd=58.27/-8.67(bull) | 15m: K=89.1↓(prev 99.5) | regime=NEUTRAL any_active=True
+2026-09-21 08:51:09,422 [INFO] [SIGNAL] CE: reg=False K=False(K=89.1>=38,rising) Kextr=False RSI=True(60.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=89.1<=80,falling) Kextr=True RSI=False(60.6<47) MACD=False(gate off) => BLOCK
+2026-09-21 08:51:09,422 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26SEP74800CE ltp=414.45 entry=360.65 pnl=+53.80(+14.9%) sl=0.00 peak=441.45 tr_armed=False elapsed=144min
