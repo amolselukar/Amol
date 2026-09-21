@@ -1252,3 +1252,28 @@ valuable there.
 2026-09-21 04:16:43,706 [INFO] [INDICATORS] spot=74733.1 | 1h: close=74295.0 sma20=74434.9 sma50=74607.9 rsi=43.0 macd=-48.42/-75.78(bull) | 15m: K=47.8↑(prev 28.1) | regime=PE-eligible any_active=True
 2026-09-21 04:16:43,706 [INFO] [SIGNAL] CE: reg=False K=True(K=47.8>=38,rising) Kextr=False RSI=False(43.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=47.8<=80,falling) Kextr=False RSI=True(43.0<47) MACD=False(gate off) => BLOCK
 2026-09-21 04:16:43,707 [INFO] [STATE][ORB] CE BFO:SENSEX26SEP74800CE ltp=338.50 entry=354.85 pnl=-16.35(-4.6%) sl=0.00 peak=357.80 tr_armed=False elapsed=16min
+2026-09-21 04:16:44,380 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-21 04:17:14,618 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:17:44,991 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:18:15,256 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:18:45,567 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:19:15,953 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:19:46,230 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:20:16,505 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:20:46,788 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+2.6pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:21:17,054 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+11.7pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:21:47,335 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+11.7pt persist=True (last 2x5m vs FUTvwap=74722.4)
+2026-09-21 04:21:47,389 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-21 04:21:47,390 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-21 04:21:47,392 [INFO] [INDICATORS] spot=74757.1 | 1h: close=74295.0 sma20=74434.9 sma50=74607.9 rsi=43.0 macd=-48.42/-75.78(bull) | 15m: K=47.8↑(prev 28.1) | regime=PE-eligible any_active=True
+2026-09-21 04:21:47,392 [INFO] [SIGNAL] CE: reg=False K=True(K=47.8>=38,rising) Kextr=False RSI=False(43.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=47.8<=80,falling) Kextr=False RSI=True(43.0<47) MACD=False(gate off) => BLOCK
+2026-09-21 04:21:47,393 [INFO] [STATE][ORB] CE BFO:SENSEX26SEP74800CE ltp=341.95 entry=354.85 pnl=-12.90(-3.6%) sl=0.00 peak=357.80 tr_armed=False elapsed=21min
