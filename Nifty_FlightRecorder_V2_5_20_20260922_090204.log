@@ -2038,3 +2038,24 @@ valuable there.
 2026-09-22 05:08:47,286 [INFO] [INDICATORS] spot=23413.6 | 1h: close=23465.2 sma20=23359.0 sma50=23336.0 rsi=62.5 macd=31.35/16.09(bull) | 15m: K=43.8↓(prev 57.1) | regime=CE-eligible any_active=True
 2026-09-22 05:08:47,286 [INFO] [SIGNAL] CE: reg=True K=False(K=43.8>=38,rising) Kextr=False RSI=True(62.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=43.8<=80,falling) Kextr=False RSI=False(62.5<47) MACD=False(gate off) => BLOCK
 2026-09-22 05:08:47,286 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2692223400PE ltp=41.75 entry=41.85 pnl=-0.10(-0.2%) sl=0.00 peak=41.85 tr_armed=False elapsed=2min
+2026-09-22 05:08:48,001 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-22 05:10:19,771 [INFO] [ORB] H3 CONFIRMED PE break 23422.2 -> 23406.2 vs OR[23434.0,23489.0]; waiting for pullback to 23434.0±8 until 11:25
+2026-09-22 05:10:20,679 [INFO] [FAST] PE23400 score=221 vol=1.35 U=14.2 skipped: leader score=221 vol=1.35 U=14.2
+2026-09-22 05:12:23,485 [INFO] [FAST] PE23400 score=286 vol=1.56 U=22.3 skipped: leader score=286 vol=1.56 U=22.3
+2026-09-22 05:13:24,720 [INFO] [FAST] SIGNAL 1m momentum PE23400 score=290 vol=2.7x U=+29 momN=45.9% trend=PE bar 10:42; trail 15
+2026-09-22 05:13:24,772 [INFO] ENTRY: NFO:NIFTY2692223400PE @ 57.20  engine=FAST  detail=1m momentum PE23400 score=290 vol=2.7x U=+29 momN=45.9% trend=PE bar 10:42; trail 15
+2026-09-22 05:13:56,269 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-22 05:13:56,269 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-22 05:13:56,270 [INFO] [INDICATORS] spot=23385.5 | 1h: close=23465.2 sma20=23359.0 sma50=23336.0 rsi=62.5 macd=31.35/16.09(bull) | 15m: K=43.8↓(prev 57.1) | regime=CE-eligible any_active=True
+2026-09-22 05:13:56,270 [INFO] [SIGNAL] CE: reg=True K=False(K=43.8>=38,rising) Kextr=False RSI=True(62.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=43.8<=80,falling) Kextr=False RSI=False(62.5<47) MACD=False(gate off) => BLOCK
+2026-09-22 05:13:56,270 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2692223400PE ltp=54.05 entry=41.85 pnl=+12.20(+29.2%) sl=0.00 peak=69.05 tr_armed=False elapsed=7min
+2026-09-22 05:13:56,271 [INFO] [STATE][FAST] PE NFO:NIFTY2692223400PE ltp=54.30 entry=57.20 pnl=-2.90(-5.1%) sl=0.00 peak=57.20 tr_armed=False elapsed=0min
