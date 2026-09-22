@@ -2011,3 +2011,30 @@ valuable there.
 2026-09-22 05:03:37,205 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-22 05:03:37,205 [INFO] [INDICATORS] spot=23420.2 | 1h: close=23465.2 sma20=23359.0 sma50=23336.0 rsi=62.5 macd=31.35/16.09(bull) | 15m: K=43.8↓(prev 57.1) | regime=CE-eligible any_active=False
 2026-09-22 05:03:37,205 [INFO] [SIGNAL] CE: reg=True K=False(K=43.8>=38,rising) Kextr=False RSI=True(62.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=43.8<=80,falling) Kextr=False RSI=False(62.5<47) MACD=False(gate off) => BLOCK
+2026-09-22 05:03:38,691 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-22 05:04:08,990 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-8.1pt persist=False (last 2x5m vs FUTvwap=23454.8)
+2026-09-22 05:04:39,634 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.1pt persist=False (last 2x5m vs FUTvwap=23453.8)
+2026-09-22 05:05:10,297 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-7.1pt persist=False (last 2x5m vs FUTvwap=23453.8)
+2026-09-22 05:05:40,930 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-6.9pt persist=False (last 2x5m vs FUTvwap=23453.6)
+2026-09-22 05:06:11,622 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-6.9pt persist=False (last 2x5m vs FUTvwap=23453.6)
+2026-09-22 05:06:42,271 [INFO] [RENKO] dir=-1 (DOWN) bricks=3 brick=17.79 last5=[1, -1, -1]
+2026-09-22 05:06:42,277 [INFO] [VWAP] Signal — FUT 23447<23452 body=82% side=PE | persist_gate=dist=-26.7pt persist=True (last 2x5m vs FUTvwap=23451.7)
+2026-09-22 05:06:42,369 [INFO] [EMA9] LIMIT PLACED VWAP PE NFO:NIFTY2692223400PE limit=32.82 (signal LTP 41.80 is +8.98 above 15m EMA9) window=15min -- FUT VWAP 23447<23452 body=82% | bar=134
+2026-09-22 05:06:43,245 [INFO] [FUT5VWAP] Signal — 23425<23452 body=84% side=PE (fixed +12pt target)
+2026-09-22 05:06:43,333 [INFO] ENTRY: NFO:NIFTY2692223400PE @ 41.85  engine=FUT5VWAP  detail=FUT5 VWAP cross 23425<23452 body=84% pivΔ=57pt | bar=92
+2026-09-22 05:08:16,465 [INFO] [WCR] 23450PE — OI 31.5M @10:19 -> 21.8M (31% unwound in 19m), price 39.25 -> 67.05, spot 23412 through 23450
+2026-09-22 05:08:16,465 [INFO] [WCR] resting limit BUY @ 43.18, valid 20m (no chase)
+2026-09-22 05:08:47,285 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-22 05:08:47,285 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-22 05:08:47,286 [INFO] [INDICATORS] spot=23413.6 | 1h: close=23465.2 sma20=23359.0 sma50=23336.0 rsi=62.5 macd=31.35/16.09(bull) | 15m: K=43.8↓(prev 57.1) | regime=CE-eligible any_active=True
+2026-09-22 05:08:47,286 [INFO] [SIGNAL] CE: reg=True K=False(K=43.8>=38,rising) Kextr=False RSI=True(62.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=43.8<=80,falling) Kextr=False RSI=False(62.5<47) MACD=False(gate off) => BLOCK
+2026-09-22 05:08:47,286 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY2692223400PE ltp=41.75 entry=41.85 pnl=-0.10(-0.2%) sl=0.00 peak=41.85 tr_armed=False elapsed=2min
