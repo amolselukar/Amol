@@ -2484,3 +2484,19 @@ valuable there.
 2026-09-22 07:27:11,700 [INFO] [INDICATORS] spot=23338.2 | 1h: close=23356.9 sma20=23363.6 sma50=23333.9 rsi=48.7 macd=23.21/19.52(bull) | 15m: K=0.6↓(prev 0.6) | regime=NEUTRAL any_active=True
 2026-09-22 07:27:11,700 [INFO] [SIGNAL] CE: reg=False K=False(K=0.6>=38,rising) Kextr=True RSI=False(48.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.6<=80,falling) Kextr=False RSI=False(48.7<47) MACD=False(gate off) => BLOCK
 2026-09-22 07:27:11,701 [INFO] [STATE][STOCH] CE NFO:NIFTY2692223350CE ltp=30.45 entry=37.10 pnl=-6.65(-17.9%) sl=0.00 peak=38.60 tr_armed=False elapsed=11min
+2026-09-22 07:27:12,503 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-22 07:30:46,605 [INFO] [CB] STOCH loss (own count 1) — TOTAL across all engines=1/4 (reason=STOCH_STOP)
+2026-09-22 07:30:46,606 [INFO] EXIT: NFO:NIFTY2692223350CE @ 27.10 reason=STOCH_STOP pnl/sh=-10.00 is_flip=False losses=1/4
+2026-09-22 07:32:20,525 [INFO] [APEX] open=0 trades=1 realized=-5.8pt/Rs-374 unreal=+0.0pt/Rs+0
+2026-09-22 07:32:20,588 [INFO] [T5] open=0 trades=1 realized=-12.0pt/Rs-780 unreal=+0.0pt/Rs+0
+2026-09-22 07:32:20,589 [INFO] [INDICATORS] spot=23333.2 | 1h: close=23356.9 sma20=23363.6 sma50=23333.9 rsi=48.7 macd=23.21/19.52(bull) | 15m: K=0.6↓(prev 0.6) | regime=NEUTRAL any_active=False
+2026-09-22 07:32:20,589 [INFO] [SIGNAL] CE: reg=False K=False(K=0.6>=38,rising) Kextr=True RSI=False(48.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.6<=80,falling) Kextr=False RSI=False(48.7<47) MACD=False(gate off) => BLOCK
