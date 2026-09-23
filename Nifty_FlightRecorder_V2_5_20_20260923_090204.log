@@ -2724,3 +2724,28 @@ valuable there.
 2026-09-23 08:43:23,938 [INFO] [INDICATORS] spot=23450.8 | 1h: close=23446.3 sma20=23395.2 sma50=23332.9 rsi=57.8 macd=19.62/14.85(bull) | 15m: K=19.7↓(prev 44.3) | regime=CE-eligible any_active=True
 2026-09-23 08:43:23,938 [INFO] [SIGNAL] CE: reg=True K=False(K=19.7>=38,rising) Kextr=True RSI=True(57.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.7<=80,falling) Kextr=True RSI=False(57.8<47) MACD=False(gate off) => BLOCK
 2026-09-23 08:43:23,939 [INFO] [STATE][STOCH] CE NFO:NIFTY26SEP23450CE ltp=123.00 entry=109.35 pnl=+13.65(+12.5%) sl=0.00 peak=123.00 tr_armed=False elapsed=13min
+2026-09-23 08:43:24,671 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-23 08:46:28,301 [INFO] [VWAP] Signal — FUT 23469>23435 body=79% side=CE | persist_gate=dist=+32.4pt persist=True (last 2x5m vs FUTvwap=23436.6)
+2026-09-23 08:46:28,307 [INFO] [RENKO] VWAP CE BLOCKED — 1m renko NEUTRAL (no 2 same-colour bricks yet, bricks=12, brick=13.3)
+2026-09-23 08:47:36,227 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-23 08:47:43,324 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-23 08:47:51,411 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-23 08:47:55,411 [ERROR] Kite call ltp terminal failure
+2026-09-23 08:48:32,323 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-23 08:48:39,446 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-23 08:48:47,538 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-23 08:48:51,538 [ERROR] Kite call ltp terminal failure
+2026-09-23 08:48:51,709 [INFO] [APEX] open=0 trades=5 realized=-31.7pt/Rs-2057 unreal=+0.0pt/Rs+0
+2026-09-23 08:48:51,789 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-23 08:48:51,790 [INFO] [INDICATORS] spot=23445.1 | 1h: close=23451.7 sma20=23400.6 sma50=23335.2 rsi=58.3 macd=22.26/16.33(bull) | 15m: K=19.7↓(prev 19.7) | regime=CE-eligible any_active=True
+2026-09-23 08:48:51,790 [INFO] [SIGNAL] CE: reg=True K=False(K=19.7>=38,rising) Kextr=True RSI=True(58.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.7<=80,falling) Kextr=False RSI=False(58.3<47) MACD=False(gate off) => BLOCK
+2026-09-23 08:48:51,790 [INFO] [STATE][STOCH] CE NFO:NIFTY26SEP23450CE ltp=119.70 entry=109.35 pnl=+10.35(+9.5%) sl=0.00 peak=123.00 tr_armed=False elapsed=18min
