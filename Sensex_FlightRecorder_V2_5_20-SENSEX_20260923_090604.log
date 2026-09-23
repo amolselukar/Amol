@@ -1992,3 +1992,20 @@ valuable there.
 2026-09-23 08:10:44,728 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-23 08:10:44,728 [INFO] [INDICATORS] spot=74820.9 | 1h: close=74902.3 sma20=74741.9 sma50=74581.0 rsi=56.5 macd=59.41/44.26(bull) | 15m: K=72.4↓(prev 81.9) | regime=CE-eligible any_active=False
 2026-09-23 08:10:44,728 [INFO] [SIGNAL] CE: reg=True K=False(K=72.4>=38,rising) Kextr=False RSI=True(56.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=72.4<=80,falling) Kextr=True RSI=False(56.5<47) MACD=False(gate off) => BLOCK
+2026-09-23 08:10:46,225 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-23 08:11:16,570 [INFO] [FUT5VWAP] Signal — 74813<74823 body=85% side=PE (fixed +40pt target)
+2026-09-23 08:11:16,671 [INFO] ENTRY: BFO:SENSEX26SEP74800PE @ 207.00  engine=FUT5VWAP  detail=FUT5 VWAP cross 74813<74823 body=85% pivΔ=91pt | bar=206
+2026-09-23 08:15:51,464 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-23 08:15:51,464 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-23 08:15:51,464 [INFO] [INDICATORS] spot=74832.3 | 1h: close=74902.3 sma20=74741.9 sma50=74581.0 rsi=56.5 macd=59.41/44.26(bull) | 15m: K=43.6↓(prev 72.4) | regime=CE-eligible any_active=True
+2026-09-23 08:15:51,465 [INFO] [SIGNAL] CE: reg=True K=False(K=43.6>=38,rising) Kextr=False RSI=True(56.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=43.6<=80,falling) Kextr=True RSI=False(56.5<47) MACD=False(gate off) => BLOCK
+2026-09-23 08:15:51,465 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26SEP74800PE ltp=194.35 entry=207.00 pnl=-12.65(-6.1%) sl=0.00 peak=207.00 tr_armed=False elapsed=4min
