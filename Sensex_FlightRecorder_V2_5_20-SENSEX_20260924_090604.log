@@ -2389,3 +2389,21 @@ valuable there.
 2026-09-24 09:54:38,843 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-24 09:55:39,638 [INFO] [INDICATORS] spot=73719.8 | 1h: close=73719.6 sma20=74524.6 sma50=74505.7 rsi=29.2 macd=-206.98/-82.10(bear) | 15m: K=97.6↑(prev 78.5) | regime=NEUTRAL any_active=False
 2026-09-24 09:55:39,639 [INFO] [SIGNAL] CE: reg=False K=True(K=97.6>=38,rising) Kextr=False RSI=False(29.2>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=97.6<=80,falling) Kextr=True RSI=True(29.2<47) MACD=True(gate off) => BLOCK
+2026-09-24 09:55:40,464 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-24 09:56:10,998 [INFO] [EXP12] EXP2 ENTRY 73700PE @ 34.15 (cheap-ladder bar@15:23=52.75 dist=-20 oi15=-10.8%)
+2026-09-24 09:56:11,815 [INFO] [EXP12] EXP2W ENTRY 73700PE @ 34.15 (was-expensive afthi=236.10 bar@15:23=52.75 dist=-20 oi15=-10.8%)
+2026-09-24 09:56:12,639 [INFO] [EXP12] M=73700 open=2[EXP2:73700PE EXP2W:73700PE] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-24 09:58:15,034 [INFO] [EXP12] EXP2 EXIT 73700PE 34.15->73.55 Rs+788 [EOD_1528] | day Rs+788
+2026-09-24 09:58:15,879 [INFO] [EXP12] EXP2W EXIT 73700PE 34.15->74.35 Rs+804 [EOD_1528] | day Rs+1592
+2026-09-24 09:59:18,185 [INFO] [EXP12] EOD why/why-not report sent
+2026-09-24 09:59:48,508 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 09:59:48,508 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
