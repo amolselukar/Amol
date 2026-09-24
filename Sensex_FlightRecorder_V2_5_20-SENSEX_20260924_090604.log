@@ -2340,3 +2340,20 @@ valuable there.
 2026-09-24 09:39:21,348 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-24 09:40:22,344 [INFO] [INDICATORS] spot=73744.2 | 1h: close=73661.9 sma20=74581.5 sma50=74517.9 rsi=27.0 macd=-171.44/-50.87(bear) | 15m: K=78.5↑(prev 59.8) | regime=NEUTRAL any_active=False
 2026-09-24 09:40:22,344 [INFO] [SIGNAL] CE: reg=False K=True(K=78.5>=38,rising) Kextr=True RSI=False(27.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=78.5<=80,falling) Kextr=True RSI=True(27.0<47) MACD=True(gate off) => BLOCK
+2026-09-24 09:40:23,086 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-24 09:40:53,515 [INFO] [EXP12] anchor=spot M=73700 (max-OI would be 74000, diverged by +300) spot=73744.2
+2026-09-24 09:40:53,515 [INFO] [EXP12] universe RE-resolved: M=73700 legs=[(73600, 'CE'), (73600, 'PE'), (73700, 'CE'), (73700, 'PE'), (73800, 'CE'), (73800, 'PE')]
+2026-09-24 09:40:53,680 [INFO] [EXP12] M=73700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-24 09:44:27,947 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 09:44:27,948 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 09:45:28,782 [INFO] [INDICATORS] spot=73719.6 | 1h: close=73719.6 sma20=74524.6 sma50=74505.7 rsi=27.0 macd=-171.44/-50.88(bear) | 15m: K=97.6↑(prev 78.5) | regime=NEUTRAL any_active=False
+2026-09-24 09:45:28,783 [INFO] [SIGNAL] CE: reg=False K=True(K=97.6>=38,rising) Kextr=True RSI=False(27.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=97.6<=80,falling) Kextr=True RSI=True(27.0<47) MACD=True(gate off) => BLOCK
