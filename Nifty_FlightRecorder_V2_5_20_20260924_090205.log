@@ -2773,3 +2773,31 @@ valuable there.
 2026-09-24 09:13:38,273 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-5.7pt/Rs-370
 2026-09-24 09:13:38,274 [INFO] [INDICATORS] spot=23090.3 | 1h: close=23077.8 sma20=23347.8 sma50=23318.3 rsi=27.3 macd=-47.53/-11.30(bear) | 15m: K=25.9↑(prev 14.1) | regime=NEUTRAL any_active=False
 2026-09-24 09:13:38,274 [INFO] [SIGNAL] CE: reg=False K=False(K=25.9>=38,rising) Kextr=True RSI=False(27.3>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=25.9<=80,falling) Kextr=False RSI=True(27.3<47) MACD=True(gate off) => BLOCK
+2026-09-24 09:13:39,088 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-24 09:16:43,510 [INFO] [VWAP] Signal — FUT 23119<23193 body=70% side=PE | persist_gate=dist=-74.3pt persist=True (last 2x5m vs FUTvwap=23193.3)
+2026-09-24 09:16:43,513 [INFO] [RENKO] VWAP PE BLOCKED — 1m renko UP-established, PE is against it (bricks=23, brick=12.4)
+2026-09-24 09:17:51,855 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:17:58,932 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:18:07,013 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:18:11,013 [ERROR] Kite call ltp terminal failure
+2026-09-24 09:18:41,823 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 09:18:47,922 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:18:55,001 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:19:03,094 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:19:07,094 [ERROR] Kite call ltp terminal failure
+2026-09-24 09:19:13,277 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:19:20,371 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:19:28,467 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-09-24 09:19:32,467 [ERROR] Kite call ltp terminal failure
+2026-09-24 09:19:32,468 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 09:19:32,468 [INFO] [INDICATORS] spot=23097.3 | 1h: close=23077.8 sma20=23347.8 sma50=23318.3 rsi=27.3 macd=-47.53/-11.30(bear) | 15m: K=58.4↑(prev 25.9) | regime=NEUTRAL any_active=False
+2026-09-24 09:19:32,469 [INFO] [SIGNAL] CE: reg=False K=True(K=58.4>=38,rising) Kextr=True RSI=False(27.3>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=58.4<=80,falling) Kextr=False RSI=True(27.3<47) MACD=True(gate off) => BLOCK
