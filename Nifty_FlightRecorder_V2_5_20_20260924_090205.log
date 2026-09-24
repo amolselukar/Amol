@@ -2924,3 +2924,13 @@ valuable there.
 
 2026-09-24 09:58:47,654 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=25 brick=12.42 last5=[-1, 1, 1, 1, -1]
 2026-09-24 09:59:48,263 [INFO] [RENKO] dir=-1 (DOWN) bricks=26 brick=12.42 last5=[1, 1, 1, -1, -1]
+2026-09-24 10:00:19,800 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
