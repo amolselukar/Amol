@@ -2482,3 +2482,20 @@ valuable there.
 2026-09-24 07:41:36,797 [INFO] [INDICATORS] spot=23178.0 | 1h: close=23195.7 sma20=23378.9 sma50=23325.7 rsi=34.1 macd=-20.55/4.99(bear) | 15m: K=12.6↑(prev 12.5) | regime=NEUTRAL any_active=True
 2026-09-24 07:41:36,797 [INFO] [SIGNAL] CE: reg=False K=False(K=12.6>=38,rising) Kextr=True RSI=False(34.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=12.6<=80,falling) Kextr=False RSI=True(34.1<47) MACD=True(gate off) => BLOCK
 2026-09-24 07:41:36,798 [INFO] [STATE][STOCH] CE NFO:NIFTY26SEP23200CE ltp=120.85 entry=124.95 pnl=-4.10(-3.3%) sl=0.00 peak=128.10 tr_armed=False elapsed=56min
+2026-09-24 07:41:37,481 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-24 07:43:39,785 [INFO] [RENKO] dir=-1 (DOWN) bricks=10 brick=12.42 last5=[1, -1, -1, -1, -1]
+2026-09-24 07:45:11,649 [INFO] [CB] STOCH loss (own count 1) — TOTAL across all engines=1/4 (reason=STOCH_TIMEOUT)
+2026-09-24 07:45:11,651 [INFO] EXIT: NFO:NIFTY26SEP23200CE @ 120.00 reason=STOCH_TIMEOUT pnl/sh=-4.95 is_flip=False losses=1/4
+2026-09-24 07:46:43,973 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 07:46:43,974 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 07:46:43,974 [INFO] [INDICATORS] spot=23185.5 | 1h: close=23182.8 sma20=23365.4 sma50=23322.6 rsi=33.2 macd=-31.18/-2.25(bear) | 15m: K=34.6↑(prev 12.6) | regime=NEUTRAL any_active=False
+2026-09-24 07:46:43,974 [INFO] [SIGNAL] CE: reg=False K=False(K=34.6>=38,rising) Kextr=True RSI=False(33.2>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=34.6<=80,falling) Kextr=False RSI=True(33.2<47) MACD=True(gate off) => BLOCK
