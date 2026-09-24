@@ -2575,3 +2575,30 @@ valuable there.
 2026-09-24 08:12:16,730 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-24 08:12:16,730 [INFO] [INDICATORS] spot=23136.0 | 1h: close=23182.8 sma20=23365.4 sma50=23322.6 rsi=33.2 macd=-31.18/-2.25(bear) | 15m: K=35.3↑(prev 34.6) | regime=NEUTRAL any_active=False
 2026-09-24 08:12:16,730 [INFO] [SIGNAL] CE: reg=False K=False(K=35.3>=38,rising) Kextr=True RSI=False(33.2>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=35.3<=80,falling) Kextr=False RSI=True(33.2<47) MACD=True(gate off) => BLOCK
+2026-09-24 08:12:17,429 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-24 08:13:18,532 [INFO] [FAST] PE23150 score=139 vol=1.37 U=19.4 skipped: leader score=139 vol=1.37 U=19.4
+2026-09-24 08:14:19,354 [INFO] [RENKO] dir=-1 (DOWN) bricks=13 brick=12.42 last5=[-1, -1, -1, -1, -1]
+2026-09-24 08:14:19,620 [INFO] [FAST] PE23100 score=228 vol=2.47 U=28.7 skipped: spike cap +18.4 allow 17.7
+2026-09-24 08:15:21,209 [INFO] [STOCH] SIGNAL 23100CE @150.10 -- 15m Stoch(5,3) crossed INTO <=20 (K 20.8->18.9) bar 13:30; scalp +14/-10 Rs, 60min
+2026-09-24 08:15:21,271 [INFO] ENTRY: NFO:NIFTY26SEP23100CE @ 150.10  engine=STOCH  detail=15m Stoch(5,3) crossed INTO <=20 (K 20.8->18.9) bar 13:30; scalp +14/-10 Rs, 60min
+2026-09-24 08:15:22,213 [INFO] [FAST] SIGNAL 1m momentum PE23100 score=271 vol=3.0x U=+37 momN=24.7% trend=PE bar 13:44; trail 15
+2026-09-24 08:15:22,269 [INFO] ENTRY: NFO:NIFTY26SEP23100PE @ 116.20  engine=FAST  detail=1m momentum PE23100 score=271 vol=3.0x U=+37 momN=24.7% trend=PE bar 13:44; trail 15
+2026-09-24 08:16:24,166 [INFO] [VWAP] Signal — FUT 23118<23226 body=74% side=PE | persist_gate=dist=-107.7pt persist=True (last 2x5m vs FUTvwap=23226.0)
+2026-09-24 08:16:24,173 [INFO] [STOCHZONE] VWAP PE BLOCKED — 15m Stoch K=18.9 <= 20 (oversold zone, STOCH fades it)
+2026-09-24 08:16:24,819 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=\" at byte offset 73"}
+2026-09-24 08:16:24,819 [WARNING] HTML parse failed; retrying as plain text
+2026-09-24 08:17:28,151 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 08:17:28,151 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-24 08:17:28,152 [INFO] [INDICATORS] spot=23084.8 | 1h: close=23182.8 sma20=23365.4 sma50=23322.6 rsi=33.2 macd=-31.18/-2.25(bear) | 15m: K=31.4↓(prev 35.3) | regime=NEUTRAL any_active=True
+2026-09-24 08:17:28,152 [INFO] [SIGNAL] CE: reg=False K=False(K=31.4>=38,rising) Kextr=True RSI=False(33.2>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=31.4<=80,falling) Kextr=False RSI=True(33.2<47) MACD=True(gate off) => BLOCK
+2026-09-24 08:17:28,153 [INFO] [STATE][STOCH] CE NFO:NIFTY26SEP23100CE ltp=143.55 entry=150.10 pnl=-6.55(-4.4%) sl=0.00 peak=150.10 tr_armed=False elapsed=2min
+2026-09-24 08:17:28,153 [INFO] [STATE][FAST] PE NFO:NIFTY26SEP23100PE ltp=141.50 entry=116.20 pnl=+25.30(+21.8%) sl=0.00 peak=141.50 tr_armed=False elapsed=2min
