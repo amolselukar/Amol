@@ -1946,3 +1946,22 @@ valuable there.
 2026-09-25 04:38:18,429 [INFO] [INDICATORS] spot=23080.2 | 1h: close=23063.1 sma20=23311.2 sma50=23313.2 rsi=27.0 macd=-69.55/-30.64(bear) | 15m: K=80.5↑(prev 80.1) | regime=PE-eligible any_active=True
 2026-09-25 04:38:18,429 [INFO] [SIGNAL] CE: reg=False K=True(K=80.5>=38,rising) Kextr=False RSI=False(27.0>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.5<=80,falling) Kextr=True RSI=True(27.0<47) MACD=True(gate off) => BLOCK
 2026-09-25 04:38:18,430 [INFO] [STATE][VWAP] PE NFO:NIFTY26SEP23100PE ltp=99.00 entry=113.65 pnl=-14.65(-12.9%) sl=93.19 peak=116.25 tr_armed=False elapsed=8min
+2026-09-25 04:38:26,493 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-25 04:39:27,564 [INFO] [FAST] CE23100 score=173 vol=1.93 U=27.5 skipped: leader score=173 vol=1.93 U=27.5
+2026-09-25 04:39:57,880 [INFO] [RENKO] dir=+1 (UP) bricks=8 brick=13.52 last5=[-1, -1, -1, 1, 1]
+2026-09-25 04:40:28,626 [INFO] [FAST] CE23100 score=119 vol=1.33 U=20.9 skipped: leader score=119 vol=1.33 U=20.9
+2026-09-25 04:43:01,324 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=2/4 (reason=HARDSL_-18pct)
+2026-09-25 04:43:01,325 [INFO] EXIT: NFO:NIFTY26SEP23100PE @ 93.19 reason=HARDSL_-18pct pnl/sh=-20.46 is_flip=False losses=2/4
+2026-09-25 04:43:32,857 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-25 04:43:32,935 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-25 04:43:32,935 [INFO] [INDICATORS] spot=23103.5 | 1h: close=23063.1 sma20=23311.2 sma50=23313.2 rsi=27.0 macd=-69.55/-30.64(bear) | 15m: K=80.5↑(prev 80.1) | regime=PE-eligible any_active=False
+2026-09-25 04:43:32,935 [INFO] [SIGNAL] CE: reg=False K=True(K=80.5>=38,rising) Kextr=False RSI=False(27.0>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.5<=80,falling) Kextr=True RSI=True(27.0<47) MACD=True(gate off) => BLOCK
