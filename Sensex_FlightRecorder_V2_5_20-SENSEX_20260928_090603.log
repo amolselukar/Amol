@@ -1120,3 +1120,21 @@
 2026-09-28 03:36:04,455 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-09-28 03:36:04,455 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-09-28 03:36:06,403 [INFO] [CHANGELOG] up to date (last entry 2026-09-19)
+2026-09-28 03:36:07,923 [WARNING] [boot] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-28 03:36:08,128 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 03:36:08,131 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 03:36:08,132 [INFO] [INDICATORS] spot=73895.7 | 1h: close=73881.4 sma20=74186.4 sma50=74430.1 rsi=41.1 macd=-245.43/-222.88(bear) | 15m: K=99.0↓(prev 99.0) | regime=PE-eligible any_active=False
+2026-09-28 03:36:08,132 [INFO] [SIGNAL] CE: reg=False K=False(K=99.0>=38,rising) Kextr=False RSI=False(41.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=99.0<=80,falling) Kextr=True RSI=True(41.1<47) MACD=True(gate off) => BLOCK
+2026-09-28 03:41:10,755 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 03:41:10,756 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 03:41:10,757 [INFO] [INDICATORS] spot=73895.7 | 1h: close=73881.4 sma20=74186.4 sma50=74430.1 rsi=41.1 macd=-245.43/-222.88(bear) | 15m: K=99.0↓(prev 99.0) | regime=PE-eligible any_active=False
+2026-09-28 03:41:10,757 [INFO] [SIGNAL] CE: reg=False K=False(K=99.0>=38,rising) Kextr=False RSI=False(41.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=99.0<=80,falling) Kextr=True RSI=True(41.1<47) MACD=True(gate off) => BLOCK
