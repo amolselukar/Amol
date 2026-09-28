@@ -1867,3 +1867,20 @@ valuable there.
 2026-09-28 04:17:46,568 [INFO] [INDICATORS] spot=22870.8 | 1h: close=23140.5 sma20=23220.5 sma50=23297.2 rsi=41.6 macd=-69.62/-66.53(bear) | 15m: K=33.3↓(prev 66.7) | regime=PE-eligible any_active=True
 2026-09-28 04:17:46,568 [INFO] [SIGNAL] CE: reg=False K=False(K=33.3>=38,rising) Kextr=False RSI=False(41.6>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=33.3<=80,falling) Kextr=True RSI=True(41.6<47) MACD=True(gate off) => PASS
 2026-09-28 04:17:46,569 [INFO] [STATE][BASE] PE NFO:NIFTY26SEP22900PE ltp=85.85 entry=95.90 pnl=-10.05(-10.5%) sl=80.90 peak=95.90 tr_armed=False elapsed=2min
+2026-09-28 04:17:48,073 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-28 04:20:20,474 [INFO] [FAST] CE22850 score=117 vol=0.88 U=16.8 skipped: leader score=117 vol=0.88 U=16.8
+2026-09-28 04:22:52,755 [INFO] [RENKO] dir=-1 (DOWN) bricks=6 brick=14.17 last5=[-1, -1, -1, -1, -1]
+2026-09-28 04:22:52,884 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 04:22:52,884 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 04:22:52,885 [INFO] [INDICATORS] spot=22868.3 | 1h: close=23140.5 sma20=23220.5 sma50=23297.2 rsi=41.6 macd=-69.62/-66.53(bear) | 15m: K=33.3↓(prev 66.7) | regime=PE-eligible any_active=True
+2026-09-28 04:22:52,885 [INFO] [SIGNAL] CE: reg=False K=False(K=33.3>=38,rising) Kextr=False RSI=False(41.6>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=33.3<=80,falling) Kextr=True RSI=True(41.6<47) MACD=True(gate off) => PASS
+2026-09-28 04:22:52,885 [INFO] [STATE][BASE] PE NFO:NIFTY26SEP22900PE ltp=87.05 entry=95.90 pnl=-8.85(-9.2%) sl=80.90 peak=95.90 tr_armed=False elapsed=7min
