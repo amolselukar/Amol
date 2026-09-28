@@ -1922,3 +1922,37 @@ valuable there.
 2026-09-28 07:35:05,064 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-28 07:35:05,064 [INFO] [INDICATORS] spot=72926.5 | 1h: close=72923.5 sma20=73852.7 sma50=74335.3 rsi=26.2 macd=-363.25/-276.34(bear) | 15m: K=65.8↑(prev 46.0) | regime=PE-eligible any_active=False
 2026-09-28 07:35:05,064 [INFO] [SIGNAL] CE: reg=False K=True(K=65.8>=38,rising) Kextr=True RSI=False(26.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=65.8<=80,falling) Kextr=False RSI=True(26.2<47) MACD=True(gate off) => BLOCK
+2026-09-28 07:35:05,761 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-28 07:35:36,006 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72906.7 is -799.7 below FUT VWAP 73706.4 (buffer 16)
+2026-09-28 07:35:36,009 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:36:06,357 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72906.7 is -799.7 below FUT VWAP 73706.4 (buffer 16)
+2026-09-28 07:36:06,360 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:36:36,682 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72903.1 is -803.3 below FUT VWAP 73706.4 (buffer 16)
+2026-09-28 07:36:36,684 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:37:07,028 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72903.1 is -803.3 below FUT VWAP 73706.4 (buffer 16)
+2026-09-28 07:37:07,030 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:37:37,358 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72895.4 is -810.9 below FUT VWAP 73706.4 (buffer 16)
+2026-09-28 07:37:37,360 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:38:07,721 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72895.4 is -810.6 below FUT VWAP 73706.1 (buffer 16)
+2026-09-28 07:38:07,726 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:38:38,082 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72895.2 is -810.9 below FUT VWAP 73706.1 (buffer 16)
+2026-09-28 07:38:38,084 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:39:08,422 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72895.2 is -810.6 below FUT VWAP 73705.7 (buffer 16)
+2026-09-28 07:39:08,424 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:39:38,768 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72866.8 is -838.9 below FUT VWAP 73705.7 (buffer 16)
+2026-09-28 07:39:38,771 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:40:09,049 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 72866.8 is -838.9 below FUT VWAP 73705.7 (buffer 16)
+2026-09-28 07:40:09,051 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-09-28 07:40:09,071 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 07:40:09,071 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 07:40:09,072 [INFO] [INDICATORS] spot=72866.8 | 1h: close=72923.5 sma20=73852.7 sma50=74335.3 rsi=26.2 macd=-363.25/-276.34(bear) | 15m: K=65.8↑(prev 46.0) | regime=PE-eligible any_active=False
+2026-09-28 07:40:09,072 [INFO] [SIGNAL] CE: reg=False K=True(K=65.8>=38,rising) Kextr=True RSI=False(26.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=65.8<=80,falling) Kextr=False RSI=True(26.2<47) MACD=True(gate off) => BLOCK
