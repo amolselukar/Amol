@@ -2775,3 +2775,21 @@ valuable there.
 2026-09-28 09:03:06,481 [INFO] [SIGNAL] CE: reg=False K=False(K=75.0>=38,rising) Kextr=False RSI=False(25.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=75.0<=80,falling) Kextr=True RSI=True(25.1<47) MACD=True(gate off) => PASS
 2026-09-28 09:03:06,481 [INFO] [STATE][BASE] PE NFO:NIFTY26SEP22800PE ltp=75.00 entry=68.80 pnl=+6.20(+9.0%) sl=53.80 peak=75.00 tr_armed=False elapsed=1min
 2026-09-28 09:03:06,482 [INFO] [STATE][FAST] PE NFO:NIFTY26SEP22800PE ltp=75.00 entry=61.10 pnl=+13.90(+22.7%) sl=0.00 peak=78.40 tr_armed=False elapsed=15min
+2026-09-28 09:03:07,195 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-28 09:05:09,383 [INFO] [RENKO] dir=-1 (DOWN) bricks=13 brick=14.17 last5=[-1, -1, 1, -1, -1]
+2026-09-28 09:08:13,922 [INFO] [TRAIL] SL ratcheted 76.36 → 82.01  (peak=85.45)
+2026-09-28 09:08:14,237 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 09:08:14,237 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-28 09:08:14,237 [INFO] [INDICATORS] spot=22779.2 | 1h: close=22821.8 sma20=23067.4 sma50=23252.2 rsi=25.1 macd=-124.64/-97.86(bear) | 15m: K=75.0↓(prev 88.7) | regime=PE-eligible any_active=True
+2026-09-28 09:08:14,238 [INFO] [SIGNAL] CE: reg=False K=False(K=75.0>=38,rising) Kextr=False RSI=False(25.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=75.0<=80,falling) Kextr=True RSI=True(25.1<47) MACD=True(gate off) => PASS
+2026-09-28 09:08:14,238 [INFO] [STATE][BASE] PE NFO:NIFTY26SEP22800PE ltp=85.45 entry=68.80 pnl=+16.65(+24.2%) sl=82.01 peak=85.45 tr_armed=True elapsed=6min
+2026-09-28 09:08:14,239 [INFO] [STATE][FAST] PE NFO:NIFTY26SEP22800PE ltp=85.45 entry=61.10 pnl=+24.35(+39.9%) sl=0.00 peak=85.45 tr_armed=False elapsed=20min
