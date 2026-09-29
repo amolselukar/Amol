@@ -1537,3 +1537,20 @@ valuable there.
 2026-09-29 05:22:52,849 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-29 05:22:52,850 [INFO] [INDICATORS] spot=72172.0 | 1h: close=72118.9 sma20=73387.8 sma50=74159.2 rsi=17.5 macd=-475.12/-378.50(bear) | 15m: K=22.4↑(prev 7.8) | regime=PE-eligible any_active=False
 2026-09-29 05:22:52,850 [INFO] [SIGNAL] CE: reg=False K=False(K=22.4>=38,rising) Kextr=True RSI=False(17.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=22.4<=80,falling) Kextr=False RSI=True(17.5<47) MACD=True(gate off) => BLOCK
+2026-09-29 05:22:54,378 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-29 05:26:26,825 [INFO] [V3PROBE] PLACED CE BFO:SENSEX26O0172200CE limit=461.10 (LTP=474.10 - 13) window=25min — EARLY(10m) Grade B R-cluster REJECT-CE at 72240
+2026-09-29 05:27:28,251 [INFO] [V3PROBE] FILLED CE BFO:SENSEX26O0172200CE @ 461.10 (LTP touched 459.05)
+2026-09-29 05:27:28,271 [INFO] [NIFTYGATE] V3 CE BLOCKED — NIFTY refused 2 entries in last 60m (last: RENKO VWAP PE @10:31)
+2026-09-29 05:27:59,359 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-29 05:27:59,360 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-29 05:27:59,360 [INFO] [INDICATORS] spot=72234.5 | 1h: close=72118.9 sma20=73387.8 sma50=74159.2 rsi=17.5 macd=-475.12/-378.50(bear) | 15m: K=22.4↑(prev 7.8) | regime=PE-eligible any_active=False
+2026-09-29 05:27:59,360 [INFO] [SIGNAL] CE: reg=False K=False(K=22.4>=38,rising) Kextr=True RSI=False(17.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=22.4<=80,falling) Kextr=False RSI=True(17.5<47) MACD=True(gate off) => BLOCK
