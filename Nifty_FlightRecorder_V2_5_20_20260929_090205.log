@@ -2566,3 +2566,33 @@ valuable there.
 2026-09-29 07:11:23,524 [INFO] [T5] open=0 trades=1 realized=+16.0pt/Rs+1040 unreal=+0.0pt/Rs+0
 2026-09-29 07:11:23,525 [INFO] [INDICATORS] spot=22672.7 | 1h: close=22741.9 sma20=22933.0 sma50=23194.1 rsi=33.5 macd=-148.58/-129.47(bear) | 15m: K=91.0↓(prev 100.0) | regime=PE-eligible any_active=False
 2026-09-29 07:11:23,525 [INFO] [SIGNAL] CE: reg=False K=False(K=91.0>=38,rising) Kextr=False RSI=False(33.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=91.0<=80,falling) Kextr=True RSI=True(33.5<47) MACD=True(gate off) => BLOCK
+2026-09-29 07:11:24,269 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-29 07:11:54,485 [INFO] [FUT5VWAP] Skip — close 22684 only 3pt from a pivot (need >20)
+2026-09-29 07:11:54,540 [INFO] [WCR] SIGNAL 22700PE @52.70 — OI 30.7M @12:25 -> 19.0M (38% unwound in 11m), price 48.00 -> 89.25, spot 22650 through 22700 | limit 52.80 filled at 52.70
+2026-09-29 07:11:54,543 [INFO] [VETO] WCR PE BLOCKED — PE into an UPtrend: spot 22674.8 is +23.5 above SPOT VWAP 22651.3 (buffer 5)
+2026-09-29 07:12:25,931 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=25 brick=16.94 last5=[-1, -1, -1, -1, 1]
+2026-09-29 07:12:25,940 [INFO] [FUT5VWAP] Skip — close 22684 only 0pt from a pivot (need >20)
+2026-09-29 07:12:26,056 [INFO] [FAST] CE22700 score=289 vol=1.86 U=27.4 skipped: leader score=289 vol=1.86 U=27.4
+2026-09-29 07:12:26,138 [INFO] [APEX] ENTRY CE 22700 @ 48.6 (level+RSI-turn+energy+diverge) open=1
+2026-09-29 07:12:57,271 [INFO] [FUT5VWAP] Skip — close 22684 only 0pt from a pivot (need >20)
+2026-09-29 07:13:27,701 [INFO] [FUT5VWAP] Skip — close 22684 only 1pt from a pivot (need >20)
+2026-09-29 07:13:27,941 [INFO] [APEX] ENTRY CE 22700 @ 44.5 (level+RSI-turn+energy+diverge) open=2
+2026-09-29 07:13:58,957 [INFO] [FUT5VWAP] Skip — close 22684 only 1pt from a pivot (need >20)
+2026-09-29 07:14:29,364 [INFO] [FUT5VWAP] Skip — close 22684 only 1pt from a pivot (need >20)
+2026-09-29 07:14:59,855 [INFO] [FUT5VWAP] Skip — close 22684 only 1pt from a pivot (need >20)
+2026-09-29 07:15:30,365 [INFO] [FUT5VWAP] Skip — close 22684 only 3pt from a pivot (need >20)
+2026-09-29 07:15:30,530 [INFO] [FAST] PE22650 score=159 vol=1.33 U=7.0 skipped: leader score=159 vol=1.33 U=7.0
+2026-09-29 07:16:01,013 [INFO] [FUT5VWAP] Skip — close 22684 only 3pt from a pivot (need >20)
+2026-09-29 07:16:31,802 [INFO] [APEX] open=2 trades=1 realized=+5.1pt/Rs+332 unreal=-19.1pt/Rs-1242
+2026-09-29 07:16:31,855 [INFO] [T5] open=0 trades=1 realized=+16.0pt/Rs+1040 unreal=+0.0pt/Rs+0
+2026-09-29 07:16:31,856 [INFO] [INDICATORS] spot=22667.8 | 1h: close=22741.9 sma20=22933.0 sma50=23194.1 rsi=33.5 macd=-148.58/-129.47(bear) | 15m: K=81.1↓(prev 91.0) | regime=PE-eligible any_active=False
+2026-09-29 07:16:31,856 [INFO] [SIGNAL] CE: reg=False K=False(K=81.1>=38,rising) Kextr=False RSI=False(33.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=81.1<=80,falling) Kextr=True RSI=True(33.5<47) MACD=True(gate off) => BLOCK
