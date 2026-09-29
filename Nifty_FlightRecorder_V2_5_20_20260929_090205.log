@@ -3173,3 +3173,30 @@ valuable there.
 2026-09-29 09:25:25,568 [INFO] [INDICATORS] spot=22686.2 | 1h: close=22672.0 sma20=22892.7 sma50=23168.2 rsi=30.5 macd=-147.73/-136.18(bear) | 15m: K=55.9↓(prev 60.5) | regime=PE-eligible any_active=True
 2026-09-29 09:25:25,568 [INFO] [SIGNAL] CE: reg=False K=False(K=55.9>=38,rising) Kextr=False RSI=False(30.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=55.9<=80,falling) Kextr=False RSI=True(30.5<47) MACD=True(gate off) => BLOCK
 2026-09-29 09:25:25,569 [INFO] [STATE][EXPIRY] PE NFO:NIFTY26SEP22600PE ltp=8.25 entry=21.15 pnl=-12.90(-61.0%) sl=0.00 peak=25.30 tr_armed=False elapsed=55min
+2026-09-29 09:25:26,635 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-29 09:25:56,899 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22686.2 is +27.9 above SPOT VWAP 22658.4 (buffer 5)
+2026-09-29 09:25:57,012 [INFO] [T5] open=0 trades=1 realized=+16.0pt/Rs+1040 unreal=+0.0pt/Rs+0
+2026-09-29 09:26:27,272 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22688.8 is +30.3 above SPOT VWAP 22658.5 (buffer 5)
+2026-09-29 09:26:27,469 [INFO] [FAST] CE22700 score=252 vol=1.42 U=17.0 skipped: leader score=252 vol=1.42 U=17.0
+2026-09-29 09:26:58,044 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22688.8 is +30.3 above SPOT VWAP 22658.5 (buffer 5)
+2026-09-29 09:27:28,569 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22684.8 is +26.3 above SPOT VWAP 22658.6 (buffer 5)
+2026-09-29 09:27:28,926 [INFO] [EXP12] EXP2 22650PE skipped: bar@14:55=19.10 in band but LTP 20.85 is not
+2026-09-29 09:27:59,178 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22684.8 is +26.3 above SPOT VWAP 22658.6 (buffer 5)
+2026-09-29 09:28:29,480 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22681.3 is +22.7 above SPOT VWAP 22658.6 (buffer 5)
+2026-09-29 09:29:00,100 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22681.3 is +22.7 above SPOT VWAP 22658.6 (buffer 5)
+2026-09-29 09:29:30,569 [INFO] [VETO] FLIP PE BLOCKED — PE into an UPtrend: spot 22676.5 is +17.8 above SPOT VWAP 22658.7 (buffer 5)
+2026-09-29 09:29:30,644 [INFO] [FAST] PE22700 score=101 vol=1.20 U=4.0 skipped: leader score=101 vol=1.20 U=4.0
+2026-09-29 09:30:01,718 [INFO] [APEX] open=0 trades=6 realized=-25.0pt/Rs-1628 unreal=+0.0pt/Rs+0
+2026-09-29 09:30:32,399 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-29 09:30:32,400 [INFO] [INDICATORS] spot=22673.9 | 1h: close=22672.0 sma20=22892.7 sma50=23168.2 rsi=30.5 macd=-147.73/-136.18(bear) | 15m: K=49.6↓(prev 55.9) | regime=PE-eligible any_active=True
+2026-09-29 09:30:32,400 [INFO] [SIGNAL] CE: reg=False K=False(K=49.6>=38,rising) Kextr=False RSI=False(30.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=49.6<=80,falling) Kextr=False RSI=True(30.5<47) MACD=True(gate off) => BLOCK
+2026-09-29 09:30:32,402 [INFO] [STATE][EXPIRY] PE NFO:NIFTY26SEP22600PE ltp=10.55 entry=21.15 pnl=-10.60(-50.1%) sl=0.00 peak=25.30 tr_armed=False elapsed=60min
