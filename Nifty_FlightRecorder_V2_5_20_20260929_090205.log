@@ -3012,3 +3012,35 @@ valuable there.
 2026-09-29 08:59:40,204 [INFO] [SIGNAL] CE: reg=False K=True(K=65.2>=38,rising) Kextr=False RSI=False(30.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=65.2<=80,falling) Kextr=True RSI=True(30.5<47) MACD=True(gate off) => BLOCK
 2026-09-29 08:59:40,205 [INFO] [STATE][EXPIRY] PE NFO:NIFTY26SEP22600PE ltp=16.95 entry=21.15 pnl=-4.20(-19.9%) sl=0.00 peak=25.30 tr_armed=False elapsed=29min
 2026-09-29 08:59:40,206 [INFO] [STATE][FAST] PE NFO:NIFTY26SEP22650PE ltp=32.25 entry=36.00 pnl=-3.75(-10.4%) sl=0.00 peak=37.60 tr_armed=False elapsed=5min
+2026-09-29 08:59:40,962 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-29 09:01:13,084 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:01:13,386 [INFO] [CB] FAST loss NOT counted toward the circuit breaker (user 2026-09-17: FAST has no daily stop and must not halt other engines)
+2026-09-29 09:01:13,386 [INFO] EXIT: NFO:NIFTY26SEP22650PE @ 22.60 reason=FAST_TRAIL15 pnl/sh=-13.40 is_flip=False losses=0/4
+2026-09-29 09:01:14,260 [INFO] [APEX] EXIT PE 22700 59.1->41.1 -18.0pt Rs-1173 [stop] | day -25.0pt Rs-1628
+2026-09-29 09:01:45,526 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:01:45,699 [INFO] [FAST] CE22700 score=288 vol=1.83 U=20.0 skipped: leader score=288 vol=1.83 U=20.0
+2026-09-29 09:02:16,393 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:02:16,717 [INFO] [FAST] SIGNAL 1m momentum CE22700 score=270 vol=3.5x U=+27 momN=34.7% trend=off bar 14:31; trail 15
+2026-09-29 09:02:16,779 [INFO] ENTRY: NFO:NIFTY26SEP22700CE @ 40.30  engine=FAST  detail=1m momentum CE22700 score=270 vol=3.5x U=+27 momN=34.7% trend=off bar 14:31; trail 15
+2026-09-29 09:02:48,123 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:02:48,625 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-29 09:03:19,022 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:03:50,029 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:04:20,908 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:04:21,188 [INFO] [APEX] open=0 trades=6 realized=-25.0pt/Rs-1628 unreal=+0.0pt/Rs+0
+2026-09-29 09:04:51,617 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=29 brick=16.94 last5=[1, 1, -1, -1, 1]
+2026-09-29 09:04:51,618 [INFO] [FLIP] PUT-flip BLOCKED — K=60.5 > 60 (too high to buy puts into) (K=60.5 prev=65.2)
+2026-09-29 09:04:51,882 [INFO] [T5] open=0 trades=1 realized=+16.0pt/Rs+1040 unreal=+0.0pt/Rs+0
+2026-09-29 09:04:52,014 [INFO] [INDICATORS] spot=22667.1 | 1h: close=22672.0 sma20=22892.7 sma50=23168.2 rsi=30.5 macd=-147.73/-136.18(bear) | 15m: K=60.5↓(prev 65.2) | regime=PE-eligible any_active=True
+2026-09-29 09:04:52,014 [INFO] [SIGNAL] CE: reg=False K=False(K=60.5>=38,rising) Kextr=False RSI=False(30.5>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=60.5<=80,falling) Kextr=False RSI=True(30.5<47) MACD=True(gate off) => BLOCK
+2026-09-29 09:04:52,016 [INFO] [STATE][EXPIRY] PE NFO:NIFTY26SEP22600PE ltp=14.00 entry=21.15 pnl=-7.15(-33.8%) sl=0.00 peak=25.30 tr_armed=False elapsed=34min
+2026-09-29 09:04:52,016 [INFO] [STATE][FAST] CE NFO:NIFTY26SEP22700CE ltp=30.35 entry=40.30 pnl=-9.95(-24.7%) sl=0.00 peak=41.40 tr_armed=False elapsed=2min
