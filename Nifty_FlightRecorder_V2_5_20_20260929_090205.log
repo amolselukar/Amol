@@ -3303,3 +3303,13 @@ valuable there.
 
 2026-09-29 09:56:57,911 [INFO] [T5] open=0 trades=1 realized=+16.0pt/Rs+1040 unreal=+0.0pt/Rs+0
 2026-09-29 09:56:58,177 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-09-29 10:00:02,936 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
