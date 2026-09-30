@@ -2305,3 +2305,27 @@ valuable there.
 2026-09-30 05:24:05,432 [INFO] [T5] open=0 trades=1 realized=-11.8pt/Rs-764 unreal=+0.0pt/Rs+0
 2026-09-30 05:24:05,433 [INFO] [INDICATORS] spot=22709.8 | 1h: close=22755.2 sma20=22837.7 sma50=23130.6 rsi=38.8 macd=-127.56/-135.74(bull) | 15m: K=82.2↓(prev 100.0) | regime=PE-eligible any_active=False
 2026-09-30 05:24:05,433 [INFO] [SIGNAL] CE: reg=False K=False(K=82.2>=38,rising) Kextr=False RSI=False(38.8>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=82.2<=80,falling) Kextr=True RSI=True(38.8<47) MACD=False(gate off) => BLOCK
+2026-09-30 05:24:06,202 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-30 05:24:36,428 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:25:06,682 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:25:37,069 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:26:07,312 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:26:37,725 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:27:08,031 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:27:38,474 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:28:08,879 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:28:39,444 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:29:09,840 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-09-30 05:29:10,046 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-09-30 05:29:10,105 [INFO] [T5] open=0 trades=1 realized=-11.8pt/Rs-764 unreal=+0.0pt/Rs+0
+2026-09-30 05:29:10,105 [INFO] [INDICATORS] spot=22695.2 | 1h: close=22755.2 sma20=22837.7 sma50=23130.6 rsi=38.8 macd=-127.56/-135.74(bull) | 15m: K=82.2↓(prev 100.0) | regime=PE-eligible any_active=False
+2026-09-30 05:29:10,106 [INFO] [SIGNAL] CE: reg=False K=False(K=82.2>=38,rising) Kextr=False RSI=False(38.8>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=82.2<=80,falling) Kextr=True RSI=True(38.8<47) MACD=False(gate off) => BLOCK
