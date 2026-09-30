@@ -1602,3 +1602,30 @@ valuable there.
 2026-09-30 05:18:07,964 [INFO] [T5] open=0 trades=1 realized=-23.1pt/Rs-463 unreal=+0.0pt/Rs+0
 2026-09-30 05:18:07,964 [INFO] [INDICATORS] spot=72685.6 | 1h: close=72834.8 sma20=72951.4 sma50=73885.8 rsi=43.1 macd=-394.37/-430.93(bull) | 15m: K=86.4↓(prev 100.0) | regime=PE-eligible any_active=False
 2026-09-30 05:18:07,964 [INFO] [SIGNAL] CE: reg=False K=False(K=86.4>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=86.4<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => BLOCK
+2026-09-30 05:18:08,697 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-30 05:18:39,015 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-24.1pt persist=True (last 2x5m vs FUTvwap=73325.1)
+2026-09-30 05:19:09,585 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-24.1pt persist=True (last 2x5m vs FUTvwap=73325.1)
+2026-09-30 05:19:40,139 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-24.1pt persist=True (last 2x5m vs FUTvwap=73325.1)
+2026-09-30 05:20:10,705 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-24.1pt persist=True (last 2x5m vs FUTvwap=73325.1)
+2026-09-30 05:20:41,289 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-24.1pt persist=True (last 2x5m vs FUTvwap=73325.1)
+2026-09-30 05:21:11,781 [INFO] [V3PROBE] EXPIRED unfilled PE BFO:SENSEX26O0172900PE limit=276.35
+2026-09-30 05:21:12,632 [INFO] [VWAP] Signal — FUT 73301<73312 body=67% side=PE | persist_gate=dist=-75.1pt persist=True (last 2x5m vs FUTvwap=73325.1)
+2026-09-30 05:21:12,703 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): SENSEX26O0172700PE
+2026-09-30 05:21:12,705 [INFO] ENTRY: BFO:SENSEX26O0172700PE @ 272.05  engine=VWAP  detail=FUT VWAP 73301<73312 body=67% | bar=187
+2026-09-30 05:21:44,244 [INFO] [APEX] EXIT PE 72800 305.0->304.1 -0.9pt Rs-19 [trail] | day +20.1pt Rs+403
+2026-09-30 05:23:16,507 [INFO] [APEX] EXIT PE 72700 270.8->263.0 -7.8pt Rs-155 [exhaust] | day +12.4pt Rs+248
+2026-09-30 05:23:17,366 [INFO] [APEX] EXIT PE 72700 267.4->262.5 -4.9pt Rs-99 [exhaust] | day +7.4pt Rs+149
+2026-09-30 05:23:18,191 [INFO] [APEX] open=0 trades=5 realized=+7.4pt/Rs+149 unreal=+0.0pt/Rs+0
+2026-09-30 05:23:18,191 [INFO] [T5] open=0 trades=1 realized=-23.1pt/Rs-463 unreal=+0.0pt/Rs+0
+2026-09-30 05:23:18,192 [INFO] [INDICATORS] spot=72719.7 | 1h: close=72834.8 sma20=72951.4 sma50=73885.8 rsi=43.1 macd=-394.37/-430.93(bull) | 15m: K=86.4↓(prev 100.0) | regime=PE-eligible any_active=True
+2026-09-30 05:23:18,192 [INFO] [SIGNAL] CE: reg=False K=False(K=86.4>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=86.4<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => BLOCK
+2026-09-30 05:23:18,192 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0172700PE ltp=262.05 entry=272.05 pnl=-10.00(-3.7%) sl=223.08 peak=272.05 tr_armed=False elapsed=2min
