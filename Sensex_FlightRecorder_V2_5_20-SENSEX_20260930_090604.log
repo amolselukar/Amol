@@ -1536,3 +1536,27 @@ valuable there.
 2026-09-30 05:02:39,268 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-09-30 05:02:39,268 [INFO] [INDICATORS] spot=72826.1 | 1h: close=72834.8 sma20=72951.4 sma50=73885.8 rsi=43.1 macd=-394.37/-430.93(bull) | 15m: K=100.0↓(prev 100.0) | regime=PE-eligible any_active=False
 2026-09-30 05:02:39,268 [INFO] [SIGNAL] CE: reg=False K=False(K=100.0>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => BLOCK
+2026-09-30 05:02:40,076 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-30 05:03:10,523 [INFO] [APEX] ENTRY PE 72800 @ 275.2 (level+RSI-turn+energy+diverge) open=1
+2026-09-30 05:03:41,885 [INFO] [APEX] ENTRY PE 72800 @ 282.5 (level+RSI-turn+energy+diverge) open=2
+2026-09-30 05:04:43,914 [INFO] [APEX] ENTRY PE 72800 @ 305.0 (level+RSI-turn+energy+diverge) open=3
+2026-09-30 05:05:15,276 [INFO] [APEX] ENTRY PE 72700 @ 270.8 (level+RSI-turn+energy+diverge) open=4
+2026-09-30 05:06:17,061 [INFO] [FUT5VWAP] Skip — close 73310 only 58pt from a pivot (need >65)
+2026-09-30 05:06:17,431 [INFO] [APEX] ENTRY PE 72700 @ 267.4 (level+RSI-turn+energy+diverge) open=5
+2026-09-30 05:06:18,372 [INFO] [T5] ENTRY PE 72700 @ 267.4 tgt392.2 stp249.4 (bo+26.3 CEdec-79.4) open=1
+2026-09-30 05:06:49,521 [INFO] [FUT5VWAP] Skip — close 73310 only 58pt from a pivot (need >65)
+2026-09-30 05:07:20,273 [INFO] [FUT5VWAP] Skip — close 73310 only 50pt from a pivot (need >65)
+2026-09-30 05:07:51,081 [INFO] [FUT5VWAP] Skip — close 73310 only 50pt from a pivot (need >65)
+2026-09-30 05:07:51,545 [INFO] [APEX] open=5 trades=0 realized=+0.0pt/Rs+0 unreal=+107.3pt/Rs+2147
+2026-09-30 05:07:51,624 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+4.5pt/Rs+90
+2026-09-30 05:07:51,624 [INFO] [INDICATORS] spot=72714.9 | 1h: close=72834.8 sma20=72951.4 sma50=73885.8 rsi=43.1 macd=-394.37/-430.93(bull) | 15m: K=100.0↓(prev 100.0) | regime=PE-eligible any_active=False
+2026-09-30 05:07:51,624 [INFO] [SIGNAL] CE: reg=False K=False(K=100.0>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=100.0<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => BLOCK
