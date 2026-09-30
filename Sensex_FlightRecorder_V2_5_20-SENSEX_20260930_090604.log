@@ -1683,3 +1683,23 @@ valuable there.
 2026-09-30 05:38:36,027 [INFO] [INDICATORS] spot=72752.3 | 1h: close=72834.8 sma20=72951.4 sma50=73885.8 rsi=43.1 macd=-394.37/-430.93(bull) | 15m: K=67.8↓(prev 86.4) | regime=PE-eligible any_active=True
 2026-09-30 05:38:36,027 [INFO] [SIGNAL] CE: reg=False K=False(K=67.8>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=67.8<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => PASS
 2026-09-30 05:38:36,027 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0172700PE ltp=240.15 entry=272.05 pnl=-31.90(-11.7%) sl=223.08 peak=302.85 tr_armed=False elapsed=17min
+2026-09-30 05:38:37,597 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-30 05:39:07,984 [INFO] [FUT5VWAP] Skip — close 73360 only 26pt from a pivot (need >65)
+2026-09-30 05:39:38,550 [INFO] [FUT5VWAP] Skip — close 73360 only 29pt from a pivot (need >65)
+2026-09-30 05:40:09,041 [INFO] [FUT5VWAP] Skip — close 73360 only 4pt from a pivot (need >65)
+2026-09-30 05:40:39,480 [INFO] [FUT5VWAP] Skip — close 73360 only 22pt from a pivot (need >65)
+2026-09-30 05:43:11,880 [INFO] [APEX] EXIT CE 72800 283.8->252.8 -31.0pt Rs-620 [exhaust] | day -23.6pt Rs-471
+2026-09-30 05:43:43,077 [INFO] [APEX] open=0 trades=6 realized=-23.6pt/Rs-471 unreal=+0.0pt/Rs+0
+2026-09-30 05:43:43,135 [INFO] [T5] open=0 trades=1 realized=-23.1pt/Rs-463 unreal=+0.0pt/Rs+0
+2026-09-30 05:43:43,136 [INFO] [INDICATORS] spot=72700.7 | 1h: close=72834.8 sma20=72951.4 sma50=73885.8 rsi=43.1 macd=-394.37/-430.93(bull) | 15m: K=67.8↓(prev 86.4) | regime=PE-eligible any_active=True
+2026-09-30 05:43:43,136 [INFO] [SIGNAL] CE: reg=False K=False(K=67.8>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=67.8<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => PASS
+2026-09-30 05:43:43,136 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0172700PE ltp=271.25 entry=272.05 pnl=-0.80(-0.3%) sl=223.08 peak=302.85 tr_armed=False elapsed=22min
