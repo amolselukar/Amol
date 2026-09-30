@@ -3097,3 +3097,29 @@ valuable there.
 2026-09-30 09:09:26,279 [INFO] [T5] open=0 trades=3 realized=+18.7pt/Rs+1215 unreal=+0.0pt/Rs+0
 2026-09-30 09:09:26,280 [INFO] [INDICATORS] spot=22621.2 | 1h: close=22708.3 sma20=22764.1 sma50=23076.6 rsi=39.1 macd=-100.30/-119.98(bull) | 15m: K=11.1↓(prev 18.1) | regime=PE-eligible any_active=False
 2026-09-30 09:09:26,280 [INFO] [SIGNAL] CE: reg=False K=False(K=11.1>=38,rising) Kextr=True RSI=False(39.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=11.1<=80,falling) Kextr=False RSI=True(39.1<47) MACD=False(gate off) => BLOCK
+2026-09-30 09:09:27,020 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-30 09:09:57,357 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:10:27,695 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:10:27,953 [INFO] [FAST] PE22600 score=186 vol=1.47 U=35.6 skipped: leader score=186 vol=1.47 U=35.6
+2026-09-30 09:10:58,417 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:11:28,976 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:11:59,688 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:12:30,097 [INFO] [RENKO] dir=-1 (DOWN) bricks=30 brick=16.61 last5=[-1, -1, -1, -1, -1]
+2026-09-30 09:12:30,101 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:13:00,746 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:13:31,468 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:14:01,945 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:14:32,590 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-09-30 09:14:32,642 [INFO] [APEX] open=0 trades=2 realized=+3.7pt/Rs+244 unreal=+0.0pt/Rs+0
+2026-09-30 09:14:32,714 [INFO] [T5] open=0 trades=3 realized=+18.7pt/Rs+1215 unreal=+0.0pt/Rs+0
+2026-09-30 09:14:32,715 [INFO] [INDICATORS] spot=22605.0 | 1h: close=22708.3 sma20=22764.1 sma50=23076.6 rsi=39.1 macd=-100.30/-119.98(bull) | 15m: K=11.1↓(prev 18.1) | regime=PE-eligible any_active=False
+2026-09-30 09:14:32,715 [INFO] [SIGNAL] CE: reg=False K=False(K=11.1>=38,rising) Kextr=True RSI=False(39.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=11.1<=80,falling) Kextr=False RSI=True(39.1<47) MACD=False(gate off) => BLOCK
