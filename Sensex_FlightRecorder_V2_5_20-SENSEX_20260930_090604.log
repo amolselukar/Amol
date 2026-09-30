@@ -2151,3 +2151,33 @@ valuable there.
 2026-09-30 07:55:59,680 [INFO] [INDICATORS] spot=72973.4 | 1h: close=72944.6 sma20=72811.2 sma50=73769.0 rsi=47.2 macd=-292.61/-380.08(bull) | 15m: K=83.5↑(prev 80.1) | regime=NEUTRAL any_active=True
 2026-09-30 07:55:59,680 [INFO] [SIGNAL] CE: reg=False K=True(K=83.5>=38,rising) Kextr=False RSI=False(47.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=83.5<=80,falling) Kextr=True RSI=False(47.2<47) MACD=False(gate off) => BLOCK
 2026-09-30 07:55:59,681 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O0172900CE ltp=322.45 entry=287.20 pnl=+35.25(+12.3%) sl=0.00 peak=411.50 tr_armed=False elapsed=59min
+2026-09-30 07:56:01,506 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-09-30 07:56:31,759 [INFO] [V3PROBE] PLACED CE BFO:SENSEX26O0173000CE limit=259.00 (LTP=272.00 - 13) window=25min — EARLY(10m) Grade B G-cluster BREAK-CE at 72940
+2026-09-30 07:56:32,597 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 07:57:02,873 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 07:57:33,188 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 07:58:03,491 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 07:58:33,787 [INFO] [V3PROBE] FILLED CE BFO:SENSEX26O0173000CE @ 259.00 (LTP touched 255.70)
+2026-09-30 07:58:33,836 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): SENSEX26O0173000CE
+2026-09-30 07:58:33,839 [INFO] ENTRY: BFO:SENSEX26O0173000CE @ 259.00  engine=V3  detail=EARLY(10m) Grade B G-cluster BREAK-CE at 72940
+2026-09-30 07:58:34,656 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 07:59:05,004 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 07:59:35,337 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 08:00:05,706 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 08:00:05,730 [INFO] EXIT: BFO:SENSEX26O0172900CE @ 300.20 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+13.00 is_flip=False losses=1/4
+2026-09-30 08:00:36,888 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 08:01:07,227 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-09-30 08:01:07,249 [INFO] [APEX] open=0 trades=8 realized=+110.4pt/Rs+2208 unreal=+0.0pt/Rs+0
+2026-09-30 08:01:07,249 [INFO] [T5] open=0 trades=2 realized=-44.5pt/Rs-890 unreal=+0.0pt/Rs+0
+2026-09-30 08:01:07,250 [INFO] [INDICATORS] spot=72925.7 | 1h: close=72944.6 sma20=72811.2 sma50=73769.0 rsi=47.2 macd=-292.61/-380.08(bull) | 15m: K=77.1↓(prev 83.5) | regime=NEUTRAL any_active=True
+2026-09-30 08:01:07,250 [INFO] [SIGNAL] CE: reg=False K=False(K=77.1>=38,rising) Kextr=False RSI=False(47.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=77.1<=80,falling) Kextr=True RSI=False(47.2<47) MACD=False(gate off) => BLOCK
+2026-09-30 08:01:07,250 [INFO] [STATE][BASE] CE BFO:SENSEX26O0173000CE ltp=254.85 entry=259.00 pnl=-4.15(-1.6%) sl=212.38 peak=260.70 tr_armed=False elapsed=2min
