@@ -2142,3 +2142,22 @@ valuable there.
 2026-10-01 04:38:09,744 [INFO] [INDICATORS] spot=22609.2 | 1h: close=22620.5 sma20=22725.6 sma50=23043.6 rsi=34.7 macd=-103.52/-113.98(bull) | 15m: K=7.9↑(prev 6.6) | regime=PE-eligible any_active=True
 2026-10-01 04:38:09,744 [INFO] [SIGNAL] CE: reg=False K=False(K=7.9>=38,rising) Kextr=True RSI=False(34.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=7.9<=80,falling) Kextr=False RSI=True(34.7<47) MACD=False(gate off) => BLOCK
 2026-10-01 04:38:09,745 [INFO] [STATE][FAST] CE NFO:NIFTY26O0622600CE ltp=143.00 entry=142.90 pnl=+0.10(+0.1%) sl=0.00 peak=146.00 tr_armed=False elapsed=6min
+2026-10-01 04:38:10,424 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-01 04:40:12,267 [INFO] [ORB] H3 break 22599.5 (CE) @10:00 NOT confirmed (next close 22583.7) — scanning on
+2026-10-01 04:40:12,435 [INFO] [CB] FAST loss NOT counted toward the circuit breaker (user 2026-09-17: FAST has no daily stop and must not halt other engines)
+2026-10-01 04:40:12,435 [INFO] EXIT: NFO:NIFTY26O0622600CE @ 131.00 reason=FAST_TRAIL15 pnl/sh=-11.90 is_flip=False losses=0/4
+2026-10-01 04:40:43,695 [INFO] [FAST] PE22600 score=121 vol=1.76 U=21.7 skipped: leader score=121 vol=1.76 U=21.7
+2026-10-01 04:42:15,184 [INFO] [FAST] PE22600 score=135 vol=0.78 U=24.5 skipped: leader score=135 vol=0.78 U=24.5
+2026-10-01 04:43:15,999 [INFO] [APEX] open=0 trades=1 realized=-14.4pt/Rs-936 unreal=+0.0pt/Rs+0
+2026-10-01 04:43:15,999 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-01 04:43:16,000 [INFO] [INDICATORS] spot=22573.5 | 1h: close=22620.5 sma20=22725.6 sma50=23043.6 rsi=34.7 macd=-103.52/-113.98(bull) | 15m: K=7.9↑(prev 6.6) | regime=PE-eligible any_active=False
+2026-10-01 04:43:16,000 [INFO] [SIGNAL] CE: reg=False K=False(K=7.9>=38,rising) Kextr=True RSI=False(34.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=7.9<=80,falling) Kextr=False RSI=True(34.7<47) MACD=False(gate off) => BLOCK
