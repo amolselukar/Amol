@@ -2205,3 +2205,19 @@ valuable there.
 2026-10-01 04:58:32,373 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-01 04:58:32,373 [INFO] [INDICATORS] spot=22552.0 | 1h: close=22574.7 sma20=22713.3 sma50=23026.8 rsi=32.3 macd=-106.39/-112.46(bull) | 15m: K=15.0↑(prev 7.9) | regime=PE-eligible any_active=False
 2026-10-01 04:58:32,373 [INFO] [SIGNAL] CE: reg=False K=False(K=15.0>=38,rising) Kextr=True RSI=False(32.3>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=15.0<=80,falling) Kextr=False RSI=True(32.3<47) MACD=False(gate off) => BLOCK
+2026-10-01 04:58:33,051 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-01 05:00:04,270 [INFO] [CHOPGATE] Clear to trade — ER=0.40 crosses=0 range=97pt
+2026-10-01 05:03:20,304 [INFO] [FAST] CE22600 score=209 vol=2.40 U=39.0 skipped: spike cap +19.1 allow 18.7
+2026-10-01 05:04:31,818 [INFO] [APEX] open=0 trades=1 realized=-14.4pt/Rs-936 unreal=+0.0pt/Rs+0
+2026-10-01 05:04:31,885 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-01 05:04:31,885 [INFO] [INDICATORS] spot=22586.7 | 1h: close=22574.7 sma20=22713.3 sma50=23026.8 rsi=32.3 macd=-106.39/-112.46(bull) | 15m: K=18.6↑(prev 15.0) | regime=PE-eligible any_active=False
+2026-10-01 05:04:31,885 [INFO] [SIGNAL] CE: reg=False K=False(K=18.6>=38,rising) Kextr=True RSI=False(32.3>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=18.6<=80,falling) Kextr=False RSI=True(32.3<47) MACD=False(gate off) => BLOCK
