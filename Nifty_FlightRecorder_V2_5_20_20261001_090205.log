@@ -2466,3 +2466,29 @@ valuable there.
 2026-10-01 06:21:41,303 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-01 06:21:41,304 [INFO] [INDICATORS] spot=22548.6 | 1h: close=22546.5 sma20=22698.9 sma50=23008.5 rsi=31.0 macd=-109.67/-111.90(bull) | 15m: K=52.8↑(prev 28.1) | regime=PE-eligible any_active=False
 2026-10-01 06:21:41,304 [INFO] [SIGNAL] CE: reg=False K=True(K=52.8>=38,rising) Kextr=True RSI=False(31.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=52.8<=80,falling) Kextr=False RSI=True(31.0<47) MACD=False(gate off) => BLOCK
+2026-10-01 06:21:42,036 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-01 06:22:12,509 [INFO] [FLIP] CE BLOCKED -- last 60m index range 52 pts = 2.8 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:22:13,084 [INFO] [APEX] ENTRY PE 22500 @ 90.8 (level+RSI-turn+energy+diverge) open=2
+2026-10-01 06:22:44,454 [INFO] [FLIP] CE BLOCKED -- last 60m index range 52 pts = 2.8 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:23:15,359 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:23:46,408 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:24:17,184 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:24:48,233 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:25:18,914 [INFO] [RENKO] dir=-1 (DOWN) bricks=8 brick=18.22 last5=[1, 1, 1, -1, -1]
+2026-10-01 06:25:18,916 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:25:49,981 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:26:20,780 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:26:51,852 [INFO] [FLIP] CE BLOCKED -- last 60m index range 44 pts = 2.4 bricks < 4 (brick 18.2) -- box, no flip
+2026-10-01 06:26:52,230 [INFO] [APEX] open=2 trades=1 realized=-14.4pt/Rs-936 unreal=-2.8pt/Rs-185
+2026-10-01 06:26:52,320 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-01 06:26:52,321 [INFO] [INDICATORS] spot=22552.2 | 1h: close=22546.5 sma20=22698.9 sma50=23008.5 rsi=31.0 macd=-109.67/-111.90(bull) | 15m: K=52.8↑(prev 28.1) | regime=PE-eligible any_active=False
+2026-10-01 06:26:52,321 [INFO] [SIGNAL] CE: reg=False K=True(K=52.8>=38,rising) Kextr=True RSI=False(31.0>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=52.8<=80,falling) Kextr=False RSI=True(31.0<47) MACD=False(gate off) => BLOCK
