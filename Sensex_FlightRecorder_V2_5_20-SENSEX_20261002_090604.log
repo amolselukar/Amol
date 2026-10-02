@@ -3307,3 +3307,57 @@ valuable there.
 2026-10-02 07:09:10,952 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-02 07:09:10,953 [INFO] [INDICATORS] spot=71909.7 | 1h: close=71909.7 sma20=72403.4 sma50=73250.4 rsi=37.7 macd=-361.18/-326.67(bear) | 15m: K=96.4↑(prev 92.9) | regime=PE-eligible any_active=False
 2026-10-02 07:09:10,953 [INFO] [SIGNAL] CE: reg=False K=True(K=96.4>=38,rising) Kextr=False RSI=False(37.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=96.4<=80,falling) Kextr=True RSI=True(37.7<47) MACD=True(gate off) => BLOCK
+2026-10-02 07:09:12,443 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-02 07:09:42,640 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:09:42,673 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:09:42,673 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:09:42,700 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:10:12,899 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:10:12,929 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:10:12,930 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:10:12,961 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:10:43,166 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:10:43,195 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:10:43,195 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:10:43,221 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:11:13,488 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:11:13,517 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:11:13,517 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:11:13,565 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:11:43,769 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:11:43,798 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:11:43,799 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:11:43,825 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:12:14,035 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:12:14,063 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:12:14,064 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:12:14,092 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:12:44,296 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:12:44,326 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:12:44,327 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:12:44,352 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:13:14,565 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:13:14,596 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:13:14,596 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:13:14,626 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:13:44,826 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:13:44,854 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:13:44,855 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:13:44,882 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:14:15,105 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-02 07:14:15,134 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:14:15,134 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-02 07:14:15,161 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-02 07:14:15,173 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-02 07:14:15,175 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-02 07:14:15,175 [INFO] [INDICATORS] spot=71909.7 | 1h: close=71909.7 sma20=72403.4 sma50=73250.4 rsi=37.7 macd=-361.18/-326.67(bear) | 15m: K=96.4↑(prev 92.9) | regime=PE-eligible any_active=False
+2026-10-02 07:14:15,175 [INFO] [SIGNAL] CE: reg=False K=True(K=96.4>=38,rising) Kextr=False RSI=False(37.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=96.4<=80,falling) Kextr=True RSI=True(37.7<47) MACD=True(gate off) => BLOCK
