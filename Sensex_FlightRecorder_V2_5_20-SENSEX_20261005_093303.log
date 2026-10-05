@@ -2097,3 +2097,19 @@ valuable there.
 2026-10-05 08:30:21,565 [INFO] [INDICATORS] spot=72296.6 | 1h: close=72048.9 sma20=72328.6 sma50=73038.7 rsi=42.4 macd=-291.66/-315.67(bull) | 15m: K=79.3↑(prev 59.4) | regime=PE-eligible any_active=True
 2026-10-05 08:30:21,565 [INFO] [SIGNAL] CE: reg=False K=True(K=79.3>=38,rising) Kextr=True RSI=False(42.4>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=79.3<=80,falling) Kextr=False RSI=True(42.4<47) MACD=False(gate off) => BLOCK
 2026-10-05 08:30:21,565 [INFO] [STATE][VWAP] CE BFO:SENSEX26O0872300CE ltp=346.75 entry=526.00 pnl=-179.25(-34.1%) sl=431.32 peak=526.00 tr_armed=False elapsed=0min
+2026-10-05 08:30:22,291 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-05 08:35:27,191 [INFO] [BREAKWATCH] VWAP CE BFO:SENSEX26O0872300CE entry 14:00 score 1/6 -> WOULD_CUT(log-only) | {'progress_x': -1.8028, 'other_idx_dir%': -0.1709, 'hw_breadth': 0.1667, 'hw_basket_dir%': -0.1214, 'hw_top4_agree': 0.25, 'sellers_sameOTM_oi%': 0.5992} missing=[] fetch_fail=[]
+2026-10-05 08:35:27,288 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-05 08:35:27,379 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-05 08:35:27,380 [INFO] [INDICATORS] spot=72208.3 | 1h: close=72048.9 sma20=72328.6 sma50=73038.7 rsi=42.4 macd=-291.66/-315.67(bull) | 15m: K=80.1↑(prev 59.4) | regime=PE-eligible any_active=True
+2026-10-05 08:35:27,380 [INFO] [SIGNAL] CE: reg=False K=True(K=80.1>=38,rising) Kextr=False RSI=False(42.4>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=80.1<=80,falling) Kextr=True RSI=True(42.4<47) MACD=False(gate off) => BLOCK
+2026-10-05 08:35:27,381 [INFO] [STATE][VWAP] CE BFO:SENSEX26O0872300CE ltp=479.00 entry=526.00 pnl=-47.00(-8.9%) sl=431.32 peak=545.70 tr_armed=False elapsed=5min
