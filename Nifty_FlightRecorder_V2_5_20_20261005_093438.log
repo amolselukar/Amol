@@ -2251,3 +2251,21 @@ valuable there.
 2026-10-05 05:43:12,542 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-05 05:43:12,543 [INFO] [INDICATORS] spot=22493.2 | 1h: close=22543.8 sma20=22605.3 sma50=22897.5 rsi=43.1 macd=-126.16/-126.75(bull) | 15m: K=77.8↓(prev 81.5) | regime=PE-eligible any_active=False
 2026-10-05 05:43:12,543 [INFO] [SIGNAL] CE: reg=False K=False(K=77.8>=38,rising) Kextr=False RSI=False(43.1>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=77.8<=80,falling) Kextr=True RSI=True(43.1<47) MACD=False(gate off) => PASS
+2026-10-05 05:43:13,204 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-05 05:45:14,727 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26O0622500PE @ 92.75 spot=22499.8 | K=77.8↓ RSI=43.1 MACD✓
+2026-10-05 05:46:46,179 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26O0622500PE @ 100.10 spot=22487.4 | K=73.4↓ RSI=40.3 MACD✓
+2026-10-05 05:47:16,692 [INFO] [FAST] PE22500 score=151 vol=2.52 U=15.5 skipped: leader score=151 vol=2.52 U=15.5
+2026-10-05 05:48:17,460 [INFO] [FAST] PE22500 score=136 vol=1.80 U=21.0 skipped: leader score=136 vol=1.80 U=21.0
+2026-10-05 05:48:17,482 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-05 05:48:17,483 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-05 05:48:17,484 [INFO] [INDICATORS] spot=22476.0 | 1h: close=22487.6 sma20=22592.6 sma50=22879.9 rsi=40.3 macd=-119.67/-125.33(bull) | 15m: K=73.4↓(prev 77.8) | regime=PE-eligible any_active=False
+2026-10-05 05:48:17,485 [INFO] [SIGNAL] CE: reg=False K=False(K=73.4>=38,rising) Kextr=False RSI=False(40.3>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=73.4<=80,falling) Kextr=True RSI=True(40.3<47) MACD=False(gate off) => PASS
