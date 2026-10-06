@@ -2946,3 +2946,24 @@ valuable there.
 2026-10-06 08:43:31,976 [INFO] [INDICATORS] spot=22724.2 | 1h: close=22712.0 sma20=22534.2 sma50=22738.7 rsi=56.4 macd=-21.68/-65.78(bull) | 15m: K=21.4↓(prev 29.3) | regime=NEUTRAL any_active=True
 2026-10-06 08:43:31,977 [INFO] [SIGNAL] CE: reg=False K=False(K=21.4>=38,rising) Kextr=True RSI=True(56.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=21.4<=80,falling) Kextr=True RSI=False(56.4<47) MACD=False(gate off) => BLOCK
 2026-10-06 08:43:31,978 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26O0622700CE ltp=48.25 entry=42.65 pnl=+5.60(+13.1%) sl=0.00 peak=51.05 tr_armed=False elapsed=13min
+2026-10-06 08:43:32,813 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-06 08:46:35,833 [INFO] [VWAP] Signal — FUT 22816>22750 body=84% side=CE | persist_gate=dist=+66.3pt persist=True (last 2x5m vs FUTvwap=22749.9)
+2026-10-06 08:46:35,916 [INFO] [EMA9] LIMIT PLACED VWAP CE NFO:NIFTY26O0622700CE limit=41.58 (signal LTP 42.60 is +1.02 above 15m EMA9) window=15min -- FUT VWAP 22816>22750 body=84% | bar=149
+2026-10-06 08:46:37,008 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-06 08:47:37,992 [INFO] [EMA9] FILLED VWAP CE NFO:NIFTY26O0622700CE @ 41.58 (LTP touched 39.50)
+2026-10-06 08:47:38,057 [INFO] ENTRY: NFO:NIFTY26O0622700CE @ 41.58  engine=VWAP  detail=FUT VWAP 22816>22750 body=84% | bar=149
+2026-10-06 08:48:40,293 [INFO] [APEX] open=0 trades=4 realized=-44.7pt/Rs-2909 unreal=+0.0pt/Rs+0
+2026-10-06 08:48:40,293 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-06 08:48:40,473 [INFO] [INDICATORS] spot=22712.3 | 1h: close=22722.8 sma20=22539.6 sma50=22729.5 rsi=57.1 macd=-10.06/-54.64(bull) | 15m: K=41.3↑(prev 21.4) | regime=NEUTRAL any_active=True
+2026-10-06 08:48:40,473 [INFO] [SIGNAL] CE: reg=False K=True(K=41.3>=38,rising) Kextr=True RSI=True(57.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=41.3<=80,falling) Kextr=False RSI=False(57.1<47) MACD=False(gate off) => BLOCK
+2026-10-06 08:48:40,476 [INFO] [STATE][VWAP] CE NFO:NIFTY26O0622700CE ltp=40.00 entry=41.58 pnl=-1.58(-3.8%) sl=34.10 peak=41.58 tr_armed=False elapsed=1min
+2026-10-06 08:48:40,476 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26O0622700CE ltp=40.00 entry=42.65 pnl=-2.65(-6.2%) sl=0.00 peak=51.05 tr_armed=False elapsed=18min
