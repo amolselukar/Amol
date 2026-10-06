@@ -2187,3 +2187,31 @@ valuable there.
 2026-10-06 04:43:19,095 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-06 04:43:19,096 [INFO] [INDICATORS] spot=22637.8 | 1h: close=22555.8 sma20=22543.4 sma50=22786.0 rsi=46.7 macd=-80.08/-105.63(bull) | 15m: K=100.0↑(prev 97.9) | regime=NEUTRAL any_active=False
 2026-10-06 04:43:19,096 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(46.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=True(46.7<47) MACD=False(gate off) => BLOCK
+2026-10-06 04:43:19,804 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-06 04:43:50,029 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-10-06 04:44:20,409 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-10-06 04:44:20,562 [INFO] [FAST] CE22650 score=116 vol=1.42 U=9.0 skipped: leader score=116 vol=1.42 U=9.0
+2026-10-06 04:44:51,026 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-10-06 04:45:21,502 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-10-06 04:45:21,661 [INFO] [FAST] CE22650 score=275 vol=1.79 U=23.9 skipped: leader score=275 vol=1.79 U=23.9
+2026-10-06 04:45:52,143 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-10-06 04:46:22,808 [INFO] [FAST] SIGNAL 1m momentum CE22650 score=246 vol=2.1x U=+23 momN=21.6% trend=off bar 10:15; target +10 / trail 15
+2026-10-06 04:46:22,851 [INFO] ENTRY: NFO:NIFTY26O0622650CE @ 60.25  engine=FAST  detail=1m momentum CE22650 score=246 vol=2.1x U=+23 momN=21.6% trend=off bar 10:15; target +10 / trail 15
+2026-10-06 04:47:24,788 [INFO] [APEX] EXIT PE 22600 43.4->34.8 -8.6pt Rs-559 [exhaust] | day -8.6pt Rs-559
+2026-10-06 04:47:25,631 [INFO] [APEX] EXIT PE 22600 47.3->34.7 -12.6pt Rs-819 [exhaust] | day -21.2pt Rs-1378
+2026-10-06 04:47:26,478 [INFO] [APEX] EXIT PE 22600 48.1->34.4 -13.7pt Rs-891 [exhaust] | day -34.9pt Rs-2268
+2026-10-06 04:47:27,327 [INFO] [APEX] EXIT PE 22600 44.5->34.7 -9.8pt Rs-640 [exhaust] | day -44.7pt Rs-2909
+2026-10-06 04:48:29,050 [INFO] [APEX] open=0 trades=4 realized=-44.7pt/Rs-2909 unreal=+0.0pt/Rs+0
+2026-10-06 04:48:29,095 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-06 04:48:29,096 [INFO] [INDICATORS] spot=22658.7 | 1h: close=22652.0 sma20=22541.6 sma50=22770.1 rsi=52.9 macd=-63.37/-97.18(bull) | 15m: K=97.9↓(prev 100.0) | regime=NEUTRAL any_active=True
+2026-10-06 04:48:29,096 [INFO] [SIGNAL] CE: reg=False K=False(K=97.9>=38,rising) Kextr=False RSI=False(52.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=97.9<=80,falling) Kextr=True RSI=False(52.9<47) MACD=False(gate off) => BLOCK
+2026-10-06 04:48:29,098 [INFO] [STATE][FAST] CE NFO:NIFTY26O0622650CE ltp=60.90 entry=60.25 pnl=+0.65(+1.1%) sl=0.00 peak=61.30 tr_armed=False elapsed=2min
