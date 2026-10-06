@@ -3208,3 +3208,20 @@ valuable there.
 2026-10-06 09:41:11,786 [INFO] [INDICATORS] spot=22709.5 | 1h: close=22722.8 sma20=22539.6 sma50=22729.5 rsi=57.1 macd=-10.06/-54.64(bull) | 15m: K=14.2↓(prev 27.4) | regime=NEUTRAL any_active=True
 2026-10-06 09:41:11,786 [INFO] [SIGNAL] CE: reg=False K=False(K=14.2>=38,rising) Kextr=True RSI=True(57.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=14.2<=80,falling) Kextr=False RSI=False(57.1<47) MACD=False(gate off) => BLOCK
 2026-10-06 09:41:11,786 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26O0622700CE ltp=32.15 entry=42.65 pnl=-10.50(-24.6%) sl=0.00 peak=51.05 tr_armed=False elapsed=70min
+2026-10-06 09:41:12,660 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-06 09:42:43,958 [INFO] [RENKO] dir=+1 (UP) bricks=7 brick=22.23 last5=[1, 1, 1, 1, 1]
+2026-10-06 09:45:16,224 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-06 09:45:46,562 [INFO] [APEX] open=0 trades=4 realized=-44.7pt/Rs-2909 unreal=+0.0pt/Rs+0
+2026-10-06 09:46:16,908 [INFO] [T5] open=0 trades=1 realized=-17.4pt/Rs-1131 unreal=+0.0pt/Rs+0
+2026-10-06 09:46:17,068 [INFO] [INDICATORS] spot=22717.7 | 1h: close=22717.4 sma20=22544.4 sma50=22722.3 rsi=56.7 macd=-1.27/-43.96(bull) | 15m: K=27.8↑(prev 14.2) | regime=NEUTRAL any_active=True
+2026-10-06 09:46:17,068 [INFO] [SIGNAL] CE: reg=False K=False(K=27.8>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=27.8<=80,falling) Kextr=False RSI=False(56.7<47) MACD=False(gate off) => BLOCK
+2026-10-06 09:46:17,070 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26O0622700CE ltp=32.35 entry=42.65 pnl=-10.30(-24.2%) sl=0.00 peak=51.05 tr_armed=False elapsed=76min
