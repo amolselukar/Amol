@@ -3063,3 +3063,47 @@ valuable there.
 2026-10-07 09:14:51,062 [INFO] [INDICATORS] spot=22616.3 | 1h: close=22559.3 sma20=22601.2 sma50=22670.8 rsi=44.5 macd=-4.08/-8.46(bull) | 15m: K=26.7↑(prev 8.5) | regime=PE-eligible any_active=True
 2026-10-07 09:14:51,062 [INFO] [SIGNAL] CE: reg=False K=False(K=26.7>=38,rising) Kextr=True RSI=False(44.5>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=26.7<=80,falling) Kextr=False RSI=True(44.5<47) MACD=False(gate off) => BLOCK
 2026-10-07 09:14:51,085 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY26O1322600CE ltp=157.90 entry=170.90 pnl=-13.00(-7.6%) sl=0.00 peak=172.40 tr_armed=False elapsed=13min
+2026-10-07 09:14:51,938 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-07 09:15:29,796 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-07 09:16:07,323 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-07 09:16:38,467 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+8.5pt persist=False (last 2x5m vs FUTvwap=22681.2)
+2026-10-07 09:17:09,401 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+8.5pt persist=False (last 2x5m vs FUTvwap=22681.2)
+2026-10-07 09:17:40,593 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+8.5pt persist=False (last 2x5m vs FUTvwap=22681.2)
+2026-10-07 09:17:46,866 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:17:54,142 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:02,250 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:06,250 [ERROR] Kite call ltp terminal failure
+2026-10-07 09:18:12,677 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:19,811 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:27,943 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:31,944 [ERROR] Kite call ltp terminal failure
+2026-10-07 09:18:38,098 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:45,219 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:53,357 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:18:57,357 [ERROR] Kite call ltp terminal failure
+2026-10-07 09:19:27,775 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+8.6pt persist=False (last 2x5m vs FUTvwap=22681.1)
+2026-10-07 09:19:33,857 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:19:40,956 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:19:49,039 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:19:53,039 [ERROR] Kite call ltp terminal failure
+2026-10-07 09:19:53,373 [INFO] [APEX] open=0 trades=4 realized=+1.2pt/Rs+75 unreal=+0.0pt/Rs+0
+2026-10-07 09:19:59,477 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:20:06,573 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:20:14,657 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:20:18,658 [ERROR] Kite call ltp terminal failure
+2026-10-07 09:20:24,751 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:20:31,842 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-07 09:20:36,936 [INFO] [T5] EXIT CE 22600 168.2->145.9 -22.3pt Rs-1453 [stop] | day -22.3pt Rs-1453
+2026-10-07 09:20:37,895 [INFO] [T5] open=1 trades=1 realized=-22.3pt/Rs-1453 unreal=-20.6pt/Rs-1336
+2026-10-07 09:20:37,896 [INFO] [INDICATORS] spot=22606.5 | 1h: close=22559.3 sma20=22601.2 sma50=22670.8 rsi=44.5 macd=-4.08/-8.46(bull) | 15m: K=48.9↑(prev 26.7) | regime=PE-eligible any_active=True
+2026-10-07 09:20:37,896 [INFO] [SIGNAL] CE: reg=False K=True(K=48.9>=38,rising) Kextr=True RSI=False(44.5>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=48.9<=80,falling) Kextr=False RSI=True(44.5<47) MACD=False(gate off) => BLOCK
+2026-10-07 09:20:37,897 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY26O1322600CE ltp=154.30 entry=170.90 pnl=-16.60(-9.7%) sl=0.00 peak=172.40 tr_armed=False elapsed=19min
