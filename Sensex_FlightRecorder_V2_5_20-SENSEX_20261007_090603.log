@@ -1387,3 +1387,22 @@ valuable there.
 2026-10-07 04:16:41,616 [INFO] [INDICATORS] spot=72659.4 | 1h: close=73067.8 sma20=72366.8 sma50=72717.7 rsi=61.5 macd=85.45/-46.66(bull) | 15m: K=26.3↓(prev 38.6) | regime=NEUTRAL any_active=True
 2026-10-07 04:16:41,616 [INFO] [SIGNAL] CE: reg=False K=False(K=26.3>=38,rising) Kextr=True RSI=True(61.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=26.3<=80,falling) Kextr=False RSI=False(61.5<47) MACD=False(gate off) => BLOCK
 2026-10-07 04:16:41,616 [INFO] [STATE][ORB] CE BFO:SENSEX26O0872600CE ltp=316.20 entry=317.20 pnl=-1.00(-0.3%) sl=0.00 peak=339.70 tr_armed=False elapsed=4min
+2026-10-07 04:16:42,330 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-07 04:17:12,590 [INFO] [FUT5VWAP] Signal — 72970>72944 body=81% side=CE (fixed +40pt target)
+2026-10-07 04:17:12,656 [INFO] ENTRY: BFO:SENSEX26O0872700CE @ 272.70  engine=FUT5VWAP  detail=FUT5 VWAP cross 72970>72944 body=81% pivΔ=104pt | bar=159
+2026-10-07 04:17:44,294 [INFO] [BREAKWATCH] ORB CE BFO:SENSEX26O0872600CE entry 09:42 score 1/6 -> WOULD_CUT(log-only) | {'progress_x': 0.8297, 'other_idx_dir%': 0.0095, 'hw_breadth': 0.5833, 'hw_basket_dir%': 0.0124, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 23.9641} missing=[] fetch_fail=[]
+2026-10-07 04:21:47,106 [INFO] EXIT: BFO:SENSEX26O0872700CE @ 285.70 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+13.00 is_flip=False losses=0/4
+2026-10-07 04:21:47,965 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-07 04:21:47,965 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-07 04:21:47,966 [INFO] [INDICATORS] spot=72655.0 | 1h: close=73067.8 sma20=72366.8 sma50=72717.7 rsi=61.5 macd=85.45/-46.66(bull) | 15m: K=26.3↓(prev 38.6) | regime=NEUTRAL any_active=True
+2026-10-07 04:21:47,966 [INFO] [SIGNAL] CE: reg=False K=False(K=26.3>=38,rising) Kextr=True RSI=True(61.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=26.3<=80,falling) Kextr=False RSI=False(61.5<47) MACD=False(gate off) => BLOCK
+2026-10-07 04:21:47,966 [INFO] [STATE][ORB] CE BFO:SENSEX26O0872600CE ltp=332.40 entry=317.20 pnl=+15.20(+4.8%) sl=0.00 peak=339.70 tr_armed=False elapsed=9min
