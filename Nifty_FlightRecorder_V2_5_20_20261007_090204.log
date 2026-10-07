@@ -2541,3 +2541,27 @@ valuable there.
 2026-10-07 06:41:14,003 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-07 06:41:14,004 [INFO] [INDICATORS] spot=22692.3 | 1h: close=22690.6 sma20=22566.3 sma50=22698.9 rsi=52.9 macd=9.12/-18.38(bull) | 15m: K=33.1↓(prev 33.7) | regime=NEUTRAL any_active=False
 2026-10-07 06:41:14,004 [INFO] [SIGNAL] CE: reg=False K=False(K=33.1>=38,rising) Kextr=False RSI=False(52.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=33.1<=80,falling) Kextr=False RSI=False(52.9<47) MACD=False(gate off) => BLOCK
+2026-10-07 06:41:14,749 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-07 06:41:45,052 [INFO] [EMA9] FILLED VWAP CE NFO:NIFTY26O1322700CE @ 143.29 (LTP touched 137.00)
+2026-10-07 06:41:45,098 [INFO] ENTRY: NFO:NIFTY26O1322700CE @ 143.29  engine=VWAP  detail=FUT VWAP 22746>22696 body=71% | bar=166
+2026-10-07 06:42:16,777 [INFO] [FAST] PE22700 score=154 vol=2.10 U=32.6 skipped: VRTREND counter CE
+2026-10-07 06:43:18,242 [INFO] [FAST] PE22700 score=152 vol=1.65 U=33.5 skipped: leader score=152 vol=1.65 U=33.5
+2026-10-07 06:43:18,347 [INFO] [APEX] ENTRY PE 22700 @ 155.2 (level+RSI-turn+energy+diverge) open=1
+2026-10-07 06:44:20,296 [INFO] [FAST] PE22650 score=154 BLOCKED -- 2m renko UP does not agree (brick 20.5)
+2026-10-07 06:44:20,443 [INFO] [APEX] ENTRY PE 22700 @ 159.1 (level+RSI-turn+energy+diverge) open=2
+2026-10-07 06:46:23,665 [INFO] [BREAKWATCH] VWAP CE NFO:NIFTY26O1322700CE entry 12:11 score 0/6 -> CUT | {'progress_x': -0.7415, 'other_idx_dir%': -0.067, 'hw_breadth': 0.25, 'hw_basket_dir%': -0.0611, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 4.1484} missing=[] fetch_fail=[]
+2026-10-07 06:46:23,668 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=1/4 (reason=BREAKWATCH_CUT_s0)
+2026-10-07 06:46:23,670 [INFO] EXIT: NFO:NIFTY26O1322700CE @ 138.20 reason=BREAKWATCH_CUT_s0 pnl/sh=-5.09 is_flip=False losses=1/4
+2026-10-07 06:46:24,877 [INFO] [APEX] open=2 trades=2 realized=-7.9pt/Rs-513 unreal=-7.5pt/Rs-488
+2026-10-07 06:46:24,877 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-07 06:46:24,878 [INFO] [INDICATORS] spot=22677.2 | 1h: close=22674.8 sma20=22581.4 sma50=22690.6 rsi=51.8 macd=10.07/-12.69(bull) | 15m: K=31.2↓(prev 33.1) | regime=NEUTRAL any_active=False
+2026-10-07 06:46:24,878 [INFO] [SIGNAL] CE: reg=False K=False(K=31.2>=38,rising) Kextr=False RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=31.2<=80,falling) Kextr=False RSI=False(51.8<47) MACD=False(gate off) => BLOCK
