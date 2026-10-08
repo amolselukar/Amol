@@ -2337,3 +2337,23 @@ valuable there.
 2026-10-08 09:12:36,145 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-08 09:12:36,146 [INFO] [INDICATORS] spot=71584.1 | 1h: close=71559.4 sma20=72546.9 sma50=72453.4 rsi=31.3 macd=-184.21/-58.64(bear) | 15m: K=8.2↓(prev 14.8) | regime=NEUTRAL any_active=False
 2026-10-08 09:12:36,146 [INFO] [SIGNAL] CE: reg=False K=False(K=8.2>=38,rising) Kextr=True RSI=False(31.3>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=8.2<=80,falling) Kextr=False RSI=True(31.3<47) MACD=True(gate off) => BLOCK
+2026-10-08 09:12:37,912 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-08 09:15:10,600 [INFO] [VWAP] Signal — FUT 71861<72307 body=75% side=PE | persist_gate=dist=-339.3pt persist=True (last 2x5m vs FUTvwap=72309.3)
+2026-10-08 09:15:10,722 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): SENSEX26O0871500PE
+2026-10-08 09:15:10,729 [INFO] ENTRY: BFO:SENSEX26O0871500PE @ 102.90  engine=VWAP  detail=FUT VWAP 71861<72307 body=75% | bar=179
+2026-10-08 09:17:14,788 [INFO] [EXP12] universe RE-resolved: M=71500 legs=[(71400, 'CE'), (71400, 'PE'), (71500, 'CE'), (71500, 'PE'), (71600, 'CE'), (71600, 'PE')]
+2026-10-08 09:17:15,021 [INFO] [EXP12] M=71500 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-08 09:17:45,485 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 09:17:45,551 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 09:17:45,552 [INFO] [INDICATORS] spot=71510.4 | 1h: close=71559.4 sma20=72546.9 sma50=72453.4 rsi=31.3 macd=-184.21/-58.64(bear) | 15m: K=6.8↓(prev 8.2) | regime=NEUTRAL any_active=True
+2026-10-08 09:17:45,552 [INFO] [SIGNAL] CE: reg=False K=False(K=6.8>=38,rising) Kextr=True RSI=False(31.3>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=6.8<=80,falling) Kextr=False RSI=True(31.3<47) MACD=True(gate off) => BLOCK
+2026-10-08 09:17:45,552 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0871500PE ltp=90.45 entry=102.90 pnl=-12.45(-12.1%) sl=84.38 peak=108.50 tr_armed=False elapsed=2min
