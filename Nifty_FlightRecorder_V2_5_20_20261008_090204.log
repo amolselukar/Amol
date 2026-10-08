@@ -2394,3 +2394,28 @@ valuable there.
 2026-10-08 06:00:16,186 [INFO] [INDICATORS] spot=22338.2 | 1h: close=22440.2 sma20=22614.8 sma50=22628.7 rsi=38.2 macd=-29.14/-13.46(bear) | 15m: K=2.2↓(prev 2.2) | regime=PE-eligible any_active=True
 2026-10-08 06:00:16,186 [INFO] [SIGNAL] CE: reg=False K=False(K=2.2>=38,rising) Kextr=True RSI=False(38.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=2.2<=80,falling) Kextr=False RSI=True(38.2<47) MACD=True(gate off) => BLOCK
 2026-10-08 06:00:16,186 [INFO] [STATE][FAST] PE NFO:NIFTY26O1322350PE ltp=152.55 entry=146.90 pnl=+5.65(+3.8%) sl=0.00 peak=152.85 tr_armed=False elapsed=2min
+2026-10-08 06:00:16,988 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-08 06:01:17,873 [INFO] [V3PROBE] PLACED PE NFO:NIFTY26O1322300PE limit=112.80 (LTP=116.80 - 4) window=25min — Grade B R-cluster BREAK-PE at 22399
+2026-10-08 06:01:49,362 [INFO] [VWAP] Signal — FUT 22393<22515 body=80% side=PE | persist_gate=dist=-125.2pt persist=True (last 2x5m vs FUTvwap=22518.4)
+2026-10-08 06:01:49,366 [INFO] [STOCHZONE] VWAP PE BLOCKED — 15m Stoch K=17.4 <= 20 (oversold zone, STOCH fades it)
+2026-10-08 06:01:49,973 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=\" at byte offset 73"}
+2026-10-08 06:01:49,974 [WARNING] HTML parse failed; retrying as plain text
+2026-10-08 06:02:22,244 [INFO] [V3PROBE] FILLED PE NFO:NIFTY26O1322300PE @ 112.80 (LTP touched 108.65)
+2026-10-08 06:02:22,247 [INFO] [STOCHZONE] V3 PE BLOCKED — 15m Stoch K=17.4 <= 20 (oversold zone, STOCH fades it)
+2026-10-08 06:02:22,868 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"=\" at byte offset 71"}
+2026-10-08 06:02:22,868 [WARNING] HTML parse failed; retrying as plain text
+2026-10-08 06:02:24,926 [INFO] [CB] FAST loss NOT counted toward the circuit breaker (user 2026-09-17: FAST has no daily stop and must not halt other engines)
+2026-10-08 06:02:24,928 [INFO] EXIT: NFO:NIFTY26O1322350PE @ 137.85 reason=FAST_TRAIL15 pnl/sh=-9.05 is_flip=False losses=0/4
+2026-10-08 06:05:29,209 [INFO] [APEX] open=0 trades=2 realized=-10.5pt/Rs-682 unreal=+0.0pt/Rs+0
+2026-10-08 06:05:29,209 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 06:05:29,210 [INFO] [INDICATORS] spot=22360.8 | 1h: close=22440.2 sma20=22614.8 sma50=22628.7 rsi=38.2 macd=-29.14/-13.46(bear) | 15m: K=2.2↓(prev 2.2) | regime=PE-eligible any_active=False
+2026-10-08 06:05:29,210 [INFO] [SIGNAL] CE: reg=False K=False(K=2.2>=38,rising) Kextr=True RSI=False(38.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=2.2<=80,falling) Kextr=False RSI=True(38.2<47) MACD=True(gate off) => BLOCK
