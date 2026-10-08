@@ -1930,3 +1930,21 @@ valuable there.
 2026-10-08 06:59:56,939 [INFO] [INDICATORS] spot=71875.0 | 1h: close=71920.0 sma20=72615.8 sma50=72504.3 rsi=36.4 macd=-77.68/-1.14(bear) | 15m: K=25.1↑(prev 17.7) | regime=NEUTRAL any_active=True
 2026-10-08 06:59:56,939 [INFO] [SIGNAL] CE: reg=False K=False(K=25.1>=38,rising) Kextr=True RSI=False(36.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=25.1<=80,falling) Kextr=False RSI=True(36.4<47) MACD=True(gate off) => BLOCK
 2026-10-08 06:59:56,940 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0871900PE ltp=180.05 entry=160.15 pnl=+19.90(+12.4%) sl=131.32 peak=202.50 tr_armed=False elapsed=28min
+2026-10-08 06:59:57,779 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-08 07:01:29,711 [INFO] [TRAIL] SL ratcheted 196.85 → 206.55  (peak=222.55)
+2026-10-08 07:03:31,708 [INFO] [TRAIL] SL ratcheted 206.55 → 231.75  (peak=247.75)
+2026-10-08 07:04:02,190 [INFO] [TRAIL] SL ratcheted 231.75 → 248.70  (peak=264.70)
+2026-10-08 07:04:32,702 [INFO] EXIT: BFO:SENSEX26O0871900PE @ 248.70 reason=TRAIL_+88 pnl/sh=+88.55 is_flip=False losses=1/4
+2026-10-08 07:05:03,993 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 07:05:03,993 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 07:05:03,994 [INFO] [INDICATORS] spot=71736.4 | 1h: close=71920.0 sma20=72615.8 sma50=72504.3 rsi=36.4 macd=-77.68/-1.14(bear) | 15m: K=21.0↓(prev 25.1) | regime=NEUTRAL any_active=False
+2026-10-08 07:05:03,994 [INFO] [SIGNAL] CE: reg=False K=False(K=21.0>=38,rising) Kextr=True RSI=False(36.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=21.0<=80,falling) Kextr=False RSI=True(36.4<47) MACD=True(gate off) => BLOCK
