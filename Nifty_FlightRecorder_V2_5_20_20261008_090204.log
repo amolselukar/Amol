@@ -2228,3 +2228,21 @@ valuable there.
 2026-10-08 05:08:56,306 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-08 05:08:56,306 [INFO] [INDICATORS] spot=22441.0 | 1h: close=22487.0 sma20=22613.8 sma50=22637.2 rsi=40.7 macd=-17.35/-9.54(bear) | 15m: K=6.1↑(prev 5.3) | regime=PE-eligible any_active=False
 2026-10-08 05:08:56,306 [INFO] [SIGNAL] CE: reg=False K=False(K=6.1>=38,rising) Kextr=True RSI=False(40.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=6.1<=80,falling) Kextr=False RSI=True(40.7<47) MACD=True(gate off) => BLOCK
+2026-10-08 05:08:57,075 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-08 05:10:28,586 [INFO] [RENKO] dir=-1 (DOWN) bricks=8 brick=20.30 last5=[-1, -1, 1, -1, -1]
+2026-10-08 05:11:30,020 [INFO] [FAST] SIGNAL 1m momentum PE22400 score=139 vol=2.8x U=+22 momN=10.9% trend=PE bar 10:40; target +10 / trail 15
+2026-10-08 05:11:30,076 [INFO] ENTRY: NFO:NIFTY26O1322400PE @ 116.65  engine=FAST  detail=1m momentum PE22400 score=139 vol=2.8x U=+22 momN=10.9% trend=PE bar 10:40; target +10 / trail 15
+2026-10-08 05:14:03,779 [INFO] [APEX] open=0 trades=1 realized=-4.5pt/Rs-292 unreal=+0.0pt/Rs+0
+2026-10-08 05:14:03,779 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 05:14:03,780 [INFO] [INDICATORS] spot=22438.6 | 1h: close=22487.0 sma20=22613.8 sma50=22637.2 rsi=40.7 macd=-17.35/-9.54(bear) | 15m: K=6.1↑(prev 5.3) | regime=PE-eligible any_active=True
+2026-10-08 05:14:03,780 [INFO] [SIGNAL] CE: reg=False K=False(K=6.1>=38,rising) Kextr=True RSI=False(40.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=6.1<=80,falling) Kextr=False RSI=True(40.7<47) MACD=True(gate off) => BLOCK
+2026-10-08 05:14:03,781 [INFO] [STATE][FAST] PE NFO:NIFTY26O1322400PE ltp=111.90 entry=116.65 pnl=-4.75(-4.1%) sl=0.00 peak=116.65 tr_armed=False elapsed=2min
