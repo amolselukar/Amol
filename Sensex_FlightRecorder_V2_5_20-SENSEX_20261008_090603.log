@@ -1365,3 +1365,35 @@ valuable there.
 2026-10-08 04:16:43,157 [INFO] [SIGNAL] CE: reg=True K=False(K=17.5>=38,rising) Kextr=True RSI=False(50.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=17.5<=80,falling) Kextr=False RSI=False(50.0<47) MACD=False(gate off) => BLOCK
 2026-10-08 04:16:43,157 [INFO] [STATE][ORB] PE BFO:SENSEX26O0872200PE ltp=191.70 entry=174.25 pnl=+17.45(+10.0%) sl=0.00 peak=194.30 tr_armed=False elapsed=1min
 2026-10-08 04:16:43,157 [INFO] [STATE][EXPIRY] PE BFO:SENSEX26O0872200PE ltp=191.70 entry=194.30 pnl=-2.60(-1.3%) sl=159.33 peak=194.30 tr_armed=False elapsed=0min
+2026-10-08 04:16:43,877 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-08 04:17:14,117 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-117.5pt persist=False (last 2x5m vs FUTvwap=72624.5)
+2026-10-08 04:17:44,473 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-117.5pt persist=False (last 2x5m vs FUTvwap=72624.5)
+2026-10-08 04:18:15,074 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-114.2pt persist=False (last 2x5m vs FUTvwap=72621.2)
+2026-10-08 04:18:45,452 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-114.2pt persist=False (last 2x5m vs FUTvwap=72621.2)
+2026-10-08 04:19:15,809 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-103.8pt persist=False (last 2x5m vs FUTvwap=72610.8)
+2026-10-08 04:19:46,185 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-103.8pt persist=False (last 2x5m vs FUTvwap=72610.8)
+2026-10-08 04:20:16,554 [INFO] [V3PROBE] FILLED PE BFO:SENSEX26O0872200PE @ 160.80 (LTP touched 155.10)
+2026-10-08 04:20:16,602 [INFO] ENTRY: BFO:SENSEX26O0872200PE @ 160.80  engine=V3  detail=Grade B R-cluster BREAK-PE at 72484
+2026-10-08 04:20:17,418 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-104.7pt persist=False (last 2x5m vs FUTvwap=72611.7)
+2026-10-08 04:20:17,856 [INFO] [BREAKWATCH] ORB PE BFO:SENSEX26O0872200PE entry 09:45 score 3/6 -> KEEP | {'progress_x': -0.1619, 'other_idx_dir%': 0.1533, 'hw_breadth': 0.6667, 'hw_basket_dir%': 0.1357, 'hw_top4_agree': 0.25, 'sellers_sameOTM_oi%': -8.8345} missing=[] fetch_fail=[]
+2026-10-08 04:20:17,886 [INFO] [CB] EXPIRY loss (own count 1) — TOTAL across all engines=1/4 (reason=HARDSL_-18pct)
+2026-10-08 04:20:17,888 [INFO] EXIT: BFO:SENSEX26O0872200PE @ 159.33 reason=HARDSL_-18pct pnl/sh=-34.97 is_flip=False losses=1/4
+2026-10-08 04:20:49,021 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-104.7pt persist=False (last 2x5m vs FUTvwap=72611.7)
+2026-10-08 04:21:19,361 [INFO] [VWAP] Signal — FUT 72507<72608 body=72% side=PE | persist_gate=dist=-115.0pt persist=True (last 2x5m vs FUTvwap=72611.3)
+2026-10-08 04:21:19,425 [INFO] ENTRY: BFO:SENSEX26O0872300PE @ 204.20  engine=VWAP  detail=FUT VWAP 72507<72608 body=72% | bar=180
+2026-10-08 04:21:50,678 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 04:21:50,678 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 04:21:50,679 [INFO] [INDICATORS] spot=72260.8 | 1h: close=72638.7 sma20=72598.2 sma50=72571.7 rsi=50.0 macd=36.91/35.99(bull) | 15m: K=17.5↓(prev 33.4) | regime=CE-eligible any_active=True
+2026-10-08 04:21:50,679 [INFO] [SIGNAL] CE: reg=True K=False(K=17.5>=38,rising) Kextr=True RSI=False(50.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=17.5<=80,falling) Kextr=False RSI=False(50.0<47) MACD=False(gate off) => BLOCK
+2026-10-08 04:21:50,679 [INFO] [STATE][BASE] PE BFO:SENSEX26O0872200PE ltp=155.50 entry=160.80 pnl=-5.30(-3.3%) sl=131.86 peak=165.75 tr_armed=False elapsed=1min
+2026-10-08 04:21:50,679 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0872300PE ltp=203.45 entry=204.20 pnl=-0.75(-0.4%) sl=167.44 peak=204.20 tr_armed=False elapsed=0min
+2026-10-08 04:21:50,679 [INFO] [STATE][ORB] PE BFO:SENSEX26O0872200PE ltp=155.50 entry=174.25 pnl=-18.75(-10.8%) sl=0.00 peak=198.75 tr_armed=False elapsed=6min
