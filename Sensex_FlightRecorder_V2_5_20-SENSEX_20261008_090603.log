@@ -1835,3 +1835,21 @@ valuable there.
 2026-10-08 06:29:24,040 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-08 06:29:24,040 [INFO] [INDICATORS] spot=71941.7 | 1h: close=72189.0 sma20=72622.3 sma50=72523.4 rsi=40.9 macd=-29.40/17.99(bear) | 15m: K=13.4↑(prev 7.9) | regime=NEUTRAL any_active=False
 2026-10-08 06:29:24,041 [INFO] [SIGNAL] CE: reg=False K=False(K=13.4>=38,rising) Kextr=True RSI=False(40.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=13.4<=80,falling) Kextr=False RSI=True(40.9<47) MACD=True(gate off) => BLOCK
+2026-10-08 06:29:24,815 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-08 06:31:26,180 [INFO] [VWAP] Signal — FUT 72230<72505 body=75% side=PE | persist_gate=dist=-280.5pt persist=True (last 2x5m vs FUTvwap=72510.9)
+2026-10-08 06:31:26,286 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): SENSEX26O0871900PE
+2026-10-08 06:31:26,288 [INFO] ENTRY: BFO:SENSEX26O0871900PE @ 160.15  engine=VWAP  detail=FUT VWAP 72230<72505 body=75% | bar=180
+2026-10-08 06:34:29,522 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 06:34:29,522 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-08 06:34:29,522 [INFO] [INDICATORS] spot=71957.6 | 1h: close=72189.0 sma20=72622.3 sma50=72523.4 rsi=40.9 macd=-29.40/17.99(bear) | 15m: K=17.7↑(prev 13.4) | regime=NEUTRAL any_active=True
+2026-10-08 06:34:29,522 [INFO] [SIGNAL] CE: reg=False K=False(K=17.7>=38,rising) Kextr=True RSI=False(40.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=17.7<=80,falling) Kextr=False RSI=True(40.9<47) MACD=True(gate off) => BLOCK
+2026-10-08 06:34:29,523 [INFO] [STATE][VWAP] PE BFO:SENSEX26O0871900PE ltp=154.80 entry=160.15 pnl=-5.35(-3.3%) sl=131.32 peak=160.15 tr_armed=False elapsed=3min
