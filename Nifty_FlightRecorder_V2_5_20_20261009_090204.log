@@ -2791,3 +2791,21 @@ valuable there.
 2026-10-09 08:13:20,604 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-09 08:13:20,605 [INFO] [INDICATORS] spot=22515.1 | 1h: close=22503.3 sma20=22500.6 sma50=22556.5 rsi=50.4 macd=-53.75/-64.12(bull) | 15m: K=54.6↑(prev 49.1) | regime=NEUTRAL any_active=False
 2026-10-09 08:13:20,605 [INFO] [SIGNAL] CE: reg=False K=True(K=54.6>=38,rising) Kextr=False RSI=False(50.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=54.6<=80,falling) Kextr=False RSI=False(50.4<47) MACD=False(gate off) => BLOCK
+2026-10-09 08:13:21,362 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-09 08:14:22,438 [INFO] [FAST] CE22500 score=101 vol=2.21 U=14.9 skipped: leader score=101 vol=2.21 U=14.9
+2026-10-09 08:15:23,633 [INFO] [FAST] CE22550 score=127 vol=4.17 U=14.6 skipped: leader score=127 vol=4.17 U=14.6
+2026-10-09 08:16:55,139 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=11 brick=23.72 last5=[1, 1, 1, -1, 1]
+2026-10-09 08:17:25,800 [INFO] [FAST] CE22550 score=152 vol=1.65 U=22.7 skipped: leader score=152 vol=1.65 U=22.7
+2026-10-09 08:18:26,878 [INFO] [APEX] open=0 trades=3 realized=-27.0pt/Rs-1755 unreal=+0.0pt/Rs+0
+2026-10-09 08:18:26,878 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-09 08:18:26,879 [INFO] [INDICATORS] spot=22524.7 | 1h: close=22503.3 sma20=22500.6 sma50=22556.5 rsi=50.4 macd=-53.75/-64.12(bull) | 15m: K=58.0↑(prev 54.6) | regime=NEUTRAL any_active=False
+2026-10-09 08:18:26,879 [INFO] [SIGNAL] CE: reg=False K=True(K=58.0>=38,rising) Kextr=False RSI=False(50.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=58.0<=80,falling) Kextr=False RSI=False(50.4<47) MACD=False(gate off) => BLOCK
