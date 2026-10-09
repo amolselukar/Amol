@@ -2011,3 +2011,20 @@ valuable there.
 2026-10-09 03:57:32,707 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-09 03:57:32,709 [INFO] [INDICATORS] spot=22331.2 | 1h: close=22231.8 sma20=22542.3 sma50=22573.2 rsi=30.2 macd=-101.89/-60.17(bear) | 15m: K=62.1↑(prev 42.1) | regime=PE-eligible any_active=False
 2026-10-09 03:57:32,709 [INFO] [SIGNAL] CE: reg=False K=True(K=62.1>=38,rising) Kextr=True RSI=False(30.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=62.1<=80,falling) Kextr=False RSI=True(30.2<47) MACD=True(gate off) => BLOCK
+2026-10-09 03:57:33,353 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-09 04:00:05,178 [INFO] [MVWAP] Signal — 22275<22408 body=73% side=PE (morning exception)
+2026-10-09 04:00:05,181 [INFO] [VETO] VWAP PE BLOCKED — PE into an UPtrend: spot 22361.8 is +24.6 above SPOT VWAP 22337.3 (buffer 5)
+2026-10-09 04:01:36,714 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=3 brick=23.72 last5=[1, -1, 1]
+2026-10-09 04:02:37,727 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-09 04:02:37,727 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-09 04:02:37,728 [INFO] [INDICATORS] spot=22373.8 | 1h: close=22231.8 sma20=22542.3 sma50=22573.2 rsi=30.2 macd=-101.89/-60.17(bear) | 15m: K=89.8↑(prev 62.1) | regime=PE-eligible any_active=False
+2026-10-09 04:02:37,728 [INFO] [SIGNAL] CE: reg=False K=True(K=89.8>=38,rising) Kextr=True RSI=False(30.2>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=89.8<=80,falling) Kextr=True RSI=True(30.2<47) MACD=True(gate off) => BLOCK
