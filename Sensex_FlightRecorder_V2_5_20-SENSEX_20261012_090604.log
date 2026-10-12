@@ -2329,3 +2329,31 @@ valuable there.
 2026-10-12 09:18:34,549 [INFO] [SIGNAL] CE: reg=False K=False(K=3.4>=38,rising) Kextr=True RSI=False(39.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=3.4<=80,falling) Kextr=False RSI=True(39.1<47) MACD=True(gate off) => BLOCK
 2026-10-12 09:18:34,549 [INFO] [STATE][BASE] PE BFO:SENSEX26O1571700PE ltp=402.95 entry=398.40 pnl=+4.55(+1.1%) sl=326.69 peak=425.00 tr_armed=False elapsed=16min
 2026-10-12 09:18:34,551 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX26O1572300PE ltp=744.45 entry=415.55 pnl=+328.90(+79.1%) sl=0.00 peak=773.40 tr_armed=False elapsed=291min
+2026-10-12 09:18:35,521 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-12 09:19:11,818 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:19:18,877 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:19:26,939 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:19:30,939 [ERROR] Kite call ltp terminal failure
+2026-10-12 09:19:37,008 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:19:44,070 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:19:52,133 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:19:56,134 [ERROR] Kite call ltp terminal failure
+2026-10-12 09:20:32,539 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-12 09:22:04,770 [INFO] [CB] V3 loss (own count 1) — TOTAL across all engines=1/4 (reason=V3_FAST_STOP)
+2026-10-12 09:22:04,771 [INFO] EXIT: BFO:SENSEX26O1571700PE @ 372.40 reason=V3_FAST_STOP pnl/sh=-26.00 is_flip=False losses=1/4
+2026-10-12 09:23:06,435 [INFO] [T5] ENTRY CE 71800 @ 470.9 tgt670.9 stp452.9 (bo+11.5 PEdec-60.9) open=1
+2026-10-12 09:23:37,493 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-12 09:23:37,626 [INFO] [T5] ENTRY CE 71800 @ 457.1 tgt657.1 stp439.1 (bo+17.1 PEdec-60.9) open=2
+2026-10-12 09:23:38,440 [INFO] [T5] open=2 trades=0 realized=+0.0pt/Rs+0 unreal=-16.0pt/Rs-320
+2026-10-12 09:23:38,441 [INFO] [INDICATORS] spot=71795.6 | 1h: close=71810.5 sma20=72111.5 sma50=72316.7 rsi=39.1 macd=-120.50/-88.96(bear) | 15m: K=3.4↓(prev 18.4) | regime=PE-eligible any_active=True
+2026-10-12 09:23:38,441 [INFO] [SIGNAL] CE: reg=False K=False(K=3.4>=38,rising) Kextr=True RSI=False(39.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=3.4<=80,falling) Kextr=False RSI=True(39.1<47) MACD=True(gate off) => BLOCK
+2026-10-12 09:23:38,441 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX26O1572300PE ltp=706.65 entry=415.55 pnl=+291.10(+70.1%) sl=0.00 peak=773.40 tr_armed=False elapsed=296min
