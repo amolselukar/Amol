@@ -3077,3 +3077,23 @@ valuable there.
 2026-10-13 09:04:39,056 [INFO] [SIGNAL] CE: reg=False K=True(K=84.9>=38,rising) Kextr=False RSI=True(57.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.9<=80,falling) Kextr=True RSI=False(57.8<47) MACD=False(gate off) => BLOCK
 2026-10-13 09:04:39,057 [INFO] [STATE][WCR] PE NFO:NIFTY26O1322550PE ltp=3.85 entry=60.60 pnl=-56.75(-93.6%) sl=0.00 peak=93.45 tr_armed=False elapsed=224min
 2026-10-13 09:04:39,058 [INFO] [STATE][FAST] CE NFO:NIFTY26O1322600CE ltp=54.95 entry=32.15 pnl=+22.80(+70.9%) sl=0.00 peak=54.95 tr_armed=False elapsed=13min
+2026-10-13 09:04:40,127 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-13 09:06:12,080 [INFO] [LSC] WASHOUT 22650PE — vol 7,265,180 = 5.5x median, OI 11.00M -> 13.25M (fresh writing), close 30.90 = lowest of 30 bars
+2026-10-13 09:07:13,352 [INFO] [RENKO] dir=+1 (UP) bricks=16 brick=23.96 last5=[-1, 1, 1, 1, 1]
+2026-10-13 09:07:44,349 [INFO] [EXP12] M=22600 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-13 09:08:14,858 [INFO] [LSC] WASHOUT 22650PE — vol 6,303,635 = 4.7x median, OI 15.60M -> 16.54M (fresh writing), close 29.55 = lowest of 30 bars
+2026-10-13 09:09:47,876 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-13 09:09:47,941 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-13 09:09:48,133 [INFO] [INDICATORS] spot=22642.3 | 1h: close=22582.3 sma20=22456.0 sma50=22502.1 rsi=57.8 macd=4.28/-20.99(bull) | 15m: K=84.9↑(prev 74.3) | regime=NEUTRAL any_active=True
+2026-10-13 09:09:48,133 [INFO] [SIGNAL] CE: reg=False K=True(K=84.9>=38,rising) Kextr=False RSI=True(57.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.9<=80,falling) Kextr=True RSI=False(57.8<47) MACD=False(gate off) => BLOCK
+2026-10-13 09:09:48,135 [INFO] [STATE][WCR] PE NFO:NIFTY26O1322550PE ltp=3.75 entry=60.60 pnl=-56.85(-93.8%) sl=0.00 peak=93.45 tr_armed=False elapsed=230min
+2026-10-13 09:09:48,135 [INFO] [STATE][FAST] CE NFO:NIFTY26O1322600CE ltp=71.05 entry=32.15 pnl=+38.90(+121.0%) sl=0.00 peak=71.55 tr_armed=False elapsed=19min
