@@ -3008,3 +3008,30 @@ valuable there.
 2026-10-13 08:48:57,937 [INFO] [INDICATORS] spot=22580.8 | 1h: close=22582.3 sma20=22456.0 sma50=22502.1 rsi=57.8 macd=4.28/-20.99(bull) | 15m: K=74.3↑(prev 48.4) | regime=NEUTRAL any_active=True
 2026-10-13 08:48:57,938 [INFO] [SIGNAL] CE: reg=False K=True(K=74.3>=38,rising) Kextr=False RSI=True(57.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=74.3<=80,falling) Kextr=False RSI=False(57.8<47) MACD=False(gate off) => BLOCK
 2026-10-13 08:48:57,938 [INFO] [STATE][WCR] PE NFO:NIFTY26O1322550PE ltp=12.75 entry=60.60 pnl=-47.85(-79.0%) sl=0.00 peak=93.45 tr_armed=False elapsed=209min
+2026-10-13 08:48:58,936 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-13 08:49:35,407 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-13 08:49:42,489 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-13 08:49:50,566 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-13 08:49:54,567 [ERROR] Kite call ltp terminal failure
+2026-10-13 08:50:00,699 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-13 08:50:07,776 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-13 08:50:40,870 [INFO] [FAST] SIGNAL 1m momentum CE22600 score=305 vol=3.5x U=+21 momN=48.8% trend=CE bar 14:19; trail 15
+2026-10-13 08:50:40,917 [INFO] ENTRY: NFO:NIFTY26O1322600CE @ 32.15  engine=FAST  detail=1m momentum CE22600 score=305 vol=3.5x U=+21 momN=48.8% trend=CE bar 14:19; trail 15
+2026-10-13 08:51:43,567 [INFO] [RENKO] dir=+1 (UP) bricks=15 brick=23.96 last5=[-1, -1, 1, 1, 1]
+2026-10-13 08:52:14,427 [INFO] [LSC] WASHOUT 22600PE — vol 18,278,260 = 6.0x median, OI 23.99M -> 26.52M (fresh writing), close 24.00 = lowest of 30 bars
+2026-10-13 08:52:14,789 [INFO] [EXP12] M=22600 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-13 08:54:18,930 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-13 08:54:19,000 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-13 08:54:19,163 [INFO] [INDICATORS] spot=22593.3 | 1h: close=22582.3 sma20=22456.0 sma50=22502.1 rsi=57.8 macd=4.28/-20.99(bull) | 15m: K=74.3↑(prev 48.4) | regime=NEUTRAL any_active=True
+2026-10-13 08:54:19,164 [INFO] [SIGNAL] CE: reg=False K=True(K=74.3>=38,rising) Kextr=False RSI=True(57.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=74.3<=80,falling) Kextr=False RSI=False(57.8<47) MACD=False(gate off) => BLOCK
+2026-10-13 08:54:19,166 [INFO] [STATE][WCR] PE NFO:NIFTY26O1322550PE ltp=8.90 entry=60.60 pnl=-51.70(-85.3%) sl=0.00 peak=93.45 tr_armed=False elapsed=214min
+2026-10-13 08:54:19,166 [INFO] [STATE][FAST] CE NFO:NIFTY26O1322600CE ltp=31.50 entry=32.15 pnl=-0.65(-2.0%) sl=0.00 peak=38.60 tr_armed=False elapsed=3min
