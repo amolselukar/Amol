@@ -2941,3 +2941,25 @@ valuable there.
 2026-10-13 08:33:09,231 [INFO] [INDICATORS] spot=22558.7 | 1h: close=22557.5 sma20=22437.7 sma50=22497.9 rsi=56.3 macd=-5.60/-27.31(bull) | 15m: K=48.4↓(prev 52.6) | regime=NEUTRAL any_active=True
 2026-10-13 08:33:09,231 [INFO] [SIGNAL] CE: reg=False K=False(K=48.4>=38,rising) Kextr=False RSI=True(56.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=48.4<=80,falling) Kextr=False RSI=False(56.3<47) MACD=False(gate off) => BLOCK
 2026-10-13 08:33:09,232 [INFO] [STATE][WCR] PE NFO:NIFTY26O1322550PE ltp=17.30 entry=60.60 pnl=-43.30(-71.5%) sl=0.00 peak=93.45 tr_armed=False elapsed=193min
+2026-10-13 08:33:10,223 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-13 08:34:42,165 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=13 brick=23.96 last5=[1, 1, -1, -1, 1]
+2026-10-13 08:36:14,640 [INFO] [RENKO] dir=+1 (UP) bricks=14 brick=23.96 last5=[1, -1, -1, 1, 1]
+2026-10-13 08:36:15,148 [INFO] [EXP12] anchor=spot M=22600 (max-OI would be 22550, diverged by -50) spot=22571.5
+2026-10-13 08:36:15,148 [INFO] [EXP12] universe RE-resolved: M=22600 legs=[(22550, 'CE'), (22550, 'PE'), (22600, 'CE'), (22600, 'PE'), (22650, 'CE'), (22650, 'PE')]
+2026-10-13 08:36:15,363 [INFO] [EXP12] M=22600 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-13 08:37:16,730 [INFO] [FAST] CE22600 fired but premium 25.85 outside [30,400] -- skipped
+2026-10-13 08:38:18,472 [INFO] [FAST] CE22600 fired but premium 25.85 outside [30,400] -- skipped
+2026-10-13 08:38:18,501 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-13 08:38:18,576 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-13 08:38:18,754 [INFO] [INDICATORS] spot=22581.6 | 1h: close=22557.5 sma20=22437.7 sma50=22497.9 rsi=56.3 macd=-5.60/-27.31(bull) | 15m: K=48.4↓(prev 52.6) | regime=NEUTRAL any_active=True
+2026-10-13 08:38:18,754 [INFO] [SIGNAL] CE: reg=False K=False(K=48.4>=38,rising) Kextr=False RSI=True(56.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=48.4<=80,falling) Kextr=False RSI=False(56.3<47) MACD=False(gate off) => BLOCK
+2026-10-13 08:38:18,755 [INFO] [STATE][WCR] PE NFO:NIFTY26O1322550PE ltp=11.35 entry=60.60 pnl=-49.25(-81.3%) sl=0.00 peak=93.45 tr_armed=False elapsed=198min
