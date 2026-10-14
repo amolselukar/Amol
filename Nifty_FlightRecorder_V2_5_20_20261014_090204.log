@@ -2931,3 +2931,20 @@ valuable there.
 2026-10-14 08:33:02,983 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-14 08:33:02,983 [INFO] [INDICATORS] spot=22647.7 | 1h: close=22561.8 sma20=22525.4 sma50=22532.2 rsi=50.7 macd=51.52/30.22(bull) | 15m: K=27.1↑(prev 13.1) | regime=NEUTRAL any_active=False
 2026-10-14 08:33:02,984 [INFO] [SIGNAL] CE: reg=False K=False(K=27.1>=38,rising) Kextr=True RSI=False(50.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=27.1<=80,falling) Kextr=False RSI=False(50.7<47) MACD=False(gate off) => BLOCK
+2026-10-14 08:33:03,696 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-14 08:33:34,089 [INFO] [APEX] EXIT CE 22600 142.3->164.2 +21.8pt Rs+1420 [trail] | day +21.8pt Rs+1420
+2026-10-14 08:33:34,892 [INFO] [APEX] EXIT CE 22600 137.9->164.3 +26.4pt Rs+1719 [trail] | day +48.3pt Rs+3139
+2026-10-14 08:34:06,125 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=11 brick=27.61 last5=[-1, -1, -1, -1, 1]
+2026-10-14 08:38:11,139 [INFO] [APEX] open=0 trades=2 realized=+48.3pt/Rs+3139 unreal=+0.0pt/Rs+0
+2026-10-14 08:38:11,139 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-14 08:38:11,139 [INFO] [INDICATORS] spot=22635.0 | 1h: close=22561.8 sma20=22525.4 sma50=22532.2 rsi=50.7 macd=51.52/30.22(bull) | 15m: K=27.1↑(prev 13.1) | regime=NEUTRAL any_active=False
+2026-10-14 08:38:11,139 [INFO] [SIGNAL] CE: reg=False K=False(K=27.1>=38,rising) Kextr=True RSI=False(50.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=27.1<=80,falling) Kextr=False RSI=False(50.7<47) MACD=False(gate off) => BLOCK
