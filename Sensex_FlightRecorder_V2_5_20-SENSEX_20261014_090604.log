@@ -2075,3 +2075,26 @@ valuable there.
 2026-10-14 07:55:34,202 [INFO] [STATE][BASE] PE BFO:SENSEX26O1572600PE ltp=314.35 entry=336.75 pnl=-22.40(-6.7%) sl=276.14 peak=362.05 tr_armed=False elapsed=9min
 2026-10-14 07:55:34,202 [INFO] [STATE][VWAP] PE BFO:SENSEX26O1572700PE ltp=366.55 entry=394.65 pnl=-28.10(-7.1%) sl=323.61 peak=417.50 tr_armed=False elapsed=9min
 2026-10-14 07:55:34,203 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26O1573000PE ltp=560.40 entry=301.60 pnl=+258.80(+85.8%) sl=0.00 peak=627.75 tr_armed=False elapsed=29min
+2026-10-14 07:55:35,780 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-14 07:56:06,060 [INFO] [CB] V3 loss (own count 1) — TOTAL across all engines=2/4 (reason=V3_FAST_STOP)
+2026-10-14 07:56:06,063 [INFO] EXIT: BFO:SENSEX26O1572600PE @ 310.75 reason=V3_FAST_STOP pnl/sh=-26.00 is_flip=False losses=1/4
+2026-10-14 07:56:37,256 [INFO] [V3PROBE] PLACED PE BFO:SENSEX26O1572700PE limit=360.85 (LTP=373.85 - 13) window=25min — Grade B R-cluster BREAK-PE at 72610
+2026-10-14 07:57:08,443 [INFO] [V3PROBE] FILLED PE BFO:SENSEX26O1572700PE @ 360.85 (LTP touched 359.35)
+2026-10-14 07:57:08,490 [INFO] ENTRY: BFO:SENSEX26O1572700PE @ 360.85  engine=V3  detail=Grade B R-cluster BREAK-PE at 72610
+2026-10-14 07:59:41,535 [INFO] [CB] V3 loss (own count 2) — TOTAL across all engines=3/4 (reason=V3_FAST_STOP)
+2026-10-14 07:59:41,535 [INFO] EXIT: BFO:SENSEX26O1572700PE @ 334.85 reason=V3_FAST_STOP pnl/sh=-26.00 is_flip=False losses=2/4
+2026-10-14 08:00:43,360 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-14 08:00:43,427 [INFO] [T5] open=0 trades=1 realized=+26.8pt/Rs+535 unreal=+0.0pt/Rs+0
+2026-10-14 08:00:43,428 [INFO] [INDICATORS] spot=72702.6 | 1h: close=72598.1 sma20=72436.7 sma50=72429.4 rsi=51.8 macd=179.43/110.27(bull) | 15m: K=5.0↑(prev 4.8) | regime=CE-eligible any_active=True
+2026-10-14 08:00:43,428 [INFO] [SIGNAL] CE: reg=True K=False(K=5.0>=38,rising) Kextr=True RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=5.0<=80,falling) Kextr=False RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-10-14 08:00:43,428 [INFO] [STATE][VWAP] PE BFO:SENSEX26O1572700PE ltp=379.80 entry=394.65 pnl=-14.85(-3.8%) sl=323.61 peak=417.50 tr_armed=False elapsed=14min
+2026-10-14 08:00:43,429 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26O1573000PE ltp=580.30 entry=301.60 pnl=+278.70(+92.4%) sl=0.00 peak=627.75 tr_armed=False elapsed=34min
