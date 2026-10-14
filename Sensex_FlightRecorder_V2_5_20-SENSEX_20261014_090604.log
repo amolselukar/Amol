@@ -2057,3 +2057,21 @@ valuable there.
 2026-10-14 07:50:28,191 [INFO] [STATE][BASE] PE BFO:SENSEX26O1572600PE ltp=346.85 entry=336.75 pnl=+10.10(+3.0%) sl=276.14 peak=362.05 tr_armed=False elapsed=4min
 2026-10-14 07:50:28,191 [INFO] [STATE][VWAP] PE BFO:SENSEX26O1572700PE ltp=402.40 entry=394.65 pnl=+7.75(+2.0%) sl=323.61 peak=417.50 tr_armed=False elapsed=4min
 2026-10-14 07:50:28,191 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26O1573000PE ltp=602.20 entry=301.60 pnl=+300.60(+99.7%) sl=0.00 peak=627.75 tr_armed=False elapsed=24min
+2026-10-14 07:50:28,942 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-14 07:51:30,359 [INFO] [BREAKWATCH] VWAP PE BFO:SENSEX26O1572700PE entry 13:16 score 4/6 -> KEEP | {'progress_x': 0.6914, 'other_idx_dir%': 0.2772, 'hw_breadth': 0.875, 'hw_basket_dir%': 0.2552, 'hw_top4_agree': 0.75, 'sellers_sameOTM_oi%': 3.4228} missing=[] fetch_fail=[]
+2026-10-14 07:55:34,201 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-14 07:55:34,201 [INFO] [T5] open=0 trades=1 realized=+26.8pt/Rs+535 unreal=+0.0pt/Rs+0
+2026-10-14 07:55:34,202 [INFO] [INDICATORS] spot=72659.0 | 1h: close=72598.1 sma20=72436.7 sma50=72429.4 rsi=51.8 macd=179.43/110.27(bull) | 15m: K=4.8↓(prev 14.9) | regime=CE-eligible any_active=True
+2026-10-14 07:55:34,202 [INFO] [SIGNAL] CE: reg=True K=False(K=4.8>=38,rising) Kextr=True RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=4.8<=80,falling) Kextr=False RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-10-14 07:55:34,202 [INFO] [STATE][BASE] PE BFO:SENSEX26O1572600PE ltp=314.35 entry=336.75 pnl=-22.40(-6.7%) sl=276.14 peak=362.05 tr_armed=False elapsed=9min
+2026-10-14 07:55:34,202 [INFO] [STATE][VWAP] PE BFO:SENSEX26O1572700PE ltp=366.55 entry=394.65 pnl=-28.10(-7.1%) sl=323.61 peak=417.50 tr_armed=False elapsed=9min
+2026-10-14 07:55:34,203 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26O1573000PE ltp=560.40 entry=301.60 pnl=+258.80(+85.8%) sl=0.00 peak=627.75 tr_armed=False elapsed=29min
