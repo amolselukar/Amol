@@ -1426,3 +1426,30 @@ valuable there.
 2026-10-15 04:32:03,176 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=227.55 entry=170.10 pnl=+57.45(+33.8%) sl=0.00 peak=242.70 tr_armed=False elapsed=6min
 2026-10-15 04:32:03,176 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=354.55 entry=203.65 pnl=+150.90(+74.1%) sl=0.00 peak=372.30 tr_armed=False elapsed=10min
 2026-10-15 04:32:03,176 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=354.55 entry=204.55 pnl=+150.00(+73.3%) sl=167.73 peak=372.30 tr_armed=False elapsed=10min
+2026-10-15 04:32:03,868 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-15 04:32:34,197 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:33:04,637 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:33:35,060 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:34:05,558 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:34:36,086 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:35:06,516 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:35:36,987 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:36:07,449 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:36:37,880 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:37:08,300 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-10-15 04:37:08,414 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 04:37:08,414 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 04:37:08,415 [INFO] [INDICATORS] spot=73628.5 | 1h: close=72781.9 sma20=72490.3 sma50=72462.5 rsi=55.4 macd=157.57/136.31(bull) | 15m: K=99.9↑(prev 78.2) | regime=CE-eligible any_active=True
+2026-10-15 04:37:08,415 [INFO] [SIGNAL] CE: reg=True K=True(K=99.9>=38,rising) Kextr=False RSI=True(55.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=99.9<=80,falling) Kextr=True RSI=False(55.4<47) MACD=False(gate off) => BLOCK
+2026-10-15 04:37:08,415 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=244.10 entry=170.10 pnl=+74.00(+43.5%) sl=0.00 peak=249.40 tr_armed=False elapsed=11min
+2026-10-15 04:37:08,415 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=377.65 entry=203.65 pnl=+174.00(+85.4%) sl=0.00 peak=382.65 tr_armed=False elapsed=15min
+2026-10-15 04:37:08,415 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=377.65 entry=204.55 pnl=+173.10(+84.6%) sl=167.73 peak=382.65 tr_armed=False elapsed=15min
