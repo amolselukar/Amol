@@ -2445,3 +2445,22 @@ valuable there.
 2026-10-15 05:54:24,144 [INFO] [T5] open=2 trades=0 realized=+0.0pt/Rs+0 unreal=-25.1pt/Rs-1632
 2026-10-15 05:54:24,145 [INFO] [INDICATORS] spot=22914.4 | 1h: close=22933.5 sma20=22595.5 sma50=22551.0 rsi=69.6 macd=81.51/50.93(bull) | 15m: K=99.7↓(prev 100.0) | regime=CE-eligible any_active=False
 2026-10-15 05:54:24,145 [INFO] [SIGNAL] CE: reg=True K=False(K=99.7>=38,rising) Kextr=False RSI=True(69.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=99.7<=80,falling) Kextr=True RSI=False(69.6<47) MACD=False(gate off) => BLOCK
+2026-10-15 05:54:24,849 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-15 05:56:57,131 [INFO] [T5] EXIT PE 22900 137.2->119.0 -18.2pt Rs-1180 [stop] | day -18.2pt Rs-1180
+2026-10-15 05:57:28,404 [INFO] [FAST] CE22950 score=101 vol=1.06 U=12.5 skipped: leader score=101 vol=1.06 U=12.5
+2026-10-15 05:57:28,451 [INFO] [T5] EXIT PE 22900 135.2->116.2 -18.9pt Rs-1229 [stop] | day -37.1pt Rs-2408
+2026-10-15 05:58:30,059 [INFO] [FAST] CE22950 score=162 vol=1.58 U=26.7 skipped: leader score=162 vol=1.58 U=26.7
+2026-10-15 05:59:30,884 [INFO] [RENKO] dir=+1 (UP) bricks=9 brick=28.07 last5=[1, 1, 1, 1, 1]
+2026-10-15 05:59:30,917 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 05:59:30,918 [INFO] [T5] open=0 trades=2 realized=-37.1pt/Rs-2408 unreal=+0.0pt/Rs+0
+2026-10-15 05:59:30,918 [INFO] [INDICATORS] spot=22953.3 | 1h: close=22933.5 sma20=22595.5 sma50=22551.0 rsi=69.6 macd=81.51/50.93(bull) | 15m: K=99.7↓(prev 100.0) | regime=CE-eligible any_active=False
+2026-10-15 05:59:30,918 [INFO] [SIGNAL] CE: reg=True K=False(K=99.7>=38,rising) Kextr=False RSI=True(69.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=99.7<=80,falling) Kextr=True RSI=False(69.6<47) MACD=False(gate off) => BLOCK
