@@ -2656,3 +2656,21 @@ valuable there.
 2026-10-15 09:54:47,551 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-15 09:54:47,552 [INFO] [INDICATORS] spot=73969.7 | 1h: close=73959.4 sma20=73126.2 sma50=72612.5 rsi=67.8 macd=441.89/317.56(bull) | 15m: K=0.0↓(prev 0.0) | regime=CE-eligible any_active=False
 2026-10-15 09:54:47,552 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(67.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(67.8<47) MACD=False(gate off) => BLOCK
+2026-10-15 09:54:48,364 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-15 09:58:21,881 [INFO] [EXP12] EXP1 trigger 73900CE expired (gates=False extra=True)
+2026-10-15 09:58:21,882 [INFO] [EXP12] M=74000 open=0[-] trades=0 realized=Rs+0 triggers=2 | by-engine none
+2026-10-15 09:59:23,598 [INFO] [EXP12] EXP1 trigger 73900CE @15:23 ref=248.80 snap=+122.8% oi15=6.1 dist=+416
+2026-10-15 09:59:24,400 [INFO] [EXP12] EOD why/why-not report sent
+2026-10-15 09:59:54,782 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 09:59:54,782 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 09:59:54,782 [INFO] [INDICATORS] spot=74315.6 | 1h: close=73959.4 sma20=73126.2 sma50=72612.5 rsi=67.8 macd=441.89/317.56(bull) | 15m: K=0.0↓(prev 0.0) | regime=CE-eligible any_active=False
+2026-10-15 09:59:54,782 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(67.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(67.8<47) MACD=False(gate off) => BLOCK
