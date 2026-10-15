@@ -1386,3 +1386,23 @@ valuable there.
 2026-10-15 04:21:49,795 [INFO] [SIGNAL] CE: reg=True K=True(K=78.2>=38,rising) Kextr=False RSI=True(55.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=78.2<=80,falling) Kextr=True RSI=False(55.4<47) MACD=False(gate off) => BLOCK
 2026-10-15 04:21:49,796 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=203.20 entry=203.65 pnl=-0.45(-0.2%) sl=0.00 peak=203.65 tr_armed=False elapsed=0min
 2026-10-15 04:21:49,796 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=203.20 entry=204.55 pnl=-1.35(-0.7%) sl=167.73 peak=204.55 tr_armed=False elapsed=0min
+2026-10-15 04:21:51,442 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-15 04:25:24,318 [INFO] [FUT5VWAP] Signal — 73500>73374 body=81% side=CE (fixed +40pt target)
+2026-10-15 04:25:24,393 [INFO] ENTRY: BFO:SENSEX26O1573600CE @ 170.10  engine=FUT5VWAP  detail=FUT5 VWAP cross 73500>73374 body=81% pivΔ=94pt | bar=228
+2026-10-15 04:26:26,674 [INFO] [BREAKWATCH] GAPBREAK CE BFO:SENSEX26O1573400CE entry 09:51 score 5/6 -> KEEP | {'progress_x': 2.4522, 'other_idx_dir%': 0.3375, 'hw_breadth': 0.7917, 'hw_basket_dir%': 0.3388, 'hw_top4_agree': 0.75, 'sellers_sameOTM_oi%': -18.9307} missing=[] fetch_fail=[]
+2026-10-15 04:26:57,177 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 04:26:57,177 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 04:26:57,178 [INFO] [INDICATORS] spot=73546.0 | 1h: close=72781.9 sma20=72490.3 sma50=72462.5 rsi=55.4 macd=157.57/136.31(bull) | 15m: K=78.2↑(prev 57.8) | regime=CE-eligible any_active=True
+2026-10-15 04:26:57,179 [INFO] [SIGNAL] CE: reg=True K=True(K=78.2>=38,rising) Kextr=False RSI=True(55.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=78.2<=80,falling) Kextr=True RSI=False(55.4<47) MACD=False(gate off) => BLOCK
+2026-10-15 04:26:57,179 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=181.65 entry=170.10 pnl=+11.55(+6.8%) sl=0.00 peak=181.65 tr_armed=False elapsed=1min
+2026-10-15 04:26:57,179 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=293.00 entry=203.65 pnl=+89.35(+43.9%) sl=0.00 peak=293.00 tr_armed=False elapsed=5min
+2026-10-15 04:26:57,180 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=291.90 entry=204.55 pnl=+87.35(+42.7%) sl=167.73 peak=293.25 tr_armed=False elapsed=5min
