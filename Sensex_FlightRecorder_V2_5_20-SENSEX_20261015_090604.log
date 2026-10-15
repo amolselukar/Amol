@@ -1695,3 +1695,21 @@ valuable there.
 2026-10-15 05:38:27,040 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=332.50 entry=170.10 pnl=+162.40(+95.5%) sl=0.00 peak=388.85 tr_armed=False elapsed=73min
 2026-10-15 05:38:27,040 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=490.00 entry=203.65 pnl=+286.35(+140.6%) sl=0.00 peak=559.50 tr_armed=False elapsed=77min
 2026-10-15 05:38:27,040 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=490.00 entry=204.55 pnl=+285.45(+139.6%) sl=306.83 peak=559.50 tr_armed=True elapsed=77min
+2026-10-15 05:38:28,658 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-15 05:41:31,254 [INFO] [V3PROBE] EXPIRED unfilled CE BFO:SENSEX26O1573800CE limit=191.45
+2026-10-15 05:43:33,907 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 05:43:33,907 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 05:43:33,908 [INFO] [INDICATORS] spot=73847.5 | 1h: close=73749.7 sma20=72580.9 sma50=72491.3 rsi=70.2 macd=226.83/154.41(bull) | 15m: K=99.8↓(prev 99.8) | regime=CE-eligible any_active=True
+2026-10-15 05:43:33,908 [INFO] [SIGNAL] CE: reg=True K=False(K=99.8>=38,rising) Kextr=False RSI=True(70.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=99.8<=80,falling) Kextr=True RSI=False(70.2<47) MACD=False(gate off) => BLOCK
+2026-10-15 05:43:33,908 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=342.40 entry=170.10 pnl=+172.30(+101.3%) sl=0.00 peak=388.85 tr_armed=False elapsed=78min
+2026-10-15 05:43:33,908 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=502.90 entry=203.65 pnl=+299.25(+146.9%) sl=0.00 peak=559.50 tr_armed=False elapsed=82min
+2026-10-15 05:43:33,909 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=502.90 entry=204.55 pnl=+298.35(+145.9%) sl=306.83 peak=559.50 tr_armed=True elapsed=82min
