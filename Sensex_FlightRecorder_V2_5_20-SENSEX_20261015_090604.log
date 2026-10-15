@@ -1907,3 +1907,20 @@ valuable there.
 2026-10-15 06:39:50,889 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=397.60 entry=170.10 pnl=+227.50(+133.7%) sl=0.00 peak=479.35 tr_armed=False elapsed=134min
 2026-10-15 06:39:50,890 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=571.90 entry=203.65 pnl=+368.25(+180.8%) sl=0.00 peak=659.95 tr_armed=False elapsed=138min
 2026-10-15 06:39:50,890 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=571.90 entry=204.55 pnl=+367.35(+179.6%) sl=461.96 peak=659.95 tr_armed=True elapsed=138min
+2026-10-15 06:39:52,567 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-15 06:44:57,100 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 06:44:57,100 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-15 06:44:57,101 [INFO] [INDICATORS] spot=73973.3 | 1h: close=73857.1 sma20=72679.2 sma50=72514.7 rsi=71.3 macd=287.08/180.95(bull) | 15m: K=100.0↓(prev 100.0) | regime=CE-eligible any_active=True
+2026-10-15 06:44:57,101 [INFO] [SIGNAL] CE: reg=True K=False(K=100.0>=38,rising) Kextr=False RSI=True(71.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(71.3<47) MACD=False(gate off) => BLOCK
+2026-10-15 06:44:57,101 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26O1573600CE ltp=426.35 entry=170.10 pnl=+256.25(+150.6%) sl=0.00 peak=479.35 tr_armed=False elapsed=139min
+2026-10-15 06:44:57,101 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O1573400CE ltp=602.05 entry=203.65 pnl=+398.40(+195.6%) sl=0.00 peak=659.95 tr_armed=False elapsed=143min
+2026-10-15 06:44:57,101 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26O1573400CE ltp=602.05 entry=204.55 pnl=+397.50(+194.3%) sl=461.96 peak=659.95 tr_armed=True elapsed=143min
