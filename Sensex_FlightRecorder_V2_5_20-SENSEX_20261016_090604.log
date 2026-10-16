@@ -1584,3 +1584,25 @@ valuable there.
 2026-10-16 05:12:41,467 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-16 05:12:41,468 [INFO] [INDICATORS] spot=74691.3 | 1h: close=74596.8 sma20=73328.1 sma50=72670.5 rsi=74.6 macd=509.99/380.51(bull) | 15m: K=51.3↑(prev 36.2) | regime=CE-eligible any_active=False
 2026-10-16 05:12:41,468 [INFO] [SIGNAL] CE: reg=True K=True(K=51.3>=38,rising) Kextr=True RSI=True(74.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=51.3<=80,falling) Kextr=False RSI=False(74.6<47) MACD=False(gate off) => BLOCK
+2026-10-16 05:12:42,290 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-16 05:13:12,610 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-16 05:13:43,018 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-16 05:14:13,352 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-16 05:14:43,670 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-16 05:15:14,009 [INFO] [V2] WOULD_ENTER(log-only) CE BFO:SENSEX26O2274600CE @ 512.55 spot=74628.99 | K=51.3↑ RSI=74.6 MACD✓
+2026-10-16 05:15:14,013 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-16 05:15:44,323 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-16 05:16:45,010 [INFO] [V2] WOULD_ENTER(log-only) CE BFO:SENSEX26O2274600CE @ 499.35 spot=74633.57 | K=52.7↑ RSI=74.6 MACD✓
+2026-10-16 05:17:45,734 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 05:17:45,828 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 05:17:45,828 [INFO] [INDICATORS] spot=74596.7 | 1h: close=74596.8 sma20=73328.1 sma50=72670.5 rsi=74.6 macd=509.99/380.51(bull) | 15m: K=52.7↑(prev 51.3) | regime=CE-eligible any_active=False
+2026-10-16 05:17:45,829 [INFO] [SIGNAL] CE: reg=True K=True(K=52.7>=38,rising) Kextr=True RSI=True(74.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=52.7<=80,falling) Kextr=False RSI=False(74.6<47) MACD=False(gate off) => BLOCK
