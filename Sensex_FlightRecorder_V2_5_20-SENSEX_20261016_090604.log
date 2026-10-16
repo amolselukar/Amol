@@ -2029,3 +2029,28 @@ valuable there.
 2026-10-16 07:35:38,197 [INFO] [T5] open=1 trades=2 realized=-44.8pt/Rs-895 unreal=-0.4pt/Rs-8
 2026-10-16 07:35:38,198 [INFO] [INDICATORS] spot=74594.3 | 1h: close=74659.6 sma20=73542.8 sma50=72744.2 rsi=75.1 macd=553.11/439.64(bull) | 15m: K=36.9↓(prev 56.3) | regime=CE-eligible any_active=False
 2026-10-16 07:35:38,198 [INFO] [SIGNAL] CE: reg=True K=False(K=36.9>=38,rising) Kextr=False RSI=True(75.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=36.9<=80,falling) Kextr=False RSI=False(75.1<47) MACD=False(gate off) => BLOCK
+2026-10-16 07:35:38,965 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-16 07:36:09,658 [INFO] [VWAP] Cooldown BLOCK — CE 5.1min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:36:40,098 [INFO] [VWAP] Cooldown BLOCK — CE 5.6min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:37:10,492 [INFO] [VWAP] Cooldown BLOCK — CE 6.2min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:37:10,582 [INFO] [T5] EXIT PE 74600 504.4->482.6 -21.8pt Rs-436 [stop] | day -66.5pt Rs-1331
+2026-10-16 07:37:41,644 [INFO] [VWAP] Cooldown BLOCK — CE 6.7min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:38:11,981 [INFO] [VWAP] Cooldown BLOCK — CE 7.2min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:38:42,287 [INFO] [VWAP] Cooldown BLOCK — CE 7.7min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:39:12,596 [INFO] [VWAP] Cooldown BLOCK — CE 8.2min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:39:42,894 [INFO] [VWAP] Cooldown BLOCK — CE 8.7min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:40:13,198 [INFO] [VWAP] Cooldown BLOCK — CE 9.2min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:40:43,559 [INFO] [VWAP] Cooldown BLOCK — CE 9.7min since last VWAP CE loss (cooldown 30min)
+2026-10-16 07:40:43,589 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 07:40:43,589 [INFO] [T5] open=0 trades=3 realized=-66.5pt/Rs-1331 unreal=+0.0pt/Rs+0
+2026-10-16 07:40:43,590 [INFO] [INDICATORS] spot=74646.3 | 1h: close=74659.6 sma20=73542.8 sma50=72744.2 rsi=75.1 macd=553.11/439.64(bull) | 15m: K=36.9↓(prev 56.3) | regime=CE-eligible any_active=False
+2026-10-16 07:40:43,590 [INFO] [SIGNAL] CE: reg=True K=False(K=36.9>=38,rising) Kextr=False RSI=True(75.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=36.9<=80,falling) Kextr=False RSI=False(75.1<47) MACD=False(gate off) => BLOCK
