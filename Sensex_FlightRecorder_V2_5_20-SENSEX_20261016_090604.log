@@ -1343,3 +1343,21 @@ valuable there.
 2026-10-16 04:11:40,588 [INFO] [INDICATORS] spot=74161.4 | 1h: close=74315.6 sma20=73214.1 sma50=72640.0 rsi=71.9 macd=470.50/348.14(bull) | 15m: K=18.6↑(prev 15.8) | regime=CE-eligible any_active=True
 2026-10-16 04:11:40,588 [INFO] [SIGNAL] CE: reg=True K=False(K=18.6>=38,rising) Kextr=True RSI=True(71.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=18.6<=80,falling) Kextr=False RSI=False(71.9<47) MACD=False(gate off) => BLOCK
 2026-10-16 04:11:40,589 [INFO] [STATE][ORB] CE BFO:SENSEX26O2274100CE ltp=521.10 entry=527.10 pnl=-6.00(-1.1%) sl=0.00 peak=527.10 tr_armed=False elapsed=1min
+2026-10-16 04:11:41,354 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-16 04:15:14,517 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-10-16 04:15:44,859 [INFO] [VWAP] Climax skip — body=94% >= 87%
+2026-10-16 04:15:45,468 [INFO] [BREAKWATCH] ORB CE BFO:SENSEX26O2274100CE entry 09:40 score 1/6 -> KEEP(green, profit guard) | {'progress_x': 2.3687, 'other_idx_dir%': -0.0581, 'hw_breadth': 0.4167, 'hw_basket_dir%': -0.0002, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 15.7825} missing=[] fetch_fail=[]
+2026-10-16 04:16:46,172 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 04:16:46,231 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 04:16:46,231 [INFO] [INDICATORS] spot=74189.5 | 1h: close=74315.6 sma20=73214.1 sma50=72640.0 rsi=71.9 macd=470.50/348.14(bull) | 15m: K=25.0↑(prev 18.6) | regime=CE-eligible any_active=True
+2026-10-16 04:16:46,232 [INFO] [SIGNAL] CE: reg=True K=False(K=25.0>=38,rising) Kextr=True RSI=True(71.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=25.0<=80,falling) Kextr=False RSI=False(71.9<47) MACD=False(gate off) => BLOCK
+2026-10-16 04:16:46,232 [INFO] [STATE][ORB] CE BFO:SENSEX26O2274100CE ltp=504.85 entry=527.10 pnl=-22.25(-4.2%) sl=0.00 peak=555.25 tr_armed=False elapsed=6min
