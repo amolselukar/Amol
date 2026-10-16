@@ -2310,3 +2310,29 @@ valuable there.
 2026-10-16 05:14:20,068 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-16 05:14:20,069 [INFO] [INDICATORS] spot=23114.6 | 1h: close=23094.3 sma20=22775.5 sma50=22586.2 rsi=71.1 macd=135.83/104.58(bull) | 15m: K=54.5↑(prev 35.1) | regime=CE-eligible any_active=False
 2026-10-16 05:14:20,069 [INFO] [SIGNAL] CE: reg=True K=True(K=54.5>=38,rising) Kextr=True RSI=True(71.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=54.5<=80,falling) Kextr=False RSI=False(71.1<47) MACD=False(gate off) => BLOCK
+2026-10-16 05:14:20,816 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-16 05:15:21,488 [INFO] [STOCHZONE] V2 CE BLOCKED — 15m Stoch K=92.4 >= 80 (overbought zone, STOCH fades it)
+2026-10-16 05:15:21,493 [INFO] [VWAP] Signal — FUT 23142>23043 body=69% side=CE | persist_gate=dist=+79.8pt persist=True (last 2x5m vs FUTvwap=23040.7)
+2026-10-16 05:15:21,499 [INFO] [STOCHZONE] VWAP CE BLOCKED — 15m Stoch K=92.4 >= 80 (overbought zone, STOCH fades it)
+2026-10-16 05:15:21,678 [INFO] [FAST] PE23100 score=194 vol=1.29 U=33.9 skipped: leader score=194 vol=1.29 U=33.9
+2026-10-16 05:15:21,827 [INFO] [T5] ENTRY PE 23100 @ 116.3 tgt176.3 stp98.3 (bo+5.3 CEdec-21.5) open=1
+2026-10-16 05:16:23,323 [INFO] [STOCHZONE] V2 CE BLOCKED — 15m Stoch K=91.7 >= 80 (overbought zone, STOCH fades it)
+2026-10-16 05:16:23,329 [INFO] [VWAP] Signal — FUT 23100>23043 body=76% side=CE | persist_gate=dist=+59.0pt persist=True (last 2x5m vs FUTvwap=23041.0)
+2026-10-16 05:16:23,334 [INFO] [STOCHZONE] VWAP CE BLOCKED — 15m Stoch K=91.7 >= 80 (overbought zone, STOCH fades it)
+2026-10-16 05:16:53,935 [INFO] [RENKO] dir=+1 (UP) bricks=9 brick=28.07 last5=[1, 1, 1, 1, 1]
+2026-10-16 05:17:24,650 [INFO] [FAST] PE23100 score=147 vol=1.44 U=24.3 skipped: leader score=147 vol=1.44 U=24.3
+2026-10-16 05:18:25,763 [INFO] [FAST] PE23100 score=178 vol=1.40 U=28.0 skipped: leader score=178 vol=1.40 U=28.0
+2026-10-16 05:19:26,867 [INFO] [APEX] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+20.5pt/Rs+1332
+2026-10-16 05:19:27,013 [INFO] [T5] ENTRY PE 23100 @ 122.7 tgt182.7 stp104.7 (bo+5.7 CEdec-19.5) open=2
+2026-10-16 05:19:27,871 [INFO] [T5] open=2 trades=0 realized=+0.0pt/Rs+0 unreal=+6.5pt/Rs+422
+2026-10-16 05:19:27,872 [INFO] [INDICATORS] spot=23092.2 | 1h: close=23094.3 sma20=22775.5 sma50=22586.2 rsi=71.1 macd=135.83/104.58(bull) | 15m: K=58.2↑(prev 54.5) | regime=CE-eligible any_active=False
+2026-10-16 05:19:27,872 [INFO] [SIGNAL] CE: reg=True K=True(K=58.2>=38,rising) Kextr=True RSI=True(71.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=58.2<=80,falling) Kextr=False RSI=False(71.1<47) MACD=False(gate off) => BLOCK
