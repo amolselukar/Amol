@@ -2178,3 +2178,26 @@ valuable there.
 2026-10-16 04:43:28,330 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-16 04:43:28,330 [INFO] [INDICATORS] spot=23073.7 | 1h: close=22997.3 sma20=22745.3 sma50=22579.8 rsi=67.4 macd=126.73/96.77(bull) | 15m: K=16.1↑(prev 14.8) | regime=CE-eligible any_active=False
 2026-10-16 04:43:28,331 [INFO] [SIGNAL] CE: reg=True K=False(K=16.1>=38,rising) Kextr=True RSI=True(67.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=16.1<=80,falling) Kextr=False RSI=False(67.4<47) MACD=False(gate off) => BLOCK
+2026-10-16 04:43:29,082 [WARNING] [periodic] git rebase failed, aborting rebase: fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+	git rebase (--continue | --abort | --skip)
+If that is not the case, please
+	rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+2026-10-16 04:45:31,334 [INFO] [GAPBREAK] Range-break detected — close 23094.3 broke [22913.8,23076.5] side=CE (gap=+67.8)
+2026-10-16 04:46:01,869 [INFO] [RENKO] dir=+1 (UP) bricks=7 brick=28.07 last5=[-1, 1, 1, 1, 1]
+2026-10-16 04:46:32,637 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-16 04:46:32,641 [INFO] [GAPBREAK] Confirmed — bar close 23105.8 > ref 23094.3
+2026-10-16 04:46:32,734 [INFO] [EMA9] LIMIT PLACED GAPBREAK CE NFO:NIFTY26O1923100CE limit=67.67 (signal LTP 100.10 is +32.43 above 15m EMA9) window=15min -- GAP break confirmed, gap=+68
+2026-10-16 04:47:04,071 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-16 04:47:34,780 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-16 04:48:05,332 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-16 04:48:36,064 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-16 04:48:36,158 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 04:48:36,158 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-16 04:48:36,159 [INFO] [INDICATORS] spot=23126.1 | 1h: close=23094.3 sma20=22775.5 sma50=22586.2 rsi=71.1 macd=135.83/104.58(bull) | 15m: K=35.1↑(prev 16.1) | regime=CE-eligible any_active=False
+2026-10-16 04:48:36,159 [INFO] [SIGNAL] CE: reg=True K=False(K=35.1>=38,rising) Kextr=True RSI=True(71.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=35.1<=80,falling) Kextr=False RSI=False(71.1<47) MACD=False(gate off) => BLOCK
