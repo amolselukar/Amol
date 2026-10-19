@@ -2175,3 +2175,18 @@
 2026-10-19 05:20:48,568 [INFO] [SIGNAL] CE: reg=True K=True(K=43.4>=38,rising) Kextr=True RSI=True(63.2>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=43.4<=80,falling) Kextr=True RSI=False(63.2<47) MACD=False(gate off) => BLOCK
 2026-10-19 05:20:48,569 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=145.55 entry=69.65 pnl=+75.90(+109.0%) sl=0.00 peak=151.90 tr_armed=False elapsed=72min
 2026-10-19 05:20:48,570 [INFO] [STATE][CLM] CE NFO:NIFTY26O1923050CE ltp=53.00 entry=53.95 pnl=-0.95(-1.8%) sl=44.24 peak=62.80 tr_armed=False elapsed=8min
+2026-10-19 05:22:22,369 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 05:23:23,049 [INFO] [FAST] CE23050 score=162 vol=2.15 U=15.8 skipped: leader score=162 vol=2.15 U=15.8
+2026-10-19 05:24:23,782 [INFO] [FAST] CE23050 score=256 vol=1.03 U=31.7 skipped: leader score=256 vol=1.03 U=31.7
+2026-10-19 05:25:24,489 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=16 brick=27.24 last5=[-1, -1, -1, 1, -1]
+2026-10-19 05:25:24,617 [INFO] EXIT: NFO:NIFTY26O1923050CE @ 62.15 reason=CLM_STOCH_PEAK pnl/sh=+8.20 is_flip=False losses=4/4
+2026-10-19 05:25:55,946 [INFO] [CLM] SIGNAL CLM PE23050 K=0->5 hist=-1.47 ADX-side bar 10:54
+2026-10-19 05:25:55,984 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1923050PE
+2026-10-19 05:25:55,987 [INFO] ENTRY: NFO:NIFTY26O1923050PE @ 63.00  engine=CLM  detail=CLM PE23050 K=0->5 hist=-1.47 ADX-side bar 10:54
+2026-10-19 05:25:56,817 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 05:25:56,818 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 05:25:56,818 [INFO] [INDICATORS] spot=23051.5 | 1h: close=23060.5 sma20=22939.1 sma50=22654.8 rsi=63.2 macd=135.85/135.00(bull) | 15m: K=43.4↑(prev 42.4) | regime=CE-eligible any_active=True
+2026-10-19 05:25:56,818 [INFO] [SIGNAL] CE: reg=True K=True(K=43.4>=38,rising) Kextr=True RSI=True(63.2>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=43.4<=80,falling) Kextr=True RSI=False(63.2<47) MACD=False(gate off) => BLOCK
+2026-10-19 05:25:56,820 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=126.10 entry=69.65 pnl=+56.45(+81.0%) sl=0.00 peak=151.90 tr_armed=False elapsed=77min
+2026-10-19 05:25:56,820 [INFO] [STATE][CLM] PE NFO:NIFTY26O1923050PE ltp=62.15 entry=63.00 pnl=-0.85(-1.3%) sl=51.66 peak=63.00 tr_armed=False elapsed=0min
+2026-10-19 05:27:27,994 [INFO] [FAST] CE23050 score=123 vol=1.70 U=12.4 skipped: leader score=123 vol=1.70 U=12.4
