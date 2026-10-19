@@ -1966,3 +1966,12 @@
 2026-10-19 03:32:07,030 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-10-19 03:32:07,030 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-10-19 03:32:08,807 [INFO] [CHANGELOG] up to date (last entry 2026-10-18)
+2026-10-19 03:32:38,464 [INFO] [boot] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 03:32:38,711 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:32:38,714 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:32:38,715 [INFO] [INDICATORS] spot=23146.2 | 1h: close=23119.0 sma20=22899.3 sma50=22635.0 rsi=71.4 macd=145.54/132.26(bull) | 15m: K=21.2↑(prev 4.6) | regime=CE-eligible any_active=False
+2026-10-19 03:32:38,715 [INFO] [SIGNAL] CE: reg=True K=False(K=21.2>=38,rising) Kextr=True RSI=True(71.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=False(71.4<47) MACD=False(gate off) => BLOCK
+2026-10-19 03:37:41,905 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:37:41,907 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:37:41,908 [INFO] [INDICATORS] spot=23146.2 | 1h: close=23119.0 sma20=22899.3 sma50=22635.0 rsi=71.4 macd=145.54/132.26(bull) | 15m: K=21.2↑(prev 4.6) | regime=CE-eligible any_active=False
+2026-10-19 03:37:41,908 [INFO] [SIGNAL] CE: reg=True K=False(K=21.2>=38,rising) Kextr=True RSI=True(71.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=False(71.4<47) MACD=False(gate off) => BLOCK
