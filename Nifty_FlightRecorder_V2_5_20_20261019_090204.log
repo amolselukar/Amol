@@ -2435,3 +2435,21 @@
 2026-10-19 07:50:04,227 [INFO] [EXP12] anchor=spot M=22900 (max-OI would be 23000, diverged by +100) spot=22892.0
 2026-10-19 07:50:04,227 [INFO] [EXP12] universe resolved: M=22900 legs=[(22850, 'CE'), (22850, 'PE'), (22900, 'CE'), (22900, 'PE'), (22950, 'CE'), (22950, 'PE')]
 2026-10-19 07:50:04,368 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-19 07:51:08,123 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 07:52:09,103 [INFO] [CLM] SIGNAL CLM CE22900 K=10->22 hist=-1.39 ADX-side bar 13:21
+2026-10-19 07:52:09,146 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922900CE
+2026-10-19 07:52:09,149 [INFO] ENTRY: NFO:NIFTY26O1922900CE @ 38.55  engine=CLM  detail=CLM CE22900 K=10->22 hist=-1.39 ADX-side bar 13:21
+2026-10-19 07:53:11,153 [INFO] [CB] CLM loss (own count 8) — TOTAL across all engines=11/4 (reason=HARDSL_-18pct)
+2026-10-19 07:53:11,155 [INFO] EXIT: NFO:NIFTY26O1922900CE @ 31.61 reason=HARDSL_-18pct pnl/sh=-6.94 is_flip=False losses=8/4
+2026-10-19 07:54:44,407 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 07:54:44,407 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 07:54:44,407 [INFO] [INDICATORS] spot=22873.3 | 1h: close=22922.1 sma20=22990.9 sma50=22688.0 rsi=50.6 macd=93.64/121.91(bear) | 15m: K=0.6↑(prev 0.4) | regime=NEUTRAL any_active=True
+2026-10-19 07:54:44,407 [INFO] [SIGNAL] CE: reg=False K=False(K=0.6>=38,rising) Kextr=True RSI=False(50.6>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.6<=80,falling) Kextr=True RSI=False(50.6<47) MACD=True(gate off) => BLOCK
+2026-10-19 07:54:44,409 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=291.60 entry=69.65 pnl=+221.95(+318.7%) sl=174.96 peak=291.60 tr_armed=True elapsed=226min
+2026-10-19 07:55:14,877 [INFO] [EXP12] anchor=spot M=22900 (max-OI would be 23000, diverged by +100) spot=22870.0
+2026-10-19 07:55:15,026 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-19 07:56:15,711 [INFO] [RENKO] dir=-1 (DOWN) bricks=22 brick=27.24 last5=[-1, -1, -1, -1, -1]
+2026-10-19 07:56:15,743 [INFO] [V3PROBE] PLACED PE NFO:NIFTY26O1922900PE limit=63.55 (LTP=67.55 - 4) window=25min — EARLY(10m) Grade A R-cluster BREAK-PE at 22909
+2026-10-19 07:56:16,803 [INFO] [CLM] SIGNAL CLM CE22900 K=6->16 hist=-1.64 ADX-side bar 13:25
+2026-10-19 07:56:16,851 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922900CE
+2026-10-19 07:56:16,854 [INFO] ENTRY: NFO:NIFTY26O1922900CE @ 28.70  engine=CLM  detail=CLM CE22900 K=6->16 hist=-1.64 ADX-side bar 13:25
