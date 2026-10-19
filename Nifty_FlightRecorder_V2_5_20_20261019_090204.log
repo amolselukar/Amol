@@ -2485,3 +2485,16 @@
 2026-10-19 08:10:14,600 [INFO] [STATE][CLM] CE NFO:NIFTY26O1922900CE ltp=29.60 entry=28.70 pnl=+0.90(+3.1%) sl=23.53 peak=32.30 tr_armed=False elapsed=13min
 2026-10-19 08:10:45,182 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
 2026-10-19 08:11:46,103 [INFO] [RENKO] dir=-1 (DOWN) bricks=22 brick=27.24 last5=[-1, -1, -1, -1, -1]
+2026-10-19 08:11:48,779 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 08:13:50,863 [INFO] [T5] ENTRY CE 22900 @ 31.2 tgt91.2 stp23.2 (bo+3.1 PEdec-18.1) open=1
+2026-10-19 08:15:23,430 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 08:15:23,459 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-6.6pt/Rs-432
+2026-10-19 08:15:23,459 [INFO] [INDICATORS] spot=22864.0 | 1h: close=22922.1 sma20=22990.9 sma50=22688.0 rsi=50.6 macd=93.64/121.91(bear) | 15m: K=1.1↑(prev 0.6) | regime=NEUTRAL any_active=True
+2026-10-19 08:15:23,459 [INFO] [SIGNAL] CE: reg=False K=False(K=1.1>=38,rising) Kextr=True RSI=False(50.6>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=1.1<=80,falling) Kextr=True RSI=False(50.6<47) MACD=True(gate off) => BLOCK
+2026-10-19 08:15:23,461 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=296.75 entry=69.65 pnl=+227.10(+326.1%) sl=181.20 peak=302.00 tr_armed=True elapsed=247min
+2026-10-19 08:15:23,462 [INFO] [STATE][CLM] CE NFO:NIFTY26O1922900CE ltp=24.55 entry=28.70 pnl=-4.15(-14.5%) sl=23.53 peak=35.65 tr_armed=False elapsed=19min
+2026-10-19 08:15:53,760 [INFO] [CB] CLM loss (own count 9) — TOTAL across all engines=12/4 (reason=HARDSL_-18pct)
+2026-10-19 08:15:53,761 [INFO] EXIT: NFO:NIFTY26O1922900CE @ 23.53 reason=HARDSL_-18pct pnl/sh=-5.17 is_flip=False losses=9/4
+2026-10-19 08:15:54,648 [INFO] [T5] EXIT CE 22900 31.2->22.8 -8.4pt Rs-546 [stop] | day -8.4pt Rs-546
+2026-10-19 08:15:55,623 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-19 08:16:26,089 [INFO] [FAST] PE22850 score=262 vol=1.62 U=19.2 skipped: leader score=262 vol=1.62 U=19.2
