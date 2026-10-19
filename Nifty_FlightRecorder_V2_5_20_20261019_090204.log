@@ -2621,3 +2621,24 @@
 2026-10-19 09:17:16,509 [INFO] [SIGNAL] CE: reg=False K=False(K=14.3>=38,rising) Kextr=True RSI=False(46.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=14.3<=80,falling) Kextr=True RSI=True(46.9<47) MACD=True(gate off) => BLOCK
 2026-10-19 09:17:16,511 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=277.70 entry=69.65 pnl=+208.05(+298.7%) sl=185.16 peak=308.60 tr_armed=True elapsed=309min
 2026-10-19 09:18:17,952 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-19 09:18:50,772 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 09:19:21,485 [INFO] [FAST] PE22850 score=120 vol=1.34 U=7.6 skipped: leader score=120 vol=1.34 U=7.6
+2026-10-19 09:20:22,752 [INFO] [FAST] PE22850 score=282 vol=1.17 U=29.1 skipped: leader score=282 vol=1.17 U=29.1
+2026-10-19 09:21:24,106 [INFO] [CLM] SIGNAL CLM CE22850 K=27->28 hist=+0.04 ADX-side bar 14:50
+2026-10-19 09:21:24,151 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922850CE
+2026-10-19 09:21:24,154 [INFO] ENTRY: NFO:NIFTY26O1922850CE @ 36.60  engine=CLM  detail=CLM CE22850 K=27->28 hist=+0.04 ADX-side bar 14:50
+2026-10-19 09:21:26,496 [INFO] [EXP12] EXP2 22900CE @ 15.25 NOT opened — chain 2/3 against: wall CE 23200->22900(against) | PE writers 80% of max | PCR 1.80->0.92(against)
+2026-10-19 09:21:26,497 [INFO] [EXP12] EXP2W declined 22900CE @14:49 (not a decay INTO the band) — EXP2 took it
+2026-10-19 09:22:27,639 [INFO] [CB] CLM loss (own count 12) — TOTAL across all engines=15/4 (reason=CLM_STOCH_PEAK)
+2026-10-19 09:22:27,641 [INFO] EXIT: NFO:NIFTY26O1922850CE @ 35.30 reason=CLM_STOCH_PEAK pnl/sh=-1.30 is_flip=False losses=12/4
+2026-10-19 09:22:28,501 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 09:22:28,501 [INFO] [T5] open=0 trades=1 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-19 09:22:29,964 [INFO] [EXP12] EXP2 22900CE @ 14.30 NOT opened — chain 2/3 against: wall CE 23200->22900(against) | PE writers 80% of max | PCR 1.59->0.84(against)
+2026-10-19 09:22:29,964 [INFO] [EXP12] EXP2W declined 22900CE @14:50 (not a decay INTO the band) — EXP2 took it
+2026-10-19 09:22:29,965 [INFO] [INDICATORS] spot=22875.5 | 1h: close=22871.3 sma20=23003.2 sma50=22699.9 rsi=46.9 macd=75.30/112.59(bear) | 15m: K=14.3↑(prev 6.1) | regime=NEUTRAL any_active=True
+2026-10-19 09:22:29,965 [INFO] [SIGNAL] CE: reg=False K=False(K=14.3>=38,rising) Kextr=True RSI=False(46.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=14.3<=80,falling) Kextr=True RSI=True(46.9<47) MACD=True(gate off) => BLOCK
+2026-10-19 09:22:29,967 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=289.95 entry=69.65 pnl=+220.30(+316.3%) sl=185.16 peak=308.60 tr_armed=True elapsed=314min
+2026-10-19 09:23:31,074 [INFO] [FAST] PE22850 score=183 vol=0.77 U=8.5 skipped: slope5=+1.44
+2026-10-19 09:23:32,499 [INFO] [EXP12] EXP2 22900CE @ 11.35 NOT opened — chain 2/3 against: wall CE 23200->22900(against) | PE writers 80% of max | PCR 1.80->0.90(against)
+2026-10-19 09:23:32,499 [INFO] [EXP12] EXP2W declined 22900CE @14:51 (not a decay INTO the band) — EXP2 took it
+2026-10-19 09:23:32,499 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
