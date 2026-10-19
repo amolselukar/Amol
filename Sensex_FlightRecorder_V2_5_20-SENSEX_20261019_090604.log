@@ -1438,3 +1438,11 @@
 2026-10-19 05:28:33,411 [INFO] [INDICATORS] spot=74443.0 | 1h: close=74439.2 sma20=73961.9 sma50=72941.5 rsi=65.3 macd=514.92/508.60(bull) | 15m: K=38.7↓(prev 39.7) | regime=CE-eligible any_active=True
 2026-10-19 05:28:33,412 [INFO] [SIGNAL] CE: reg=True K=False(K=38.7>=38,rising) Kextr=False RSI=True(65.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=38.7<=80,falling) Kextr=False RSI=False(65.3<47) MACD=False(gate off) => BLOCK
 2026-10-19 05:28:33,412 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274300PE ltp=375.70 entry=405.00 pnl=-29.30(-7.2%) sl=332.10 peak=405.00 tr_armed=False elapsed=6min
+2026-10-19 05:28:35,810 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261019_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261019_090604.csv
+2026-10-19 05:31:07,901 [INFO] [VWAP_TRAIL] Option 15m close 363.25 < VWAP 383.21 — exiting
+2026-10-19 05:31:07,902 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=3/4 (reason=VWAP_TRAIL)
+2026-10-19 05:31:07,905 [INFO] EXIT: BFO:SENSEX26O2274300PE @ 368.40 reason=VWAP_TRAIL pnl/sh=-36.60 is_flip=False losses=2/4
+2026-10-19 05:33:40,446 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 05:33:40,503 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 05:33:40,505 [INFO] [INDICATORS] spot=74403.2 | 1h: close=74439.2 sma20=73961.9 sma50=72941.5 rsi=65.3 macd=514.92/508.60(bull) | 15m: K=39.5↑(prev 38.7) | regime=CE-eligible any_active=False
+2026-10-19 05:33:40,505 [INFO] [SIGNAL] CE: reg=True K=True(K=39.5>=38,rising) Kextr=False RSI=True(65.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=39.5<=80,falling) Kextr=False RSI=False(65.3<47) MACD=False(gate off) => BLOCK
