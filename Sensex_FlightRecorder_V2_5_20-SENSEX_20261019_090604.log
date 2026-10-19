@@ -1267,3 +1267,17 @@
 2026-10-19 03:56:33,123 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-19 03:56:33,124 [INFO] [INDICATORS] spot=74465.6 | 1h: close=74729.3 sma20=73894.4 sma50=72905.5 rsi=75.3 macd=548.36/507.02(bull) | 15m: K=38.9↑(prev 20.8) | regime=CE-eligible any_active=False
 2026-10-19 03:56:33,124 [INFO] [SIGNAL] CE: reg=True K=True(K=38.9>=38,rising) Kextr=True RSI=True(75.3>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=38.9<=80,falling) Kextr=False RSI=False(75.3<47) MACD=False(gate off) => BLOCK
+2026-10-19 03:56:36,680 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261019_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261019_090604.csv
+2026-10-19 04:00:08,223 [INFO] [MVWAP] Signal — 74650>74450 body=80% side=CE (morning exception)
+2026-10-19 04:00:08,225 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 74197.9 is -389.8 below SPOT VWAP 74587.8 (buffer 16)
+2026-10-19 04:00:09,140 [INFO] [ORB] Signal — close 74197.9 broke OR[74513.0,74849.8] side=PE
+2026-10-19 04:00:09,200 [INFO] ENTRY: BFO:SENSEX26O2274200PE @ 483.90  engine=ORB  detail=ORB break 74198 vs OR[74513,74850]
+2026-10-19 04:01:40,931 [INFO] [MVWAP] Skip — close 74254 only 1pt from a pivot (need >65)
+2026-10-19 04:01:41,016 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=2/4 (reason=ORB_STOP)
+2026-10-19 04:01:41,018 [INFO] EXIT: BFO:SENSEX26O2274200PE @ 453.90 reason=ORB_STOP pnl/sh=-30.00 is_flip=False losses=1/4
+2026-10-19 04:01:41,878 [INFO] ENTRY: BFO:SENSEX26O2274200CE @ 453.40  engine=ORB  detail=ORB flip-on-stop
+2026-10-19 04:01:42,773 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 04:01:42,826 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 04:01:42,827 [INFO] [INDICATORS] spot=74192.1 | 1h: close=74729.3 sma20=73894.4 sma50=72905.5 rsi=75.3 macd=548.36/507.02(bull) | 15m: K=38.9↓(prev 38.9) | regime=CE-eligible any_active=True
+2026-10-19 04:01:42,827 [INFO] [SIGNAL] CE: reg=True K=False(K=38.9>=38,rising) Kextr=True RSI=True(75.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=38.9<=80,falling) Kextr=False RSI=False(75.3<47) MACD=False(gate off) => BLOCK
+2026-10-19 04:01:42,829 [INFO] [STATE][ORB] CE BFO:SENSEX26O2274200CE ltp=418.35 entry=453.40 pnl=-35.05(-7.7%) sl=0.00 peak=453.40 tr_armed=False elapsed=0min
