@@ -2642,3 +2642,16 @@
 2026-10-19 09:23:32,499 [INFO] [EXP12] EXP2 22900CE @ 11.35 NOT opened — chain 2/3 against: wall CE 23200->22900(against) | PE writers 80% of max | PCR 1.80->0.90(against)
 2026-10-19 09:23:32,499 [INFO] [EXP12] EXP2W declined 22900CE @14:51 (not a decay INTO the band) — EXP2 took it
 2026-10-19 09:23:32,499 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-19 09:24:05,622 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 09:26:38,918 [INFO] [EXP12] EXP2 22900CE skipped: bar@14:54=14.10 in band but LTP 24.30 is not
+2026-10-19 09:27:40,994 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 09:27:40,994 [INFO] [T5] open=0 trades=1 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-19 09:27:42,526 [INFO] [EXP12] EXP2 ENTRY 22850PE @ 13.30 (cheap-ladder bar@14:55=19.70 dist=-34 oi15=-1.4% | chain 0/3: wall PE 23000->22800 | CE writers 93% of max | PCR 1.59->0.86)
+2026-10-19 09:27:43,446 [INFO] [EXP12] EXP2W ENTRY 22850PE @ 13.30 (was-expensive afthi=47.40 bar@14:55=19.70 dist=-34 oi15=-1.4% | chain 0/3: wall PE 23000->22800 | CE writers 93% of max | PCR 1.59->0.86)
+2026-10-19 09:27:44,288 [INFO] [EXP12] EXP2 22900CE skipped: bar@14:55=16.75 in band but LTP 23.90 is not
+2026-10-19 09:27:44,313 [INFO] [INDICATORS] spot=22884.5 | 1h: close=22871.3 sma20=23003.2 sma50=22699.9 rsi=46.9 macd=75.30/112.59(bear) | 15m: K=14.3↑(prev 6.1) | regime=NEUTRAL any_active=True
+2026-10-19 09:27:44,313 [INFO] [SIGNAL] CE: reg=False K=False(K=14.3>=38,rising) Kextr=True RSI=False(46.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=14.3<=80,falling) Kextr=True RSI=True(46.9<47) MACD=True(gate off) => BLOCK
+2026-10-19 09:27:44,315 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=260.45 entry=69.65 pnl=+190.80(+273.9%) sl=185.16 peak=308.60 tr_armed=True elapsed=319min
+2026-10-19 09:28:14,963 [INFO] [FAST] CE22900 score=284 vol=1.89 U=35.4 skipped: leader score=284 vol=1.89 U=35.4
+2026-10-19 09:28:45,476 [INFO] [RENKO] dir=-1 (DOWN) bricks=23 brick=27.24 last5=[-1, -1, -1, -1, -1]
+2026-10-19 09:28:45,860 [INFO] [EXP12] M=22900 open=2[EXP2:22850PE EXP2W:22850PE] trades=0 realized=Rs+0 triggers=0 | by-engine none
