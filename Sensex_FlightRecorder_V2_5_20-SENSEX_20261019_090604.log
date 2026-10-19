@@ -1254,3 +1254,11 @@
 2026-10-19 03:46:20,263 [INFO] [INDICATORS] spot=74729.3 | 1h: close=74729.3 sma20=73894.4 sma50=72905.5 rsi=74.6 macd=553.54/496.69(bull) | 15m: K=38.9↑(prev 20.8) | regime=CE-eligible any_active=True
 2026-10-19 03:46:20,263 [INFO] [SIGNAL] CE: reg=True K=True(K=38.9>=38,rising) Kextr=True RSI=True(74.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=38.9<=80,falling) Kextr=False RSI=False(74.6<47) MACD=False(gate off) => BLOCK
 2026-10-19 03:46:20,265 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274700PE ltp=0.00 entry=537.65 pnl=-537.65(-100.0%) sl=440.87 peak=537.65 tr_armed=False elapsed=0min
+2026-10-19 03:46:23,233 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261019_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261019_090604.csv
+2026-10-19 03:47:23,708 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=1/4 (reason=HARDSL_-18pct)
+2026-10-19 03:47:23,710 [INFO] EXIT: BFO:SENSEX26O2274700PE @ 440.87 reason=HARDSL_-18pct pnl/sh=-96.78 is_flip=False losses=1/4
+2026-10-19 03:50:25,972 [INFO] [STRADDLE] Reference: ₹839.5 at 09:20
+2026-10-19 03:51:26,416 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:51:26,416 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:51:26,416 [INFO] [INDICATORS] spot=74653.0 | 1h: close=74729.3 sma20=73894.4 sma50=72905.5 rsi=75.3 macd=548.36/507.02(bull) | 15m: K=38.9↑(prev 20.8) | regime=CE-eligible any_active=False
+2026-10-19 03:51:26,417 [INFO] [SIGNAL] CE: reg=True K=True(K=38.9>=38,rising) Kextr=True RSI=True(75.3>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=38.9<=80,falling) Kextr=False RSI=False(75.3<47) MACD=False(gate off) => BLOCK
