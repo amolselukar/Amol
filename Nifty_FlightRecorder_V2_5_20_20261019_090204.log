@@ -2453,3 +2453,18 @@
 2026-10-19 07:56:16,803 [INFO] [CLM] SIGNAL CLM CE22900 K=6->16 hist=-1.64 ADX-side bar 13:25
 2026-10-19 07:56:16,851 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922900CE
 2026-10-19 07:56:16,854 [INFO] ENTRY: NFO:NIFTY26O1922900CE @ 28.70  engine=CLM  detail=CLM CE22900 K=6->16 hist=-1.64 ADX-side bar 13:25
+2026-10-19 07:56:20,377 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 07:56:50,683 [INFO] [V3PROBE] FILLED PE NFO:NIFTY26O1922900PE @ 63.55 (LTP touched 62.65)
+2026-10-19 07:56:50,730 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922900PE
+2026-10-19 07:56:50,734 [INFO] ENTRY: NFO:NIFTY26O1922900PE @ 63.55  engine=V3  detail=EARLY(10m) Grade A R-cluster BREAK-PE at 22909
+2026-10-19 07:57:52,705 [INFO] EXIT: NFO:NIFTY26O1922900PE @ 73.55 reason=V3_FAST_TARGET pnl/sh=+10.00 is_flip=False losses=0/4
+2026-10-19 07:58:24,258 [INFO] [FAST] PE22850 score=250 vol=0.88 U=16.3 skipped: leader score=250 vol=0.88 U=16.3
+2026-10-19 07:59:55,896 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 07:59:55,896 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 07:59:55,896 [INFO] [INDICATORS] spot=22868.8 | 1h: close=22922.1 sma20=22990.9 sma50=22688.0 rsi=50.6 macd=93.64/121.91(bear) | 15m: K=0.6↑(prev 0.4) | regime=NEUTRAL any_active=True
+2026-10-19 07:59:55,896 [INFO] [SIGNAL] CE: reg=False K=False(K=0.6>=38,rising) Kextr=True RSI=False(50.6>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.6<=80,falling) Kextr=True RSI=False(50.6<47) MACD=True(gate off) => BLOCK
+2026-10-19 07:59:55,897 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=302.00 entry=69.65 pnl=+232.35(+333.6%) sl=181.20 peak=302.00 tr_armed=True elapsed=231min
+2026-10-19 07:59:55,897 [INFO] [STATE][CLM] CE NFO:NIFTY26O1922900CE ltp=25.25 entry=28.70 pnl=-3.45(-12.0%) sl=23.53 peak=31.25 tr_armed=False elapsed=3min
+2026-10-19 08:00:26,525 [INFO] [FAST] PE22850 score=106 vol=0.75 U=4.8 skipped: leader score=106 vol=0.75 U=4.8
+2026-10-19 08:00:26,649 [INFO] [EXP12] anchor=spot M=22900 (max-OI would be 23000, diverged by +100) spot=22864.2
+2026-10-19 08:00:26,812 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
