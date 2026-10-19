@@ -2716,3 +2716,4 @@
 2026-10-19 09:59:31,791 [INFO] [RENKO] dir=-1 (DOWN) bricks=23 brick=27.24 last5=[-1, -1, -1, -1, -1]
 2026-10-19 09:59:32,813 [INFO] [EXP12] EOD why/why-not report sent
 2026-10-19 09:59:33,657 [INFO] [CRUSH] EOD why/why-not report sent
+2026-10-19 10:00:07,338 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
