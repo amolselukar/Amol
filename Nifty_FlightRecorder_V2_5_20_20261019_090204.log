@@ -2140,3 +2140,20 @@
 2026-10-19 05:05:23,816 [INFO] [INDICATORS] spot=23080.0 | 1h: close=23060.5 sma20=22939.1 sma50=22654.8 rsi=63.2 macd=135.85/135.00(bull) | 15m: K=42.4↓(prev 46.4) | regime=CE-eligible any_active=True
 2026-10-19 05:05:23,816 [INFO] [SIGNAL] CE: reg=True K=False(K=42.4>=38,rising) Kextr=True RSI=True(63.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=42.4<=80,falling) Kextr=True RSI=False(63.2<47) MACD=False(gate off) => BLOCK
 2026-10-19 05:05:23,818 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=105.00 entry=69.65 pnl=+35.35(+50.8%) sl=0.00 peak=150.85 tr_armed=False elapsed=57min
+2026-10-19 05:06:57,772 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 05:08:29,167 [INFO] [CLM] SIGNAL CLM CE23050 K=0->7 hist=-1.34 ADX-side bar 10:37
+2026-10-19 05:08:29,216 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1923050CE
+2026-10-19 05:08:29,220 [INFO] ENTRY: NFO:NIFTY26O1923050CE @ 74.10  engine=CLM  detail=CLM CE23050 K=0->7 hist=-1.34 ADX-side bar 10:37
+2026-10-19 05:10:01,293 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=15 brick=27.24 last5=[1, -1, -1, -1, 1]
+2026-10-19 05:10:31,956 [INFO] [CB] CLM loss (own count 4) — TOTAL across all engines=6/4 (reason=HARDSL_-18pct)
+2026-10-19 05:10:31,959 [INFO] EXIT: NFO:NIFTY26O1923050CE @ 60.76 reason=HARDSL_-18pct pnl/sh=-13.34 is_flip=False losses=4/4
+2026-10-19 05:10:32,946 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 05:10:32,947 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 05:10:32,948 [INFO] [INDICATORS] spot=23050.7 | 1h: close=23060.5 sma20=22939.1 sma50=22654.8 rsi=63.2 macd=135.85/135.00(bull) | 15m: K=42.4↓(prev 46.4) | regime=CE-eligible any_active=True
+2026-10-19 05:10:32,948 [INFO] [SIGNAL] CE: reg=True K=False(K=42.4>=38,rising) Kextr=True RSI=True(63.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=42.4<=80,falling) Kextr=True RSI=False(63.2<47) MACD=False(gate off) => BLOCK
+2026-10-19 05:10:32,949 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=137.90 entry=69.65 pnl=+68.25(+98.0%) sl=0.00 peak=150.85 tr_armed=False elapsed=62min
+2026-10-19 05:11:03,290 [INFO] [FAST] PE23050 score=288 vol=1.80 U=53.2 skipped: leader score=288 vol=1.80 U=53.2
+2026-10-19 05:12:04,100 [INFO] [FAST] PE23050 score=257 vol=1.77 U=47.3 skipped: leader score=257 vol=1.77 U=47.3
+2026-10-19 05:12:04,157 [INFO] [CLM] SIGNAL CLM CE23050 K=0->2 hist=-3.31 ADX-side bar 10:41
+2026-10-19 05:12:04,200 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1923050CE
+2026-10-19 05:12:04,202 [INFO] ENTRY: NFO:NIFTY26O1923050CE @ 53.95  engine=CLM  detail=CLM CE23050 K=0->2 hist=-3.31 ADX-side bar 10:41
