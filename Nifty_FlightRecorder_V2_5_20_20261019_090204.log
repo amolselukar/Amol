@@ -2316,3 +2316,15 @@
 2026-10-19 06:37:50,807 [INFO] [SIGNAL] CE: reg=True K=False(K=24.7>=38,rising) Kextr=True RSI=True(63.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=24.7<=80,falling) Kextr=True RSI=False(63.8<47) MACD=True(gate off) => BLOCK
 2026-10-19 06:37:50,809 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=198.70 entry=69.65 pnl=+129.05(+185.3%) sl=138.18 peak=230.30 tr_armed=True elapsed=149min
 2026-10-19 06:39:21,950 [INFO] [RENKO] dir=-1 (DOWN) bricks=19 brick=27.24 last5=[1, -1, -1, -1, -1]
+2026-10-19 06:39:24,693 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 06:41:26,587 [INFO] [CLM] SIGNAL CLM PE22950 K=23->33 hist=+0.25 ADX-side bar 12:10
+2026-10-19 06:41:26,639 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922950PE
+2026-10-19 06:41:26,643 [INFO] ENTRY: NFO:NIFTY26O1922950PE @ 59.85  engine=CLM  detail=CLM PE22950 K=23->33 hist=+0.25 ADX-side bar 12:10
+2026-10-19 06:42:58,945 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 06:42:58,945 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 06:42:58,945 [INFO] [INDICATORS] spot=22954.1 | 1h: close=23070.2 sma20=22956.5 sma50=22666.4 rsi=63.8 macd=128.02/133.60(bear) | 15m: K=24.7↓(prev 35.0) | regime=CE-eligible any_active=True
+2026-10-19 06:42:58,946 [INFO] [SIGNAL] CE: reg=True K=False(K=24.7>=38,rising) Kextr=True RSI=True(63.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=24.7<=80,falling) Kextr=True RSI=False(63.8<47) MACD=True(gate off) => BLOCK
+2026-10-19 06:42:58,946 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=223.60 entry=69.65 pnl=+153.95(+221.0%) sl=138.18 peak=230.30 tr_armed=True elapsed=155min
+2026-10-19 06:42:58,946 [INFO] [STATE][CLM] PE NFO:NIFTY26O1922950PE ltp=65.10 entry=59.85 pnl=+5.25(+8.8%) sl=49.08 peak=65.10 tr_armed=False elapsed=1min
+2026-10-19 06:43:29,366 [INFO] [FAST] PE22950 score=253 vol=0.84 U=26.9 skipped: leader score=253 vol=0.84 U=26.9
+2026-10-19 06:44:30,378 [INFO] [FAST] PE22950 score=144 vol=0.94 U=13.3 skipped: leader score=144 vol=0.94 U=13.3
