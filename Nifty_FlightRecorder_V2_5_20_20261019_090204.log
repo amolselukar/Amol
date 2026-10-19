@@ -2203,3 +2203,15 @@
 2026-10-19 05:31:05,505 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=117.00 entry=69.65 pnl=+47.35(+68.0%) sl=0.00 peak=151.90 tr_armed=False elapsed=83min
 2026-10-19 05:31:05,506 [INFO] [STATE][CLM] PE NFO:NIFTY26O1923050PE ltp=56.40 entry=63.00 pnl=-6.60(-10.5%) sl=51.66 peak=63.00 tr_armed=False elapsed=5min
 2026-10-19 05:31:35,792 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26O1923100CE @ 38.45 spot=23063.7 | K=44.6↑ RSI=63.2 MACD✓
+2026-10-19 05:32:39,799 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 05:33:41,045 [INFO] [BREAKWATCH] ORB PE NFO:NIFTY26O1923100PE entry 10:58 score 1/6 -> CUT | {'progress_x': 0.5902, 'other_idx_dir%': -0.0423, 'hw_breadth': 0.3333, 'hw_basket_dir%': -0.0046, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 22.4194} missing=[] fetch_fail=[]
+2026-10-19 05:33:41,052 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=7/4 (reason=BREAKWATCH_CUT_s1)
+2026-10-19 05:33:41,052 [INFO] EXIT: NFO:NIFTY26O1923100PE @ 85.90 reason=BREAKWATCH_CUT_s1 pnl/sh=-1.65 is_flip=False losses=1/4
+2026-10-19 05:36:15,085 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 05:36:15,142 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 05:36:15,142 [INFO] [INDICATORS] spot=23064.2 | 1h: close=23060.5 sma20=22939.1 sma50=22654.8 rsi=63.2 macd=135.85/135.00(bull) | 15m: K=44.6↑(prev 43.5) | regime=CE-eligible any_active=True
+2026-10-19 05:36:15,142 [INFO] [SIGNAL] CE: reg=True K=True(K=44.6>=38,rising) Kextr=True RSI=True(63.2>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=44.6<=80,falling) Kextr=True RSI=False(63.2<47) MACD=False(gate off) => BLOCK
+2026-10-19 05:36:15,144 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=120.40 entry=69.65 pnl=+50.75(+72.9%) sl=0.00 peak=151.90 tr_armed=False elapsed=88min
+2026-10-19 05:36:15,144 [INFO] [STATE][CLM] PE NFO:NIFTY26O1923050PE ltp=57.75 entry=63.00 pnl=-5.25(-8.3%) sl=51.66 peak=63.15 tr_armed=False elapsed=10min
+2026-10-19 05:37:46,243 [INFO] [CB] CLM loss (own count 5) — TOTAL across all engines=8/4 (reason=HARDSL_-18pct)
+2026-10-19 05:37:46,245 [INFO] EXIT: NFO:NIFTY26O1923050PE @ 51.66 reason=HARDSL_-18pct pnl/sh=-11.34 is_flip=False losses=5/4
