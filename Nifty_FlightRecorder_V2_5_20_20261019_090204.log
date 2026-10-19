@@ -1980,3 +1980,13 @@
 2026-10-19 03:42:47,224 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-19 03:42:47,225 [INFO] [INDICATORS] spot=23146.2 | 1h: close=23119.0 sma20=22899.3 sma50=22635.0 rsi=71.4 macd=145.54/132.26(bull) | 15m: K=21.2↑(prev 4.6) | regime=CE-eligible any_active=False
 2026-10-19 03:42:47,225 [INFO] [SIGNAL] CE: reg=True K=False(K=21.2>=38,rising) Kextr=True RSI=True(71.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=21.2<=80,falling) Kextr=True RSI=False(71.4<47) MACD=False(gate off) => BLOCK
+2026-10-19 03:42:50,436 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 03:46:22,216 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=0 brick=27.24 last5=[]
+2026-10-19 03:46:22,220 [INFO] [MVWAP] Signal — 23113<23129 body=76% side=PE (morning exception)
+2026-10-19 03:46:22,288 [INFO] ENTRY: NFO:NIFTY26O1923100PE @ 77.05  engine=VWAP  detail=MORNING FUT VWAP 23113<23129 body=76% pivΔ=118pt | bar=154
+2026-10-19 03:46:53,397 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=1/4 (reason=HARDSL_-18pct)
+2026-10-19 03:46:53,399 [INFO] EXIT: NFO:NIFTY26O1923100PE @ 63.18 reason=HARDSL_-18pct pnl/sh=-13.87 is_flip=False losses=1/4
+2026-10-19 03:47:54,844 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:47:54,844 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 03:47:54,844 [INFO] [INDICATORS] spot=23128.3 | 1h: close=23146.2 sma20=22922.2 sma50=22645.6 rsi=72.7 macd=144.86/134.78(bull) | 15m: K=43.5↑(prev 21.2) | regime=CE-eligible any_active=False
+2026-10-19 03:47:54,844 [INFO] [SIGNAL] CE: reg=True K=True(K=43.5>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=43.5<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
