@@ -2385,3 +2385,15 @@
 2026-10-19 07:18:49,536 [INFO] [INDICATORS] spot=22930.3 | 1h: close=22946.0 sma20=22975.7 sma50=22676.5 rsi=52.5 macd=110.52/128.98(bear) | 15m: K=0.9↓(prev 5.7) | regime=NEUTRAL any_active=True
 2026-10-19 07:18:49,536 [INFO] [SIGNAL] CE: reg=False K=False(K=0.9>=38,rising) Kextr=True RSI=False(52.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.9<=80,falling) Kextr=True RSI=False(52.5<47) MACD=True(gate off) => BLOCK
 2026-10-19 07:18:49,537 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=239.55 entry=69.65 pnl=+169.90(+243.9%) sl=147.27 peak=245.45 tr_armed=True elapsed=190min
+2026-10-19 07:20:23,737 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 07:23:25,784 [INFO] [FAST] CE22950 score=150 vol=1.23 U=9.5 skipped: slope5=-0.02
+2026-10-19 07:23:57,021 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 07:23:57,021 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 07:23:57,022 [INFO] [INDICATORS] spot=22935.3 | 1h: close=22946.0 sma20=22975.7 sma50=22676.5 rsi=52.5 macd=110.52/128.98(bear) | 15m: K=0.9↓(prev 5.7) | regime=NEUTRAL any_active=True
+2026-10-19 07:23:57,022 [INFO] [SIGNAL] CE: reg=False K=False(K=0.9>=38,rising) Kextr=True RSI=False(52.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.9<=80,falling) Kextr=True RSI=False(52.5<47) MACD=True(gate off) => BLOCK
+2026-10-19 07:23:57,023 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=236.35 entry=69.65 pnl=+166.70(+239.3%) sl=147.27 peak=245.45 tr_armed=True elapsed=195min
+2026-10-19 07:25:28,009 [INFO] [RENKO] dir=-1 (DOWN) bricks=20 brick=27.24 last5=[-1, -1, -1, -1, -1]
+2026-10-19 07:25:28,105 [INFO] [FAST] PE22900 score=107 vol=2.04 U=4.5 skipped: leader score=107 vol=2.04 U=4.5
+2026-10-19 07:25:28,165 [INFO] [CLM] SIGNAL CLM PE22900 K=28->36 hist=+0.07 ADX-side bar 12:54
+2026-10-19 07:25:28,213 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26O1922900PE
+2026-10-19 07:25:28,218 [INFO] ENTRY: NFO:NIFTY26O1922900PE @ 49.40  engine=CLM  detail=CLM PE22900 K=28->36 hist=+0.07 ADX-side bar 12:54
