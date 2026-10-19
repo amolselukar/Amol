@@ -2613,3 +2613,11 @@
 2026-10-19 09:13:07,679 [INFO] EXIT: NFO:NIFTY26O1922850PE @ 26.36 reason=HARDSL_-18pct pnl/sh=-5.79 is_flip=False losses=11/4
 2026-10-19 09:13:08,683 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
 2026-10-19 09:13:38,967 [INFO] [RENKO] dir=-1 (DOWN) bricks=23 brick=27.24 last5=[-1, -1, -1, -1, -1]
+2026-10-19 09:13:41,633 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 09:16:15,198 [INFO] [EXP12] EXP2 22900CE skipped: bar@14:43=19.80 in band but LTP 22.85 is not
+2026-10-19 09:17:16,351 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 09:17:16,351 [INFO] [T5] open=0 trades=1 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-19 09:17:16,509 [INFO] [INDICATORS] spot=22879.0 | 1h: close=22871.3 sma20=23003.2 sma50=22699.9 rsi=46.9 macd=75.30/112.59(bear) | 15m: K=14.3↑(prev 6.1) | regime=NEUTRAL any_active=True
+2026-10-19 09:17:16,509 [INFO] [SIGNAL] CE: reg=False K=False(K=14.3>=38,rising) Kextr=True RSI=False(46.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=14.3<=80,falling) Kextr=True RSI=True(46.9<47) MACD=True(gate off) => BLOCK
+2026-10-19 09:17:16,511 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=277.70 entry=69.65 pnl=+208.05(+298.7%) sl=185.16 peak=308.60 tr_armed=True elapsed=309min
+2026-10-19 09:18:17,952 [INFO] [EXP12] M=22900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
