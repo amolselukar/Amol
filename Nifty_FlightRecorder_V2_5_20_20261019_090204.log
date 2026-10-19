@@ -2071,3 +2071,14 @@
 2026-10-19 04:29:04,286 [INFO] [INDICATORS] spot=23080.3 | 1h: close=23146.2 sma20=22922.2 sma50=22645.6 rsi=72.7 macd=144.86/134.78(bull) | 15m: K=49.0↑(prev 43.5) | regime=CE-eligible any_active=True
 2026-10-19 04:29:04,287 [INFO] [SIGNAL] CE: reg=True K=True(K=49.0>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=49.0<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
 2026-10-19 04:29:04,292 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=141.35 entry=69.65 pnl=+71.70(+102.9%) sl=0.00 peak=141.35 tr_armed=False elapsed=21min
+2026-10-19 04:29:06,632 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 04:29:36,893 [INFO] [RENKO] dir=-1 (DOWN) bricks=13 brick=27.24 last5=[1, 1, 1, -1, -1]
+2026-10-19 04:30:07,527 [INFO] [FAST] PE23050 score=294 BLOCKED -- 2m renko NEUTRAL does not agree (brick 27.2)
+2026-10-19 04:31:08,523 [INFO] [CLM] SIGNAL CLM CE23050 K=6->17 hist=-4.96 ADX-side bar 10:00
+2026-10-19 04:31:08,568 [INFO] ENTRY: NFO:NIFTY26O1923050CE @ 87.15  engine=CLM  detail=CLM CE23050 K=6->17 hist=-4.96 ADX-side bar 10:00
+2026-10-19 04:34:12,605 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 04:34:12,606 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 04:34:12,606 [INFO] [INDICATORS] spot=23086.5 | 1h: close=23146.2 sma20=22922.2 sma50=22645.6 rsi=72.7 macd=144.86/134.78(bull) | 15m: K=33.1↓(prev 49.0) | regime=CE-eligible any_active=True
+2026-10-19 04:34:12,606 [INFO] [SIGNAL] CE: reg=True K=False(K=33.1>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=33.1<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
+2026-10-19 04:34:12,608 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=114.05 entry=69.65 pnl=+44.40(+63.7%) sl=0.00 peak=150.85 tr_armed=False elapsed=26min
+2026-10-19 04:34:12,609 [INFO] [STATE][CLM] CE NFO:NIFTY26O1923050CE ltp=82.25 entry=87.15 pnl=-4.90(-5.6%) sl=71.46 peak=92.90 tr_armed=False elapsed=3min
