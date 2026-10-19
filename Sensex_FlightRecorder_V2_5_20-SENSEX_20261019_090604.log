@@ -1373,3 +1373,12 @@
 2026-10-19 04:42:38,812 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-19 04:42:38,813 [INFO] [INDICATORS] spot=74489.0 | 1h: close=74729.3 sma20=73894.4 sma50=72905.5 rsi=75.3 macd=548.36/507.02(bull) | 15m: K=32.3↓(prev 43.3) | regime=CE-eligible any_active=False
 2026-10-19 04:42:38,814 [INFO] [SIGNAL] CE: reg=True K=False(K=32.3>=38,rising) Kextr=False RSI=True(75.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=32.3<=80,falling) Kextr=False RSI=False(75.3<47) MACD=False(gate off) => BLOCK
+2026-10-19 04:42:41,311 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261019_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261019_090604.csv
+2026-10-19 04:43:11,587 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+27.6pt persist=False (last 2x5m vs FUTvwap=74500.1)
+2026-10-19 04:43:41,911 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+27.4pt persist=False (last 2x5m vs FUTvwap=74500.3)
+2026-10-19 04:44:12,193 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+27.4pt persist=False (last 2x5m vs FUTvwap=74500.3)
+2026-10-19 04:44:42,486 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+27.6pt persist=False (last 2x5m vs FUTvwap=74500.1)
+2026-10-19 04:47:44,299 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 04:47:44,300 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 04:47:44,300 [INFO] [INDICATORS] spot=74451.1 | 1h: close=74439.2 sma20=73961.9 sma50=72941.5 rsi=65.3 macd=514.92/508.60(bull) | 15m: K=44.4↑(prev 32.3) | regime=CE-eligible any_active=False
+2026-10-19 04:47:44,300 [INFO] [SIGNAL] CE: reg=True K=True(K=44.4>=38,rising) Kextr=False RSI=True(65.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=44.4<=80,falling) Kextr=False RSI=False(65.3<47) MACD=False(gate off) => BLOCK
