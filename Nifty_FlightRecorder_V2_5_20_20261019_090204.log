@@ -2271,3 +2271,10 @@
 2026-10-19 06:12:08,048 [INFO] [INDICATORS] spot=22998.0 | 1h: close=23070.2 sma20=22956.5 sma50=22666.4 rsi=63.8 macd=128.02/133.60(bear) | 15m: K=42.5↑(prev 41.6) | regime=CE-eligible any_active=True
 2026-10-19 06:12:08,048 [INFO] [SIGNAL] CE: reg=True K=True(K=42.5>=38,rising) Kextr=True RSI=True(63.8>53) MACD=False(gate off) => PASS | PE: reg=False K=False(K=42.5<=80,falling) Kextr=True RSI=False(63.8<47) MACD=True(gate off) => BLOCK
 2026-10-19 06:12:08,049 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=171.30 entry=69.65 pnl=+101.65(+145.9%) sl=0.00 peak=189.45 tr_armed=False elapsed=124min
+2026-10-19 06:13:41,547 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261019_090204.log, Nifty_BarLevel_V2_5_20_20261019_090204.csv
+2026-10-19 06:15:12,589 [INFO] [RENKO] V2 CE BLOCKED — 1m renko DOWN-established, CE is against it (bricks=17, brick=27.2)
+2026-10-19 06:17:15,153 [INFO] [APEX] open=0 trades=2 realized=-19.3pt/Rs-1258 unreal=+0.0pt/Rs+0
+2026-10-19 06:17:15,221 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-19 06:17:15,222 [INFO] [INDICATORS] spot=23003.7 | 1h: close=23070.2 sma20=22956.5 sma50=22666.4 rsi=63.8 macd=128.02/133.60(bear) | 15m: K=35.1↓(prev 42.5) | regime=CE-eligible any_active=True
+2026-10-19 06:17:15,222 [INFO] [SIGNAL] CE: reg=True K=False(K=35.1>=38,rising) Kextr=True RSI=True(63.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=35.1<=80,falling) Kextr=True RSI=False(63.8<47) MACD=True(gate off) => BLOCK
+2026-10-19 06:17:15,224 [INFO] [STATE][WCR] PE NFO:NIFTY26O1923150PE ltp=171.65 entry=69.65 pnl=+102.00(+146.4%) sl=0.00 peak=189.45 tr_armed=False elapsed=129min
