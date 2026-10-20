@@ -3750,3 +3750,48 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-20 07:16:41,127 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-20 07:16:41,127 [INFO] [INDICATORS] spot=22889.0 | 1h: close=22889.0 sma20=23015.1 sma50=22726.1 rsi=47.0 macd=60.24/102.12(bear) | 15m: K=66.8↑(prev 44.3) | regime=NEUTRAL any_active=False
 2026-10-20 07:16:41,127 [INFO] [SIGNAL] CE: reg=False K=True(K=66.8>=38,rising) Kextr=True RSI=False(47.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=66.8<=80,falling) Kextr=True RSI=False(47.0<47) MACD=True(gate off) => BLOCK
+2026-10-20 07:16:43,610 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261020_090205.log, Nifty_BarLevel_V2_5_20_20261020_090205.csv
+2026-10-20 07:17:13,830 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:17:13,867 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:17:13,867 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:17:13,899 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:17:44,136 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:17:44,173 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:17:44,173 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:17:44,209 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:18:14,446 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:18:14,489 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:18:14,489 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:18:14,522 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:18:44,764 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:18:44,798 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:18:44,798 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:18:44,829 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:19:15,083 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:19:15,120 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:19:15,121 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:19:15,156 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:19:45,406 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:19:45,441 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:19:45,441 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:19:45,476 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:20:15,713 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:20:15,750 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:20:15,750 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:20:15,780 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:20:46,009 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:20:46,047 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:20:46,047 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:20:46,079 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:21:16,311 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:21:16,344 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:21:16,344 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:21:16,373 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:21:46,673 [WARNING] [STALE] 15m last bar 15:15 (>20min old) — instant refetch
+2026-10-20 07:21:46,707 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:21:46,708 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
+2026-10-20 07:21:46,744 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 07:21:46,757 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-20 07:21:46,759 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-20 07:21:46,760 [INFO] [INDICATORS] spot=22889.0 | 1h: close=22889.0 sma20=23015.1 sma50=22726.1 rsi=47.0 macd=60.24/102.12(bear) | 15m: K=66.8↑(prev 44.3) | regime=NEUTRAL any_active=False
+2026-10-20 07:21:46,760 [INFO] [SIGNAL] CE: reg=False K=True(K=66.8>=38,rising) Kextr=True RSI=False(47.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=66.8<=80,falling) Kextr=True RSI=False(47.0<47) MACD=True(gate off) => BLOCK
