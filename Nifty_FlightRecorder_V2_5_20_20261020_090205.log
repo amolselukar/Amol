@@ -5182,3 +5182,4 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-20 09:59:47,030 [WARNING] [STALE] 15m STILL stale after refetch — entries blocked this cycle
 2026-10-20 09:59:47,853 [WARNING] [STALE] fut15 last bar 15:30 (>20min old) — instant refetch
 2026-10-20 09:59:47,889 [WARNING] [STALE] fut15 STILL stale after refetch — entries blocked this cycle
+2026-10-20 10:00:21,589 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261020_090205.log, Nifty_BarLevel_V2_5_20_20261020_090205.csv
