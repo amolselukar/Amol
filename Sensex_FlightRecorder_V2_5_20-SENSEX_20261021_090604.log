@@ -1607,3 +1607,16 @@
 2026-10-21 06:40:30,162 [INFO] [INDICATORS] spot=73648.0 | 1h: close=74187.6 sma20=74291.9 sma50=73284.3 rsi=57.4 macd=184.13/293.61(bear) | 15m: K=18.1↓(prev 35.3) | regime=NEUTRAL any_active=True
 2026-10-21 06:40:30,163 [INFO] [SIGNAL] CE: reg=False K=False(K=18.1>=38,rising) Kextr=True RSI=True(57.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=18.1<=80,falling) Kextr=False RSI=False(57.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 06:40:30,163 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2273800PE ltp=437.45 entry=388.90 pnl=+48.55(+12.5%) sl=429.95 peak=445.95 tr_armed=True elapsed=24min
+2026-10-21 06:40:33,679 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 06:41:34,312 [INFO] [V3PROBE] PLACED PE BFO:SENSEX26O2273600PE limit=331.65 (LTP=344.65 - 13) window=25min — EARLY(10m) Grade B R-cluster BREAK-PE at 73704
+2026-10-21 06:41:35,177 [INFO] [TRAIL] SL ratcheted 429.95 → 440.00  (peak=456.00)
+2026-10-21 06:42:05,627 [INFO] [TRAIL] SL ratcheted 440.00 → 457.90  (peak=473.90)
+2026-10-21 06:43:36,878 [INFO] [TRAIL] SL ratcheted 457.90 → 483.15  (peak=499.15)
+2026-10-21 06:44:07,308 [INFO] [TRAIL] SL ratcheted 483.15 → 499.00  (peak=515.00)
+2026-10-21 06:44:37,760 [INFO] [TRAIL] SL ratcheted 499.00 → 500.30  (peak=516.30)
+2026-10-21 06:45:08,151 [INFO] [TRAIL] SL ratcheted 500.30 → 514.20  (peak=530.20)
+2026-10-21 06:45:38,623 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 06:45:38,623 [INFO] [T5] open=0 trades=2 realized=+43.5pt/Rs+870 unreal=+0.0pt/Rs+0
+2026-10-21 06:45:38,623 [INFO] [INDICATORS] spot=73528.9 | 1h: close=73528.9 sma20=74259.2 sma50=73307.1 rsi=57.4 macd=184.13/293.61(bear) | 15m: K=5.3↓(prev 18.1) | regime=NEUTRAL any_active=True
+2026-10-21 06:45:38,624 [INFO] [SIGNAL] CE: reg=False K=False(K=5.3>=38,rising) Kextr=True RSI=True(57.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=5.3<=80,falling) Kextr=False RSI=False(57.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 06:45:38,624 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2273800PE ltp=522.50 entry=388.90 pnl=+133.60(+34.4%) sl=514.20 peak=530.20 tr_armed=True elapsed=29min
