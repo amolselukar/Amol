@@ -2403,3 +2403,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 07:23:24,499 [INFO] [INDICATORS] spot=22744.8 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.5↑(prev 0.0) | regime=NEUTRAL any_active=True
 2026-10-21 07:23:24,499 [INFO] [SIGNAL] CE: reg=False K=False(K=0.5>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.5<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
 2026-10-21 07:23:24,500 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22750PE ltp=177.60 entry=174.00 pnl=+3.60(+2.1%) sl=142.68 peak=184.90 tr_armed=False elapsed=21min
+2026-10-21 07:23:27,810 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 07:26:30,638 [INFO] [CB] CLM loss (own count 2) — TOTAL across all engines=3/4 (reason=CLM_TRAIL)
+2026-10-21 07:26:30,639 [INFO] EXIT: NFO:NIFTY26OCT22750PE @ 164.90 reason=CLM_TRAIL pnl/sh=-9.10 is_flip=False losses=2/4
+2026-10-21 07:28:08,019 [INFO] [T5] ENTRY CE 22800 @ 169.0 tgt229.0 stp151.1 (bo+8.9 PEdec-13.1) open=2
+2026-10-21 07:28:39,213 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 07:28:39,351 [INFO] [T5] open=2 trades=1 realized=-23.3pt/Rs-1515 unreal=+9.2pt/Rs+598
+2026-10-21 07:28:39,352 [INFO] [INDICATORS] spot=22769.0 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.5↑(prev 0.0) | regime=NEUTRAL any_active=False
+2026-10-21 07:28:39,352 [INFO] [SIGNAL] CE: reg=False K=False(K=0.5>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.5<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
