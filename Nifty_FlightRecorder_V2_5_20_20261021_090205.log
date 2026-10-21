@@ -2070,3 +2070,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 04:23:24,327 [INFO] [INDICATORS] spot=23028.9 | 1h: close=22889.0 sma20=23015.1 sma50=22726.1 rsi=48.4 macd=48.99/91.50(bear) | 15m: K=100.0↑(prev 81.9) | regime=NEUTRAL any_active=True
 2026-10-21 04:23:24,328 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=True RSI=False(48.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(48.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 04:23:24,328 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26OCT23000PE ltp=149.70 entry=144.75 pnl=+4.95(+3.4%) sl=0.00 peak=149.70 tr_armed=False elapsed=2min
+2026-10-21 04:23:27,022 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 04:23:57,322 [INFO] EXIT: NFO:NIFTY26OCT23000PE @ 148.75 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+4.00 is_flip=False losses=0/4
+2026-10-21 04:24:28,777 [INFO] [CLM] SIGNAL CLM CE23050 K=0->5 hist=-4.56 ADX-side bar 09:53
+2026-10-21 04:24:28,810 [INFO] ENTRY: NFO:NIFTY26OCT23050CE @ 166.35  engine=CLM  detail=CLM CE23050 K=0->5 hist=-4.56 ADX-side bar 09:53
+2026-10-21 04:27:32,387 [INFO] [RENKO] dir=-1 (DOWN) bricks=5 brick=26.96 last5=[1, 1, 1, -1, -1]
+2026-10-21 04:28:33,389 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:28:33,390 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:28:33,390 [INFO] [INDICATORS] spot=23034.2 | 1h: close=22889.0 sma20=23015.1 sma50=22726.1 rsi=48.4 macd=48.99/91.50(bear) | 15m: K=100.0↑(prev 81.9) | regime=NEUTRAL any_active=True
+2026-10-21 04:28:33,392 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=True RSI=False(48.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(48.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 04:28:33,393 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT23050CE ltp=166.50 entry=166.35 pnl=+0.15(+0.1%) sl=136.41 peak=168.20 tr_armed=False elapsed=4min
