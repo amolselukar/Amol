@@ -1351,3 +1351,25 @@
 2026-10-21 04:42:35,473 [INFO] [INDICATORS] spot=74161.3 | 1h: close=73852.9 sma20=74267.0 sma50=73196.3 rsi=49.6 macd=202.03/353.43(bear) | 15m: K=91.8↓(prev 100.0) | regime=NEUTRAL any_active=True
 2026-10-21 04:42:35,473 [INFO] [SIGNAL] CE: reg=False K=False(K=91.8>=38,rising) Kextr=False RSI=False(49.6>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=91.8<=80,falling) Kextr=True RSI=False(49.6<47) MACD=True(gate off) => BLOCK
 2026-10-21 04:42:35,473 [INFO] [STATE][ORB] PE BFO:SENSEX26O2274600PE ltp=634.95 entry=327.10 pnl=+307.85(+94.1%) sl=0.00 peak=634.95 tr_armed=False elapsed=27min
+2026-10-21 04:42:37,991 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 04:43:08,243 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-10-21 04:43:38,753 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-10-21 04:44:09,140 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-10-21 04:44:39,654 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-10-21 04:45:10,132 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-10-21 04:45:10,168 [INFO] [GAPBREAK] Range-break detected — close 74094.8 broke [74149.9,74682.2] side=PE (gap=+485.0)
+2026-10-21 04:45:40,609 [INFO] [VWAP] Climax skip — body=99% >= 87%
+2026-10-21 04:46:11,029 [INFO] [VWAP] Signal — FUT 74247<74456 body=67% side=PE | persist_gate=dist=-224.5pt persist=True (last 2x5m vs FUTvwap=74471.2)
+2026-10-21 04:46:11,103 [INFO] ENTRY: BFO:SENSEX26O2274100PE @ 314.50  engine=VWAP  detail=FUT VWAP 74247<74456 body=67% | bar=159
+2026-10-21 04:46:42,345 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:46:42,479 [INFO] EXIT: BFO:SENSEX26O2274600PE @ 599.35 reason=ORB_LOCK_FLOOR pnl/sh=+272.25 is_flip=False losses=1/4
+2026-10-21 04:46:43,320 [INFO] [GAPBREAK] Confirmed — bar close 74157.9 > ref 74094.8
+2026-10-21 04:46:43,403 [INFO] ENTRY: BFO:SENSEX26O2274200PE @ 342.90  engine=GAPBREAK  detail=GAP break confirmed, gap=+485
+2026-10-21 04:47:14,555 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:47:45,037 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:47:45,258 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:47:45,317 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:47:45,318 [INFO] [INDICATORS] spot=74205.7 | 1h: close=74142.8 sma20=74281.3 sma50=73247.3 rsi=56.4 macd=191.21/320.98(bear) | 15m: K=76.5↓(prev 91.8) | regime=NEUTRAL any_active=True
+2026-10-21 04:47:45,319 [INFO] [SIGNAL] CE: reg=False K=False(K=76.5>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=76.5<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 04:47:45,319 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274100PE ltp=331.85 entry=314.50 pnl=+17.35(+5.5%) sl=257.89 peak=331.85 tr_armed=False elapsed=1min
+2026-10-21 04:47:45,319 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX26O2274200PE ltp=381.50 entry=342.90 pnl=+38.60(+11.3%) sl=0.00 peak=381.50 tr_armed=False elapsed=1min
