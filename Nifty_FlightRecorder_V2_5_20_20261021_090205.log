@@ -2438,3 +2438,16 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 07:38:57,738 [INFO] [INDICATORS] spot=22734.5 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=5.6↑(prev 0.5) | regime=NEUTRAL any_active=True
 2026-10-21 07:38:57,738 [INFO] [SIGNAL] CE: reg=False K=False(K=5.6>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=5.6<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
 2026-10-21 07:38:57,739 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=153.15 entry=152.45 pnl=+0.70(+0.5%) sl=125.01 peak=160.45 tr_armed=False elapsed=7min
+2026-10-21 07:39:00,237 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 07:39:30,710 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:40:01,367 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:41:02,325 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:42:03,227 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:43:04,348 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:43:04,401 [INFO] [T5] EXIT CE 22800 160.0->142.8 -17.2pt Rs-1118 [stop] | day -60.4pt Rs-3926
+2026-10-21 07:44:06,070 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:44:06,095 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 07:44:06,095 [INFO] [T5] open=0 trades=3 realized=-60.4pt/Rs-3926 unreal=+0.0pt/Rs+0
+2026-10-21 07:44:06,095 [INFO] [INDICATORS] spot=22718.4 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=5.6↑(prev 0.5) | regime=NEUTRAL any_active=True
+2026-10-21 07:44:06,095 [INFO] [SIGNAL] CE: reg=False K=False(K=5.6>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=5.6<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 07:44:06,097 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=163.60 entry=152.45 pnl=+11.15(+7.3%) sl=125.01 peak=163.60 tr_armed=False elapsed=12min
