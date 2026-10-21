@@ -2571,3 +2571,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 08:40:37,478 [INFO] [SIGNAL] CE: reg=False K=False(K=13.6>=38,rising) Kextr=True RSI=False(36.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=13.6<=80,falling) Kextr=True RSI=True(36.8<47) MACD=True(gate off) => BLOCK
 2026-10-21 08:40:37,480 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=171.90 entry=152.45 pnl=+19.45(+12.8%) sl=125.01 peak=178.90 tr_armed=False elapsed=68min
 2026-10-21 08:40:37,480 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22700PE ltp=171.90 entry=159.40 pnl=+12.50(+7.8%) sl=130.71 peak=171.90 tr_armed=False elapsed=3min
+2026-10-21 08:40:40,082 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 08:42:11,666 [INFO] EXIT: NFO:NIFTY26OCT22700PE @ 170.05 reason=CLM_STOCH_PEAK pnl/sh=+10.65 is_flip=False losses=3/4
+2026-10-21 08:45:14,976 [INFO] [VWAP] GAP_REVERSAL_TREND holding — 15m close 22679.8 vs VWAP 22860.8 (ltp 172.55, peak 178.90)
+2026-10-21 08:45:15,132 [INFO] [STOCH] SIGNAL 22700CE @169.15 -- 15m Stoch(5,3) crossed INTO <=20 (K 23.4->12.6) bar 14:00; scalp +14/-10 Rs, 60min
+2026-10-21 08:45:15,132 [INFO] [STOCH] WOULD_ENTER(log-only) CE 15m Stoch(5,3) crossed INTO <=20 (K 23.4->12.6) bar 14:00; scalp +14/-10 Rs, 60min
+2026-10-21 08:45:45,581 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 08:45:45,581 [INFO] [T5] open=0 trades=3 realized=-60.4pt/Rs-3926 unreal=+0.0pt/Rs+0
+2026-10-21 08:45:45,581 [INFO] [INDICATORS] spot=22679.8 | 1h: close=22679.8 sma20=22973.0 sma50=22763.2 rsi=36.8 macd=1.75/50.92(bear) | 15m: K=7.0↓(prev 13.6) | regime=NEUTRAL any_active=True
+2026-10-21 08:45:45,581 [INFO] [SIGNAL] CE: reg=False K=False(K=7.0>=38,rising) Kextr=True RSI=False(36.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=7.0<=80,falling) Kextr=True RSI=True(36.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 08:45:45,583 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=170.00 entry=152.45 pnl=+17.55(+11.5%) sl=125.01 peak=178.90 tr_armed=False elapsed=74min
