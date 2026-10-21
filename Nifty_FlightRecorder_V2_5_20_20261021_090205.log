@@ -2370,3 +2370,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 07:02:46,752 [INFO] [INDICATORS] spot=22749.5 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.0↓(prev 0.2) | regime=NEUTRAL any_active=True
 2026-10-21 07:02:46,753 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
 2026-10-21 07:02:46,755 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22750PE ltp=172.90 entry=174.00 pnl=-1.10(-0.6%) sl=142.68 peak=174.00 tr_armed=False elapsed=0min
+2026-10-21 07:02:49,302 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 07:03:19,762 [INFO] [FAST] CE22750 score=126 vol=1.85 U=31.8 skipped: leader score=126 vol=1.85 U=31.8
+2026-10-21 07:04:21,004 [INFO] [FAST] CE22750 score=213 vol=4.56 U=48.9 skipped: VRTREND counter PE
+2026-10-21 07:04:21,181 [INFO] [APEX] ENTRY CE 22800 @ 168.4 (level+RSI-turn+energy+diverge) open=2
+2026-10-21 07:05:23,236 [INFO] [APEX] ENTRY CE 22800 @ 162.8 (level+RSI-turn+energy+diverge) open=3
+2026-10-21 07:05:54,590 [INFO] [T5] ENTRY CE 22800 @ 160.0 tgt220.0 stp143.9 (bo+8.2 PEdec-35.1) open=1
+2026-10-21 07:07:57,854 [INFO] [APEX] open=3 trades=1 realized=+7.3pt/Rs+475 unreal=-25.8pt/Rs-1674
+2026-10-21 07:07:57,882 [INFO] [T5] open=1 trades=1 realized=-23.3pt/Rs-1515 unreal=-4.9pt/Rs-319
+2026-10-21 07:07:57,883 [INFO] [INDICATORS] spot=22752.1 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.0↓(prev 0.2) | regime=NEUTRAL any_active=True
+2026-10-21 07:07:57,883 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 07:07:57,885 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22750PE ltp=181.55 entry=174.00 pnl=+7.55(+4.3%) sl=142.68 peak=181.55 tr_armed=False elapsed=5min
