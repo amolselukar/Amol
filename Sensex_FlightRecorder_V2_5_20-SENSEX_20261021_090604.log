@@ -1373,3 +1373,22 @@
 2026-10-21 04:47:45,319 [INFO] [SIGNAL] CE: reg=False K=False(K=76.5>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=76.5<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 04:47:45,319 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274100PE ltp=331.85 entry=314.50 pnl=+17.35(+5.5%) sl=257.89 peak=331.85 tr_armed=False elapsed=1min
 2026-10-21 04:47:45,319 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX26O2274200PE ltp=381.50 entry=342.90 pnl=+38.60(+11.3%) sl=0.00 peak=381.50 tr_armed=False elapsed=1min
+2026-10-21 04:47:47,986 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 04:48:18,309 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:48:48,826 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:49:19,351 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:49:49,869 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:50:20,305 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:50:50,753 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:51:21,178 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:51:51,620 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:52:22,095 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:52:22,727 [INFO] [BREAKWATCH] VWAP PE BFO:SENSEX26O2274100PE entry 10:16 score 5/6 -> KEEP | {'progress_x': 1.006, 'other_idx_dir%': 0.3344, 'hw_breadth': 0.9167, 'hw_basket_dir%': 0.3108, 'hw_top4_agree': 1.0, 'sellers_sameOTM_oi%': 11.836} missing=[] fetch_fail=[]
+2026-10-21 04:52:22,813 [INFO] [BREAKWATCH] GAPBREAK PE BFO:SENSEX26O2274200PE entry 10:16 score 5/6 -> KEEP | {'progress_x': 1.006, 'other_idx_dir%': 0.3344, 'hw_breadth': 0.9167, 'hw_basket_dir%': 0.3108, 'hw_top4_agree': 1.0, 'sellers_sameOTM_oi%': 11.836} missing=[] fetch_fail=[]
+2026-10-21 04:52:53,216 [INFO] [FLIP] PUT-flip BLOCKED — K=76.5 > 60 (too high to buy puts into) (K=76.5 prev=91.8)
+2026-10-21 04:52:53,355 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:52:53,423 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:52:53,424 [INFO] [INDICATORS] spot=74106.3 | 1h: close=74142.8 sma20=74281.3 sma50=73247.3 rsi=56.4 macd=191.21/320.98(bear) | 15m: K=76.5↓(prev 91.8) | regime=NEUTRAL any_active=True
+2026-10-21 04:52:53,424 [INFO] [SIGNAL] CE: reg=False K=False(K=76.5>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=76.5<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 04:52:53,424 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274100PE ltp=328.15 entry=314.50 pnl=+13.65(+4.3%) sl=257.89 peak=354.00 tr_armed=False elapsed=6min
+2026-10-21 04:52:53,425 [INFO] [STATE][GAPBREAK] PE BFO:SENSEX26O2274200PE ltp=381.15 entry=342.90 pnl=+38.25(+11.2%) sl=0.00 peak=402.90 tr_armed=False elapsed=6min
