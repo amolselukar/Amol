@@ -2714,3 +2714,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 09:53:07,350 [INFO] [INDICATORS] spot=22738.5 | 1h: close=22739.2 sma20=22960.1 sma50=22767.1 rsi=40.7 macd=-23.76/25.38(bear) | 15m: K=45.2↑(prev 11.9) | regime=NEUTRAL any_active=True
 2026-10-21 09:53:07,350 [INFO] [SIGNAL] CE: reg=False K=True(K=45.2>=38,rising) Kextr=True RSI=False(40.7>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=45.2<=80,falling) Kextr=True RSI=True(40.7<47) MACD=True(gate off) => BLOCK
 2026-10-21 09:53:07,351 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=148.10 entry=152.45 pnl=-4.35(-2.9%) sl=125.01 peak=184.20 tr_armed=False elapsed=141min
+2026-10-21 09:53:09,753 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 09:55:12,014 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=5/4 (reason=FORCE_CLOSE_15_25)
+2026-10-21 09:55:12,016 [INFO] EXIT: NFO:NIFTY26OCT22700PE @ 146.00 reason=FORCE_CLOSE_15_25 pnl/sh=-6.45 is_flip=False losses=1/4
+2026-10-21 09:55:12,874 [INFO] [T5] EXIT CE 22700 189.6->184.4 -5.2pt Rs-335 [FORCE_1525] | day -65.6pt Rs-4261
+2026-10-21 09:58:17,174 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 09:58:17,174 [INFO] [T5] open=0 trades=4 realized=-65.6pt/Rs-4261 unreal=+0.0pt/Rs+0
+2026-10-21 09:58:17,174 [INFO] [INDICATORS] spot=22738.5 | 1h: close=22739.2 sma20=22960.1 sma50=22767.1 rsi=40.7 macd=-23.76/25.38(bear) | 15m: K=45.2↑(prev 11.9) | regime=NEUTRAL any_active=False
+2026-10-21 09:58:17,174 [INFO] [SIGNAL] CE: reg=False K=True(K=45.2>=38,rising) Kextr=True RSI=False(40.7>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=45.2<=80,falling) Kextr=True RSI=True(40.7<47) MACD=True(gate off) => BLOCK
