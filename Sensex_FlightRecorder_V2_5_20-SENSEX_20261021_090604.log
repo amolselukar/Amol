@@ -1277,3 +1277,18 @@
 2026-10-21 04:11:49,723 [INFO] [INDICATORS] spot=74665.6 | 1h: close=73852.9 sma20=74267.0 sma50=73196.3 rsi=49.6 macd=202.03/353.43(bear) | 15m: K=83.1↑(prev 69.2) | regime=NEUTRAL any_active=True
 2026-10-21 04:11:49,723 [INFO] [SIGNAL] CE: reg=False K=True(K=83.1>=38,rising) Kextr=False RSI=False(49.6>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=83.1<=80,falling) Kextr=True RSI=False(49.6<47) MACD=True(gate off) => BLOCK
 2026-10-21 04:11:49,724 [INFO] [STATE][ORB] CE BFO:SENSEX26O2274600CE ltp=370.95 entry=369.30 pnl=+1.65(+0.4%) sl=0.00 peak=388.05 tr_armed=False elapsed=6min
+2026-10-21 04:11:52,232 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 04:15:25,476 [INFO] [V3PROBE] PLACED CE BFO:SENSEX26O2274600CE limit=326.60 (LTP=339.60 - 13) window=25min — EARLY(10m) Grade B G-cluster BREAK-CE at 74040
+2026-10-21 04:15:26,423 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-21 04:15:26,452 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=1/4 (reason=ORB_STOP)
+2026-10-21 04:15:26,455 [INFO] EXIT: BFO:SENSEX26O2274600CE @ 339.30 reason=ORB_STOP pnl/sh=-30.00 is_flip=False losses=1/4
+2026-10-21 04:15:27,374 [INFO] ENTRY: BFO:SENSEX26O2274600PE @ 327.10  engine=ORB  detail=ORB flip-on-stop
+2026-10-21 04:15:58,550 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-21 04:16:28,889 [INFO] [V3PROBE] FILLED CE BFO:SENSEX26O2274600CE @ 326.60 (LTP touched 312.45)
+2026-10-21 04:16:28,930 [INFO] ENTRY: BFO:SENSEX26O2274600CE @ 326.60  engine=V3  detail=EARLY(10m) Grade B G-cluster BREAK-CE at 74040
+2026-10-21 04:17:00,280 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:17:00,330 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:17:00,331 [INFO] [INDICATORS] spot=74577.6 | 1h: close=73852.9 sma20=74267.0 sma50=73196.3 rsi=49.6 macd=202.03/353.43(bear) | 15m: K=100.0↑(prev 83.1) | regime=NEUTRAL any_active=True
+2026-10-21 04:17:00,332 [INFO] [SIGNAL] CE: reg=False K=True(K=100.0>=38,rising) Kextr=False RSI=False(49.6>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(49.6<47) MACD=True(gate off) => BLOCK
+2026-10-21 04:17:00,332 [INFO] [STATE][BASE] CE BFO:SENSEX26O2274600CE ltp=319.20 entry=326.60 pnl=-7.40(-2.3%) sl=267.81 peak=326.60 tr_armed=False elapsed=0min
+2026-10-21 04:17:00,332 [INFO] [STATE][ORB] PE BFO:SENSEX26O2274600PE ltp=348.15 entry=327.10 pnl=+21.05(+6.4%) sl=0.00 peak=358.10 tr_armed=False elapsed=1min
