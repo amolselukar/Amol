@@ -1564,3 +1564,13 @@
 2026-10-21 06:09:45,351 [INFO] [INDICATORS] spot=73847.6 | 1h: close=74187.6 sma20=74291.9 sma50=73284.3 rsi=57.4 macd=184.13/293.61(bear) | 15m: K=51.2↓(prev 59.0) | regime=NEUTRAL any_active=True
 2026-10-21 06:09:45,351 [INFO] [SIGNAL] CE: reg=False K=False(K=51.2>=38,rising) Kextr=False RSI=True(57.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=51.2<=80,falling) Kextr=False RSI=False(57.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 06:09:45,351 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274000PE ltp=451.65 entry=384.30 pnl=+67.35(+17.5%) sl=435.65 peak=451.65 tr_armed=True elapsed=8min
+2026-10-21 06:09:49,032 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 06:10:19,385 [INFO] [TRAIL] SL ratcheted 435.65 → 457.20  (peak=473.20)
+2026-10-21 06:10:49,802 [INFO] [TRAIL] SL ratcheted 457.20 → 496.60  (peak=512.60)
+2026-10-21 06:11:20,215 [INFO] [TRAIL] SL ratcheted 496.60 → 499.30  (peak=515.30)
+2026-10-21 06:12:21,104 [INFO] [TRAIL] SL ratcheted 499.30 → 504.00  (peak=520.00)
+2026-10-21 06:13:21,983 [INFO] EXIT: BFO:SENSEX26O2274000PE @ 504.00 reason=TRAIL_+120 pnl/sh=+119.70 is_flip=False losses=1/4
+2026-10-21 06:14:53,981 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 06:14:54,045 [INFO] [T5] open=0 trades=2 realized=+43.5pt/Rs+870 unreal=+0.0pt/Rs+0
+2026-10-21 06:14:54,045 [INFO] [INDICATORS] spot=73793.8 | 1h: close=74187.6 sma20=74291.9 sma50=73284.3 rsi=57.4 macd=184.13/293.61(bear) | 15m: K=51.2↓(prev 59.0) | regime=NEUTRAL any_active=False
+2026-10-21 06:14:54,045 [INFO] [SIGNAL] CE: reg=False K=False(K=51.2>=38,rising) Kextr=False RSI=True(57.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=51.2<=80,falling) Kextr=False RSI=False(57.4<47) MACD=True(gate off) => BLOCK
