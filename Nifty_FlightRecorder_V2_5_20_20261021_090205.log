@@ -2671,3 +2671,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 09:32:16,070 [INFO] [INDICATORS] spot=22683.5 | 1h: close=22679.8 sma20=22973.0 sma50=22763.2 rsi=35.4 macd=-15.31/37.67(bear) | 15m: K=11.9↑(prev 2.2) | regime=NEUTRAL any_active=True
 2026-10-21 09:32:16,070 [INFO] [SIGNAL] CE: reg=False K=False(K=11.9>=38,rising) Kextr=True RSI=False(35.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=11.9<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 09:32:16,070 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=162.15 entry=152.45 pnl=+9.70(+6.4%) sl=125.01 peak=184.20 tr_armed=False elapsed=120min
+2026-10-21 09:32:18,666 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 09:33:19,786 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:34:21,320 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:35:22,468 [INFO] [RENKO] dir=-1 (DOWN) bricks=18 brick=26.96 last5=[-1, -1, -1, -1, -1]
+2026-10-21 09:35:22,768 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:35:22,915 [INFO] [T5] ENTRY CE 22700 @ 189.6 tgt249.6 stp171.6 (bo+3.5 PEdec-12.0) open=1
+2026-10-21 09:37:26,357 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 09:37:26,499 [INFO] [T5] open=1 trades=3 realized=-60.4pt/Rs-3926 unreal=-8.2pt/Rs-533
+2026-10-21 09:37:26,500 [INFO] [INDICATORS] spot=22710.9 | 1h: close=22679.8 sma20=22973.0 sma50=22763.2 rsi=35.4 macd=-15.31/37.67(bear) | 15m: K=11.9↑(prev 2.2) | regime=NEUTRAL any_active=True
+2026-10-21 09:37:26,500 [INFO] [SIGNAL] CE: reg=False K=False(K=11.9>=38,rising) Kextr=True RSI=False(35.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=11.9<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 09:37:26,500 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=152.35 entry=152.45 pnl=-0.10(-0.1%) sl=125.01 peak=184.20 tr_armed=False elapsed=125min
