@@ -1427,3 +1427,22 @@
 2026-10-21 05:03:11,072 [INFO] [INDICATORS] spot=74174.8 | 1h: close=74142.8 sma20=74281.3 sma50=73247.3 rsi=56.4 macd=191.21/320.98(bear) | 15m: K=62.7↓(prev 76.5) | regime=NEUTRAL any_active=True
 2026-10-21 05:03:11,072 [INFO] [SIGNAL] CE: reg=False K=False(K=62.7>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=62.7<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 05:03:11,073 [INFO] [STATE][VWAP] PE BFO:SENSEX26O2274100PE ltp=293.75 entry=314.50 pnl=-20.75(-6.6%) sl=257.89 peak=354.00 tr_armed=False elapsed=17min
+2026-10-21 05:03:13,447 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 05:03:43,734 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:04:14,218 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:04:14,255 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=3/4 (reason=HARDSL_-18pct)
+2026-10-21 05:04:14,256 [INFO] EXIT: BFO:SENSEX26O2274100PE @ 257.89 reason=HARDSL_-18pct pnl/sh=-56.61 is_flip=False losses=1/4
+2026-10-21 05:04:45,490 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:05:15,917 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:05:16,009 [INFO] [T5] EXIT CE 74200 327.9->391.2 +63.4pt Rs+1268 [giveback] | day +63.4pt Rs+1268
+2026-10-21 05:05:47,150 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:06:17,451 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:06:47,754 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:07:18,072 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:07:48,411 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:07:48,571 [INFO] [T5] ENTRY CE 74300 @ 313.1 tgt513.1 stp295.1 (bo+28.4 PEdec-68.5) open=1
+2026-10-21 05:08:19,678 [INFO] [FLIP] PUT-flip BLOCKED — K=62.7 > 60 (too high to buy puts into) (K=62.7 prev=76.5)
+2026-10-21 05:08:19,703 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 05:08:19,835 [INFO] [T5] open=1 trades=1 realized=+63.4pt/Rs+1268 unreal=-10.8pt/Rs-215
+2026-10-21 05:08:19,835 [INFO] [INDICATORS] spot=74293.8 | 1h: close=74142.8 sma20=74281.3 sma50=73247.3 rsi=56.4 macd=191.21/320.98(bear) | 15m: K=62.7↓(prev 76.5) | regime=NEUTRAL any_active=False
+2026-10-21 05:08:19,836 [INFO] [SIGNAL] CE: reg=False K=False(K=62.7>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=62.7<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
