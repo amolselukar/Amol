@@ -2091,3 +2091,20 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 04:33:40,661 [INFO] [INDICATORS] spot=23018.1 | 1h: close=22889.0 sma20=23015.1 sma50=22726.1 rsi=48.4 macd=48.99/91.50(bear) | 15m: K=90.3↓(prev 100.0) | regime=NEUTRAL any_active=True
 2026-10-21 04:33:40,661 [INFO] [SIGNAL] CE: reg=False K=False(K=90.3>=38,rising) Kextr=True RSI=False(48.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=90.3<=80,falling) Kextr=True RSI=False(48.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 04:33:40,662 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT23050CE ltp=152.00 entry=166.35 pnl=-14.35(-8.6%) sl=136.41 peak=169.80 tr_armed=False elapsed=9min
+2026-10-21 04:33:44,105 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 04:34:14,374 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:34:45,034 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:34:45,073 [INFO] [CB] CLM loss (own count 1) — TOTAL across all engines=1/4 (reason=CLM_TRAIL)
+2026-10-21 04:34:45,074 [INFO] EXIT: NFO:NIFTY26OCT23050CE @ 149.80 reason=CLM_TRAIL pnl/sh=-16.55 is_flip=False losses=1/4
+2026-10-21 04:35:16,306 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:35:46,866 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:36:17,190 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:36:47,897 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:37:18,355 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:37:48,885 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:38:19,212 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:38:49,793 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-10-21 04:38:49,836 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:38:49,903 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 04:38:49,903 [INFO] [INDICATORS] spot=22962.8 | 1h: close=22889.0 sma20=23015.1 sma50=22726.1 rsi=48.4 macd=48.99/91.50(bear) | 15m: K=90.3↓(prev 100.0) | regime=NEUTRAL any_active=False
+2026-10-21 04:38:49,903 [INFO] [SIGNAL] CE: reg=False K=False(K=90.3>=38,rising) Kextr=True RSI=False(48.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=90.3<=80,falling) Kextr=True RSI=False(48.4<47) MACD=True(gate off) => BLOCK
