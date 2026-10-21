@@ -2191,3 +2191,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 05:25:07,767 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-11.1pt/Rs-722
 2026-10-21 05:25:07,768 [INFO] [INDICATORS] spot=22980.3 | 1h: close=22949.2 sma20=23015.9 sma50=22740.5 rsi=53.4 macd=44.42/82.08(bear) | 15m: K=51.0↓(prev 56.5) | regime=NEUTRAL any_active=False
 2026-10-21 05:25:07,768 [INFO] [SIGNAL] CE: reg=False K=False(K=51.0>=38,rising) Kextr=True RSI=True(53.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=51.0<=80,falling) Kextr=True RSI=False(53.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 05:25:10,286 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 05:28:13,922 [INFO] [T5] EXIT CE 23000 176.3->153.0 -23.3pt Rs-1515 [stop] | day -23.3pt Rs-1515
+2026-10-21 05:29:15,592 [INFO] [RENKO] dir=-1 (DOWN) bricks=8 brick=26.96 last5=[-1, -1, -1, -1, -1]
+2026-10-21 05:30:16,832 [INFO] [STOCH] CE cross (K 23.4->18.8) bar 10:45 BLOCKED -- 1m renko DOWN opposes CE with a WEAK trend (net bricks -2, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-10-21 05:30:17,463 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 113"}
+2026-10-21 05:30:17,463 [WARNING] HTML parse failed; retrying as plain text
+2026-10-21 05:30:19,431 [INFO] [CLM] SIGNAL CLM CE22950 K=5->9 hist=-1.49 ADX-side bar 10:59
+2026-10-21 05:30:19,432 [INFO] [RENKO] CLM CE BLOCKED — 1m renko DOWN-established, CE is against it (bricks=8, brick=27.0)
+2026-10-21 05:30:20,322 [INFO] [APEX] open=0 trades=1 realized=+7.3pt/Rs+475 unreal=+0.0pt/Rs+0
+2026-10-21 05:30:20,322 [INFO] [T5] open=0 trades=1 realized=-23.3pt/Rs-1515 unreal=+0.0pt/Rs+0
+2026-10-21 05:30:20,323 [INFO] [INDICATORS] spot=22952.3 | 1h: close=22949.2 sma20=23015.9 sma50=22740.5 rsi=53.4 macd=44.42/82.08(bear) | 15m: K=51.2↑(prev 51.0) | regime=NEUTRAL any_active=False
+2026-10-21 05:30:20,323 [INFO] [SIGNAL] CE: reg=False K=True(K=51.2>=38,rising) Kextr=True RSI=True(53.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=51.2<=80,falling) Kextr=True RSI=False(53.4<47) MACD=True(gate off) => BLOCK
