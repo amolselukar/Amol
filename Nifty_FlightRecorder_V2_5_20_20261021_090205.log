@@ -2475,3 +2475,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 07:54:20,053 [INFO] [INDICATORS] spot=22727.1 | 1h: close=22706.6 sma20=22985.9 sma50=22759.7 rsi=36.8 macd=1.75/50.92(bear) | 15m: K=6.2↑(prev 5.6) | regime=NEUTRAL any_active=True
 2026-10-21 07:54:20,053 [INFO] [SIGNAL] CE: reg=False K=False(K=6.2>=38,rising) Kextr=True RSI=False(36.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=6.2<=80,falling) Kextr=True RSI=True(36.8<47) MACD=True(gate off) => BLOCK
 2026-10-21 07:54:20,055 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=156.70 entry=152.45 pnl=+4.25(+2.8%) sl=125.01 peak=168.70 tr_armed=False elapsed=22min
+2026-10-21 07:54:22,545 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 07:55:23,318 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:56:24,217 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:57:25,299 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:58:26,309 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:59:27,311 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:59:27,350 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 07:59:27,350 [INFO] [T5] open=0 trades=3 realized=-60.4pt/Rs-3926 unreal=+0.0pt/Rs+0
+2026-10-21 07:59:27,351 [INFO] [INDICATORS] spot=22727.8 | 1h: close=22706.6 sma20=22985.9 sma50=22759.7 rsi=36.8 macd=1.75/50.92(bear) | 15m: K=6.2↑(prev 5.6) | regime=NEUTRAL any_active=True
+2026-10-21 07:59:27,351 [INFO] [SIGNAL] CE: reg=False K=False(K=6.2>=38,rising) Kextr=True RSI=False(36.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=6.2<=80,falling) Kextr=True RSI=True(36.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 07:59:27,351 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=157.40 entry=152.45 pnl=+4.95(+3.2%) sl=125.01 peak=168.70 tr_armed=False elapsed=27min
