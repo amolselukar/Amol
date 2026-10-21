@@ -1729,3 +1729,16 @@
 2026-10-21 07:57:21,124 [INFO] [INDICATORS] spot=73492.3 | 1h: close=73397.8 sma20=74218.6 sma50=73328.4 rsi=40.2 macd=64.91/220.72(bear) | 15m: K=8.4↑(prev 7.0) | regime=NEUTRAL any_active=True
 2026-10-21 07:57:21,124 [INFO] [SIGNAL] CE: reg=False K=False(K=8.4>=38,rising) Kextr=True RSI=False(40.2>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=8.4<=80,falling) Kextr=False RSI=True(40.2<47) MACD=True(gate off) => BLOCK
 2026-10-21 07:57:21,125 [INFO] [STATE][BASE] PE BFO:SENSEX26O2273500PE ltp=360.00 entry=364.15 pnl=-4.15(-1.1%) sl=298.60 peak=385.45 tr_armed=False elapsed=9min
+2026-10-21 07:57:24,809 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 07:57:55,115 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 07:58:25,501 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 07:58:55,834 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 07:59:26,152 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 07:59:56,473 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 08:00:26,803 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 08:00:57,128 [INFO] [VWAP] Climax skip — body=90% >= 87%
+2026-10-21 08:02:28,376 [INFO] [APEX] open=0 trades=1 realized=-12.4pt/Rs-249 unreal=+0.0pt/Rs+0
+2026-10-21 08:02:28,376 [INFO] [T5] open=0 trades=5 realized=-19.9pt/Rs-399 unreal=+0.0pt/Rs+0
+2026-10-21 08:02:28,377 [INFO] [INDICATORS] spot=73463.8 | 1h: close=73397.8 sma20=74218.6 sma50=73328.4 rsi=40.2 macd=64.91/220.72(bear) | 15m: K=14.1↑(prev 8.4) | regime=NEUTRAL any_active=True
+2026-10-21 08:02:28,377 [INFO] [SIGNAL] CE: reg=False K=False(K=14.1>=38,rising) Kextr=True RSI=False(40.2>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=14.1<=80,falling) Kextr=False RSI=True(40.2<47) MACD=True(gate off) => BLOCK
+2026-10-21 08:02:28,377 [INFO] [STATE][BASE] PE BFO:SENSEX26O2273500PE ltp=371.80 entry=364.15 pnl=+7.65(+2.1%) sl=298.60 peak=385.45 tr_armed=False elapsed=14min
