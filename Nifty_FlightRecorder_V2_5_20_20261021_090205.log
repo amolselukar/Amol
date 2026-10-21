@@ -2411,3 +2411,18 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 07:28:39,351 [INFO] [T5] open=2 trades=1 realized=-23.3pt/Rs-1515 unreal=+9.2pt/Rs+598
 2026-10-21 07:28:39,352 [INFO] [INDICATORS] spot=22769.0 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.5↑(prev 0.0) | regime=NEUTRAL any_active=False
 2026-10-21 07:28:39,352 [INFO] [SIGNAL] CE: reg=False K=False(K=0.5>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.5<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 07:28:42,142 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 07:30:13,567 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:31:14,808 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:31:45,295 [INFO] [VWAP] Signal — FUT 22794<22964 body=73% side=PE | persist_gate=dist=-172.5pt persist=True (last 2x5m vs FUTvwap=22966.5)
+2026-10-21 07:31:45,296 [INFO] [VWAP] GAP_REVERSAL_TREND day-type: gap +127, PE against it -> trend-hold exit
+2026-10-21 07:31:45,366 [INFO] ENTRY: NFO:NIFTY26OCT22700PE @ 152.45  engine=VWAP  detail=FUT VWAP 22794<22964 body=73% | bar=170 | GAP_REVERSAL_TREND gap=+127 (hold while spot keeps its VWAP)
+2026-10-21 07:32:16,596 [INFO] [RENKO] dir=-1 (DOWN) bricks=16 brick=26.96 last5=[-1, -1, -1, -1, -1]
+2026-10-21 07:32:16,788 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:33:17,877 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-21 07:33:18,015 [INFO] [T5] EXIT CE 22800 169.0->149.1 -19.9pt Rs-1294 [stop] | day -43.2pt Rs-2808
+2026-10-21 07:33:49,273 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 07:33:49,326 [INFO] [T5] open=1 trades=2 realized=-43.2pt/Rs-2808 unreal=-8.2pt/Rs-533
+2026-10-21 07:33:49,327 [INFO] [INDICATORS] spot=22735.2 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=5.6↑(prev 0.5) | regime=NEUTRAL any_active=True
+2026-10-21 07:33:49,327 [INFO] [SIGNAL] CE: reg=False K=False(K=5.6>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=5.6<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 07:33:49,328 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=157.50 entry=152.45 pnl=+5.05(+3.3%) sl=125.01 peak=159.55 tr_armed=False elapsed=2min
