@@ -1514,3 +1514,18 @@
 2026-10-21 05:39:01,241 [INFO] [T5] open=0 trades=2 realized=+43.5pt/Rs+870 unreal=+0.0pt/Rs+0
 2026-10-21 05:39:01,241 [INFO] [INDICATORS] spot=74212.9 | 1h: close=74142.8 sma20=74281.3 sma50=73247.3 rsi=56.4 macd=191.21/320.98(bear) | 15m: K=59.4↑(prev 58.1) | regime=NEUTRAL any_active=False
 2026-10-21 05:39:01,241 [INFO] [SIGNAL] CE: reg=False K=True(K=59.4>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=59.4<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 05:39:04,638 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261021_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261021_090604.csv
+2026-10-21 05:39:34,903 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74176.6 is -161.8 below SPOT VWAP 74338.4 (buffer 16)
+2026-10-21 05:40:05,228 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74176.6 is -161.8 below SPOT VWAP 74338.4 (buffer 16)
+2026-10-21 05:40:35,516 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74165.5 is -171.4 below SPOT VWAP 74336.9 (buffer 16)
+2026-10-21 05:41:05,848 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74165.5 is -169.8 below SPOT VWAP 74335.3 (buffer 16)
+2026-10-21 05:41:36,202 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74134.6 is -200.6 below SPOT VWAP 74335.3 (buffer 16)
+2026-10-21 05:42:06,613 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74180.5 is -153.3 below SPOT VWAP 74333.8 (buffer 16)
+2026-10-21 05:42:36,921 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74180.5 is -153.3 below SPOT VWAP 74333.8 (buffer 16)
+2026-10-21 05:43:07,212 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74173.4 is -159.0 below SPOT VWAP 74332.4 (buffer 16)
+2026-10-21 05:43:37,536 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74173.4 is -159.0 below SPOT VWAP 74332.4 (buffer 16)
+2026-10-21 05:44:07,810 [INFO] [VETO] FLIP CE BLOCKED — CE into a DOWNtrend: spot 74167.0 is -164.0 below SPOT VWAP 74331.0 (buffer 16)
+2026-10-21 05:44:07,848 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-21 05:44:07,848 [INFO] [T5] open=0 trades=2 realized=+43.5pt/Rs+870 unreal=+0.0pt/Rs+0
+2026-10-21 05:44:07,848 [INFO] [INDICATORS] spot=74167.0 | 1h: close=74142.8 sma20=74281.3 sma50=73247.3 rsi=56.4 macd=191.21/320.98(bear) | 15m: K=59.4↑(prev 58.1) | regime=NEUTRAL any_active=False
+2026-10-21 05:44:07,848 [INFO] [SIGNAL] CE: reg=False K=True(K=59.4>=38,rising) Kextr=False RSI=True(56.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=59.4<=80,falling) Kextr=True RSI=False(56.4<47) MACD=True(gate off) => BLOCK
