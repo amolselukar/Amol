@@ -2659,3 +2659,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 09:27:07,175 [INFO] [INDICATORS] spot=22675.8 | 1h: close=22679.8 sma20=22973.0 sma50=22763.2 rsi=35.4 macd=-15.31/37.67(bear) | 15m: K=2.2↓(prev 3.2) | regime=NEUTRAL any_active=True
 2026-10-21 09:27:07,175 [INFO] [SIGNAL] CE: reg=False K=False(K=2.2>=38,rising) Kextr=True RSI=False(35.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=2.2<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True(gate off) => BLOCK
 2026-10-21 09:27:07,175 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=167.50 entry=152.45 pnl=+15.05(+9.9%) sl=125.01 peak=184.20 tr_armed=False elapsed=115min
+2026-10-21 09:27:10,035 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 09:28:11,151 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:29:12,437 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:30:13,478 [INFO] [VWAP] GAP_REVERSAL_TREND holding — 15m close 22676.7 vs VWAP 22837.2 (ltp 163.35, peak 184.20)
+2026-10-21 09:30:13,728 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:31:14,878 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:32:16,035 [INFO] [SELLER] CLM CE skipped: ride seller-stopped side PE, block counter CE
+2026-10-21 09:32:16,069 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 09:32:16,070 [INFO] [T5] open=0 trades=3 realized=-60.4pt/Rs-3926 unreal=+0.0pt/Rs+0
+2026-10-21 09:32:16,070 [INFO] [INDICATORS] spot=22683.5 | 1h: close=22679.8 sma20=22973.0 sma50=22763.2 rsi=35.4 macd=-15.31/37.67(bear) | 15m: K=11.9↑(prev 2.2) | regime=NEUTRAL any_active=True
+2026-10-21 09:32:16,070 [INFO] [SIGNAL] CE: reg=False K=False(K=11.9>=38,rising) Kextr=True RSI=False(35.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=11.9<=80,falling) Kextr=True RSI=True(35.4<47) MACD=True(gate off) => BLOCK
+2026-10-21 09:32:16,070 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=162.15 entry=152.45 pnl=+9.70(+6.4%) sl=125.01 peak=184.20 tr_armed=False elapsed=120min
