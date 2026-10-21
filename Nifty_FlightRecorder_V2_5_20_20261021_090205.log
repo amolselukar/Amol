@@ -2381,3 +2381,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 07:07:57,883 [INFO] [INDICATORS] spot=22752.1 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.0↓(prev 0.2) | regime=NEUTRAL any_active=True
 2026-10-21 07:07:57,883 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
 2026-10-21 07:07:57,885 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22750PE ltp=181.55 entry=174.00 pnl=+7.55(+4.3%) sl=142.68 peak=181.55 tr_armed=False elapsed=5min
+2026-10-21 07:08:01,170 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 07:11:35,857 [INFO] [APEX] EXIT CE 22800 159.8->158.7 -1.1pt Rs-68 [exhaust] | day +6.2pt Rs+406
+2026-10-21 07:11:36,745 [INFO] [APEX] EXIT CE 22800 168.4->158.7 -9.8pt Rs-634 [exhaust] | day -3.5pt Rs-228
+2026-10-21 07:11:37,597 [INFO] [APEX] EXIT CE 22800 162.8->157.9 -4.9pt Rs-319 [exhaust] | day -8.4pt Rs-546
+2026-10-21 07:13:10,040 [INFO] [APEX] open=0 trades=4 realized=-8.4pt/Rs-546 unreal=+0.0pt/Rs+0
+2026-10-21 07:13:10,162 [INFO] [T5] open=1 trades=1 realized=-23.3pt/Rs-1515 unreal=-6.8pt/Rs-439
+2026-10-21 07:13:10,162 [INFO] [INDICATORS] spot=22752.7 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.0↓(prev 0.2) | regime=NEUTRAL any_active=True
+2026-10-21 07:13:10,162 [INFO] [SIGNAL] CE: reg=False K=False(K=0.0>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 07:13:10,164 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22750PE ltp=182.90 entry=174.00 pnl=+8.90(+5.1%) sl=142.68 peak=184.70 tr_armed=False elapsed=10min
