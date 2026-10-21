@@ -2335,3 +2335,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-21 06:42:13,325 [INFO] [SIGNAL] CE: reg=False K=False(K=9.6>=38,rising) Kextr=True RSI=True(53.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=9.6<=80,falling) Kextr=True RSI=False(53.9<47) MACD=True(gate off) => BLOCK
 2026-10-21 06:42:13,325 [INFO] [STATE][FAST] PE NFO:NIFTY26OCT22900PE ltp=235.40 entry=154.70 pnl=+80.70(+52.2%) sl=0.00 peak=235.40 tr_armed=False elapsed=50min
 2026-10-21 06:42:13,326 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22850PE ltp=206.65 entry=189.05 pnl=+17.60(+9.3%) sl=155.02 peak=206.65 tr_armed=False elapsed=14min
+2026-10-21 06:42:15,759 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261021_090205.log, Nifty_BarLevel_V2_5_20_20261021_090205.csv
+2026-10-21 06:46:19,532 [INFO] [RENKO] dir=-1 (DOWN) bricks=15 brick=26.96 last5=[-1, -1, -1, -1, -1]
+2026-10-21 06:46:19,539 [INFO] [VWAP] Signal — FUT 22760<22990 body=80% side=PE | persist_gate=dist=-233.1pt persist=True (last 2x5m vs FUTvwap=22993.2)
+2026-10-21 06:46:19,540 [INFO] [VWAP] GAP_REVERSAL_TREND day-type: gap +127, PE against it -> trend-hold exit
+2026-10-21 06:46:19,540 [INFO] [FAST] VWAP PE BLOCKED -- FAST already holds PE
+2026-10-21 06:47:20,596 [INFO] EXIT: NFO:NIFTY26OCT22850PE @ 225.30 reason=CLM_STOCH_PEAK pnl/sh=+36.25 is_flip=False losses=1/4
+2026-10-21 06:47:21,447 [INFO] [APEX] open=0 trades=1 realized=+7.3pt/Rs+475 unreal=+0.0pt/Rs+0
+2026-10-21 06:47:21,447 [INFO] [T5] open=0 trades=1 realized=-23.3pt/Rs-1515 unreal=+0.0pt/Rs+0
+2026-10-21 06:47:21,447 [INFO] [INDICATORS] spot=22737.2 | 1h: close=22745.2 sma20=23002.1 sma50=22754.9 rsi=38.8 macd=20.76/63.21(bear) | 15m: K=0.2↓(prev 9.6) | regime=NEUTRAL any_active=True
+2026-10-21 06:47:21,447 [INFO] [SIGNAL] CE: reg=False K=False(K=0.2>=38,rising) Kextr=True RSI=False(38.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=0.2<=80,falling) Kextr=True RSI=True(38.8<47) MACD=True(gate off) => BLOCK
+2026-10-21 06:47:21,448 [INFO] [STATE][FAST] PE NFO:NIFTY26OCT22900PE ltp=253.75 entry=154.70 pnl=+99.05(+64.0%) sl=0.00 peak=264.65 tr_armed=False elapsed=55min
