@@ -2332,3 +2332,26 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 06:41:51,137 [INFO] [SIGNAL] CE: reg=False K=False(K=62.0>=38,rising) Kextr=True RSI=False(46.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=62.0<=80,falling) Kextr=True RSI=True(46.1<47) MACD=True(gate off) => BLOCK
 2026-10-22 06:41:51,138 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=150.30 entry=134.70 pnl=+15.60(+11.6%) sl=145.60 peak=150.60 tr_armed=True elapsed=10min
 2026-10-22 06:41:51,139 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22650PE ltp=175.25 entry=160.20 pnl=+15.05(+9.4%) sl=131.36 peak=175.25 tr_armed=False elapsed=12min
+2026-10-22 06:41:53,687 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 06:42:23,970 [INFO] [TRAIL] SL ratcheted 145.60 → 147.65  (peak=152.65)
+2026-10-22 06:42:24,740 [INFO] [FAST] SIGNAL 1m momentum PE22600 score=170 vol=3.4x U=+30 momN=11.9% trend=PE bar 12:11; trail 15
+2026-10-22 06:42:24,781 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22600PE
+2026-10-22 06:42:24,784 [INFO] ENTRY: NFO:NIFTY26OCT22600PE @ 152.65  engine=FAST  detail=1m momentum PE22600 score=170 vol=3.4x U=+30 momN=11.9% trend=PE bar 12:11; trail 15
+2026-10-22 06:42:56,062 [INFO] EXIT: NFO:NIFTY26OCT22600PE @ 147.65 reason=TRAIL_+13 pnl/sh=+12.95 is_flip=False losses=0/4
+2026-10-22 06:44:28,538 [INFO] EXIT: NFO:NIFTY26OCT22650PE @ 165.55 reason=CLM_STOCH_PEAK pnl/sh=+5.35 is_flip=False losses=5/4
+2026-10-22 06:44:59,724 [INFO] [CB] FAST loss NOT counted toward the circuit breaker (user 2026-09-17: FAST has no daily stop and must not halt other engines)
+2026-10-22 06:44:59,724 [INFO] EXIT: NFO:NIFTY26OCT22600PE @ 137.65 reason=FAST_TRAIL15 pnl/sh=-15.00 is_flip=False losses=0/4
+2026-10-22 06:45:31,243 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 141.65 spot=22613.7 | K=62.0↓ RSI=46.1 MACD✓
+2026-10-22 06:45:31,252 [INFO] [VWAP] Signal — FUT 22650<22681 body=66% side=PE | persist_gate=dist=-30.9pt persist=True (last 2x5m vs FUTvwap=22677.6)
+2026-10-22 06:45:31,303 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22600PE
+2026-10-22 06:45:31,308 [INFO] ENTRY: NFO:NIFTY26OCT22600PE @ 141.65  engine=VWAP  detail=FUT VWAP 22650<22681 body=66% | bar=179
+2026-10-22 06:45:32,296 [INFO] [STOCH] CE cross (K 32.7->10.1) bar 12:00 BLOCKED -- 1m renko DOWN opposes CE with a WEAK trend (net bricks +2, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-10-22 06:45:32,908 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 113"}
+2026-10-22 06:45:32,908 [WARNING] HTML parse failed; retrying as plain text
+2026-10-22 06:46:36,194 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 144.75 spot=22605.8 | K=38.9↓ RSI=38.4 MACD✓
+2026-10-22 06:47:06,743 [INFO] [RENKO] dir=-1 (DOWN) bricks=16 brick=27.59 last5=[1, -1, -1, -1, -1]
+2026-10-22 06:47:07,166 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 06:47:07,231 [INFO] [T5] open=0 trades=2 realized=-1.1pt/Rs-75 unreal=+0.0pt/Rs+0
+2026-10-22 06:47:07,231 [INFO] [INDICATORS] spot=22605.8 | 1h: close=22613.7 sma20=22882.7 sma50=22785.8 rsi=38.4 macd=-48.64/-12.19(bear) | 15m: K=38.9↓(prev 62.0) | regime=NEUTRAL any_active=True
+2026-10-22 06:47:07,231 [INFO] [SIGNAL] CE: reg=False K=False(K=38.9>=38,rising) Kextr=True RSI=False(38.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=38.9<=80,falling) Kextr=True RSI=True(38.4<47) MACD=True(gate off) => BLOCK
+2026-10-22 06:47:07,232 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=146.45 entry=141.65 pnl=+4.80(+3.4%) sl=116.15 peak=146.45 tr_armed=False elapsed=1min
