@@ -2457,3 +2457,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 07:38:42,599 [INFO] [INDICATORS] spot=22693.0 | 1h: close=22613.7 sma20=22882.7 sma50=22785.8 rsi=38.4 macd=-48.64/-12.19(bear) | 15m: K=46.4↑(prev 27.4) | regime=NEUTRAL any_active=True
 2026-10-22 07:38:42,600 [INFO] [SIGNAL] CE: reg=False K=True(K=46.4>=38,rising) Kextr=True RSI=False(38.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=46.4<=80,falling) Kextr=True RSI=True(38.4<47) MACD=True(gate off) => BLOCK
 2026-10-22 07:38:42,600 [INFO] [STATE][BASE] CE NFO:NIFTY26OCT22700CE ltp=168.80 entry=178.80 pnl=-10.00(-5.6%) sl=146.62 peak=178.80 tr_armed=False elapsed=7min
+2026-10-22 07:38:45,160 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 07:39:15,477 [INFO] [RENKO] dir=+1 (UP) bricks=21 brick=27.59 last5=[-1, 1, 1, 1, 1]
+2026-10-22 07:39:15,640 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:40:16,915 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:41:18,567 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:42:19,564 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:43:20,461 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:43:50,997 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 07:43:50,998 [INFO] [T5] open=0 trades=4 realized=+46.7pt/Rs+3036 unreal=+0.0pt/Rs+0
+2026-10-22 07:43:50,998 [INFO] [INDICATORS] spot=22677.8 | 1h: close=22613.7 sma20=22882.7 sma50=22785.8 rsi=38.4 macd=-48.64/-12.19(bear) | 15m: K=46.4↑(prev 27.4) | regime=NEUTRAL any_active=True
+2026-10-22 07:43:50,999 [INFO] [SIGNAL] CE: reg=False K=True(K=46.4>=38,rising) Kextr=True RSI=False(38.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=46.4<=80,falling) Kextr=True RSI=True(38.4<47) MACD=True(gate off) => BLOCK
+2026-10-22 07:43:50,999 [INFO] [STATE][BASE] CE NFO:NIFTY26OCT22700CE ltp=155.75 entry=178.80 pnl=-23.05(-12.9%) sl=146.62 peak=178.80 tr_armed=False elapsed=12min
