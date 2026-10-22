@@ -2048,3 +2048,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 04:12:59,570 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-22 04:12:59,571 [INFO] [INDICATORS] spot=22626.7 | 1h: close=22811.3 sma20=22945.9 sma50=22772.6 rsi=46.5 macd=-24.35/15.44(bear) | 15m: K=72.6↓(prev 77.2) | regime=NEUTRAL any_active=False
 2026-10-22 04:12:59,571 [INFO] [SIGNAL] CE: reg=False K=False(K=72.6>=38,rising) Kextr=True RSI=False(46.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=72.6<=80,falling) Kextr=True RSI=True(46.5<47) MACD=True(gate off) => BLOCK
+2026-10-22 04:13:02,364 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 04:13:32,820 [INFO] [FAST] CE22650 score=176 vol=1.51 U=47.9 skipped: leader score=176 vol=1.51 U=47.9
+2026-10-22 04:14:33,708 [INFO] [RENKO] dir=+1 (UP) bricks=4 brick=27.59 last5=[1, -1, 1, 1]
+2026-10-22 04:15:04,984 [INFO] [RENKO] V2 PE BLOCKED — 1m renko UP-established, PE is against it (bricks=4, brick=27.6)
+2026-10-22 04:16:37,125 [INFO] [RENKO] V2 PE BLOCKED — 1m renko UP-established, PE is against it (bricks=4, brick=27.6)
+2026-10-22 04:18:08,455 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 04:18:08,503 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 04:18:08,504 [INFO] [INDICATORS] spot=22649.3 | 1h: close=22811.3 sma20=22945.9 sma50=22772.6 rsi=46.5 macd=-24.35/15.44(bear) | 15m: K=52.9↓(prev 72.6) | regime=NEUTRAL any_active=False
+2026-10-22 04:18:08,504 [INFO] [SIGNAL] CE: reg=False K=False(K=52.9>=38,rising) Kextr=True RSI=False(46.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=52.9<=80,falling) Kextr=True RSI=True(46.5<47) MACD=True(gate off) => BLOCK
