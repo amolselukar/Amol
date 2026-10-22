@@ -1733,3 +1733,13 @@
 2026-10-22 09:23:44,669 [INFO] [T5] open=0 trades=7 realized=+14.8pt/Rs+296 unreal=+0.0pt/Rs+0
 2026-10-22 09:23:44,669 [INFO] [INDICATORS] spot=73243.7 | 1h: close=73173.4 sma20=73776.6 sma50=73513.1 rsi=41.8 macd=-130.49/-28.96(bear) | 15m: K=48.8↑(prev 28.7) | regime=NEUTRAL any_active=False
 2026-10-22 09:23:44,669 [INFO] [SIGNAL] CE: reg=False K=True(K=48.8>=38,rising) Kextr=False RSI=False(41.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=48.8<=80,falling) Kextr=False RSI=True(41.8<47) MACD=True(gate off) => BLOCK
+2026-10-22 09:23:47,175 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261022_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261022_090603.csv
+2026-10-22 09:27:20,765 [INFO] [EXP12] anchor=spot M=73200 (max-OI would be 73000, diverged by -200) spot=73240.5
+2026-10-22 09:27:20,765 [INFO] [EXP12] universe RE-resolved: M=73200 legs=[(73100, 'CE'), (73100, 'PE'), (73200, 'CE'), (73200, 'PE'), (73300, 'CE'), (73300, 'PE')]
+2026-10-22 09:27:20,933 [INFO] [EXP12] M=73200 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-22 09:28:21,976 [INFO] [EXP12] EXP2 ENTRY 73300CE @ 60.25 (cheap-ladder bar@14:56=60.85 dist=-58 oi15=-7.7%)
+2026-10-22 09:28:22,783 [INFO] [EXP12] EXP2W declined 73300CE @14:56 (not a decay INTO the band) — EXP2 took it
+2026-10-22 09:28:53,166 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 09:28:53,166 [INFO] [T5] open=0 trades=7 realized=+14.8pt/Rs+296 unreal=+0.0pt/Rs+0
+2026-10-22 09:28:53,166 [INFO] [INDICATORS] spot=73241.6 | 1h: close=73173.4 sma20=73776.6 sma50=73513.1 rsi=41.8 macd=-130.49/-28.96(bear) | 15m: K=48.8↑(prev 28.7) | regime=NEUTRAL any_active=False
+2026-10-22 09:28:53,167 [INFO] [SIGNAL] CE: reg=False K=True(K=48.8>=38,rising) Kextr=False RSI=False(41.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=48.8<=80,falling) Kextr=False RSI=True(41.8<47) MACD=True(gate off) => BLOCK
