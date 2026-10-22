@@ -2227,3 +2227,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 06:00:41,392 [INFO] [INDICATORS] spot=22758.8 | 1h: close=22776.4 sma20=22907.8 sma50=22781.4 rsi=46.1 macd=-36.03/-3.08(bear) | 15m: K=93.2↑(prev 88.1) | regime=NEUTRAL any_active=True
 2026-10-22 06:00:41,392 [INFO] [SIGNAL] CE: reg=False K=True(K=93.2>=38,rising) Kextr=True RSI=False(46.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=93.2<=80,falling) Kextr=True RSI=True(46.1<47) MACD=True(gate off) => BLOCK
 2026-10-22 06:00:41,394 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT22750CE ltp=167.35 entry=172.50 pnl=-5.15(-3.0%) sl=141.45 peak=177.90 tr_armed=False elapsed=8min
+2026-10-22 06:00:44,032 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 06:03:16,226 [INFO] [CB] CLM loss (own count 5) — TOTAL across all engines=5/4 (reason=CLM_TRAIL)
+2026-10-22 06:03:16,228 [INFO] EXIT: NFO:NIFTY26OCT22750CE @ 157.90 reason=CLM_TRAIL pnl/sh=-14.60 is_flip=False losses=5/4
+2026-10-22 06:05:18,736 [INFO] [FAST] PE22700 score=219 vol=2.87 U=47.5 skipped: VRTREND counter CE
+2026-10-22 06:05:49,061 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=12 brick=27.59 last5=[1, 1, 1, -1, 1]
+2026-10-22 06:05:49,089 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 06:05:49,089 [INFO] [T5] open=0 trades=1 realized=-18.7pt/Rs-1219 unreal=+0.0pt/Rs+0
+2026-10-22 06:05:49,090 [INFO] [INDICATORS] spot=22715.8 | 1h: close=22776.4 sma20=22907.8 sma50=22781.4 rsi=46.1 macd=-36.03/-3.08(bear) | 15m: K=93.2↑(prev 88.1) | regime=NEUTRAL any_active=False
+2026-10-22 06:05:49,090 [INFO] [SIGNAL] CE: reg=False K=True(K=93.2>=38,rising) Kextr=True RSI=False(46.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=93.2<=80,falling) Kextr=True RSI=True(46.1<47) MACD=True(gate off) => BLOCK
