@@ -2737,3 +2737,24 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 09:16:26,641 [INFO] [INDICATORS] spot=22690.7 | 1h: close=22624.1 sma20=22835.9 sma50=22797.1 rsi=40.0 macd=-60.29/-28.41(bear) | 15m: K=53.3↑(prev 34.4) | regime=NEUTRAL any_active=True
 2026-10-22 09:16:26,641 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=False(40.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=True(40.0<47) MACD=True(gate off) => BLOCK
 2026-10-22 09:16:26,643 [INFO] [STATE][FAST] CE NFO:NIFTY26OCT22700CE ltp=165.50 entry=179.50 pnl=-14.00(-7.8%) sl=0.00 peak=179.50 tr_armed=False elapsed=1min
+2026-10-22 09:16:29,562 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 09:16:59,904 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:16:59,939 [INFO] [CB] FAST loss NOT counted toward the circuit breaker (user 2026-09-17: FAST has no daily stop and must not halt other engines)
+2026-10-22 09:16:59,942 [INFO] EXIT: NFO:NIFTY26OCT22700CE @ 164.50 reason=FAST_TRAIL15 pnl/sh=-15.00 is_flip=False losses=0/4
+2026-10-22 09:17:31,276 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:17:31,532 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 09:18:01,965 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:18:02,219 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 09:18:32,606 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:19:03,035 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:19:03,276 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 09:19:33,680 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:20:04,103 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:20:04,390 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 09:20:34,800 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:21:05,171 [INFO] [FLIP] CE BLOCKED -- last 60m index range 95 pts = 3.5 bricks < 4 (brick 27.6) -- box, no flip
+2026-10-22 09:21:05,504 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 09:21:35,935 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 09:21:36,005 [INFO] [T5] open=0 trades=5 realized=+69.2pt/Rs+4498 unreal=+0.0pt/Rs+0
+2026-10-22 09:21:36,006 [INFO] [INDICATORS] spot=22657.8 | 1h: close=22624.1 sma20=22835.9 sma50=22797.1 rsi=40.0 macd=-60.29/-28.41(bear) | 15m: K=53.3↑(prev 34.4) | regime=NEUTRAL any_active=False
+2026-10-22 09:21:36,006 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=False(40.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=True(40.0<47) MACD=True(gate off) => BLOCK
