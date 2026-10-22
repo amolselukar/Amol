@@ -2076,3 +2076,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 04:28:25,644 [INFO] [INDICATORS] spot=22640.7 | 1h: close=22811.3 sma20=22945.9 sma50=22772.6 rsi=46.5 macd=-24.35/15.44(bear) | 15m: K=52.9↓(prev 72.6) | regime=NEUTRAL any_active=True
 2026-10-22 04:28:25,644 [INFO] [SIGNAL] CE: reg=False K=False(K=52.9>=38,rising) Kextr=True RSI=False(46.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=52.9<=80,falling) Kextr=True RSI=True(46.5<47) MACD=True(gate off) => BLOCK
 2026-10-22 04:28:25,644 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT22650CE ltp=147.75 entry=173.05 pnl=-25.30(-14.6%) sl=141.90 peak=173.05 tr_armed=False elapsed=0min
+2026-10-22 04:28:28,125 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 04:29:59,327 [INFO] [RENKO] dir=+1 (UP) bricks=4 brick=27.59 last5=[1, -1, 1, 1]
+2026-10-22 04:30:29,687 [INFO] [RENKO] V2 PE BLOCKED — 1m renko UP-established, PE is against it (bricks=4, brick=27.6)
+2026-10-22 04:31:31,763 [INFO] [RENKO] V2 PE BLOCKED — 1m renko UP-established, PE is against it (bricks=4, brick=27.6)
+2026-10-22 04:33:03,272 [INFO] [CB] CLM loss (own count 2) — TOTAL across all engines=2/4 (reason=CLM_TRAIL)
+2026-10-22 04:33:03,273 [INFO] EXIT: NFO:NIFTY26OCT22650CE @ 156.10 reason=CLM_TRAIL pnl/sh=-16.95 is_flip=False losses=2/4
+2026-10-22 04:33:34,566 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 04:33:34,619 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 04:33:34,620 [INFO] [INDICATORS] spot=22605.5 | 1h: close=22811.3 sma20=22945.9 sma50=22772.6 rsi=46.5 macd=-24.35/15.44(bear) | 15m: K=32.4↓(prev 52.9) | regime=NEUTRAL any_active=False
+2026-10-22 04:33:34,620 [INFO] [SIGNAL] CE: reg=False K=False(K=32.4>=38,rising) Kextr=True RSI=False(46.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=32.4<=80,falling) Kextr=True RSI=True(46.5<47) MACD=True(gate off) => BLOCK
