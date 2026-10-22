@@ -1513,3 +1513,18 @@
 2026-10-22 07:00:29,442 [INFO] [T5] open=0 trades=5 realized=+58.9pt/Rs+1178 unreal=+0.0pt/Rs+0
 2026-10-22 07:00:29,442 [INFO] [INDICATORS] spot=73213.6 | 1h: close=73154.6 sma20=73916.2 sma50=73458.5 rsi=40.7 macd=-90.54/22.12(bear) | 15m: K=23.0↓(prev 32.2) | regime=NEUTRAL any_active=False
 2026-10-22 07:00:29,442 [INFO] [SIGNAL] CE: reg=False K=False(K=23.0>=38,rising) Kextr=False RSI=False(40.7>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=23.0<=80,falling) Kextr=True RSI=True(40.7<47) MACD=True(gate off) => BLOCK
+2026-10-22 07:00:32,129 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261022_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261022_090603.csv
+2026-10-22 07:01:02,499 [INFO] [T5] ENTRY CE 73200 @ 158.8 tgt358.8 stp140.8 (bo+26.4 PEdec-79.7) open=1
+2026-10-22 07:01:33,552 [INFO] [VWAP] Cooldown BLOCK — PE 4.1min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:02:03,924 [INFO] [VWAP] Cooldown BLOCK — PE 4.6min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:02:34,299 [INFO] [VWAP] Cooldown BLOCK — PE 5.1min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:03:04,694 [INFO] [VWAP] Cooldown BLOCK — PE 5.6min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:03:35,077 [INFO] [VWAP] Cooldown BLOCK — PE 6.1min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:04:05,463 [INFO] [VWAP] Cooldown BLOCK — PE 6.6min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:04:35,805 [INFO] [VWAP] Cooldown BLOCK — PE 7.1min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:05:06,255 [INFO] [VWAP] Cooldown BLOCK — PE 7.7min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:05:36,603 [INFO] [VWAP] Cooldown BLOCK — PE 8.2min since last VWAP PE loss (cooldown 30min)
+2026-10-22 07:05:36,627 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 07:05:36,683 [INFO] [T5] open=1 trades=5 realized=+58.9pt/Rs+1178 unreal=+15.0pt/Rs+300
+2026-10-22 07:05:36,684 [INFO] [INDICATORS] spot=73213.5 | 1h: close=73154.6 sma20=73916.2 sma50=73458.5 rsi=40.7 macd=-90.54/22.12(bear) | 15m: K=23.0↓(prev 32.2) | regime=NEUTRAL any_active=False
+2026-10-22 07:05:36,684 [INFO] [SIGNAL] CE: reg=False K=False(K=23.0>=38,rising) Kextr=True RSI=False(40.7>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=23.0<=80,falling) Kextr=True RSI=True(40.7<47) MACD=True(gate off) => BLOCK
