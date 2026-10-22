@@ -2650,3 +2650,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 08:40:30,153 [INFO] [T5] open=1 trades=4 realized=+46.7pt/Rs+3036 unreal=-10.0pt/Rs-650
 2026-10-22 08:40:30,154 [INFO] [INDICATORS] spot=22624.5 | 1h: close=22670.2 sma20=22860.6 sma50=22791.9 rsi=42.0 macd=-53.45/-20.44(bear) | 15m: K=31.6↓(prev 34.9) | regime=NEUTRAL any_active=False
 2026-10-22 08:40:30,154 [INFO] [SIGNAL] CE: reg=False K=False(K=31.6>=38,rising) Kextr=True RSI=False(42.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=31.6<=80,falling) Kextr=True RSI=True(42.0<47) MACD=True(gate off) => BLOCK
+2026-10-22 08:40:33,200 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 08:41:03,758 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:42:04,843 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:43:05,873 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:44:06,993 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:45:07,927 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 116.20 spot=22627.2 | K=31.6↓ RSI=42.0 MACD✓
+2026-10-22 08:45:08,153 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:45:38,632 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 08:45:38,706 [INFO] [T5] open=1 trades=4 realized=+46.7pt/Rs+3036 unreal=-10.2pt/Rs-663
+2026-10-22 08:45:38,706 [INFO] [INDICATORS] spot=22624.1 | 1h: close=22624.1 sma20=22835.9 sma50=22797.1 rsi=42.0 macd=-53.45/-20.44(bear) | 15m: K=33.0↑(prev 31.6) | regime=NEUTRAL any_active=False
+2026-10-22 08:45:38,706 [INFO] [SIGNAL] CE: reg=False K=False(K=33.0>=38,rising) Kextr=True RSI=False(42.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=33.0<=80,falling) Kextr=True RSI=True(42.0<47) MACD=True(gate off) => BLOCK
