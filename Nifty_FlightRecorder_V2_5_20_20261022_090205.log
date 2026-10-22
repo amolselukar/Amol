@@ -2145,3 +2145,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 05:04:18,887 [INFO] [SIGNAL] CE: reg=False K=True(K=55.3>=38,rising) Kextr=True RSI=False(38.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=55.3<=80,falling) Kextr=True RSI=True(38.5<47) MACD=True(gate off) => BLOCK
 2026-10-22 05:04:18,888 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26OCT22700CE ltp=204.90 entry=188.80 pnl=+16.10(+8.5%) sl=0.00 peak=204.90 tr_armed=False elapsed=2min
 2026-10-22 05:04:18,888 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT22750CE ltp=175.70 entry=173.00 pnl=+2.70(+1.6%) sl=141.86 peak=175.70 tr_armed=False elapsed=1min
+2026-10-22 05:04:22,335 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 05:05:22,984 [INFO] [FAST] CE22750 score=199 vol=1.36 U=51.1 skipped: leader score=199 vol=1.36 U=51.1
+2026-10-22 05:06:23,778 [INFO] [BREAKWATCH] GAPBREAK CE NFO:NIFTY26OCT22700CE entry 10:31 score 4/6 -> KEEP | {'progress_x': 1.461, 'other_idx_dir%': 0.3937, 'hw_breadth': 0.8333, 'hw_basket_dir%': 0.313, 'hw_top4_agree': 0.75, 'sellers_sameOTM_oi%': 21.8395} missing=[] fetch_fail=[]
+2026-10-22 05:06:54,204 [INFO] EXIT: NFO:NIFTY26OCT22700CE @ 196.80 reason=GAPBREAK_LOCK_FLOOR pnl/sh=+8.00 is_flip=False losses=0/4
+2026-10-22 05:09:26,750 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 05:09:26,751 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 05:09:26,751 [INFO] [INDICATORS] spot=22758.3 | 1h: close=22667.9 sma20=22924.8 sma50=22775.5 rsi=38.5 macd=-35.98/5.16(bear) | 15m: K=55.3↑(prev 44.0) | regime=NEUTRAL any_active=True
+2026-10-22 05:09:26,751 [INFO] [SIGNAL] CE: reg=False K=True(K=55.3>=38,rising) Kextr=True RSI=False(38.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=55.3<=80,falling) Kextr=True RSI=True(38.5<47) MACD=True(gate off) => BLOCK
+2026-10-22 05:09:26,752 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT22750CE ltp=173.95 entry=173.00 pnl=+0.95(+0.5%) sl=141.86 peak=179.25 tr_armed=False elapsed=6min
