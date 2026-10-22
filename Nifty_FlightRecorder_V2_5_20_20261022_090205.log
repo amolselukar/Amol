@@ -2541,3 +2541,24 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 08:04:27,564 [INFO] [T5] open=0 trades=4 realized=+46.7pt/Rs+3036 unreal=+0.0pt/Rs+0
 2026-10-22 08:04:27,565 [INFO] [INDICATORS] spot=22622.7 | 1h: close=22670.2 sma20=22860.6 sma50=22791.9 rsi=42.0 macd=-53.45/-20.44(bear) | 15m: K=52.8↓(prev 53.8) | regime=NEUTRAL any_active=False
 2026-10-22 08:04:27,566 [INFO] [SIGNAL] CE: reg=False K=False(K=52.8>=38,rising) Kextr=True RSI=False(42.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=52.8<=80,falling) Kextr=True RSI=True(42.0<47) MACD=True(gate off) => BLOCK
+2026-10-22 08:04:30,206 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 08:05:00,571 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:05:00,830 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:05:31,280 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:06:01,682 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:06:01,950 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:06:32,321 [INFO] [RENKO] dir=-1 (DOWN) bricks=24 brick=27.59 last5=[1, 1, -1, -1, -1]
+2026-10-22 08:06:32,323 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:07:02,692 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:07:02,940 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:07:33,348 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:08:03,779 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:08:04,266 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:08:34,616 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:09:05,123 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:09:05,421 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 08:09:36,683 [INFO] [FLIP] PUT-flip BLOCKED — K fell only 0.9 (< 2, noise tick) (K=52.8 prev=53.8)
+2026-10-22 08:09:36,715 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 08:09:36,784 [INFO] [T5] open=0 trades=4 realized=+46.7pt/Rs+3036 unreal=+0.0pt/Rs+0
+2026-10-22 08:09:36,784 [INFO] [INDICATORS] spot=22609.8 | 1h: close=22670.2 sma20=22860.6 sma50=22791.9 rsi=42.0 macd=-53.45/-20.44(bear) | 15m: K=52.8↓(prev 53.8) | regime=NEUTRAL any_active=False
+2026-10-22 08:09:36,785 [INFO] [SIGNAL] CE: reg=False K=False(K=52.8>=38,rising) Kextr=True RSI=False(42.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=52.8<=80,falling) Kextr=True RSI=True(42.0<47) MACD=True(gate off) => BLOCK
