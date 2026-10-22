@@ -2488,3 +2488,24 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 07:48:59,747 [INFO] [SIGNAL] CE: reg=False K=True(K=53.8>=38,rising) Kextr=True RSI=False(42.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=53.8<=80,falling) Kextr=True RSI=True(42.0<47) MACD=True(gate off) => BLOCK
 2026-10-22 07:48:59,747 [INFO] [STATE][BASE] CE NFO:NIFTY26OCT22700CE ltp=156.00 entry=178.80 pnl=-22.80(-12.8%) sl=146.62 peak=178.80 tr_armed=False elapsed=17min
 2026-10-22 07:48:59,747 [INFO] [STATE][VWAP] CE NFO:NIFTY26OCT22700CE ltp=156.00 entry=162.30 pnl=-6.30(-3.9%) sl=133.09 peak=171.40 tr_armed=False elapsed=2min
+2026-10-22 07:49:02,324 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 07:49:32,817 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:50:03,442 [INFO] [FAST] PE22650 score=102 vol=1.86 U=12.0 skipped: leader score=102 vol=1.86 U=12.0
+2026-10-22 07:50:03,447 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:51:04,374 [INFO] [RENKO] dir=-1 (DOWN) bricks=23 brick=27.59 last5=[1, 1, 1, -1, -1]
+2026-10-22 07:51:04,404 [INFO] EXIT: NFO:NIFTY26OCT22700CE @ 146.62 reason=HARDSL_-18pct pnl/sh=-32.18 is_flip=True losses=0/4
+2026-10-22 07:51:05,357 [INFO] [FAST] SIGNAL 1m momentum PE22650 score=232 vol=2.6x U=+44 momN=18.2% trend=off bar 13:20; trail 15
+2026-10-22 07:51:05,440 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22650PE
+2026-10-22 07:51:05,444 [INFO] ENTRY: NFO:NIFTY26OCT22650PE @ 138.95  engine=FAST  detail=1m momentum PE22650 score=232 vol=2.6x U=+44 momN=18.2% trend=off bar 13:20; trail 15
+2026-10-22 07:51:06,283 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:51:37,061 [INFO] [BREAKWATCH] VWAP CE NFO:NIFTY26OCT22700CE entry 13:16 score 1/6 -> CUT | {'progress_x': -1.8415, 'other_idx_dir%': -0.2228, 'hw_breadth': 0.0, 'hw_basket_dir%': -0.2134, 'hw_top4_agree': 0.0, 'sellers_sameOTM_oi%': -1.0123} missing=[] fetch_fail=[]
+2026-10-22 07:51:37,063 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=7/4 (reason=BREAKWATCH_CUT_s1)
+2026-10-22 07:51:37,063 [INFO] EXIT: NFO:NIFTY26OCT22700CE @ 147.45 reason=BREAKWATCH_CUT_s1 pnl/sh=-14.85 is_flip=False losses=2/4
+2026-10-22 07:52:08,470 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:53:09,406 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:54:11,231 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-22 07:54:11,262 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 07:54:11,317 [INFO] [T5] open=0 trades=4 realized=+46.7pt/Rs+3036 unreal=+0.0pt/Rs+0
+2026-10-22 07:54:11,317 [INFO] [INDICATORS] spot=22657.4 | 1h: close=22670.2 sma20=22860.6 sma50=22791.9 rsi=42.0 macd=-53.45/-20.44(bear) | 15m: K=53.8↑(prev 46.4) | regime=NEUTRAL any_active=True
+2026-10-22 07:54:11,317 [INFO] [SIGNAL] CE: reg=False K=True(K=53.8>=38,rising) Kextr=True RSI=False(42.0>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=53.8<=80,falling) Kextr=True RSI=True(42.0<47) MACD=True(gate off) => BLOCK
+2026-10-22 07:54:11,318 [INFO] [STATE][FAST] PE NFO:NIFTY26OCT22650PE ltp=133.05 entry=138.95 pnl=-5.90(-4.2%) sl=0.00 peak=138.95 tr_armed=False elapsed=3min
