@@ -1339,3 +1339,10 @@
 2026-10-22 05:02:44,456 [INFO] [INDICATORS] spot=73530.0 | 1h: close=73324.2 sma20=74038.5 sma50=73405.3 rsi=41.4 macd=-54.25/75.52(bear) | 15m: K=59.3↑(prev 47.7) | regime=NEUTRAL any_active=True
 2026-10-22 05:02:44,456 [INFO] [SIGNAL] CE: reg=False K=True(K=59.3>=38,rising) Kextr=False RSI=False(41.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=59.3<=80,falling) Kextr=False RSI=True(41.4<47) MACD=True(gate off) => BLOCK
 2026-10-22 05:02:44,457 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26O2273500CE ltp=307.35 entry=272.50 pnl=+34.85(+12.8%) sl=0.00 peak=307.35 tr_armed=False elapsed=1min
+2026-10-22 05:02:47,150 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261022_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261022_090603.csv
+2026-10-22 05:06:19,472 [INFO] [BREAKWATCH] GAPBREAK CE BFO:SENSEX26O2273500CE entry 10:31 score 4/6 -> KEEP | {'progress_x': 2.1037, 'other_idx_dir%': 0.3645, 'hw_breadth': 0.9167, 'hw_basket_dir%': 0.3498, 'hw_top4_agree': 0.75, 'sellers_sameOTM_oi%': 32.1051} missing=[] fetch_fail=[]
+2026-10-22 05:07:20,020 [INFO] EXIT: BFO:SENSEX26O2273500CE @ 299.20 reason=GAPBREAK_LOCK_FLOOR pnl/sh=+26.70 is_flip=False losses=0/4
+2026-10-22 05:07:51,117 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 05:07:51,118 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 05:07:51,119 [INFO] [INDICATORS] spot=73574.5 | 1h: close=73324.2 sma20=74038.5 sma50=73405.3 rsi=41.4 macd=-54.25/75.52(bear) | 15m: K=59.3↑(prev 47.7) | regime=NEUTRAL any_active=False
+2026-10-22 05:07:51,120 [INFO] [SIGNAL] CE: reg=False K=True(K=59.3>=38,rising) Kextr=False RSI=False(41.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=59.3<=80,falling) Kextr=False RSI=True(41.4<47) MACD=True(gate off) => BLOCK
