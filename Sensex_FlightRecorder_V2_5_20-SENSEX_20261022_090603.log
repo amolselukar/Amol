@@ -1241,3 +1241,10 @@
 2026-10-22 03:41:13,188 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-22 03:41:13,189 [INFO] [INDICATORS] spot=73709.7 | 1h: close=73509.1 sma20=74146.0 sma50=73365.0 rsi=43.8 macd=-15.43/139.96(bear) | 15m: K=47.0↑(prev 13.7) | regime=NEUTRAL any_active=False
 2026-10-22 03:41:13,189 [INFO] [SIGNAL] CE: reg=False K=True(K=47.0>=38,rising) Kextr=True RSI=False(43.8>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=47.0<=80,falling) Kextr=False RSI=True(43.8<47) MACD=True(gate off) => BLOCK
+2026-10-22 03:41:15,769 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261022_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261022_090603.csv
+2026-10-22 03:46:18,192 [INFO] [MVWAP] Signal — 73629>73250 body=75% side=CE (morning exception)
+2026-10-22 03:46:18,196 [INFO] [VETO] VWAP CE BLOCKED — CE into a DOWNtrend: spot 73137.2 is -42.4 below SPOT VWAP 73179.6 (buffer 16)
+2026-10-22 03:46:19,035 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 03:46:19,035 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 03:46:19,036 [INFO] [INDICATORS] spot=73137.2 | 1h: close=73709.7 sma20=74101.6 sma50=73388.3 rsi=48.4 macd=-20.08/107.96(bear) | 15m: K=76.3↑(prev 47.0) | regime=NEUTRAL any_active=False
+2026-10-22 03:46:19,036 [INFO] [SIGNAL] CE: reg=False K=True(K=76.3>=38,rising) Kextr=True RSI=False(48.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=76.3<=80,falling) Kextr=True RSI=False(48.4<47) MACD=True(gate off) => BLOCK
