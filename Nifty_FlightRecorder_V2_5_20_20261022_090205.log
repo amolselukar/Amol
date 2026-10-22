@@ -2098,3 +2098,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 04:38:42,987 [INFO] [INDICATORS] spot=22624.3 | 1h: close=22811.3 sma20=22945.9 sma50=22772.6 rsi=46.5 macd=-24.35/15.44(bear) | 15m: K=32.4↓(prev 52.9) | regime=NEUTRAL any_active=True
 2026-10-22 04:38:42,987 [INFO] [SIGNAL] CE: reg=False K=False(K=32.4>=38,rising) Kextr=True RSI=False(46.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=32.4<=80,falling) Kextr=True RSI=True(46.5<47) MACD=True(gate off) => BLOCK
 2026-10-22 04:38:42,988 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26OCT22600PE ltp=146.85 entry=142.25 pnl=+4.60(+3.2%) sl=0.00 peak=146.85 tr_armed=False elapsed=0min
+2026-10-22 04:38:45,461 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 04:39:15,689 [INFO] EXIT: NFO:NIFTY26OCT22600PE @ 146.25 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+4.00 is_flip=False losses=0/4
+2026-10-22 04:39:16,645 [INFO] [FAST] CE22650 score=153 vol=1.58 U=42.6 skipped: leader score=153 vol=1.58 U=42.6
+2026-10-22 04:42:18,650 [INFO] [FAST] CE22650 score=151 vol=1.58 U=38.1 skipped: leader score=151 vol=1.58 U=38.1
+2026-10-22 04:43:19,468 [INFO] [FAST] CE22650 score=241 BLOCKED -- 2m renko NEUTRAL does not agree (brick 27.6)
+2026-10-22 04:43:49,732 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 04:43:49,732 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 04:43:49,732 [INFO] [INDICATORS] spot=22672.2 | 1h: close=22811.3 sma20=22945.9 sma50=22772.6 rsi=46.5 macd=-24.35/15.44(bear) | 15m: K=32.4↓(prev 52.9) | regime=NEUTRAL any_active=False
+2026-10-22 04:43:49,732 [INFO] [SIGNAL] CE: reg=False K=False(K=32.4>=38,rising) Kextr=True RSI=False(46.5>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=32.4<=80,falling) Kextr=True RSI=True(46.5<47) MACD=True(gate off) => BLOCK
