@@ -2369,3 +2369,20 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 06:57:26,645 [INFO] [INDICATORS] spot=22609.8 | 1h: close=22613.7 sma20=22882.7 sma50=22785.8 rsi=38.4 macd=-48.64/-12.19(bear) | 15m: K=38.9↓(prev 62.0) | regime=NEUTRAL any_active=True
 2026-10-22 06:57:26,645 [INFO] [SIGNAL] CE: reg=False K=False(K=38.9>=38,rising) Kextr=True RSI=False(38.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=38.9<=80,falling) Kextr=True RSI=True(38.4<47) MACD=True(gate off) => BLOCK
 2026-10-22 06:57:26,645 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=129.65 entry=141.65 pnl=-12.00(-8.5%) sl=116.15 peak=152.60 tr_armed=False elapsed=11min
+2026-10-22 06:57:29,191 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 06:58:30,281 [INFO] [FAST] CE22650 score=251 vol=6.69 U=49.8 skipped: VRTREND counter PE
+2026-10-22 06:59:31,893 [INFO] [T5] ENTRY CE 22600 @ 187.9 tgt247.9 stp169.9 (bo+10.9 PEdec-23.8) open=1
+2026-10-22 07:00:03,441 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 130.60 spot=22638.7 | K=38.9↓ RSI=38.4 MACD✓
+2026-10-22 07:00:03,984 [INFO] [CLM] SIGNAL CLM PE22650 K=4->14 hist=-3.36 ADX-side bar 12:29
+2026-10-22 07:00:04,059 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22650PE
+2026-10-22 07:00:04,083 [INFO] ENTRY: NFO:NIFTY26OCT22650PE @ 153.25  engine=CLM  detail=CLM PE22650 K=4->14 hist=-3.36 ADX-side bar 12:29
+2026-10-22 07:01:36,996 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 133.65 spot=22623.55 | K=29.7↓ RSI=38.4 MACD✓
+2026-10-22 07:01:37,071 [INFO] [VWAP_TRAIL] Option 15m close 130.80 < VWAP 132.85 — exiting
+2026-10-22 07:01:37,072 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=6/4 (reason=VWAP_TRAIL)
+2026-10-22 07:01:37,073 [INFO] EXIT: NFO:NIFTY26OCT22600PE @ 133.65 reason=VWAP_TRAIL pnl/sh=-8.00 is_flip=False losses=1/4
+2026-10-22 07:02:08,397 [INFO] [RENKO] dir=-1 (DOWN) bricks=17 brick=27.59 last5=[-1, -1, -1, -1, -1]
+2026-10-22 07:02:39,224 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 07:02:39,287 [INFO] [T5] open=1 trades=2 realized=-1.1pt/Rs-75 unreal=-5.2pt/Rs-338
+2026-10-22 07:02:39,287 [INFO] [INDICATORS] spot=22635.2 | 1h: close=22613.7 sma20=22882.7 sma50=22785.8 rsi=38.4 macd=-48.64/-12.19(bear) | 15m: K=29.7↓(prev 38.9) | regime=NEUTRAL any_active=True
+2026-10-22 07:02:39,287 [INFO] [SIGNAL] CE: reg=False K=False(K=29.7>=38,rising) Kextr=True RSI=False(38.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=29.7<=80,falling) Kextr=True RSI=True(38.4<47) MACD=True(gate off) => BLOCK
+2026-10-22 07:02:39,288 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22650PE ltp=152.50 entry=153.25 pnl=-0.75(-0.5%) sl=125.67 peak=155.00 tr_armed=False elapsed=2min
