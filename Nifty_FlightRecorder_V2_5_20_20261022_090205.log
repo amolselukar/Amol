@@ -2313,3 +2313,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 06:31:33,336 [INFO] [STATE][BASE] PE NFO:NIFTY26OCT22600PE ltp=134.70 entry=132.20 pnl=+2.50(+1.9%) sl=108.40 peak=134.70 tr_armed=False elapsed=0min
 2026-10-22 06:31:33,337 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=0.00 entry=134.70 pnl=-134.70(-100.0%) sl=110.45 peak=134.70 tr_armed=False elapsed=0min
 2026-10-22 06:31:33,338 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22650PE ltp=157.85 entry=160.20 pnl=-2.35(-1.5%) sl=131.36 peak=162.00 tr_armed=False elapsed=2min
+2026-10-22 06:31:35,805 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 06:32:06,059 [INFO] [RENKO] dir=-1 (DOWN) bricks=16 brick=27.59 last5=[1, -1, -1, -1, -1]
+2026-10-22 06:35:09,024 [INFO] EXIT: NFO:NIFTY26OCT22600PE @ 142.20 reason=V3_FAST_TARGET pnl/sh=+10.00 is_flip=False losses=0/4
+2026-10-22 06:35:40,407 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 135.10 spot=22620.2 | K=62.0↓ RSI=46.1 MACD✓
+2026-10-22 06:36:41,620 [INFO] [BREAKWATCH] VWAP PE NFO:NIFTY26OCT22600PE entry 12:01 score 6/6 -> KEEP | {'progress_x': 0.7829, 'other_idx_dir%': 0.155, 'hw_breadth': 0.6667, 'hw_basket_dir%': 0.189, 'hw_top4_agree': 1.0, 'sellers_sameOTM_oi%': 2.9139} missing=[] fetch_fail=[]
+2026-10-22 06:36:41,743 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 06:36:41,743 [INFO] [T5] open=0 trades=2 realized=-1.1pt/Rs-75 unreal=+0.0pt/Rs+0
+2026-10-22 06:36:41,744 [INFO] [INDICATORS] spot=22625.5 | 1h: close=22776.4 sma20=22907.8 sma50=22781.4 rsi=46.1 macd=-36.03/-3.08(bear) | 15m: K=62.0↓(prev 83.6) | regime=NEUTRAL any_active=True
+2026-10-22 06:36:41,744 [INFO] [SIGNAL] CE: reg=False K=False(K=62.0>=38,rising) Kextr=True RSI=False(46.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=62.0<=80,falling) Kextr=True RSI=True(46.1<47) MACD=True(gate off) => BLOCK
+2026-10-22 06:36:41,746 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=136.65 entry=134.70 pnl=+1.95(+1.4%) sl=110.45 peak=143.90 tr_armed=False elapsed=5min
+2026-10-22 06:36:41,748 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22650PE ltp=159.35 entry=160.20 pnl=-0.85(-0.5%) sl=131.36 peak=167.85 tr_armed=False elapsed=7min
