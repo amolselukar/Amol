@@ -1590,3 +1590,13 @@
 2026-10-22 07:46:28,953 [INFO] [INDICATORS] spot=73398.5 | 1h: close=73334.3 sma20=73851.6 sma50=73487.3 rsi=44.1 macd=-106.43/-3.59(bear) | 15m: K=46.3↑(prev 38.7) | regime=NEUTRAL any_active=True
 2026-10-22 07:46:28,953 [INFO] [SIGNAL] CE: reg=False K=True(K=46.3>=38,rising) Kextr=True RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=46.3<=80,falling) Kextr=False RSI=True(44.1<47) MACD=True(gate off) => BLOCK
 2026-10-22 07:46:28,954 [INFO] [STATE][VWAP] CE BFO:SENSEX26O2273400CE ltp=166.05 entry=157.15 pnl=+8.90(+5.7%) sl=128.86 peak=157.15 tr_armed=False elapsed=0min
+2026-10-22 07:46:31,839 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261022_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261022_090603.csv
+2026-10-22 07:49:04,273 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=3/4 (reason=HARDSL_-18pct)
+2026-10-22 07:49:04,276 [INFO] EXIT: BFO:SENSEX26O2273400CE @ 128.86 reason=HARDSL_-18pct pnl/sh=-28.29 is_flip=False losses=2/4
+2026-10-22 07:50:05,943 [INFO] [EXP12] anchor=spot M=73400 (max-OI would be 73000, diverged by -400) spot=73366.9
+2026-10-22 07:50:05,944 [INFO] [EXP12] universe resolved: M=73400 legs=[(73300, 'CE'), (73300, 'PE'), (73400, 'CE'), (73400, 'PE'), (73500, 'CE'), (73500, 'PE')]
+2026-10-22 07:50:06,115 [INFO] [EXP12] M=73400 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-22 07:51:37,472 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 07:51:37,472 [INFO] [T5] open=0 trades=6 realized=+34.1pt/Rs+683 unreal=+0.0pt/Rs+0
+2026-10-22 07:51:37,473 [INFO] [INDICATORS] spot=73278.5 | 1h: close=73334.3 sma20=73851.6 sma50=73487.3 rsi=44.1 macd=-106.43/-3.59(bear) | 15m: K=46.3↑(prev 38.7) | regime=NEUTRAL any_active=False
+2026-10-22 07:51:37,473 [INFO] [SIGNAL] CE: reg=False K=True(K=46.3>=38,rising) Kextr=True RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=46.3<=80,falling) Kextr=False RSI=True(44.1<47) MACD=True(gate off) => BLOCK
