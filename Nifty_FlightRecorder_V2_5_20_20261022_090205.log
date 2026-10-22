@@ -2286,3 +2286,30 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-22 06:26:22,383 [INFO] [T5] open=0 trades=2 realized=-1.1pt/Rs-75 unreal=+0.0pt/Rs+0
 2026-10-22 06:26:22,383 [INFO] [INDICATORS] spot=22627.0 | 1h: close=22776.4 sma20=22907.8 sma50=22781.4 rsi=46.1 macd=-36.03/-3.08(bear) | 15m: K=83.6↓(prev 93.2) | regime=NEUTRAL any_active=False
 2026-10-22 06:26:22,383 [INFO] [SIGNAL] CE: reg=False K=False(K=83.6>=38,rising) Kextr=True RSI=False(46.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=83.6<=80,falling) Kextr=True RSI=True(46.1<47) MACD=True(gate off) => BLOCK
+2026-10-22 06:26:25,232 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261022_090205.log, Nifty_BarLevel_V2_5_20_20261022_090205.csv
+2026-10-22 06:26:55,517 [INFO] [V3PROBE] PLACED PE NFO:NIFTY26OCT22600PE limit=132.20 (LTP=136.20 - 4) window=25min — EARLY(10m) Grade B R-cluster BREAK-PE at 22650
+2026-10-22 06:26:56,351 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:27:26,758 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:27:57,399 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:28:27,697 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:28:58,286 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:29:28,635 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:29:28,859 [INFO] [CLM] SIGNAL CLM PE22650 K=11->19 hist=-0.69 ADX-side bar 11:58
+2026-10-22 06:29:28,896 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22650PE
+2026-10-22 06:29:28,900 [INFO] ENTRY: NFO:NIFTY26OCT22650PE @ 160.20  engine=CLM  detail=CLM PE22650 K=11->19 hist=-0.69 ADX-side bar 11:58
+2026-10-22 06:30:00,017 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:30:30,522 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:31:00,919 [INFO] [V3PROBE] FILLED PE NFO:NIFTY26OCT22600PE @ 132.20 (LTP touched 129.80)
+2026-10-22 06:31:00,954 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22600PE
+2026-10-22 06:31:00,957 [INFO] ENTRY: NFO:NIFTY26OCT22600PE @ 132.20  engine=V3  detail=EARLY(10m) Grade B R-cluster BREAK-PE at 22650
+2026-10-22 06:31:01,779 [INFO] [VWAP] Climax skip — body=87% >= 87%
+2026-10-22 06:31:32,355 [INFO] [VWAP] Signal — FUT 22650<22683 body=66% side=PE | persist_gate=dist=-28.7pt persist=True (last 2x5m vs FUTvwap=22678.7)
+2026-10-22 06:31:32,395 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22600PE
+2026-10-22 06:31:32,398 [INFO] ENTRY: NFO:NIFTY26OCT22600PE @ 134.70  engine=VWAP  detail=FUT VWAP 22650<22683 body=66% | bar=180
+2026-10-22 06:31:33,289 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 06:31:33,336 [INFO] [T5] open=0 trades=2 realized=-1.1pt/Rs-75 unreal=+0.0pt/Rs+0
+2026-10-22 06:31:33,336 [INFO] [INDICATORS] spot=22641.6 | 1h: close=22776.4 sma20=22907.8 sma50=22781.4 rsi=46.1 macd=-36.03/-3.08(bear) | 15m: K=62.0↓(prev 83.6) | regime=NEUTRAL any_active=True
+2026-10-22 06:31:33,336 [INFO] [SIGNAL] CE: reg=False K=False(K=62.0>=38,rising) Kextr=True RSI=False(46.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=62.0<=80,falling) Kextr=True RSI=True(46.1<47) MACD=True(gate off) => BLOCK
+2026-10-22 06:31:33,336 [INFO] [STATE][BASE] PE NFO:NIFTY26OCT22600PE ltp=134.70 entry=132.20 pnl=+2.50(+1.9%) sl=108.40 peak=134.70 tr_armed=False elapsed=0min
+2026-10-22 06:31:33,337 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=0.00 entry=134.70 pnl=-134.70(-100.0%) sl=110.45 peak=134.70 tr_armed=False elapsed=0min
+2026-10-22 06:31:33,338 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22650PE ltp=157.85 entry=160.20 pnl=-2.35(-1.5%) sl=131.36 peak=162.00 tr_armed=False elapsed=2min
