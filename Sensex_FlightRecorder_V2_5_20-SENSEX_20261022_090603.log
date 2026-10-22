@@ -1785,3 +1785,15 @@
 2026-10-22 09:54:36,767 [INFO] [T5] open=0 trades=7 realized=+14.8pt/Rs+296 unreal=+0.0pt/Rs+0
 2026-10-22 09:54:36,767 [INFO] [INDICATORS] spot=73292.1 | 1h: close=73290.8 sma20=73704.6 sma50=73542.7 rsi=44.1 macd=-138.50/-50.87(bear) | 15m: K=75.1↑(prev 60.2) | regime=NEUTRAL any_active=False
 2026-10-22 09:54:36,767 [INFO] [SIGNAL] CE: reg=False K=True(K=75.1>=38,rising) Kextr=False RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=75.1<=80,falling) Kextr=True RSI=True(44.1<47) MACD=True(gate off) => BLOCK
+2026-10-22 09:54:39,287 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261022_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261022_090603.csv
+2026-10-22 09:56:10,999 [INFO] [EXP12] EXP2W 73300CE @ 33.60 NOT opened — after entry cutoff
+2026-10-22 09:58:12,760 [INFO] [EXP12] EXP2 EXIT 73300CE 60.25->8.00 Rs-1045 [EOD_1528] | day Rs-1045
+2026-10-22 09:58:13,657 [INFO] [EXP12] EXP2 EXIT 73200PE 37.40->121.50 Rs+1682 [EOD_1528] | day Rs+637
+2026-10-22 09:58:14,532 [INFO] [EXP12] EXP2W EXIT 73200PE 37.40->121.50 Rs+1682 [EOD_1528] | day Rs+2319
+2026-10-22 09:58:15,391 [INFO] [EXP12] EXP2 EXIT 73400CE 49.55->2.15 Rs-948 [EOD_1528] | day Rs+1371
+2026-10-22 09:58:16,200 [INFO] [EXP12] M=73300 open=0[-] trades=4 realized=Rs+1371 triggers=0 | by-engine EXP2:3tr/Rs-311 EXP2W:1tr/Rs+1682
+2026-10-22 09:59:17,826 [INFO] [EXP12] EOD why/why-not report sent
+2026-10-22 09:59:48,164 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-22 09:59:48,164 [INFO] [T5] open=0 trades=7 realized=+14.8pt/Rs+296 unreal=+0.0pt/Rs+0
+2026-10-22 09:59:48,165 [INFO] [INDICATORS] spot=73292.1 | 1h: close=73290.8 sma20=73704.6 sma50=73542.7 rsi=44.1 macd=-138.50/-50.87(bear) | 15m: K=75.1↑(prev 60.2) | regime=NEUTRAL any_active=False
+2026-10-22 09:59:48,165 [INFO] [SIGNAL] CE: reg=False K=True(K=75.1>=38,rising) Kextr=False RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=75.1<=80,falling) Kextr=True RSI=True(44.1<47) MACD=True(gate off) => BLOCK
