@@ -2562,3 +2562,22 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-23 08:35:31,952 [INFO] [T5] open=0 trades=5 realized=-56.2pt/Rs-3656 unreal=+0.0pt/Rs+0
 2026-10-23 08:35:31,953 [INFO] [INDICATORS] spot=22560.6 | 1h: close=22403.6 sma20=22694.4 sma50=22809.0 rsi=32.1 macd=-105.45/-70.95(bear) | 15m: K=80.7↑(prev 63.3) | regime=PE-eligible any_active=False
 2026-10-23 08:35:31,953 [INFO] [SIGNAL] CE: reg=False K=True(K=80.7>=38,rising) Kextr=True RSI=False(32.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.7<=80,falling) Kextr=True RSI=True(32.1<47) MACD=True(gate off) => BLOCK
+2026-10-23 08:35:34,754 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
+2026-10-23 08:36:05,150 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:36:35,567 [INFO] [FUT5VWAP] Skip — close 22634 only 6pt from a pivot (need >20)
+2026-10-23 08:37:05,925 [INFO] [FUT5VWAP] Skip — close 22634 only 6pt from a pivot (need >20)
+2026-10-23 08:37:06,079 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:37:36,445 [INFO] [FUT5VWAP] Skip — close 22634 only 1pt from a pivot (need >20)
+2026-10-23 08:38:06,757 [INFO] [FUT5VWAP] Skip — close 22634 only 1pt from a pivot (need >20)
+2026-10-23 08:38:06,908 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:38:37,215 [INFO] [FUT5VWAP] Skip — close 22634 only 1pt from a pivot (need >20)
+2026-10-23 08:39:07,533 [INFO] [FUT5VWAP] Skip — close 22634 only 1pt from a pivot (need >20)
+2026-10-23 08:39:07,693 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:39:38,010 [INFO] [FUT5VWAP] Skip — close 22634 only 6pt from a pivot (need >20)
+2026-10-23 08:40:08,362 [INFO] [FUT5VWAP] Skip — close 22634 only 6pt from a pivot (need >20)
+2026-10-23 08:40:08,515 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:40:39,727 [INFO] [FUT5VWAP] Skip — close 22634 only 2pt from a pivot (need >20)
+2026-10-23 08:40:39,795 [INFO] [APEX] open=0 trades=3 realized=-26.5pt/Rs-1722 unreal=+0.0pt/Rs+0
+2026-10-23 08:40:39,845 [INFO] [T5] open=0 trades=5 realized=-56.2pt/Rs-3656 unreal=+0.0pt/Rs+0
+2026-10-23 08:40:39,845 [INFO] [INDICATORS] spot=22543.5 | 1h: close=22403.6 sma20=22694.4 sma50=22809.0 rsi=32.1 macd=-105.45/-70.95(bear) | 15m: K=80.7↑(prev 63.3) | regime=PE-eligible any_active=False
+2026-10-23 08:40:39,845 [INFO] [SIGNAL] CE: reg=False K=True(K=80.7>=38,rising) Kextr=True RSI=False(32.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.7<=80,falling) Kextr=True RSI=True(32.1<47) MACD=True(gate off) => BLOCK
