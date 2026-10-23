@@ -2548,3 +2548,17 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-23 08:30:22,847 [INFO] [T5] open=0 trades=5 realized=-56.2pt/Rs-3656 unreal=+0.0pt/Rs+0
 2026-10-23 08:30:22,848 [INFO] [INDICATORS] spot=22520.6 | 1h: close=22403.6 sma20=22694.4 sma50=22809.0 rsi=32.1 macd=-105.45/-70.95(bear) | 15m: K=80.7↑(prev 63.3) | regime=PE-eligible any_active=False
 2026-10-23 08:30:22,848 [INFO] [SIGNAL] CE: reg=False K=True(K=80.7>=38,rising) Kextr=True RSI=False(32.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.7<=80,falling) Kextr=True RSI=True(32.1<47) MACD=True(gate off) => BLOCK
+2026-10-23 08:30:25,541 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
+2026-10-23 08:30:55,793 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-23 08:31:26,285 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:32:27,082 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:33:27,948 [INFO] [FAST] CE22550 score=154 vol=1.69 U=29.7 skipped: leader score=154 vol=1.69 U=29.7
+2026-10-23 08:33:27,953 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:34:28,963 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:34:29,006 [INFO] [APEX] EXIT PE 22500 105.2->91.5 -13.6pt Rs-884 [exhaust] | day -13.5pt Rs-874
+2026-10-23 08:34:29,834 [INFO] [APEX] EXIT PE 22500 104.6->91.5 -13.0pt Rs-848 [exhaust] | day -26.5pt Rs-1722
+2026-10-23 08:35:01,302 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-23 08:35:31,877 [INFO] [APEX] open=0 trades=3 realized=-26.5pt/Rs-1722 unreal=+0.0pt/Rs+0
+2026-10-23 08:35:31,952 [INFO] [T5] open=0 trades=5 realized=-56.2pt/Rs-3656 unreal=+0.0pt/Rs+0
+2026-10-23 08:35:31,953 [INFO] [INDICATORS] spot=22560.6 | 1h: close=22403.6 sma20=22694.4 sma50=22809.0 rsi=32.1 macd=-105.45/-70.95(bear) | 15m: K=80.7↑(prev 63.3) | regime=PE-eligible any_active=False
+2026-10-23 08:35:31,953 [INFO] [SIGNAL] CE: reg=False K=True(K=80.7>=38,rising) Kextr=True RSI=False(32.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=80.7<=80,falling) Kextr=True RSI=True(32.1<47) MACD=True(gate off) => BLOCK
