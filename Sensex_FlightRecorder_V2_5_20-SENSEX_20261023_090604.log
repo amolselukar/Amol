@@ -1321,3 +1321,19 @@
 2026-10-23 04:37:21,126 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-23 04:37:21,126 [INFO] [INDICATORS] spot=73102.2 | 1h: close=73249.4 sma20=73645.2 sma50=73572.3 rsi=43.4 macd=-146.50/-70.01(bear) | 15m: K=68.2↓(prev 79.8) | regime=NEUTRAL any_active=False
 2026-10-23 04:37:21,126 [INFO] [SIGNAL] CE: reg=False K=False(K=68.2>=38,rising) Kextr=False RSI=False(43.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=68.2<=80,falling) Kextr=True RSI=True(43.4<47) MACD=True(gate off) => BLOCK
+2026-10-23 04:37:24,454 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261023_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261023_090604.csv
+2026-10-23 04:37:54,670 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:38:24,971 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:38:55,235 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:39:25,498 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:39:55,809 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:40:26,118 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:40:56,359 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:41:26,624 [INFO] [V3PROBE] PLACED PE BFO:SENSEX26OCT72900PE limit=550.30 (LTP=563.30 - 13) window=25min — EARLY(10m) Grade A R-cluster BREAK-PE at 73003
+2026-10-23 04:41:27,449 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:41:57,785 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:42:28,110 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-23 04:42:28,138 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:42:28,138 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:42:28,139 [INFO] [INDICATORS] spot=72952.7 | 1h: close=73249.4 sma20=73645.2 sma50=73572.3 rsi=43.4 macd=-146.50/-70.01(bear) | 15m: K=68.2↓(prev 79.8) | regime=NEUTRAL any_active=False
+2026-10-23 04:42:28,139 [INFO] [SIGNAL] CE: reg=False K=False(K=68.2>=38,rising) Kextr=False RSI=False(43.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=True(K=68.2<=80,falling) Kextr=True RSI=True(43.4<47) MACD=True(gate off) => BLOCK
