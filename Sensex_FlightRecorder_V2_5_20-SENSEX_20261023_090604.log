@@ -1270,3 +1270,12 @@
 2026-10-23 04:06:43,371 [INFO] [INDICATORS] spot=73399.6 | 1h: close=73249.4 sma20=73645.2 sma50=73572.3 rsi=43.4 macd=-146.50/-70.01(bear) | 15m: K=75.7↑(prev 61.9) | regime=NEUTRAL any_active=True
 2026-10-23 04:06:43,372 [INFO] [SIGNAL] CE: reg=False K=True(K=75.7>=38,rising) Kextr=False RSI=False(43.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=75.7<=80,falling) Kextr=True RSI=True(43.4<47) MACD=True(gate off) => BLOCK
 2026-10-23 04:06:43,372 [INFO] [STATE][ORB] PE BFO:SENSEX26OCT73400PE ltp=562.40 entry=544.60 pnl=+17.80(+3.3%) sl=0.00 peak=563.40 tr_armed=False elapsed=1min
+2026-10-23 04:06:46,767 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261023_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261023_090604.csv
+2026-10-23 04:10:49,269 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=1/4 (reason=ORB_STOP)
+2026-10-23 04:10:49,271 [INFO] EXIT: BFO:SENSEX26OCT73400PE @ 514.60 reason=ORB_STOP pnl/sh=-30.00 is_flip=False losses=1/4
+2026-10-23 04:10:50,163 [INFO] ENTRY: BFO:SENSEX26OCT73400CE @ 843.10  engine=ORB  detail=ORB flip-on-stop
+2026-10-23 04:11:51,617 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:11:51,617 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:11:51,618 [INFO] [INDICATORS] spot=73527.6 | 1h: close=73249.4 sma20=73645.2 sma50=73572.3 rsi=43.4 macd=-146.50/-70.01(bear) | 15m: K=75.7↑(prev 61.9) | regime=NEUTRAL any_active=True
+2026-10-23 04:11:51,618 [INFO] [SIGNAL] CE: reg=False K=True(K=75.7>=38,rising) Kextr=False RSI=False(43.4>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=75.7<=80,falling) Kextr=True RSI=True(43.4<47) MACD=True(gate off) => BLOCK
+2026-10-23 04:11:51,618 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT73400CE ltp=818.60 entry=843.10 pnl=-24.50(-2.9%) sl=0.00 peak=843.10 tr_armed=False elapsed=1min
