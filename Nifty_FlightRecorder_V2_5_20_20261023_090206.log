@@ -2074,3 +2074,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-23 04:28:27,026 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-23 04:28:27,027 [INFO] [INDICATORS] spot=22642.7 | 1h: close=22687.7 sma20=22793.3 sma50=22810.9 rsi=44.1 macd=-60.16/-40.06(bear) | 15m: K=87.1↑(prev 87.1) | regime=PE-eligible any_active=False
 2026-10-23 04:28:27,027 [INFO] [SIGNAL] CE: reg=False K=True(K=87.1>=38,rising) Kextr=True RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=87.1<=80,falling) Kextr=True RSI=True(44.1<47) MACD=True(gate off) => BLOCK
+2026-10-23 04:28:29,671 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
+2026-10-23 04:29:30,358 [INFO] [FAST] PE22600 score=168 vol=1.75 U=31.3 skipped: leader score=168 vol=1.75 U=31.3
+2026-10-23 04:31:32,063 [INFO] [V2] WOULD_ENTER(log-only) PE NFO:NIFTY26OCT22600PE @ 136.00 spot=22600.35 | K=60.1↓ RSI=44.1 MACD✓
+2026-10-23 04:31:32,070 [INFO] [VWAP] Signal — FUT 22663<22761 body=82% side=PE | persist_gate=dist=-99.5pt persist=True (last 2x5m vs FUTvwap=22762.4)
+2026-10-23 04:31:32,115 [INFO] ENTRY: NFO:NIFTY26OCT22600PE @ 136.00  engine=VWAP  detail=FUT VWAP 22663<22761 body=82% | bar=180
+2026-10-23 04:33:38,611 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:33:38,673 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:33:38,674 [INFO] [INDICATORS] spot=22574.3 | 1h: close=22687.7 sma20=22793.3 sma50=22810.9 rsi=44.1 macd=-60.16/-40.06(bear) | 15m: K=60.1↓(prev 87.1) | regime=PE-eligible any_active=True
+2026-10-23 04:33:38,674 [INFO] [SIGNAL] CE: reg=False K=False(K=60.1>=38,rising) Kextr=True RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=60.1<=80,falling) Kextr=True RSI=True(44.1<47) MACD=True(gate off) => PASS
+2026-10-23 04:33:38,675 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22600PE ltp=149.00 entry=136.00 pnl=+13.00(+9.6%) sl=111.52 peak=149.85 tr_armed=False elapsed=2min
