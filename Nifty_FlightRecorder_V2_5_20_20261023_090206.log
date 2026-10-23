@@ -2747,3 +2747,4 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-23 09:57:35,558 [INFO] [SIGNAL] CE: reg=False K=False(K=64.4>=38,rising) Kextr=True RSI=False(40.9>53) MACD=False(gate off) => BLOCK | PE: reg=True K=True(K=64.4<=80,falling) Kextr=True RSI=True(40.9<47) MACD=True(gate off) => PASS
 2026-10-23 09:57:38,211 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
 2026-10-23 09:59:39,241 [INFO] [RENKO] dir=+1 (UP) bricks=26 brick=28.11 last5=[-1, 1, 1, 1, 1]
+2026-10-23 10:00:12,770 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
