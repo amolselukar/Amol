@@ -2322,3 +2322,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-23 06:52:47,394 [INFO] [INDICATORS] spot=22458.5 | 1h: close=22443.5 sma20=22717.7 sma50=22811.3 rsi=33.7 macd=-94.96/-62.33(bear) | 15m: K=17.3↓(prev 18.4) | regime=PE-eligible any_active=True
 2026-10-23 06:52:47,394 [INFO] [SIGNAL] CE: reg=False K=False(K=17.3>=38,rising) Kextr=True RSI=False(33.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=17.3<=80,falling) Kextr=True RSI=True(33.7<47) MACD=True(gate off) => BLOCK
 2026-10-23 06:52:47,397 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22400PE ltp=104.85 entry=111.20 pnl=-6.35(-5.7%) sl=91.18 peak=119.05 tr_armed=False elapsed=80min
+2026-10-23 06:52:49,985 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
+2026-10-23 06:53:20,765 [INFO] [T5] EXIT CE 22500 163.1->144.7 -18.4pt Rs-1199 [stop] | day -56.4pt Rs-3666
+2026-10-23 06:54:22,683 [INFO] [FAST] PE22450 score=105 vol=2.18 U=21.0 skipped: leader score=105 vol=2.18 U=21.0
+2026-10-23 06:55:23,939 [INFO] [FAST] PE22400 score=163 vol=1.35 U=39.1 skipped: leader score=163 vol=1.35 U=39.1
+2026-10-23 06:56:55,726 [INFO] [T5] EXIT CE 22400 210.2->190.4 -19.8pt Rs-1290 [stop] | day -76.2pt Rs-4956
+2026-10-23 06:57:27,143 [INFO] [FAST] PE22400 score=199 vol=1.32 U=45.4 skipped: leader score=199 vol=1.32 U=45.4
+2026-10-23 06:57:57,596 [INFO] [APEX] open=0 trades=1 realized=+0.2pt/Rs+10 unreal=+0.0pt/Rs+0
+2026-10-23 06:57:57,596 [INFO] [T5] open=0 trades=4 realized=-76.2pt/Rs-4956 unreal=+0.0pt/Rs+0
+2026-10-23 06:57:57,596 [INFO] [INDICATORS] spot=22415.0 | 1h: close=22443.5 sma20=22717.7 sma50=22811.3 rsi=33.7 macd=-94.96/-62.33(bear) | 15m: K=17.3↓(prev 18.4) | regime=PE-eligible any_active=True
+2026-10-23 06:57:57,597 [INFO] [SIGNAL] CE: reg=False K=False(K=17.3>=38,rising) Kextr=True RSI=False(33.7>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=17.3<=80,falling) Kextr=True RSI=True(33.7<47) MACD=True(gate off) => BLOCK
+2026-10-23 06:57:57,598 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22400PE ltp=114.80 entry=111.20 pnl=+3.60(+3.2%) sl=91.18 peak=119.05 tr_armed=False elapsed=86min
