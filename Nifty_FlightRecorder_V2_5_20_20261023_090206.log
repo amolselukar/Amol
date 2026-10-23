@@ -2065,3 +2065,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-23 04:23:18,993 [INFO] [INDICATORS] spot=22642.9 | 1h: close=22687.7 sma20=22793.3 sma50=22810.9 rsi=44.1 macd=-60.16/-40.06(bear) | 15m: K=87.1↑(prev 87.1) | regime=PE-eligible any_active=True
 2026-10-23 04:23:18,993 [INFO] [SIGNAL] CE: reg=False K=True(K=87.1>=38,rising) Kextr=True RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=87.1<=80,falling) Kextr=True RSI=True(44.1<47) MACD=True(gate off) => BLOCK
 2026-10-23 04:23:18,993 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26OCT22700PE ltp=162.20 entry=154.95 pnl=+7.25(+4.7%) sl=0.00 peak=162.20 tr_armed=False elapsed=1min
+2026-10-23 04:23:21,453 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261023_090206.log, Nifty_BarLevel_V2_5_20_20261023_090206.csv
+2026-10-23 04:25:22,778 [INFO] [ORB] H3 CONFIRMED PE break 22661.7 -> 22639.0 vs OR[22703.6,22787.2]; waiting for pullback to 22703.6±8 until 10:40
+2026-10-23 04:25:23,775 [INFO] [FAST] PE22650 score=129 vol=1.02 U=29.8 skipped: leader score=129 vol=1.02 U=29.8
+2026-10-23 04:26:24,473 [INFO] EXIT: NFO:NIFTY26OCT22700PE @ 162.95 reason=GAPBREAK_LOCK_FLOOR pnl/sh=+8.00 is_flip=False losses=0/4
+2026-10-23 04:26:25,529 [INFO] [FAST] PE22650 score=152 vol=1.04 U=38.3 skipped: leader score=152 vol=1.04 U=38.3
+2026-10-23 04:28:27,026 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:28:27,026 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-23 04:28:27,027 [INFO] [INDICATORS] spot=22642.7 | 1h: close=22687.7 sma20=22793.3 sma50=22810.9 rsi=44.1 macd=-60.16/-40.06(bear) | 15m: K=87.1↑(prev 87.1) | regime=PE-eligible any_active=False
+2026-10-23 04:28:27,027 [INFO] [SIGNAL] CE: reg=False K=True(K=87.1>=38,rising) Kextr=True RSI=False(44.1>53) MACD=False(gate off) => BLOCK | PE: reg=True K=False(K=87.1<=80,falling) Kextr=True RSI=True(44.1<47) MACD=True(gate off) => BLOCK
