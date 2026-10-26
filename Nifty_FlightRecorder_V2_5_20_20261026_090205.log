@@ -2136,3 +2136,9 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-26 05:14:26,297 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-7.6pt/Rs-494
 2026-10-26 05:14:26,297 [INFO] [INDICATORS] spot=22625.8 | 1h: close=22691.3 sma20=22629.1 sma50=22805.0 rsi=51.0 macd=-73.33/-80.82(bull) | 15m: K=95.4↑(prev 83.0) | regime=NEUTRAL any_active=False
 2026-10-26 05:14:26,297 [INFO] [SIGNAL] CE: reg=False K=True(K=95.4>=38,rising) Kextr=True RSI=False(51.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=95.4<=80,falling) Kextr=True RSI=False(51.0<47) MACD=False(gate off) => BLOCK
+2026-10-26 05:14:28,868 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261026_090205.log, Nifty_BarLevel_V2_5_20_20261026_090205.csv
+2026-10-26 05:17:00,574 [INFO] [ORB] H3 no pullback within 45min of the confirm — ORB done for the day
+2026-10-26 05:19:33,406 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-26 05:19:33,451 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-14.2pt/Rs-923
+2026-10-26 05:19:33,451 [INFO] [INDICATORS] spot=22623.3 | 1h: close=22691.3 sma20=22629.1 sma50=22805.0 rsi=51.0 macd=-73.33/-80.82(bull) | 15m: K=83.5↓(prev 95.4) | regime=NEUTRAL any_active=False
+2026-10-26 05:19:33,451 [INFO] [SIGNAL] CE: reg=False K=False(K=83.5>=38,rising) Kextr=True RSI=False(51.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=83.5<=80,falling) Kextr=True RSI=False(51.0<47) MACD=False(gate off) => BLOCK
