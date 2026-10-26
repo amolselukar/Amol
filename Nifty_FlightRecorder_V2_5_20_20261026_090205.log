@@ -2515,3 +2515,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-26 09:31:34,639 [INFO] [T5] open=0 trades=3 realized=-59.2pt/Rs-3851 unreal=+0.0pt/Rs+0
 2026-10-26 09:31:34,640 [INFO] [INDICATORS] spot=22692.0 | 1h: close=22704.4 sma20=22610.5 sma50=22801.1 rsi=52.5 macd=-44.36/-66.34(bull) | 15m: K=84.3↓(prev 85.8) | regime=NEUTRAL any_active=False
 2026-10-26 09:31:34,640 [INFO] [SIGNAL] CE: reg=False K=False(K=84.3>=38,rising) Kextr=True RSI=False(52.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.3<=80,falling) Kextr=True RSI=False(52.5<47) MACD=False(gate off) => BLOCK
+2026-10-26 09:31:37,364 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261026_090205.log, Nifty_BarLevel_V2_5_20_20261026_090205.csv
+2026-10-26 09:32:07,713 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-26 09:33:08,483 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-26 09:34:09,214 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-26 09:35:09,975 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-26 09:36:41,097 [INFO] [APEX] open=0 trades=3 realized=+11.2pt/Rs+731 unreal=+0.0pt/Rs+0
+2026-10-26 09:36:41,159 [INFO] [T5] open=0 trades=3 realized=-59.2pt/Rs-3851 unreal=+0.0pt/Rs+0
+2026-10-26 09:36:41,159 [INFO] [INDICATORS] spot=22696.7 | 1h: close=22704.4 sma20=22610.5 sma50=22801.1 rsi=52.5 macd=-44.36/-66.34(bull) | 15m: K=84.3↓(prev 85.8) | regime=NEUTRAL any_active=False
+2026-10-26 09:36:41,159 [INFO] [SIGNAL] CE: reg=False K=False(K=84.3>=38,rising) Kextr=True RSI=False(52.5>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.3<=80,falling) Kextr=True RSI=False(52.5<47) MACD=False(gate off) => BLOCK
