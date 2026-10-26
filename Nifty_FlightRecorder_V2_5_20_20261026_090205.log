@@ -2107,3 +2107,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-26 04:59:04,638 [INFO] [INDICATORS] spot=22655.1 | 1h: close=22691.3 sma20=22629.1 sma50=22805.0 rsi=51.0 macd=-73.33/-80.82(bull) | 15m: K=83.0↑(prev 66.8) | regime=NEUTRAL any_active=True
 2026-10-26 04:59:04,638 [INFO] [SIGNAL] CE: reg=False K=True(K=83.0>=38,rising) Kextr=True RSI=False(51.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=83.0<=80,falling) Kextr=True RSI=False(51.0<47) MACD=False(gate off) => BLOCK
 2026-10-26 04:59:04,638 [INFO] [STATE][VWAP] CE NFO:NIFTY26OCT22700CE ltp=138.05 entry=161.50 pnl=-23.45(-14.5%) sl=132.43 peak=169.45 tr_armed=False elapsed=13min
+2026-10-26 04:59:07,144 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261026_090205.log, Nifty_BarLevel_V2_5_20_20261026_090205.csv
+2026-10-26 05:00:07,745 [INFO] [CHOPGATE] Clear to trade — ER=0.66 crosses=0 range=350pt
+2026-10-26 05:00:08,000 [INFO] [STOCH] SIGNAL 22650PE @95.65 -- 15m Stoch(5,3) crossed INTO >=80 (K 74.0->89.5) bar 10:15; scalp +14/-10 Rs, 60min
+2026-10-26 05:00:08,000 [INFO] [STOCH] WOULD_ENTER(log-only) PE 15m Stoch(5,3) crossed INTO >=80 (K 74.0->89.5) bar 10:15; scalp +14/-10 Rs, 60min
+2026-10-26 05:01:08,723 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=1/4 (reason=HARDSL_-18pct)
+2026-10-26 05:01:08,725 [INFO] EXIT: NFO:NIFTY26OCT22700CE @ 132.43 reason=HARDSL_-18pct pnl/sh=-29.07 is_flip=False losses=1/4
+2026-10-26 05:01:09,768 [INFO] [FAST] PE22650 score=142 vol=1.39 U=23.3 skipped: leader score=142 vol=1.39 U=23.3
+2026-10-26 05:04:12,123 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-26 05:04:12,124 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-26 05:04:12,124 [INFO] [INDICATORS] spot=22669.1 | 1h: close=22691.3 sma20=22629.1 sma50=22805.0 rsi=51.0 macd=-73.33/-80.82(bull) | 15m: K=95.4↑(prev 83.0) | regime=NEUTRAL any_active=False
+2026-10-26 05:04:12,124 [INFO] [SIGNAL] CE: reg=False K=True(K=95.4>=38,rising) Kextr=True RSI=False(51.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=95.4<=80,falling) Kextr=True RSI=False(51.0<47) MACD=False(gate off) => BLOCK
