@@ -1460,3 +1460,15 @@
 2026-10-26 06:29:38,468 [INFO] [T5] open=0 trades=1 realized=-23.4pt/Rs-469 unreal=+0.0pt/Rs+0
 2026-10-26 06:29:38,469 [INFO] [INDICATORS] spot=73066.9 | 1h: close=73097.1 sma20=73181.2 sma50=73634.0 rsi=46.7 macd=-170.23/-195.41(bull) | 15m: K=39.7↓(prev 49.4) | regime=PE-eligible any_active=False
 2026-10-26 06:29:38,470 [INFO] [SIGNAL] CE: reg=False K=False(K=39.7>=38,rising) Kextr=False RSI=False(46.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=True(K=39.7<=80,falling) Kextr=False RSI=True(46.7<47) MACD=False(gate off) => BLOCK
+2026-10-26 06:29:41,509 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261026_090605.log, Sensex_BarLevel_V2_5_20-SENSEX_20261026_090605.csv
+2026-10-26 06:31:42,722 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.4pt persist=True (last 2x5m vs FUTvwap=73323.4)
+2026-10-26 06:32:13,021 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.4pt persist=True (last 2x5m vs FUTvwap=73323.4)
+2026-10-26 06:32:43,366 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.4pt persist=True (last 2x5m vs FUTvwap=73323.4)
+2026-10-26 06:33:13,661 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.4pt persist=True (last 2x5m vs FUTvwap=73323.4)
+2026-10-26 06:33:44,151 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.4pt persist=True (last 2x5m vs FUTvwap=73323.4)
+2026-10-26 06:34:14,464 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.4pt persist=True (last 2x5m vs FUTvwap=73323.4)
+2026-10-26 06:34:44,765 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-23.7pt persist=True (last 2x5m vs FUTvwap=73323.7)
+2026-10-26 06:34:44,844 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-26 06:34:44,844 [INFO] [T5] open=0 trades=1 realized=-23.4pt/Rs-469 unreal=+0.0pt/Rs+0
+2026-10-26 06:34:44,846 [INFO] [INDICATORS] spot=73181.1 | 1h: close=73097.1 sma20=73181.2 sma50=73634.0 rsi=46.7 macd=-170.23/-195.41(bull) | 15m: K=40.7↑(prev 39.7) | regime=PE-eligible any_active=False
+2026-10-26 06:34:44,846 [INFO] [SIGNAL] CE: reg=False K=True(K=40.7>=38,rising) Kextr=False RSI=False(46.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=40.7<=80,falling) Kextr=False RSI=True(46.7<47) MACD=False(gate off) => BLOCK
