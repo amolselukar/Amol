@@ -2695,3 +2695,13 @@ KeyError: 'trigger'
 2026-10-27 09:27:31,364 [INFO] [INDICATORS] spot=22744.5 | 1h: close=22657.6 sma20=22625.0 sma50=22790.0 rsi=47.7 macd=2.37/-15.93(bull) | 15m: K=16.5↑(prev 6.6) | regime=NEUTRAL any_active=True
 2026-10-27 09:27:31,364 [INFO] [SIGNAL] CE: reg=False K=False(K=16.5>=38,rising) Kextr=True RSI=False(47.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=16.5<=80,falling) Kextr=True RSI=False(47.7<47) MACD=False(gate off) => BLOCK
 2026-10-27 09:27:31,364 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=48.35 entry=89.90 pnl=-41.55(-46.2%) sl=0.00 peak=170.40 tr_armed=False elapsed=259min
+2026-10-27 09:27:34,020 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 09:30:38,093 [INFO] [EXP12] anchor=spot M=22800 (max-OI would be 22700, diverged by -100) spot=22769.7
+2026-10-27 09:30:39,597 [INFO] [EXP12] EXP2 ENTRY 22800CE @ 16.90 (cheap-ladder bar@14:58=18.55 dist=-30 oi15=-5.6% | chain 1/3: wall CE 23000->22800(against) | PE writers 73% of max | PCR 0.92->1.02)
+2026-10-27 09:30:40,393 [INFO] [EXP12] EXP2W declined 22800CE @14:58 (afthi 32.30 < 40) — EXP2 took it
+2026-10-27 09:30:40,426 [INFO] [EXP12] M=22800 open=1[EXP2:22800CE] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-27 09:32:42,872 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 09:32:42,941 [INFO] [T5] open=0 trades=3 realized=+79.1pt/Rs+5142 unreal=+0.0pt/Rs+0
+2026-10-27 09:32:43,147 [INFO] [INDICATORS] spot=22759.2 | 1h: close=22657.6 sma20=22625.0 sma50=22790.0 rsi=47.7 macd=2.37/-15.93(bull) | 15m: K=37.4↑(prev 16.5) | regime=NEUTRAL any_active=True
+2026-10-27 09:32:43,148 [INFO] [SIGNAL] CE: reg=False K=False(K=37.4>=38,rising) Kextr=True RSI=False(47.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=37.4<=80,falling) Kextr=True RSI=False(47.7<47) MACD=False(gate off) => BLOCK
+2026-10-27 09:32:43,149 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=37.05 entry=89.90 pnl=-52.85(-58.8%) sl=0.00 peak=170.40 tr_armed=False elapsed=264min
