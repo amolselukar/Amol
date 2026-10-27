@@ -2757,3 +2757,4 @@ KeyError: 'trigger'
 2026-10-27 09:58:34,120 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
 2026-10-27 09:59:05,459 [INFO] [EXP12] EOD why/why-not report sent
 2026-10-27 09:59:06,272 [INFO] [CRUSH] EOD why/why-not report sent
+2026-10-27 10:00:10,645 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
