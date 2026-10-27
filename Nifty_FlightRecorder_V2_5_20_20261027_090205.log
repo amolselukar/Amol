@@ -2033,3 +2033,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-27 04:13:04,124 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-27 04:13:04,124 [INFO] [INDICATORS] spot=22742.5 | 1h: close=22753.2 sma20=22610.0 sma50=22805.6 rsi=55.2 macd=-20.51/-51.81(bull) | 15m: K=96.9↓(prev 98.5) | regime=NEUTRAL any_active=False
 2026-10-27 04:13:04,124 [INFO] [SIGNAL] CE: reg=False K=False(K=96.9>=38,rising) Kextr=True RSI=True(55.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=96.9<=80,falling) Kextr=True RSI=False(55.2<47) MACD=False(gate off) => BLOCK
+2026-10-27 04:13:06,843 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 04:14:07,480 [INFO] [RENKO] dir=+1 (UP) bricks=2 brick=30.21 last5=[1, 1]
+2026-10-27 04:15:09,275 [INFO] [ORB] H3 CONFIRMED CE break 22734.4 -> 22758.7 vs OR[22653.2,22724.3]; resting buy on pullback to [PDC 22753 / OR 22724] ±8 until 15:00 (entry cutoff, no timer)
+2026-10-27 04:16:10,992 [INFO] [ORB] H3 PULLBACK HIT — 1m close 22750.5 within 8pt of PDC 22753.2 @09:45; buying CE
+2026-10-27 04:16:11,065 [INFO] ENTRY: NFO:NIFTY26OCT22800CE @ 54.95  engine=ORB  detail=ORB H3 pullback 22750 to PDC 22753 after confirmed break 22734->22759
+2026-10-27 04:16:11,872 [INFO] [EXPIRY] Signal — round-level cross 22736->22759 (zone 454->455) side=CE at 2026-10-27 09:40:00+05:30
+2026-10-27 04:16:11,872 [INFO] [EXPIRY] AFT mode: WATCH 22800CE (morning premium 54.95); buy at >= 14:00 if premium in [5,60]
+2026-10-27 04:18:14,927 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 04:18:14,927 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 04:18:14,928 [INFO] [INDICATORS] spot=22737.8 | 1h: close=22753.2 sma20=22610.0 sma50=22805.6 rsi=55.2 macd=-20.51/-51.81(bull) | 15m: K=96.7↓(prev 96.9) | regime=NEUTRAL any_active=True
+2026-10-27 04:18:14,928 [INFO] [SIGNAL] CE: reg=False K=False(K=96.7>=38,rising) Kextr=True RSI=True(55.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=96.7<=80,falling) Kextr=True RSI=False(55.2<47) MACD=False(gate off) => BLOCK
+2026-10-27 04:18:14,928 [INFO] [STATE][ORB] CE NFO:NIFTY26OCT22800CE ltp=56.50 entry=54.95 pnl=+1.55(+2.8%) sl=0.00 peak=57.40 tr_armed=False elapsed=2min
