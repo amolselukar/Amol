@@ -1279,3 +1279,17 @@
 2026-10-27 04:11:58,025 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-27 04:11:58,026 [INFO] [INDICATORS] spot=73507.1 | 1h: close=73606.8 sma20=73162.4 sma50=73684.6 rsi=55.8 macd=-33.60/-122.00(bull) | 15m: K=86.8↓(prev 99.7) | regime=NEUTRAL any_active=False
 2026-10-27 04:11:58,026 [INFO] [SIGNAL] CE: reg=False K=False(K=86.8>=38,rising) Kextr=False RSI=True(55.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=86.8<=80,falling) Kextr=True RSI=False(55.8<47) MACD=False(gate off) => BLOCK
+2026-10-27 04:12:00,814 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261027_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261027_090604.csv
+2026-10-27 04:15:03,258 [INFO] [V3PROBE] PLACED CE BFO:SENSEX26OCT73600CE limit=515.75 (LTP=528.75 - 13) window=25min — EARLY(10m) Grade B R-cluster REJECT-CE at 73496
+2026-10-27 04:15:04,082 [INFO] [FUT5VWAP] Signal — 73599>73546 body=70% side=CE (fixed +40pt target)
+2026-10-27 04:15:04,160 [INFO] ENTRY: BFO:SENSEX26OCT73600CE @ 528.30  engine=FUT5VWAP  detail=FUT5 VWAP cross 73599>73546 body=70% pivΔ=448pt | bar=81
+2026-10-27 04:16:05,472 [INFO] [V3PROBE] FILLED CE BFO:SENSEX26OCT73600CE @ 515.75 (LTP touched 497.50)
+2026-10-27 04:16:05,507 [INFO] ENTRY: BFO:SENSEX26OCT73600CE @ 515.75  engine=V3  detail=EARLY(10m) Grade B R-cluster REJECT-CE at 73496
+2026-10-27 04:17:06,807 [INFO] [CB] V3 loss (own count 1) — TOTAL across all engines=3/4 (reason=V3_FAST_STOP)
+2026-10-27 04:17:06,808 [INFO] EXIT: BFO:SENSEX26OCT73600CE @ 489.75 reason=V3_FAST_STOP pnl/sh=-26.00 is_flip=False losses=1/4
+2026-10-27 04:17:07,624 [INFO] [CB] FUT5VWAP loss (own count 1) — TOTAL across all engines=4/4 (reason=FUT5VWAP_STOP)
+2026-10-27 04:17:08,433 [INFO] EXIT: BFO:SENSEX26OCT73600CE @ 488.30 reason=FUT5VWAP_STOP pnl/sh=-40.00 is_flip=False losses=1/4
+2026-10-27 04:17:09,222 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 04:17:09,223 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 04:17:09,223 [INFO] [INDICATORS] spot=73533.2 | 1h: close=73606.8 sma20=73162.4 sma50=73684.6 rsi=55.8 macd=-33.60/-122.00(bull) | 15m: K=77.4↓(prev 86.8) | regime=NEUTRAL any_active=False
+2026-10-27 04:17:09,223 [INFO] [SIGNAL] CE: reg=False K=False(K=77.4>=38,rising) Kextr=False RSI=True(55.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=77.4<=80,falling) Kextr=True RSI=False(55.8<47) MACD=False(gate off) => BLOCK
