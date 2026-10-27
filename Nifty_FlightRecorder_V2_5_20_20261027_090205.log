@@ -2521,3 +2521,22 @@ KeyError: 'trigger'
 2026-10-27 08:35:29,243 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26OCT22800CE ltp=5.90 entry=10.00 pnl=-4.10(-41.0%) sl=0.00 peak=10.00 tr_armed=False elapsed=5min
 2026-10-27 08:35:29,244 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=137.50 entry=89.90 pnl=+47.60(+52.9%) sl=0.00 peak=138.25 tr_armed=False elapsed=207min
 2026-10-27 08:35:29,244 [INFO] [STATE][FAST] PE NFO:NIFTY26OCT22650PE ltp=31.30 entry=30.25 pnl=+1.05(+3.5%) sl=0.00 peak=31.30 tr_armed=False elapsed=1min
+2026-10-27 08:35:32,168 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 08:37:35,354 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-27 08:38:05,951 [INFO] [CRUSH] SIGNAL 22700CE @25.25 — crushed to 17% of 149 session high, OI at 100% of day max, turn-up @25.25
+2026-10-27 08:38:05,953 [ERROR] Main loop exception: 'trigger'
+Traceback (most recent call last):
+  File "/home/selukar_amol123/Amol/ORION_PAPER_V2_5_20.py", line 11794, in main
+    open_trade(sig, spot, expiry_lookup, paper_only=_cb_paper_mode,
+  File "/home/selukar_amol123/Amol/ORION_PAPER_V2_5_20.py", line 7715, in open_trade
+    POS.trigger_value = sig['trigger']
+                        ~~~^^^^^^^^^^^
+KeyError: 'trigger'
+
+2026-10-27 08:40:41,114 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 08:40:41,115 [INFO] [T5] open=0 trades=2 realized=+55.2pt/Rs+3591 unreal=+0.0pt/Rs+0
+2026-10-27 08:40:41,280 [INFO] [INDICATORS] spot=22675.7 | 1h: close=22714.4 sma20=22625.5 sma50=22797.0 rsi=51.8 macd=5.82/-20.50(bull) | 15m: K=7.2↑(prev 4.1) | regime=NEUTRAL any_active=True
+2026-10-27 08:40:41,280 [INFO] [SIGNAL] CE: reg=False K=False(K=7.2>=38,rising) Kextr=True RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=7.2<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-10-27 08:40:41,281 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26OCT22800CE ltp=5.10 entry=10.00 pnl=-4.90(-49.0%) sl=0.00 peak=10.00 tr_armed=False elapsed=10min
+2026-10-27 08:40:41,281 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=132.75 entry=89.90 pnl=+42.85(+47.7%) sl=0.00 peak=138.25 tr_armed=False elapsed=212min
+2026-10-27 08:40:41,282 [INFO] [STATE][FAST] PE NFO:NIFTY26OCT22650PE ltp=27.55 entry=30.25 pnl=-2.70(-8.9%) sl=0.00 peak=31.30 tr_armed=False elapsed=6min
