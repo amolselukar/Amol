@@ -2436,3 +2436,20 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-27 07:59:10,967 [INFO] [SIGNAL] CE: reg=False K=False(K=30.3>=38,rising) Kextr=True RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=30.3<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
 2026-10-27 07:59:10,967 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=52.65 entry=45.30 pnl=+7.35(+16.2%) sl=37.15 peak=54.80 tr_armed=False elapsed=12min
 2026-10-27 07:59:10,968 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=124.55 entry=89.90 pnl=+34.65(+38.5%) sl=0.00 peak=126.85 tr_armed=False elapsed=171min
+2026-10-27 07:59:13,591 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 08:00:14,654 [INFO] [RENKO] dir=-1 (DOWN) bricks=8 brick=30.21 last5=[-1, 1, 1, -1, -1]
+2026-10-27 08:00:15,779 [INFO] [STOCH] CE cross (K 46.4->18.7) bar 13:15 BLOCKED -- 1m renko DOWN opposes CE with a WEAK trend (net bricks +2, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-10-27 08:00:16,387 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 113"}
+2026-10-27 08:00:16,387 [WARNING] HTML parse failed; retrying as plain text
+2026-10-27 08:00:18,311 [INFO] [FAST] PE22700 score=285 vol=1.47 U=34.6 skipped: leader score=285 vol=1.47 U=34.6
+2026-10-27 08:00:48,766 [INFO] EXIT: NFO:NIFTY26OCT22700PE @ 57.70 reason=TRAIL_+12 pnl/sh=+12.40 is_flip=False losses=0/4
+2026-10-27 08:00:49,861 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-27 08:01:20,199 [INFO] [VWAP] Signal — FUT 22679<22752 body=86% side=PE | persist_gate=dist=-69.2pt persist=True (last 2x5m vs FUTvwap=22748.2)
+2026-10-27 08:01:20,284 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22700PE
+2026-10-27 08:01:20,287 [INFO] ENTRY: NFO:NIFTY26OCT22700PE @ 51.70  engine=VWAP  detail=FUT VWAP 22679<22752 body=86% | bar=146
+2026-10-27 08:04:25,740 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 08:04:25,802 [INFO] [T5] open=0 trades=2 realized=+55.2pt/Rs+3591 unreal=+0.0pt/Rs+0
+2026-10-27 08:04:25,802 [INFO] [INDICATORS] spot=22696.8 | 1h: close=22714.4 sma20=22625.5 sma50=22797.0 rsi=51.8 macd=5.82/-20.50(bull) | 15m: K=1.1↓(prev 30.3) | regime=NEUTRAL any_active=True
+2026-10-27 08:04:25,802 [INFO] [SIGNAL] CE: reg=False K=False(K=1.1>=38,rising) Kextr=True RSI=False(51.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=1.1<=80,falling) Kextr=True RSI=False(51.8<47) MACD=False(gate off) => BLOCK
+2026-10-27 08:04:25,803 [INFO] [STATE][VWAP] PE NFO:NIFTY26OCT22700PE ltp=43.25 entry=51.70 pnl=-8.45(-16.3%) sl=42.39 peak=51.70 tr_armed=False elapsed=3min
+2026-10-27 08:04:25,803 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=112.05 entry=89.90 pnl=+22.15(+24.6%) sl=0.00 peak=138.25 tr_armed=False elapsed=176min
