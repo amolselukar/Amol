@@ -1651,3 +1651,20 @@
 2026-10-27 09:13:30,544 [INFO] [T5] open=0 trades=2 realized=+33.9pt/Rs+678 unreal=+0.0pt/Rs+0
 2026-10-27 09:13:30,544 [INFO] [INDICATORS] spot=73451.5 | 1h: close=73253.1 sma20=73196.3 sma50=73660.3 rsi=47.3 macd=9.79/-30.78(bull) | 15m: K=6.4↓(prev 8.2) | regime=NEUTRAL any_active=False
 2026-10-27 09:13:30,544 [INFO] [SIGNAL] CE: reg=False K=False(K=6.4>=38,rising) Kextr=True RSI=False(47.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=6.4<=80,falling) Kextr=False RSI=False(47.3<47) MACD=False(gate off) => BLOCK
+2026-10-27 09:13:34,025 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261027_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261027_090604.csv
+2026-10-27 09:16:36,271 [INFO] [FUT5VWAP] Signal — 73498<73536 body=77% side=PE (fixed +40pt target)
+2026-10-27 09:16:36,397 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): SENSEX26OCT73400PE
+2026-10-27 09:16:36,419 [INFO] ENTRY: BFO:SENSEX26OCT73400PE @ 384.20  engine=FUT5VWAP  detail=FUT5 VWAP cross 73498<73536 body=77% pivΔ=521pt | bar=142
+2026-10-27 09:18:14,530 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:18:21,609 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:18:29,684 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:18:33,684 [ERROR] Kite call ltp terminal failure
+2026-10-27 09:18:33,711 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 09:18:33,711 [INFO] [T5] open=0 trades=2 realized=+33.9pt/Rs+678 unreal=+0.0pt/Rs+0
+2026-10-27 09:18:33,712 [INFO] [INDICATORS] spot=73440.7 | 1h: close=73253.1 sma20=73196.3 sma50=73660.3 rsi=47.3 macd=9.79/-30.78(bull) | 15m: K=17.5↑(prev 6.4) | regime=NEUTRAL any_active=True
+2026-10-27 09:18:33,712 [INFO] [SIGNAL] CE: reg=False K=False(K=17.5>=38,rising) Kextr=True RSI=False(47.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=17.5<=80,falling) Kextr=False RSI=False(47.3<47) MACD=False(gate off) => BLOCK
+2026-10-27 09:18:33,714 [INFO] [STATE][FUT5VWAP] PE BFO:SENSEX26OCT73400PE ltp=394.80 entry=384.20 pnl=+10.60(+2.8%) sl=0.00 peak=394.80 tr_armed=False elapsed=1min
+2026-10-27 09:19:10,138 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:19:17,217 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:19:25,286 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:19:29,287 [ERROR] Kite call ltp terminal failure
