@@ -2570,3 +2570,17 @@ KeyError: 'trigger'
 2026-10-27 08:45:53,125 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26OCT22800CE ltp=3.40 entry=10.00 pnl=-6.60(-66.0%) sl=0.00 peak=10.00 tr_armed=False elapsed=15min
 2026-10-27 08:45:53,126 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=158.30 entry=89.90 pnl=+68.40(+76.1%) sl=0.00 peak=159.25 tr_armed=False elapsed=217min
 2026-10-27 08:45:53,126 [INFO] [STATE][FAST] PE NFO:NIFTY26OCT22650PE ltp=39.35 entry=30.25 pnl=+9.10(+30.1%) sl=0.00 peak=42.30 tr_armed=False elapsed=11min
+2026-10-27 08:45:55,924 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 08:47:27,741 [INFO] [LSC] WASHOUT 22650CE — vol 8,621,795 = 5.4x median, OI 10.92M -> 12.54M (fresh writing), close 32.55 = lowest of 30 bars
+2026-10-27 08:47:58,601 [INFO] [EXP12] anchor=spot M=22600 (max-OI would be 22700, diverged by +100) spot=22639.5
+2026-10-27 08:47:58,602 [INFO] [EXP12] universe RE-resolved: M=22600 legs=[(22550, 'CE'), (22550, 'PE'), (22600, 'CE'), (22600, 'PE'), (22650, 'CE'), (22650, 'PE')]
+2026-10-27 08:47:58,747 [INFO] [EXP12] M=22600 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-27 08:48:29,298 [INFO] [PGB] 22650CE — OI 6.2M -> 12.5M (2.0x in 30m, still day max), premium 63.45 -> 28.35 (45%), spot 22647 vs strike 22650
+2026-10-27 08:48:29,298 [INFO] [PGB] resting limit BUY @ 24.10, valid 20m (no chase)
+2026-10-27 08:49:30,702 [INFO] EXIT: NFO:NIFTY26OCT22650PE @ 31.45 reason=FAST_TRAIL15 pnl/sh=+1.20 is_flip=False losses=0/4
+2026-10-27 08:51:03,902 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 08:51:03,903 [INFO] [T5] open=0 trades=2 realized=+55.2pt/Rs+3591 unreal=+0.0pt/Rs+0
+2026-10-27 08:51:04,057 [INFO] [INDICATORS] spot=22672.0 | 1h: close=22657.6 sma20=22625.0 sma50=22790.0 rsi=47.7 macd=2.37/-15.93(bull) | 15m: K=7.2↓(prev 7.2) | regime=NEUTRAL any_active=True
+2026-10-27 08:51:04,057 [INFO] [SIGNAL] CE: reg=False K=False(K=7.2>=38,rising) Kextr=True RSI=False(47.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=7.2<=80,falling) Kextr=True RSI=False(47.7<47) MACD=False(gate off) => BLOCK
+2026-10-27 08:51:04,058 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26OCT22800CE ltp=3.80 entry=10.00 pnl=-6.20(-62.0%) sl=0.00 peak=10.00 tr_armed=False elapsed=20min
+2026-10-27 08:51:04,058 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=139.65 entry=89.90 pnl=+49.75(+55.3%) sl=0.00 peak=170.40 tr_armed=False elapsed=222min
