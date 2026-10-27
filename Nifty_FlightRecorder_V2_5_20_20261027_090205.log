@@ -2731,3 +2731,16 @@ KeyError: 'trigger'
 2026-10-27 09:48:11,846 [INFO] [INDICATORS] spot=22760.8 | 1h: close=22762.0 sma20=22628.8 sma50=22784.6 rsi=54.7 macd=7.97/-11.15(bull) | 15m: K=53.3↑(prev 37.4) | regime=NEUTRAL any_active=True
 2026-10-27 09:48:11,846 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=True(54.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=False(54.7<47) MACD=False(gate off) => BLOCK
 2026-10-27 09:48:11,846 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=30.70 entry=89.90 pnl=-59.20(-65.9%) sl=0.00 peak=170.40 tr_armed=False elapsed=280min
+2026-10-27 09:48:14,532 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 09:49:21,441 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:49:28,528 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:49:36,612 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:49:40,613 [ERROR] Kite call ltp terminal failure
+2026-10-27 09:50:17,403 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-27 09:51:50,200 [INFO] [EXP12] anchor=spot M=22800 (max-OI would be 22700, diverged by -100) spot=22760.8
+2026-10-27 09:51:50,382 [INFO] [EXP12] M=22800 open=0[-] trades=1 realized=Rs+16 triggers=0 | by-engine EXP2:1tr/Rs+16
+2026-10-27 09:53:21,949 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 09:53:22,028 [INFO] [T5] open=0 trades=3 realized=+79.1pt/Rs+5142 unreal=+0.0pt/Rs+0
+2026-10-27 09:53:22,028 [INFO] [INDICATORS] spot=22760.8 | 1h: close=22762.0 sma20=22628.8 sma50=22784.6 rsi=54.7 macd=7.97/-11.15(bull) | 15m: K=53.3↑(prev 37.4) | regime=NEUTRAL any_active=True
+2026-10-27 09:53:22,028 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=True(54.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=False(54.7<47) MACD=False(gate off) => BLOCK
+2026-10-27 09:53:22,029 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=25.20 entry=89.90 pnl=-64.70(-72.0%) sl=0.00 peak=170.40 tr_armed=False elapsed=285min
