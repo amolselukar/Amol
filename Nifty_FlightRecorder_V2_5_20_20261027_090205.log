@@ -2321,3 +2321,20 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-27 07:12:52,874 [INFO] [INDICATORS] spot=22792.3 | 1h: close=22755.6 sma20=22621.0 sma50=22802.1 rsi=54.9 macd=4.36/-27.09(bull) | 15m: K=19.7↓(prev 29.0) | regime=NEUTRAL any_active=True
 2026-10-27 07:12:52,874 [INFO] [SIGNAL] CE: reg=False K=False(K=19.7>=38,rising) Kextr=True RSI=True(54.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.7<=80,falling) Kextr=True RSI=False(54.9<47) MACD=False(gate off) => BLOCK
 2026-10-27 07:12:52,874 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=37.80 entry=89.90 pnl=-52.10(-58.0%) sl=0.00 peak=106.50 tr_armed=False elapsed=124min
+2026-10-27 07:12:55,465 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 07:13:25,834 [INFO] [RENKO] dir=+1 (UP) bricks=6 brick=30.21 last5=[1, 1, -1, 1, 1]
+2026-10-27 07:13:26,023 [INFO] [FAST] SIGNAL 1m momentum CE22800 score=309 vol=3.9x U=+36 momN=48.9% trend=CE bar 12:42; trail 15
+2026-10-27 07:13:26,083 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22800CE
+2026-10-27 07:13:26,087 [INFO] ENTRY: NFO:NIFTY26OCT22800CE @ 67.90  engine=FAST  detail=1m momentum CE22800 score=309 vol=3.9x U=+36 momN=48.9% trend=CE bar 12:42; trail 15
+2026-10-27 07:16:29,762 [INFO] [V3PROBE] PLACED CE NFO:NIFTY26OCT22800CE limit=52.95 (LTP=56.95 - 4) window=25min — Grade B G-cluster BREAK-CE at 22800
+2026-10-27 07:16:30,549 [INFO] [VWAP] Signal — FUT 22832>22756 body=86% side=CE | persist_gate=dist=+80.7pt persist=True (last 2x5m vs FUTvwap=22750.8)
+2026-10-27 07:16:30,550 [INFO] [FAST] VWAP CE BLOCKED -- FAST already holds CE
+2026-10-27 07:17:01,039 [INFO] [V3PROBE] FILLED CE NFO:NIFTY26OCT22800CE @ 52.95 (LTP touched 50.35)
+2026-10-27 07:17:01,039 [INFO] [FAST] V3 CE BLOCKED -- FAST already holds CE
+2026-10-27 07:17:01,074 [INFO] [CB] FAST loss NOT counted toward the circuit breaker (user 2026-09-17: FAST has no daily stop and must not halt other engines)
+2026-10-27 07:17:01,077 [INFO] EXIT: NFO:NIFTY26OCT22800CE @ 54.15 reason=FAST_TRAIL15 pnl/sh=-13.75 is_flip=False losses=0/4
+2026-10-27 07:18:02,962 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 07:18:03,030 [INFO] [T5] open=0 trades=1 realized=+34.5pt/Rs+2246 unreal=+0.0pt/Rs+0
+2026-10-27 07:18:03,031 [INFO] [INDICATORS] spot=22804.6 | 1h: close=22755.6 sma20=22621.0 sma50=22802.1 rsi=54.9 macd=4.36/-27.09(bull) | 15m: K=30.5↑(prev 19.7) | regime=NEUTRAL any_active=True
+2026-10-27 07:18:03,031 [INFO] [SIGNAL] CE: reg=False K=False(K=30.5>=38,rising) Kextr=True RSI=True(54.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=30.5<=80,falling) Kextr=True RSI=False(54.9<47) MACD=False(gate off) => BLOCK
+2026-10-27 07:18:03,032 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=40.60 entry=89.90 pnl=-49.30(-54.8%) sl=0.00 peak=106.50 tr_armed=False elapsed=129min
