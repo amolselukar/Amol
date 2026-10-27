@@ -2137,3 +2137,16 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-27 05:09:43,432 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26OCT22700PE ltp=45.05 entry=62.50 pnl=-17.45(-27.9%) sl=0.00 peak=62.50 tr_armed=False elapsed=13min
 2026-10-27 05:09:43,433 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=93.70 entry=89.90 pnl=+3.80(+4.2%) sl=0.00 peak=94.70 tr_armed=False elapsed=1min
 2026-10-27 05:09:43,433 [INFO] [STATE][CLM] CE NFO:NIFTY26OCT22700CE ltp=100.00 entry=78.40 pnl=+21.60(+27.6%) sl=64.29 peak=104.75 tr_armed=False elapsed=17min
+2026-10-27 05:09:46,014 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 05:11:17,506 [INFO] [FAST] CE22750 score=215 vol=1.58 U=24.0 skipped: leader score=215 vol=1.58 U=24.0
+2026-10-27 05:12:18,394 [INFO] [FAST] CE22750 score=109 vol=0.75 U=12.0 skipped: leader score=109 vol=0.75 U=12.0
+2026-10-27 05:13:19,542 [INFO] EXIT: NFO:NIFTY26OCT22700CE @ 105.00 reason=CLM_STOCH_PEAK pnl/sh=+26.60 is_flip=False losses=0/4
+2026-10-27 05:13:50,850 [INFO] [CLM] SIGNAL CLM PE22750 K=4->7 hist=-2.53 ADX-side bar 10:42
+2026-10-27 05:13:50,893 [INFO] ENTRY: NFO:NIFTY26OCT22750PE @ 64.10  engine=CLM  detail=CLM PE22750 K=4->7 hist=-2.53 ADX-side bar 10:42
+2026-10-27 05:14:52,791 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 05:14:52,857 [INFO] [T5] open=0 trades=1 realized=+34.5pt/Rs+2246 unreal=+0.0pt/Rs+0
+2026-10-27 05:14:52,858 [INFO] [INDICATORS] spot=22755.7 | 1h: close=22774.0 sma20=22609.9 sma50=22808.7 rsi=56.3 macd=-8.98/-43.24(bull) | 15m: K=62.3↓(prev 93.5) | regime=NEUTRAL any_active=True
+2026-10-27 05:14:52,858 [INFO] [SIGNAL] CE: reg=False K=False(K=62.3>=38,rising) Kextr=True RSI=True(56.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=62.3<=80,falling) Kextr=True RSI=False(56.3<47) MACD=False(gate off) => BLOCK
+2026-10-27 05:14:52,858 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26OCT22700PE ltp=43.85 entry=62.50 pnl=-18.65(-29.8%) sl=0.00 peak=62.50 tr_armed=False elapsed=18min
+2026-10-27 05:14:52,858 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=91.80 entry=89.90 pnl=+1.90(+2.1%) sl=0.00 peak=95.80 tr_armed=False elapsed=6min
+2026-10-27 05:14:52,859 [INFO] [STATE][CLM] PE NFO:NIFTY26OCT22750PE ltp=64.75 entry=64.10 pnl=+0.65(+1.0%) sl=52.56 peak=67.00 tr_armed=False elapsed=1min
