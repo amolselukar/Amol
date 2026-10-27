@@ -1368,3 +1368,18 @@
 2026-10-27 05:18:25,868 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-27 05:18:25,868 [INFO] [INDICATORS] spot=73559.6 | 1h: close=73608.2 sma20=73157.9 sma50=73701.2 rsi=55.8 macd=-5.36/-98.67(bull) | 15m: K=34.7↓(prev 41.3) | regime=NEUTRAL any_active=False
 2026-10-27 05:18:25,869 [INFO] [SIGNAL] CE: reg=False K=False(K=34.7>=38,rising) Kextr=False RSI=True(55.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=34.7<=80,falling) Kextr=False RSI=False(55.8<47) MACD=False(gate off) => BLOCK
+2026-10-27 05:18:28,433 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261027_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261027_090604.csv
+2026-10-27 05:18:58,714 [INFO] [VWAP] Cooldown BLOCK — PE 2.6min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:19:29,025 [INFO] [VWAP] Cooldown BLOCK — PE 3.1min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:19:59,338 [INFO] [VWAP] Cooldown BLOCK — PE 3.6min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:20:29,687 [INFO] [VWAP] Cooldown BLOCK — PE 4.1min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:21:00,073 [INFO] [VWAP] Cooldown BLOCK — PE 4.6min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:21:30,464 [INFO] [VWAP] Cooldown BLOCK — PE 5.1min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:22:00,868 [INFO] [VWAP] Cooldown BLOCK — PE 5.6min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:22:31,243 [INFO] [VWAP] Cooldown BLOCK — PE 6.1min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:23:01,626 [INFO] [VWAP] Cooldown BLOCK — PE 6.6min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:23:32,013 [INFO] [VWAP] Cooldown BLOCK — PE 7.1min since last VWAP PE loss (cooldown 30min)
+2026-10-27 05:23:32,037 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 05:23:32,038 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 05:23:32,038 [INFO] [INDICATORS] spot=73629.9 | 1h: close=73608.2 sma20=73157.9 sma50=73701.2 rsi=55.8 macd=-5.36/-98.67(bull) | 15m: K=34.7↓(prev 41.3) | regime=NEUTRAL any_active=False
+2026-10-27 05:23:32,038 [INFO] [SIGNAL] CE: reg=False K=False(K=34.7>=38,rising) Kextr=False RSI=True(55.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=34.7<=80,falling) Kextr=False RSI=False(55.8<47) MACD=False(gate off) => BLOCK
