@@ -2611,3 +2611,22 @@ KeyError: 'trigger'
 2026-10-27 09:06:34,014 [INFO] [SIGNAL] CE: reg=False K=False(K=6.6>=38,rising) Kextr=True RSI=False(47.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=6.6<=80,falling) Kextr=True RSI=False(47.7<47) MACD=False(gate off) => BLOCK
 2026-10-27 09:06:34,016 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26OCT22800CE ltp=7.95 entry=10.00 pnl=-2.05(-20.5%) sl=0.00 peak=10.00 tr_armed=False elapsed=36min
 2026-10-27 09:06:34,016 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=86.20 entry=89.90 pnl=-3.70(-4.1%) sl=0.00 peak=170.40 tr_armed=False elapsed=238min
+2026-10-27 09:06:37,053 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 09:08:08,791 [INFO] [FAST] CE22700 score=289 vol=1.90 U=54.3 skipped: leader score=289 vol=1.90 U=54.3
+2026-10-27 09:08:08,903 [INFO] [T5] ENTRY CE 22700 @ 58.5 tgt118.5 stp40.5 (bo+7.1 PEdec-32.4) open=1
+2026-10-27 09:08:39,954 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=11 brick=30.21 last5=[-1, -1, -1, -1, 1]
+2026-10-27 09:08:40,269 [INFO] [EXP12] EXP2 22750CE skipped: bar@14:36=18.45 in band but LTP 26.15 is not
+2026-10-27 09:08:40,269 [INFO] [EXP12] M=22700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-27 09:09:10,776 [INFO] [PGB] resting limit 24.10 on 22650CE EXPIRED unfilled
+2026-10-27 09:09:10,821 [INFO] [FAST] CE22700 score=256 vol=1.28 U=59.8 skipped: leader score=256 vol=1.28 U=59.8
+2026-10-27 09:10:12,995 [INFO] [T5] EXIT CE 22700 58.5->82.3 +23.8pt Rs+1550 [giveback] | day +79.1pt Rs+5142
+2026-10-27 09:10:44,908 [INFO] EXIT: NFO:NIFTY26OCT22800CE @ 16.57 reason=EXPIRY_AFT_LOCK_2.3x pnl/sh=+6.57 is_flip=False losses=0/4
+2026-10-27 09:11:16,297 [INFO] [FUT5VWAP] Signal — 22758>22733 body=81% side=CE (fixed +12pt target)
+2026-10-27 09:11:16,368 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26OCT22700CE
+2026-10-27 09:11:16,371 [INFO] ENTRY: NFO:NIFTY26OCT22700CE @ 55.95  engine=FUT5VWAP  detail=FUT5 VWAP cross 22758>22733 body=81% pivΔ=126pt | bar=141
+2026-10-27 09:11:47,804 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 09:11:47,804 [INFO] [T5] open=0 trades=3 realized=+79.1pt/Rs+5142 unreal=+0.0pt/Rs+0
+2026-10-27 09:11:47,965 [INFO] [INDICATORS] spot=22727.0 | 1h: close=22657.6 sma20=22625.0 sma50=22790.0 rsi=47.7 macd=2.37/-15.93(bull) | 15m: K=6.6↓(prev 7.2) | regime=NEUTRAL any_active=True
+2026-10-27 09:11:47,965 [INFO] [SIGNAL] CE: reg=False K=False(K=6.6>=38,rising) Kextr=True RSI=False(47.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=6.6<=80,falling) Kextr=True RSI=False(47.7<47) MACD=False(gate off) => BLOCK
+2026-10-27 09:11:47,966 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY26OCT22700CE ltp=63.55 entry=55.95 pnl=+7.60(+13.6%) sl=0.00 peak=63.55 tr_armed=False elapsed=0min
+2026-10-27 09:11:47,966 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=61.65 entry=89.90 pnl=-28.25(-31.4%) sl=0.00 peak=170.40 tr_armed=False elapsed=243min
