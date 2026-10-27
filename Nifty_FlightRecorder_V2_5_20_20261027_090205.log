@@ -2744,3 +2744,13 @@ KeyError: 'trigger'
 2026-10-27 09:53:22,028 [INFO] [INDICATORS] spot=22760.8 | 1h: close=22762.0 sma20=22628.8 sma50=22784.6 rsi=54.7 macd=7.97/-11.15(bull) | 15m: K=53.3↑(prev 37.4) | regime=NEUTRAL any_active=True
 2026-10-27 09:53:22,028 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=True(54.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=False(54.7<47) MACD=False(gate off) => BLOCK
 2026-10-27 09:53:22,029 [INFO] [STATE][WCR] PE NFO:NIFTY26OCT22800PE ltp=25.20 entry=89.90 pnl=-64.70(-72.0%) sl=0.00 peak=170.40 tr_armed=False elapsed=285min
+2026-10-27 09:53:24,791 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261027_090205.log, Nifty_BarLevel_V2_5_20_20261027_090205.csv
+2026-10-27 09:55:27,041 [INFO] [RENKO] dir=+1 (UP) bricks=12 brick=30.21 last5=[-1, -1, -1, 1, 1]
+2026-10-27 09:55:27,072 [INFO] [CB] WCR loss (own count 1) — TOTAL across all engines=6/4 (reason=FORCE_CLOSE_15_25)
+2026-10-27 09:55:27,074 [INFO] EXIT: NFO:NIFTY26OCT22800PE @ 45.00 reason=FORCE_CLOSE_15_25 pnl/sh=-44.90 is_flip=False losses=1/4
+2026-10-27 09:57:00,029 [INFO] [EXP12] anchor=spot M=22800 (max-OI would be 22700, diverged by -100) spot=22760.8
+2026-10-27 09:57:00,209 [INFO] [EXP12] M=22800 open=0[-] trades=1 realized=Rs+16 triggers=0 | by-engine EXP2:1tr/Rs+16
+2026-10-27 09:58:31,437 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-27 09:58:31,437 [INFO] [T5] open=0 trades=3 realized=+79.1pt/Rs+5142 unreal=+0.0pt/Rs+0
+2026-10-27 09:58:31,437 [INFO] [INDICATORS] spot=22760.8 | 1h: close=22762.0 sma20=22628.8 sma50=22784.6 rsi=54.7 macd=7.97/-11.15(bull) | 15m: K=53.3↑(prev 37.4) | regime=NEUTRAL any_active=False
+2026-10-27 09:58:31,437 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=True(54.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=False(54.7<47) MACD=False(gate off) => BLOCK
