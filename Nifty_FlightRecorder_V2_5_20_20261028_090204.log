@@ -2090,3 +2090,20 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 04:18:05,235 [INFO] [INDICATORS] spot=22634.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=23.4↓(prev 36.1) | regime=NEUTRAL any_active=True
 2026-10-28 04:18:05,235 [INFO] [SIGNAL] CE: reg=False K=False(K=23.4>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=23.4<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:18:05,235 [INFO] [STATE][BASE] PE NFO:NIFTY26N0322600PE ltp=184.65 entry=190.95 pnl=-6.30(-3.3%) sl=156.58 peak=191.60 tr_armed=False elapsed=2min
+2026-10-28 04:18:08,800 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 04:18:39,061 [INFO] [RENKO] dir=+1 (UP) bricks=2 brick=27.92 last5=[1, 1]
+2026-10-28 04:18:39,133 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+21.1pt persist=False (last 2x5m vs FUTvwap=22658.5)
+2026-10-28 04:19:09,558 [INFO] [CB] V3 loss (own count 1) — TOTAL across all engines=1/4 (reason=V3_FAST_STOP)
+2026-10-28 04:19:09,565 [INFO] EXIT: NFO:NIFTY26N0322600PE @ 182.95 reason=V3_FAST_STOP pnl/sh=-8.00 is_flip=False losses=1/4
+2026-10-28 04:19:10,384 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+21.1pt persist=False (last 2x5m vs FUTvwap=22658.5)
+2026-10-28 04:19:40,934 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+20.7pt persist=False (last 2x5m vs FUTvwap=22658.9)
+2026-10-28 04:20:11,370 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+20.7pt persist=False (last 2x5m vs FUTvwap=22658.9)
+2026-10-28 04:20:41,962 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+19.7pt persist=False (last 2x5m vs FUTvwap=22659.9)
+2026-10-28 04:21:12,374 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+19.7pt persist=False (last 2x5m vs FUTvwap=22659.9)
+2026-10-28 04:21:42,981 [INFO] [VWAP] Signal — FUT 22680>22659 body=72% side=CE | persist_gate=dist=+59.0pt persist=True (last 2x5m vs FUTvwap=22660.8)
+2026-10-28 04:21:43,050 [INFO] ENTRY: NFO:NIFTY26N0322700CE @ 173.80  engine=VWAP  detail=FUT VWAP 22680>22659 body=72% | bar=157
+2026-10-28 04:23:15,792 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 04:23:15,893 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+13.9pt/Rs+904
+2026-10-28 04:23:15,893 [INFO] [INDICATORS] spot=22655.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=23.4↓(prev 36.1) | regime=NEUTRAL any_active=True
+2026-10-28 04:23:15,893 [INFO] [SIGNAL] CE: reg=False K=False(K=23.4>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=23.4<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:23:15,893 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0322700CE ltp=173.45 entry=173.80 pnl=-0.35(-0.2%) sl=142.52 peak=173.80 tr_armed=False elapsed=1min
