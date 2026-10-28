@@ -2069,3 +2069,24 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 04:12:53,785 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-28 04:12:53,785 [INFO] [INDICATORS] spot=22573.3 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=36.1↓(prev 57.0) | regime=NEUTRAL any_active=False
 2026-10-28 04:12:53,785 [INFO] [SIGNAL] CE: reg=False K=False(K=36.1>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=36.1<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:12:56,450 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 04:13:26,744 [INFO] [MVWAP] Skip — close 22626 only 12pt from a pivot (need >20)
+2026-10-28 04:13:57,225 [INFO] [MVWAP] Skip — close 22626 only 12pt from a pivot (need >20)
+2026-10-28 04:14:27,560 [INFO] [MVWAP] Skip — close 22626 only 4pt from a pivot (need >20)
+2026-10-28 04:14:58,083 [INFO] [MVWAP] Skip — close 22626 only 4pt from a pivot (need >20)
+2026-10-28 04:15:29,387 [INFO] [V3PROBE] PLACED PE NFO:NIFTY26N0322600PE limit=190.95 (LTP=194.95 - 4) window=25min — Grade B R-cluster BREAK-PE at 22643
+2026-10-28 04:15:30,247 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-6.8pt persist=True (last 2x5m vs FUTvwap=22653.3)
+2026-10-28 04:15:30,577 [INFO] [T5] ENTRY CE 22600 @ 211.1 tgt244.0 stp193.1 (bo+7.6 PEdec-35.1) open=1
+2026-10-28 04:16:01,761 [INFO] [V3PROBE] FILLED PE NFO:NIFTY26N0322600PE @ 190.95 (LTP touched 189.50)
+2026-10-28 04:16:01,830 [INFO] ENTRY: NFO:NIFTY26N0322600PE @ 190.95  engine=V3  detail=Grade B R-cluster BREAK-PE at 22643
+2026-10-28 04:16:02,652 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=-6.8pt persist=True (last 2x5m vs FUTvwap=22653.3)
+2026-10-28 04:16:33,297 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.7pt persist=False (last 2x5m vs FUTvwap=22654.9)
+2026-10-28 04:17:03,767 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=1 brick=27.92 last5=[1]
+2026-10-28 04:17:03,833 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+24.7pt persist=False (last 2x5m vs FUTvwap=22654.9)
+2026-10-28 04:17:34,454 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+22.4pt persist=False (last 2x5m vs FUTvwap=22657.2)
+2026-10-28 04:18:04,926 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+22.4pt persist=False (last 2x5m vs FUTvwap=22657.2)
+2026-10-28 04:18:05,122 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 04:18:05,234 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+7.6pt/Rs+494
+2026-10-28 04:18:05,235 [INFO] [INDICATORS] spot=22634.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=23.4↓(prev 36.1) | regime=NEUTRAL any_active=True
+2026-10-28 04:18:05,235 [INFO] [SIGNAL] CE: reg=False K=False(K=23.4>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=23.4<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:18:05,235 [INFO] [STATE][BASE] PE NFO:NIFTY26N0322600PE ltp=184.65 entry=190.95 pnl=-6.30(-3.3%) sl=156.58 peak=191.60 tr_armed=False elapsed=2min
