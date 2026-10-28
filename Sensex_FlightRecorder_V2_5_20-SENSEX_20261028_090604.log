@@ -1286,3 +1286,21 @@
 2026-10-28 04:11:51,968 [INFO] [INDICATORS] spot=72923.0 | 1h: close=73598.7 sma20=73247.3 sma50=73640.0 rsi=55.0 macd=37.91/-8.30(bull) | 15m: K=42.0↓(prev 64.9) | regime=NEUTRAL any_active=True
 2026-10-28 04:11:51,968 [INFO] [SIGNAL] CE: reg=False K=False(K=42.0>=38,rising) Kextr=False RSI=True(55.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=42.0<=80,falling) Kextr=False RSI=False(55.0<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:11:51,968 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT72800CE ltp=460.90 entry=461.60 pnl=-0.70(-0.2%) sl=0.00 peak=495.60 tr_armed=False elapsed=8min
+2026-10-28 04:11:54,730 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261028_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261028_090604.csv
+2026-10-28 04:12:25,227 [INFO] [T5] ENTRY CE 72900 @ 426.1 tgt626.0 stp408.1 (bo+12.2 PEdec-47.0) open=1
+2026-10-28 04:13:57,210 [INFO] [T5] EXIT CE 72900 426.1->477.9 +51.8pt Rs+1036 [giveback] | day +51.8pt Rs+1036
+2026-10-28 04:15:30,007 [INFO] [V3PROBE] PLACED PE BFO:SENSEX26OCT73000PE limit=381.10 (LTP=394.10 - 13) window=25min — Grade B R-cluster BREAK-PE at 73190
+2026-10-28 04:15:30,869 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-28 04:16:01,263 [INFO] [V3PROBE] FILLED PE BFO:SENSEX26OCT73000PE @ 381.10 (LTP touched 368.35)
+2026-10-28 04:16:01,267 [INFO] [VETO] V3 PE BLOCKED — PE into an UPtrend: spot 73107.7 is +196.6 above SPOT VWAP 72911.2 (buffer 16)
+2026-10-28 04:16:02,086 [INFO] [VWAP] Climax skip — body=95% >= 87%
+2026-10-28 04:16:32,480 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+15.6pt persist=False (last 2x5m vs FUTvwap=72980.5)
+2026-10-28 04:16:32,483 [INFO] [FUT5VWAP] Signal — 72996>72980 body=87% side=CE (fixed +40pt target)
+2026-10-28 04:16:32,557 [INFO] ENTRY: BFO:SENSEX26OCT73100CE @ 412.90  engine=FUT5VWAP  detail=FUT5 VWAP cross 72996>72980 body=87% pivΔ=74pt | bar=159
+2026-10-28 04:17:03,786 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+15.6pt persist=False (last 2x5m vs FUTvwap=72980.5)
+2026-10-28 04:17:03,863 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 04:17:03,924 [INFO] [T5] open=0 trades=1 realized=+51.8pt/Rs+1036 unreal=+0.0pt/Rs+0
+2026-10-28 04:17:03,925 [INFO] [INDICATORS] spot=73103.6 | 1h: close=73598.7 sma20=73247.3 sma50=73640.0 rsi=55.0 macd=37.91/-8.30(bull) | 15m: K=29.5↓(prev 42.0) | regime=NEUTRAL any_active=True
+2026-10-28 04:17:03,925 [INFO] [SIGNAL] CE: reg=False K=False(K=29.5>=38,rising) Kextr=False RSI=True(55.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=29.5<=80,falling) Kextr=False RSI=False(55.0<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:17:03,925 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26OCT73100CE ltp=412.40 entry=412.90 pnl=-0.50(-0.1%) sl=0.00 peak=412.90 tr_armed=False elapsed=0min
+2026-10-28 04:17:03,925 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT72800CE ltp=581.05 entry=461.60 pnl=+119.45(+25.9%) sl=0.00 peak=581.05 tr_armed=False elapsed=13min
