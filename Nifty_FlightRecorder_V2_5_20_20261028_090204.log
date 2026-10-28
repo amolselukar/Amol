@@ -2225,3 +2225,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 05:20:02,856 [INFO] [SIGNAL] CE: reg=False K=False(K=10.9>=38,rising) Kextr=True RSI=False(42.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=10.9<=80,falling) Kextr=True RSI=True(42.7<47) MACD=False(gate off) => BLOCK
 2026-10-28 05:20:02,857 [INFO] [STATE][ORB] PE NFO:NIFTY26N0322600PE ltp=229.95 entry=226.55 pnl=+3.40(+1.5%) sl=0.00 peak=229.95 tr_armed=False elapsed=1min
 2026-10-28 05:20:02,857 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=198.70 entry=223.70 pnl=-25.00(-11.2%) sl=0.00 peak=223.70 tr_armed=False elapsed=49min
+2026-10-28 05:20:05,982 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 05:22:08,008 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=7 brick=27.92 last5=[-1, -1, -1, -1, 1]
+2026-10-28 05:23:40,013 [INFO] [BREAKWATCH] ORB PE NFO:NIFTY26N0322600PE entry 10:48 score 0/6 -> CUT | {'progress_x': -0.1854, 'other_idx_dir%': -0.1738, 'hw_breadth': 0.3333, 'hw_basket_dir%': -0.1573, 'hw_top4_agree': 0.0, 'sellers_sameOTM_oi%': 8.4262} missing=[] fetch_fail=[]
+2026-10-28 05:23:40,014 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=4/4 (reason=BREAKWATCH_CUT_s0)
+2026-10-28 05:23:40,829 [INFO] EXIT: NFO:NIFTY26N0322600PE @ 220.65 reason=BREAKWATCH_CUT_s0 pnl/sh=-5.90 is_flip=False losses=1/4
+2026-10-28 05:25:13,249 [INFO] [APEX] open=0 trades=1 realized=+27.8pt/Rs+1804 unreal=+0.0pt/Rs+0
+2026-10-28 05:25:13,312 [INFO] [T5] open=1 trades=1 realized=-21.3pt/Rs-1384 unreal=+10.3pt/Rs+673
+2026-10-28 05:25:13,312 [INFO] [INDICATORS] spot=22559.8 | 1h: close=22571.7 sma20=22645.6 sma50=22772.3 rsi=42.7 macd=-0.45/-5.42(bull) | 15m: K=10.9↓(prev 13.4) | regime=PE-eligible any_active=True
+2026-10-28 05:25:13,312 [INFO] [SIGNAL] CE: reg=False K=False(K=10.9>=38,rising) Kextr=True RSI=False(42.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=10.9<=80,falling) Kextr=True RSI=True(42.7<47) MACD=False(gate off) => BLOCK
+2026-10-28 05:25:13,313 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=203.60 entry=223.70 pnl=-20.10(-9.0%) sl=0.00 peak=223.70 tr_armed=False elapsed=54min
