@@ -2115,3 +2115,23 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 04:28:24,642 [INFO] [INDICATORS] spot=22630.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=23.4↓(prev 36.1) | regime=NEUTRAL any_active=True
 2026-10-28 04:28:24,642 [INFO] [SIGNAL] CE: reg=False K=False(K=23.4>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=23.4<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:28:24,642 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0322700CE ltp=152.20 entry=173.80 pnl=-21.60(-12.4%) sl=142.52 peak=173.80 tr_armed=False elapsed=6min
+2026-10-28 04:28:27,354 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 04:29:28,480 [INFO] [APEX] ENTRY PE 22600 @ 199.8 (level+RSI-turn+energy+diverge) open=1
+2026-10-28 04:30:30,546 [INFO] [WCR] 22550CE — OI 2.8M @09:42 -> 1.9M (32% unwound in 18m), price 225.55 -> 229.10, spot 22600 through 22550
+2026-10-28 04:30:30,546 [INFO] [WCR] resting limit BUY @ 248.11, valid 20m (no chase)
+2026-10-28 04:30:30,582 [INFO] [STOCH] SIGNAL 22600CE @194.35 -- 15m Stoch(5,3) crossed INTO <=20 (K 36.2->17.9) bar 09:45; scalp +14/-10 Rs, 60min
+2026-10-28 04:30:30,582 [INFO] [STOCH] WOULD_ENTER(log-only) CE 15m Stoch(5,3) crossed INTO <=20 (K 36.2->17.9) bar 09:45; scalp +14/-10 Rs, 60min
+2026-10-28 04:30:30,645 [INFO] [FAST] PE22600 score=110 vol=1.94 U=26.9 skipped: leader score=110 vol=1.94 U=26.9
+2026-10-28 04:31:01,435 [INFO] [WCR] SIGNAL 22550CE @223.70 — OI 2.8M @09:42 -> 1.9M (32% unwound in 18m), price 225.55 -> 229.10, spot 22600 through 22550 | limit 248.11 filled at 223.70
+2026-10-28 04:31:01,501 [INFO] ENTRY: NFO:NIFTY26N0322550CE @ 223.70  engine=WCR  detail=OI 2.8M @09:42 -> 1.9M (32% unwound in 18m), price 225.55 -> 229.10, spot 22600 through 22550 | limit 248.11 filled at 223.70
+2026-10-28 04:31:33,193 [INFO] [VWAP_TRAIL] Option 15m close 149.80 < VWAP 153.60 — exiting
+2026-10-28 04:31:33,193 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=2/4 (reason=VWAP_TRAIL)
+2026-10-28 04:31:33,194 [INFO] EXIT: NFO:NIFTY26N0322700CE @ 144.30 reason=VWAP_TRAIL pnl/sh=-29.50 is_flip=False losses=1/4
+2026-10-28 04:31:34,180 [INFO] [T5] EXIT CE 22600 211.1->189.8 -21.3pt Rs-1384 [stop] | day -21.3pt Rs-1384
+2026-10-28 04:32:05,568 [INFO] [FAST] PE22600 score=217 vol=2.06 U=54.4 skipped: spike cap +27.7 allow 27.0
+2026-10-28 04:32:36,089 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=3 brick=27.92 last5=[1, 1, -1]
+2026-10-28 04:33:38,090 [INFO] [APEX] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+15.7pt/Rs+1017
+2026-10-28 04:33:38,091 [INFO] [T5] open=0 trades=1 realized=-21.3pt/Rs-1384 unreal=+0.0pt/Rs+0
+2026-10-28 04:33:38,091 [INFO] [INDICATORS] spot=22574.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=14.8↓(prev 23.4) | regime=NEUTRAL any_active=True
+2026-10-28 04:33:38,091 [INFO] [SIGNAL] CE: reg=False K=False(K=14.8>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=14.8<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:33:38,092 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=207.85 entry=223.70 pnl=-15.85(-7.1%) sl=0.00 peak=223.70 tr_armed=False elapsed=2min
