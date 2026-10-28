@@ -1304,3 +1304,20 @@
 2026-10-28 04:17:03,925 [INFO] [SIGNAL] CE: reg=False K=False(K=29.5>=38,rising) Kextr=False RSI=True(55.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=29.5<=80,falling) Kextr=False RSI=False(55.0<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:17:03,925 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26OCT73100CE ltp=412.40 entry=412.90 pnl=-0.50(-0.1%) sl=0.00 peak=412.90 tr_armed=False elapsed=0min
 2026-10-28 04:17:03,925 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT72800CE ltp=581.05 entry=461.60 pnl=+119.45(+25.9%) sl=0.00 peak=581.05 tr_armed=False elapsed=13min
+2026-10-28 04:17:06,679 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261028_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261028_090604.csv
+2026-10-28 04:17:36,963 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+14.4pt persist=False (last 2x5m vs FUTvwap=72981.7)
+2026-10-28 04:18:07,371 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+14.4pt persist=False (last 2x5m vs FUTvwap=72981.7)
+2026-10-28 04:18:07,400 [INFO] EXIT: BFO:SENSEX26OCT73100CE @ 425.90 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+13.00 is_flip=False losses=0/4
+2026-10-28 04:18:38,531 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+9.4pt persist=False (last 2x5m vs FUTvwap=72986.7)
+2026-10-28 04:19:08,849 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+9.4pt persist=False (last 2x5m vs FUTvwap=72986.7)
+2026-10-28 04:19:39,157 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+8.4pt persist=False (last 2x5m vs FUTvwap=72987.7)
+2026-10-28 04:20:09,495 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+8.4pt persist=False (last 2x5m vs FUTvwap=72987.7)
+2026-10-28 04:20:39,801 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+5.6pt persist=False (last 2x5m vs FUTvwap=72990.5)
+2026-10-28 04:21:10,129 [INFO] [VWAP] Persistence-gate BLOCK — CE dist=+5.6pt persist=False (last 2x5m vs FUTvwap=72990.5)
+2026-10-28 04:21:40,557 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+145.5pt persist=False (last 2x5m vs FUTvwap=73004.5)
+2026-10-28 04:22:10,900 [INFO] [VWAP] Persistence-gate BLOCK — PE dist=+145.5pt persist=False (last 2x5m vs FUTvwap=73004.5)
+2026-10-28 04:22:10,953 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 04:22:11,006 [INFO] [T5] open=0 trades=1 realized=+51.8pt/Rs+1036 unreal=+0.0pt/Rs+0
+2026-10-28 04:22:11,007 [INFO] [INDICATORS] spot=73172.2 | 1h: close=73598.7 sma20=73247.3 sma50=73640.0 rsi=55.0 macd=37.91/-8.30(bull) | 15m: K=29.5↓(prev 42.0) | regime=NEUTRAL any_active=True
+2026-10-28 04:22:11,007 [INFO] [SIGNAL] CE: reg=False K=False(K=29.5>=38,rising) Kextr=False RSI=True(55.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=29.5<=80,falling) Kextr=False RSI=False(55.0<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:22:11,007 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT72800CE ltp=599.30 entry=461.60 pnl=+137.70(+29.8%) sl=0.00 peak=619.20 tr_armed=False elapsed=18min
