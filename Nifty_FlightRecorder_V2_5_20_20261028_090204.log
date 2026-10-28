@@ -2176,3 +2176,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 04:54:14,007 [INFO] [SIGNAL] CE: reg=False K=False(K=20.1>=38,rising) Kextr=True RSI=False(42.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=20.1<=80,falling) Kextr=True RSI=True(42.7<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:54:14,008 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=180.90 entry=223.70 pnl=-42.80(-19.1%) sl=0.00 peak=223.70 tr_armed=False elapsed=23min
 2026-10-28 04:54:14,008 [INFO] [STATE][FAST] PE NFO:NIFTY26N0322550PE ltp=231.35 entry=211.40 pnl=+19.95(+9.4%) sl=0.00 peak=238.90 tr_armed=False elapsed=16min
+2026-10-28 04:54:16,712 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 04:55:17,482 [INFO] [ORB] H3 CONFIRMED PE break 22517.7 -> 22508.5 vs OR[22555.9,22691.5]; resting buy on pullback to [OR 22556 / PDC 22750] ±8 until 15:00 (entry cutoff, no timer)
+2026-10-28 04:55:18,339 [INFO] EXIT: NFO:NIFTY26N0322550PE @ 223.90 reason=FAST_TRAIL15 pnl/sh=+12.50 is_flip=False losses=0/4
+2026-10-28 04:59:22,686 [INFO] [APEX] open=0 trades=1 realized=+27.8pt/Rs+1804 unreal=+0.0pt/Rs+0
+2026-10-28 04:59:22,686 [INFO] [T5] open=0 trades=1 realized=-21.3pt/Rs-1384 unreal=+0.0pt/Rs+0
+2026-10-28 04:59:22,687 [INFO] [INDICATORS] spot=22518.7 | 1h: close=22571.7 sma20=22645.6 sma50=22772.3 rsi=42.7 macd=-0.45/-5.42(bull) | 15m: K=20.1↑(prev 14.8) | regime=PE-eligible any_active=True
+2026-10-28 04:59:22,687 [INFO] [SIGNAL] CE: reg=False K=False(K=20.1>=38,rising) Kextr=True RSI=False(42.7>53) MACD=True(gate off) => BLOCK | PE: reg=True K=False(K=20.1<=80,falling) Kextr=True RSI=True(42.7<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:59:22,688 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=182.00 entry=223.70 pnl=-41.70(-18.6%) sl=0.00 peak=223.70 tr_armed=False elapsed=28min
