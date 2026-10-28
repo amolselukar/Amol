@@ -2515,3 +2515,10 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 08:25:11,295 [INFO] [INDICATORS] spot=22713.5 | 1h: close=22735.0 sma20=22673.6 sma50=22745.5 rsi=53.4 macd=-4.17/-6.36(bull) | 15m: K=84.3↓(prev 90.1) | regime=NEUTRAL any_active=True
 2026-10-28 08:25:11,295 [INFO] [SIGNAL] CE: reg=False K=False(K=84.3>=38,rising) Kextr=True RSI=True(53.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.3<=80,falling) Kextr=True RSI=False(53.4<47) MACD=False(gate off) => BLOCK
 2026-10-28 08:25:11,296 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=295.85 entry=223.70 pnl=+72.15(+32.3%) sl=0.00 peak=341.35 tr_armed=False elapsed=234min
+2026-10-28 08:25:14,085 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 08:26:14,728 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=15 brick=27.92 last5=[1, 1, 1, 1, -1]
+2026-10-28 08:30:18,689 [INFO] [APEX] open=0 trades=5 realized=+41.4pt/Rs+2688 unreal=+0.0pt/Rs+0
+2026-10-28 08:30:18,764 [INFO] [T5] open=0 trades=4 realized=-8.6pt/Rs-559 unreal=+0.0pt/Rs+0
+2026-10-28 08:30:18,765 [INFO] [INDICATORS] spot=22706.2 | 1h: close=22735.0 sma20=22673.6 sma50=22745.5 rsi=53.4 macd=-4.17/-6.36(bull) | 15m: K=78.1↓(prev 84.3) | regime=NEUTRAL any_active=True
+2026-10-28 08:30:18,765 [INFO] [SIGNAL] CE: reg=False K=False(K=78.1>=38,rising) Kextr=True RSI=True(53.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=78.1<=80,falling) Kextr=True RSI=False(53.4<47) MACD=False(gate off) => BLOCK
+2026-10-28 08:30:18,766 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=285.70 entry=223.70 pnl=+62.00(+27.7%) sl=0.00 peak=341.35 tr_armed=False elapsed=239min
