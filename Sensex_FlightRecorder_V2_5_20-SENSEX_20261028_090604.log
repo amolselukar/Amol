@@ -1279,3 +1279,10 @@
 2026-10-28 04:06:44,506 [INFO] [INDICATORS] spot=72852.5 | 1h: close=73598.7 sma20=73247.3 sma50=73640.0 rsi=55.0 macd=37.91/-8.30(bull) | 15m: K=42.0↓(prev 64.9) | regime=NEUTRAL any_active=True
 2026-10-28 04:06:44,506 [INFO] [SIGNAL] CE: reg=False K=False(K=42.0>=38,rising) Kextr=False RSI=True(55.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=42.0<=80,falling) Kextr=False RSI=False(55.0<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:06:44,507 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT72800CE ltp=455.20 entry=461.60 pnl=-6.40(-1.4%) sl=0.00 peak=477.65 tr_armed=False elapsed=3min
+2026-10-28 04:06:48,124 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261028_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261028_090604.csv
+2026-10-28 04:09:20,219 [INFO] [BREAKWATCH] ORB CE BFO:SENSEX26OCT72800CE entry 09:33 score 1/6 -> KEEP(green, profit guard) | {'progress_x': 0.1998, 'other_idx_dir%': -0.0246, 'hw_breadth': 0.4583, 'hw_basket_dir%': 0.0102, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 42.7094} missing=[] fetch_fail=[]
+2026-10-28 04:11:51,904 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 04:11:51,967 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 04:11:51,968 [INFO] [INDICATORS] spot=72923.0 | 1h: close=73598.7 sma20=73247.3 sma50=73640.0 rsi=55.0 macd=37.91/-8.30(bull) | 15m: K=42.0↓(prev 64.9) | regime=NEUTRAL any_active=True
+2026-10-28 04:11:51,968 [INFO] [SIGNAL] CE: reg=False K=False(K=42.0>=38,rising) Kextr=False RSI=True(55.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=42.0<=80,falling) Kextr=False RSI=False(55.0<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:11:51,968 [INFO] [STATE][ORB] CE BFO:SENSEX26OCT72800CE ltp=460.90 entry=461.60 pnl=-0.70(-0.2%) sl=0.00 peak=495.60 tr_armed=False elapsed=8min
