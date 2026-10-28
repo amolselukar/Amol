@@ -2010,3 +2010,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 03:42:20,204 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-28 03:42:20,204 [INFO] [INDICATORS] spot=22749.8 | 1h: close=22762.0 sma20=22628.8 sma50=22784.6 rsi=54.7 macd=7.97/-11.15(bull) | 15m: K=53.3↑(prev 37.4) | regime=NEUTRAL any_active=False
 2026-10-28 03:42:20,204 [INFO] [SIGNAL] CE: reg=False K=True(K=53.3>=38,rising) Kextr=True RSI=True(54.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=53.3<=80,falling) Kextr=True RSI=False(54.7<47) MACD=False(gate off) => BLOCK
+2026-10-28 03:42:22,760 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 03:46:24,409 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=0 brick=27.92 last5=[]
+2026-10-28 03:46:24,412 [INFO] [MVWAP] Signal — 22808>22662 body=71% side=CE (morning exception)
+2026-10-28 03:46:24,439 [WARNING] Premium 199.30 outside gate [30,180] (CE); skipping entry
+2026-10-28 03:47:24,897 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 03:47:24,930 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-28 03:47:24,931 [INFO] [INDICATORS] spot=22605.1 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=57.0↑(prev 53.3) | regime=NEUTRAL any_active=False
+2026-10-28 03:47:24,931 [INFO] [SIGNAL] CE: reg=False K=True(K=57.0>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=57.0<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
