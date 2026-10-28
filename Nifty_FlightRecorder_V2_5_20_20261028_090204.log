@@ -2135,3 +2135,19 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-28 04:33:38,091 [INFO] [INDICATORS] spot=22574.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=14.8↓(prev 23.4) | regime=NEUTRAL any_active=True
 2026-10-28 04:33:38,091 [INFO] [SIGNAL] CE: reg=False K=False(K=14.8>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=14.8<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
 2026-10-28 04:33:38,092 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=207.85 entry=223.70 pnl=-15.85(-7.1%) sl=0.00 peak=223.70 tr_armed=False elapsed=2min
+2026-10-28 04:33:40,808 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261028_090204.log, Nifty_BarLevel_V2_5_20_20261028_090204.csv
+2026-10-28 04:35:12,123 [INFO] [FAST] PE22600 score=139 vol=0.82 U=41.1 skipped: leader score=139 vol=0.82 U=41.1
+2026-10-28 04:36:12,954 [INFO] [FUT5VWAP] Signal — 22634<22663 body=68% side=PE (fixed +12pt target)
+2026-10-28 04:36:13,029 [INFO] ENTRY: NFO:NIFTY26N0322600PE @ 227.45  engine=FUT5VWAP  detail=FUT5 VWAP cross 22634<22663 body=68% pivΔ=28pt | bar=163
+2026-10-28 04:36:14,047 [INFO] [FAST] PE22550 score=201 vol=1.54 U=57.5 skipped: leader score=201 vol=1.54 U=57.5
+2026-10-28 04:36:44,612 [INFO] [RENKO] dir=-1 (DOWN) bricks=4 brick=27.92 last5=[1, 1, -1, -1]
+2026-10-28 04:37:15,308 [INFO] [FAST] SIGNAL 1m momentum PE22550 score=209 vol=2.6x U=+47 momN=15.7% trend=off bar 10:06; trail 15
+2026-10-28 04:37:15,358 [INFO] ENTRY: NFO:NIFTY26N0322550PE @ 211.40  engine=FAST  detail=1m momentum PE22550 score=209 vol=2.6x U=+47 momN=15.7% trend=off bar 10:06; trail 15
+2026-10-28 04:37:46,704 [INFO] EXIT: NFO:NIFTY26N0322600PE @ 231.45 reason=FUT5VWAP_LOCK_FLOOR pnl/sh=+4.00 is_flip=False losses=0/4
+2026-10-28 04:37:47,589 [INFO] [APEX] EXIT PE 22600 199.8->227.5 +27.8pt Rs+1804 [trail] | day +27.8pt Rs+1804
+2026-10-28 04:38:49,378 [INFO] [APEX] open=0 trades=1 realized=+27.8pt/Rs+1804 unreal=+0.0pt/Rs+0
+2026-10-28 04:38:49,378 [INFO] [T5] open=0 trades=1 realized=-21.3pt/Rs-1384 unreal=+0.0pt/Rs+0
+2026-10-28 04:38:49,379 [INFO] [INDICATORS] spot=22558.0 | 1h: close=22749.8 sma20=22641.0 sma50=22780.8 rsi=53.8 macd=11.29/-6.66(bull) | 15m: K=14.8↓(prev 23.4) | regime=NEUTRAL any_active=True
+2026-10-28 04:38:49,379 [INFO] [SIGNAL] CE: reg=False K=False(K=14.8>=38,rising) Kextr=True RSI=True(53.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=14.8<=80,falling) Kextr=True RSI=False(53.8<47) MACD=False(gate off) => BLOCK
+2026-10-28 04:38:49,379 [INFO] [STATE][WCR] CE NFO:NIFTY26N0322550CE ltp=203.85 entry=223.70 pnl=-19.85(-8.9%) sl=0.00 peak=223.70 tr_armed=False elapsed=7min
+2026-10-28 04:38:49,379 [INFO] [STATE][FAST] PE NFO:NIFTY26N0322550PE ltp=199.90 entry=211.40 pnl=-11.50(-5.4%) sl=0.00 peak=211.40 tr_armed=False elapsed=1min
