@@ -2506,3 +2506,10 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-29 09:17:04,953 [INFO] [INDICATORS] spot=22941.0 | 1h: close=22889.8 sma20=22738.9 sma50=22702.3 rsi=62.0 macd=42.28/19.45(bull) | 15m: K=100.0↑(prev 97.2) | regime=CE-eligible any_active=True
 2026-10-29 09:17:04,953 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(62.0>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(62.0<47) MACD=False(gate off) => BLOCK
 2026-10-29 09:17:04,955 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0322900CE ltp=178.65 entry=175.10 pnl=+3.55(+2.0%) sl=143.58 peak=184.30 tr_armed=False elapsed=2min
+2026-10-29 09:17:07,953 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261029_090205.log, Nifty_BarLevel_V2_5_20_20261029_090205.csv
+2026-10-29 09:20:42,518 [INFO] [BREAKWATCH] VWAP CE NFO:NIFTY26N0322900CE entry 14:45 score 3/6 -> KEEP | {'progress_x': -0.022, 'other_idx_dir%': 0.0338, 'hw_breadth': 0.6667, 'hw_basket_dir%': 0.012, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 1.8813} missing=[] fetch_fail=[]
+2026-10-29 09:22:14,691 [INFO] [APEX] open=0 trades=1 realized=+3.9pt/Rs+253 unreal=+0.0pt/Rs+0
+2026-10-29 09:22:14,750 [INFO] [T5] open=0 trades=3 realized=-43.0pt/Rs-2792 unreal=+0.0pt/Rs+0
+2026-10-29 09:22:14,751 [INFO] [INDICATORS] spot=22941.2 | 1h: close=22889.8 sma20=22738.9 sma50=22702.3 rsi=62.0 macd=42.28/19.45(bull) | 15m: K=100.0↑(prev 97.2) | regime=CE-eligible any_active=True
+2026-10-29 09:22:14,751 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(62.0>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(62.0<47) MACD=False(gate off) => BLOCK
+2026-10-29 09:22:14,752 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0322900CE ltp=183.75 entry=175.10 pnl=+8.65(+4.9%) sl=143.58 peak=184.30 tr_armed=False elapsed=7min
