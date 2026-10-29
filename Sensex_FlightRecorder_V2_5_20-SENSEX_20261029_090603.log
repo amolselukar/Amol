@@ -1833,3 +1833,10 @@
 2026-10-29 09:53:56,379 [INFO] [EXP12] M=74100 open=2[EXP2:74000PE EXP2:74200CE] trades=0 realized=Rs+0 triggers=4 | by-engine none
 2026-10-29 09:55:28,457 [INFO] [INDICATORS] spot=74092.5 | 1h: close=74096.7 sma20=73477.7 sma50=73391.3 rsi=64.4 macd=148.50/59.79(bull) | 15m: K=93.7↓(prev 100.0) | regime=CE-eligible any_active=False
 2026-10-29 09:55:28,457 [INFO] [SIGNAL] CE: reg=True K=False(K=93.7>=38,rising) Kextr=False RSI=True(64.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=93.7<=80,falling) Kextr=True RSI=False(64.4<47) MACD=False(gate off) => BLOCK
+2026-10-29 09:55:32,352 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261029_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261029_090603.csv
+2026-10-29 09:56:02,901 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 09:56:02,901 [INFO] [T5] open=0 trades=1 realized=-20.8pt/Rs-415 unreal=+0.0pt/Rs+0
+2026-10-29 09:58:05,900 [INFO] [EXP12] EXP2 EXIT 74000PE 46.05->5.55 Rs-810 [EOD_1528] | day Rs-810
+2026-10-29 09:58:06,756 [INFO] [EXP12] EXP2 EXIT 74200CE 65.80->33.45 Rs-647 [EOD_1528] | day Rs-1457
+2026-10-29 09:59:09,668 [INFO] [EXP12] EOD why/why-not report sent
+2026-10-29 09:59:09,669 [INFO] [EXP12] M=74100 open=0[-] trades=2 realized=Rs-1457 triggers=4 | by-engine EXP2:2tr/Rs-1457
