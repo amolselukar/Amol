@@ -1674,3 +1674,11 @@
 2026-10-29 08:22:42,958 [INFO] [T5] open=0 trades=1 realized=-20.8pt/Rs-415 unreal=+0.0pt/Rs+0
 2026-10-29 08:22:42,958 [INFO] [INDICATORS] spot=73892.3 | 1h: close=73808.1 sma20=73431.1 sma50=73385.6 rsi=59.3 macd=87.56/18.19(bull) | 15m: K=46.3↑(prev 38.8) | regime=CE-eligible any_active=False
 2026-10-29 08:22:42,958 [INFO] [SIGNAL] CE: reg=True K=True(K=46.3>=38,rising) Kextr=False RSI=True(59.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=46.3<=80,falling) Kextr=False RSI=False(59.3<47) MACD=False(gate off) => BLOCK
+2026-10-29 08:22:45,890 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261029_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261029_090603.csv
+2026-10-29 08:26:18,288 [INFO] [V3PROBE] PLACED CE BFO:SENSEX26OCT74000CE limit=87.20 (LTP=100.20 - 13) window=25min — EARLY(10m) Grade B G-cluster BREAK-CE at 73840
+2026-10-29 08:26:19,138 [INFO] [EXP12] universe RE-resolved: M=74000 legs=[(73900, 'CE'), (73900, 'PE'), (74000, 'CE'), (74000, 'PE'), (74100, 'CE'), (74100, 'PE')]
+2026-10-29 08:26:19,260 [INFO] [EXP12] M=74000 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-29 08:27:50,313 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 08:27:50,313 [INFO] [T5] open=0 trades=1 realized=-20.8pt/Rs-415 unreal=+0.0pt/Rs+0
+2026-10-29 08:27:50,314 [INFO] [INDICATORS] spot=73945.3 | 1h: close=73808.1 sma20=73431.1 sma50=73385.6 rsi=59.3 macd=87.56/18.19(bull) | 15m: K=46.3↑(prev 38.8) | regime=CE-eligible any_active=False
+2026-10-29 08:27:50,314 [INFO] [SIGNAL] CE: reg=True K=True(K=46.3>=38,rising) Kextr=False RSI=True(59.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=46.3<=80,falling) Kextr=False RSI=False(59.3<47) MACD=False(gate off) => BLOCK
