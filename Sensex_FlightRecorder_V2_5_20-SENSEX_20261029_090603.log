@@ -1516,3 +1516,20 @@
 2026-10-29 06:24:49,632 [INFO] [INDICATORS] spot=73833.4 | 1h: close=73743.6 sma20=73381.1 sma50=73402.1 rsi=58.6 macd=28.07/-14.95(bull) | 15m: K=87.5↑(prev 81.4) | regime=NEUTRAL any_active=True
 2026-10-29 06:24:49,632 [INFO] [SIGNAL] CE: reg=False K=True(K=87.5>=38,rising) Kextr=False RSI=True(58.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=87.5<=80,falling) Kextr=True RSI=False(58.6<47) MACD=False(gate off) => BLOCK
 2026-10-29 06:24:49,632 [INFO] [STATE][BASE] CE BFO:SENSEX26OCT73800CE ltp=179.55 entry=184.15 pnl=-4.60(-2.5%) sl=151.00 peak=193.90 tr_armed=False elapsed=3min
+2026-10-29 06:24:53,471 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261029_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261029_090603.csv
+2026-10-29 06:25:23,787 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:25:54,163 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:26:24,992 [INFO] [BREAKWATCH] V3 CE BFO:SENSEX26OCT73800CE entry 11:51 score 0/6 -> KEEP(green, profit guard) | {'progress_x': -0.3494, 'other_idx_dir%': 0.012, 'hw_breadth': 0.4583, 'hw_basket_dir%': 0.0101, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 9.8536} missing=[] fetch_fail=[]
+2026-10-29 06:26:25,036 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:26:55,352 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:27:25,668 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:27:56,025 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:28:26,373 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:28:56,701 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:29:27,022 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:29:57,339 [INFO] [VWAP] Climax skip — body=96% >= 87%
+2026-10-29 06:29:57,362 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 06:29:57,362 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 06:29:57,363 [INFO] [INDICATORS] spot=73848.3 | 1h: close=73743.6 sma20=73381.1 sma50=73402.1 rsi=58.6 macd=28.07/-14.95(bull) | 15m: K=87.5↑(prev 81.4) | regime=NEUTRAL any_active=True
+2026-10-29 06:29:57,363 [INFO] [SIGNAL] CE: reg=False K=True(K=87.5>=38,rising) Kextr=False RSI=True(58.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=87.5<=80,falling) Kextr=True RSI=False(58.6<47) MACD=False(gate off) => BLOCK
+2026-10-29 06:29:57,363 [INFO] [STATE][BASE] CE BFO:SENSEX26OCT73800CE ltp=188.40 entry=184.15 pnl=+4.25(+2.3%) sl=151.00 peak=205.50 tr_armed=False elapsed=8min
