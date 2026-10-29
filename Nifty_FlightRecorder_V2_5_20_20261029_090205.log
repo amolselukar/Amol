@@ -2440,3 +2440,10 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-29 08:40:25,323 [INFO] [T5] open=0 trades=3 realized=-43.0pt/Rs-2792 unreal=+0.0pt/Rs+0
 2026-10-29 08:40:25,324 [INFO] [INDICATORS] spot=22890.0 | 1h: close=22840.0 sma20=22730.3 sma50=22702.9 rsi=59.1 macd=34.44/13.74(bull) | 15m: K=57.6↑(prev 35.2) | regime=CE-eligible any_active=False
 2026-10-29 08:40:25,324 [INFO] [SIGNAL] CE: reg=True K=True(K=57.6>=38,rising) Kextr=True RSI=True(59.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=57.6<=80,falling) Kextr=True RSI=False(59.1<47) MACD=False(gate off) => BLOCK
+2026-10-29 08:40:36,869 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261029_090205.log, Nifty_BarLevel_V2_5_20_20261029_090205.csv
+2026-10-29 08:41:07,178 [INFO] [RENKO] dir=+1 (UP) bricks=9 brick=24.74 last5=[1, 1, -1, 1, 1]
+2026-10-29 08:41:37,855 [INFO] [V3PROBE] PLACED PE NFO:NIFTY26N0322900PE limit=132.80 (LTP=136.80 - 4) window=25min — EARLY(10m) Grade B G-cluster REJECT-PE at 22900
+2026-10-29 08:45:43,363 [INFO] [APEX] open=0 trades=1 realized=+3.9pt/Rs+253 unreal=+0.0pt/Rs+0
+2026-10-29 08:45:43,421 [INFO] [T5] open=0 trades=3 realized=-43.0pt/Rs-2792 unreal=+0.0pt/Rs+0
+2026-10-29 08:45:43,421 [INFO] [INDICATORS] spot=22890.0 | 1h: close=22890.0 sma20=22738.9 sma50=22702.3 rsi=59.1 macd=34.44/13.74(bull) | 15m: K=79.6↑(prev 57.6) | regime=CE-eligible any_active=False
+2026-10-29 08:45:43,422 [INFO] [SIGNAL] CE: reg=True K=True(K=79.6>=38,rising) Kextr=True RSI=True(59.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=79.6<=80,falling) Kextr=True RSI=False(59.1<47) MACD=False(gate off) => BLOCK
