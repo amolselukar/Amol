@@ -2134,3 +2134,23 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-29 05:04:16,556 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-29 05:04:16,557 [INFO] [INDICATORS] spot=22864.5 | 1h: close=22787.3 sma20=22699.0 sma50=22713.7 rsi=56.7 macd=9.43/-0.54(bull) | 15m: K=93.8↑(prev 84.5) | regime=NEUTRAL any_active=False
 2026-10-29 05:04:16,557 [INFO] [SIGNAL] CE: reg=False K=True(K=93.8>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=93.8<=80,falling) Kextr=True RSI=False(56.7<47) MACD=False(gate off) => BLOCK
+2026-10-29 05:04:20,108 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261029_090205.log, Nifty_BarLevel_V2_5_20_20261029_090205.csv
+2026-10-29 05:04:50,413 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:05:20,770 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:05:51,312 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:06:21,647 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:06:52,159 [INFO] [V3PROBE] EXPIRED unfilled CE NFO:NIFTY26N0322800CE limit=153.55
+2026-10-29 05:06:52,966 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:07:23,286 [INFO] [V3PROBE] PLACED CE NFO:NIFTY26N0322900CE limit=139.55 (LTP=143.55 - 4) window=25min — Grade B G-cluster BREAK-CE at 22830
+2026-10-29 05:07:24,081 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:07:54,609 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:08:24,936 [INFO] [V3PROBE] FILLED CE NFO:NIFTY26N0322900CE @ 139.55 (LTP touched 138.25)
+2026-10-29 05:08:24,976 [INFO] ENTRY: NFO:NIFTY26N0322900CE @ 139.55  engine=V3  detail=Grade B G-cluster BREAK-CE at 22830
+2026-10-29 05:08:25,783 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:08:56,354 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:09:26,756 [INFO] [VWAP] Climax skip — body=88% >= 87%
+2026-10-29 05:09:26,955 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 05:09:26,956 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 05:09:26,956 [INFO] [INDICATORS] spot=22844.5 | 1h: close=22787.3 sma20=22699.0 sma50=22713.7 rsi=56.7 macd=9.43/-0.54(bull) | 15m: K=93.8↑(prev 84.5) | regime=NEUTRAL any_active=True
+2026-10-29 05:09:26,956 [INFO] [SIGNAL] CE: reg=False K=True(K=93.8>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=93.8<=80,falling) Kextr=True RSI=False(56.7<47) MACD=False(gate off) => BLOCK
+2026-10-29 05:09:26,956 [INFO] [STATE][BASE] CE NFO:NIFTY26N0322900CE ltp=141.05 entry=139.55 pnl=+1.50(+1.1%) sl=114.43 peak=141.05 tr_armed=False elapsed=1min
