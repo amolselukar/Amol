@@ -2447,3 +2447,19 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-29 08:45:43,421 [INFO] [T5] open=0 trades=3 realized=-43.0pt/Rs-2792 unreal=+0.0pt/Rs+0
 2026-10-29 08:45:43,421 [INFO] [INDICATORS] spot=22890.0 | 1h: close=22890.0 sma20=22738.9 sma50=22702.3 rsi=59.1 macd=34.44/13.74(bull) | 15m: K=79.6↑(prev 57.6) | regime=CE-eligible any_active=False
 2026-10-29 08:45:43,422 [INFO] [SIGNAL] CE: reg=True K=True(K=79.6>=38,rising) Kextr=True RSI=True(59.1>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=79.6<=80,falling) Kextr=True RSI=False(59.1<47) MACD=False(gate off) => BLOCK
+2026-10-29 08:45:46,255 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261029_090205.log, Nifty_BarLevel_V2_5_20_20261029_090205.csv
+2026-10-29 08:48:55,745 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 08:49:02,812 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 08:49:10,883 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 08:49:14,884 [ERROR] Kite call ltp terminal failure
+2026-10-29 08:49:51,542 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 08:49:58,621 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 08:50:06,702 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 08:50:10,702 [ERROR] Kite call ltp terminal failure
+2026-10-29 08:51:12,058 [INFO] [V3PROBE] FILLED PE NFO:NIFTY26N0322900PE @ 132.80 (LTP touched 130.85)
+2026-10-29 08:51:12,110 [INFO] ENTRY: NFO:NIFTY26N0322900PE @ 132.80  engine=V3  detail=EARLY(10m) Grade B G-cluster REJECT-PE at 22900
+2026-10-29 08:51:13,197 [INFO] [APEX] open=0 trades=1 realized=+3.9pt/Rs+253 unreal=+0.0pt/Rs+0
+2026-10-29 08:51:13,269 [INFO] [T5] open=0 trades=3 realized=-43.0pt/Rs-2792 unreal=+0.0pt/Rs+0
+2026-10-29 08:51:13,269 [INFO] [INDICATORS] spot=22902.4 | 1h: close=22889.8 sma20=22738.9 sma50=22702.3 rsi=62.0 macd=42.28/19.45(bull) | 15m: K=79.6↑(prev 57.6) | regime=CE-eligible any_active=True
+2026-10-29 08:51:13,269 [INFO] [SIGNAL] CE: reg=True K=True(K=79.6>=38,rising) Kextr=True RSI=True(62.0>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=79.6<=80,falling) Kextr=True RSI=False(62.0<47) MACD=False(gate off) => BLOCK
+2026-10-29 08:51:13,269 [INFO] [STATE][BASE] PE NFO:NIFTY26N0322900PE ltp=131.10 entry=132.80 pnl=-1.70(-1.3%) sl=108.90 peak=132.80 tr_armed=False elapsed=0min
