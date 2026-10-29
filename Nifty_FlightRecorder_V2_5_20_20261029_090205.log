@@ -2207,3 +2207,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-29 05:40:20,895 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+11.2pt/Rs+731
 2026-10-29 05:40:20,895 [INFO] [INDICATORS] spot=22818.9 | 1h: close=22787.3 sma20=22699.0 sma50=22713.7 rsi=56.7 macd=9.43/-0.54(bull) | 15m: K=90.2↓(prev 99.4) | regime=NEUTRAL any_active=False
 2026-10-29 05:40:20,895 [INFO] [SIGNAL] CE: reg=False K=False(K=90.2>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=90.2<=80,falling) Kextr=True RSI=False(56.7<47) MACD=False(gate off) => BLOCK
+2026-10-29 05:40:23,625 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261029_090205.log, Nifty_BarLevel_V2_5_20_20261029_090205.csv
+2026-10-29 05:41:55,054 [INFO] [RENKO] dir=+1 (UP) bricks=6 brick=24.74 last5=[1, 1, 1, 1, 1]
+2026-10-29 05:42:25,742 [INFO] [FAST] PE22800 score=125 vol=1.25 U=26.5 skipped: leader score=125 vol=1.25 U=26.5
+2026-10-29 05:43:27,097 [INFO] [T5] ENTRY PE 22800 @ 138.8 tgt198.8 stp122.7 (bo+4.0 CEdec-15.2) open=2
+2026-10-29 05:45:30,302 [INFO] [FAST] SIGNAL 1m momentum CE22850 score=128 vol=2.2x U=+22 momN=6.9% trend=CE bar 11:14; trail 15
+2026-10-29 05:45:30,367 [INFO] ENTRY: NFO:NIFTY26N0322850CE @ 156.00  engine=FAST  detail=1m momentum CE22850 score=128 vol=2.2x U=+22 momN=6.9% trend=CE bar 11:14; trail 15
+2026-10-29 05:45:31,301 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 05:45:31,383 [INFO] [T5] open=2 trades=0 realized=+0.0pt/Rs+0 unreal=-15.8pt/Rs-1027
+2026-10-29 05:45:31,383 [INFO] [INDICATORS] spot=22836.8 | 1h: close=22836.8 sma20=22711.2 sma50=22709.2 rsi=56.7 macd=9.44/-0.54(bull) | 15m: K=83.0↓(prev 90.2) | regime=CE-eligible any_active=True
+2026-10-29 05:45:31,384 [INFO] [SIGNAL] CE: reg=True K=False(K=83.0>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=83.0<=80,falling) Kextr=True RSI=False(56.7<47) MACD=False(gate off) => BLOCK
+2026-10-29 05:45:31,388 [INFO] [STATE][FAST] CE NFO:NIFTY26N0322850CE ltp=0.00 entry=156.00 pnl=-156.00(-100.0%) sl=0.00 peak=156.00 tr_armed=False elapsed=0min
