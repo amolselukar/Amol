@@ -2102,3 +2102,17 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-29 04:53:59,687 [INFO] [INDICATORS] spot=22813.7 | 1h: close=22787.3 sma20=22699.0 sma50=22713.7 rsi=56.7 macd=9.43/-0.54(bull) | 15m: K=84.5↑(prev 73.2) | regime=NEUTRAL any_active=True
 2026-10-29 04:53:59,687 [INFO] [SIGNAL] CE: reg=False K=True(K=84.5>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.5<=80,falling) Kextr=True RSI=False(56.7<47) MACD=False(gate off) => BLOCK
 2026-10-29 04:53:59,687 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0322800CE ltp=173.55 entry=159.25 pnl=+14.30(+9.0%) sl=130.59 peak=173.70 tr_armed=False elapsed=7min
+2026-10-29 04:54:02,580 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261029_090205.log, Nifty_BarLevel_V2_5_20_20261029_090205.csv
+2026-10-29 04:55:04,533 [INFO] [ORB] H3 CONFIRMED CE break 22806.5 -> 22818.6 vs OR[22656.8,22737.5]; resting buy on pullback to [OR 22737 / PDC 22699] ±8 until 15:00 (entry cutoff, no timer)
+2026-10-29 04:55:35,772 [INFO] [RENKO] dir=+1 (UP) bricks=4 brick=24.74 last5=[1, 1, 1, 1]
+2026-10-29 04:56:06,190 [INFO] [TRAIL] SL ratcheted 173.00 → 182.30  (peak=187.30)
+2026-10-29 04:57:07,057 [INFO] [TRAIL] SL ratcheted 182.30 → 182.70  (peak=187.70)
+2026-10-29 04:58:07,994 [INFO] [FAST] CE22850 score=133 vol=1.29 U=28.5 skipped: leader score=133 vol=1.29 U=28.5
+2026-10-29 04:58:38,254 [INFO] [TRAIL] SL ratcheted 182.70 → 186.65  (peak=191.65)
+2026-10-29 04:59:08,562 [INFO] [TRAIL] SL ratcheted 186.65 → 187.60  (peak=192.60)
+2026-10-29 04:59:08,746 [INFO] [FAST] CE22850 score=159 vol=1.30 U=34.4 skipped: leader score=159 vol=1.30 U=34.4
+2026-10-29 04:59:08,777 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 04:59:08,778 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 04:59:08,778 [INFO] [INDICATORS] spot=22840.9 | 1h: close=22787.3 sma20=22699.0 sma50=22713.7 rsi=56.7 macd=9.43/-0.54(bull) | 15m: K=84.5↑(prev 73.2) | regime=NEUTRAL any_active=True
+2026-10-29 04:59:08,778 [INFO] [SIGNAL] CE: reg=False K=True(K=84.5>=38,rising) Kextr=True RSI=True(56.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=84.5<=80,falling) Kextr=True RSI=False(56.7<47) MACD=False(gate off) => BLOCK
+2026-10-29 04:59:08,779 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0322800CE ltp=192.60 entry=159.25 pnl=+33.35(+20.9%) sl=187.60 peak=192.60 tr_armed=True elapsed=12min
