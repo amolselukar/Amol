@@ -1694,3 +1694,13 @@
 2026-10-29 08:38:04,630 [INFO] [T5] open=0 trades=1 realized=-20.8pt/Rs-415 unreal=+0.0pt/Rs+0
 2026-10-29 08:38:04,630 [INFO] [INDICATORS] spot=73948.1 | 1h: close=73808.1 sma20=73431.1 sma50=73385.6 rsi=59.3 macd=87.56/18.19(bull) | 15m: K=64.4↑(prev 46.3) | regime=CE-eligible any_active=False
 2026-10-29 08:38:04,630 [INFO] [SIGNAL] CE: reg=True K=True(K=64.4>=38,rising) Kextr=False RSI=True(59.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=64.4<=80,falling) Kextr=False RSI=False(59.3<47) MACD=False(gate off) => BLOCK
+2026-10-29 08:38:07,654 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261029_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261029_090603.csv
+2026-10-29 08:38:37,938 [INFO] [V3PROBE] FILLED CE BFO:SENSEX26OCT74000CE @ 87.20 (LTP touched 86.65)
+2026-10-29 08:38:37,987 [INFO] [MOMGATE] BLOCKED V3 CE #3 mv=-19pt thr=40 — 3rd+ same-direction entry without momentum
+2026-10-29 08:41:42,117 [INFO] [EXP12] anchor=spot M=73900 (max-OI would be 74000, diverged by +100) spot=73942.7
+2026-10-29 08:41:42,118 [INFO] [EXP12] universe RE-resolved: M=73900 legs=[(73800, 'CE'), (73800, 'PE'), (73900, 'CE'), (73900, 'PE'), (74000, 'CE'), (74000, 'PE')]
+2026-10-29 08:41:42,271 [INFO] [EXP12] M=73900 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-10-29 08:43:13,607 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-29 08:43:13,607 [INFO] [T5] open=0 trades=1 realized=-20.8pt/Rs-415 unreal=+0.0pt/Rs+0
+2026-10-29 08:43:13,608 [INFO] [INDICATORS] spot=73917.2 | 1h: close=73808.1 sma20=73431.1 sma50=73385.6 rsi=59.3 macd=87.56/18.19(bull) | 15m: K=64.4↑(prev 46.3) | regime=CE-eligible any_active=False
+2026-10-29 08:43:13,609 [INFO] [SIGNAL] CE: reg=True K=True(K=64.4>=38,rising) Kextr=False RSI=True(59.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=64.4<=80,falling) Kextr=False RSI=False(59.3<47) MACD=False(gate off) => BLOCK
