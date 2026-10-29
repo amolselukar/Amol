@@ -1798,3 +1798,24 @@
 2026-10-29 09:44:46,611 [INFO] [T5] open=0 trades=1 realized=-20.8pt/Rs-415 unreal=+0.0pt/Rs+0
 2026-10-29 09:44:46,611 [INFO] [INDICATORS] spot=74124.1 | 1h: close=73938.0 sma20=73453.2 sma50=73385.4 rsi=61.7 macd=115.37/37.62(bull) | 15m: K=100.0↑(prev 94.8) | regime=CE-eligible any_active=False
 2026-10-29 09:44:46,611 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=False RSI=True(61.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(61.7<47) MACD=False(gate off) => BLOCK
+2026-10-29 09:44:50,174 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261029_090603.log, Sensex_BarLevel_V2_5_20-SENSEX_20261029_090603.csv
+2026-10-29 09:45:20,646 [INFO] [EXP12] EXP1 trigger 74200PE @15:13 ref=140.55 snap=+9.2% oi15=0.1 dist=+76
+2026-10-29 09:46:21,914 [INFO] [EXP12] EXP1 trigger 74100PE @15:14 ref=90.50 snap=+21.3% oi15=-2.2 dist=+3
+2026-10-29 09:46:21,915 [INFO] [EXP12] EXP1 trigger 74000PE @15:14 ref=49.30 snap=+29.9% oi15=-11.4 dist=-97
+2026-10-29 09:46:21,953 [INFO] [EXP12] EXP1 74200PE @ 155.05 NOT opened — after entry cutoff
+2026-10-29 09:46:21,985 [INFO] [EXP12] EXP1 74100PE @ 95.05 NOT opened — after entry cutoff
+2026-10-29 09:46:22,018 [INFO] [EXP12] EXP1 74000PE @ 51.75 NOT opened — after entry cutoff
+2026-10-29 09:47:23,501 [INFO] [EXP12] EXP1 trigger 74200PE @15:14 ref=149.60 snap=+16.3% oi15=2.3 dist=+108
+2026-10-29 09:47:23,535 [INFO] [EXP12] EXP1 74200PE @ 140.00 NOT opened — after entry cutoff
+2026-10-29 09:48:24,840 [INFO] [EXP12] universe RE-resolved: M=74100 legs=[(74000, 'CE'), (74000, 'PE'), (74100, 'CE'), (74100, 'PE'), (74200, 'CE'), (74200, 'PE'), (74300, 'PE')]
+2026-10-29 09:48:25,092 [INFO] [EXP12] M=74100 open=2[EXP2:74000PE EXP2:74200CE] trades=0 realized=Rs+0 triggers=4 | by-engine none
+2026-10-29 09:49:32,745 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 09:49:39,842 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 09:49:47,952 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 09:49:51,953 [ERROR] Kite call ltp terminal failure
+2026-10-29 09:49:58,045 [WARNING] Kite call failed (ltp) attempt 1: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 09:50:05,146 [WARNING] Kite call failed (ltp) attempt 2: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 09:50:13,297 [WARNING] Kite call failed (ltp) attempt 3: Upstox GET /v3/market-quote/quotes failed: HTTP 429: {"status":"error","errors":[{"errorCode":"UDAPI10005","message":"Too Many Request Sent","propertyPath":null,"invalidValue":null,"error_code":"UDAPI10005","property_path":null,"invalid_value":null}]}
+2026-10-29 09:50:17,298 [ERROR] Kite call ltp terminal failure
+2026-10-29 09:50:17,300 [INFO] [INDICATORS] spot=74092.5 | 1h: close=74096.7 sma20=73477.7 sma50=73391.3 rsi=64.4 macd=148.50/59.79(bull) | 15m: K=93.7↓(prev 100.0) | regime=CE-eligible any_active=False
+2026-10-29 09:50:17,300 [INFO] [SIGNAL] CE: reg=True K=False(K=93.7>=38,rising) Kextr=False RSI=True(64.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=93.7<=80,falling) Kextr=True RSI=False(64.4<47) MACD=False(gate off) => BLOCK
