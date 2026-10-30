@@ -2192,3 +2192,17 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 05:56:18,351 [INFO] [INDICATORS] spot=23021.6 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=68.4 macd=71.82/45.32(bull) | 15m: K=43.9↑(prev 22.2) | regime=CE-eligible any_active=True
 2026-10-30 05:56:18,351 [INFO] [SIGNAL] CE: reg=True K=True(K=43.9>=38,rising) Kextr=True RSI=True(68.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=43.9<=80,falling) Kextr=True RSI=False(68.4<47) MACD=False(gate off) => BLOCK
 2026-10-30 05:56:18,352 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323000CE ltp=135.00 entry=126.95 pnl=+8.05(+6.3%) sl=104.10 peak=141.45 tr_armed=False elapsed=9min
+2026-10-30 05:56:51,890 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 06:00:27,156 [INFO] [STOCH] PE cross (K 63.2->80.9) bar 11:15 BLOCKED -- 1m renko UP opposes PE with a WEAK trend (net bricks +2, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-10-30 06:00:27,775 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 111"}
+2026-10-30 06:00:27,775 [WARNING] HTML parse failed; retrying as plain text
+2026-10-30 06:00:29,691 [INFO] [FAST] CE23050 score=170 vol=1.25 U=24.1 skipped: leader score=170 vol=1.25 U=24.1
+2026-10-30 06:01:00,167 [INFO] EXIT: NFO:NIFTY26N0323000CE @ 138.55 reason=TRAIL_+12 pnl/sh=+11.60 is_flip=False losses=1/4
+2026-10-30 06:01:31,693 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323000CE @ 137.05 spot=23032.3 | K=63.1↑ RSI=68.4 MACD✓
+2026-10-30 06:01:31,700 [INFO] [VWAP] Signal — FUT 23085>23022 body=68% side=CE | persist_gate=dist=+66.6pt persist=True (last 2x5m vs FUTvwap=23018.3)
+2026-10-30 06:01:31,749 [INFO] ENTRY: NFO:NIFTY26N0323000CE @ 137.05  engine=VWAP  detail=FUT VWAP 23085>23022 body=68% | bar=190
+2026-10-30 06:01:32,686 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 06:01:32,686 [INFO] [T5] open=0 trades=1 realized=+19.4pt/Rs+1258 unreal=+0.0pt/Rs+0
+2026-10-30 06:01:32,687 [INFO] [INDICATORS] spot=23032.3 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=68.4 macd=71.82/45.32(bull) | 15m: K=63.1↑(prev 43.9) | regime=CE-eligible any_active=True
+2026-10-30 06:01:32,687 [INFO] [SIGNAL] CE: reg=True K=True(K=63.1>=38,rising) Kextr=True RSI=True(68.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=63.1<=80,falling) Kextr=True RSI=False(68.4<47) MACD=False(gate off) => BLOCK
+2026-10-30 06:01:32,687 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323000CE ltp=137.75 entry=137.05 pnl=+0.70(+0.5%) sl=112.38 peak=137.05 tr_armed=False elapsed=0min
