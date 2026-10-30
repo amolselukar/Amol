@@ -2170,3 +2170,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 05:40:52,035 [INFO] [T5] open=0 trades=1 realized=+19.4pt/Rs+1258 unreal=+0.0pt/Rs+0
 2026-10-30 05:40:52,036 [INFO] [INDICATORS] spot=23001.7 | 1h: close=22938.6 sma20=22765.8 sma50=22705.9 rsi=64.6 macd=63.44/38.70(bull) | 15m: K=22.2↑(prev 11.7) | regime=CE-eligible any_active=False
 2026-10-30 05:40:52,036 [INFO] [SIGNAL] CE: reg=True K=False(K=22.2>=38,rising) Kextr=True RSI=True(64.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=22.2<=80,falling) Kextr=True RSI=False(64.6<47) MACD=False(gate off) => BLOCK
+2026-10-30 05:41:25,628 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 05:45:59,740 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 05:45:59,801 [INFO] [T5] open=0 trades=1 realized=+19.4pt/Rs+1258 unreal=+0.0pt/Rs+0
+2026-10-30 05:45:59,801 [INFO] [INDICATORS] spot=23006.2 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=64.5 macd=63.44/38.69(bull) | 15m: K=43.9↑(prev 22.2) | regime=CE-eligible any_active=False
+2026-10-30 05:45:59,802 [INFO] [SIGNAL] CE: reg=True K=True(K=43.9>=38,rising) Kextr=True RSI=True(64.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=43.9<=80,falling) Kextr=True RSI=False(64.5<47) MACD=False(gate off) => BLOCK
+2026-10-30 05:46:30,073 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323000CE @ 126.95 spot=23008.55 | K=43.9↑ RSI=68.4 MACD✓
+2026-10-30 05:46:30,082 [INFO] [VWAP] Signal — FUT 23050>23015 body=74% side=CE | persist_gate=dist=+38.9pt persist=True (last 2x5m vs FUTvwap=23011.4)
+2026-10-30 05:46:30,127 [INFO] ENTRY: NFO:NIFTY26N0323000CE @ 126.95  engine=VWAP  detail=FUT VWAP 23050>23015 body=74% | bar=189
