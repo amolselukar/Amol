@@ -2468,3 +2468,22 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 08:25:52,945 [INFO] [INDICATORS] spot=23038.4 | 1h: close=23096.8 sma20=22818.4 sma50=22716.5 rsi=72.7 macd=92.66/60.83(bull) | 15m: K=23.1↓(prev 50.8) | regime=CE-eligible any_active=False
 2026-10-30 08:25:52,945 [INFO] [SIGNAL] CE: reg=True K=False(K=23.1>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=23.1<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
 2026-10-30 08:26:23,471 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:26:26,593 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 08:27:27,634 [INFO] [FAST] PE23050 score=184 vol=0.78 U=37.0 skipped: leader score=184 vol=0.78 U=37.0
+2026-10-30 08:27:27,638 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:28:28,904 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:28:28,953 [INFO] [APEX] EXIT CE 23100 86.0->74.0 -12.0pt Rs-777 [exhaust] | day -12.0pt Rs-777
+2026-10-30 08:29:31,000 [INFO] [FAST] PE23000 score=152 vol=1.40 U=27.8 skipped: leader score=152 vol=1.40 U=27.8
+2026-10-30 08:29:31,004 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:30:02,007 [INFO] [STOCH] CE cross (K 24.9->7.5) bar 13:45 BLOCKED -- 1m renko DOWN opposes CE with a WEAK trend (net bricks +3, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-10-30 08:30:02,695 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 113"}
+2026-10-30 08:30:02,696 [WARNING] HTML parse failed; retrying as plain text
+2026-10-30 08:30:04,708 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:31:05,972 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:31:06,002 [INFO] [APEX] open=0 trades=1 realized=-12.0pt/Rs-777 unreal=+0.0pt/Rs+0
+2026-10-30 08:31:06,130 [INFO] [T5] open=1 trades=1 realized=+19.4pt/Rs+1258 unreal=+11.7pt/Rs+760
+2026-10-30 08:31:06,131 [INFO] [INDICATORS] spot=23011.8 | 1h: close=23096.8 sma20=22818.4 sma50=22716.5 rsi=72.7 macd=92.66/60.83(bull) | 15m: K=1.8↓(prev 23.1) | regime=CE-eligible any_active=False
+2026-10-30 08:31:06,131 [INFO] [SIGNAL] CE: reg=True K=False(K=1.8>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=1.8<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
+2026-10-30 08:31:36,458 [INFO] [FUT5VWAP] Signal — 23056<23065 body=79% side=PE (fixed +12pt target)
+2026-10-30 08:31:36,536 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26N0323000PE
+2026-10-30 08:31:36,541 [INFO] ENTRY: NFO:NIFTY26N0323000PE @ 129.30  engine=FUT5VWAP  detail=FUT5 VWAP cross 23056<23065 body=79% pivΔ=40pt | bar=229
