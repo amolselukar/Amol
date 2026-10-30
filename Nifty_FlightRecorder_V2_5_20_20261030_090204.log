@@ -2206,3 +2206,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 06:01:32,687 [INFO] [INDICATORS] spot=23032.3 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=68.4 macd=71.82/45.32(bull) | 15m: K=63.1↑(prev 43.9) | regime=CE-eligible any_active=True
 2026-10-30 06:01:32,687 [INFO] [SIGNAL] CE: reg=True K=True(K=63.1>=38,rising) Kextr=True RSI=True(68.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=63.1<=80,falling) Kextr=True RSI=False(68.4<47) MACD=False(gate off) => BLOCK
 2026-10-30 06:01:32,687 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323000CE ltp=137.75 entry=137.05 pnl=+0.70(+0.5%) sl=112.38 peak=137.05 tr_armed=False elapsed=0min
+2026-10-30 06:02:06,187 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 06:04:08,171 [INFO] [FAST] CE23050 score=111 vol=1.72 U=18.9 skipped: leader score=111 vol=1.72 U=18.9
+2026-10-30 06:06:42,120 [INFO] [BREAKWATCH] VWAP CE NFO:NIFTY26N0323000CE entry 11:31 score 6/6 -> KEEP | {'progress_x': 0.6244, 'other_idx_dir%': 0.1516, 'hw_breadth': 0.75, 'hw_basket_dir%': 0.1861, 'hw_top4_agree': 1.0, 'sellers_sameOTM_oi%': -5.6109} missing=[] fetch_fail=[]
+2026-10-30 06:06:42,206 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 06:06:42,259 [INFO] [T5] open=0 trades=1 realized=+19.4pt/Rs+1258 unreal=+0.0pt/Rs+0
+2026-10-30 06:06:42,260 [INFO] [INDICATORS] spot=23045.1 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=68.4 macd=71.82/45.32(bull) | 15m: K=63.1↑(prev 43.9) | regime=CE-eligible any_active=True
+2026-10-30 06:06:42,260 [INFO] [SIGNAL] CE: reg=True K=True(K=63.1>=38,rising) Kextr=True RSI=True(68.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=63.1<=80,falling) Kextr=True RSI=False(68.4<47) MACD=False(gate off) => BLOCK
+2026-10-30 06:06:42,261 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323000CE ltp=142.90 entry=137.05 pnl=+5.85(+4.3%) sl=112.38 peak=146.20 tr_armed=False elapsed=5min
