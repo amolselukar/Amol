@@ -2103,3 +2103,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 04:59:40,019 [INFO] [SIGNAL] CE: reg=True K=False(K=67.5>=38,rising) Kextr=True RSI=True(64.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=67.5<=80,falling) Kextr=True RSI=False(64.6<47) MACD=False(gate off) => BLOCK
 2026-10-30 04:59:40,019 [INFO] [STATE][VWAP] PE NFO:NIFTY26N0322900PE ltp=134.15 entry=142.15 pnl=-8.00(-5.6%) sl=116.56 peak=143.50 tr_armed=False elapsed=12min
 2026-10-30 05:00:10,356 [INFO] [CHOPGATE] Clear to trade — ER=0.67 crosses=3 range=125pt
+2026-10-30 05:00:13,561 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 05:02:15,352 [INFO] [CLM] SIGNAL CLM PE22950 K=12->20 hist=-0.91 ADX-side bar 10:31
+2026-10-30 05:02:15,393 [INFO] ENTRY: NFO:NIFTY26N0322950PE @ 162.50  engine=CLM  detail=CLM PE22950 K=12->20 hist=-0.91 ADX-side bar 10:31
+2026-10-30 05:02:46,495 [INFO] [RENKO] dir=-1 (DOWN) bricks=5 brick=25.99 last5=[-1, 1, 1, -1, -1]
+2026-10-30 05:04:49,035 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 05:04:49,035 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 05:04:49,035 [INFO] [INDICATORS] spot=22920.6 | 1h: close=22938.6 sma20=22765.8 sma50=22705.9 rsi=64.6 macd=63.44/38.70(bull) | 15m: K=36.2↓(prev 67.5) | regime=CE-eligible any_active=True
+2026-10-30 05:04:49,035 [INFO] [SIGNAL] CE: reg=True K=False(K=36.2>=38,rising) Kextr=True RSI=True(64.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=36.2<=80,falling) Kextr=True RSI=False(64.6<47) MACD=False(gate off) => BLOCK
+2026-10-30 05:04:49,036 [INFO] [STATE][VWAP] PE NFO:NIFTY26N0322900PE ltp=140.10 entry=142.15 pnl=-2.05(-1.4%) sl=116.56 peak=143.50 tr_armed=False elapsed=18min
+2026-10-30 05:04:49,036 [INFO] [STATE][CLM] PE NFO:NIFTY26N0322950PE ltp=166.25 entry=162.50 pnl=+3.75(+2.3%) sl=133.25 peak=166.25 tr_armed=False elapsed=2min
+2026-10-30 05:05:19,457 [INFO] [FAST] PE22900 score=101 vol=0.76 U=19.1 skipped: leader score=101 vol=0.76 U=19.1
