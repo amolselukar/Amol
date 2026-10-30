@@ -2074,3 +2074,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 04:44:13,119 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-10-30 04:44:13,120 [INFO] [INDICATORS] spot=22934.2 | 1h: close=22936.8 sma20=22756.4 sma50=22704.9 rsi=64.4 macd=58.71/32.51(bull) | 15m: K=97.7↑(prev 90.5) | regime=CE-eligible any_active=False
 2026-10-30 04:44:13,120 [INFO] [SIGNAL] CE: reg=True K=True(K=97.7>=38,rising) Kextr=True RSI=True(64.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=97.7<=80,falling) Kextr=True RSI=False(64.4<47) MACD=False(gate off) => BLOCK
+2026-10-30 04:44:46,361 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 04:46:47,819 [INFO] [VWAP] Signal — FUT 22987<23021 body=71% side=PE | persist_gate=dist=-30.1pt persist=True (last 2x5m vs FUTvwap=23017.2)
+2026-10-30 04:46:47,919 [INFO] ENTRY: NFO:NIFTY26N0322900PE @ 142.15  engine=VWAP  detail=FUT VWAP 22987<23021 body=71% | bar=185
+2026-10-30 04:47:19,005 [INFO] [RENKO] dir=-1 (DOWN) bricks=5 brick=25.99 last5=[-1, 1, 1, -1, -1]
+2026-10-30 04:49:22,383 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 04:49:22,436 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 04:49:22,437 [INFO] [INDICATORS] spot=22908.5 | 1h: close=22938.6 sma20=22765.8 sma50=22705.9 rsi=64.6 macd=63.44/38.70(bull) | 15m: K=67.5↓(prev 97.7) | regime=CE-eligible any_active=True
+2026-10-30 04:49:22,437 [INFO] [SIGNAL] CE: reg=True K=False(K=67.5>=38,rising) Kextr=True RSI=True(64.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=67.5<=80,falling) Kextr=True RSI=False(64.6<47) MACD=False(gate off) => BLOCK
+2026-10-30 04:49:22,438 [INFO] [STATE][VWAP] PE NFO:NIFTY26N0322900PE ltp=140.00 entry=142.15 pnl=-2.15(-1.5%) sl=116.56 peak=143.50 tr_armed=False elapsed=2min
