@@ -2214,3 +2214,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 06:06:42,260 [INFO] [INDICATORS] spot=23045.1 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=68.4 macd=71.82/45.32(bull) | 15m: K=63.1↑(prev 43.9) | regime=CE-eligible any_active=True
 2026-10-30 06:06:42,260 [INFO] [SIGNAL] CE: reg=True K=True(K=63.1>=38,rising) Kextr=True RSI=True(68.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=63.1<=80,falling) Kextr=True RSI=False(68.4<47) MACD=False(gate off) => BLOCK
 2026-10-30 06:06:42,261 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323000CE ltp=142.90 entry=137.05 pnl=+5.85(+4.3%) sl=112.38 peak=146.20 tr_armed=False elapsed=5min
+2026-10-30 06:07:15,739 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 06:09:18,713 [INFO] [FAST] CE23050 score=109 vol=2.09 U=18.2 skipped: leader score=109 vol=2.09 U=18.2
+2026-10-30 06:09:49,083 [INFO] [RENKO] dir=+1 (UP) bricks=9 brick=25.99 last5=[-1, 1, 1, 1, 1]
+2026-10-30 06:09:49,112 [INFO] EXIT: NFO:NIFTY26N0323000CE @ 149.50 reason=TRAIL_+12 pnl/sh=+12.45 is_flip=False losses=1/4
+2026-10-30 06:11:51,829 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 06:11:51,885 [INFO] [T5] open=0 trades=1 realized=+19.4pt/Rs+1258 unreal=+0.0pt/Rs+0
+2026-10-30 06:11:51,886 [INFO] [INDICATORS] spot=23048.2 | 1h: close=23006.2 sma20=22778.4 sma50=22707.1 rsi=68.4 macd=71.82/45.32(bull) | 15m: K=63.1↑(prev 43.9) | regime=CE-eligible any_active=False
+2026-10-30 06:11:51,886 [INFO] [SIGNAL] CE: reg=True K=True(K=63.1>=38,rising) Kextr=True RSI=True(68.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=63.1<=80,falling) Kextr=True RSI=False(68.4<47) MACD=False(gate off) => BLOCK
