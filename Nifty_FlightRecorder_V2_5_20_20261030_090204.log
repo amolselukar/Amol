@@ -2408,3 +2408,16 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 08:00:02,708 [INFO] [INDICATORS] spot=23062.3 | 1h: close=23096.8 sma20=22818.4 sma50=22716.5 rsi=72.7 macd=92.66/60.83(bull) | 15m: K=54.3↓(prev 75.7) | regime=CE-eligible any_active=False
 2026-10-30 08:00:02,708 [INFO] [SIGNAL] CE: reg=True K=False(K=54.3>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=54.3<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
 2026-10-30 08:00:33,045 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=12 brick=25.99 last5=[1, 1, 1, 1, -1]
+2026-10-30 08:00:36,108 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 08:01:06,724 [INFO] [FAST] PE23050 score=151 vol=2.44 U=23.3 skipped: VRTREND counter CE
+2026-10-30 08:01:06,730 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:01:37,436 [INFO] [T5] ENTRY PE 23000 @ 119.2 tgt179.2 stp101.2 (bo+3.5 CEdec-15.1) open=1
+2026-10-30 08:02:08,770 [INFO] [FAST] PE23050 score=163 vol=2.39 U=31.7 skipped: VRTREND counter CE
+2026-10-30 08:02:08,774 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:03:10,037 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:04:11,229 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:05:12,484 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:05:12,575 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 08:05:12,704 [INFO] [T5] open=1 trades=1 realized=+19.4pt/Rs+1258 unreal=-3.9pt/Rs-254
+2026-10-30 08:05:12,704 [INFO] [INDICATORS] spot=23052.5 | 1h: close=23096.8 sma20=22818.4 sma50=22716.5 rsi=72.7 macd=92.66/60.83(bull) | 15m: K=50.8↓(prev 75.7) | regime=CE-eligible any_active=False
+2026-10-30 08:05:12,704 [INFO] [SIGNAL] CE: reg=True K=False(K=50.8>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=50.8<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
