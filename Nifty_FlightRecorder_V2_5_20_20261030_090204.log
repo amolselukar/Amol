@@ -2432,3 +2432,17 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 08:10:22,911 [INFO] [T5] open=1 trades=1 realized=+19.4pt/Rs+1258 unreal=+2.7pt/Rs+176
 2026-10-30 08:10:22,912 [INFO] [INDICATORS] spot=23047.2 | 1h: close=23096.8 sma20=22818.4 sma50=22716.5 rsi=72.7 macd=92.66/60.83(bull) | 15m: K=50.8↓(prev 75.7) | regime=CE-eligible any_active=False
 2026-10-30 08:10:22,912 [INFO] [SIGNAL] CE: reg=True K=False(K=50.8>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=50.8<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
+2026-10-30 08:10:56,553 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 08:11:27,288 [INFO] [FAST] PE23050 score=134 vol=1.02 U=25.1 skipped: leader score=134 vol=1.02 U=25.1
+2026-10-30 08:11:27,293 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:12:28,488 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:13:29,720 [INFO] [FAST] PE23050 score=104 vol=1.01 U=16.9 skipped: leader score=104 vol=1.01 U=16.9
+2026-10-30 08:13:29,725 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:14:30,864 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:15:01,977 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:15:32,786 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-10-30 08:15:33,001 [INFO] [T5] open=1 trades=1 realized=+19.4pt/Rs+1258 unreal=+0.8pt/Rs+49
+2026-10-30 08:15:33,002 [INFO] [INDICATORS] spot=23044.3 | 1h: close=23096.8 sma20=22818.4 sma50=22716.5 rsi=72.7 macd=92.66/60.83(bull) | 15m: K=23.1↓(prev 50.8) | regime=CE-eligible any_active=False
+2026-10-30 08:15:33,002 [INFO] [SIGNAL] CE: reg=True K=False(K=23.1>=38,rising) Kextr=True RSI=True(72.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=23.1<=80,falling) Kextr=True RSI=False(72.7<47) MACD=False(gate off) => BLOCK
+2026-10-30 08:16:03,359 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=12 brick=25.99 last5=[1, 1, 1, 1, -1]
+2026-10-30 08:16:03,626 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
