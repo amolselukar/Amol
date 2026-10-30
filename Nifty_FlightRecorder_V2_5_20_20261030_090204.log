@@ -2538,3 +2538,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-10-30 08:51:48,192 [INFO] [INDICATORS] spot=23033.2 | 1h: close=23025.2 sma20=22831.5 sma50=22722.9 rsi=64.7 macd=93.41/67.35(bull) | 15m: K=2.7↑(prev 1.8) | regime=CE-eligible any_active=False
 2026-10-30 08:51:48,192 [INFO] [SIGNAL] CE: reg=True K=False(K=2.7>=38,rising) Kextr=True RSI=True(64.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=2.7<=80,falling) Kextr=True RSI=False(64.7<47) MACD=False(gate off) => BLOCK
 2026-10-30 08:52:18,836 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:52:22,054 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261030_090204.log, Nifty_BarLevel_V2_5_20_20261030_090204.csv
+2026-10-30 08:53:23,273 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:54:24,608 [INFO] [FAST] CE23050 score=134 vol=1.96 U=20.1 skipped: leader score=134 vol=1.96 U=20.1
+2026-10-30 08:54:24,614 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:55:26,775 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:56:28,090 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-10-30 08:56:58,620 [INFO] [APEX] open=0 trades=1 realized=-12.0pt/Rs-777 unreal=+0.0pt/Rs+0
+2026-10-30 08:56:58,620 [INFO] [T5] open=0 trades=2 realized=+0.9pt/Rs+59 unreal=+0.0pt/Rs+0
+2026-10-30 08:56:58,621 [INFO] [INDICATORS] spot=23058.9 | 1h: close=23025.2 sma20=22831.5 sma50=22722.9 rsi=64.7 macd=93.41/67.35(bull) | 15m: K=2.7↑(prev 1.8) | regime=CE-eligible any_active=False
+2026-10-30 08:56:58,621 [INFO] [SIGNAL] CE: reg=True K=False(K=2.7>=38,rising) Kextr=True RSI=True(64.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=2.7<=80,falling) Kextr=True RSI=False(64.7<47) MACD=False(gate off) => BLOCK
+2026-10-30 08:57:29,229 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
