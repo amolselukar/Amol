@@ -2697,3 +2697,18 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 09:11:12,263 [INFO] [INDICATORS] spot=23304.3 | 1h: close=23264.5 sma20=23023.7 sma50=22794.5 rsi=67.9 macd=140.31/116.29(bull) | 15m: K=24.7↑(prev 16.3) | regime=CE-eligible any_active=True
 2026-11-02 09:11:12,263 [INFO] [SIGNAL] CE: reg=True K=False(K=24.7>=38,rising) Kextr=True RSI=True(67.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=24.7<=80,falling) Kextr=True RSI=False(67.9<47) MACD=False(gate off) => BLOCK
 2026-11-02 09:11:12,265 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=77.45 entry=86.55 pnl=-9.10(-10.5%) sl=0.00 peak=92.25 tr_armed=False elapsed=128min
+2026-11-02 09:11:14,816 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 09:12:15,567 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 09:13:16,451 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 09:14:17,210 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 09:15:17,970 [INFO] [STOCH] PE cross (K 67.7->85.9) bar 14:30 BLOCKED -- 1m renko UP opposes PE with a WEAK trend (net bricks +2, |net|<4) -- chop bucket 47% / +0.5 Rs/sh
+2026-11-02 09:15:18,600 [WARNING] Telegram send returned 400: {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"4)\" at byte offset 111"}
+2026-11-02 09:15:18,600 [WARNING] HTML parse failed; retrying as plain text
+2026-11-02 09:15:20,489 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 09:16:21,098 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323300CE @ 87.45 spot=23324.6 | K=38.7↑ RSI=67.9 MACD✓
+2026-11-02 09:16:21,271 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 09:16:21,296 [INFO] [APEX] open=0 trades=3 realized=-10.3pt/Rs-669 unreal=+0.0pt/Rs+0
+2026-11-02 09:16:21,296 [INFO] [T5] open=0 trades=3 realized=+25.4pt/Rs+1651 unreal=+0.0pt/Rs+0
+2026-11-02 09:16:21,296 [INFO] [INDICATORS] spot=23324.6 | 1h: close=23264.5 sma20=23023.7 sma50=22794.5 rsi=67.9 macd=140.31/116.29(bull) | 15m: K=38.7↑(prev 24.7) | regime=CE-eligible any_active=True
+2026-11-02 09:16:21,296 [INFO] [SIGNAL] CE: reg=True K=True(K=38.7>=38,rising) Kextr=True RSI=True(67.9>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=38.7<=80,falling) Kextr=True RSI=False(67.9<47) MACD=False(gate off) => BLOCK
+2026-11-02 09:16:21,299 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=87.45 entry=86.55 pnl=+0.90(+1.0%) sl=0.00 peak=92.25 tr_armed=False elapsed=133min
