@@ -2254,3 +2254,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 05:45:31,634 [INFO] [SIGNAL] CE: reg=True K=False(K=90.9>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=90.9<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
 2026-11-02 05:45:31,635 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323300CE ltp=85.80 entry=101.30 pnl=-15.50(-15.3%) sl=83.07 peak=101.30 tr_armed=False elapsed=0min
 2026-11-02 05:45:31,636 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=101.30 entry=109.75 pnl=-8.45(-7.7%) sl=0.00 peak=112.00 tr_armed=False elapsed=83min
+2026-11-02 05:45:34,240 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 05:50:39,795 [INFO] [BREAKWATCH] VWAP CE NFO:NIFTY26N0323300CE entry 11:15 score 1/6 -> CUT | {'progress_x': -0.439, 'other_idx_dir%': -0.0194, 'hw_breadth': 0.3333, 'hw_basket_dir%': -0.052, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 2.9154} missing=[] fetch_fail=[]
+2026-11-02 05:50:39,798 [INFO] [CB] VWAP loss (own count 2) — TOTAL across all engines=4/4 (reason=BREAKWATCH_CUT_s1)
+2026-11-02 05:50:40,677 [INFO] EXIT: NFO:NIFTY26N0323300CE @ 97.45 reason=BREAKWATCH_CUT_s1 pnl/sh=-3.85 is_flip=False losses=2/4
+2026-11-02 05:50:41,570 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 05:50:41,570 [INFO] [T5] open=0 trades=2 realized=-36.2pt/Rs-2353 unreal=+0.0pt/Rs+0
+2026-11-02 05:50:41,571 [INFO] [INDICATORS] spot=23327.0 | 1h: close=23336.0 sma20=22940.2 sma50=22759.3 rsi=77.1 macd=130.41/93.18(bull) | 15m: K=90.9↓(prev 94.3) | regime=CE-eligible any_active=True
+2026-11-02 05:50:41,571 [INFO] [SIGNAL] CE: reg=True K=False(K=90.9>=38,rising) Kextr=True RSI=True(77.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=90.9<=80,falling) Kextr=True RSI=False(77.1<47) MACD=False(gate off) => BLOCK
+2026-11-02 05:50:41,573 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=96.40 entry=109.75 pnl=-13.35(-12.2%) sl=0.00 peak=112.00 tr_armed=False elapsed=88min
