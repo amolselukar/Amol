@@ -2148,3 +2148,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 04:54:14,432 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
 2026-11-02 04:54:14,432 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=94.25 entry=109.75 pnl=-15.50(-14.1%) sl=0.00 peak=109.75 tr_armed=False elapsed=32min
 2026-11-02 04:54:14,432 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323300CE ltp=94.25 entry=86.60 pnl=+7.65(+8.8%) sl=71.01 peak=94.25 tr_armed=False elapsed=1min
+2026-11-02 04:54:16,891 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 04:56:18,809 [INFO] [FAST] CE23300 score=243 vol=1.59 U=39.6 skipped: leader score=243 vol=1.59 U=39.6
+2026-11-02 04:56:18,887 [INFO] [T5] EXIT PE 23300 98.5->81.0 -17.5pt Rs-1138 [stop] | day -17.5pt Rs-1138
+2026-11-02 04:56:19,700 [INFO] [T5] EXIT PE 23300 99.7->81.0 -18.7pt Rs-1216 [stop] | day -36.2pt Rs-2353
+2026-11-02 04:57:51,546 [INFO] [RENKO] dir=+1 (UP) bricks=3 brick=22.62 last5=[1, 1, 1]
+2026-11-02 04:58:22,108 [INFO] EXIT: NFO:NIFTY26N0323300CE @ 97.45 reason=CLM_STOCH_PEAK pnl/sh=+10.85 is_flip=False losses=1/4
+2026-11-02 04:59:23,724 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:59:23,724 [INFO] [T5] open=0 trades=2 realized=-36.2pt/Rs-2353 unreal=+0.0pt/Rs+0
+2026-11-02 04:59:23,725 [INFO] [INDICATORS] spot=23317.0 | 1h: close=23320.8 sma20=22905.4 sma50=22746.0 rsi=76.6 macd=113.95/83.87(bull) | 15m: K=100.0↑(prev 97.9) | regime=CE-eligible any_active=True
+2026-11-02 04:59:23,725 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
+2026-11-02 04:59:23,725 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=95.00 entry=109.75 pnl=-14.75(-13.4%) sl=0.00 peak=109.75 tr_armed=False elapsed=37min
