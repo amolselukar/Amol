@@ -2499,3 +2499,18 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 07:53:52,992 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(65.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=True RSI=False(65.9<47) MACD=False(gate off) => BLOCK
 2026-11-02 07:53:52,992 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26N0323300PE ltp=131.40 entry=104.05 pnl=+27.35(+26.3%) sl=0.00 peak=161.50 tr_armed=False elapsed=27min
 2026-11-02 07:53:52,992 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=56.35 entry=86.55 pnl=-30.20(-34.9%) sl=0.00 peak=92.25 tr_armed=False elapsed=50min
+2026-11-02 07:53:56,291 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 07:54:26,650 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 07:55:27,425 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 07:55:57,715 [INFO] [RENKO] dir=-1 (DOWN) bricks=10 brick=22.62 last5=[1, -1, -1, -1, -1]
+2026-11-02 07:56:28,205 [INFO] [FAST] PE23250 score=151 vol=1.29 U=17.5 skipped: leader score=151 vol=1.29 U=17.5
+2026-11-02 07:56:28,213 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 07:57:29,234 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 07:58:30,193 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 07:59:00,678 [INFO] [SELLER] CLM PE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 07:59:00,782 [INFO] [APEX] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=-2.5pt/Rs-162
+2026-11-02 07:59:00,849 [INFO] [T5] open=0 trades=3 realized=+25.4pt/Rs+1651 unreal=+0.0pt/Rs+0
+2026-11-02 07:59:00,849 [INFO] [INDICATORS] spot=23242.4 | 1h: close=23219.8 sma20=22995.9 sma50=22782.6 rsi=65.9 macd=139.85/110.29(bull) | 15m: K=0.0↓(prev 22.8) | regime=CE-eligible any_active=True
+2026-11-02 07:59:00,850 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(65.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=True RSI=False(65.9<47) MACD=False(gate off) => BLOCK
+2026-11-02 07:59:00,853 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26N0323300PE ltp=133.50 entry=104.05 pnl=+29.45(+28.3%) sl=0.00 peak=161.50 tr_armed=False elapsed=32min
+2026-11-02 07:59:00,853 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=54.00 entry=86.55 pnl=-32.55(-37.6%) sl=0.00 peak=92.25 tr_armed=False elapsed=55min
