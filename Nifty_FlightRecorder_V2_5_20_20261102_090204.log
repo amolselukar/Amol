@@ -2039,3 +2039,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 04:07:49,896 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-02 04:07:49,896 [INFO] [INDICATORS] spot=23283.8 | 1h: close=23053.1 sma20=22868.7 sma50=22735.8 rsi=65.7 macd=92.83/76.35(bull) | 15m: K=39.8↑(prev 11.3) | regime=CE-eligible any_active=False
 2026-11-02 04:07:49,896 [INFO] [SIGNAL] CE: reg=True K=True(K=39.8>=38,rising) Kextr=True RSI=True(65.7>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=39.8<=80,falling) Kextr=True RSI=False(65.7<47) MACD=False(gate off) => BLOCK
+2026-11-02 04:07:52,324 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 04:08:22,747 [INFO] [FAST] CE23300 score=141 vol=1.07 U=22.1 skipped: leader score=141 vol=1.07 U=22.1
+2026-11-02 04:09:23,773 [INFO] [FAST] CE23300 score=206 vol=1.76 U=28.9 skipped: leader score=206 vol=1.76 U=28.9
+2026-11-02 04:10:24,668 [INFO] [FAST] CE23300 score=134 vol=1.10 U=20.0 skipped: leader score=134 vol=1.10 U=20.0
+2026-11-02 04:11:25,379 [INFO] [RENKO] dir=+1 (UP) bricks=2 brick=22.62 last5=[1, 1]
+2026-11-02 04:11:25,549 [INFO] [FAST] CE23300 score=146 vol=1.38 U=21.8 skipped: leader score=146 vol=1.38 U=21.8
+2026-11-02 04:12:26,342 [INFO] [FAST] CE23300 score=160 vol=1.73 U=21.4 skipped: leader score=160 vol=1.73 U=21.4
+2026-11-02 04:12:56,693 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:12:56,751 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:12:56,752 [INFO] [INDICATORS] spot=23304.7 | 1h: close=23053.1 sma20=22868.7 sma50=22735.8 rsi=65.7 macd=92.83/76.35(bull) | 15m: K=39.8↑(prev 11.3) | regime=CE-eligible any_active=False
+2026-11-02 04:12:56,752 [INFO] [SIGNAL] CE: reg=True K=True(K=39.8>=38,rising) Kextr=True RSI=True(65.7>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=39.8<=80,falling) Kextr=True RSI=False(65.7<47) MACD=False(gate off) => BLOCK
