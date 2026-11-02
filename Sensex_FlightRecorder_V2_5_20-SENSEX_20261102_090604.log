@@ -1331,3 +1331,21 @@
 2026-11-02 04:27:08,913 [INFO] [STATE][BASE] CE BFO:SENSEX26N0575400CE ltp=525.10 entry=523.15 pnl=+1.95(+0.4%) sl=428.98 peak=525.10 tr_armed=False elapsed=2min
 2026-11-02 04:27:08,913 [INFO] [STATE][ORB] CE BFO:SENSEX26N0575400CE ltp=525.10 entry=497.75 pnl=+27.35(+5.5%) sl=0.00 peak=550.10 tr_armed=False elapsed=16min
 2026-11-02 04:27:08,913 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26N0575500CE ltp=471.70 entry=493.35 pnl=-21.65(-4.4%) sl=0.00 peak=493.35 tr_armed=False elapsed=5min
+2026-11-02 04:27:11,396 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261102_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261102_090604.csv
+2026-11-02 04:27:41,661 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:28:11,949 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:28:42,243 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:29:12,554 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:29:43,222 [INFO] [BREAKWATCH] V3 CE BFO:SENSEX26N0575400CE entry 09:54 score 1/6 -> WOULD_CUT(log-only) | {'progress_x': -0.4545, 'other_idx_dir%': 0.0777, 'hw_breadth': 0.625, 'hw_basket_dir%': 0.046, 'hw_top4_agree': 0.5, 'sellers_sameOTM_oi%': 12.6598} missing=[] fetch_fail=[]
+2026-11-02 04:29:43,256 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:30:13,560 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:30:43,860 [INFO] [CB] V3 loss (own count 1) — TOTAL across all engines=1/4 (reason=V3_FAST_STOP)
+2026-11-02 04:30:43,863 [INFO] EXIT: BFO:SENSEX26N0575400CE @ 497.15 reason=V3_FAST_STOP pnl/sh=-26.00 is_flip=False losses=1/4
+2026-11-02 04:30:44,667 [INFO] [VWAP] Climax skip — body=91% >= 87%
+2026-11-02 04:31:14,969 [INFO] [V2] WOULD_ENTER(log-only) CE BFO:SENSEX26N0575400CE @ 484.50 spot=75391.36 | K=98.1↑ RSI=64.7 MACD✓
+2026-11-02 04:32:15,704 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:32:15,705 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:32:15,705 [INFO] [INDICATORS] spot=75363.8 | 1h: close=74459.5 sma20=73876.1 sma50=73503.2 rsi=64.7 macd=303.95/246.94(bull) | 15m: K=98.1↑(prev 70.0) | regime=CE-eligible any_active=True
+2026-11-02 04:32:15,705 [INFO] [SIGNAL] CE: reg=True K=True(K=98.1>=38,rising) Kextr=True RSI=True(64.7>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=98.1<=80,falling) Kextr=True RSI=False(64.7<47) MACD=False(gate off) => BLOCK
+2026-11-02 04:32:15,706 [INFO] [STATE][ORB] CE BFO:SENSEX26N0575400CE ltp=482.30 entry=497.75 pnl=-15.45(-3.1%) sl=0.00 peak=550.10 tr_armed=False elapsed=21min
+2026-11-02 04:32:15,707 [INFO] [STATE][GAPBREAK] CE BFO:SENSEX26N0575500CE ltp=431.60 entry=493.35 pnl=-61.75(-12.5%) sl=0.00 peak=493.35 tr_armed=False elapsed=10min
