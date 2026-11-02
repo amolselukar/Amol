@@ -2138,3 +2138,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 04:49:03,850 [INFO] [INDICATORS] spot=23299.7 | 1h: close=23320.8 sma20=22905.4 sma50=22746.0 rsi=76.6 macd=113.95/83.87(bull) | 15m: K=100.0↑(prev 97.9) | regime=CE-eligible any_active=True
 2026-11-02 04:49:03,850 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
 2026-11-02 04:49:03,851 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=85.80 entry=109.75 pnl=-23.95(-21.8%) sl=0.00 peak=109.75 tr_armed=False elapsed=27min
+2026-11-02 04:49:07,099 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 04:51:39,693 [INFO] [T5] ENTRY PE 23300 @ 99.7 tgt159.7 stp83.9 (bo+4.6 CEdec-16.5) open=2
+2026-11-02 04:53:12,213 [INFO] [CLM] SIGNAL CLM CE23300 K=7->19 hist=-1.18 ADX-side bar 10:22
+2026-11-02 04:53:12,261 [INFO] ENTRY: NFO:NIFTY26N0323300CE @ 86.60  engine=CLM  detail=CLM CE23300 K=7->19 hist=-1.18 ADX-side bar 10:22
+2026-11-02 04:54:14,304 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:54:14,431 [INFO] [T5] open=2 trades=0 realized=+0.0pt/Rs+0 unreal=-16.3pt/Rs-1059
+2026-11-02 04:54:14,432 [INFO] [INDICATORS] spot=23300.8 | 1h: close=23320.8 sma20=22905.4 sma50=22746.0 rsi=76.6 macd=113.95/83.87(bull) | 15m: K=100.0↑(prev 97.9) | regime=CE-eligible any_active=True
+2026-11-02 04:54:14,432 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
+2026-11-02 04:54:14,432 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=94.25 entry=109.75 pnl=-15.50(-14.1%) sl=0.00 peak=109.75 tr_armed=False elapsed=32min
+2026-11-02 04:54:14,432 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323300CE ltp=94.25 entry=86.60 pnl=+7.65(+8.8%) sl=71.01 peak=94.25 tr_armed=False elapsed=1min
