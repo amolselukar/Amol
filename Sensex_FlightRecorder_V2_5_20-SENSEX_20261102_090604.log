@@ -1515,3 +1515,10 @@
 2026-11-02 06:39:59,128 [INFO] [T5] open=0 trades=1 realized=-21.6pt/Rs-431 unreal=+0.0pt/Rs+0
 2026-11-02 06:39:59,128 [INFO] [INDICATORS] spot=75351.2 | 1h: close=75463.2 sma20=74120.8 sma50=73580.5 rsi=77.1 macd=432.80/305.01(bull) | 15m: K=66.6↓(prev 75.3) | regime=CE-eligible any_active=False
 2026-11-02 06:39:59,128 [INFO] [SIGNAL] CE: reg=True K=False(K=66.6>=38,rising) Kextr=False RSI=True(77.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=66.6<=80,falling) Kextr=True RSI=False(77.1<47) MACD=False(gate off) => BLOCK
+2026-11-02 06:40:02,396 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261102_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261102_090604.csv
+2026-11-02 06:41:33,203 [INFO] [FUT5VWAP] Signal — 75650>75614 body=83% side=CE (fixed +40pt target)
+2026-11-02 06:41:33,210 [INFO] [NIFTYGATE] FUT5VWAP CE BLOCKED — NIFTY refused 2 entries in last 60m (last: RENKO CLM PE @11:35)
+2026-11-02 06:45:06,188 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 06:45:06,189 [INFO] [T5] open=0 trades=1 realized=-21.6pt/Rs-431 unreal=+0.0pt/Rs+0
+2026-11-02 06:45:06,190 [INFO] [INDICATORS] spot=75420.2 | 1h: close=75420.2 sma20=74222.9 sma50=73615.0 rsi=77.1 macd=432.80/305.01(bull) | 15m: K=61.9↓(prev 66.6) | regime=CE-eligible any_active=False
+2026-11-02 06:45:06,190 [INFO] [SIGNAL] CE: reg=True K=False(K=61.9>=38,rising) Kextr=False RSI=True(77.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=61.9<=80,falling) Kextr=True RSI=False(77.1<47) MACD=False(gate off) => BLOCK
