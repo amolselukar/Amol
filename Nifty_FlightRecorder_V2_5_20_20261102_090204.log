@@ -2348,3 +2348,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 06:47:09,245 [INFO] [INDICATORS] spot=23341.2 | 1h: close=23335.5 sma20=22970.2 sma50=22770.5 rsi=77.0 macd=141.79/102.90(bull) | 15m: K=70.8↓(prev 74.0) | regime=CE-eligible any_active=True
 2026-11-02 06:47:09,245 [INFO] [SIGNAL] CE: reg=True K=False(K=70.8>=38,rising) Kextr=True RSI=True(77.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=70.8<=80,falling) Kextr=True RSI=False(77.0<47) MACD=False(gate off) => BLOCK
 2026-11-02 06:47:09,245 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26N0323300PE ltp=67.70 entry=97.15 pnl=-29.45(-30.3%) sl=0.00 peak=101.60 tr_armed=False elapsed=28min
+2026-11-02 06:47:11,835 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 06:50:13,809 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=6 brick=22.62 last5=[1, 1, 1, -1, 1]
+2026-11-02 06:51:14,759 [INFO] [WCR] 23300CE — OI 22.9M @12:02 -> 16.1M (30% unwound in 19m), price 80.30 -> 114.60, spot 23343 through 23300
+2026-11-02 06:51:14,760 [INFO] [WCR] resting limit BUY @ 88.33, valid 20m (no chase)
+2026-11-02 06:52:15,458 [INFO] [FAST] PE23350 score=119 vol=1.26 U=16.5 skipped: leader score=119 vol=1.26 U=16.5
+2026-11-02 06:52:15,518 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 06:52:15,518 [INFO] [T5] open=0 trades=2 realized=-36.2pt/Rs-2353 unreal=+0.0pt/Rs+0
+2026-11-02 06:52:15,519 [INFO] [INDICATORS] spot=23335.4 | 1h: close=23335.5 sma20=22970.2 sma50=22770.5 rsi=77.0 macd=141.79/102.90(bull) | 15m: K=70.8↓(prev 74.0) | regime=CE-eligible any_active=True
+2026-11-02 06:52:15,519 [INFO] [SIGNAL] CE: reg=True K=False(K=70.8>=38,rising) Kextr=True RSI=True(77.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=70.8<=80,falling) Kextr=True RSI=False(77.0<47) MACD=False(gate off) => BLOCK
+2026-11-02 06:52:15,520 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26N0323300PE ltp=71.25 entry=97.15 pnl=-25.90(-26.7%) sl=0.00 peak=101.60 tr_armed=False elapsed=33min
