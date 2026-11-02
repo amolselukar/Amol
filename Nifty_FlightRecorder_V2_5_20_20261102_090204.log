@@ -2211,3 +2211,20 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 05:25:00,817 [INFO] [INDICATORS] spot=23354.1 | 1h: close=23320.8 sma20=22905.4 sma50=22746.0 rsi=76.6 macd=113.95/83.87(bull) | 15m: K=99.2↓(prev 99.2) | regime=CE-eligible any_active=True
 2026-11-02 05:25:00,817 [INFO] [SIGNAL] CE: reg=True K=False(K=99.2>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=99.2<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
 2026-11-02 05:25:00,817 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=112.00 entry=109.75 pnl=+2.25(+2.1%) sl=0.00 peak=112.00 tr_armed=False elapsed=63min
+2026-11-02 05:25:03,308 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 05:25:33,615 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:26:03,947 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:26:34,534 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:27:04,876 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:27:35,434 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:28:05,785 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:28:36,366 [INFO] [RENKO] dir=+1 (UP) bricks=4 brick=22.62 last5=[1, 1, 1, 1]
+2026-11-02 05:28:36,370 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:29:06,704 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:29:37,265 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:30:07,604 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-02 05:30:07,901 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 05:30:07,902 [INFO] [T5] open=0 trades=2 realized=-36.2pt/Rs-2353 unreal=+0.0pt/Rs+0
+2026-11-02 05:30:07,902 [INFO] [INDICATORS] spot=23332.5 | 1h: close=23320.8 sma20=22905.4 sma50=22746.0 rsi=76.6 macd=113.95/83.87(bull) | 15m: K=95.5↓(prev 99.2) | regime=CE-eligible any_active=True
+2026-11-02 05:30:07,902 [INFO] [SIGNAL] CE: reg=True K=False(K=95.5>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=95.5<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
+2026-11-02 05:30:07,903 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=96.45 entry=109.75 pnl=-13.30(-12.1%) sl=0.00 peak=112.00 tr_armed=False elapsed=68min
