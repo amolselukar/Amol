@@ -2419,3 +2419,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 07:23:05,163 [INFO] [SIGNAL] CE: reg=True K=False(K=48.1>=38,rising) Kextr=True RSI=True(77.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=48.1<=80,falling) Kextr=True RSI=False(77.0<47) MACD=False(gate off) => BLOCK
 2026-11-02 07:23:05,164 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26N0323300PE ltp=95.15 entry=97.15 pnl=-2.00(-2.1%) sl=0.00 peak=101.60 tr_armed=False elapsed=64min
 2026-11-02 07:23:05,164 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=79.50 entry=86.55 pnl=-7.05(-8.1%) sl=0.00 peak=92.25 tr_armed=False elapsed=20min
+2026-11-02 07:23:08,585 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 07:25:10,282 [INFO] [RENKO] dir=-1 (DOWN) bricks=8 brick=22.62 last5=[1, -1, 1, -1, -1]
+2026-11-02 07:26:41,765 [INFO] [FUT5VWAP] Signal — 23341<23365 body=65% side=PE (fixed +12pt target)
+2026-11-02 07:26:41,840 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26N0323300PE
+2026-11-02 07:26:41,844 [INFO] ENTRY: NFO:NIFTY26N0323300PE @ 104.05  engine=FUT5VWAP  detail=FUT5 VWAP cross 23341<23365 body=65% pivΔ=41pt | bar=75
+2026-11-02 07:26:42,652 [INFO] EXIT: NFO:NIFTY26N0323300PE @ 105.15 reason=GAPBREAK_LOCK_FLOOR pnl/sh=+8.00 is_flip=False losses=1/4
+2026-11-02 07:28:14,948 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 07:28:15,042 [INFO] [T5] open=1 trades=2 realized=-36.2pt/Rs-2353 unreal=+11.9pt/Rs+777
+2026-11-02 07:28:15,043 [INFO] [INDICATORS] spot=23292.8 | 1h: close=23335.5 sma20=22970.2 sma50=22770.5 rsi=77.0 macd=141.79/102.90(bull) | 15m: K=48.1↓(prev 70.9) | regime=CE-eligible any_active=True
+2026-11-02 07:28:15,043 [INFO] [SIGNAL] CE: reg=True K=False(K=48.1>=38,rising) Kextr=True RSI=True(77.0>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=48.1<=80,falling) Kextr=True RSI=False(77.0<47) MACD=False(gate off) => BLOCK
+2026-11-02 07:28:15,045 [INFO] [STATE][FUT5VWAP] PE NFO:NIFTY26N0323300PE ltp=97.35 entry=104.05 pnl=-6.70(-6.4%) sl=0.00 peak=106.40 tr_armed=False elapsed=1min
+2026-11-02 07:28:15,046 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=77.50 entry=86.55 pnl=-9.05(-10.5%) sl=0.00 peak=92.25 tr_armed=False elapsed=25min
