@@ -2378,3 +2378,17 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 07:02:30,088 [INFO] [SIGNAL] CE: reg=True K=True(K=70.9>=38,rising) Kextr=True RSI=True(77.0>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=70.9<=80,falling) Kextr=True RSI=False(77.0<47) MACD=False(gate off) => BLOCK
 2026-11-02 07:02:30,090 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26N0323300PE ltp=84.30 entry=97.15 pnl=-12.85(-13.2%) sl=0.00 peak=101.60 tr_armed=False elapsed=43min
 2026-11-02 07:02:30,091 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323350CE ltp=66.15 entry=79.50 pnl=-13.35(-16.8%) sl=65.19 peak=81.35 tr_armed=False elapsed=7min
+2026-11-02 07:02:32,575 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 07:03:02,874 [INFO] [WCR] SIGNAL 23300CE @86.55 — OI 22.9M @12:02 -> 16.1M (30% unwound in 19m), price 80.30 -> 114.60, spot 23343 through 23300 | limit 88.33 filled at 86.55
+2026-11-02 07:03:02,915 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26N0323300CE
+2026-11-02 07:03:02,918 [INFO] ENTRY: NFO:NIFTY26N0323300CE @ 86.55  engine=WCR  detail=OI 22.9M @12:02 -> 16.1M (30% unwound in 19m), price 80.30 -> 114.60, spot 23343 through 23300 | limit 88.33 filled at 86.55
+2026-11-02 07:03:03,832 [INFO] [CB] CLM loss (own count 2) — TOTAL across all engines=6/4 (reason=HARDSL_-18pct)
+2026-11-02 07:03:03,834 [INFO] EXIT: NFO:NIFTY26N0323350CE @ 65.19 reason=HARDSL_-18pct pnl/sh=-14.31 is_flip=False losses=2/4
+2026-11-02 07:05:37,598 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=7 brick=22.62 last5=[1, 1, -1, 1, -1]
+2026-11-02 07:05:37,733 [INFO] [T5] ENTRY PE 23300 @ 85.4 tgt145.4 stp68.0 (bo+9.2 CEdec-27.3) open=1
+2026-11-02 07:07:40,388 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 07:07:40,475 [INFO] [T5] open=1 trades=2 realized=-36.2pt/Rs-2353 unreal=-1.1pt/Rs-72
+2026-11-02 07:07:40,476 [INFO] [INDICATORS] spot=23308.5 | 1h: close=23335.5 sma20=22970.2 sma50=22770.5 rsi=77.0 macd=141.79/102.90(bull) | 15m: K=70.9↑(prev 70.8) | regime=CE-eligible any_active=True
+2026-11-02 07:07:40,476 [INFO] [SIGNAL] CE: reg=True K=True(K=70.9>=38,rising) Kextr=True RSI=True(77.0>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=70.9<=80,falling) Kextr=True RSI=False(77.0<47) MACD=False(gate off) => BLOCK
+2026-11-02 07:07:40,478 [INFO] [STATE][GAPBREAK] PE NFO:NIFTY26N0323300PE ltp=84.30 entry=97.15 pnl=-12.85(-13.2%) sl=0.00 peak=101.60 tr_armed=False elapsed=48min
+2026-11-02 07:07:40,479 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=90.65 entry=86.55 pnl=+4.10(+4.7%) sl=0.00 peak=91.90 tr_armed=False elapsed=4min
