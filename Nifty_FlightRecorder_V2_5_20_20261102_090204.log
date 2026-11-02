@@ -2648,3 +2648,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 08:50:38,000 [INFO] [INDICATORS] spot=23276.7 | 1h: close=23264.5 sma20=23023.7 sma50=22794.5 rsi=67.9 macd=140.31/116.29(bull) | 15m: K=16.3↑(prev 10.8) | regime=CE-eligible any_active=True
 2026-11-02 08:50:38,000 [INFO] [SIGNAL] CE: reg=True K=False(K=16.3>=38,rising) Kextr=True RSI=True(67.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=16.3<=80,falling) Kextr=True RSI=False(67.9<47) MACD=False(gate off) => BLOCK
 2026-11-02 08:50:38,002 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=64.10 entry=86.55 pnl=-22.45(-25.9%) sl=0.00 peak=92.25 tr_armed=False elapsed=107min
+2026-11-02 08:50:45,658 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 08:51:16,167 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 08:52:16,901 [INFO] [FAST] CE23300 score=122 vol=1.23 U=14.5 skipped: leader score=122 vol=1.23 U=14.5
+2026-11-02 08:52:16,906 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 08:53:17,738 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 08:54:18,461 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 08:55:19,160 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-02 08:55:50,296 [INFO] [APEX] open=0 trades=3 realized=-10.3pt/Rs-669 unreal=+0.0pt/Rs+0
+2026-11-02 08:55:50,296 [INFO] [T5] open=0 trades=3 realized=+25.4pt/Rs+1651 unreal=+0.0pt/Rs+0
+2026-11-02 08:55:50,297 [INFO] [INDICATORS] spot=23275.2 | 1h: close=23264.5 sma20=23023.7 sma50=22794.5 rsi=67.9 macd=140.31/116.29(bull) | 15m: K=16.3↑(prev 10.8) | regime=CE-eligible any_active=True
+2026-11-02 08:55:50,297 [INFO] [SIGNAL] CE: reg=True K=False(K=16.3>=38,rising) Kextr=True RSI=True(67.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=16.3<=80,falling) Kextr=True RSI=False(67.9<47) MACD=False(gate off) => BLOCK
+2026-11-02 08:55:50,299 [INFO] [STATE][WCR] CE NFO:NIFTY26N0323300CE ltp=62.10 entry=86.55 pnl=-24.45(-28.2%) sl=0.00 peak=92.25 tr_armed=False elapsed=112min
