@@ -2276,3 +2276,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 06:00:57,915 [INFO] [INDICATORS] spot=23333.5 | 1h: close=23336.0 sma20=22940.2 sma50=22759.3 rsi=77.1 macd=130.41/93.18(bull) | 15m: K=86.1↓(prev 90.9) | regime=CE-eligible any_active=True
 2026-11-02 06:00:57,915 [INFO] [SIGNAL] CE: reg=True K=False(K=86.1>=38,rising) Kextr=True RSI=True(77.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=86.1<=80,falling) Kextr=True RSI=False(77.1<47) MACD=False(gate off) => BLOCK
 2026-11-02 06:00:57,917 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=101.75 entry=109.75 pnl=-8.00(-7.3%) sl=0.00 peak=112.00 tr_armed=False elapsed=99min
+2026-11-02 06:01:00,382 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 06:01:31,040 [INFO] [FAST] CE23350 score=131 vol=1.34 U=16.5 skipped: leader score=131 vol=1.34 U=16.5
+2026-11-02 06:05:04,688 [INFO] [CLM] SIGNAL CLM PE23300 K=37->59 hist=+0.15 ADX-side bar 11:34
+2026-11-02 06:05:04,688 [INFO] [RENKO] CLM PE BLOCKED — 1m renko UP-established, PE is against it (bricks=4, brick=22.6)
+2026-11-02 06:06:06,451 [INFO] [FAST] PE23300 score=148 vol=1.84 U=21.0 skipped: leader score=148 vol=1.84 U=21.0
+2026-11-02 06:06:06,507 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 06:06:06,508 [INFO] [T5] open=0 trades=2 realized=-36.2pt/Rs-2353 unreal=+0.0pt/Rs+0
+2026-11-02 06:06:06,508 [INFO] [INDICATORS] spot=23318.5 | 1h: close=23336.0 sma20=22940.2 sma50=22759.3 rsi=77.1 macd=130.41/93.18(bull) | 15m: K=86.1↓(prev 90.9) | regime=CE-eligible any_active=True
+2026-11-02 06:06:06,508 [INFO] [SIGNAL] CE: reg=True K=False(K=86.1>=38,rising) Kextr=True RSI=True(77.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=86.1<=80,falling) Kextr=True RSI=False(77.1<47) MACD=False(gate off) => BLOCK
+2026-11-02 06:06:06,510 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=90.65 entry=109.75 pnl=-19.10(-17.4%) sl=0.00 peak=112.00 tr_armed=False elapsed=104min
