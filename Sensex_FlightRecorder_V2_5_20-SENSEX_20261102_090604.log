@@ -1620,3 +1620,18 @@
 2026-11-02 07:46:25,528 [INFO] [T5] open=0 trades=1 realized=-21.6pt/Rs-431 unreal=+0.0pt/Rs+0
 2026-11-02 07:46:25,529 [INFO] [INDICATORS] spot=75020.2 | 1h: close=75046.7 sma20=74311.0 sma50=73653.0 rsi=65.3 macd=460.32/362.18(bull) | 15m: K=0.0↓(prev 20.5) | regime=CE-eligible any_active=False
 2026-11-02 07:46:25,529 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(65.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(65.3<47) MACD=False(gate off) => BLOCK
+2026-11-02 07:46:27,959 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261102_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261102_090604.csv
+2026-11-02 07:46:58,250 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:47:28,576 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:47:58,897 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:48:29,210 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:48:59,521 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:49:29,812 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:50:00,124 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:50:30,435 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:51:00,731 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:51:31,019 [INFO] [VWAP] Climax skip — body=98% >= 87%
+2026-11-02 07:51:31,047 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 07:51:31,047 [INFO] [T5] open=0 trades=1 realized=-21.6pt/Rs-431 unreal=+0.0pt/Rs+0
+2026-11-02 07:51:31,048 [INFO] [INDICATORS] spot=75139.9 | 1h: close=75046.7 sma20=74311.0 sma50=73653.0 rsi=65.3 macd=460.32/362.18(bull) | 15m: K=0.0↓(prev 20.5) | regime=CE-eligible any_active=False
+2026-11-02 07:51:31,048 [INFO] [SIGNAL] CE: reg=True K=False(K=0.0>=38,rising) Kextr=True RSI=True(65.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=0.0<=80,falling) Kextr=False RSI=False(65.3<47) MACD=False(gate off) => BLOCK
