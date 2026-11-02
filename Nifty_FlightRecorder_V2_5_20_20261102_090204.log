@@ -2126,3 +2126,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-02 04:43:54,182 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323300CE ltp=99.25 entry=104.75 pnl=-5.50(-5.3%) sl=85.90 peak=109.75 tr_armed=False elapsed=27min
 2026-11-02 04:43:54,183 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=99.25 entry=109.75 pnl=-10.50(-9.6%) sl=0.00 peak=109.75 tr_armed=False elapsed=22min
 2026-11-02 04:43:54,183 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323300CE ltp=99.25 entry=101.25 pnl=-2.00(-2.0%) sl=83.03 peak=102.05 tr_armed=False elapsed=14min
+2026-11-02 04:43:56,597 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261102_090204.log, Nifty_BarLevel_V2_5_20_20261102_090204.csv
+2026-11-02 04:44:27,143 [INFO] [CB] CLM loss (own count 1) — TOTAL across all engines=2/4 (reason=CLM_STOCH_PEAK)
+2026-11-02 04:44:27,144 [INFO] EXIT: NFO:NIFTY26N0323300CE @ 99.10 reason=CLM_STOCH_PEAK pnl/sh=-2.15 is_flip=False losses=1/4
+2026-11-02 04:45:28,801 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323300CE @ 95.80 spot=23320.75 | K=97.9↑ RSI=65.7 MACD✓
+2026-11-02 04:46:29,873 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323300CE @ 97.00 spot=23313.7 | K=100.0↑ RSI=76.6 MACD✓
+2026-11-02 04:49:02,721 [INFO] [CB] VWAP loss (own count 1) — TOTAL across all engines=3/4 (reason=HARDSL_-18pct)
+2026-11-02 04:49:02,722 [INFO] EXIT: NFO:NIFTY26N0323300CE @ 85.90 reason=HARDSL_-18pct pnl/sh=-18.85 is_flip=False losses=1/4
+2026-11-02 04:49:03,742 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-02 04:49:03,849 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+1.4pt/Rs+91
+2026-11-02 04:49:03,850 [INFO] [INDICATORS] spot=23299.7 | 1h: close=23320.8 sma20=22905.4 sma50=22746.0 rsi=76.6 macd=113.95/83.87(bull) | 15m: K=100.0↑(prev 97.9) | regime=CE-eligible any_active=True
+2026-11-02 04:49:03,850 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.6>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.6<47) MACD=False(gate off) => BLOCK
+2026-11-02 04:49:03,851 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0323300CE ltp=85.80 entry=109.75 pnl=-23.95(-21.8%) sl=0.00 peak=109.75 tr_armed=False elapsed=27min
