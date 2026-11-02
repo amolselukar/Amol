@@ -1831,3 +1831,8 @@
 2026-11-02 09:49:08,762 [INFO] [T5] open=0 trades=2 realized=+51.2pt/Rs+1025 unreal=+0.0pt/Rs+0
 2026-11-02 09:49:08,763 [INFO] [INDICATORS] spot=75408.7 | 1h: close=75408.7 sma20=74513.8 sma50=73734.0 rsi=69.9 macd=470.22/399.00(bull) | 15m: K=62.1↑(prev 46.9) | regime=CE-eligible any_active=False
 2026-11-02 09:49:08,763 [INFO] [SIGNAL] CE: reg=True K=True(K=62.1>=38,rising) Kextr=True RSI=True(69.9>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=62.1<=80,falling) Kextr=False RSI=False(69.9<47) MACD=False(gate off) => BLOCK
+2026-11-02 09:49:11,221 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261102_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261102_090604.csv
+2026-11-02 09:54:14,908 [INFO] [APEX] open=0 trades=2 realized=-13.7pt/Rs-274 unreal=+0.0pt/Rs+0
+2026-11-02 09:54:14,998 [INFO] [T5] open=0 trades=2 realized=+51.2pt/Rs+1025 unreal=+0.0pt/Rs+0
+2026-11-02 09:54:14,999 [INFO] [INDICATORS] spot=75408.7 | 1h: close=75408.7 sma20=74513.8 sma50=73734.0 rsi=69.9 macd=470.22/399.00(bull) | 15m: K=62.1↑(prev 46.9) | regime=CE-eligible any_active=False
+2026-11-02 09:54:14,999 [INFO] [SIGNAL] CE: reg=True K=True(K=62.1>=38,rising) Kextr=True RSI=True(69.9>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=62.1<=80,falling) Kextr=False RSI=False(69.9<47) MACD=False(gate off) => BLOCK
