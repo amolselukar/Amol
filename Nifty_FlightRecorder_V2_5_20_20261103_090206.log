@@ -2282,3 +2282,12 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 06:31:51,543 [INFO] [INDICATORS] spot=23701.5 | 1h: close=23635.8 sma20=23166.4 sma50=22865.6 rsi=79.4 macd=191.36/148.66(bull) | 15m: K=82.6↑(prev 79.9) | regime=CE-eligible any_active=True
 2026-11-03 06:31:51,543 [INFO] [SIGNAL] CE: reg=True K=True(K=82.6>=38,rising) Kextr=True RSI=True(79.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=82.6<=80,falling) Kextr=True RSI=False(79.4<47) MACD=False(gate off) => BLOCK
 2026-11-03 06:31:51,545 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323700CE ltp=78.70 entry=44.25 pnl=+34.45(+77.9%) sl=36.29 peak=44.25 tr_armed=False elapsed=0min
+2026-11-03 06:31:54,089 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 06:32:24,705 [INFO] [FAST] PE23700 score=132 vol=1.06 U=7.1 skipped: slope5=+0.12
+2026-11-03 06:34:27,132 [INFO] [FAST] CE23700 score=135 vol=0.75 U=6.2 skipped: leader score=135 vol=0.75 U=6.2
+2026-11-03 06:36:29,955 [INFO] [BREAKWATCH] VWAP CE NFO:NIFTY26N0323700CE entry 12:01 score 4/6 -> KEEP | {'progress_x': 0.0073, 'other_idx_dir%': 0.1473, 'hw_breadth': 0.5833, 'hw_basket_dir%': 0.1547, 'hw_top4_agree': 0.75, 'sellers_sameOTM_oi%': -2.8903} missing=[] fetch_fail=[]
+2026-11-03 06:37:01,022 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 06:37:01,085 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 06:37:01,085 [INFO] [INDICATORS] spot=23701.7 | 1h: close=23635.8 sma20=23166.4 sma50=22865.6 rsi=79.4 macd=191.36/148.66(bull) | 15m: K=82.6↑(prev 79.9) | regime=CE-eligible any_active=True
+2026-11-03 06:37:01,085 [INFO] [SIGNAL] CE: reg=True K=True(K=82.6>=38,rising) Kextr=True RSI=True(79.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=82.6<=80,falling) Kextr=True RSI=False(79.4<47) MACD=False(gate off) => BLOCK
+2026-11-03 06:37:01,087 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323700CE ltp=45.30 entry=44.25 pnl=+1.05(+2.4%) sl=36.29 peak=48.45 tr_armed=False elapsed=5min
