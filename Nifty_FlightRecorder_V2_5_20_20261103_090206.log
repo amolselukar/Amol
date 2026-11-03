@@ -2728,3 +2728,4 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 09:59:50,229 [INFO] [EXP12] EOD why/why-not report sent
 2026-11-03 09:59:51,048 [INFO] [CRUSH] EOD why/why-not report sent
 2026-11-03 09:59:51,050 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-11-03 10:00:24,468 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
