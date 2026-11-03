@@ -1615,3 +1615,18 @@
 2026-11-03 07:15:59,603 [INFO] [T5] open=0 trades=1 realized=-24.5pt/Rs-490 unreal=+0.0pt/Rs+0
 2026-11-03 07:15:59,604 [INFO] [INDICATORS] spot=76533.9 | 1h: close=76520.0 sma20=75016.7 sma50=73990.7 rsi=79.6 macd=663.19/519.58(bull) | 15m: K=21.8↓(prev 50.7) | regime=CE-eligible any_active=False
 2026-11-03 07:15:59,604 [INFO] [SIGNAL] CE: reg=True K=False(K=21.8>=38,rising) Kextr=False RSI=True(79.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=21.8<=80,falling) Kextr=True RSI=False(79.6<47) MACD=False(gate off) => BLOCK
+2026-11-03 07:16:02,662 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261103_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261103_090604.csv
+2026-11-03 07:16:32,970 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:17:03,296 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:17:33,621 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:18:04,033 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:18:34,477 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:19:04,809 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:19:35,141 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:20:05,468 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:20:35,779 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:21:06,165 [INFO] [VWAP] Climax skip — body=100% >= 87%
+2026-11-03 07:21:06,212 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 07:21:06,212 [INFO] [T5] open=0 trades=1 realized=-24.5pt/Rs-490 unreal=+0.0pt/Rs+0
+2026-11-03 07:21:06,213 [INFO] [INDICATORS] spot=76563.5 | 1h: close=76520.0 sma20=75016.7 sma50=73990.7 rsi=79.6 macd=663.19/519.58(bull) | 15m: K=21.8↓(prev 50.7) | regime=CE-eligible any_active=False
+2026-11-03 07:21:06,213 [INFO] [SIGNAL] CE: reg=True K=False(K=21.8>=38,rising) Kextr=True RSI=True(79.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=21.8<=80,falling) Kextr=True RSI=False(79.6<47) MACD=False(gate off) => BLOCK
