@@ -1583,3 +1583,19 @@
 2026-11-03 06:55:31,950 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+9.8pt/Rs+196
 2026-11-03 06:55:31,951 [INFO] [INDICATORS] spot=76477.2 | 1h: close=76520.0 sma20=75016.7 sma50=73990.7 rsi=79.6 macd=663.19/519.58(bull) | 15m: K=72.5↓(prev 82.7) | regime=CE-eligible any_active=False
 2026-11-03 06:55:31,951 [INFO] [SIGNAL] CE: reg=True K=False(K=72.5>=38,rising) Kextr=False RSI=True(79.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=72.5<=80,falling) Kextr=True RSI=False(79.6<47) MACD=False(gate off) => BLOCK
+2026-11-03 06:55:35,614 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261103_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261103_090604.csv
+2026-11-03 06:56:05,929 [INFO] [VWAP] Cooldown BLOCK — CE 15.4min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:56:36,305 [INFO] [VWAP] Cooldown BLOCK — CE 15.9min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:57:06,749 [INFO] [VWAP] Cooldown BLOCK — CE 16.4min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:57:37,238 [INFO] [VWAP] Cooldown BLOCK — CE 16.9min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:58:07,690 [INFO] [VWAP] Cooldown BLOCK — CE 17.4min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:58:38,172 [INFO] [VWAP] Cooldown BLOCK — CE 17.9min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:59:08,583 [INFO] [VWAP] Cooldown BLOCK — CE 18.4min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:59:08,634 [INFO] [T5] EXIT PE 76500 457.8->433.3 -24.5pt Rs-490 [stop] | day -24.5pt Rs-490
+2026-11-03 06:59:39,772 [INFO] [VWAP] Cooldown BLOCK — CE 18.9min since last VWAP CE loss (cooldown 30min)
+2026-11-03 07:00:10,205 [INFO] [VWAP] Cooldown BLOCK — CE 19.5min since last VWAP CE loss (cooldown 30min)
+2026-11-03 07:00:40,548 [INFO] [VWAP] Cooldown BLOCK — CE 20.0min since last VWAP CE loss (cooldown 30min)
+2026-11-03 07:00:40,581 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 07:00:40,581 [INFO] [T5] open=0 trades=1 realized=-24.5pt/Rs-490 unreal=+0.0pt/Rs+0
+2026-11-03 07:00:40,582 [INFO] [INDICATORS] spot=76543.4 | 1h: close=76520.0 sma20=75016.7 sma50=73990.7 rsi=79.6 macd=663.19/519.58(bull) | 15m: K=50.5↓(prev 72.5) | regime=CE-eligible any_active=False
+2026-11-03 07:00:40,582 [INFO] [SIGNAL] CE: reg=True K=False(K=50.5>=38,rising) Kextr=False RSI=True(79.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=50.5<=80,falling) Kextr=True RSI=False(79.6<47) MACD=False(gate off) => BLOCK
