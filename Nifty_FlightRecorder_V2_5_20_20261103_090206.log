@@ -2142,3 +2142,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 05:09:34,316 [INFO] [INDICATORS] spot=23655.5 | 1h: close=23631.6 sma20=23127.7 sma50=22843.0 rsi=79.3 macd=176.16/137.99(bull) | 15m: K=98.2↑(prev 96.8) | regime=CE-eligible any_active=True
 2026-11-03 05:09:34,316 [INFO] [SIGNAL] CE: reg=True K=True(K=98.2>=38,rising) Kextr=True RSI=True(79.3>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=98.2<=80,falling) Kextr=True RSI=False(79.3<47) MACD=False(gate off) => BLOCK
 2026-11-03 05:09:34,319 [INFO] [STATE][FAST] CE NFO:NIFTY26N0323650CE ltp=58.20 entry=49.70 pnl=+8.50(+17.1%) sl=0.00 peak=65.30 tr_armed=False elapsed=23min
+2026-11-03 05:09:36,855 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 05:10:07,278 [INFO] [CLM] SIGNAL CLM CE23650 K=8->18 hist=-0.06 ADX-side bar 10:39
+2026-11-03 05:10:07,488 [INFO] ENTRY: NFO:NIFTY26N0323650CE @ 56.95  engine=CLM  detail=CLM CE23650 K=8->18 hist=-0.06 ADX-side bar 10:39
+2026-11-03 05:12:09,820 [INFO] [CB] CLM loss (own count 1) — TOTAL across all engines=2/4 (reason=CLM_STOCH_PEAK)
+2026-11-03 05:12:09,827 [INFO] EXIT: NFO:NIFTY26N0323650CE @ 54.95 reason=CLM_STOCH_PEAK pnl/sh=-2.00 is_flip=False losses=1/4
+2026-11-03 05:14:42,354 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 05:14:42,354 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 05:14:42,355 [INFO] [INDICATORS] spot=23653.3 | 1h: close=23631.6 sma20=23127.7 sma50=22843.0 rsi=79.3 macd=176.16/137.99(bull) | 15m: K=98.2↑(prev 96.8) | regime=CE-eligible any_active=True
+2026-11-03 05:14:42,355 [INFO] [SIGNAL] CE: reg=True K=True(K=98.2>=38,rising) Kextr=True RSI=True(79.3>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=98.2<=80,falling) Kextr=True RSI=False(79.3<47) MACD=False(gate off) => BLOCK
+2026-11-03 05:14:42,358 [INFO] [STATE][FAST] CE NFO:NIFTY26N0323650CE ltp=54.45 entry=49.70 pnl=+4.75(+9.6%) sl=0.00 peak=65.30 tr_armed=False elapsed=28min
