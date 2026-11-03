@@ -2425,3 +2425,19 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 07:48:52,345 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0323700CE ltp=56.60 entry=38.50 pnl=+18.10(+47.0%) sl=51.60 peak=56.60 tr_armed=True elapsed=17min
 2026-11-03 07:48:52,346 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=32.00 entry=66.00 pnl=-34.00(-51.5%) sl=0.00 peak=82.70 tr_armed=False elapsed=49min
 2026-11-03 07:48:52,346 [INFO] [STATE][FAST] CE NFO:NIFTY26N0323700CE ltp=56.60 entry=54.60 pnl=+2.00(+3.7%) sl=0.00 peak=56.60 tr_armed=False elapsed=0min
+2026-11-03 07:48:54,852 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 07:49:25,267 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-03 07:50:26,057 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-03 07:50:26,130 [INFO] [EXP12] anchor=spot M=23700 (max-OI would be 23600, diverged by -100) spot=23721.2
+2026-11-03 07:50:26,130 [INFO] [EXP12] universe resolved: M=23700 legs=[(23650, 'CE'), (23650, 'PE'), (23700, 'CE'), (23700, 'PE'), (23750, 'CE'), (23750, 'PE')]
+2026-11-03 07:50:26,314 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-11-03 07:51:27,134 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-03 07:52:27,950 [INFO] EXIT: NFO:NIFTY26N0323700CE @ 51.60 reason=TRAIL_+13 pnl/sh=+13.10 is_flip=False losses=1/4
+2026-11-03 07:52:28,860 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-03 07:53:29,792 [INFO] [SELLER] CLM CE skipped: quiet regime (no seller stop by 13:00)
+2026-11-03 07:54:00,312 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 07:54:00,312 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 07:54:00,312 [INFO] [INDICATORS] spot=23719.0 | 1h: close=23697.5 sma20=23248.0 sma50=22914.4 rsi=80.9 macd=213.08/170.29(bull) | 15m: K=14.1↑(prev 8.2) | regime=CE-eligible any_active=True
+2026-11-03 07:54:00,313 [INFO] [SIGNAL] CE: reg=True K=False(K=14.1>=38,rising) Kextr=True RSI=True(80.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=14.1<=80,falling) Kextr=True RSI=False(80.9<47) MACD=False(gate off) => BLOCK
+2026-11-03 07:54:00,315 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=34.80 entry=66.00 pnl=-31.20(-47.3%) sl=0.00 peak=82.70 tr_armed=False elapsed=54min
+2026-11-03 07:54:00,315 [INFO] [STATE][FAST] CE NFO:NIFTY26N0323700CE ltp=51.40 entry=54.60 pnl=-3.20(-5.9%) sl=0.00 peak=56.60 tr_armed=False elapsed=5min
