@@ -2539,3 +2539,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 08:30:09,080 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=0.00 entry=45.80 pnl=-45.80(-100.0%) sl=0.00 peak=45.80 tr_armed=False elapsed=0min
 2026-11-03 08:30:09,081 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=34.00 entry=66.00 pnl=-32.00(-48.5%) sl=0.00 peak=82.70 tr_armed=False elapsed=91min
 2026-11-03 08:30:09,082 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323700CE ltp=43.05 entry=45.70 pnl=-2.65(-5.8%) sl=37.47 peak=45.70 tr_armed=False elapsed=0min
+2026-11-03 08:30:13,838 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 08:31:46,261 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-11-03 08:33:18,254 [INFO] [FAST] CE23700 score=150 vol=1.45 U=7.2 skipped: leader score=150 vol=1.45 U=7.2
+2026-11-03 08:33:48,598 [INFO] [RENKO] dir=+1 (UP) bricks=12 brick=20.42 last5=[1, -1, 1, 1, 1]
+2026-11-03 08:35:20,423 [INFO] [FAST] PE23700 score=145 vol=0.85 U=7.1 skipped: slope5=+1.68
+2026-11-03 08:35:20,467 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 08:35:20,468 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 08:35:20,470 [INFO] [INDICATORS] spot=23714.2 | 1h: close=23697.5 sma20=23248.0 sma50=22914.4 rsi=80.9 macd=213.08/170.29(bull) | 15m: K=33.4↓(prev 41.5) | regime=CE-eligible any_active=True
+2026-11-03 08:35:20,470 [INFO] [SIGNAL] CE: reg=True K=False(K=33.4>=38,rising) Kextr=True RSI=True(80.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=33.4<=80,falling) Kextr=True RSI=False(80.9<47) MACD=False(gate off) => BLOCK
+2026-11-03 08:35:20,474 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=42.15 entry=45.80 pnl=-3.65(-8.0%) sl=0.00 peak=50.00 tr_armed=False elapsed=5min
+2026-11-03 08:35:20,475 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=35.55 entry=66.00 pnl=-30.45(-46.1%) sl=0.00 peak=82.70 tr_armed=False elapsed=96min
+2026-11-03 08:35:20,475 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323700CE ltp=42.15 entry=45.70 pnl=-3.55(-7.8%) sl=37.47 peak=50.00 tr_armed=False elapsed=5min
