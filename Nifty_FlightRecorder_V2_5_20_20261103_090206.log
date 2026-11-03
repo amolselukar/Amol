@@ -2644,3 +2644,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 09:16:52,711 [INFO] [SIGNAL] CE: reg=True K=False(K=8.3>=38,rising) Kextr=True RSI=True(81.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=8.3<=80,falling) Kextr=True RSI=False(81.2<47) MACD=False(gate off) => BLOCK
 2026-11-03 09:16:52,712 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=34.40 entry=45.80 pnl=-11.40(-24.9%) sl=0.00 peak=50.00 tr_armed=False elapsed=46min
 2026-11-03 09:16:52,712 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=27.05 entry=66.00 pnl=-38.95(-59.0%) sl=0.00 peak=82.70 tr_armed=False elapsed=137min
+2026-11-03 09:16:55,261 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 09:18:27,750 [INFO] [FAST] PE23700 score=284 vol=1.44 U=20.5 skipped: leader score=284 vol=1.44 U=20.5
+2026-11-03 09:18:28,075 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-11-03 09:19:59,839 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=13 brick=20.42 last5=[-1, 1, 1, 1, -1]
+2026-11-03 09:20:30,841 [INFO] [FAST] PE23700 score=263 vol=0.75 U=16.5 skipped: leader score=263 vol=0.75 U=16.5
+2026-11-03 09:22:03,308 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 09:22:03,377 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 09:22:03,377 [INFO] [INDICATORS] spot=23699.8 | 1h: close=23710.2 sma20=23286.5 sma50=22940.5 rsi=81.2 macd=219.29/180.09(bull) | 15m: K=8.3↑(prev 1.1) | regime=CE-eligible any_active=True
+2026-11-03 09:22:03,377 [INFO] [SIGNAL] CE: reg=True K=False(K=8.3>=38,rising) Kextr=True RSI=True(81.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=8.3<=80,falling) Kextr=True RSI=False(81.2<47) MACD=False(gate off) => BLOCK
+2026-11-03 09:22:03,380 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=27.95 entry=45.80 pnl=-17.85(-39.0%) sl=0.00 peak=50.00 tr_armed=False elapsed=51min
+2026-11-03 09:22:03,381 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=32.85 entry=66.00 pnl=-33.15(-50.2%) sl=0.00 peak=82.70 tr_armed=False elapsed=142min
