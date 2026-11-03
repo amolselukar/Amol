@@ -2723,3 +2723,8 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 09:58:15,384 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-03 09:58:15,384 [INFO] [INDICATORS] spot=23731.8 | 1h: close=23731.8 sma20=23326.2 sma50=22964.1 rsi=81.7 macd=223.38/188.75(bull) | 15m: K=16.4↑(prev 8.0) | regime=CE-eligible any_active=False
 2026-11-03 09:58:15,385 [INFO] [SIGNAL] CE: reg=True K=False(K=16.4>=38,rising) Kextr=True RSI=True(81.7>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=16.4<=80,falling) Kextr=True RSI=False(81.7<47) MACD=False(gate off) => BLOCK
+2026-11-03 09:58:18,034 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 09:59:49,121 [INFO] [EXP12] anchor=spot M=23700 (max-OI would be 23800, diverged by +100) spot=23731.8
+2026-11-03 09:59:50,229 [INFO] [EXP12] EOD why/why-not report sent
+2026-11-03 09:59:51,048 [INFO] [CRUSH] EOD why/why-not report sent
+2026-11-03 09:59:51,050 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
