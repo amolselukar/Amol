@@ -2569,3 +2569,17 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 08:45:50,427 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=43.60 entry=45.80 pnl=-2.20(-4.8%) sl=0.00 peak=50.00 tr_armed=False elapsed=15min
 2026-11-03 08:45:50,428 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=33.30 entry=66.00 pnl=-32.70(-49.5%) sl=0.00 peak=82.70 tr_armed=False elapsed=106min
 2026-11-03 08:45:50,428 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323700CE ltp=43.60 entry=45.70 pnl=-2.10(-4.6%) sl=37.47 peak=50.00 tr_armed=False elapsed=15min
+2026-11-03 08:45:53,092 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 08:47:24,846 [INFO] [CB] CLM loss (own count 6) — TOTAL across all engines=8/4 (reason=HARDSL_-18pct)
+2026-11-03 08:47:24,850 [INFO] EXIT: NFO:NIFTY26N0323700CE @ 37.47 reason=HARDSL_-18pct pnl/sh=-8.23 is_flip=False losses=6/4
+2026-11-03 08:47:25,953 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-11-03 08:48:27,215 [INFO] [FAST] PE23700 score=308 vol=3.76 U=20.8 skipped: VRTREND counter CE
+2026-11-03 08:48:57,750 [INFO] [RENKO] dir=+1 (UP) bricks=12 brick=20.42 last5=[1, -1, 1, 1, 1]
+2026-11-03 08:49:28,220 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=13 brick=20.42 last5=[-1, 1, 1, 1, -1]
+2026-11-03 08:49:28,549 [INFO] [FAST] PE23700 score=268 BLOCKED -- 2m renko NEUTRAL does not agree (brick 20.4)
+2026-11-03 08:51:00,919 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 08:51:00,981 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 08:51:00,982 [INFO] [INDICATORS] spot=23688.2 | 1h: close=23710.2 sma20=23286.5 sma50=22940.5 rsi=81.2 macd=219.29/180.09(bull) | 15m: K=19.7↓(prev 33.4) | regime=CE-eligible any_active=True
+2026-11-03 08:51:00,982 [INFO] [SIGNAL] CE: reg=True K=False(K=19.7>=38,rising) Kextr=True RSI=True(81.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=19.7<=80,falling) Kextr=True RSI=False(81.2<47) MACD=False(gate off) => BLOCK
+2026-11-03 08:51:00,984 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=34.00 entry=45.80 pnl=-11.80(-25.8%) sl=0.00 peak=50.00 tr_armed=False elapsed=20min
+2026-11-03 08:51:00,984 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=38.45 entry=66.00 pnl=-27.55(-41.7%) sl=0.00 peak=82.70 tr_armed=False elapsed=111min
