@@ -2046,3 +2046,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 04:13:00,217 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-03 04:13:00,218 [INFO] [INDICATORS] spot=23615.5 | 1h: close=23440.8 sma20=23088.0 sma50=22824.1 rsi=74.3 macd=154.63/128.45(bull) | 15m: K=88.9↑(prev 75.5) | regime=CE-eligible any_active=False
 2026-11-03 04:13:00,218 [INFO] [SIGNAL] CE: reg=True K=True(K=88.9>=38,rising) Kextr=True RSI=True(74.3>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=88.9<=80,falling) Kextr=True RSI=False(74.3<47) MACD=False(gate off) => BLOCK
+2026-11-03 04:13:03,304 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 04:15:05,784 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323600CE @ 65.40 spot=23612.3 | K=88.9↑ RSI=74.3 MACD✓
+2026-11-03 04:15:05,801 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-11-03 04:15:36,269 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-11-03 04:16:06,698 [INFO] [VWAP] Climax skip — body=93% >= 87%
+2026-11-03 04:16:37,230 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0323600CE @ 72.05 spot=23613.1 | K=98.4↑ RSI=74.3 MACD✓
+2026-11-03 04:17:07,731 [INFO] [FAST] CE23650 score=165 vol=1.58 U=14.4 skipped: leader score=165 vol=1.58 U=14.4
+2026-11-03 04:18:08,507 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 04:18:08,507 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 04:18:08,508 [INFO] [INDICATORS] spot=23629.7 | 1h: close=23440.8 sma20=23088.0 sma50=22824.1 rsi=74.3 macd=154.63/128.45(bull) | 15m: K=98.4↑(prev 88.9) | regime=CE-eligible any_active=False
+2026-11-03 04:18:08,508 [INFO] [SIGNAL] CE: reg=True K=True(K=98.4>=38,rising) Kextr=True RSI=True(74.3>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=98.4<=80,falling) Kextr=True RSI=False(74.3<47) MACD=False(gate off) => BLOCK
