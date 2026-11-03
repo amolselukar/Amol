@@ -2599,3 +2599,21 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 09:01:21,152 [INFO] [SIGNAL] CE: reg=True K=False(K=1.1>=38,rising) Kextr=True RSI=True(81.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=1.1<=80,falling) Kextr=True RSI=False(81.2<47) MACD=False(gate off) => BLOCK
 2026-11-03 09:01:21,153 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=27.10 entry=45.80 pnl=-18.70(-40.8%) sl=0.00 peak=50.00 tr_armed=False elapsed=31min
 2026-11-03 09:01:21,154 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=40.70 entry=66.00 pnl=-25.30(-38.3%) sl=0.00 peak=82.70 tr_armed=False elapsed=122min
+2026-11-03 09:01:24,402 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 09:01:54,677 [INFO] [VWAP] Signal — FUT 23730>23688 body=68% side=CE | persist_gate=dist=+45.9pt persist=True (last 2x5m vs FUTvwap=23684.6)
+2026-11-03 09:01:54,702 [WARNING] Premium 24.25 outside gate [30,180] (CE); skipping entry
+2026-11-03 09:02:25,507 [INFO] [SELLER] CLM PE skipped: ride seller-stopped side CE, block counter PE
+2026-11-03 09:02:56,126 [INFO] [EXP12] M=23700 open=0[-] trades=0 realized=Rs+0 triggers=0 | by-engine none
+2026-11-03 09:03:26,735 [INFO] [SELLER] CLM PE skipped: ride seller-stopped side CE, block counter PE
+2026-11-03 09:04:27,966 [INFO] [SELLER] CLM PE skipped: ride seller-stopped side CE, block counter PE
+2026-11-03 09:04:58,322 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=13 brick=20.42 last5=[-1, 1, 1, 1, -1]
+2026-11-03 09:05:29,655 [INFO] [FAST] CE23700 score=286 vol=1.63 U=21.3 skipped: leader score=286 vol=1.63 U=21.3
+2026-11-03 09:05:29,661 [INFO] [SELLER] CLM PE skipped: ride seller-stopped side CE, block counter PE
+2026-11-03 09:06:31,147 [INFO] [FAST] CE23700 score=259 vol=1.33 U=20.4 skipped: leader score=259 vol=1.33 U=20.4
+2026-11-03 09:06:31,152 [INFO] [SELLER] CLM PE skipped: ride seller-stopped side CE, block counter PE
+2026-11-03 09:06:31,177 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 09:06:31,238 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 09:06:31,240 [INFO] [INDICATORS] spot=23695.9 | 1h: close=23710.2 sma20=23286.5 sma50=22940.5 rsi=81.2 macd=219.29/180.09(bull) | 15m: K=1.1↓(prev 19.7) | regime=CE-eligible any_active=True
+2026-11-03 09:06:31,240 [INFO] [SIGNAL] CE: reg=True K=False(K=1.1>=38,rising) Kextr=True RSI=True(81.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=1.1<=80,falling) Kextr=True RSI=False(81.2<47) MACD=False(gate off) => BLOCK
+2026-11-03 09:06:31,243 [INFO] [STATE][EXPIRY] CE NFO:NIFTY26N0323700CE ltp=34.75 entry=45.80 pnl=-11.05(-24.1%) sl=0.00 peak=50.00 tr_armed=False elapsed=36min
+2026-11-03 09:06:31,244 [INFO] [STATE][WCR] PE NFO:NIFTY26N0323700PE ltp=29.75 entry=66.00 pnl=-36.25(-54.9%) sl=0.00 peak=82.70 tr_armed=False elapsed=127min
