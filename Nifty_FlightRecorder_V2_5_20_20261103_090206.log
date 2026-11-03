@@ -2228,3 +2228,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-03 06:01:01,241 [INFO] [INDICATORS] spot=23654.5 | 1h: close=23635.8 sma20=23166.4 sma50=22865.6 rsi=79.4 macd=191.36/148.66(bull) | 15m: K=86.5↓(prev 92.9) | regime=CE-eligible any_active=True
 2026-11-03 06:01:01,241 [INFO] [SIGNAL] CE: reg=True K=False(K=86.5>=38,rising) Kextr=True RSI=True(79.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=86.5<=80,falling) Kextr=True RSI=False(79.4<47) MACD=False(gate off) => BLOCK
 2026-11-03 06:01:01,243 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323650CE ltp=46.60 entry=50.30 pnl=-3.70(-7.4%) sl=41.25 peak=55.50 tr_armed=False elapsed=23min
+2026-11-03 06:01:03,759 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261103_090206.log, Nifty_BarLevel_V2_5_20_20261103_090206.csv
+2026-11-03 06:02:04,577 [INFO] [CB] CLM loss (own count 3) — TOTAL across all engines=4/4 (reason=HARDSL_-18pct)
+2026-11-03 06:02:05,386 [INFO] EXIT: NFO:NIFTY26N0323650CE @ 41.25 reason=HARDSL_-18pct pnl/sh=-9.05 is_flip=False losses=3/4
+2026-11-03 06:04:07,905 [INFO] [CLM] SIGNAL CLM CE23650 K=0->8 hist=-1.21 ADX-side bar 11:33
+2026-11-03 06:04:07,942 [INFO] [PAPER-FALLBACK] CB hit — logging as paper trade (no real order): NIFTY26N0323650CE
+2026-11-03 06:04:07,947 [INFO] ENTRY: NFO:NIFTY26N0323650CE @ 42.35  engine=CLM  detail=CLM CE23650 K=0->8 hist=-1.21 ADX-side bar 11:33
+2026-11-03 06:06:10,498 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 06:06:10,499 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 06:06:10,499 [INFO] [INDICATORS] spot=23649.8 | 1h: close=23635.8 sma20=23166.4 sma50=22865.6 rsi=79.4 macd=191.36/148.66(bull) | 15m: K=86.5↓(prev 92.9) | regime=CE-eligible any_active=True
+2026-11-03 06:06:10,499 [INFO] [SIGNAL] CE: reg=True K=False(K=86.5>=38,rising) Kextr=True RSI=True(79.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=86.5<=80,falling) Kextr=True RSI=False(79.4<47) MACD=False(gate off) => BLOCK
+2026-11-03 06:06:10,503 [INFO] [STATE][CLM] CE NFO:NIFTY26N0323650CE ltp=48.60 entry=42.35 pnl=+6.25(+14.8%) sl=34.73 peak=48.60 tr_armed=False elapsed=2min
