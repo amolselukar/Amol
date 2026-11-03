@@ -1554,3 +1554,17 @@
 2026-11-03 06:45:18,019 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+5.1pt/Rs+101
 2026-11-03 06:45:18,020 [INFO] [INDICATORS] spot=76520.0 | 1h: close=76520.0 sma20=75016.7 sma50=73990.7 rsi=78.9 macd=621.87/483.68(bull) | 15m: K=72.5↓(prev 82.7) | regime=CE-eligible any_active=False
 2026-11-03 06:45:18,020 [INFO] [SIGNAL] CE: reg=True K=False(K=72.5>=38,rising) Kextr=False RSI=True(78.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=72.5<=80,falling) Kextr=True RSI=False(78.9<47) MACD=False(gate off) => BLOCK
+2026-11-03 06:45:20,536 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261103_090604.log, Sensex_BarLevel_V2_5_20-SENSEX_20261103_090604.csv
+2026-11-03 06:46:21,241 [INFO] [VWAP] Cooldown BLOCK — CE 5.6min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:46:51,612 [INFO] [VWAP] Cooldown BLOCK — CE 6.1min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:47:21,956 [INFO] [VWAP] Cooldown BLOCK — CE 6.7min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:47:52,417 [INFO] [VWAP] Cooldown BLOCK — CE 7.2min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:48:22,855 [INFO] [VWAP] Cooldown BLOCK — CE 7.7min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:48:53,306 [INFO] [VWAP] Cooldown BLOCK — CE 8.2min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:49:23,761 [INFO] [VWAP] Cooldown BLOCK — CE 8.7min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:49:54,207 [INFO] [VWAP] Cooldown BLOCK — CE 9.2min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:50:24,680 [INFO] [VWAP] Cooldown BLOCK — CE 9.7min since last VWAP CE loss (cooldown 30min)
+2026-11-03 06:50:24,705 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-03 06:50:24,775 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+22.2pt/Rs+444
+2026-11-03 06:50:24,776 [INFO] [INDICATORS] spot=76474.1 | 1h: close=76520.0 sma20=75016.7 sma50=73990.7 rsi=79.6 macd=663.19/519.58(bull) | 15m: K=72.5↓(prev 82.7) | regime=CE-eligible any_active=False
+2026-11-03 06:50:24,776 [INFO] [SIGNAL] CE: reg=True K=False(K=72.5>=38,rising) Kextr=False RSI=True(79.6>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=72.5<=80,falling) Kextr=True RSI=False(79.6<47) MACD=False(gate off) => BLOCK
