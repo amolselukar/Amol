@@ -2115,3 +2115,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-04 09:02:05,378 [INFO] [INDICATORS] spot=23900.6 | 1h: close=23874.4 sma20=23569.9 sma50=23112.5 rsi=74.3 macd=226.05/220.25(bull) | 15m: K=85.4↓(prev 89.3) | regime=CE-eligible any_active=True
 2026-11-04 09:02:05,378 [INFO] [SIGNAL] CE: reg=True K=False(K=85.4>=38,rising) Kextr=True RSI=True(74.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=85.4<=80,falling) Kextr=True RSI=False(74.3<47) MACD=False(gate off) => BLOCK
 2026-11-04 09:02:05,378 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0923900CE ltp=159.15 entry=163.50 pnl=-4.35(-2.7%) sl=134.07 peak=163.50 tr_armed=False elapsed=0min
+2026-11-04 09:02:09,231 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261104_125924.log, Nifty_BarLevel_V2_5_20_20261104_125924.csv
+2026-11-04 09:04:11,681 [INFO] [CLM] SIGNAL CLM CE23900 K=12->15 hist=-0.67 ADX-side bar 14:33
+2026-11-04 09:04:11,717 [INFO] ENTRY: NFO:NIFTY26N0923900CE @ 161.35  engine=CLM  detail=CLM CE23900 K=12->15 hist=-0.67 ADX-side bar 14:33
+2026-11-04 09:06:45,465 [WARNING] [BREAKWATCH] VWAP NFO:NIFTY26N0923900CE error, no action: No module named 'breakwatch_live'
+2026-11-04 09:07:16,275 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 09:07:16,342 [INFO] [T5] open=0 trades=1 realized=+16.6pt/Rs+1076 unreal=+0.0pt/Rs+0
+2026-11-04 09:07:16,343 [INFO] [INDICATORS] spot=23904.0 | 1h: close=23874.4 sma20=23569.9 sma50=23112.5 rsi=74.3 macd=226.05/220.25(bull) | 15m: K=85.4↓(prev 89.3) | regime=CE-eligible any_active=True
+2026-11-04 09:07:16,343 [INFO] [SIGNAL] CE: reg=True K=False(K=85.4>=38,rising) Kextr=True RSI=True(74.3>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=85.4<=80,falling) Kextr=True RSI=False(74.3<47) MACD=False(gate off) => BLOCK
+2026-11-04 09:07:16,344 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0923900CE ltp=167.60 entry=163.50 pnl=+4.10(+2.5%) sl=134.07 peak=167.95 tr_armed=False elapsed=5min
+2026-11-04 09:07:16,344 [INFO] [STATE][CLM] CE NFO:NIFTY26N0923900CE ltp=167.60 entry=161.35 pnl=+6.25(+3.9%) sl=132.31 peak=167.95 tr_armed=False elapsed=3min
