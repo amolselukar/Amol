@@ -1359,3 +1359,11 @@
 2026-11-04 09:25:51,313 [INFO] [T5] open=0 trades=1 realized=-18.5pt/Rs-370 unreal=+0.0pt/Rs+0
 2026-11-04 09:25:51,314 [INFO] [INDICATORS] spot=77222.1 | 1h: close=77098.8 sma20=76172.4 sma50=74688.6 rsi=72.9 macd=719.46/709.44(bull) | 15m: K=82.3↓(prev 83.8) | regime=CE-eligible any_active=False
 2026-11-04 09:25:51,314 [INFO] [SIGNAL] CE: reg=True K=False(K=82.3>=38,rising) Kextr=False RSI=True(72.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=82.3<=80,falling) Kextr=True RSI=False(72.9<47) MACD=False(gate off) => BLOCK
+2026-11-04 09:25:54,111 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261104_132845.log, Sensex_BarLevel_V2_5_20-SENSEX_20261104_132845.csv
+2026-11-04 09:26:54,758 [INFO] [V3PROBE] PLACED PE BFO:SENSEX26N0577200PE limit=221.15 (LTP=234.15 - 13) window=25min — EARLY(10m) Grade B G-cluster REJECT-PE at 77240
+2026-11-04 09:27:56,216 [INFO] [V3PROBE] FILLED PE BFO:SENSEX26N0577200PE @ 221.15 (LTP touched 220.80)
+2026-11-04 09:27:56,221 [INFO] [VETO] V3 PE BLOCKED — PE into an UPtrend: spot 77250.1 is +187.7 above SPOT VWAP 77062.4 (buffer 16)
+2026-11-04 09:30:59,070 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 09:30:59,070 [INFO] [T5] open=0 trades=1 realized=-18.5pt/Rs-370 unreal=+0.0pt/Rs+0
+2026-11-04 09:30:59,070 [INFO] [INDICATORS] spot=77255.5 | 1h: close=77098.8 sma20=76172.4 sma50=74688.6 rsi=72.9 macd=719.46/709.44(bull) | 15m: K=93.0↑(prev 82.3) | regime=CE-eligible any_active=False
+2026-11-04 09:30:59,070 [INFO] [SIGNAL] CE: reg=True K=True(K=93.0>=38,rising) Kextr=False RSI=True(72.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=93.0<=80,falling) Kextr=True RSI=False(72.9<47) MACD=False(gate off) => BLOCK
