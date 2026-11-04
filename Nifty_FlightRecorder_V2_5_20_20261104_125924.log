@@ -2197,3 +2197,10 @@ error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
 2026-11-04 09:58:31,147 [INFO] [INDICATORS] spot=23911.7 | 1h: close=23912.7 sma20=23612.9 sma50=23136.7 rsi=75.4 macd=224.64/221.12(bull) | 15m: K=94.4↓(prev 94.7) | regime=CE-eligible any_active=False
 2026-11-04 09:58:31,147 [INFO] [SIGNAL] CE: reg=True K=False(K=94.4>=38,rising) Kextr=True RSI=True(75.4>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=94.4<=80,falling) Kextr=True RSI=False(75.4<47) MACD=False(gate off) => BLOCK
 2026-11-04 09:59:41,977 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261104_125924.log, Nifty_BarLevel_V2_5_20_20261104_125924.csv
+2026-11-04 10:00:31,188 [WARNING] [periodic] Git push failed: remote: Internal Server Error        
+remote: Request ID CFEC:242A86:1EB78D:282D14:6AEB023E        
+remote: Time 2026-11-04T10:00:31Z
+To https://github.com/amolselukar/Amol.git
+ ! [remote rejected]   HEAD -> claude/general-session-YfHuZ (Internal Server Error)
+error: failed to push some refs to 'https://github.com/amolselukar/Amol.git'
+
