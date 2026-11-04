@@ -1318,3 +1318,18 @@
 2026-11-04 09:05:23,550 [INFO] [T5] open=0 trades=1 realized=-18.5pt/Rs-370 unreal=+0.0pt/Rs+0
 2026-11-04 09:05:23,551 [INFO] [INDICATORS] spot=77188.3 | 1h: close=77098.8 sma20=76172.4 sma50=74688.6 rsi=72.9 macd=719.46/709.44(bull) | 15m: K=83.8↓(prev 87.7) | regime=CE-eligible any_active=False
 2026-11-04 09:05:23,551 [INFO] [SIGNAL] CE: reg=True K=False(K=83.8>=38,rising) Kextr=False RSI=True(72.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=83.8<=80,falling) Kextr=True RSI=False(72.9<47) MACD=False(gate off) => BLOCK
+2026-11-04 09:05:26,457 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261104_132845.log, Sensex_BarLevel_V2_5_20-SENSEX_20261104_132845.csv
+2026-11-04 09:05:56,769 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:06:27,188 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:06:57,631 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:07:28,066 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:07:58,533 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:08:28,959 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:08:59,381 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:09:29,803 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:10:00,237 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:10:30,690 [INFO] [VWAP] Climax skip — body=89% >= 87%
+2026-11-04 09:10:30,721 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 09:10:30,816 [INFO] [T5] open=0 trades=1 realized=-18.5pt/Rs-370 unreal=+0.0pt/Rs+0
+2026-11-04 09:10:30,817 [INFO] [INDICATORS] spot=77213.0 | 1h: close=77098.8 sma20=76172.4 sma50=74688.6 rsi=72.9 macd=719.46/709.44(bull) | 15m: K=83.8↓(prev 87.7) | regime=CE-eligible any_active=False
+2026-11-04 09:10:30,817 [INFO] [SIGNAL] CE: reg=True K=False(K=83.8>=38,rising) Kextr=False RSI=True(72.9>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=83.8<=80,falling) Kextr=True RSI=False(72.9<47) MACD=False(gate off) => BLOCK
