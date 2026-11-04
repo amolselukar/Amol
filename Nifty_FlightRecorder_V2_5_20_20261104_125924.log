@@ -2007,3 +2007,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-04 08:00:19,217 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-04 08:00:19,218 [INFO] [INDICATORS] spot=23867.2 | 1h: close=23849.8 sma20=23526.7 sma50=23087.4 rsi=73.5 macd=228.46/218.80(bull) | 15m: K=42.4↑(prev 34.7) | regime=CE-eligible any_active=False
 2026-11-04 08:00:19,218 [INFO] [SIGNAL] CE: reg=True K=True(K=42.4>=38,rising) Kextr=True RSI=True(73.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=42.4<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False(gate off) => BLOCK
+2026-11-04 08:00:22,822 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261104_125924.log, Nifty_BarLevel_V2_5_20_20261104_125924.csv
+2026-11-04 08:01:23,342 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0923900CE @ 154.05 spot=23867.5 | K=42.4↑ RSI=73.5 MACD✓
+2026-11-04 08:01:23,342 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/nifty_v2_shadow.jsonl'
+2026-11-04 08:03:24,926 [INFO] [FAST] CE23900 score=108 vol=2.36 U=17.2 skipped: leader score=108 vol=2.36 U=17.2
+2026-11-04 08:04:25,629 [INFO] [FAST] CE23900 score=102 vol=2.71 U=18.3 skipped: leader score=102 vol=2.71 U=18.3
+2026-11-04 08:05:26,413 [INFO] [FAST] SIGNAL 1m momentum CE23900 score=129 vol=2.0x U=+26 momN=9.3% trend=CE bar 13:34; trail 15
+2026-11-04 08:05:26,457 [INFO] ENTRY: NFO:NIFTY26N0923900CE @ 167.90  engine=FAST  detail=1m momentum CE23900 score=129 vol=2.0x U=+26 momN=9.3% trend=CE bar 13:34; trail 15
+2026-11-04 08:05:27,310 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:05:27,311 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:05:27,311 [INFO] [INDICATORS] spot=23886.7 | 1h: close=23849.8 sma20=23526.7 sma50=23087.4 rsi=73.5 macd=228.46/218.80(bull) | 15m: K=42.4↑(prev 34.7) | regime=CE-eligible any_active=True
+2026-11-04 08:05:27,311 [INFO] [SIGNAL] CE: reg=True K=True(K=42.4>=38,rising) Kextr=True RSI=True(73.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=42.4<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False(gate off) => BLOCK
+2026-11-04 08:05:27,312 [INFO] [STATE][FAST] CE NFO:NIFTY26N0923900CE ltp=0.00 entry=167.90 pnl=-167.90(-100.0%) sl=0.00 peak=167.90 tr_armed=False elapsed=0min
