@@ -2062,3 +2062,15 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-04 08:31:09,448 [INFO] [INDICATORS] spot=23890.0 | 1h: close=23849.8 sma20=23526.7 sma50=23087.4 rsi=73.5 macd=228.46/218.80(bull) | 15m: K=83.1↑(prev 64.2) | regime=CE-eligible any_active=True
 2026-11-04 08:31:09,448 [INFO] [SIGNAL] CE: reg=True K=True(K=83.1>=38,rising) Kextr=True RSI=True(73.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=83.1<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False(gate off) => BLOCK
 2026-11-04 08:31:09,448 [INFO] [STATE][CLM] CE NFO:NIFTY26N0923900CE ltp=159.35 entry=159.60 pnl=-0.25(-0.2%) sl=130.87 peak=169.00 tr_armed=False elapsed=10min
+2026-11-04 08:31:13,503 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261104_125924.log, Nifty_BarLevel_V2_5_20_20261104_125924.csv
+2026-11-04 08:31:43,843 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0923900CE @ 155.10 spot=23889.95 | K=83.1↑ RSI=73.5 MACD✓
+2026-11-04 08:31:43,845 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/nifty_v2_shadow.jsonl'
+2026-11-04 08:32:14,517 [INFO] [FAST] PE23900 score=122 vol=3.61 U=18.3 skipped: leader score=122 vol=3.61 U=18.3
+2026-11-04 08:33:15,725 [INFO] [FAST] PE23850 score=131 vol=4.03 U=26.6 skipped: VRTREND counter CE
+2026-11-04 08:33:46,429 [INFO] [CB] CLM loss (own count 1) — TOTAL across all engines=1/4 (reason=CLM_TRAIL)
+2026-11-04 08:33:46,431 [INFO] EXIT: NFO:NIFTY26N0923900CE @ 149.00 reason=CLM_TRAIL pnl/sh=-10.60 is_flip=False losses=1/4
+2026-11-04 08:34:17,846 [INFO] [FAST] PE23850 score=202 BLOCKED -- 2m renko UP does not agree (brick 22.7)
+2026-11-04 08:36:20,153 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:36:20,225 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+13.0pt/Rs+842
+2026-11-04 08:36:20,226 [INFO] [INDICATORS] spot=23866.2 | 1h: close=23849.8 sma20=23526.7 sma50=23087.4 rsi=73.5 macd=228.46/218.80(bull) | 15m: K=83.1↑(prev 64.2) | regime=CE-eligible any_active=False
+2026-11-04 08:36:20,226 [INFO] [SIGNAL] CE: reg=True K=True(K=83.1>=38,rising) Kextr=True RSI=True(73.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=83.1<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False(gate off) => BLOCK
