@@ -3,3 +3,12 @@ credentials.py
 *.json
 __pycache__/
 *.pyc
+# runtime state (added 2026-11-04 cleanup)
+*.pkl
+*.pid
+*.lock
+*.csv
+relay_enabled
+relay_halt
+v13_relay_enabled
+v13_relay_halt_cust3

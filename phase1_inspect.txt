@@ -1,4 +1,0 @@
-Keys in day: ['spot_at_open', 'atm', 'open_minute']
-  spot_at_open: 25884.05
-  atm: 25900
-  open_minute: 09:15

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORION Control</title>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel2:#1c2230; --line:#2a3240;
+    --tx:#e6edf3; --dim:#8b949e; --up:#3fb950; --dn:#f85149; --acc:#58a6ff;
+    --warn:#d29922;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);
+    font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  header{position:sticky;top:0;z-index:20;background:var(--panel);
+    border-bottom:1px solid var(--line);padding:10px 14px}
+  .brandrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  h1{font-size:16px;margin:0;letter-spacing:.5px}
+  .tick{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto;align-items:center}
+  .idx{background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    padding:5px 11px;font-variant-numeric:tabular-nums}
+  .idx b{font-size:15px;margin-left:6px}
+  .stamp{color:var(--dim);font-size:12px}
+  nav{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+  nav button{background:transparent;color:var(--dim);border:1px solid transparent;
+    padding:6px 13px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:600}
+  nav button.on{background:var(--panel2);color:var(--tx);border-color:var(--line)}
+  main{padding:14px;max-width:1400px;margin:0 auto}
+  section{display:none} section.on{display:block}
+  .cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    margin-bottom:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px}
+  .card .k{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+  .card .v{font-size:23px;font-weight:700;margin-top:5px;font-variant-numeric:tabular-nums}
+  .card .s{color:var(--dim);font-size:12px;margin-top:3px}
+  h2{font-size:14px;margin:20px 0 9px;color:var(--dim);text-transform:uppercase;
+    letter-spacing:.8px;font-weight:700}
+  .wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);
+    border-radius:10px}
+  table{border-collapse:collapse;width:100%;font-size:13px}
+  th,td{padding:8px 11px;text-align:right;white-space:nowrap;
+    border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.5px;
+    position:sticky;top:0;background:var(--panel2);text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  th:nth-child(2),td:nth-child(2){text-align:left}
+  tbody tr:hover{background:var(--panel2)}
+  tr:last-child td{border-bottom:none}
+  .up{color:var(--up)} .dn{color:var(--dn)} .dim{color:var(--dim)}
+  .pill{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;
+    font-weight:700;background:var(--panel2);border:1px solid var(--line)}
+  .pill.n{color:var(--acc)} .pill.s{color:var(--warn)} .pill.k{color:#c297ff}
+  .clk{cursor:pointer;user-select:none}
+  .clk:hover td:first-child{color:var(--acc)}
+  .sub td{background:#11151c;font-size:12px;color:var(--dim)}
+  .sub table{margin:0}
+  .sub th{background:#11151c}
+  .logic{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:14px;margin-bottom:11px}
+  .logic h3{margin:0 0 6px;font-size:14px;display:flex;align-items:center;gap:9px}
+  .logic p{margin:0;color:var(--dim);font-size:13px}
+  .err{background:#3d1d1d;border:1px solid #6e2b2b;color:#ffb4ab;padding:9px 12px;
+    border-radius:8px;margin-bottom:12px;font-size:13px}
+  .note{color:var(--dim);font-size:12px;margin:8px 2px}
+  @media(max-width:640px){ .tick{width:100%;margin-left:0} h1{width:100%} }
+</style>
+</head>
+<body>
+<header>
+  <div class="brandrow">
+    <h1>◆ ORION CONTROL</h1>
+    <div class="tick">
+      <div class="idx">NIFTY<b id="nf">—</b></div>
+      <div class="idx">SENSEX<b id="sx">—</b></div>
+      <div class="stamp" id="stamp">connecting…</div>
+    </div>
+  </div>
+  <nav>
+    <button class="on" data-t="today">Today</button>
+    <button data-t="daily">Daily P&amp;L</button>
+    <button data-t="stocks">Carried Stocks</button>
+    <button data-t="engines">Engines &amp; Logic</button>
+  </nav>
+</header>
+<main>
+  <div id="err"></div>
+
+  <section id="today" class="on">
+    <div class="cards" id="todayCards"></div>
+    <h2>Today — engine by engine</h2>
+    <div class="wrap"><table id="todayTbl"></table></div>
+    <h2>Open right now (live)</h2>
+    <div class="wrap"><table id="openTbl"></table></div>
+  </section>
+
+  <section id="daily">
+    <h2>Daily P&amp;L — click a row for that day's engines and trades</h2>
+    <div class="wrap"><table id="dailyTbl"></table></div>
+    <p class="note" id="dailyNote"></p>
+  </section>
+
+  <section id="stocks">
+    <div class="cards" id="stkCards"></div>
+    <h2>Carried positions — live</h2>
+    <div class="wrap"><table id="stkOpen"></table></div>
+    <h2>Closed stock trades by day</h2>
+    <div class="wrap"><table id="stkHist"></table></div>
+  </section>
+
+  <section id="engines">
+    <div id="engBox"></div>
+  </section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const rs = v => (v==null||isNaN(v)) ? '—'
+  : (v<0?'-':'+') + '₹' + Math.abs(Math.round(v)).toLocaleString('en-IN');
+const cls = v => v>0 ? 'up' : v<0 ? 'dn' : 'dim';
+const num = v => (v==null||isNaN(v)) ? '—' : Number(v).toLocaleString('en-IN',
+  {minimumFractionDigits:2, maximumFractionDigits:2});
+const esc = s => String(s??'').replace(/[<>&]/g, c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+const botPill = b => b.startsWith('NIFTY') ? 'n' : b.startsWith('SENSEX') ? 's' : 'k';
+
+let HIST = {days:{}, bots:{}, engine_logic:{}}, LIVE = {};
+
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));
+});
+
+function dates(){ return Object.keys(HIST.days).sort().reverse(); }
+
+function renderToday(){
+  const ds = dates();
+  const today = ds[0];
+  const d = HIST.days[today] || {};
+  let cards = '';
+  let tot = 0;
+  for (const [bot,b] of Object.entries(d)) tot += b.pnl_rs;
+  cards += `<div class="card"><div class="k">Latest session</div>
+    <div class="v ${cls(tot)}">${rs(tot)}</div><div class="s">${today||'no data'}</div></div>`;
+  for (const [bot,b] of Object.entries(d)){
+    cards += `<div class="card"><div class="k">${esc(bot)}</div>
+      <div class="v ${cls(b.pnl_rs)}">${rs(b.pnl_rs)}</div>
+      <div class="s">${b.trades} trade${b.trades==1?'':'s'}</div></div>`;
+  }
+  let allTot = 0, allTr = 0;
+  for (const day of ds) for (const b of Object.values(HIST.days[day])){
+    allTot += b.pnl_rs; allTr += b.trades; }
+  cards += `<div class="card"><div class="k">All-time archived</div>
+    <div class="v ${cls(allTot)}">${rs(allTot)}</div>
+    <div class="s">${allTr} trades over ${ds.length} days</div></div>`;
+  $('#todayCards').innerHTML = cards;
+
+  let h = `<thead><tr><th>Bot</th><th>Engine</th><th>Trades</th><th>Wins</th>
+    <th>P&amp;L</th></tr></thead><tbody>`;
+  let any = false;
+  for (const [bot,b] of Object.entries(d))
+    for (const [eng,e] of Object.entries(b.engines).sort()){
+      any = true;
+      h += `<tr><td><span class="pill ${botPill(bot)}">${esc(bot)}</span></td>
+        <td>${esc(eng)}</td><td>${e.trades}</td><td>${e.wins}/${e.trades}</td>
+        <td class="${cls(e.pnl_rs)}">${rs(e.pnl_rs)}</td></tr>`;
+    }
+  if(!any) h += `<tr><td colspan="5" class="dim">No closed trades yet today.</td></tr>`;
+  $('#todayTbl').innerHTML = h + '</tbody>';
+
+  const ps = (LIVE.positions||[]);
+  let o = `<thead><tr><th>Bot</th><th>Position</th><th>Entry</th><th>LTP</th>
+    <th>Qty</th><th>Unrealised</th><th>%</th></tr></thead><tbody>`;
+  if(!ps.length) o += `<tr><td colspan="7" class="dim">Flat — nothing open.</td></tr>`;
+  for (const p of ps){
+    o += `<tr><td><span class="pill ${botPill(p.bot)}">${esc(p.bot)}</span></td>
+      <td>${esc(p.symbol||p.stock)} <span class="dim">${esc(p.engine)}</span></td>
+      <td>${num(p.entry)}</td><td>${num(p.ltp)}</td><td>${p.qty??'—'}</td>
+      <td class="${cls(p.unreal_rs)}">${rs(p.unreal_rs)}</td>
+      <td class="${cls(p.unreal_rs)}">${p.unreal_pct==null?'—':p.unreal_pct+'%'}</td></tr>`;
+  }
+  $('#openTbl').innerHTML = o + '</tbody>';
+}
+
+function renderDaily(){
+  const ds = dates();
+  const bots = [...new Set(ds.flatMap(d=>Object.keys(HIST.days[d])))].sort();
+  let h = `<thead><tr><th>Date</th><th>Total</th>` +
+    bots.map(b=>`<th>${esc(b)}</th>`).join('') + `<th>Trades</th></tr></thead><tbody>`;
+  let run = 0;
+  for (const d of ds){
+    const row = HIST.days[d];
+    const tot = Object.values(row).reduce((a,b)=>a+b.pnl_rs,0);
+    const tr = Object.values(row).reduce((a,b)=>a+b.trades,0);
+    run += tot;
+    h += `<tr class="clk" data-d="${d}"><td>${d}</td>
+      <td class="${cls(tot)}">${rs(tot)}</td>` +
+      bots.map(b=>row[b] ? `<td class="${cls(row[b].pnl_rs)}">${rs(row[b].pnl_rs)}</td>`
+                         : `<td class="dim">—</td>`).join('') +
+      `<td>${tr}</td></tr><tr class="sub" id="sub-${d}" style="display:none">
+        <td colspan="${bots.length+3}"></td></tr>`;
+  }
+  h += `<tr><td><b>TOTAL</b></td><td class="${cls(run)}"><b>${rs(run)}</b></td>` +
+    bots.map(b=>{
+      const s = ds.reduce((a,d)=>a+((HIST.days[d][b]||{}).pnl_rs||0),0);
+      return `<td class="${cls(s)}"><b>${rs(s)}</b></td>`;}).join('') +
+    `<td></td></tr>`;
+  $('#dailyTbl').innerHTML = h + '</tbody>';
+
+  document.querySelectorAll('#dailyTbl tr.clk').forEach(tr=>tr.onclick=()=>{
+    const d = tr.dataset.d, sub = $('#sub-'+d);
+    if(sub.style.display!=='none'){ sub.style.display='none'; return; }
+    sub.style.display='';
+    let inner = '';
+    for (const [bot,b] of Object.entries(HIST.days[d])){
+      inner += `<table><thead><tr><th>${esc(bot)}</th><th>Engine</th><th>Symbol</th>
+        <th>Entry</th><th>Exit</th><th>Reason</th><th>P&amp;L</th></tr></thead><tbody>`;
+      for (const [eng,e] of Object.entries(b.engines).sort())
+        for (const t of e.detail)
+          inner += `<tr><td class="dim">${esc(t.entry_time||'')}</td><td>${esc(eng)}</td>
+            <td>${esc(t.symbol||t.stock||'')}</td><td>${num(t.entry)}</td>
+            <td>${num(t.exit)}</td><td class="dim">${esc(t.reason)}</td>
+            <td class="${cls(t.pnl_rs)}">${rs(t.pnl_rs)}</td></tr>`;
+      inner += '</tbody></table>';
+    }
+    sub.querySelector('td').innerHTML = inner;
+  });
+
+  const st = HIST.parse_stats||{};
+  $('#dailyNote').textContent = 'Archive rebuilt ' + (HIST.generated||'') +
+    '. Days are captured from each bot’s own state file while the day is live, ' +
+    'then kept permanently — the bots wipe their trade list at the next day boundary.';
+}
+
+function renderStocks(){
+  const ps = (LIVE.positions||[]).filter(p=>p.bot==='STOCKS_V1');
+  let unreal = 0; ps.forEach(p=>unreal += (p.unreal_rs||0));
+  const ds = dates();
+  let realised = 0, trades = 0;
+  for (const d of ds){ const b = HIST.days[d]['STOCKS_V1'];
+    if(b){ realised += b.pnl_rs; trades += b.trades; } }
+  $('#stkCards').innerHTML = `
+    <div class="card"><div class="k">Open positions</div><div class="v">${ps.length}</div>
+      <div class="s">carry up to 5 trading days</div></div>
+    <div class="card"><div class="k">Unrealised now</div>
+      <div class="v ${cls(unreal)}">${rs(unreal)}</div><div class="s">live option LTP</div></div>
+    <div class="card"><div class="k">Realised to date</div>
+      <div class="v ${cls(realised)}">${rs(realised)}</div>
+      <div class="s">${trades} closed trades</div></div>`;
+
+  let h = `<thead><tr><th>Stock</th><th>Side / Src</th><th>Option</th><th>Entry</th>
+    <th>LTP</th><th>Stock now</th><th>Entry stock</th><th>Stop</th><th>Day</th>
+    <th>Unrealised</th></tr></thead><tbody>`;
+  if(!ps.length) h += `<tr><td colspan="10" class="dim">No carried positions.</td></tr>`;
+  for (const p of ps){
+    const mv = (p.stock_ltp!=null && p.entry_stock)
+      ? ((p.stock_ltp/p.entry_stock-1)*100*(p.side==='SHORT'?-1:1)) : null;
+    h += `<tr><td><b>${esc(p.stock)}</b></td>
+      <td>${esc(p.side)} <span class="dim">${esc(p.src_list||'')}</span></td>
+      <td class="dim">${esc(p.symbol)}</td><td>${num(p.entry)}</td>
+      <td>${num(p.ltp)}</td>
+      <td class="${mv==null?'dim':cls(mv)}">${num(p.stock_ltp)}</td>
+      <td class="dim">${num(p.entry_stock)}</td><td class="dim">${num(p.sl_level)}</td>
+      <td>${p.days_held??'—'}/5</td>
+      <td class="${cls(p.unreal_rs)}">${rs(p.unreal_rs)}</td></tr>`;
+  }
+  $('#stkOpen').innerHTML = h + '</tbody>';
+
+  let g = `<thead><tr><th>Date</th><th>Trades</th><th>Wins</th><th>P&amp;L</th>
+    <th>Exits</th></tr></thead><tbody>`;
+  let anyd = false;
+  for (const d of ds){
+    const b = HIST.days[d]['STOCKS_V1']; if(!b) continue;
+    anyd = true;
+    const e = b.engines['STOCKS']||{detail:[],wins:0};
+    const reasons = {};
+    e.detail.forEach(t=>reasons[t.reason]=(reasons[t.reason]||0)+1);
+    g += `<tr><td>${d}</td><td>${b.trades}</td><td>${e.wins}/${b.trades}</td>
+      <td class="${cls(b.pnl_rs)}">${rs(b.pnl_rs)}</td>
+      <td class="dim">${Object.entries(reasons).map(([k,v])=>esc(k)+'×'+v).join(', ')}</td></tr>`;
+  }
+  if(!anyd) g += `<tr><td colspan="5" class="dim">No closed stock trades archived yet.</td></tr>`;
+  $('#stkHist').innerHTML = g + '</tbody>';
+}
+
+function renderEngines(){
+  const seen = {};
+  for (const d of dates()) for (const [bot,b] of Object.entries(HIST.days[d]))
+    for (const [eng,e] of Object.entries(b.engines)){
+      const k = bot+'|'+eng;
+      seen[k] = seen[k] || {bot, eng, pnl:0, tr:0, wins:0};
+      seen[k].pnl += e.pnl_rs; seen[k].tr += e.trades; seen[k].wins += e.wins;
+    }
+  const byBot = {};
+  for (const v of Object.values(seen)) (byBot[v.bot] = byBot[v.bot]||[]).push(v);
+  let h = '';
+  for (const [bot,list] of Object.entries(byBot)){
+    const cfg = HIST.bots[bot]||{};
+    h += `<h2>${esc(bot)} <span class="dim">lot ${esc(cfg.lot)}</span></h2>`;
+    for (const v of list.sort((a,b)=>a.pnl-b.pnl)){
+      h += `<div class="logic"><h3>${esc(v.eng)}
+        <span class="pill ${cls(v.pnl)}">${rs(v.pnl)}</span>
+        <span class="dim" style="font-weight:400">${v.wins}/${v.tr} wins</span></h3>
+        <p>${esc(HIST.engine_logic[v.eng]||'No description recorded yet.')}</p></div>`;
+    }
+  }
+  $('#engBox').innerHTML = h || '<p class="dim">No engines archived yet.</p>';
+}
+
+async function pull(){
+  try{
+    const [h,l] = await Promise.all([
+      fetch('/api/history'+location.search).then(r=>r.json()),
+      fetch('/api/live'+location.search).then(r=>r.json())]);
+    HIST = h; LIVE = l;
+    $('#nf').textContent = l.index?.NIFTY!=null ? num(l.index.NIFTY) : '—';
+    $('#sx').textContent = l.index?.SENSEX!=null ? num(l.index.SENSEX) : '—';
+    $('#stamp').textContent = 'live ' + (l.ts||'');
+    $('#err').innerHTML = l.error ? `<div class="err">${esc(l.error)}</div>` : '';
+    renderToday(); renderDaily(); renderStocks(); renderEngines();
+  }catch(e){
+    $('#err').innerHTML = `<div class="err">dashboard could not reach the server: ${esc(e.message)}</div>`;
+  }
+}
+pull(); setInterval(pull, 20000);
+</script>
+</body>
+</html>
