@@ -2038,3 +2038,13 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-04 08:15:43,329 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-04 08:15:43,329 [INFO] [INDICATORS] spot=23899.9 | 1h: close=23849.8 sma20=23526.7 sma50=23087.4 rsi=73.5 macd=228.46/218.80(bull) | 15m: K=64.2↑(prev 42.4) | regime=CE-eligible any_active=False
 2026-11-04 08:15:43,329 [INFO] [SIGNAL] CE: reg=True K=True(K=64.2>=38,rising) Kextr=True RSI=True(73.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=64.2<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False(gate off) => BLOCK
+2026-11-04 08:15:46,974 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261104_125924.log, Nifty_BarLevel_V2_5_20_20261104_125924.csv
+2026-11-04 08:16:17,226 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0923900CE @ 168.50 spot=23898.1 | K=64.2↑ RSI=73.5 MACD✓
+2026-11-04 08:16:17,226 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/nifty_v2_shadow.jsonl'
+2026-11-04 08:20:20,575 [INFO] [CLM] SIGNAL CLM CE23900 K=0->2 hist=-2.76 ADX-side bar 13:49
+2026-11-04 08:20:20,619 [INFO] ENTRY: NFO:NIFTY26N0923900CE @ 159.60  engine=CLM  detail=CLM CE23900 K=0->2 hist=-2.76 ADX-side bar 13:49
+2026-11-04 08:20:51,863 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:20:51,916 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:20:51,917 [INFO] [INDICATORS] spot=23890.2 | 1h: close=23849.8 sma20=23526.7 sma50=23087.4 rsi=73.5 macd=228.46/218.80(bull) | 15m: K=64.2↑(prev 42.4) | regime=CE-eligible any_active=True
+2026-11-04 08:20:51,917 [INFO] [SIGNAL] CE: reg=True K=True(K=64.2>=38,rising) Kextr=True RSI=True(73.5>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=64.2<=80,falling) Kextr=True RSI=False(73.5<47) MACD=False(gate off) => BLOCK
+2026-11-04 08:20:51,918 [INFO] [STATE][CLM] CE NFO:NIFTY26N0923900CE ltp=161.75 entry=159.60 pnl=+2.15(+1.3%) sl=130.87 peak=161.75 tr_armed=False elapsed=0min
