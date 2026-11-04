@@ -1220,3 +1220,23 @@
 2026-11-04 07:58:45,671 [INFO]   V2.5.11 straddle halt: straddle expansion days WR 69.8% > normal 66.9%;
 2026-11-04 07:58:45,671 [INFO]                          halting on expansion removed profitable trades (+Rs 2,54,234 phantom)
 2026-11-04 07:58:47,360 [INFO] [CHANGELOG] up to date (last entry 2026-09-29)
+2026-11-04 07:58:51,352 [INFO] [boot] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261104_132845.log, Sensex_BarLevel_V2_5_20-SENSEX_20261104_132845.csv
+2026-11-04 07:58:51,571 [INFO] [CHOPGATE] Clear to trade — ER=0.89 crosses=1 range=957pt
+2026-11-04 07:58:51,595 [INFO] [V3PROBE] PLACED PE BFO:SENSEX26N0577100PE limit=316.55 (LTP=329.55 - 13) window=25min — EARLY(10m) Grade B G-cluster REJECT-PE at 77040
+2026-11-04 07:58:52,523 [INFO] [ORB] Signal — close 77364.4 broke OR[76604.9,77223.9] side=CE
+2026-11-04 07:58:52,590 [INFO] ENTRY: BFO:SENSEX26N0577400CE @ 217.35  engine=ORB  detail=ORB break 77364 vs OR[76605,77224]
+2026-11-04 07:58:53,434 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 07:58:53,434 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 07:58:53,435 [INFO] [INDICATORS] spot=77074.4 | 1h: close=77028.1 sma20=76036.2 sma50=74610.7 rsi=72.2 macd=730.49/706.93(bull) | 15m: K=36.3↑(prev 29.9) | regime=CE-eligible any_active=True
+2026-11-04 07:58:53,435 [INFO] [SIGNAL] CE: reg=True K=False(K=36.3>=38,rising) Kextr=True RSI=True(72.2>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=36.3<=80,falling) Kextr=False RSI=False(72.2<47) MACD=False(gate off) => BLOCK
+2026-11-04 07:58:53,435 [INFO] [STATE][ORB] CE BFO:SENSEX26N0577400CE ltp=0.00 entry=217.35 pnl=-217.35(-100.0%) sl=0.00 peak=217.35 tr_armed=False elapsed=0min
+2026-11-04 08:02:56,795 [INFO] [V3PROBE] FILLED PE BFO:SENSEX26N0577100PE @ 316.55 (LTP touched 314.30)
+2026-11-04 08:02:56,799 [INFO] [VETO] V3 PE BLOCKED — PE into an UPtrend: spot 77099.4 is +74.8 above SPOT VWAP 77024.6 (buffer 16)
+2026-11-04 08:03:27,942 [INFO] [V2] WOULD_ENTER(log-only) CE BFO:SENSEX26N0577100CE @ 381.80 spot=77109.56 | K=43.6↑ RSI=72.2 MACD✓
+2026-11-04 08:03:27,942 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/sensex_v2_shadow.jsonl'
+2026-11-04 08:03:27,972 [WARNING] [BREAKWATCH] ORB BFO:SENSEX26N0577400CE error, no action: No module named 'breakwatch_live'
+2026-11-04 08:03:58,326 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:03:58,387 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-04 08:03:58,387 [INFO] [INDICATORS] spot=77109.6 | 1h: close=77028.1 sma20=76036.2 sma50=74610.7 rsi=72.2 macd=730.49/706.93(bull) | 15m: K=43.6↑(prev 36.3) | regime=CE-eligible any_active=True
+2026-11-04 08:03:58,387 [INFO] [SIGNAL] CE: reg=True K=True(K=43.6>=38,rising) Kextr=True RSI=True(72.2>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=43.6<=80,falling) Kextr=False RSI=False(72.2<47) MACD=False(gate off) => BLOCK
+2026-11-04 08:03:58,388 [INFO] [STATE][ORB] CE BFO:SENSEX26N0577400CE ltp=244.85 entry=217.35 pnl=+27.50(+12.7%) sl=0.00 peak=244.85 tr_armed=False elapsed=5min
