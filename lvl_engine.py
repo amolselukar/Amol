@@ -209,15 +209,19 @@ def main():
             sk["lvlmsg"]=True
         closed,openp=compute(key,day)
         # ENTRY alerts (closed + still-open), once each
-        ent=[(t['entry'],t['side'],t['strike'],t['level'],t['lval'],t['target'],t['espot']) for t in closed]
-        if openp: ent.append((openp['entry'],openp['side'],openp['strike'],openp['level'],openp['lval'],openp['target'],openp['espot']))
-        for e,side,strike,lvl,lval,tgt,espot in ent:
+        ent=[(t['entry'],t['side'],t['strike'],t['level'],t['lval'],t['target'],t['espot'],t['eo']) for t in closed]
+        if openp: ent.append((openp['entry'],openp['side'],openp['strike'],openp['level'],openp['lval'],openp['target'],openp['espot'],openp['eo']))
+        for e,side,strike,lvl,lval,tgt,espot,eo in ent:
             if e not in sk["entries"]:
                 # SL + target ALWAYS present at signal instant (user-directed 11-03). SL = the
                 # broken level (lval): a 15m close back through it exits; target = next rung.
+                # 11-05 (user): say "BUY CE/PE" explicitly and show the OPTION PREMIUM (eo) at signal,
+                # not just the level — the level alone didn't tell what price to buy at.
                 tgt_s = f"{tgt}" if tgt is not None else "—"
-                tg(f"🟢 <b>LVL {key}</b> — {side} {strike} | break <b>{lvl} {lval}</b> @ {espot} | "
-                   f"🎯 target <b>{tgt_s}</b> | 🛑 SL <b>{lval}</b> ({lvl}) (15m) | {e}")
+                eo_s = f"₹{eo}" if eo is not None else "—"
+                tg(f"🟢 <b>LVL {key} — BUY {side} {strike} @ {eo_s}</b>\n"
+                   f"break <b>{lvl} {lval}</b> @ spot {espot} | 🎯 target <b>{tgt_s}</b> | "
+                   f"🛑 SL <b>{lval}</b> ({lvl}) (15m) | {e}")
                 sk["entries"].append(e)
         # EXIT alerts, once each
         _done_entries=set(kx.split('|')[0] for kx in sk["exits"])
