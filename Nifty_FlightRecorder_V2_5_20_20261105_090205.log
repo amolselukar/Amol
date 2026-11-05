@@ -2136,3 +2136,10 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-05 04:59:15,686 [INFO] [INDICATORS] spot=24385.8 | 1h: close=24366.7 sma20=23696.4 sma50=23193.8 rsi=84.8 macd=254.76/228.44(bull) | 15m: K=93.6↓(prev 100.0) | regime=CE-eligible any_active=True
 2026-11-05 04:59:15,687 [INFO] [SIGNAL] CE: reg=True K=False(K=93.6>=38,rising) Kextr=True RSI=True(84.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=93.6<=80,falling) Kextr=True RSI=False(84.8<47) MACD=False(gate off) => BLOCK
 2026-11-05 04:59:15,694 [INFO] [STATE][CLM] CE NFO:NIFTY26N0924350CE ltp=166.50 entry=163.85 pnl=+2.65(+1.6%) sl=134.36 peak=176.35 tr_armed=False elapsed=13min
+2026-11-05 04:59:18,313 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261105_090205.log, Nifty_BarLevel_V2_5_20_20261105_090205.csv
+2026-11-05 05:00:18,861 [INFO] [CHOPGATE] Clear to trade — ER=0.36 crosses=0 range=159pt
+2026-11-05 05:03:21,677 [INFO] EXIT: NFO:NIFTY26N0924350CE @ 165.45 reason=CLM_STOCH_PEAK pnl/sh=+1.60 is_flip=False losses=1/4
+2026-11-05 05:04:23,337 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 05:04:23,337 [INFO] [T5] open=0 trades=1 realized=+16.6pt/Rs+1082 unreal=+0.0pt/Rs+0
+2026-11-05 05:04:23,338 [INFO] [INDICATORS] spot=24382.4 | 1h: close=24366.7 sma20=23696.4 sma50=23193.8 rsi=84.8 macd=254.76/228.44(bull) | 15m: K=88.0↓(prev 93.6) | regime=CE-eligible any_active=False
+2026-11-05 05:04:23,338 [INFO] [SIGNAL] CE: reg=True K=False(K=88.0>=38,rising) Kextr=True RSI=True(84.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=88.0<=80,falling) Kextr=True RSI=False(84.8<47) MACD=False(gate off) => BLOCK
