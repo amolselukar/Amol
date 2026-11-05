@@ -144,8 +144,9 @@ def run_once():
             rec.update(side=t['side'], strike=t['strike'], level=t.get('level'),
                        lval=t.get('lval'), target=t.get('target'), espot=t.get('espot'), entry=e)
             tgt = f" → tgt {t.get('target')}" if t.get('target') else ""
-            tg(f"🟢 <b>SHADOW 2-LOT</b> (paper) entry — {t['side']} {t['strike']} | "
-               f"break {t.get('level')} {t.get('lval')} @ {t.get('espot')}{tgt} | {e}\n"
+            eo_s = f"₹{t.get('eo')}" if t.get('eo') is not None else "—"
+            tg(f"🟢 <b>SHADOW 2-LOT (paper) — BUY {t['side']} {t['strike']} @ {eo_s}</b>\n"
+               f"break {t.get('level')} {t.get('lval')} @ spot {t.get('espot')}{tgt} | {e}\n"
                f"lotA = LIVE (mirrors live exit) + lotB = x-anchored step-trail")
             rec['entry_alert'] = True
 
