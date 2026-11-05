@@ -37,6 +37,8 @@ from typing import Optional, Tuple
 import credentials as _c
 import lvl_engine as eng          # reuse data client, compute(), levels, tg(); import does NOT run its main()
 from lvl_engine import IST
+import ORION_SENSEX_EXPIRY as sxexp  # 2026-11-05: SENSEX expiry engine (LIVE) runs inside this same
+                                     # process/loop so one mStock session serves it (import does NOT run its main())
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(HERE, "state_LVL_LIVE.json")
@@ -48,7 +50,9 @@ LIVE_QTY            = 65           # 1 NSE NIFTY option lot. Options trade ONLY 
                                    # multiples — qty=1 was rejected by broker (MA200
                                    # "quantity is not in multiple of lot size"). Fixed 2026-10-30.
 FULL_LOT            = 65
-LIVE_ORDERS_ENABLED = True         # master arm; False = paper-live (logs intents, no orders)
+LIVE_ORDERS_ENABLED = False        # 2026-11-05: NIFTY = PAPER now (no funds). Flip to True to resume
+                                   # REAL Nifty orders. When False, this bot NEVER touches mStock, so the
+                                   # SENSEX expiry engine (folded into loop() below) owns the single mStock session.
 EXCHANGE            = "NFO"
 PRODUCT             = "INTRADAY"    # MIS same-day; engine squares off by EOD
 ORDER_TYPE          = "MARKET"
@@ -871,6 +875,11 @@ def loop():
             except Exception as e:
                 log.error(f"[LVL-LIVE] run err {e}")
                 tg(f"🚨 <b>LVL-LIVE</b> run error: {e}")
+            # 2026-11-05: SENSEX expiry engine (LIVE, real BFO orders) runs in THIS process so it
+            # shares the single mStock session. It self-gates (expiry days, >=14:00), idles otherwise.
+            try: sxexp.main()
+            except Exception as e:
+                log.error(f"[LVL-LIVE] sensex-expiry err {e}")
             if time.time() - last_status >= STATUS_EVERY_SEC:
                 tg(status_text()); last_status = time.time()
         time.sleep(60)
