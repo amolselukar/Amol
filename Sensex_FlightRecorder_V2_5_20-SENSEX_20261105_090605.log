@@ -1241,3 +1241,11 @@
 2026-11-05 03:41:14,686 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-05 03:41:14,687 [INFO] [INDICATORS] spot=77301.4 | 1h: close=77216.6 sma20=76310.3 sma50=74763.7 rsi=74.1 macd=712.02/709.95(bull) | 15m: K=91.0↓(prev 93.0) | regime=CE-eligible any_active=False
 2026-11-05 03:41:14,687 [INFO] [SIGNAL] CE: reg=True K=False(K=91.0>=38,rising) Kextr=False RSI=True(74.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=91.0<=80,falling) Kextr=True RSI=False(74.1<47) MACD=False(gate off) => BLOCK
+2026-11-05 03:41:17,157 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261105_090605.log, Sensex_BarLevel_V2_5_20-SENSEX_20261105_090605.csv
+2026-11-05 03:46:19,739 [INFO] [MVWAP] Signal — 77398<78643 body=76% side=PE (morning exception)
+2026-11-05 03:46:19,806 [INFO] ENTRY: BFO:SENSEX26N0578700PE @ 331.35  engine=VWAP  detail=MORNING FUT VWAP 77398<78643 body=76% pivΔ=152pt | bar=206
+2026-11-05 03:46:20,647 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 03:46:20,647 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 03:46:20,648 [INFO] [INDICATORS] spot=78684.4 | 1h: close=77301.4 sma20=76403.4 sma50=74839.8 rsi=74.9 macd=704.84/708.92(bear) | 15m: K=93.2↑(prev 91.0) | regime=CE-eligible any_active=True
+2026-11-05 03:46:20,648 [INFO] [SIGNAL] CE: reg=True K=True(K=93.2>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=93.2<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
+2026-11-05 03:46:20,648 [INFO] [STATE][VWAP] PE BFO:SENSEX26N0578700PE ltp=0.00 entry=331.35 pnl=-331.35(-100.0%) sl=271.71 peak=331.35 tr_armed=False elapsed=0min
