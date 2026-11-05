@@ -1282,3 +1282,15 @@
 2026-11-05 04:11:54,015 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-05 04:11:54,016 [INFO] [INDICATORS] spot=78773.1 | 1h: close=77301.4 sma20=76403.4 sma50=74839.8 rsi=74.9 macd=704.84/708.92(bear) | 15m: K=94.0↑(prev 93.2) | regime=CE-eligible any_active=False
 2026-11-05 04:11:54,016 [INFO] [SIGNAL] CE: reg=True K=True(K=94.0>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=94.0<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
+2026-11-05 04:11:56,916 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261105_090605.log, Sensex_BarLevel_V2_5_20-SENSEX_20261105_090605.csv
+2026-11-05 04:15:30,102 [INFO] [V3PROBE] PLACED CE BFO:SENSEX26N0578800CE limit=228.40 (LTP=241.40 - 13) window=25min — Grade A G-cluster BREAK-CE at 77397
+2026-11-05 04:15:30,927 [INFO] [FUT5VWAP] Signal — 78850>78748 body=76% side=CE (fixed +40pt target)
+2026-11-05 04:15:31,006 [INFO] ENTRY: BFO:SENSEX26N0578800CE @ 243.60  engine=FUT5VWAP  detail=FUT5 VWAP cross 78850>78748 body=76% pivΔ=863pt | bar=228
+2026-11-05 04:15:31,810 [INFO] [EXPIRY] Signal — round-level cross 78609->78736 (zone 786->787) side=CE at 2026-11-05 09:35:00+05:30
+2026-11-05 04:15:31,876 [INFO] ENTRY: BFO:SENSEX26N0578700CE @ 299.75  engine=EXPIRY  detail=Expiry-day round-level break 78609->78736, near-ATM convergence
+2026-11-05 04:17:03,821 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:17:03,822 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:17:03,822 [INFO] [INDICATORS] spot=78848.7 | 1h: close=77301.4 sma20=76403.4 sma50=74839.8 rsi=74.9 macd=704.84/708.92(bear) | 15m: K=100.0↑(prev 94.0) | regime=CE-eligible any_active=True
+2026-11-05 04:17:03,822 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
+2026-11-05 04:17:03,822 [INFO] [STATE][FUT5VWAP] CE BFO:SENSEX26N0578800CE ltp=256.90 entry=243.60 pnl=+13.30(+5.5%) sl=0.00 peak=256.90 tr_armed=False elapsed=1min
+2026-11-05 04:17:03,823 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26N0578700CE ltp=315.00 entry=299.75 pnl=+15.25(+5.1%) sl=245.80 peak=315.00 tr_armed=False elapsed=1min
