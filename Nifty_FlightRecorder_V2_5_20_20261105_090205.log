@@ -2091,3 +2091,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-05 04:33:31,439 [INFO] [SIGNAL] CE: reg=True K=False(K=100.0>=38,rising) Kextr=True RSI=True(76.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.8<47) MACD=False(gate off) => BLOCK
 2026-11-05 04:33:31,439 [INFO] [STATE][ORB] CE NFO:NIFTY26N0924400CE ltp=0.00 entry=144.00 pnl=-144.00(-100.0%) sl=0.00 peak=144.00 tr_armed=False elapsed=0min
 2026-11-05 04:33:31,440 [INFO] [STATE][CLM] CE NFO:NIFTY26N0924400CE ltp=143.60 entry=147.65 pnl=-4.05(-2.7%) sl=121.07 peak=147.80 tr_armed=False elapsed=2min
+2026-11-05 04:33:34,905 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261105_090205.log, Nifty_BarLevel_V2_5_20_20261105_090205.csv
+2026-11-05 04:34:35,855 [INFO] [T5] ENTRY PE 24400 @ 154.6 tgt211.8 stp136.8 (bo+5.2 CEdec-28.1) open=1
+2026-11-05 04:37:39,621 [INFO] [RENKO] dir=+0 (NEUTRAL) bricks=5 brick=22.41 last5=[1, 1, 1, 1, -1]
+2026-11-05 04:37:39,654 [INFO] [ORB] H3 spot stop — 1m close 24371.5 back inside OR[24296.3,24392.0] by >10pt, ltp 133.10
+2026-11-05 04:37:39,654 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=2/4 (reason=ORB_STOP)
+2026-11-05 04:37:39,655 [INFO] EXIT: NFO:NIFTY26N0924400CE @ 133.10 reason=ORB_STOP pnl/sh=-10.90 is_flip=False losses=1/4
+2026-11-05 04:38:41,436 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:38:41,484 [INFO] [T5] open=1 trades=0 realized=+0.0pt/Rs+0 unreal=+14.8pt/Rs+965
+2026-11-05 04:38:41,484 [INFO] [INDICATORS] spot=24378.5 | 1h: close=23960.6 sma20=23644.9 sma50=23161.6 rsi=76.8 macd=224.80/221.86(bull) | 15m: K=100.0↓(prev 100.0) | regime=CE-eligible any_active=True
+2026-11-05 04:38:41,484 [INFO] [SIGNAL] CE: reg=True K=False(K=100.0>=38,rising) Kextr=True RSI=True(76.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.8<47) MACD=False(gate off) => BLOCK
+2026-11-05 04:38:41,487 [INFO] [STATE][CLM] CE NFO:NIFTY26N0924400CE ltp=129.55 entry=147.65 pnl=-18.10(-12.3%) sl=121.07 peak=147.80 tr_armed=False elapsed=7min
