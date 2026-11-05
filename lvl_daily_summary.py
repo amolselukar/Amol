@@ -9,8 +9,10 @@ import sys, os, csv, json, requests
 from datetime import datetime
 import credentials as c
 try:
+    import lvl_engine as eng
     from lvl_engine import IST
 except Exception:
+    eng = None
     import pytz; IST = pytz.timezone("Asia/Kolkata")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -47,11 +49,12 @@ def main():
     grand = 0; any_trade = False
     for mkt in ("NIFTY", "SENSEX"):
         rows = today_rows(BOOKS[mkt], day)
-        # open positions = entries without a matching exit in state
-        mstate = (st.get(mkt) or {}) if isinstance(st, dict) else {}
-        ents = mstate.get("entries", []); exits = [x.split("|")[0] for x in mstate.get("exits", [])]
-        open_ents = [e for e in ents if e not in exits]
-        if not rows and not open_ents:
+        # open position (with live target/SL) straight from the engine, not state
+        openp = None
+        if eng is not None:
+            try: _cl, openp = eng.compute(mkt, day)
+            except Exception as ex: print(f"compute {mkt} err {ex}"); openp = None
+        if not rows and not openp:
             lines.append(f"\n<b>{mkt}</b>: — no trades")
             continue
         any_trade = True
@@ -66,8 +69,11 @@ def main():
             lines.append(f"  {emo} {r.get('side')} {r.get('strike')} "
                          f"{r.get('eo')}→{r.get('xo')} ({float(r.get('pts') or 0):+.0f}pt Rs{int(float(r.get('rupees') or 0)):+,}) "
                          f"{th}[{r.get('reason')}] {r.get('entry')}→{r.get('exit')}")
-        for e in open_ents:
-            lines.append(f"  ⏳ OPEN (entry {e}) — not yet exited")
+        if openp:
+            sl = openp.get("stop", openp.get("lval")); tgt = openp.get("target")
+            lines.append(f"  ⏳ OPEN {openp.get('side')} {openp.get('strike')} @ ₹{openp.get('eo')} "
+                         f"(entry {openp.get('entry')})\n"
+                         f"     🎯 target <b>{tgt}</b> | 🛑 SL <b>{sl}</b> ({openp.get('level')}) 15m-close")
     if any_trade:
         lines.append(f"\n<b>TOTAL Rs{grand:+,}</b>  <i>(LVL paper)</i>")
     tg("\n".join(lines))
