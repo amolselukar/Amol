@@ -2064,3 +2064,11 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-05 04:23:13,617 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.8>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.8<47) MACD=False(gate off) => BLOCK
 2026-11-05 04:23:13,619 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY26N0924400CE ltp=161.40 entry=138.30 pnl=+23.10(+16.7%) sl=0.00 peak=161.85 tr_armed=False elapsed=8min
 2026-11-05 04:23:13,620 [INFO] [STATE][GAPBREAK] CE NFO:NIFTY26N0924400CE ltp=161.40 entry=154.30 pnl=+7.10(+4.6%) sl=0.00 peak=161.85 tr_armed=False elapsed=1min
+2026-11-05 04:23:16,066 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261105_090205.log, Nifty_BarLevel_V2_5_20_20261105_090205.csv
+2026-11-05 04:25:17,443 [INFO] [ORB] H3 CONFIRMED CE break 24413.1 -> 24438.7 vs OR[24296.3,24392.0]; resting buy on pullback to [OR 24392 / PDC 23961] ±8 until 15:00 (entry cutoff, no timer)
+2026-11-05 04:25:48,733 [INFO] EXIT: NFO:NIFTY26N0924400CE @ 162.30 reason=GAPBREAK_LOCK_FLOOR pnl/sh=+8.00 is_flip=False losses=0/4
+2026-11-05 04:28:21,781 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:28:21,782 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:28:21,782 [INFO] [INDICATORS] spot=24427.3 | 1h: close=23960.6 sma20=23644.9 sma50=23161.6 rsi=76.8 macd=224.80/221.86(bull) | 15m: K=100.0↑(prev 95.8) | regime=CE-eligible any_active=True
+2026-11-05 04:28:21,782 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.8>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.8<47) MACD=False(gate off) => BLOCK
+2026-11-05 04:28:21,782 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY26N0924400CE ltp=154.25 entry=138.30 pnl=+15.95(+11.5%) sl=0.00 peak=168.70 tr_armed=False elapsed=13min
