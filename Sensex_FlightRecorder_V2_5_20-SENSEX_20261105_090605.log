@@ -1301,3 +1301,16 @@
 2026-11-05 04:22:10,731 [INFO] [INDICATORS] spot=78918.0 | 1h: close=77301.4 sma20=76403.4 sma50=74839.8 rsi=74.9 macd=704.84/708.92(bear) | 15m: K=100.0↑(prev 94.0) | regime=CE-eligible any_active=True
 2026-11-05 04:22:10,731 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
 2026-11-05 04:22:10,732 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26N0578700CE ltp=356.15 entry=299.75 pnl=+56.40(+18.8%) sl=245.80 peak=356.15 tr_armed=False elapsed=6min
+2026-11-05 04:22:14,558 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261105_090605.log, Sensex_BarLevel_V2_5_20-SENSEX_20261105_090605.csv
+2026-11-05 04:25:16,609 [INFO] [ORB] Signal — close 78979.2 broke OR[78520.6,78922.4] side=CE
+2026-11-05 04:25:16,674 [INFO] ENTRY: BFO:SENSEX26N0579000CE @ 227.45  engine=ORB  detail=ORB break 78979 vs OR[78521,78922]
+2026-11-05 04:25:17,497 [INFO] [GAPBREAK] Range-break detected — close 78979.2 broke [78520.6,78922.4] side=CE (gap=+1609.5)
+2026-11-05 04:25:47,883 [INFO] [CB] ORB loss (own count 1) — TOTAL across all engines=2/4 (reason=ORB_STOP)
+2026-11-05 04:25:47,885 [INFO] EXIT: BFO:SENSEX26N0579000CE @ 197.45 reason=ORB_STOP pnl/sh=-30.00 is_flip=False losses=1/4
+2026-11-05 04:25:48,797 [INFO] ENTRY: BFO:SENSEX26N0579000PE @ 270.00  engine=ORB  detail=ORB flip-on-stop
+2026-11-05 04:27:20,757 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:27:20,758 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:27:20,758 [INFO] [INDICATORS] spot=78929.1 | 1h: close=77301.4 sma20=76403.4 sma50=74839.8 rsi=74.9 macd=704.84/708.92(bear) | 15m: K=100.0↑(prev 94.0) | regime=CE-eligible any_active=True
+2026-11-05 04:27:20,758 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
+2026-11-05 04:27:20,759 [INFO] [STATE][ORB] PE BFO:SENSEX26N0579000PE ltp=255.35 entry=270.00 pnl=-14.65(-5.4%) sl=0.00 peak=270.00 tr_armed=False elapsed=1min
+2026-11-05 04:27:20,759 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26N0578700CE ltp=380.80 entry=299.75 pnl=+81.05(+27.0%) sl=245.80 peak=408.10 tr_armed=False elapsed=11min
