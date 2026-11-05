@@ -1314,3 +1314,11 @@
 2026-11-05 04:27:20,758 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
 2026-11-05 04:27:20,759 [INFO] [STATE][ORB] PE BFO:SENSEX26N0579000PE ltp=255.35 entry=270.00 pnl=-14.65(-5.4%) sl=0.00 peak=270.00 tr_armed=False elapsed=1min
 2026-11-05 04:27:20,759 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26N0578700CE ltp=380.80 entry=299.75 pnl=+81.05(+27.0%) sl=245.80 peak=408.10 tr_armed=False elapsed=11min
+2026-11-05 04:27:23,197 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261105_090605.log, Sensex_BarLevel_V2_5_20-SENSEX_20261105_090605.csv
+2026-11-05 04:30:25,610 [WARNING] [BREAKWATCH] ORB BFO:SENSEX26N0579000PE error, no action: No module named 'breakwatch_live'
+2026-11-05 04:32:27,213 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:32:27,213 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:32:27,214 [INFO] [INDICATORS] spot=78869.1 | 1h: close=77301.4 sma20=76403.4 sma50=74839.8 rsi=74.9 macd=704.84/708.92(bear) | 15m: K=100.0↓(prev 100.0) | regime=CE-eligible any_active=True
+2026-11-05 04:32:27,214 [INFO] [SIGNAL] CE: reg=True K=False(K=100.0>=38,rising) Kextr=False RSI=True(74.9>53) MACD=False(gate off) => BLOCK | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(74.9<47) MACD=True(gate off) => BLOCK
+2026-11-05 04:32:27,214 [INFO] [STATE][ORB] PE BFO:SENSEX26N0579000PE ltp=329.85 entry=270.00 pnl=+59.85(+22.2%) sl=0.00 peak=329.85 tr_armed=False elapsed=6min
+2026-11-05 04:32:27,214 [INFO] [STATE][EXPIRY] CE BFO:SENSEX26N0578700CE ltp=289.40 entry=299.75 pnl=-10.35(-3.5%) sl=245.80 peak=408.10 tr_armed=False elapsed=16min
