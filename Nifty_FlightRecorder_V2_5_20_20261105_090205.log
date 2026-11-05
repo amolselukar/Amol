@@ -2302,3 +2302,14 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-05 06:41:58,052 [INFO] [SIGNAL] CE: reg=True K=True(K=64.9>=38,rising) Kextr=True RSI=True(84.8>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=64.9<=80,falling) Kextr=True RSI=False(84.8<47) MACD=False(gate off) => BLOCK
 2026-11-05 06:41:58,053 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0924400CE ltp=152.80 entry=153.80 pnl=-1.00(-0.7%) sl=126.12 peak=159.90 tr_armed=False elapsed=40min
 2026-11-05 06:41:58,053 [INFO] [STATE][CLM] CE NFO:NIFTY26N0924400CE ltp=152.80 entry=152.65 pnl=+0.15(+0.1%) sl=125.17 peak=156.70 tr_armed=False elapsed=25min
+2026-11-05 06:42:00,546 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261105_090205.log, Nifty_BarLevel_V2_5_20_20261105_090205.csv
+2026-11-05 06:45:03,341 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0924400CE @ 153.80 spot=24413.8 | K=64.9↑ RSI=84.8 MACD✓
+2026-11-05 06:45:03,341 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/nifty_v2_shadow.jsonl'
+2026-11-05 06:46:34,846 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0924400CE @ 156.00 spot=24412.4 | K=66.4↑ RSI=85.4 MACD✓
+2026-11-05 06:46:34,847 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/nifty_v2_shadow.jsonl'
+2026-11-05 06:47:05,420 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 06:47:05,421 [INFO] [T5] open=0 trades=1 realized=+16.6pt/Rs+1082 unreal=+0.0pt/Rs+0
+2026-11-05 06:47:05,421 [INFO] [INDICATORS] spot=24412.4 | 1h: close=24412.0 sma20=23807.7 sma50=23259.0 rsi=85.4 macd=292.08/248.70(bull) | 15m: K=66.4↑(prev 64.9) | regime=CE-eligible any_active=True
+2026-11-05 06:47:05,421 [INFO] [SIGNAL] CE: reg=True K=True(K=66.4>=38,rising) Kextr=True RSI=True(85.4>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=66.4<=80,falling) Kextr=True RSI=False(85.4<47) MACD=False(gate off) => BLOCK
+2026-11-05 06:47:05,421 [INFO] [STATE][VWAP] CE NFO:NIFTY26N0924400CE ltp=156.00 entry=153.80 pnl=+2.20(+1.4%) sl=126.12 peak=159.90 tr_armed=False elapsed=45min
+2026-11-05 06:47:05,422 [INFO] [STATE][CLM] CE NFO:NIFTY26N0924400CE ltp=156.00 entry=152.65 pnl=+3.35(+2.2%) sl=125.17 peak=156.70 tr_armed=False elapsed=30min
