@@ -1393,3 +1393,18 @@
 2026-11-05 05:18:26,393 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-05 05:18:26,394 [INFO] [INDICATORS] spot=78675.3 | 1h: close=78729.4 sma20=76566.7 sma50=74942.3 rsi=84.1 macd=805.09/728.16(bull) | 15m: K=72.9↓(prev 86.5) | regime=CE-eligible any_active=False
 2026-11-05 05:18:26,394 [INFO] [SIGNAL] CE: reg=True K=False(K=72.9>=38,rising) Kextr=False RSI=True(84.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=72.9<=80,falling) Kextr=True RSI=False(84.1<47) MACD=False(gate off) => BLOCK
+2026-11-05 05:18:28,863 [INFO] [periodic] Logs pushed to GitHub: Sensex_FlightRecorder_V2_5_20-SENSEX_20261105_090605.log, Sensex_BarLevel_V2_5_20-SENSEX_20261105_090605.csv
+2026-11-05 05:18:59,067 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:19:29,301 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:19:59,595 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:20:30,041 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:21:00,406 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:21:30,725 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:22:01,114 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:22:31,489 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:23:01,881 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:23:32,260 [INFO] [FLIP] PUT-flip BLOCKED — K=72.9 > 60 (too high to buy puts into) (K=72.9 prev=86.5)
+2026-11-05 05:23:32,287 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 05:23:32,287 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 05:23:32,288 [INFO] [INDICATORS] spot=78671.9 | 1h: close=78729.4 sma20=76566.7 sma50=74942.3 rsi=84.1 macd=805.09/728.16(bull) | 15m: K=72.9↓(prev 86.5) | regime=CE-eligible any_active=False
+2026-11-05 05:23:32,288 [INFO] [SIGNAL] CE: reg=True K=False(K=72.9>=38,rising) Kextr=False RSI=True(84.1>53) MACD=True(gate off) => BLOCK | PE: reg=False K=True(K=72.9<=80,falling) Kextr=True RSI=False(84.1<47) MACD=False(gate off) => BLOCK
