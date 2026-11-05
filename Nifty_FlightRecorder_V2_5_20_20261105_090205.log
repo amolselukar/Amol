@@ -2039,3 +2039,18 @@ Someone edited the logic without recording it. Run stamp_changelog.py.
 2026-11-05 04:12:56,418 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
 2026-11-05 04:12:56,418 [INFO] [INDICATORS] spot=24373.0 | 1h: close=23960.6 sma20=23644.9 sma50=23161.6 rsi=76.8 macd=224.80/221.86(bull) | 15m: K=95.8↓(prev 95.8) | regime=CE-eligible any_active=False
 2026-11-05 04:12:56,418 [INFO] [SIGNAL] CE: reg=True K=False(K=95.8>=38,rising) Kextr=True RSI=True(76.8>53) MACD=True(gate off) => BLOCK | PE: reg=False K=False(K=95.8<=80,falling) Kextr=True RSI=False(76.8<47) MACD=False(gate off) => BLOCK
+2026-11-05 04:12:58,896 [INFO] [periodic] Logs pushed to GitHub: Nifty_FlightRecorder_V2_5_20_20261105_090205.log, Nifty_BarLevel_V2_5_20_20261105_090205.csv
+2026-11-05 04:13:29,145 [INFO] [RENKO] dir=+1 (UP) bricks=2 brick=22.41 last5=[1, 1]
+2026-11-05 04:13:29,312 [INFO] [FAST] CE24400 score=135 vol=1.75 U=25.2 skipped: leader score=135 vol=1.75 U=25.2
+2026-11-05 04:15:01,284 [INFO] [VWAP] Cooldown BLOCK — CE 13.8min since last VWAP PE loss, entry CE (cooldown 30min, both sides=True)
+2026-11-05 04:15:01,288 [INFO] [FUT5VWAP] Signal — 24385>24369 body=70% side=CE (fixed +12pt target)
+2026-11-05 04:15:01,334 [INFO] ENTRY: NFO:NIFTY26N0924400CE @ 138.30  engine=FUT5VWAP  detail=FUT5 VWAP cross 24385>24369 body=70% pivΔ=218pt | bar=228
+2026-11-05 04:15:32,738 [INFO] [VWAP] Cooldown BLOCK — CE 14.3min since last VWAP PE loss, entry CE (cooldown 30min, both sides=True)
+2026-11-05 04:16:03,058 [INFO] [VWAP] Cooldown BLOCK — CE 14.8min since last VWAP PE loss, entry CE (cooldown 30min, both sides=True)
+2026-11-05 04:16:33,569 [INFO] [V2] WOULD_ENTER(log-only) CE NFO:NIFTY26N0924400CE @ 145.00 spot=24395.2 | K=100.0↑ RSI=76.8 MACD✓
+2026-11-05 04:16:33,570 [WARNING] [V2] shadow log write failed: [Errno 2] No such file or directory: '/home/selukar_amol123/Amol/v2_shadow/nifty_v2_shadow.jsonl'
+2026-11-05 04:18:05,180 [INFO] [APEX] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:18:05,252 [INFO] [T5] open=0 trades=0 realized=+0.0pt/Rs+0 unreal=+0.0pt/Rs+0
+2026-11-05 04:18:05,252 [INFO] [INDICATORS] spot=24401.8 | 1h: close=23960.6 sma20=23644.9 sma50=23161.6 rsi=76.8 macd=224.80/221.86(bull) | 15m: K=100.0↑(prev 95.8) | regime=CE-eligible any_active=True
+2026-11-05 04:18:05,252 [INFO] [SIGNAL] CE: reg=True K=True(K=100.0>=38,rising) Kextr=True RSI=True(76.8>53) MACD=True(gate off) => PASS | PE: reg=False K=False(K=100.0<=80,falling) Kextr=True RSI=False(76.8<47) MACD=False(gate off) => BLOCK
+2026-11-05 04:18:05,253 [INFO] [STATE][FUT5VWAP] CE NFO:NIFTY26N0924400CE ltp=150.10 entry=138.30 pnl=+11.80(+8.5%) sl=0.00 peak=150.10 tr_armed=False elapsed=3min
